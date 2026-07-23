@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dayrrig Duarte — Mentora de marca personal</title>
+<meta name="description" content="Dayrrig Duarte. Estratega de Imagen Internacional certificada y mentora de marca personal en Barcelona / Lechería, Anzoátegui.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dayrrig Duarte — Mentora de marca personal">
+<meta property="og:description" content="Brilla con tu piel y construye un negocio digital rentable. Estratega de Imagen Internacional certificada.">
+<meta property="og:image" content="./assets/dayrrig-portada.jpg">
+<meta property="og:locale" content="es_VE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23701A1B'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='62' fill='%23DCDDD8' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:SOFT,WONK,opsz,wght@0..100,0..1,9..144,300..900&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DAYRRIG DUARTE — dossier editorial por capítulos
+   Demo de diseño · Medine.tech
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body,h1,h2,h3,h4,p,figure,blockquote,ul,ol,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+img{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+
+:root{
+  --crema:#DCDDD8;
+  --crema-dark:#C9CAC4;
+  --vino:#701A1B;
+  --rojo:#931717;
+  --oro:#A8946B;          /* hairlines y detalle — nunca texto pequeño */
+  --oro-lite:#C9B489;     /* texto pequeño sobre vino (5.5:1) */
+  --oro-deep:#6B5A2E;     /* texto pequeño sobre crema (4.9:1) */
+  --tinta:#2A1416;
+  --verde-wa:#25D366;
+
+  --rail:0px;
+  --topbar:46px;
+  --pad:clamp(20px,5.2vw,72px);
+
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (min-width:1024px){
+  :root{--rail:156px;--topbar:0px}
+}
+@media (min-width:1440px){
+  :root{--rail:184px}
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--crema);
+  color:var(--tinta);
+  font-size:clamp(15px,1.02vw,17px);
+  line-height:1.62;
+  letter-spacing:.004em;
+  -webkit-font-smoothing:antialiased;
+}
+/* overflow-x:clip recorta sin crear contenedor de scroll -> no rompe position:sticky */
+html,body{overflow-x:clip}
+.page{margin-left:var(--rail);margin-top:var(--topbar);overflow-x:clip}
+@supports not (overflow-x:clip){
+  html,body{overflow-x:hidden}
+  .who-fig{position:static!important}
+}
+
+::selection{background:var(--vino);color:var(--crema)}
+
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oro-deep);outline-offset:3px;border-radius:1px}
+.on-vino :focus-visible{outline-color:var(--oro-lite)}
+
+/* ---------- utilidades tipográficas ---------- */
+.kicker{
+  font-size:clamp(9.5px,1.5vw,11px);
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-weight:600;
+  line-height:1.5;
+}
+.serif{font-family:var(--display);font-weight:400}
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:999;
+  background:var(--vino);color:var(--crema);padding:12px 18px;
+}
+.skip:focus{left:8px;top:8px}
+
+/* ============================================================
+   RAIL LATERAL FIJO (>=1024px)
+   ============================================================ */
+.rail{
+  display:none;
+  position:fixed;inset:0 auto 0 0;width:var(--rail);
+  background:var(--vino);
+  border-right:1px solid rgba(168,148,107,.42);
+  padding:26px 18px 22px;
+  z-index:60;
+  flex-direction:column;
+  color:var(--crema);
+}
+@media (min-width:1024px){.rail{display:flex}}
+
+.rail-mark{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 96,'wght' 420,'SOFT' 40,'WONK' 1;
+  font-size:clamp(15px,1.28vw,19px);
+  line-height:1.06;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  text-decoration:none;
+  display:block;
+}
+.rail-mark span{display:block}
+.rail-mark span+span{color:var(--oro-lite)}
+.rail-rule{height:1px;background:rgba(168,148,107,.45);margin:20px 0 22px}
+
+.rail-idx{display:flex;flex-direction:column;gap:2px;flex:1}
+.rail-idx a{
+  display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:baseline;
+  text-decoration:none;padding:7px 0;
+  color:rgba(220,221,216,.62);
+  transition:color .35s ease;
+}
+.rail-idx a:hover{color:var(--crema)}
+.rail-idx .n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 14,'wght' 500,'SOFT' 0,'WONK' 0;
+  font-size:12px;letter-spacing:.02em;
+}
+.rail-idx .t{
+  font-size:10px;text-transform:uppercase;letter-spacing:.17em;
+  font-weight:500;line-height:1.35;
+}
+.rail-idx a.is-active{color:var(--crema)}
+.rail-idx a.is-active .n{color:var(--oro-lite)}
+.rail-idx a.is-active .t{position:relative}
+.rail-idx a.is-active .t::after{
+  content:"";position:absolute;left:0;right:auto;bottom:-4px;
+  width:18px;height:1px;background:var(--oro-lite);
+}
+.rail-foot{border-top:1px solid rgba(168,148,107,.45);padding-top:16px}
+.rail-foot a{
+  display:inline-flex;align-items:center;gap:7px;
+  text-decoration:none;font-size:10px;text-transform:uppercase;
+  letter-spacing:.17em;font-weight:600;color:var(--oro-lite);
+}
+.rail-foot a:hover{color:var(--crema)}
+.rail-foot svg{width:13px;height:13px;flex:none}
+
+/* ============================================================
+   BARRA DE PROGRESO MÓVIL (<1024px)
+   ============================================================ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  background:var(--vino);color:var(--crema);
+  height:var(--topbar);
+  display:flex;align-items:center;gap:10px;
+  padding:0 12px 0 14px;
+  border-bottom:1px solid rgba(168,148,107,.4);
+}
+@media (min-width:1024px){.topbar{display:none}}
+.topbar-prog{
+  position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--oro-lite);
+  transition:width .12s linear;
+}
+.topbar-now{display:flex;align-items:baseline;gap:8px;min-width:0;flex:1}
+.topbar-now .n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 14,'wght' 500;
+  font-size:12px;color:var(--oro-lite);flex:none;
+}
+.topbar-now .t{
+  font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.topbar-wa{
+  flex:none;display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--oro);color:var(--crema);
+  text-decoration:none;padding:6px 11px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:600;
+}
+.topbar-wa svg{width:13px;height:13px}
+
+/* ============================================================
+   BLOQUES Y REGLAS
+   ============================================================ */
+.band{padding:clamp(64px,9vw,132px) var(--pad)}
+.band--vino{background:var(--vino);color:var(--crema)}
+.band--crema{background:var(--crema)}
+.hair{height:1px;background:var(--oro);opacity:.55;border:0;margin:0}
+.on-vino .hair{opacity:.42}
+
+.chap-head{
+  display:grid;gap:clamp(10px,1.6vw,18px);
+  grid-template-columns:1fr;
+  align-items:end;
+  padding-bottom:clamp(20px,2.6vw,32px);
+  border-bottom:1px solid var(--oro);
+}
+@media (min-width:900px){
+  .chap-head{grid-template-columns:5.5rem 1fr auto;gap:clamp(16px,2.4vw,40px)}
+}
+.chap-n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 144,'wght' 300,'SOFT' 30,'WONK' 1;
+  font-size:clamp(46px,7.2vw,92px);
+  line-height:.82;
+  color:var(--oro);
+  letter-spacing:-.02em;
+}
+.band--vino .chap-n{color:var(--oro-lite);opacity:.85}
+.chap-t{
+  font-family:var(--display);
+  font-size:clamp(30px,4.6vw,60px);
+  line-height:1.02;
+  letter-spacing:-.018em;
+  font-variation-settings:'opsz' 22,'wght' 330,'SOFT' 0,'WONK' 0;
+  transition:font-variation-settings 1.15s cubic-bezier(.22,.68,.16,1);
+}
+.chap-t.is-in{font-variation-settings:'opsz' 144,'wght' 440,'SOFT' 58,'WONK' 1}
+.chap-note{
+  max-width:30ch;font-size:clamp(13px,1.05vw,14.5px);
+  line-height:1.55;opacity:.82;
+}
+@media (min-width:900px){.chap-note{text-align:right;padding-bottom:.5em}}
+
+/* ---------- CTAs ---------- */
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--rojo);color:var(--crema);
+  border:1px solid var(--oro);
+  border-radius:0;
+  padding:15px 26px;
+  text-decoration:none;
+  font-size:clamp(11px,1.15vw,12.5px);
+  text-transform:uppercase;letter-spacing:.19em;font-weight:600;
+  transition:background .3s ease,transform .3s ease,border-color .3s ease;
+  cursor:pointer;
+}
+.cta:hover{background:var(--vino);border-color:var(--crema);transform:translateY(-1px)}
+.band--vino .cta:hover{background:var(--rojo);border-color:var(--crema)}
+.cta svg{width:15px;height:15px;flex:none}
+.cta-txt{
+  display:inline-block;text-decoration:none;
+  border-bottom:1px solid currentColor;
+  padding-bottom:2px;
+  font-size:clamp(12px,1.15vw,13.5px);
+  text-transform:uppercase;letter-spacing:.16em;font-weight:600;
+  transition:opacity .3s ease;
+}
+.cta-txt:hover{opacity:.62}
+
+/* ============================================================
+   HERO (00)
+   ============================================================ */
+.hero{
+  background:var(--vino);color:var(--crema);
+  position:relative;
+  min-height:calc(100vh - var(--topbar));
+  min-height:calc(100svh - var(--topbar));
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:clamp(30px,5vw,54px) var(--pad) 0;
+  overflow:hidden;
+}
+.hero-eyebrow{
+  color:var(--oro-lite);
+  padding-bottom:clamp(18px,2.4vw,28px);
+  border-bottom:1px solid rgba(168,148,107,.42);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;
+  gap:clamp(26px,3.4vw,48px);
+  flex:1;align-items:center;
+  padding-top:clamp(26px,3.6vw,44px);
+}
+@media (min-width:960px){
+  .hero-grid{grid-template-columns:minmax(0,0.86fr) minmax(0,1.14fr);align-items:end}
+}
+
+.hero-figure{position:relative;align-self:end;margin-inline:auto;width:100%;max-width:390px;order:2}
+@media (min-width:960px){.hero-figure{max-width:none;margin-inline:0;order:1}}
+.hero-figure img{
+  width:100%;height:auto;display:block;
+  /* el fondo de la foto es exactamente #701A1B: sangra sin borde ni contenedor */
+}
+.hero-copy{padding-bottom:clamp(20px,3vw,64px);order:1}
+@media (min-width:960px){.hero-copy{order:2}}
+
+h1{
+  font-family:var(--display);
+  font-size:clamp(37px,6.4vw,88px);
+  line-height:1.16;
+  letter-spacing:-.026em;
+  font-variation-settings:'opsz' 144,'wght' 340,'SOFT' 22,'WONK' 1;
+  margin-bottom:clamp(18px,2.2vw,26px);
+  text-wrap:balance;
+}
+h1 .ln{display:inline}
+@media (min-width:700px){h1 .ln{display:block}}
+
+/* palabra con swash — calco de su forma de subrayar a mano una palabra por frase */
+.swashword{position:relative;display:inline-block;white-space:nowrap}
+.swash{
+  position:absolute;left:-7%;
+  top:calc(100% - .04em);
+  width:121%;height:.28em;
+  overflow:visible;pointer-events:none;z-index:2;
+}
+.swash path{
+  fill:none;stroke:var(--crema);
+  stroke-linecap:round;stroke-linejoin:round;
+  vector-effect:non-scaling-stroke; /* la caja se estira, el trazo no se aplasta */
+  opacity:.95;
+}
+.swash .s1{stroke-width:clamp(5px,.9vw,11px)}
+.swash .s2{stroke-width:clamp(2px,.38vw,4.5px);opacity:.68}
+.swash .s3{stroke-width:clamp(1px,.18vw,2px);opacity:.48}
+
+.hero-lead{
+  max-width:44ch;
+  font-size:clamp(14.5px,1.18vw,17px);
+  line-height:1.62;
+  color:rgba(220,221,216,.9);
+  margin-bottom:clamp(24px,3vw,34px);
+}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,28px)}
+
+.hero-strip{
+  border-top:1px solid rgba(168,148,107,.42);
+  display:flex;flex-wrap:wrap;gap:6px 22px;
+  padding:14px 0 16px;
+  color:var(--oro-lite);
+}
+.hero-strip span:not(:last-child)::after{content:" ·";opacity:.5}
+
+/* ============================================================
+   01 · QUIÉN SOY
+   ============================================================ */
+.who{
+  display:grid;grid-template-columns:1fr;gap:clamp(34px,4.4vw,64px);
+  padding-top:clamp(34px,4.4vw,60px);
+}
+@media (min-width:900px){
+  .who{grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:clamp(36px,4.4vw,72px)}
+}
+.who-fig{align-self:start}
+@media (min-width:900px){.who-fig{position:sticky;top:40px}}
+.who-fig img{width:100%;filter:saturate(.86) contrast(1.03)}
+figcaption{
+  margin-top:12px;font-size:12px;line-height:1.5;
+  color:var(--oro-deep);font-weight:500;
+  padding-top:10px;border-top:1px solid var(--oro);
+}
+.band--vino figcaption{color:var(--oro-lite);border-top-color:rgba(168,148,107,.45)}
+
+.steps{border-top:1px solid var(--oro)}
+.step{
+  display:grid;grid-template-columns:1fr;gap:4px 20px;
+  padding:clamp(18px,2.2vw,26px) 0;
+  border-bottom:1px solid var(--oro);
+}
+@media (min-width:560px){
+  .step{grid-template-columns:4.6rem 1fr;align-items:baseline}
+}
+.step-n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 20,'wght' 420,'SOFT' 0,'WONK' 0;
+  font-size:clamp(13px,1.1vw,15px);
+  color:var(--oro-deep);letter-spacing:.04em;
+}
+.step-k{
+  display:block;color:var(--oro-deep);margin-bottom:5px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;
+}
+.step-t{
+  font-family:var(--display);
+  font-size:clamp(19px,2.05vw,27px);
+  line-height:1.18;letter-spacing:-.012em;
+  font-variation-settings:'opsz' 40,'wght' 400,'SOFT' 20,'WONK' 0;
+}
+.step-d{margin-top:7px;max-width:52ch;font-size:clamp(14px,1.05vw,15.5px);opacity:.88}
+
+.pullquote{
+  font-family:var(--display);
+  font-size:clamp(25px,4.1vw,54px);
+  line-height:1.1;letter-spacing:-.022em;
+  font-variation-settings:'opsz' 144,'wght' 330,'SOFT' 40,'WONK' 1;
+  margin:clamp(40px,5.2vw,80px) 0 0;
+  max-width:19ch;
+  text-wrap:balance;
+}
+.pullquote-sm{
+  font-family:var(--display);
+  font-size:clamp(17px,1.9vw,24px);
+  line-height:1.34;letter-spacing:-.01em;
+  font-variation-settings:'opsz' 40,'wght' 380,'SOFT' 20,'WONK' 0;
+  max-width:36ch;
+}
+.attrib{
+  margin-top:14px;color:var(--oro-deep);
+}
+.band--vino .attrib{color:var(--oro-lite)}
+
+/* ============================================================
+   02 · CÓMO PUEDO AYUDARTE
+   ============================================================ */
+.ways{margin-top:clamp(34px,4.2vw,58px);border-top:1px solid var(--oro)}
+.way{
+  display:grid;grid-template-columns:1fr;gap:8px 20px;
+  padding:clamp(26px,3.4vw,46px) 0;
+  border-bottom:1px solid var(--oro);
+}
+@media (min-width:760px){
+  .way{grid-template-columns:4.6rem minmax(0,1fr) minmax(0,auto);align-items:start;gap:10px clamp(20px,3vw,48px)}
+}
+.way-n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 144,'wght' 300,'SOFT' 30,'WONK' 1;
+  font-size:clamp(30px,3.6vw,52px);line-height:.9;
+  color:var(--oro);letter-spacing:-.02em;
+}
+.way-t{
+  font-family:var(--display);
+  font-size:clamp(24px,3.15vw,42px);
+  line-height:1.06;letter-spacing:-.02em;
+  font-variation-settings:'opsz' 90,'wght' 380,'SOFT' 30,'WONK' 0;
+  max-width:19ch;
+}
+.way-d{margin-top:12px;max-width:50ch;font-size:clamp(14.5px,1.1vw,16px)}
+.way-d + .way-d{margin-top:8px;opacity:.82}
+.way-cta{padding-top:clamp(14px,1.6vw,8px)}
+@media (min-width:760px){.way-cta{grid-column:3;grid-row:1;justify-self:end;padding-top:6px}}
+
+.ways-fig{margin-top:clamp(34px,4.4vw,60px)}
+@media (min-width:900px){
+  .ways-fig{width:min(58%,560px);margin-left:auto}
+}
+.ways-fig img{width:100%;filter:saturate(.82) contrast(1.04)}
+
+.nofee{
+  margin-top:clamp(26px,3vw,40px);
+  display:flex;gap:14px;align-items:flex-start;
+  max-width:56ch;
+}
+.nofee::before{
+  content:"";flex:none;width:34px;height:1px;background:var(--oro);margin-top:.72em;
+}
+.nofee p{font-size:clamp(13.5px,1.05vw,15px);opacity:.9}
+
+/* ============================================================
+   03 · EN MIS PALABRAS
+   ============================================================ */
+.words{margin-top:clamp(36px,4.4vw,64px);display:grid;gap:0}
+.word{
+  padding:clamp(24px,3.2vw,42px) 0;
+  border-bottom:1px solid rgba(168,148,107,.42);
+  display:grid;grid-template-columns:1fr;gap:8px 18px;
+}
+@media (min-width:700px){
+  .word{grid-template-columns:3.6rem minmax(0,1fr);align-items:baseline}
+}
+.word-n{
+  font-family:var(--display);
+  font-variation-settings:'opsz' 20,'wght' 420;
+  font-size:12px;letter-spacing:.14em;color:var(--oro-lite);
+}
+.word q,.word .q{
+  quotes:none;display:block;
+  font-family:var(--display);
+  line-height:1.09;letter-spacing:-.024em;
+  font-variation-settings:'opsz' 144,'wght' 330,'SOFT' 45,'WONK' 1;
+  text-wrap:balance;
+}
+.word--xl .q{font-size:clamp(28px,5.3vw,70px);max-width:16ch}
+.word--lg .q{font-size:clamp(24px,4.1vw,52px);max-width:20ch}
+.word--md .q{font-size:clamp(21px,3.2vw,40px);max-width:24ch}
+@media (min-width:900px){
+  .word--right{grid-template-columns:minmax(0,1fr) 3.6rem;text-align:right}
+  .word--right .word-n{order:2;justify-self:end}
+  .word--right .q{order:1;margin-left:auto}
+}
+
+.words-fig{position:relative;margin:clamp(34px,4.4vw,56px) 0 clamp(8px,1vw,16px)}
+@media (min-width:900px){
+  .words-fig{width:min(42%,400px)}
+}
+.duo{position:relative;background:var(--vino);overflow:hidden}
+.duo img{
+  width:100%;display:block;
+  filter:grayscale(1) contrast(1.12) brightness(1.06);
+  mix-blend-mode:luminosity;
+  opacity:.92;
+}
+.duo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(168deg,rgba(168,148,107,.30),rgba(112,26,27,.55) 55%,rgba(42,20,22,.68));
+  mix-blend-mode:multiply;pointer-events:none;
+}
+@supports not (mix-blend-mode:luminosity){
+  .duo img{filter:sepia(.65) saturate(2.2) hue-rotate(-28deg) contrast(1.05);mix-blend-mode:normal}
+  .duo::after{display:none}
+}
+
+/* ============================================================
+   04 · ESCRÍBEME
+   ============================================================ */
+.write{
+  display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,64px);
+  margin-top:clamp(32px,4vw,56px);
+}
+@media (min-width:900px){.write{grid-template-columns:minmax(0,1fr) minmax(0,.82fr)}}
+.write-intro p{max-width:42ch;font-size:clamp(15px,1.15vw,17px)}
+.write-intro .pullquote-sm{margin-bottom:18px}
+
+.field{padding:18px 0;border-bottom:1px solid var(--oro)}
+.field:first-of-type{border-top:1px solid var(--oro)}
+.field > label,.field legend{
+  display:block;color:var(--oro-deep);margin-bottom:9px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;
+}
+fieldset{border:0;padding:0;margin:0}
+.inp{
+  width:100%;background:transparent;border:0;
+  border-bottom:1px solid rgba(42,20,22,.22);
+  padding:6px 0 8px;
+  font-family:var(--display);
+  font-size:clamp(18px,2vw,25px);
+  font-variation-settings:'opsz' 40,'wght' 380;
+  letter-spacing:-.01em;
+  transition:border-color .3s ease;
+}
+.inp::placeholder{color:rgba(42,20,22,.34)}
+.inp:focus{outline:none;border-bottom-color:var(--vino)}
+.inp:focus-visible{outline:2px solid var(--oro-deep);outline-offset:4px}
+textarea.inp{
+  font-family:var(--body);font-size:15px;line-height:1.55;
+  resize:vertical;min-height:74px;
+  font-variation-settings:normal;
+}
+.opts{display:grid;gap:0;margin-top:2px}
+.opt{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:12px 0;cursor:pointer;
+  border-top:1px solid rgba(42,20,22,.14);
+}
+.opt:first-child{border-top:0}
+.opt input{
+  appearance:none;-webkit-appearance:none;
+  flex:none;width:15px;height:15px;margin-top:.28em;
+  border:1px solid var(--oro-deep);background:transparent;
+  border-radius:0;cursor:pointer;
+}
+.opt input:checked{background:var(--vino);border-color:var(--vino);box-shadow:inset 0 0 0 3px var(--crema)}
+.opt input:focus-visible{outline:2px solid var(--oro-deep);outline-offset:3px}
+.opt-t{font-size:clamp(14.5px,1.1vw,16px);line-height:1.4}
+
+.preview{
+  margin-top:22px;border:1px solid var(--oro);
+  background:rgba(255,255,255,.34);
+  padding:16px 18px;
+}
+.preview .kicker{color:var(--oro-deep);margin-bottom:9px}
+.preview p{font-size:14px;line-height:1.55;word-break:break-word}
+.write-send{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center}
+.write-hint{font-size:12.5px;opacity:.72;max-width:34ch}
+
+/* ============================================================
+   BANDA · NOTA AL MARGEN (Medine.tech)
+   ============================================================ */
+.note{
+  background:var(--crema-dark);
+  border-top:1px solid var(--oro-deep);
+  border-bottom:1px solid var(--oro-deep);
+  padding:clamp(44px,6vw,86px) var(--pad);
+}
+.note-inner{
+  display:grid;grid-template-columns:1fr;gap:clamp(24px,3.2vw,52px);
+  max-width:1180px;
+}
+@media (min-width:940px){.note-inner{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}}
+.note-tag{
+  display:inline-block;
+  border-left:3px solid var(--vino);
+  padding-left:11px;color:var(--vino);
+  margin-bottom:16px;
+}
+.note-t{
+  font-family:var(--display);
+  font-size:clamp(25px,3.5vw,44px);line-height:1.06;letter-spacing:-.022em;
+  font-variation-settings:'opsz' 120,'wght' 400,'SOFT' 40,'WONK' 1;
+  margin-bottom:16px;max-width:16ch;
+}
+.note-p{max-width:46ch;font-size:clamp(14.5px,1.08vw,16px)}
+.note-p + .note-p{margin-top:12px}
+.note-sign{
+  margin-top:22px;padding-top:14px;border-top:1px solid var(--oro-deep);
+  color:var(--vino);
+}
+.note-sign a{font-weight:700}
+
+/* --- módulo antes/después con :has() --- */
+.ba{border:1px solid var(--oro-deep);background:rgba(220,221,216,.55)}
+.ba-switch{display:none;border-bottom:1px solid var(--oro-deep)}
+.ba-opt{
+  flex:1;display:block;position:relative;cursor:pointer;text-align:center;
+}
+.ba-opt + .ba-opt{border-left:1px solid var(--oro-deep)}
+.ba-opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.ba-opt span{
+  display:block;padding:13px 10px;
+  font-size:10.5px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;
+  color:var(--tinta);opacity:.62;transition:background .25s ease,color .25s ease,opacity .25s ease;
+}
+.ba-opt input:focus-visible + span{outline:2px solid var(--vino);outline-offset:-4px}
+.ba-panel{padding:clamp(18px,2.4vw,28px)}
+.ba-panel + .ba-panel{border-top:1px solid var(--oro-deep)}
+.ba-state{color:var(--oro-deep);margin-bottom:12px}
+.ba-url{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:clamp(12.5px,1.5vw,15px);
+  letter-spacing:-.01em;word-break:break-all;
+  padding:11px 13px;border:1px dashed var(--oro-deep);
+  background:rgba(255,255,255,.42);
+  margin-bottom:14px;
+}
+.ba-url b{font-weight:700;color:var(--vino);background:rgba(147,23,23,.13);padding:0 2px}
+.ba-url s{color:rgba(42,20,22,.5)}
+.ba-card{
+  border:1px solid rgba(42,20,22,.3);background:#fff;
+  padding:13px 15px;display:flex;gap:11px;align-items:center;
+}
+.ba-card .wa{
+  flex:none;width:30px;height:30px;border-radius:50%;
+  background:var(--verde-wa);display:grid;place-items:center;
+}
+.ba-card .wa svg{width:17px;height:17px}
+.ba-card .txt{font-size:13.5px;line-height:1.35;min-width:0;word-break:break-word}
+.ba-card .txt em{display:block;font-style:normal;font-size:11px;opacity:.6;margin-top:2px}
+.ba-verdict{margin-top:13px;font-size:13.5px;line-height:1.5;display:flex;gap:9px;align-items:flex-start}
+.ba-verdict::before{
+  content:"";flex:none;width:9px;height:9px;margin-top:.42em;border:1px solid var(--tinta);
+}
+.ba-verdict.bad::before{background:transparent}
+.ba-verdict.good::before{background:var(--vino);border-color:var(--vino)}
+.ba-fallnote{
+  padding:11px clamp(18px,2.4vw,28px);
+  border-top:1px solid var(--oro-deep);
+  font-size:12px;opacity:.75;
+}
+
+@supports selector(:has(*)){
+  .ba-switch{display:flex}
+  .ba-panel{display:none}
+  .ba-panel + .ba-panel{border-top:0}
+  .ba:has(#ba-hoy:checked) #panel-hoy{display:block}
+  .ba:has(#ba-fix:checked) #panel-fix{display:block}
+  .ba:has(#ba-hoy:checked) .ba-opt:first-child span,
+  .ba:has(#ba-fix:checked) .ba-opt:last-child span{background:var(--vino);color:var(--crema);opacity:1}
+  .ba-fallnote{display:none}
+}
+
+/* ============================================================
+   FOOTER PÓSTER
+   ============================================================ */
+.foot{
+  background:var(--vino);color:var(--crema);
+  padding:clamp(52px,7vw,110px) var(--pad) clamp(30px,4vw,48px);
+  overflow:hidden;
+}
+.foot-top{
+  display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,40px);
+  align-items:end;
+  padding-bottom:clamp(30px,4vw,52px);
+  border-bottom:1px solid rgba(168,148,107,.42);
+}
+@media (min-width:820px){.foot-top{grid-template-columns:minmax(0,1fr) auto}}
+.foot-claim{
+  font-family:var(--display);
+  font-size:clamp(23px,3.2vw,40px);line-height:1.08;letter-spacing:-.02em;
+  font-variation-settings:'opsz' 110,'wght' 350,'SOFT' 35,'WONK' 1;
+  max-width:18ch;
+}
+/* póster: cada línea se dimensiona para llenar el ancho útil real
+   (el divisor es el ancho de la palabra medido en ems, con margen) */
+.poster{
+  --posterW:calc(100vw - var(--rail) - var(--pad)*2);
+  margin:clamp(26px,3.4vw,46px) 0 clamp(24px,3vw,38px);
+  overflow:hidden;
+}
+.poster span{
+  display:block;
+  font-family:var(--display);
+  font-variation-settings:'opsz' 144,'wght' 340,'SOFT' 55,'WONK' 1;
+  line-height:.86;
+  letter-spacing:-.035em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.poster span:first-child{font-size:min(calc(var(--posterW) / 3.95),320px)}
+.poster span:last-child{font-size:min(calc(var(--posterW) / 3.63),320px);color:var(--oro-lite)}
+
+.foot-grid{
+  display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px);
+  padding-top:clamp(24px,3vw,38px);
+  border-top:1px solid rgba(168,148,107,.42);
+}
+@media (min-width:760px){.foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.foot-h{color:var(--oro-lite);margin-bottom:11px}
+.foot-grid p,.foot-grid a{font-size:14.5px;line-height:1.6}
+.foot-grid a{text-decoration:none;border-bottom:1px solid rgba(220,221,216,.32)}
+.foot-grid a:hover{border-bottom-color:var(--crema)}
+.socials{display:flex;flex-direction:column;gap:0}
+.socials a{
+  display:flex;align-items:center;gap:11px;
+  padding:11px 0;border:0;border-bottom:1px solid rgba(168,148,107,.42);
+  text-decoration:none;transition:padding-left .3s ease;
+}
+.socials a:first-child{border-top:1px solid rgba(168,148,107,.42)}
+.socials a:hover{padding-left:7px}
+.socials svg{width:17px;height:17px;flex:none;color:var(--oro-lite)}
+.socials .h{font-size:14px}
+.socials .u{margin-left:auto;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--oro-lite)}
+
+.sello{
+  margin-top:clamp(30px,4vw,52px);
+  padding-top:16px;border-top:1px solid rgba(168,148,107,.42);
+  display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
+  font-size:11.5px;line-height:1.6;color:rgba(220,221,216,.78);
+}
+.sello a{color:var(--oro-lite);font-weight:700;text-decoration:none;border-bottom:1px solid var(--oro-lite)}
+
+/* ============================================================
+   FAB WHATSAPP
+   ============================================================ */
+.fab{
+  position:fixed;right:16px;bottom:16px;z-index:70;
+  width:54px;height:54px;border-radius:50%;
+  background:var(--verde-wa);
+  display:grid;place-items:center;
+  box-shadow:0 6px 22px rgba(42,20,22,.34);
+  text-decoration:none;
+  transition:transform .3s ease;
+}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:28px;height:28px;color:#fff}
+@media (min-width:1024px){.fab{right:26px;bottom:26px}}
+
+/* ============================================================
+   REVEALS
+   ============================================================ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important;
+  }
+  .rv{opacity:1;transform:none}
+  .swash path{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .chap-t{font-variation-settings:'opsz' 144,'wght' 440,'SOFT' 58,'WONK' 1}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#c01">Saltar al contenido</a>
+
+<!-- ============ RAIL LATERAL (desktop) ============ -->
+<nav class="rail on-vino" aria-label="Índice de capítulos">
+  <a class="rail-mark" href="#hero"><span>Dayrrig</span><span>Duarte</span></a>
+  <div class="rail-rule" aria-hidden="true"></div>
+  <ul class="rail-idx">
+    <li><a href="#hero" data-idx="hero"><span class="n">00</span><span class="t">Inicio</span></a></li>
+    <li><a href="#c01" data-idx="c01"><span class="n">01</span><span class="t">Quién soy</span></a></li>
+    <li><a href="#c02" data-idx="c02"><span class="n">02</span><span class="t">Cómo ayudo</span></a></li>
+    <li><a href="#c03" data-idx="c03"><span class="n">03</span><span class="t">En mis palabras</span></a></li>
+    <li><a href="#c04" data-idx="c04"><span class="n">04</span><span class="t">Escríbeme</span></a></li>
+  </ul>
+  <div class="rail-foot">
+    <a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/></svg>
+      Escríbeme
+    </a>
+  </div>
+</nav>
+
+<!-- ============ BARRA MÓVIL ============ -->
+<div class="topbar on-vino">
+  <div class="topbar-prog" id="prog" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div class="topbar-now">
+    <span class="n" id="mNum">00</span>
+    <span class="t" id="mLab">Dayrrig Duarte</span>
+  </div>
+  <a class="topbar-wa" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<main class="page">
+
+  <!-- ============================================================
+       HERO · 00
+       ============================================================ -->
+  <section class="hero on-vino" id="hero" data-chap="00" data-label="Inicio">
+    <p class="kicker hero-eyebrow">Mentora de marca personal · Barcelona / Lechería, Anzoátegui</p>
+
+    <div class="hero-grid">
+      <figure class="hero-figure">
+        <img src="./assets/dayrrig-portada.jpg" width="480" height="700"
+             alt="Retrato editorial de Dayrrig Duarte con blazer color verde azulado sobre fondo vino, con un trazo de pincel blanco a la altura del hombro." fetchpriority="high" decoding="async">
+      </figure>
+
+      <div class="hero-copy">
+        <h1>
+          <span class="ln">Brilla con tu piel</span>
+          <span class="ln">y construye un <span class="swashword">negocio<svg class="swash" viewBox="0 0 600 60" fill="none" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path class="s1" d="M8 40C96 17 190 10 286 17c96 7 198 17 306 1"/><path class="s2" d="M22 51C124 32 226 27 320 31c94 4 178 12 258 1"/><path class="s3" d="M340 56c76-5 148-8 214-16"/></svg></span></span>
+          <span class="ln">digital rentable.</span>
+        </h1>
+
+        <p class="hero-lead">Soy Dayrrig Duarte: abogada de origen, Estratega de Imagen Internacional certificada y mentora de marca personal. Acompaño a mujeres que quieren construir un negocio propio dentro de la belleza, con su nombre por delante.</p>
+
+        <div class="hero-actions">
+          <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+            Empieza aquí
+          </a>
+          <a class="cta-txt" href="#c02">Ver cómo puedo ayudarte</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="kicker hero-strip"><span>Estratega de Imagen Internacional</span><span>Diez años vistiendo mujeres influyentes</span><span>Comunidad de mujeres en Farmasi</span></p>
+  </section>
+
+  <!-- ============================================================
+       01 · QUIÉN SOY
+       ============================================================ -->
+  <section class="band band--crema" id="c01" data-chap="01" data-label="Quién soy">
+    <header class="chap-head">
+      <p class="chap-n" aria-hidden="true">01</p>
+      <h2 class="chap-t">Quién soy</h2>
+      <p class="chap-note">No llegué a la belleza por casualidad. Llegué por siete decisiones seguidas, y la última fue la más difícil.</p>
+    </header>
+
+    <div class="who">
+      <figure class="who-fig rv">
+        <img src="./assets/dayrrig-plural.jpg" width="610" height="1000" loading="lazy" decoding="async"
+             alt="Dayrrig Duarte sonriendo mientras sostiene una revista de moda, en la etapa de su estudio PLURAL.">
+        <figcaption>PLURAL — su estudio de moda en Lechería, antes del cierre.</figcaption>
+      </figure>
+
+      <div>
+        <ol class="steps">
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">01</span>
+            <div><span class="step-k">Derecho</span><p class="step-t">Abogada graduada</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">02</span>
+            <div><span class="step-k">Moda</span><p class="step-t">Estudié Diseño de Modas</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">03</span>
+            <div><span class="step-k">Imagen</span><p class="step-t">Me certifiqué como Estratega de Imagen Internacional</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">04</span>
+            <div><span class="step-k">Diez años</span><p class="step-t">Vistiendo mujeres influyentes</p>
+              <p class="step-d">Una década asesorando a mujeres y a marcas dentro y fuera de Venezuela.</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">05</span>
+            <div><span class="step-k">PLURAL</span><p class="step-t">Abrí mi propio estudio de moda en Lechería</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">06</span>
+            <div><span class="step-k">El cierre</span><p class="step-t">Lo cerré</p>
+              <p class="step-d">La decisión que parte esta historia en dos.</p></div>
+          </li>
+          <li class="step rv">
+            <span class="step-n" aria-hidden="true">07</span>
+            <div><span class="step-k">Hoy</span><p class="step-t">Farmasi, y una comunidad de mujeres</p>
+              <p class="step-d">Mentora de marca personal y líder de una comunidad de mujeres dentro de la red global de Farmasi.</p></div>
+          </li>
+        </ol>
+
+        <blockquote class="rv">
+          <p class="pullquote">«Cerré mi estudio de moda para hacer algo que me llamaba a gritos…»</p>
+        </blockquote>
+
+        <blockquote class="rv" style="margin-top:clamp(30px,3.6vw,52px)">
+          <p class="pullquote-sm">«Me uní a la red global de Farmasi, el lugar donde las mujeres diseñamos nuestro negocio para que nuestra vida vaya primero.»</p>
+          <p class="kicker attrib">Dayrrig Duarte</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 · CÓMO PUEDO AYUDARTE
+       ============================================================ -->
+  <section class="band band--crema" id="c02" data-chap="02" data-label="Cómo puedo ayudarte">
+    <header class="chap-head">
+      <p class="chap-n" aria-hidden="true">02</p>
+      <h2 class="chap-t">Cómo puedo ayudarte</h2>
+      <p class="chap-note">Dos caminos. Los dos empiezan con una conversación, no con un catálogo.</p>
+    </header>
+
+    <ol class="ways">
+      <li class="way rv">
+        <span class="way-n" aria-hidden="true">01</span>
+        <div>
+          <h3 class="way-t">Construye tu propio negocio de belleza</h3>
+          <p class="way-d">Te cuento cómo puedes empezar a diseñar tu propio negocio de belleza junto a mí, dentro de la comunidad de mujeres que acompaño.</p>
+          <p class="way-d">Para ti si quieres ingresos propios y un lugar donde tu vida vaya primero.</p>
+        </div>
+        <div class="way-cta">
+          <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina%20web.%20Quiero%20construir%20mi%20negocio%20de%20belleza%20junto%20a%20ti." target="_blank" rel="noopener">Quiero construir mi negocio</a>
+        </div>
+      </li>
+      <li class="way rv">
+        <span class="way-n" aria-hidden="true">02</span>
+        <div>
+          <h3 class="way-t">Diseña tu rutina de belleza y bienestar</h3>
+          <p class="way-d">Te ayudo a diseñar tu rutina de belleza y bienestar, pensada para tu piel y para tu día real.</p>
+          <p class="way-d">Para ti si quieres verte y sentirte bien sin improvisar cada mañana.</p>
+        </div>
+        <div class="way-cta">
+          <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina%20web.%20Quiero%20dise%C3%B1ar%20mi%20rutina%20de%20belleza%20y%20bienestar." target="_blank" rel="noopener">Quiero diseñar mi rutina</a>
+        </div>
+      </li>
+    </ol>
+
+    <figure class="ways-fig rv">
+      <img src="./assets/dayrrig-espacio.jpg" width="720" height="850" loading="lazy" decoding="async"
+           alt="Dayrrig Duarte sonriendo mientras ofrece un frasco de perfume frente a un mural de pinceladas en tonos nude.">
+      <figcaption>Lechería, estado Anzoátegui.</figcaption>
+    </figure>
+
+    <div class="nofee rv">
+      <p>En esta página no hay lista de precios, y es a propósito: cada camino se conversa. Escríbeme por WhatsApp y vemos cuál de los dos es el tuyo.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 · EN MIS PALABRAS
+       ============================================================ -->
+  <section class="band band--vino on-vino" id="c03" data-chap="03" data-label="En mis palabras">
+    <header class="chap-head">
+      <p class="chap-n" aria-hidden="true">03</p>
+      <h2 class="chap-t">En mis palabras</h2>
+      <p class="chap-note">Lo que le digo a las mujeres que quieren vender sin sentir que están vendiendo.</p>
+    </header>
+
+    <figure class="words-fig rv">
+      <div class="duo">
+        <img src="./assets/dayrrig-calle.jpg" width="480" height="851" loading="lazy" decoding="async"
+             alt="Dayrrig Duarte de cuerpo entero caminando por una calle colonial venezolana de fachadas de colores.">
+      </div>
+    </figure>
+
+    <div class="words">
+      <blockquote class="word word--xl rv">
+        <span class="word-n" aria-hidden="true">I</span>
+        <p class="q">No vendas catálogo, vende visión</p>
+      </blockquote>
+      <blockquote class="word word--lg word--right rv">
+        <span class="word-n" aria-hidden="true">II</span>
+        <p class="q">Vender es servir a quien ya decidió cambiar</p>
+      </blockquote>
+      <blockquote class="word word--md rv">
+        <span class="word-n" aria-hidden="true">III</span>
+        <p class="q">Las networkers que escalan no persiguen clientas. Construyen autoridad</p>
+      </blockquote>
+      <blockquote class="word word--lg word--right rv">
+        <span class="word-n" aria-hidden="true">IV</span>
+        <p class="q">Facturar bien no te salva de la soledad empresarial</p>
+      </blockquote>
+      <blockquote class="word word--md rv">
+        <span class="word-n" aria-hidden="true">V</span>
+        <p class="q">Te enseñaron que la belleza es frívola</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 · ESCRÍBEME
+       ============================================================ -->
+  <section class="band band--crema" id="c04" data-chap="04" data-label="Escríbeme">
+    <header class="chap-head">
+      <p class="chap-n" aria-hidden="true">04</p>
+      <h2 class="chap-t">Escríbeme</h2>
+      <p class="chap-note">Sin formularios que se pierden: esto abre WhatsApp con tu mensaje ya escrito.</p>
+    </header>
+
+    <div class="write">
+      <div class="write-intro rv">
+        <p class="pullquote-sm">Cuéntame quién eres y qué buscas.</p>
+        <p>Al enviar se abre tu WhatsApp con el mensaje redactado — solo tienes que darle a enviar. Así me llega completo y directo, ordenado desde el primer momento, en vez de perderse entre mensajes sueltos.</p>
+        <div class="preview" aria-live="polite">
+          <p class="kicker">Así me llegará</p>
+          <p id="prev">Hola Dayrrig, vengo de tu página web. Quiero construir mi negocio de belleza junto a ti.</p>
+        </div>
+      </div>
+
+      <form id="waForm" novalidate>
+        <div class="field">
+          <label for="fName">Tu nombre</label>
+          <input class="inp" type="text" id="fName" name="nombre" placeholder="María Alejandra" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <fieldset>
+            <legend>¿Qué te trae?</legend>
+            <div class="opts">
+              <label class="opt">
+                <input type="radio" name="via" value="negocio" checked>
+                <span class="opt-t">Quiero construir mi negocio de belleza junto a ti</span>
+              </label>
+              <label class="opt">
+                <input type="radio" name="via" value="rutina">
+                <span class="opt-t">Quiero diseñar mi rutina de belleza y bienestar</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="fMsg">Cuéntame un poco <span style="opacity:.55;letter-spacing:.1em">(opcional)</span></label>
+          <textarea class="inp" id="fMsg" name="mensaje" rows="3" placeholder="Dónde estás, en qué momento te agarra esto, qué te gustaría lograr."></textarea>
+        </div>
+
+        <div class="write-send">
+          <button class="cta" type="submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+            Enviar por WhatsApp
+          </button>
+          <p class="write-hint">Se abre WhatsApp con el mensaje listo. Nada se guarda en esta página.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BANDA · NOTA AL MARGEN (Medine.tech)
+       ============================================================ -->
+  <aside class="note" aria-label="Nota de quien diseñó esta propuesta">
+    <div class="note-inner">
+      <div>
+        <p class="kicker note-tag">Nota al margen — de quien diseñó esta propuesta</p>
+        <h2 class="note-t">El primer arreglo va de regalo.</h2>
+        <p class="note-p">Tu bio termina con «Empieza aquí 👇🏼». Revisamos ese enlace y hoy no abre el chat: le falta el código de país y le sobra un cero, así que WhatsApp no reconoce el número y se queda mostrando los dígitos sueltos.</p>
+        <p class="note-p">Se arregla en treinta segundos y es tuyo, decidas o no seguir con esta página. Solo cambia tres cosas: <b>58</b> delante, el <b>0</b> fuera y <b>https</b> en vez de http.</p>
+        <p class="kicker note-sign">Diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a></p>
+      </div>
+
+      <div class="ba">
+        <div class="ba-switch" role="group" aria-label="Comparar el enlace de la bio">
+          <label class="ba-opt"><input type="radio" name="ba" id="ba-hoy" checked><span>Hoy</span></label>
+          <label class="ba-opt"><input type="radio" name="ba" id="ba-fix"><span>Corregido</span></label>
+        </div>
+
+        <div class="ba-panel" id="panel-hoy">
+          <p class="kicker ba-state">Hoy · enlace de la bio</p>
+          <p class="ba-url">http://wa.me/<s>0</s>4248494014</p>
+          <div class="ba-card">
+            <span class="wa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/></svg></span>
+            <span class="txt">Chat on WhatsApp with 04248494014<em>Lo que ve quien toca tu link</em></span>
+          </div>
+          <p class="ba-verdict bad">WhatsApp no reconoce el número: falta el código de país (58) y sobra el 0 inicial. No hay botón que abra el chat.</p>
+        </div>
+
+        <div class="ba-panel" id="panel-fix">
+          <p class="kicker ba-state">Corregido · treinta segundos</p>
+          <p class="ba-url">https://wa.me/<b>58</b>4248494014</p>
+          <div class="ba-card">
+            <span class="wa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/></svg></span>
+            <span class="txt">Chat on WhatsApp with +58 424-8494014<em>Lo que verá a partir de hoy</em></span>
+          </div>
+          <p class="ba-verdict good">WhatsApp lo lee, muestra tu número y abre el chat. Eso es un «Empieza aquí» que de verdad empieza.</p>
+        </div>
+
+        <p class="ba-fallnote">Arriba: el enlace de hoy. Abajo: el mismo enlace corregido.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       FOOTER PÓSTER
+       ============================================================ -->
+  <footer class="foot on-vino">
+    <div class="foot-top">
+      <p class="foot-claim">Si llegaste hasta aquí, ya decidiste algo. Conversemos.</p>
+      <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+        Empieza aquí
+      </a>
+    </div>
+
+    <div class="poster" aria-hidden="true"><span>Dayrrig</span><span>Duarte</span></div>
+
+    <div class="foot-grid">
+      <div>
+        <p class="kicker foot-h">Dónde estoy</p>
+        <p>Barcelona / Lechería<br>Estado Anzoátegui, Venezuela</p>
+      </div>
+      <div>
+        <p class="kicker foot-h">Escríbeme</p>
+        <p><a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina." target="_blank" rel="noopener">+58 424 849 4014</a><br>Mentora de marca personal</p>
+      </div>
+      <div>
+        <p class="kicker foot-h">Redes</p>
+        <div class="socials">
+          <a href="https://instagram.com/pureglowday" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <span class="h">Instagram</span><span class="u">@pureglowday</span>
+          </a>
+          <a href="https://tiktok.com/@pureglowday" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.6v12.1a2.6 2.6 0 1 1-2.2-2.57V9.9a5.5 5.5 0 1 0 4.8 5.45V8.9a6.3 6.3 0 0 0 3.7 1.2V7.5a3.7 3.7 0 0 1-3.7-3.7V3Z"/></svg>
+            <span class="h">TikTok</span><span class="u">@pureglowday</span>
+          </a>
+          <a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/></svg>
+            <span class="h">WhatsApp</span><span class="u">+58 424 849 4014</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="sello">
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</span>
+    </p>
+  </footer>
+</main>
+
+<a class="fab" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Dayrrig Duarte">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO  = 'IntersectionObserver' in window;
+
+  /* ---------- 1) SWASH SVG: line-drawing con stroke-dashoffset ----------
+     Sin JS o con reduced-motion el trazo queda dibujado por defecto. */
+  var swash = document.querySelector('.swash');
+  if (swash && !reduce) {
+    var paths = Array.prototype.slice.call(swash.querySelectorAll('path'));
+    paths.forEach(function(p){
+      var len = 0;
+      try { len = p.getTotalLength(); } catch(e){ len = 0; }
+      if (!len) return;
+      p.style.strokeDasharray  = len;
+      p.style.strokeDashoffset = len;
+      p.style.transition = 'stroke-dashoffset 1.15s cubic-bezier(.32,.72,.24,1)';
+    });
+    var drawSwash = function(){
+      paths.forEach(function(p, i){
+        setTimeout(function(){ p.style.strokeDashoffset = '0'; }, 140 + i*170);
+      });
+    };
+    if (hasIO) {
+      var so = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ drawSwash(); so.disconnect(); }
+        });
+      }, { threshold: 0.35 });
+      so.observe(swash);
+    } else {
+      drawSwash();
+    }
+  }
+
+  /* ---------- 2) Ejes variables de Fraunces + reveals ---------- */
+  if (hasIO) {
+    var inObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('is-in'); inObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.chap-t, .rv').forEach(function(el){ inObs.observe(el); });
+  } else {
+    document.querySelectorAll('.chap-t, .rv').forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ---------- 3) Capítulo activo: rail + barra móvil ---------- */
+  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-chap]'));
+  var links    = Array.prototype.slice.call(document.querySelectorAll('.rail-idx a'));
+  var mNum = document.getElementById('mNum');
+  var mLab = document.getElementById('mLab');
+
+  function setActive(id, num, label){
+    links.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('data-idx') === id); });
+    if (mNum) mNum.textContent = num;
+    if (mLab) mLab.textContent = label;
+  }
+  if (sections.length){
+    if (hasIO){
+      var cur = null;
+      var chapObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting && e.target !== cur){
+            cur = e.target;
+            setActive(e.target.id, e.target.getAttribute('data-chap'), e.target.getAttribute('data-label'));
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      sections.forEach(function(s){ chapObs.observe(s); });
+    }
+    setActive('hero','00','Dayrrig Duarte');
+  }
+
+  /* ---------- Barra de progreso móvil ---------- */
+  var prog = document.getElementById('prog');
+  if (prog){
+    var ticking = false;
+    var update = function(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? Math.min(100, Math.max(0, (window.scrollY / h) * 100)) : 0;
+      prog.style.width = p.toFixed(1) + '%';
+      prog.setAttribute('aria-valuenow', Math.round(p));
+      ticking = false;
+    };
+    window.addEventListener('scroll', function(){
+      if (!ticking){ ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  /* ---------- 4) Formulario que compone el mensaje de WhatsApp ---------- */
+  var form = document.getElementById('waForm');
+  var prev = document.getElementById('prev');
+  var PHONE = '584248494014';
+
+  function buildMessage(){
+    var name = (document.getElementById('fName').value || '').trim();
+    var extra = (document.getElementById('fMsg').value || '').trim();
+    var viaEl = form.querySelector('input[name="via"]:checked');
+    var via = viaEl && viaEl.value === 'rutina'
+      ? 'Quiero diseñar mi rutina de belleza y bienestar.'
+      : 'Quiero construir mi negocio de belleza junto a ti.';
+    var msg = name
+      ? 'Hola Dayrrig, soy ' + name + '. Vengo de tu página web. ' + via
+      : 'Hola Dayrrig, vengo de tu página web. ' + via;
+    if (extra) msg += ' ' + extra;
+    return msg;
+  }
+  function refresh(){ if (prev) prev.textContent = buildMessage(); }
+
+  if (form){
+    form.addEventListener('input', refresh);
+    form.addEventListener('change', refresh);
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var url = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(buildMessage());
+      window.open(url, '_blank', 'noopener');
+    });
+    refresh();
+  }
+})();
+</script>
+</body>
+</html>
