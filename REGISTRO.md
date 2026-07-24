@@ -51,8 +51,19 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
   con fallback rAF y sin IntersectionObserver), **duotono con `background-blend-mode:
   luminosity`** + realce `color-dodge`, **`clip-path`/ola SVG animada con `d:path()`**,
   y el patrón **tema conmutable por `data-turno` en `<html>`** (sin `:has()`).
-- ⚠️ `:has()` e `IntersectionObserver` van por **2 usos** (Apamatte + Pure Glow Day) →
-  **vetados** hasta nuevo aviso. Los reveals se hacen ya con scroll-driven timelines.
+- ⚠️ `:has()` va por **1 uso real** (Apamatte). La fila retroactiva se lo atribuía también a
+  Pure Glow Day, pero esa demo lo eliminó en la reconstrucción: hoy el antes/después conmuta
+  con un toggle JS de `aria-pressed`. Se mantiene **vetado** igualmente.
+- `IntersectionObserver` queda **prohibido como efecto principal**; se acepta solo como
+  *fallback* de un scroll-driven timeline o como plomería (capítulo activo de un nav). Así
+  está en Pure Glow Day.
+- Técnicas de Pure Glow Day (1 uso cada una): **line-drawing SVG con `stroke-dashoffset`**
+  (el swash del hero) y **duotono con `mix-blend-mode: luminosity`** sobre base de color.
+  ⚠️ Coincide con Donde Patricio en *scroll-driven animations* y en la idea de duotono
+  (allí con `background-blend-mode`) — ambas se publicaron el mismo día en paralelo, sin
+  verse. No afecta al parecido visual (son técnicas invisibles para el prospecto: los dos
+  sitios no se parecen en nada), pero **scroll-driven animations queda ya en 2 usos →
+  vetado** para la próxima, que debe buscar otro motor de reveal.
 - Contadores de tipografía tras Donde Patricio: Bricolage Grotesque y DM Sans, 1 uso cada una.
 - La demo de CETI vive en un repo aparte (`edithbalbouze/ceti-demo`, anterior a este
   ledger) pero cuenta como demo previa: su arquetipo, nav, paleta pastel lavanda/rosa y
