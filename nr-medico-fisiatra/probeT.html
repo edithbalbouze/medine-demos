@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;font:12px monospace}iframe{width:390px;height:2600px;border:0;position:absolute;left:600px;top:0}pre{white-space:pre-wrap;padding:8px;width:560px}</style>
+<pre id="o">…</pre><iframe id="f" src="./index.html"></iframe>
+<script>
+f.addEventListener('load',function(){setTimeout(function(){
+ var d=f.contentDocument,w=f.contentWindow,o=[];
+ var radio=d.querySelector('input[value="columna y dolor crónico"]');
+ radio.checked=true; radio.dispatchEvent(new Event('change',{bubbles:true}));
+ setTimeout(function(){
+   var msg=d.getElementById('tMsg'), wa=d.getElementById('tWa'), ml=d.getElementById('tMail');
+   o.push('MSG: '+msg.textContent);
+   o.push('WA : '+wa.getAttribute('href'));
+   o.push('MAIL: '+ml.getAttribute('href').slice(0,120));
+   var panel=d.querySelector('.t-out'), cs=w.getComputedStyle(panel);
+   o.push('t-out display: '+cs.display);
+   var row=d.querySelector('.t-row:has(input:checked)');
+   o.push('has() matched row: '+(row?row.querySelector('.t-txt').textContent:'NO :has support'));
+   document.getElementById('o').textContent=o.join('\n');
+ },300);
+},1400);});
+</script>
