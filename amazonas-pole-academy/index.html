@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Amazonas Pole Academy · Pole Dance y Flexibilidad en Balvanera, CABA</title>
+<meta name="description" content="Academia deportiva de Pole Dance y flexibilidad en Chile 1866, Balvanera, CABA. Pole Sport, Exotic Pole, Flexibilidad y Pole Yoga. Una persona por barra, grupos reducidos. Reservá por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amazonas Pole Academy · Descubrí tu fuerza">
+<meta property="og:description" content="Pole Sport, Exotic, Flexibilidad y Pole Yoga en Chile 1866, Balvanera. Una persona por barra. No hace falta llegar con experiencia, fuerza ni flexibilidad.">
+<meta property="og:image" content="./assets/amazonas-estudio.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/amazonas-logo-avatar.png">
+<link rel="apple-touch-icon" href="./assets/amazonas-logo-avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jost:wght@300;400;500&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AMAZONAS POLE ACADEMY — demo Medine.tech
+   Arquetipo: "el tablero de horarios que no existe"
+   Firma: "el asta" — la lanza del isotipo como columna de la página
+   ============================================================ */
+
+:root{
+  --paper:#F0F0F5;
+  --white:#FFFFFF;
+  --rule:#DDDDDF;
+  --navy:#12487D;
+  --ink:#040404;
+  --ink2:#2A363E;
+  --blue:#03569F;
+  --blue2:#2779C9;
+  --cyan:#36D4EB;
+  --steel:#566E74;
+  --wa:#25D366;
+  --hair:rgba(86,110,116,.30);
+  --hair-soft:rgba(86,110,116,.18);
+
+  --asta-x:13px;
+  --pad-r:18px;
+  --maxw:1240px;
+
+  --display:"Archivo Black", "Arial Black", system-ui, sans-serif;
+  --script:"Yellowtail", cursive;
+  --body:"Jost", "Helvetica Neue", Arial, sans-serif;
+}
+@media (min-width:760px){
+  :root{ --asta-x:40px; --pad-r:32px; }
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-weight:300;
+  font-size:clamp(15px,1.05vw + 12px,17px);
+  line-height:1.62;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:var(--blue); text-decoration:none; }
+p{ margin:0 0 1em; }
+h1,h2,h3{ margin:0; font-weight:400; }
+
+:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; border-radius:2px; }
+
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:200;
+  background:var(--navy); color:#fff; padding:10px 16px; font-size:.9rem;
+}
+.skip:focus{ left:8px; top:8px; }
+
+/* ---------- layout ---------- */
+.page{ position:relative; overflow:hidden; }
+.wrap{
+  width:min(var(--maxw),100%);
+  margin-inline:auto;
+  padding-inline:calc(var(--asta-x) + 28px) var(--pad-r);
+  position:relative;
+}
+.band{ position:relative; z-index:1; padding-block:clamp(56px,9vw,110px); }
+.band + .band{ padding-top:clamp(48px,8vw,96px); }
+
+/* ---------- EL ASTA (firma técnica) ---------- */
+.rail{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+.rail-inner{
+  width:min(var(--maxw),100%);
+  margin-inline:auto;
+  height:100%;
+  position:relative;
+}
+.asta-svg{
+  position:absolute;
+  left:var(--asta-x);
+  top:0;
+  height:100%;
+  width:6px;
+  transform:translateX(-50%);
+  overflow:visible;
+}
+.asta-track{ stroke:var(--hair-soft); }
+.asta-draw{
+  stroke:var(--blue2);
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  animation:astaDraw linear both;
+  animation-timeline:scroll(root block);
+}
+@keyframes astaDraw{ to{ stroke-dashoffset:0; } }
+
+/* nodo/anillo sobre el asta, a la altura del número de sección */
+.node{
+  position:absolute;
+  left:var(--asta-x);
+  top:.42em;
+  width:13px; height:13px;
+  border-radius:50%;
+  border:1.5px solid var(--blue);
+  background:var(--paper);
+  transform:translateX(-50%);
+  z-index:2;
+}
+.node::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  width:16px; height:1px;
+  background:var(--hair);
+  transform:translateY(-50%);
+}
+
+/* ---------- tipografía de marca ---------- */
+.dh{
+  font-family:var(--display);
+  text-transform:uppercase;
+  letter-spacing:-.022em;
+  line-height:.94;
+  color:var(--navy);
+  font-size:clamp(1.9rem,7.4vw,3.6rem);
+}
+.script{
+  font-family:var(--script);
+  color:var(--blue2);
+  font-size:.86em;
+  line-height:1.05;
+  margin:.14em 0 0;
+  text-transform:none;
+  letter-spacing:0;
+}
+.dh + .script{ font-size:clamp(1.62rem,6.3vw,3.06rem); }
+
+.idx{
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--steel);
+  margin:0 0 1.1em;
+  display:flex; align-items:baseline; gap:.85em;
+}
+.idx b{ font-family:var(--display); font-weight:400; color:var(--blue); letter-spacing:.06em; font-size:.86rem; }
+
+.eyebrow{
+  font-size:.7rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--steel); margin:0 0 1.4em;
+}
+.lead{ font-size:1.06rem; max-width:56ch; color:var(--ink2); }
+.small{ font-size:.82rem; color:var(--steel); line-height:1.55; }
+.note{
+  font-size:.78rem; color:var(--steel); line-height:1.55;
+  border-top:1px solid var(--hair-soft); padding-top:14px; margin-top:26px; max-width:62ch;
+}
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.6em;
+  font-family:var(--body); font-weight:500; font-size:.9rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  background:var(--blue); color:#fff;
+  padding:15px 26px; border-radius:2px; border:1px solid var(--blue);
+  transition:background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.btn:hover{ background:var(--navy); border-color:var(--navy); }
+.btn:active{ transform:translateY(1px); }
+.btn--big{ font-size:1rem; padding:20px 34px; width:100%; }
+.btn--sm{ font-size:.74rem; padding:11px 16px; letter-spacing:.09em; }
+.btn--ghost{
+  background:transparent; color:var(--navy); border-color:var(--hair);
+}
+.btn--ghost:hover{ background:var(--navy); color:#fff; border-color:var(--navy); }
+.btn--light{ background:#fff; color:var(--navy); border-color:#fff; }
+.btn--light:hover{ background:var(--paper); border-color:var(--paper); color:var(--navy); }
+@media (min-width:520px){ .btn--big{ width:auto; } }
+
+.tlink{
+  display:inline-flex; align-items:center; gap:.5em;
+  font-size:.82rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--navy); border-bottom:1px solid var(--hair); padding-bottom:4px;
+  transition:color .18s ease, border-color .18s ease;
+}
+.tlink:hover{ color:var(--blue); border-color:var(--blue); }
+
+/* ---------- iconos ---------- */
+.ic{ width:17px; height:17px; flex:none; stroke:currentColor; fill:none; stroke-width:1.15; stroke-linecap:round; stroke-linejoin:round; }
+.ic--sm{ width:14px; height:14px; stroke-width:1.4; }
+
+/* ---------- NAV: píldora flotante centrada ---------- */
+.nav{
+  position:fixed; z-index:80;
+  top:10px; left:50%; transform:translateX(-50%);
+  width:calc(100% - 20px); max-width:640px;
+  display:flex; align-items:center; gap:10px;
+  padding:7px 7px 7px 8px;
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--hair-soft);
+  border-radius:999px;
+  box-shadow:0 1px 0 rgba(4,4,4,.04);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+}
+.nav-logo{
+  width:38px; height:38px; flex:none;
+  border-radius:50%; overflow:hidden;
+  border:1px solid var(--hair-soft);
+  background:#fff;
+}
+.nav-logo img{ width:100%; height:100%; object-fit:cover; transform:scale(1.06); }
+.nav-name{
+  font-size:.62rem; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--navy); font-weight:400; margin-right:auto; padding-left:2px;
+}
+.nav-links{ display:none; margin-right:auto; gap:20px; }
+.nav-links a{
+  font-size:.74rem; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink2); padding:6px 0; border-bottom:1px solid transparent;
+}
+.nav-links a:hover{ color:var(--blue); border-color:var(--blue); }
+.nav .btn{ padding:11px 16px; font-size:.7rem; letter-spacing:.1em; flex:none; }
+@media (min-width:820px){
+  .nav{ max-width:840px; padding-left:10px; }
+  .nav-name{ display:none; }
+  .nav-links{ display:flex; margin-left:14px; }
+  .nav .btn{ padding:12px 20px; font-size:.74rem; }
+}
+
+/* ---------- HERO ---------- */
+.hero{ padding-top:96px; padding-bottom:clamp(40px,7vw,80px); }
+@media (min-width:900px){
+  .hero{ padding-top:130px; min-height:88vh; display:grid; align-content:center; }
+}
+
+.hero-copy{ max-width:560px; }
+.hero-spear{
+  position:absolute; left:var(--asta-x); top:1px;
+  transform:translateX(-50%); margin:0; z-index:2;
+}
+.hero-spear svg{ width:21px; height:26px; display:block; }
+h1{
+  font-family:var(--display);
+  text-transform:uppercase;
+  letter-spacing:-.028em;
+  line-height:.9;
+  color:var(--navy);
+  font-size:clamp(2.4rem,12.5vw,6.1rem);
+  margin:0;
+}
+.hero-script{
+  font-family:var(--script); color:var(--blue2);
+  font-size:clamp(2.05rem,10.6vw,5.2rem);
+  line-height:1; margin:.06em 0 0;
+}
+.hero-meta{
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px;
+  margin:26px 0 20px;
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--steel);
+}
+.hero-meta .dot{ width:5px; height:5px; background:var(--cyan); flex:none; }
+.hero-cta{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 22px; margin-top:26px; }
+.hero-fine{ margin-top:26px; max-width:44ch; }
+
+.hero-media{
+  position:relative;
+  margin:38px 0 0;
+}
+.hero-media img{
+  width:100%; height:auto; aspect-ratio:1/1; object-fit:cover;
+  -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);
+}
+.hero-cap{
+  position:absolute; left:calc(var(--asta-x) + 28px); bottom:14px;
+  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--steel); background:rgba(240,240,245,.72); padding:5px 9px;
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+}
+@media (min-width:900px){
+  .hero-media{
+    position:absolute; right:0; top:0; bottom:0; width:46%;
+    margin:0; z-index:0;
+  }
+  .hero-media img{
+    width:100%; height:100%; aspect-ratio:auto;
+    -webkit-mask-image:linear-gradient(to left,#000 62%,transparent 100%),linear-gradient(to bottom,#000 68%,transparent 100%);
+    mask-image:linear-gradient(to left,#000 62%,transparent 100%),linear-gradient(to bottom,#000 68%,transparent 100%);
+    -webkit-mask-composite:source-in;
+    mask-composite:intersect;
+  }
+  .hero-cap{ left:auto; right:24px; bottom:96px; }
+  .hero .wrap{ z-index:1; }
+}
+
+/* ---------- 01 · GRILLA ---------- */
+.filters{ margin:34px 0 6px; display:grid; gap:20px; }
+@media (min-width:900px){ .filters{ grid-template-columns:1.55fr 1fr; gap:34px; } }
+.fset{ border:0; margin:0; padding:0; min-width:0; }
+.fset legend{
+  font-size:.68rem; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--steel); padding:0; margin-bottom:12px;
+}
+.chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.fset input{ position:absolute; opacity:0; width:1px; height:1px; pointer-events:none; }
+.fset label{
+  display:inline-block; cursor:pointer;
+  font-size:.76rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:9px 14px; border:1px solid var(--hair); border-radius:2px;
+  color:var(--ink2); background:transparent;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+  user-select:none;
+}
+.fset label:hover{ border-color:var(--blue2); color:var(--blue); }
+.fset input:checked + label{
+  background:var(--navy); border-color:var(--navy); color:#fff;
+}
+.fset input:focus-visible + label{ outline:2px solid var(--blue); outline-offset:3px; }
+
+.rows{ margin-top:30px; border-bottom:1px solid var(--hair); }
+
+.row{
+  display:grid; grid-template-rows:1fr;
+  transition:grid-template-rows .42s cubic-bezier(.4,0,.2,1), opacity .26s ease;
+}
+.row-in{ overflow:hidden; min-height:0; }
+.row-g{
+  display:grid; gap:8px 14px; align-items:center;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"day hour" "what what" "prof do";
+  padding:18px 0;
+  border-top:1px solid var(--hair);
+}
+.c-day{
+  grid-area:day; display:inline-flex; align-items:center; gap:8px;
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--steel);
+}
+.c-day .ico-round{ color:var(--steel); }
+.chip{
+  grid-area:hour; justify-self:end;
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--blue); color:#fff;
+  border-radius:999px; padding:6px 14px 6px 11px;
+  font-size:.8rem; font-weight:400; letter-spacing:.05em;
+  font-variant-numeric:tabular-nums;
+}
+.c-what{ grid-area:what; min-width:0; }
+.c-what h3{
+  font-family:var(--display); text-transform:uppercase;
+  font-size:clamp(1.28rem,5.4vw,1.65rem); letter-spacing:-.015em; line-height:1;
+  color:var(--navy);
+}
+.c-what .lvl{ font-size:.76rem; color:var(--steel); letter-spacing:.05em; margin:6px 0 0; }
+.c-prof{ grid-area:prof; font-size:.88rem; color:var(--ink2); margin:0; }
+.c-do{ grid-area:do; justify-self:end; }
+
+@media (min-width:880px){
+  .row-g{
+    grid-template-columns:170px 118px minmax(0,1fr) 140px auto;
+    grid-template-areas:"day hour what prof do";
+    padding:20px 0;
+  }
+  .chip{ justify-self:start; }
+}
+
+/* Con JS, .is-off manda (ver applyFilter). Sin JS, :has() cubre el mismo caso:
+   se separan para que no compitan — algunos motores no reinvalidan :has()
+   cuando cambia solo el filtro de disciplina. */
+.row.is-off,
+html:not(.js) .g:has(#d-mar:checked) .row:not([data-day="mar"]),
+html:not(.js) .g:has(#d-mie:checked) .row:not([data-day="mie"]),
+html:not(.js) .g:has(#d-jue:checked) .row:not([data-day="jue"]),
+html:not(.js) .g:has(#d-vie:checked) .row:not([data-day="vie"]),
+html:not(.js) .g:has(#d-sab:checked) .row:not([data-day="sab"]),
+html:not(.js) .g:has(#c-sport:checked) .row:not([data-cls="sport"]),
+html:not(.js) .g:has(#c-basico:checked) .row:not([data-cls="basico"]),
+html:not(.js) .g:has(#c-yoga:checked) .row:not([data-cls="yoga"]){
+  grid-template-rows:0fr;
+  opacity:0;
+  visibility:hidden;
+  transition:grid-template-rows .42s cubic-bezier(.4,0,.2,1), opacity .2s ease, visibility 0s linear .42s;
+}
+
+.empty{
+  display:none;
+  border-top:1px solid var(--hair);
+  padding:28px 0 4px;
+}
+.empty p{ max-width:48ch; }
+.empty-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.empty-actions label{
+  cursor:pointer; display:inline-block;
+  font-size:.74rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:10px 15px; border:1px solid var(--hair); border-radius:2px; color:var(--navy);
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.empty-actions label:hover{ background:var(--navy); color:#fff; border-color:var(--navy); }
+.g.is-empty .empty,
+html:not(.js) .g:has(#d-mar:checked):has(#c-yoga:checked) .empty,
+html:not(.js) .g:has(#d-mie:checked):has(#c-basico:checked) .empty,
+html:not(.js) .g:has(#d-jue:checked):has(#c-basico:checked) .empty,
+html:not(.js) .g:has(#d-jue:checked):has(#c-yoga:checked) .empty,
+html:not(.js) .g:has(#d-vie:checked):has(#c-basico:checked) .empty,
+html:not(.js) .g:has(#d-vie:checked):has(#c-yoga:checked) .empty,
+html:not(.js) .g:has(#d-sab:checked):has(#c-basico:checked) .empty,
+html:not(.js) .g:has(#d-sab:checked):has(#c-yoga:checked) .empty{ display:block; }
+
+.ico-round{
+  width:24px; height:24px; flex:none;
+  border:1px solid currentColor; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  opacity:.85;
+}
+.ico-round .ic{ width:12px; height:12px; stroke-width:1.35; }
+
+/* ---------- 02 · DISCIPLINAS ---------- */
+.disc{ border-bottom:1px solid var(--hair); }
+.disc-row{
+  display:grid; gap:6px 26px; padding:26px 0;
+  border-top:1px solid var(--hair);
+  grid-template-columns:minmax(0,1fr);
+}
+@media (min-width:880px){
+  .disc-row{ grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) auto; align-items:start; gap:8px 34px; }
+}
+.disc-row h3{
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(1.35rem,5.6vw,1.95rem); letter-spacing:-.018em; line-height:1;
+  display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+}
+.disc-row p{ margin:0; color:var(--ink2); font-size:.96rem; }
+.disc-row .tlink{ align-self:center; }
+.badge-new{
+  font-family:var(--body); font-weight:500; font-size:.6rem; letter-spacing:.2em;
+  background:var(--cyan); color:var(--navy);
+  padding:4px 9px; border-radius:2px; text-transform:uppercase;
+}
+
+.band--dark{
+  background:var(--navy); color:var(--white); padding:0;
+  margin-block:clamp(38px,6vw,72px);
+}
+.band--dark > .wrap{ padding-block:clamp(56px,8vw,96px); }
+.band-rail{
+  position:absolute; left:var(--asta-x); top:0; bottom:0;
+  width:2px; background:rgba(255,255,255,.22); transform:translateX(-50%);
+}
+.band--dark .node{ background:var(--navy); border-color:rgba(255,255,255,.72); }
+.band--dark .node::after{ background:rgba(255,255,255,.3); }
+.band--dark .idx{ color:rgba(255,255,255,.62); }
+.band--dark .idx b{ color:#fff; }
+.band--dark .dh{ color:#fff; }
+.band--dark p{ color:rgba(255,255,255,.86); }
+.exotic-grid{ display:grid; gap:26px; margin-top:22px; }
+@media (min-width:880px){ .exotic-grid{ grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:56px; align-items:end; } }
+.exotic-grid .lead{ color:rgba(255,255,255,.88); }
+
+/* ---------- 03 · PRIMERA VEZ ---------- */
+.pull{
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(1.22rem,4.7vw,2.05rem); line-height:1.06; letter-spacing:-.014em;
+  margin:0 0 20px; max-width:22ch;
+  border-left:3px solid var(--blue2); padding-left:18px;
+}
+.perks{ border-bottom:1px solid var(--hair); margin:34px 0 0; }
+.perk{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:0 16px;
+  align-items:baseline; padding:15px 0; border-top:1px solid var(--hair);
+}
+.perk b{
+  font-family:var(--display); font-weight:400; font-size:.72rem;
+  color:var(--blue); letter-spacing:.08em;
+}
+.perk span{ font-size:1rem; color:var(--ink); }
+.perk i{ display:block; font-style:normal; font-size:.82rem; color:var(--steel); margin-top:2px; }
+
+.quote{
+  margin:44px 0 0; padding:34px 0 0; border-top:2px solid var(--navy);
+}
+.quote blockquote{
+  margin:0;
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(1.55rem,6.4vw,3rem); line-height:1; letter-spacing:-.022em;
+}
+.quote figcaption{ margin-top:16px; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--steel); }
+
+.saying{ margin-top:40px; display:grid; gap:18px; }
+@media (min-width:880px){ .saying{ grid-template-columns:1fr 1fr; gap:34px; } }
+.saying div{ border-left:2px solid var(--blue2); padding-left:18px; }
+.saying p{ margin:0; font-size:1.02rem; color:var(--ink2); }
+.saying span{ display:block; margin-top:8px; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--steel); }
+
+/* ---------- 04 · PROFESORAS ---------- */
+.dir{
+  display:grid; gap:10px 30px; padding:26px 0;
+  border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
+  margin-top:8px;
+}
+@media (min-width:880px){ .dir{ grid-template-columns:auto minmax(0,1fr); align-items:center; } }
+.dir h3{
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(1.7rem,7vw,2.9rem); line-height:.96; letter-spacing:-.022em;
+}
+.dir p{ margin:0; font-size:.9rem; color:var(--steel); letter-spacing:.05em; }
+.dir p b{ color:var(--blue); font-weight:400; letter-spacing:.18em; text-transform:uppercase; font-size:.72rem; display:block; margin-bottom:4px; }
+
+.wall{
+  margin:30px 0 0; padding:0; list-style:none;
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:0 .42em;
+  font-family:var(--display); text-transform:uppercase;
+  font-size:clamp(1.5rem,7.2vw,3.4rem); line-height:1.1; letter-spacing:-.024em;
+  color:var(--navy);
+}
+.wall li{ display:inline-flex; align-items:baseline; gap:.42em; }
+.wall li::after{ content:"·"; color:var(--blue2); font-family:var(--body); font-weight:300; }
+.wall li:last-child::after{ content:""; }
+.wall li span{ transition:color .18s ease; }
+.wall li:hover span{ color:var(--blue); }
+
+/* ---------- 05 · WORKSHOPS ---------- */
+.ws{ border-bottom:1px solid var(--hair); margin-top:10px; }
+.ws-row{
+  display:grid; gap:6px 26px; padding:24px 0; border-top:1px solid var(--hair);
+  grid-template-columns:minmax(0,1fr) auto; align-items:baseline;
+}
+.ws-row h3{
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(1.05rem,4.4vw,1.5rem); letter-spacing:-.014em; line-height:1.05;
+  grid-column:1; min-width:0;
+}
+.ws-row .ws-meta{ grid-column:1/-1; font-size:.82rem; color:var(--steel); margin:0; }
+.ws-price{
+  grid-column:2; grid-row:1;
+  font-family:var(--display); color:var(--blue);
+  font-size:clamp(1.05rem,4.4vw,1.5rem); letter-spacing:-.01em; white-space:nowrap;
+  justify-self:end; text-align:right;
+}
+.ws-price em{ display:block; font-style:normal; font-family:var(--body); font-weight:300; font-size:.72rem; color:var(--steel); letter-spacing:.1em; text-transform:uppercase; margin-top:4px; }
+@media (min-width:880px){
+  .ws-row{ grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto; }
+  .ws-row .ws-meta{ grid-column:2; grid-row:1; }
+  .ws-price{ grid-column:3; }
+}
+.punko{
+  margin-top:34px; padding:26px; background:var(--white);
+  border:1px solid var(--hair-soft);
+}
+.punko p{ margin:0; }
+.punko .eyebrow{ margin-bottom:.9em; }
+
+/* ---------- 06 · CÓMO LLEGAR ---------- */
+.addr{
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(2rem,9vw,4.2rem); line-height:.94; letter-spacing:-.028em; margin:6px 0 12px;
+}
+.addr-sub{ font-size:.86rem; letter-spacing:.2em; text-transform:uppercase; color:var(--steel); margin:0 0 26px; }
+.go-grid{ display:grid; gap:34px; margin-top:34px; }
+@media (min-width:880px){ .go-grid{ grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:54px; } }
+.buses{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(56px,1fr)); gap:7px;
+  padding:0; margin-block:14px 0; list-style:none;
+}
+.buses li{
+  border:1px solid var(--hair-soft); background:var(--white);
+  font-family:var(--display); color:var(--navy);
+  font-size:1.02rem; letter-spacing:-.01em;
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio:1/.74; font-variant-numeric:tabular-nums;
+}
+.subte{ list-style:none; padding:0; margin:14px 0 0; border-bottom:1px solid var(--hair); }
+.subte li{
+  display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px solid var(--hair);
+}
+.line-badge{
+  width:34px; height:34px; flex:none; display:grid; place-items:center;
+  font-family:var(--display); font-size:.95rem; color:#fff; background:var(--navy);
+}
+.subte b{ font-weight:400; font-size:.98rem; color:var(--ink); }
+.subte i{ font-style:normal; display:block; font-size:.78rem; color:var(--steel); letter-spacing:.14em; text-transform:uppercase; }
+
+/* ---------- FOOTER PÓSTER ---------- */
+.foot{ padding-top:clamp(56px,9vw,110px); padding-bottom:0; }
+.membrete{ background:#fff; padding:26px 20px; border:1px solid var(--hair-soft); display:grid; place-items:center; margin-bottom:clamp(44px,7vw,80px); }
+.membrete img{ width:min(300px,72%); mix-blend-mode:multiply; }
+.foot-cta{ display:grid; gap:16px; margin-bottom:clamp(46px,7vw,86px); }
+@media (min-width:620px){ .foot-cta{ grid-auto-flow:column; justify-content:start; align-items:center; gap:26px; } }
+.poster{ overflow:hidden; width:100%; }
+.poster span{
+  display:block; white-space:nowrap;
+  font-family:var(--display); text-transform:uppercase; color:var(--navy);
+  font-size:clamp(4.4rem,22vw,15rem); line-height:.8; letter-spacing:-.045em;
+  margin-left:-.028em;
+}
+.poster-sub{
+  font-size:clamp(.66rem,2vw,.9rem); letter-spacing:.42em; text-transform:uppercase;
+  color:var(--ink2); font-weight:300; margin:14px 0 0;
+}
+.spear-end{ display:block; margin:36px 0 0; }
+.contact-bar{
+  background:var(--blue); color:#fff; margin-top:clamp(40px,6vw,72px);
+}
+.contact-bar .wrap{ padding-block:26px; }
+.contact-inner{
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px;
+  font-size:.92rem; letter-spacing:.06em;
+}
+.contact-inner a{ color:#fff; display:inline-flex; align-items:center; gap:9px; border-bottom:1px solid rgba(255,255,255,.45); padding-bottom:2px; }
+.contact-inner a:hover{ border-color:#fff; }
+.contact-inner .pipe{ color:rgba(255,255,255,.5); }
+.contact-inner .ic{ stroke-width:1.4; }
+
+.colofon{ background:var(--navy); color:rgba(255,255,255,.8); }
+.colofon .wrap{ padding-block:24px 30px; }
+.colofon-grid{ display:grid; gap:16px; font-size:.78rem; line-height:1.65; }
+@media (min-width:820px){ .colofon-grid{ grid-template-columns:1fr auto; align-items:end; gap:30px; } }
+.colofon a{ color:#fff; border-bottom:1px solid rgba(255,255,255,.4); }
+.colofon a:hover{ border-color:#fff; }
+.sello{ font-size:.76rem; color:rgba(255,255,255,.72); }
+
+/* ---------- FAB WhatsApp ---------- */
+.fab{
+  position:fixed; right:16px; bottom:16px; z-index:90;
+  width:56px; height:56px; border-radius:50%;
+  background:var(--wa); color:#fff;
+  display:grid; place-items:center;
+  box-shadow:0 6px 20px rgba(4,4,4,.22);
+  transition:transform .2s ease;
+}
+.fab:hover{ transform:translateY(-3px); }
+.fab svg{ width:29px; height:29px; fill:#fff; }
+
+/* ---------- reveal ---------- */
+.js .rv{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.js .rv.in{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  .js .rv{ opacity:1; transform:none; }
+  .asta-draw{ stroke-dashoffset:0; animation:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#grilla">Ir a la grilla de clases</a>
+
+<nav class="nav" aria-label="Navegación principal">
+  <span class="nav-logo"><img src="./assets/amazonas-logo.png" alt="Logo de Amazonas Pole Academy" width="260" height="257"></span>
+  <span class="nav-name">Amazonas</span>
+  <span class="nav-links">
+    <a href="#grilla">Grilla</a>
+    <a href="#disciplinas">Disciplinas</a>
+    <a href="#primera-vez">Primera vez</a>
+    <a href="#profesoras">Profes</a>
+    <a href="#llegar">Cómo llegar</a>
+  </span>
+  <a class="btn" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20una%20clase.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar</a>
+</nav>
+
+<div class="page">
+
+  <!-- EL ASTA -->
+  <div class="rail" aria-hidden="true">
+    <div class="rail-inner">
+      <svg class="asta-svg" preserveAspectRatio="none" viewBox="0 0 6 1000" fill="none" aria-hidden="true">
+        <line class="asta-track" x1="3" y1="0" x2="3" y2="1000" stroke-width="2" vector-effect="non-scaling-stroke"></line>
+        <line class="asta-draw" x1="3" y1="0" x2="3" y2="1000" stroke-width="2" pathLength="1" vector-effect="non-scaling-stroke"></line>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero band">
+    <div class="wrap"><div class="hero-spear" aria-hidden="true">
+        <svg viewBox="0 0 21 26" fill="none">
+          <path d="M10.5 0 21 26H0L10.5 0Z" fill="#12487D"></path>
+        </svg>
+      </div><div class="hero-copy">
+      <p class="eyebrow">Academia de Pole Dance y flexibilidad · Balvanera, CABA</p>
+      <h1>Descubrí<br>tu fuerza</h1>
+      <p class="hero-script">Más vos.</p>
+      <p class="hero-meta">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Chile 1866</span><span>·</span><span>Balvanera</span><span>·</span><span>Capital Federal</span>
+      </p>
+      <p class="lead">Pole Sport, Exotic, Flexibilidad y Pole&nbsp;Yoga en una sala con ocho barras. Una persona por barra, grupos reducidos y profesoras que te corrigen de verdad.</p>
+      <div class="hero-cta">
+        <a class="btn btn--big" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Nunca%20hice%20pole%20y%20quiero%20empezar.%20%C2%BFMe%20cont%C3%A1s%20c%C3%B3mo%20es%20la%20primera%20clase%3F" target="_blank" rel="noopener">Quiero mi primera clase</a>
+        <a class="tlink" href="#grilla">Ver la grilla completa</a>
+      </div>
+      <p class="hero-fine small">No hace falta llegar con experiencia, fuerza ni flexibilidad. Aprendés desde tu nivel, con acompañamiento y correcciones.</p>
+    </div></div>
+    <div class="hero-media">
+      <img src="./assets/amazonas-estudio.jpg" alt="Sala de Amazonas Pole Academy: ocho barras cromadas, pared de espejos, piso de madera gris claro, paredes blancas y plafones LED circulares." width="1080" height="1080" fetchpriority="high">
+      <span class="hero-cap">La sala de Chile 1866</span>
+    </div>
+  </header>
+
+  <!-- ============ 01 · LA GRILLA ============ -->
+  <section class="band" id="grilla" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>01</b> La grilla</p>
+        <h2 class="dh">Elegí tu horario</h2>
+        <p class="script">y reservá en un toque</p>
+        <p class="lead" style="margin-top:22px">Filtrá por día o por disciplina. Cuando encontrás la clase, tocás <b style="font-weight:500">Reservar</b> y WhatsApp se abre con el mensaje ya escrito: la clase, el día, la hora y la profe. Nadie tiene que tipear la grilla a mano nunca más.</p>
+      </div>
+
+      <div class="g rv">
+        <div class="filters">
+          <fieldset class="fset">
+            <legend>Filtrar por día</legend>
+            <div class="chips">
+              <input type="radio" name="dia" id="d-all" checked><label for="d-all">Todos</label>
+              <input type="radio" name="dia" id="d-mar"><label for="d-mar">Martes</label>
+              <input type="radio" name="dia" id="d-mie"><label for="d-mie">Miércoles</label>
+              <input type="radio" name="dia" id="d-jue"><label for="d-jue">Jueves</label>
+              <input type="radio" name="dia" id="d-vie"><label for="d-vie">Viernes</label>
+              <input type="radio" name="dia" id="d-sab"><label for="d-sab">Sábado</label>
+            </div>
+          </fieldset>
+          <fieldset class="fset">
+            <legend>Filtrar por disciplina</legend>
+            <div class="chips">
+              <input type="radio" name="cls" id="c-all" checked><label for="c-all">Todas</label>
+              <input type="radio" name="cls" id="c-sport"><label for="c-sport">Pole Sport</label>
+              <input type="radio" name="cls" id="c-basico"><label for="c-basico">Pole Básico</label>
+              <input type="radio" name="cls" id="c-yoga"><label for="c-yoga">Pole Yoga</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="rows">
+
+          <div class="row" data-day="mar" data-cls="basico"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Martes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>11:00</span>
+            <div class="c-what"><h3>Pole Básico</h3><p class="lvl">Para quien nunca subió a una barra</p></div>
+            <p class="c-prof">con Eri</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20B%C3%A1sico%20del%20martes%2011%3A00%20con%20Eri.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Básico del martes 11:00 con Eri</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mar" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Martes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>18:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Melody</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20martes%2018%3A30%20con%20Melody.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del martes 18:30 con Melody</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mar" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Martes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>20:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Eve</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20martes%2020%3A30%20con%20Eve.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del martes 20:30 con Eve</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mie" data-cls="yoga"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Miércoles</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>9:00</span>
+            <div class="c-what"><h3>Pole Yoga</h3><p class="lvl">Movilidad, equilibrio y conciencia corporal</p></div>
+            <p class="c-prof">con Lara</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Yoga%20del%20mi%C3%A9rcoles%209%3A00%20con%20Lara.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Yoga del miércoles 9:00 con Lara</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Miércoles</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>10:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Lara</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20mi%C3%A9rcoles%2010%3A00%20con%20Lara.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del miércoles 10:00 con Lara</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Miércoles</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>16:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Eve</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20mi%C3%A9rcoles%2016%3A00%20con%20Eve.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del miércoles 16:00 con Eve</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="mie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Miércoles</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>20:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Ani</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20mi%C3%A9rcoles%2020%3A30%20con%20Ani.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del miércoles 20:30 con Ani</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="jue" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Jueves</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>18:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Melody</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20jueves%2018%3A30%20con%20Melody.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del jueves 18:30 con Melody</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="jue" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Jueves</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>19:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Ani</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20jueves%2019%3A30%20con%20Ani.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del jueves 19:30 con Ani</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="vie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Viernes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>9:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Eve</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20viernes%209%3A00%20con%20Eve.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del viernes 9:00 con Eve</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="vie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Viernes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>17:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Eri</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20viernes%2017%3A30%20con%20Eri.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del viernes 17:30 con Eri</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="vie" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Viernes</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>18:30</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Eri</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20viernes%2018%3A30%20con%20Eri.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del viernes 18:30 con Eri</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="sab" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Sábado</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>11:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Ani</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20s%C3%A1bado%2011%3A00%20con%20Ani.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del sábado 11:00 con Ani</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="sab" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Sábado</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>12:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Ani</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20s%C3%A1bado%2012%3A00%20con%20Ani.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del sábado 12:00 con Ani</span></a></span>
+          </div></div></div>
+
+          <div class="row" data-day="sab" data-cls="sport"><div class="row-in"><div class="row-g">
+            <span class="c-day"><span class="ico-round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="1.5"></rect><path d="M4 10h16M9 4v4M15 4v4"></path></svg></span>Sábado</span>
+            <span class="chip"><svg class="ic ic--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.4 2"></path></svg>14:00</span>
+            <div class="c-what"><h3>Pole Sport</h3></div>
+            <p class="c-prof">con Ani</p>
+            <span class="c-do"><a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20Pole%20Sport%20del%20s%C3%A1bado%2014%3A00%20con%20Ani.%20%C2%BFMe%20pas%C3%A1s%20la%20info%3F" target="_blank" rel="noopener">Reservar<span class="sr-only"> Pole Sport del sábado 14:00 con Ani</span></a></span>
+          </div></div></div>
+
+          <div class="empty" role="status">
+            <p>Esa combinación no aparece en los horarios que publicaron en Instagram — pero la academia tiene más días y horarios de los que publica.</p>
+            <div class="empty-actions">
+              <label for="d-all">Ver todos los días</label>
+              <label for="c-all">Ver todas las disciplinas</label>
+              <a class="btn btn--sm" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Vi%20la%20web%20y%20quiero%20probar%20una%20clase.%20%C2%BFMe%20pas%C3%A1s%20los%20horarios%20y%20c%C3%B3mo%20arranco%3F" target="_blank" rel="noopener">Consultar horarios</a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="note">Grilla armada con los horarios publicados en Instagram entre el 9 y el 22 de julio de 2026. Se completa con los horarios reales de la academia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · DISCIPLINAS ============ -->
+  <section class="band" id="disciplinas" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>02</b> Disciplinas</p>
+        <h2 class="dh">Qué se entrena acá</h2>
+        <p class="script">elegí la tuya</p>
+      </div>
+
+      <div class="disc rv" style="margin-top:30px">
+        <div class="disc-row">
+          <h3>Pole Sport</h3>
+          <p>El core de la academia. Barra fija y giratoria: fuerza, giros y figuras. Niveles básico, intermedio y avanzado, más clases multinivel.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20info%20de%20Pole%20Sport.%20%C2%BFEn%20qu%C3%A9%20nivel%20me%20conviene%20arrancar%3F" target="_blank" rel="noopener">Consultar<span class="sr-only"> por Pole Sport</span></a>
+        </div>
+        <div class="disc-row">
+          <h3>Pole Básico</h3>
+          <p>Para quien nunca subió a una barra. Arrancás desde cero, con acompañamiento, correcciones y tiempo para avanzar de forma segura.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Nunca%20sub%C3%AD%20a%20una%20barra%20y%20quiero%20hacer%20Pole%20B%C3%A1sico.%20%C2%BFC%C3%B3mo%20hago%20para%20anotarme%3F" target="_blank" rel="noopener">Consultar<span class="sr-only"> por Pole Básico</span></a>
+        </div>
+        <div class="disc-row">
+          <h3>Flexibilidad</h3>
+          <p>Para pole y para acrobacias aéreas: contorsión, splits y movilidad. Se entrena aparte y se nota arriba de la barra.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20info%20de%20las%20clases%20de%20Flexibilidad.%20%C2%BFCu%C3%A1ndo%20son%3F" target="_blank" rel="noopener">Consultar<span class="sr-only"> por Flexibilidad</span></a>
+        </div>
+        <div class="disc-row">
+          <h3>Pole Yoga <span class="badge-new">Nuevo</span></h3>
+          <p>Línea estrenada el 17 de julio de 2026. Movilidad, equilibrio y conciencia corporal, con la barra como apoyo.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Me%20interesa%20Pole%20Yoga.%20%C2%BFMe%20pas%C3%A1s%20d%C3%ADas%20y%20horarios%3F" target="_blank" rel="noopener">Consultar<span class="sr-only"> por Pole Yoga</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- banda oscura: EXOTIC -->
+  <section class="band band--dark">
+    <div class="wrap">
+      <span class="band-rail" aria-hidden="true"></span>
+      <span class="node" aria-hidden="true"></span>
+      <p class="idx"><b>02.5</b> El otro registro</p>
+      <div class="exotic-grid">
+        <div>
+          <h2 class="dh">Exotic Pole</h2>
+          <p class="lead" style="margin-top:20px">El baile del caño, con tacos. Otro registro: piso, transiciones y actitud. Se aprende igual que todo lo demás — desde tu nivel, sin apuro y sin que nadie te mire raro.</p>
+        </div>
+        <div>
+          <a class="btn btn--light btn--big" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20info%20de%20Exotic%20Pole.%20%C2%BFCu%C3%A1ndo%20hay%20clases%20y%20qu%C3%A9%20necesito%20llevar%3F" target="_blank" rel="noopener">Consultar por Exotic</a>
+          <p class="small" style="color:rgba(255,255,255,.62); margin:18px 0 0">Los días de Exotic se coordinan por WhatsApp: no están en la grilla publicada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="wrap">
+      <div class="disc rv">
+        <div class="disc-row">
+          <h3>Clases particulares</h3>
+          <p>Uno a uno, con horarios a coordinar. Para arrancar con más confianza o para pulir una figura puntual.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20coordinar%20una%20clase%20particular.%20%C2%BFQu%C3%A9%20horarios%20tienen%20disponibles%3F" target="_blank" rel="noopener">Coordinar<span class="sr-only"> una clase particular</span></a>
+        </div>
+        <div class="disc-row">
+          <h3>Alquiler de sala</h3>
+          <p>Para práctica libre o para dictar tu propia clase, en la sala de Chile 1866. Precio a convenir.</p>
+          <a class="tlink" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20consultar%20por%20el%20alquiler%20de%20sala.%20%C2%BFMe%20pas%C3%A1s%20disponibilidad%20y%20condiciones%3F" target="_blank" rel="noopener">Consultar<span class="sr-only"> por el alquiler de sala</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · TU PRIMERA VEZ ============ -->
+  <section class="band" id="primera-vez" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>03</b> Tu primera vez</p>
+        <h2 class="dh">Venís como estás</h2>
+        <p class="script">sin experiencia</p>
+      </div>
+
+      <div class="rv" style="margin-top:34px">
+        <p class="pull">No hace falta llegar con experiencia, fuerza ni flexibilidad.</p>
+        <p class="lead">Aprendés desde tu nivel, con acompañamiento, correcciones y tiempo para avanzar de forma segura. La primera clase no es una prueba: es una clase.</p>
+
+        <div class="perks">
+          <div class="perk"><b>01</b><span>Una persona por barra<i>Nadie comparte ni espera turno</i></span></div>
+          <div class="perk"><b>02</b><span>Grupos reducidos<i>La profe te ve y te corrige a vos</i></span></div>
+          <div class="perk"><b>03</b><span>Profesoras certificadas<i>Diez profesoras en el plantel</i></span></div>
+          <div class="perk"><b>04</b><span>Todos los cuerpos, todas las edades<i>Textual de ellas, y se cumple</i></span></div>
+          <div class="perk"><b>05</b><span>Ambiente sin juicios<i>Menos ruido. Más vos.</i></span></div>
+          <div class="perk"><b>06</b><span>Aire acondicionado y WiFi<i>La sala es cómoda de verdad</i></span></div>
+        </div>
+
+        <figure class="quote">
+          <blockquote>“En el mejor estudio de pole del mundo”</blockquote>
+          <figcaption>Alumna de Amazonas · comentario en Instagram, julio 2026</figcaption>
+        </figure>
+
+        <div class="saying">
+          <div>
+            <p>“Quizás estás a una sola clase de descubrir algo que cambie tu vida.”</p>
+            <span>Amazonas, 22/07/2026</span>
+          </div>
+          <div>
+            <p>“No esperes a sentirte listo para actuar.”</p>
+            <span>Amazonas, 21/07/2026</span>
+          </div>
+        </div>
+
+        <p style="margin-top:38px">
+          <a class="btn btn--big" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Vengo%20sin%20fuerza%20ni%20flexibilidad%20y%20quiero%20probar.%20%C2%BFMe%20guardan%20lugar%20en%20una%20clase%3F" target="_blank" rel="noopener">Guardarme un lugar</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · PROFESORAS ============ -->
+  <section class="band" id="profesoras" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>04</b> El plantel</p>
+        <h2 class="dh">Diez profesoras</h2>
+        <p class="script">y una directora</p>
+      </div>
+
+      <div class="rv">
+        <div class="dir">
+          <h3>Fabiola Balbouze</h3>
+          <p><b>Dirección</b>Licenciada en Comunicación Corporativa. Dirige Amazonas Pole Academy en Chile 1866.</p>
+        </div>
+
+        <ul class="wall">
+          <li><span>Cami</span></li>
+          <li><span>Ani</span></li>
+          <li><span>Eve</span></li>
+          <li><span>Eri</span></li>
+          <li><span>Melody</span></li>
+          <li><span>Lara</span></li>
+          <li><span>Jime</span></li>
+          <li><span>Flor</span></li>
+          <li><span>Danu Medina</span></li>
+        </ul>
+
+        <p class="note">Un plantel de diez es lo que hace posible el “una persona por barra”: hay profe suficiente para grupos reducidos en todas las franjas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · WORKSHOPS ============ -->
+  <section class="band" id="workshops" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>05</b> Workshops y muestras</p>
+        <h2 class="dh">Fuera de la grilla</h2>
+      </div>
+
+      <div class="rv">
+        <p class="lead" style="margin-top:22px">Amazonas no es solo clases semanales: arma workshops intensivos, trae figuras internacionales y sube a sus alumnas a escenarios de teatro.</p>
+
+        <div class="ws">
+          <div class="ws-row">
+            <h3>Workshop Exotic Tricks + Coreo</h3>
+            <p class="ws-meta">2 horas · publicado el 10/03/2026</p>
+            <p class="ws-price">$30.000<em>por persona</em></p>
+          </div>
+          <div class="ws-row">
+            <h3>Muestra “Disney”</h3>
+            <p class="ws-meta">Teatro Empire · publicado el 09/10/2025</p>
+            <p class="ws-price">$21.000<em>entrada</em></p>
+          </div>
+          <div class="ws-row">
+            <h3>Show “Amazonas Warriors”</h3>
+            <p class="ws-meta">Teatro Asterión · publicado el 07/12/2024</p>
+            <p class="ws-price">$15.000<em>preventa · $21.000 en puerta</em></p>
+          </div>
+        </div>
+
+        <div class="punko">
+          <p class="eyebrow" style="margin-bottom:.9em">Invitadas internacionales</p>
+          <p>En 2025 Amazonas trajo a <b style="font-weight:500">Alla Punko</b>, atleta de Bielorrusia, a dar un workshop en la sala de Chile 1866.</p>
+        </div>
+
+        <p style="margin-top:32px">
+          <a class="btn" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20enterarme%20de%20los%20pr%C3%B3ximos%20workshops%20y%20muestras.%20%C2%BFMe%20avis%C3%A1s%20cuando%20abran%20las%20inscripciones%3F" target="_blank" rel="noopener">Avisame del próximo</a>
+        </p>
+
+        <p class="note">Precios de referencia publicados por la academia — julio 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · CÓMO LLEGAR ============ -->
+  <section class="band" id="llegar" style="scroll-margin-top:96px">
+    <div class="wrap">
+      <span class="node" aria-hidden="true"></span>
+      <div class="rv">
+        <p class="idx"><b>06</b> Cómo llegar</p>
+        <p class="addr">Chile 1866</p>
+        <p class="addr-sub">Balvanera · Capital Federal · CABA</p>
+        <p class="lead">Sobre el límite con San Cristóbal, Monserrat y Constitución. A seis cuadras del Congreso de la Nación.</p>
+      </div>
+
+      <div class="go-grid rv">
+        <div>
+          <p class="eyebrow" style="margin:0">Quince líneas de colectivo</p>
+          <ul class="buses">
+            <li>2</li><li>8</li><li>12</li><li>23</li><li>37</li><li>50</li><li>84</li><li>90</li>
+            <li>96</li><li>98</li><li>129</li><li>150</li><li>151</li><li>164</li><li>168</li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow" style="margin:0">Subte</p>
+          <ul class="subte">
+            <li>
+              <span class="line-badge" aria-hidden="true">E</span>
+              <span><b>Estación Entre Ríos</b><i>Línea E</i></span>
+            </li>
+            <li>
+              <span class="line-badge" aria-hidden="true">A</span>
+              <span><b>Estación Congreso</b><i>Línea A</i></span>
+            </li>
+          </ul>
+          <p style="margin-top:26px">
+            <a class="btn" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Voy%20a%20ir%20a%20Chile%201866.%20%C2%BFMe%20confirm%C3%A1s%20el%20horario%20de%20la%20clase%20antes%20de%20salir%3F" target="_blank" rel="noopener">Confirmar antes de salir</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER PÓSTER ============ -->
+  <footer class="band foot">
+    <div class="wrap">
+      <div class="membrete">
+        <img src="./assets/amazonas-logo-wordmark.png" alt="Amazonas Pole Academy" width="608" height="140" loading="lazy">
+      </div>
+
+      <div class="foot-cta">
+        <a class="btn btn--big" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Quiero%20reservar%20mi%20primera%20clase.%20%C2%BFQu%C3%A9%20d%C3%ADas%20tienen%20lugar%20esta%20semana%3F" target="_blank" rel="noopener">Reservar mi primera clase</a>
+        <p class="small" style="margin:0">Escribinos y te decimos en qué clase entrás esta semana.</p>
+      </div>
+
+      <div class="poster" aria-hidden="true"><span>Amazonas</span></div>
+      <p class="poster-sub">Pole Academy</p>
+
+      <svg class="spear-end" width="26" height="70" viewBox="0 0 26 70" fill="none" aria-hidden="true" style="margin-left:calc(var(--asta-x) - 13px)">
+        <path d="M13 0v40" stroke="#2779C9" stroke-width="2"></path>
+        <path d="M13 70 8 42h10l-5 28Z" fill="#12487D"></path>
+      </svg>
+    </div>
+
+    <div class="contact-bar">
+      <div class="wrap">
+        <p class="contact-inner" style="margin:0">
+          <a href="https://www.instagram.com/amazonaspoleacademy/" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"></circle></svg>
+            @amazonaspoleacademy
+          </a>
+          <span class="pipe" aria-hidden="true">|</span>
+          <a href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Vi%20la%20web%20y%20quiero%20probar%20una%20clase.%20%C2%BFMe%20pas%C3%A1s%20los%20horarios%20y%20c%C3%B3mo%20arranco%3F" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.3a8.5 8.5 0 1 1 15.4-4.6Z"></path><path d="M9 9.2c.3-.7.6-.7.9-.7h.6c.2 0 .5 0 .7.6l.7 1.7c.1.3 0 .5-.1.7l-.4.5c-.1.2-.3.4-.1.7.2.4.8 1.2 1.6 1.8.9.7 1.4.9 1.7 1 .2 0 .4 0 .6-.2l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.1.9-.5 1.3-.4.4-1.1.7-1.7.7-1 0-2.6-.5-4.3-1.9-1.8-1.4-2.7-3-3-3.8-.2-.7-.2-1.6.1-2.2Z" fill="currentColor" stroke="none"></path></svg>
+            +54 9 11 2610 6002
+          </a>
+          <span class="pipe" aria-hidden="true">|</span>
+          <a href="https://www.tiktok.com/@amazonaspoleacademy" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.4 3.5v10.9a3.9 3.9 0 1 1-3.3-3.85"></path><path d="M14.4 3.5c.3 2.2 1.9 3.8 4.1 4"></path></svg>
+            TikTok
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="colofon">
+      <div class="wrap">
+        <div class="colofon-grid">
+          <div>
+            <p style="margin:0 0 .4em"><strong style="font-weight:500;color:#fff">Amazonas Pole Academy</strong> · Chile 1866, Balvanera, Capital Federal, CABA</p>
+            <p style="margin:0 0 .4em">Pole Sport · Exotic Pole · Flexibilidad para acrobacias aéreas · Pole Yoga</p>
+            <p style="margin:0">Dirección: Fabiola Balbouze</p>
+          </div>
+          <p class="sello" style="margin:0">
+            Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> ·
+            Esta es una propuesta de diseño — no es el sitio oficial
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<a class="fab" href="https://wa.me/5491126106002?text=%C2%A1Hola%20Amazonas%21%20Vi%20la%20web%20y%20quiero%20probar%20una%20clase.%20%C2%BFMe%20pas%C3%A1s%20los%20horarios%20y%20c%C3%B3mo%20arranco%3F" target="_blank" rel="noopener" aria-label="Escribir a Amazonas Pole Academy por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3Zm0 23.6c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4A10.5 10.5 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2c-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4.1.9.6 0 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var d = document.documentElement;
+  d.classList.add('js');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- reveal on scroll --- */
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    for (var i=0;i<items.length;i++) items[i].classList.add('in');
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:0.06 });
+    for (var j=0;j<items.length;j++) io.observe(items[j]);
+  }
+
+  /* --- GRILLA: filtro por día y disciplina ---
+     Con JS este es el único responsable de ocultar filas (ver .is-off en el CSS).
+     Sin JS, las reglas :has() de html:not(.js) hacen el mismo trabajo. */
+  var grid = document.querySelector('.g');
+  if (grid) {
+    var gRows = grid.querySelectorAll('.row');
+    var applyFilter = function(){
+      var dSel = grid.querySelector('input[name="dia"]:checked');
+      var cSel = grid.querySelector('input[name="cls"]:checked');
+      var day = dSel ? dSel.id.slice(2) : 'all';
+      var cls = cSel ? cSel.id.slice(2) : 'all';
+      var shown = 0;
+      for (var k=0; k<gRows.length; k++){
+        var r = gRows[k];
+        var ok = (day === 'all' || r.getAttribute('data-day') === day) &&
+                 (cls === 'all' || r.getAttribute('data-cls') === cls);
+        if (ok) { r.classList.remove('is-off'); shown++; }
+        else { r.classList.add('is-off'); }
+      }
+      grid.classList.toggle('is-empty', shown === 0);
+    };
+    grid.addEventListener('change', function(e){
+      var n = e.target && e.target.name;
+      if (n === 'dia' || n === 'cls') applyFilter();
+    });
+    applyFilter();
+  }
+
+  /* --- EL ASTA: fallback si no hay scroll-driven animations --- */
+  var draw = document.querySelector('.asta-draw');
+  var supportsSDA = window.CSS && CSS.supports && CSS.supports('animation-timeline','scroll()');
+  if (draw && !supportsSDA) {
+    if (reduce) {
+      draw.style.strokeDashoffset = '0';
+    } else {
+      var ticking = false;
+      var paint = function(){
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        var p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 1;
+        draw.style.strokeDashoffset = String(1 - p);
+        ticking = false;
+      };
+      var onScroll = function(){
+        if (!ticking){ ticking = true; window.requestAnimationFrame(paint); }
+      };
+      window.addEventListener('scroll', onScroll, { passive:true });
+      window.addEventListener('resize', onScroll);
+      paint();
+    }
+  }
+})();
+</script>
+</body>
+</html>

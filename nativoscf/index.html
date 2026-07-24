@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nativos | CrossFit y Funcional — Barcelona, Anzoátegui</title>
+<meta name="description" content="Centro de entrenamiento de CrossFit y Funcional en Barcelona, Anzoátegui, dentro de las instalaciones de Barcelona Sports. Clases grupales con coach, de lunes a sábado.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:site_name" content="Nativos | Crossfit | Funcional">
+<meta property="og:title" content="Nativos | CrossFit y Funcional — Barcelona, Anzoátegui">
+<meta property="og:description" content="Formando atletas integrales. Siete horarios diarios, de lunes a sábado, con coach acompañando. Aparta tu clase de prueba.">
+<meta property="og:image" content="./assets/nativoscf-techo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 202'%3E%3Crect width='200' height='202' fill='%230A0A0A'/%3E%3Cg fill='%23F8C40D'%3E%3Cpath d='M100 4 C95 42 91 76 86 112 L114 112 C109 76 105 42 100 4 Z'/%3E%3Cpath d='M94 44 C76 50 50 62 24 75 C48 85 72 98 86 112 Z'/%3E%3Cpath d='M106 44 C124 50 150 62 176 75 C152 85 128 98 114 112 Z'/%3E%3Crect x='86' y='114' width='28' height='80'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="./assets/nativoscf-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#0A0A0A;
+  --coal:#181818;
+  --yel:#F8C40D;
+  --white:#FBFBFC;
+  --cream:#F3EFE9;
+  --cream-ink:#171614;
+  --cream-soft:#4A463F;
+  --red:#E50629;
+  --grey:#8A8A8A;
+  --rule:rgba(248,196,13,.42);
+  --hair:rgba(251,251,252,.14);
+  --peak:clamp(30px,6.5vw,88px);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--white);
+  font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  font-weight:500;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.display{
+  font-family:Anton,"Barlow Condensed",Impact,sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:-.015em;
+  line-height:.92;
+  margin:0;
+}
+em{font-style:normal;color:var(--yel)}
+p{margin:0 0 1rem}
+p:last-child{margin-bottom:0}
+
+::selection{background:var(--yel);color:var(--ink)}
+:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+
+.wrap{width:min(1240px,100% - 2.4rem);margin-inline:auto}
+.lbl{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.24em;color:var(--grey);
+}
+.lbl-y{color:var(--yel)}
+.skip{
+  position:absolute;left:-9999px;top:0;background:var(--yel);color:var(--ink);
+  padding:.6rem 1rem;font-weight:700;z-index:100;
+}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ============ BANDS (la pizarra) ============ */
+.band{
+  border-top:1px solid var(--rule);
+  padding:clamp(3.2rem,8vw,6.5rem) 0 clamp(3.2rem,8vw,6rem);
+  position:relative;
+}
+.band-head{display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem 1.75rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.band-num{
+  font-family:Anton,sans-serif;font-size:clamp(1.9rem,5vw,3rem);line-height:.8;
+  color:var(--yel);letter-spacing:-.02em;
+}
+.band-head .lbl{display:block;margin-bottom:.65rem}
+.band-head h2{font-size:clamp(2.1rem,7.2vw,4.6rem)}
+.band-head .lede{margin-top:1.1rem;max-width:56ch;color:var(--grey)}
+.band-head .lede strong{color:var(--white);font-weight:600}
+@media(min-width:820px){
+  .band-head{grid-template-columns:96px minmax(0,1fr)}
+  .band-num{grid-row:span 2;padding-top:.4rem}
+}
+
+/* ============ NAV — píldora flotante ============ */
+.nav{
+  position:fixed;z-index:70;top:12px;left:50%;transform:translateX(-50%);
+  width:min(1120px,calc(100vw - 20px));
+  display:flex;align-items:center;gap:.5rem;
+  padding:.4rem .4rem .4rem .5rem;
+  background:rgba(10,10,10,.82);
+  border:1px solid rgba(248,196,13,.34);
+  border-radius:4px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 6px 0 rgba(0,0,0,.45);
+}
+.nav-chip{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex:0 0 auto}
+.nav-chip img{width:34px;height:34px;border:1px solid rgba(248,196,13,.45);object-fit:cover}
+.nav-chip span{font-weight:700;letter-spacing:.18em;font-size:.82rem;text-transform:uppercase}
+.nav-links{display:none;gap:1.4rem;margin-left:auto;margin-right:.4rem}
+.nav-links a{
+  text-decoration:none;font-weight:600;font-size:.86rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--white);padding:.35rem 0;
+  border-bottom:1px solid transparent;transition:border-color .2s,color .2s;
+}
+.nav-links a:hover{color:var(--yel);border-bottom-color:var(--yel)}
+.nav-wa{
+  margin-left:auto;flex:0 0 auto;text-decoration:none;
+  background:var(--yel);color:var(--ink);font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;
+  padding:.62rem .9rem;line-height:1;border-radius:2px;
+  display:inline-flex;align-items:center;gap:.45rem;
+  transition:transform .15s;
+}
+.nav-wa:hover{transform:translateY(-1px)}
+.nav-wa svg{width:15px;height:15px;flex:0 0 auto}
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .nav-wa{margin-left:0}
+}
+@media(max-width:400px){
+  .nav-chip span{display:none}
+  .nav-wa{font-size:.74rem;padding:.6rem .7rem}
+}
+
+/* ============ BOTONES ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:"Barlow Condensed",sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;font-size:.94rem;
+  padding:1rem 1.5rem;line-height:1;border-radius:2px;
+  text-decoration:none;border:1px solid var(--yel);
+  background:var(--yel);color:var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+  box-shadow:4px 4px 0 rgba(248,196,13,.22);
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(248,196,13,.28)}
+.btn-ghost{
+  background:transparent;color:var(--yel);border-color:transparent;
+  box-shadow:none;padding-inline:0;border-bottom:3px solid var(--yel);border-radius:0;
+}
+.btn-ghost:hover{transform:none;box-shadow:none;color:var(--white);border-bottom-color:var(--white)}
+.btn-line{
+  display:inline-block;text-decoration:none;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;font-size:.86rem;color:var(--yel);
+  border-bottom:3px solid var(--yel);padding-bottom:2px;transition:color .2s,border-color .2s;
+}
+.btn-line:hover{color:var(--white);border-color:var(--white)}
+
+/* ============ 01 HERO ============ */
+.hero{position:relative;padding:clamp(6.5rem,18vw,9rem) 0 clamp(3rem,7vw,5rem);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  filter:grayscale(1) contrast(1.25) brightness(.42);opacity:.5;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(10,10,10,.35), rgba(10,10,10,.92) 68%),
+    linear-gradient(180deg, rgba(10,10,10,.5), var(--ink) 88%);
+}
+.grain{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:var(--grain);opacity:.055;mix-blend-mode:screen;
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-top{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;
+  padding-bottom:1.4rem;border-bottom:1px solid var(--rule);
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.6rem,4vw,2.5rem);padding-top:clamp(1.8rem,5vw,3rem);align-items:start}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:3.5rem}
+}
+.iso{width:clamp(132px,30vw,212px);height:auto;overflow:visible}
+.iso path{fill:var(--yel);stroke:var(--yel);stroke-width:1.1;stroke-linejoin:round}
+html.js .iso.draw path{
+  fill-opacity:0;
+  stroke-dasharray:var(--len);
+  stroke-dashoffset:var(--len);
+  animation:isoDraw .95s cubic-bezier(.5,0,.2,1) forwards var(--d),
+            isoFill .55s ease forwards calc(var(--d) + .8s);
+}
+@keyframes isoDraw{to{stroke-dashoffset:0}}
+@keyframes isoFill{to{fill-opacity:1}}
+
+h1{font-size:clamp(2.65rem,12vw,7.5rem);letter-spacing:-.022em}
+h1 .ln{display:block;overflow:hidden}
+html.js h1 .ln>span{display:block;transform:translateY(105%);animation:lineUp .8s cubic-bezier(.2,.7,.2,1) forwards var(--d)}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hero-lede{margin-top:1.6rem;max-width:52ch;color:var(--grey);font-size:clamp(1rem,2.4vw,1.16rem)}
+.hero-lede strong{color:var(--white);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1rem 1.75rem;align-items:center;margin-top:2rem}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:clamp(2.4rem,6vw,3.6rem);
+  padding-top:1.2rem;border-top:1px solid var(--hair);
+}
+.hero-facts span{display:inline-flex;align-items:center;gap:.55rem}
+.hero-facts span::before{content:"";width:7px;height:7px;background:var(--yel);flex:0 0 auto}
+
+/* ============ 02 HORARIOS / SELECTOR ============ */
+.tagline{
+  display:inline-block;margin-bottom:1.1rem;padding:.4rem .75rem;
+  border:1px solid var(--rule);color:var(--yel);
+  font-weight:700;letter-spacing:.26em;font-size:.72rem;text-transform:uppercase;
+}
+.picker{border-top:1px solid var(--hair);padding-top:clamp(1.6rem,4vw,2.4rem)}
+.step{margin-bottom:clamp(1.8rem,4.5vw,2.6rem)}
+.step-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .85rem;margin-bottom:1rem}
+.step-title .k{font-family:Anton,sans-serif;font-size:1.05rem;color:var(--yel);letter-spacing:.02em}
+.step-title .t{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.82rem}
+
+.days{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{
+  font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:.92rem;
+  text-transform:uppercase;letter-spacing:.13em;
+  background:transparent;color:var(--white);
+  border:1px solid var(--hair);border-radius:2px;
+  padding:.7rem 1rem;line-height:1;cursor:pointer;
+  transition:border-color .18s,color .18s,background .18s;
+}
+.chip:hover:not(:disabled){border-color:var(--yel);color:var(--yel)}
+.chip[aria-pressed="true"]{background:var(--yel);border-color:var(--yel);color:var(--ink)}
+.chip:disabled{
+  cursor:not-allowed;color:var(--grey);border-style:dashed;
+  border-color:rgba(138,138,138,.4);
+  display:inline-flex;align-items:center;gap:.45rem;
+}
+.dot-closed{width:7px;height:7px;background:var(--red);flex:0 0 auto;display:inline-block}
+
+.slot-group{margin-top:1.4rem}
+.slot-group>.lbl{display:block;margin-bottom:.7rem}
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+.slot{
+  font-family:"Barlow Condensed",sans-serif;font-weight:700;
+  background:transparent;color:var(--white);
+  border:1px solid var(--yel);border-radius:2px;
+  padding:.95rem .75rem;cursor:pointer;text-align:left;line-height:1.15;
+  transition:background .18s,color .18s,transform .15s;
+}
+.slot .h{display:block;font-size:1.15rem;letter-spacing:.01em}
+.slot .m{display:block;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yel);margin-top:.3rem;transition:color .18s}
+.slot:hover{transform:translateY(-2px)}
+.slot[aria-pressed="true"]{background:var(--yel);color:var(--ink)}
+.slot[aria-pressed="true"] .m{color:var(--ink)}
+
+.summary{
+  margin-top:.5rem;border:1px solid var(--hair);border-left:3px solid var(--yel);
+  padding:1.1rem 1.2rem;background:var(--coal);
+}
+.summary .lbl{display:block;margin-bottom:.4rem}
+#resumen{font-size:clamp(1.05rem,3.4vw,1.35rem);font-weight:600;color:var(--grey)}
+#resumen.ready{color:var(--white)}
+#resumen b{color:var(--yel);font-weight:700}
+
+.picker-foot{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center;margin-top:1.4rem}
+.picker-cta{
+  font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1rem;
+  text-transform:uppercase;letter-spacing:.14em;line-height:1;
+  padding:1.15rem 1.7rem;border-radius:2px;cursor:not-allowed;
+  border:1px solid rgba(138,138,138,.45);background:transparent;color:var(--grey);
+  display:inline-flex;align-items:center;gap:.6rem;
+  transition:transform .15s,box-shadow .15s,background .2s,color .2s,border-color .2s;
+}
+.picker-cta svg{width:17px;height:17px}
+.picker-hint{color:var(--grey);font-size:.92rem}
+.picker:has([data-day][aria-pressed="true"]):has([data-slot][aria-pressed="true"]) .picker-cta{
+  background:var(--yel);border-color:var(--yel);color:var(--ink);cursor:pointer;
+  box-shadow:4px 4px 0 rgba(248,196,13,.22);
+}
+.picker:has([data-day][aria-pressed="true"]):has([data-slot][aria-pressed="true"]) .picker-cta:hover{
+  transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(248,196,13,.28);
+}
+.picker:has([data-day][aria-pressed="true"]):has([data-slot][aria-pressed="true"]) .picker-hint{display:none}
+.picker:not(:has([data-day][aria-pressed="true"])) .step-slots{opacity:.55}
+@supports not (selector(:has(*))){
+  .picker[data-ready="1"] .picker-cta{
+    background:var(--yel);border-color:var(--yel);color:var(--ink);cursor:pointer;
+    box-shadow:4px 4px 0 rgba(248,196,13,.22);
+  }
+  .picker[data-ready="1"] .picker-hint{display:none}
+}
+.note{margin-top:1.6rem;color:var(--grey);font-size:.92rem}
+
+/* ============ 03 MODALIDADES ============ */
+.mod{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:1.4rem;
+  padding:clamp(1.8rem,4.5vw,2.8rem) 0;border-top:1px solid var(--hair);
+}
+.mod:first-of-type{border-top:0;padding-top:0}
+.mod h3{font-size:clamp(2.2rem,9vw,5rem)}
+.mod-body{max-width:58ch;color:var(--grey)}
+.mod-meta{
+  margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem;
+}
+.mod-meta span{
+  border:1px solid var(--hair);padding:.35rem .7rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);
+}
+.mod-cta{margin-top:1.5rem}
+.mod-strip{overflow:hidden;border:1px solid var(--hair);height:clamp(200px,50vw,300px)}
+.mod-strip img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+@media(min-width:900px){
+  .mod-a{grid-template-columns:minmax(0,7fr) minmax(0,3fr);gap:3rem;align-items:center}
+  .mod-b{grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:3rem;align-items:end}
+  .mod-a .mod-strip{height:340px}
+}
+.duo{position:relative;background:var(--ink)}
+.duo img{filter:grayscale(1) contrast(1.22) brightness(.72)}
+.duo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.12) 45%,rgba(248,196,13,.16));
+}
+
+/* ============ 04 PILARES — crema ============ */
+.pilares{
+  background:var(--cream);color:var(--cream-ink);
+  margin-top:-1px;border-top:0;
+  clip-path:polygon(0 var(--peak),50% 0,100% var(--peak),100% 100%,0 100%);
+  padding-top:calc(var(--peak) + clamp(2.8rem,7vw,5rem));
+}
+.pilares .lbl{color:var(--cream-soft)}
+.pilares .band-num{color:var(--cream-ink);position:relative;display:inline-block}
+.pilares .band-num::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:var(--yel)}
+.pilares h2{color:var(--cream-ink)}
+.pilares h2 em{
+  color:var(--cream-ink);background:var(--yel);
+  padding:0 .16em;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.pilares .lede{color:var(--cream-soft)}
+.pilar{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:.5rem 2.5rem;
+  padding:clamp(1.5rem,4vw,2.2rem) 0;border-top:1px solid rgba(23,22,20,.16);
+}
+.pilar h3{font-size:clamp(2.4rem,10vw,5.5rem);color:var(--cream-ink)}
+.pilar p{color:var(--cream-soft);font-size:clamp(1.05rem,2.6vw,1.3rem);max-width:34ch}
+@media(min-width:820px){
+  .pilar{grid-template-columns:minmax(0,5fr) minmax(0,5fr);align-items:end}
+}
+.quote{
+  margin:clamp(2.2rem,6vw,3.4rem) 0 0;padding:clamp(1.5rem,4vw,2.2rem) 0 0;
+  border-top:3px solid var(--yel);
+}
+.quote blockquote{
+  margin:0;font-family:Anton,sans-serif;text-transform:uppercase;line-height:1.02;
+  letter-spacing:-.01em;font-size:clamp(1.5rem,5.4vw,3rem);color:var(--cream-ink);max-width:22ch;
+}
+.quote .after{margin-top:1.4rem;max-width:52ch;color:var(--cream-soft)}
+.cream-strip{
+  margin-top:clamp(2.4rem,6vw,3.4rem);border:1px solid rgba(23,22,20,.2);overflow:hidden;
+}
+.cream-strip img{width:100%;height:clamp(120px,26vw,190px);object-fit:cover;filter:contrast(1.1) brightness(.95)}
+
+/* ============ 05 EL BOX ============ */
+.counters{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:clamp(2.4rem,6vw,3.4rem)}
+.counter{padding:1.4rem 0;border-top:1px solid var(--hair)}
+.counter:first-child{border-top:0;padding-top:0}
+.counter .n{font-family:Anton,sans-serif;font-size:clamp(3rem,13vw,6.5rem);line-height:.85;color:var(--yel);letter-spacing:-.02em}
+.counter .c{margin-top:.5rem;max-width:30ch;color:var(--grey)}
+@media(min-width:760px){
+  .counters{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}
+  .counter{border-top:1px solid var(--hair);padding-top:1.4rem}
+  .counter:first-child{border-top:1px solid var(--hair);padding-top:1.4rem}
+}
+.box-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.2rem,5vw,3.2rem)}
+@media(min-width:960px){.box-grid{grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:3.5rem}}
+.sub{
+  font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.15rem;
+  letter-spacing:.02em;color:var(--white);margin:0 0 1.1rem;
+}
+.person{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:.25rem 2rem;
+  padding:1.15rem 0;border-top:1px solid var(--hair);
+}
+.person .n{font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(1.25rem,4vw,1.8rem);letter-spacing:0}
+.person .r{color:var(--grey);font-size:.98rem}
+@media(min-width:720px){.person{grid-template-columns:minmax(0,4fr) minmax(0,6fr);align-items:baseline}}
+.wins{margin-top:clamp(2.2rem,5vw,3rem)}
+.win{display:grid;grid-template-columns:minmax(0,1fr);gap:.2rem 2rem;padding:1.1rem 0;border-top:1px solid var(--rule)}
+.win .k{font-family:Anton,sans-serif;text-transform:uppercase;color:var(--yel);font-size:1.05rem;letter-spacing:.02em}
+.win .v{color:var(--grey)}
+@media(min-width:720px){.win{grid-template-columns:minmax(0,3fr) minmax(0,7fr)}}
+.aside-stack{display:grid;gap:1rem;align-content:start}
+.aside-stack .duo{border:1px solid var(--hair)}
+.aside-stack img{width:100%;height:clamp(180px,44vw,300px);object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.05)}
+.aside-note{
+  border-left:3px solid var(--yel);padding:.4rem 0 .4rem 1rem;
+  color:var(--grey);font-size:.95rem;
+}
+.aside-note b{color:var(--white);font-weight:600}
+
+/* ============ 06 CONTACTO ============ */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.6rem,4vw,2.4rem)}
+@media(min-width:860px){.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem}}
+.cbox{border:1px solid var(--yel);padding:clamp(1.3rem,3.5vw,2rem);background:var(--coal)}
+.cbox .lbl{display:block;margin-bottom:.75rem}
+.cbox .big{
+  font-family:Anton,sans-serif;text-transform:uppercase;line-height:1.05;
+  font-size:clamp(1.15rem,3.6vw,1.6rem);margin-bottom:.8rem;
+}
+.cbox p{color:var(--grey)}
+.cbox a.inline{color:var(--yel);text-decoration:none;border-bottom:1px solid var(--rule)}
+.cbox a.inline:hover{border-bottom-color:var(--yel)}
+.cbox .btn{margin-top:1.2rem}
+.store{margin-top:clamp(1.6rem,4vw,2.2rem);color:var(--grey);font-size:.95rem;max-width:62ch}
+.store a{color:var(--yel);text-decoration:none;border-bottom:1px solid var(--rule)}
+.store a:hover{border-bottom-color:var(--yel)}
+
+/* ============ FOOTER PÓSTER ============ */
+.poster{
+  position:relative;background:var(--coal);margin-top:-1px;
+  clip-path:polygon(0 var(--peak),50% 0,100% var(--peak),100% 100%,0 100%);
+  padding-top:calc(var(--peak) + clamp(2.6rem,7vw,4.5rem));
+  padding-bottom:clamp(2rem,5vw,3rem);overflow:hidden;
+}
+.poster::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--peak) + 3px);
+  background:var(--yel);pointer-events:none;
+  clip-path:polygon(0 var(--peak),50% 0,100% var(--peak),100% calc(var(--peak) + 3px),50% 3px,0 calc(var(--peak) + 3px));
+}
+.poster .grain{opacity:.05}
+.poster .wrap{position:relative;z-index:2}
+.poster-display{font-size:clamp(2.35rem,11.5vw,7.5rem);letter-spacing:-.025em}
+.poster-lede{margin-top:1.5rem;max-width:46ch;color:var(--grey)}
+.poster-cta{display:flex;flex-wrap:wrap;gap:1rem 1.75rem;align-items:center;margin-top:2rem}
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(2.2rem,5vw,3rem)}
+.soc{
+  display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;
+  border:1px solid var(--hair);padding:.7rem .95rem;color:var(--white);
+  font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:.8rem;
+  transition:border-color .2s,color .2s;
+}
+.soc:hover{border-color:var(--yel);color:var(--yel)}
+.soc svg{width:17px;height:17px;flex:0 0 auto}
+.seal{
+  margin-top:clamp(2.2rem,5vw,3rem);padding-top:1.1rem;border-top:1px solid var(--hair);
+  display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:baseline;
+  color:var(--grey);font-size:.82rem;letter-spacing:.06em;
+}
+.seal a{color:var(--yel);text-decoration:none;border-bottom:1px solid var(--rule)}
+.seal a:hover{border-bottom-color:var(--yel)}
+
+/* ============ FAB ============ */
+.fab{
+  position:fixed;right:14px;bottom:14px;z-index:80;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#0A0A0A;
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.55);
+  transition:transform .18s;
+}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+
+/* ============ REVEALS ============ */
+html.js [data-reveal]{opacity:0;transform:translateY(20px)}
+html.js [data-reveal].in{
+  opacity:1;transform:none;
+  transition:opacity .65s ease var(--rd,0ms),transform .65s cubic-bezier(.2,.7,.2,1) var(--rd,0ms);
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html.js [data-reveal]{opacity:1 !important;transform:none !important}
+  html.js .iso.draw path{fill-opacity:1;stroke-dashoffset:0}
+  html.js h1 .ln>span{transform:none}
+  .btn:hover,.fab:hover,.slot:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- NAV — píldora flotante -->
+<nav class="nav" aria-label="Principal">
+  <a class="nav-chip" href="#inicio">
+    <img src="./assets/nativoscf-logo.jpg" alt="Isotipo de Nativos: punta de lanza amarilla dentro de un aro">
+    <span>Nativos</span>
+  </a>
+  <div class="nav-links">
+    <a href="#horarios">Horarios</a>
+    <a href="#modalidades">Modalidades</a>
+    <a href="#el-box">El box</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a class="nav-wa" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.26-1.38a9.87 9.87 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.21-8.23 8.21z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<main id="contenido">
+
+<!-- ============ 01 HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg" aria-hidden="false">
+    <img src="./assets/nativoscf-techo.jpg" alt="Techo de zinc con cerchas negras y un poste amarillo del rig del box Nativos">
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="lbl lbl-y">01 — Nativos · Centro de entrenamiento</span>
+      <span class="lbl">Barcelona, Anzoátegui</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <svg class="iso" id="iso" viewBox="0 0 200 200" role="img" aria-label="Isotipo de Nativos: punta de lanza con barbas laterales y astil amarrado, dentro de un aro abierto arriba y abajo">
+          <g id="iso-ring">
+            <path d="M124.5 47.3 L134.1 49.1 L142.1 54.3 L148.4 61.4 L153.1 69.6 L156.5 78.2 L160.0 86.6 L163.5 95.1 L164.2 104.4 L163.5 113.6 L162.1 122.7 L158.7 131.4 L155.7 140.3 L151.0 148.5 L145.1 156.1 L137.1 161.6 L128.7 166.1 L119.8 169.4 L110.6 171.5 L101.2 173.0 L91.8 172.4 L82.8 169.3 L74.2 165.9 L66.4 161.0 L58.9 155.9 L51.8 150.2 L44.7 144.0 L40.1 135.8 L36.5 127.1 L34.0 118.1 L32.3 108.8 L31.3 99.2 L33.7 89.9 L38.5 81.5 L46.3 84.7 L45.7 92.8 L45.2 100.6 L46.3 108.2 L47.7 115.5 L49.8 122.6 L52.6 129.4 L56.2 135.9 L62.0 140.6 L67.7 145.0 L73.5 149.0 L79.6 152.9 L86.3 155.7 L93.3 158.5 L100.8 159.0 L108.2 157.7 L115.5 156.1 L122.5 153.6 L129.2 150.0 L135.6 145.8 L140.2 139.7 L143.7 133.0 L145.9 125.9 L148.5 119.1 L149.6 112.0 L150.2 104.7 L149.7 97.5 L146.7 90.8 L143.9 84.3 L141.5 77.4 L138.0 70.8 L133.1 65.0 L127.6 59.6 L121.2 55.0 Z"/>
+            <path d="M41.1 77.8 L43.0 69.6 L48.4 63.6 L54.6 58.4 L60.6 53.1 L67.2 48.6 L75.3 47.4 L78.5 55.2 L74.0 60.9 L68.8 64.4 L64.1 68.6 L59.1 72.6 L54.8 77.3 L48.6 81.4 Z"/>
+          </g>
+          <g id="iso-shaft">
+            <path d="M89 94 L110.5 94 L110.5 111 L89 111 Z"/>
+            <path d="M84 110 L116 110 L116 119 L84 119 Z"/>
+            <path d="M86 122 L114 126 L114 135 L86 131 Z"/>
+            <path d="M86 138 L114 142 L114 151 L86 147 Z"/>
+            <path d="M88 154 L112 158 L112 172 L88 168 Z"/>
+          </g>
+          <g id="iso-barbs">
+            <path d="M66.5 92 L64 105 C70.5 101 77 97.5 84 95.5 Z"/>
+            <path d="M133.5 92 L136 105 C129.5 101 123 97.5 116 95.5 Z"/>
+          </g>
+          <g id="iso-blade">
+            <path d="M99.5 18 C93 27 76 54 66.5 94 L133.5 94 C123 54 106 27 99.5 18 Z"/>
+          </g>
+        </svg>
+      </div>
+
+      <div>
+        <h1>
+          <span class="ln"><span style="--d:.15s">Donde el estrés</span></span>
+          <span class="ln"><span style="--d:.27s">y los problemas</span></span>
+          <span class="ln"><span style="--d:.39s"><em>pierden fuerza</em></span></span>
+        </h1>
+        <p class="hero-lede">
+          Centro de entrenamiento de <strong>CrossFit</strong> y <strong>Funcional</strong> en Barcelona,
+          Anzoátegui, dentro de las instalaciones de Barcelona Sports. Clases grupales, con coach acompañando.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#reservar">Apartar clase de prueba</a>
+          <a class="btn btn-ghost" href="#horarios">Ver horarios</a>
+        </div>
+        <div class="hero-facts lbl">
+          <span>Lunes a sábado</span>
+          <span>7 horarios diarios</span>
+          <span>Formando atletas integrales</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 HORARIOS + SELECTOR ============ -->
+<section class="band" id="horarios">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-num">02</div>
+      <div>
+        <span class="lbl">Horarios</span>
+        <span class="tagline" style="display:block;width:max-content;max-width:100%">CrossFit · Funcional</span>
+        <h2 data-reveal>Horarios <em>disponibles</em></h2>
+        <p class="lede" data-reveal style="--rd:80ms">
+          Estas son las siete franjas que abrimos cada día. <strong>Elige el día y la hora</strong> y nosotros
+          te armamos el mensaje listo para enviar por WhatsApp.
+        </p>
+      </div>
+    </div>
+
+    <div class="picker" id="reservar" data-reveal>
+      <!-- PASO 01 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="k">Paso 01</span>
+          <span class="t">Elige tu día</span>
+        </div>
+        <div class="days" role="group" aria-label="Día de la clase de prueba">
+          <button type="button" class="chip" data-day="lunes" aria-pressed="false">Lun</button>
+          <button type="button" class="chip" data-day="martes" aria-pressed="false">Mar</button>
+          <button type="button" class="chip" data-day="miércoles" aria-pressed="false">Mié</button>
+          <button type="button" class="chip" data-day="jueves" aria-pressed="false">Jue</button>
+          <button type="button" class="chip" data-day="viernes" aria-pressed="false">Vie</button>
+          <button type="button" class="chip" data-day="sábado" aria-pressed="false">Sáb</button>
+          <button type="button" class="chip" disabled aria-disabled="true"><span class="dot-closed" aria-hidden="true"></span>Dom · Cerrado</button>
+        </div>
+      </div>
+
+      <!-- PASO 02 -->
+      <div class="step step-slots">
+        <div class="step-title">
+          <span class="k">Paso 02</span>
+          <span class="t">Elige tu hora</span>
+        </div>
+
+        <div class="slot-group">
+          <span class="lbl lbl-y">Mañana</span>
+          <div class="slots" role="group" aria-label="Franjas de la mañana">
+            <button type="button" class="slot" data-slot="6:00 AM" aria-pressed="false"><span class="h">6:00 – 7:00 AM</span><span class="m">CrossFit · Funcional</span></button>
+            <button type="button" class="slot" data-slot="7:00 AM" aria-pressed="false"><span class="h">7:00 – 8:00 AM</span><span class="m">CrossFit · Funcional</span></button>
+            <button type="button" class="slot" data-slot="8:00 AM" aria-pressed="false"><span class="h">8:00 – 9:00 AM</span><span class="m">CrossFit · Funcional</span></button>
+          </div>
+        </div>
+
+        <div class="slot-group">
+          <span class="lbl lbl-y">Tarde</span>
+          <div class="slots" role="group" aria-label="Franjas de la tarde">
+            <button type="button" class="slot" data-slot="4:00 PM" aria-pressed="false"><span class="h">4:00 – 5:00 PM</span><span class="m">CrossFit · Funcional</span></button>
+            <button type="button" class="slot" data-slot="5:00 PM" aria-pressed="false"><span class="h">5:00 – 6:00 PM</span><span class="m">CrossFit · Funcional</span></button>
+            <button type="button" class="slot" data-slot="6:00 PM" aria-pressed="false"><span class="h">6:00 – 7:00 PM</span><span class="m">CrossFit · Funcional</span></button>
+            <button type="button" class="slot" data-slot="7:00 PM" aria-pressed="false"><span class="h">7:00 – 8:00 PM</span><span class="m">CrossFit · Funcional</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESUMEN -->
+      <div class="summary">
+        <span class="lbl">Tu reserva</span>
+        <p id="resumen" aria-live="polite">Elige día y hora para armar tu mensaje.</p>
+      </div>
+
+      <div class="picker-foot">
+        <button type="button" class="picker-cta" id="reservarBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.26-1.38a9.87 9.87 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.21-8.23 8.21z"/><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+          <span id="reservarTxt">Apartar mi clase de prueba</span>
+        </button>
+        <span class="picker-hint">Elige día y hora</span>
+      </div>
+
+      <p class="note">Lunes a sábado. Domingos cerrado. Copiamos tu mensaje al portapapeles — solo lo pegas en el chat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 MODALIDADES ============ -->
+<section class="band" id="modalidades">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-num">03</div>
+      <div>
+        <span class="lbl">Modalidades</span>
+        <h2 data-reveal>Dos formas de <em>entrenar</em></h2>
+        <p class="lede" data-reveal style="--rd:80ms">
+          Las dos son <strong>clases grupales con coach acompañando</strong>. No es acceso libre a máquinas:
+          entras a una hora fija y hay alguien pendiente de tu técnica.
+        </p>
+      </div>
+    </div>
+
+    <article class="mod mod-a" data-reveal>
+      <div>
+        <h3>CrossFit</h3>
+        <div class="mod-body">
+          <p>
+            Clase grupal, de principio a fin acompañada por un coach que corrige la técnica y escala el trabajo
+            a tu nivel. Hay <strong>clase regular</strong> para quien viene a entrenar y ya, y también un
+            <strong>grupo de competencia</strong> para quien quiere ir por más.
+          </p>
+        </div>
+        <div class="mod-meta">
+          <span>Clase regular</span><span>Grupo de competencia</span><span>Lun a sáb</span>
+        </div>
+        <div class="mod-cta"><a class="btn-line" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">Consultar plan por WhatsApp</a></div>
+      </div>
+      <div class="mod-strip duo">
+        <img src="./assets/nativoscf-rig.jpg" alt="Poste amarillo del rig, discos bumper y la palabra crossfit pintada en la pared del box" loading="lazy">
+      </div>
+    </article>
+
+    <article class="mod mod-b" data-reveal>
+      <div>
+        <h3>Funcional</h3>
+      </div>
+      <div>
+        <div class="mod-body">
+          <p>
+            El mismo espacio, los mismos coaches y las mismas siete franjas del día. Pensado para quien arranca
+            desde cero o vuelve después de mucho tiempo y necesita que alguien le marque el paso, sin apuro y
+            sin comparaciones.
+          </p>
+        </div>
+        <div class="mod-meta">
+          <span>Grupal</span><span>Con coach</span><span>7 horarios diarios</span>
+        </div>
+        <div class="mod-cta"><a class="btn-line" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">Consultar plan por WhatsApp</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 04 PILARES (crema) ============ -->
+<section class="band pilares" id="pilares">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-num">04</div>
+      <div>
+        <span class="lbl">Los tres pilares</span>
+        <h2 data-reveal>Lo que sostiene <em>a Nativos</em></h2>
+        <p class="lede" data-reveal style="--rd:80ms">
+          No todos llegan buscando ponerse más fuertes. Algunos llegan buscando un respiro:
+          un lugar donde el ruido de afuera se apaga.
+        </p>
+      </div>
+    </div>
+
+    <div class="pilar" data-reveal>
+      <h3>Fuerza</h3>
+      <p>Que te hace más fuerte.</p>
+    </div>
+    <div class="pilar" data-reveal style="--rd:90ms">
+      <h3>Propósito</h3>
+      <p>Que te mantiene enfocado.</p>
+    </div>
+    <div class="pilar" data-reveal style="--rd:180ms">
+      <h3>Comunidad</h3>
+      <p>Que te impulsa a seguir.</p>
+    </div>
+
+    <div class="quote" data-reveal>
+      <blockquote>El nivel de un box no se mide por su mejor atleta, se mide por su promedio.</blockquote>
+      <p class="after">
+        Esto no es el grupo élite, es la clase regular. No son atletas profesionales. No son competidores.
+        Son personas. Y aquí descubren que son capaces de mucho más.
+      </p>
+    </div>
+
+    <div class="cream-strip" data-reveal>
+      <img src="./assets/nativoscf-piso.jpg" alt="Cajón pliométrico de madera con una flecha pintada, sobre el piso de concreto del box" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 EL BOX Y SU GENTE ============ -->
+<section class="band" id="el-box">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-num">05</div>
+      <div>
+        <span class="lbl">El box y su gente</span>
+        <h2 data-reveal>Coaches, atletas y <em>hierro pintado</em></h2>
+        <p class="lede" data-reveal style="--rd:80ms">
+          El amarillo de la marca es <strong>el mismo con el que están pintados los postes del rig</strong>.
+          La marca está pintada en el hierro.
+        </p>
+      </div>
+    </div>
+
+    <div class="counters">
+      <div class="counter" data-reveal>
+        <div class="n" data-count="13073" data-format="dot">13.073</div>
+        <p class="c">Seguidores en Instagram siguiendo el día a día del box.</p>
+      </div>
+      <div class="counter" data-reveal style="--rd:90ms">
+        <div class="n" data-count="4">4</div>
+        <p class="c">Podios en la liga invitacional Profit Box, en una sola fecha.</p>
+      </div>
+    </div>
+
+    <div class="box-grid">
+      <div>
+        <h3 class="sub" data-reveal>Los coaches</h3>
+        <div class="person" data-reveal>
+          <div class="n">Carlos Fernández</div>
+          <div class="r">Coach y atleta. El box lo describe como atleta élite y top 10 de Venezuela.</div>
+        </div>
+        <div class="person" data-reveal style="--rd:70ms">
+          <div class="n">Eduardo Rojas</div>
+          <div class="r">Profesor UPEL en Educación Física, Deporte y Recreación. Personal trainer. Llega al box a las 5:30 am.</div>
+        </div>
+        <div class="person" data-reveal style="--rd:140ms">
+          <div class="n">Javier Marín</div>
+          <div class="r">Coach. Primer lugar Avanzado Masculino con puntuación perfecta en la liga invitacional Profit Box, noviembre de 2025.</div>
+        </div>
+        <div class="person" data-reveal style="--rd:210ms">
+          <div class="n">José Domínguez</div>
+          <div class="r">Atleta Submaster. Compitió en FitGames 2025.</div>
+        </div>
+
+        <div class="wins">
+          <h3 class="sub" data-reveal>Lo que se ha ganado</h3>
+          <div class="win" data-reveal>
+            <div class="k">4 podios · Profit Box</div>
+            <div class="v">Liga invitacional Profit Box, 18 de noviembre de 2025: dos primeros lugares —uno con puntuación perfecta—, un segundo y un tercero.</div>
+          </div>
+          <div class="win" data-reveal style="--rd:70ms">
+            <div class="k">FitGames 2025</div>
+            <div class="v">Atletas del box compitieron en la edición 2025.</div>
+          </div>
+          <div class="win" data-reveal style="--rd:140ms">
+            <div class="k">Reto Murph</div>
+            <div class="v">24 de mayo de 2026: 1,6 km · 100 pull-ups · 200 push-ups · 300 squats · 1,6 km.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="aside-stack" data-reveal>
+        <div class="duo">
+          <img src="./assets/nativoscf-rig.jpg" alt="Detalle del rig del box: poste amarillo, discos bumper y rotulación pintada en la pared" loading="lazy">
+        </div>
+        <div class="duo">
+          <img src="./assets/nativoscf-cajones.jpg" alt="Cajones pliométricos de madera sobre el piso de concreto del box" loading="lazy">
+        </div>
+        <p class="aside-note"><b>Formando atletas integrales.</b> Centro de entrenamiento: Funcional y CrossFit, en Barcelona, Anzoátegui.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 CONTACTO ============ -->
+<section class="band" id="contacto">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-num">06</div>
+      <div>
+        <span class="lbl">Contacto</span>
+        <h2 data-reveal>Dónde <em>estamos</em></h2>
+        <p class="lede" data-reveal style="--rd:80ms">
+          Entrenamos dentro de las instalaciones de Barcelona Sports. Pregunta por Nativos al llegar.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="cbox" data-reveal>
+        <span class="lbl lbl-y">Ubicación</span>
+        <p class="big">Instalaciones de<br>Barcelona Sports</p>
+        <p>Av. Prolongación de la Costanera<br>Barcelona, estado Anzoátegui, Venezuela.</p>
+        <p style="margin-top:.9rem">Lunes a sábado · 7 horarios diarios. Domingos cerrado.</p>
+      </div>
+
+      <div class="cbox" data-reveal style="--rd:90ms">
+        <span class="lbl lbl-y">Escríbenos</span>
+        <p class="big">Contáctanos hoy,<br>te esperamos</p>
+        <p>
+          Respondemos por WhatsApp. También publicamos horarios y avisos en Instagram:
+          <a class="inline" href="https://www.instagram.com/nativoscf_/" target="_blank" rel="noopener">@nativoscf_</a>.
+        </p>
+        <a class="btn" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+
+    <p class="store" data-reveal>
+      ¿Suplementos, cuerdas, cinturones o calleras? Los lleva la tienda hermana,
+      <a href="https://www.instagram.com/storenativos/" target="_blank" rel="noopener">@storenativos</a>.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER PÓSTER ============ -->
+<footer class="poster">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="lbl lbl-y" style="margin-bottom:1.4rem">Nativos · Crossfit · Funcional</p>
+    <p class="display poster-display">
+      Contáctanos hoy,<br><em>te esperamos</em>
+    </p>
+    <p class="poster-lede">
+      Tu cambio comienza aquí. Aparta tu clase de prueba y ven a conocer el box.
+    </p>
+    <div class="poster-cta">
+      <a class="btn" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">Apartar clase de prueba</a>
+      <a class="btn btn-ghost" href="#horarios">Ver horarios</a>
+    </div>
+
+    <div class="socials">
+      <a class="soc" href="https://www.instagram.com/nativoscf_/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        @nativoscf_
+      </a>
+      <a class="soc" href="https://www.instagram.com/storenativos/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        @storenativos
+      </a>
+      <a class="soc" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.26-1.38a9.87 9.87 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.21-8.23 8.21z"/><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <div class="seal">
+      <span>Nativos · Barcelona, Anzoátegui · Lunes a sábado</span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/message/277L2N7FE3GXB1" target="_blank" rel="noopener" aria-label="Escribir a Nativos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.26-1.38a9.87 9.87 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.21-8.23 8.21z"/><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "https://wa.me/message/277L2N7FE3GXB1";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 1. Line-drawing del isotipo ---------- */
+  (function isoDraw(){
+    var svg = document.getElementById("iso");
+    if(!svg || reduce) return;
+    var order = ["iso-ring","iso-shaft","iso-barbs","iso-blade"];
+    var delay = 0.1;
+    order.forEach(function(gid){
+      var g = document.getElementById(gid);
+      if(!g) return;
+      Array.prototype.forEach.call(g.querySelectorAll("path"), function(p){
+        var len = 0;
+        try{ len = p.getTotalLength(); }catch(e){ len = 600; }
+        if(!len || !isFinite(len)) len = 600;
+        p.style.setProperty("--len", Math.ceil(len));
+        p.style.setProperty("--d", delay.toFixed(2) + "s");
+        delay += 0.075;
+      });
+    });
+    svg.classList.add("draw");
+  })();
+
+  /* ---------- 2. Reveals + contadores (IntersectionObserver) ---------- */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  var counters  = document.querySelectorAll("[data-count]");
+
+  function showAll(){
+    Array.prototype.forEach.call(revealEls, function(el){ el.classList.add("in"); });
+    Array.prototype.forEach.call(counters, function(el){ paint(el, +el.getAttribute("data-count")); });
+  }
+  function fmt(n, mode){
+    if(mode === "dot") return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return String(n);
+  }
+  function paint(el, v){ el.textContent = fmt(v, el.getAttribute("data-format")); }
+  function runCount(el){
+    var target = +el.getAttribute("data-count");
+    if(reduce){ paint(el, target); return; }
+    var dur = 1500, t0 = null;
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      paint(el, Math.round(target * e));
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if(!("IntersectionObserver" in window)){
+    showAll();
+  }else{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add("in");
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    Array.prototype.forEach.call(revealEls, function(el){ io.observe(el); });
+
+    if(!reduce){ Array.prototype.forEach.call(counters, function(el){ el.textContent = "0"; }); }
+    var ioc = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        runCount(en.target);
+        ioc.unobserve(en.target);
+      });
+    }, { threshold: 0.5 });
+    Array.prototype.forEach.call(counters, function(el){ ioc.observe(el); });
+  }
+
+  /* ---------- 3. Selector de clase de prueba ---------- */
+  var picker  = document.getElementById("reservar");
+  if(!picker) return;
+  var dayBtns  = picker.querySelectorAll("[data-day]");
+  var slotBtns = picker.querySelectorAll("[data-slot]");
+  var resumen  = document.getElementById("resumen");
+  var btn      = document.getElementById("reservarBtn");
+  var btnTxt   = document.getElementById("reservarTxt");
+  var baseTxt  = btnTxt.textContent;
+  var state    = { day: null, slot: null };
+  var resetTimer = null;
+
+  function pickOne(list, el, key){
+    Array.prototype.forEach.call(list, function(b){ b.setAttribute("aria-pressed", b === el ? "true" : "false"); });
+    state[key] = el.getAttribute(key === "day" ? "data-day" : "data-slot");
+    sync();
+  }
+  Array.prototype.forEach.call(dayBtns, function(b){
+    b.addEventListener("click", function(){ pickOne(dayBtns, b, "day"); });
+  });
+  Array.prototype.forEach.call(slotBtns, function(b){
+    b.addEventListener("click", function(){ pickOne(slotBtns, b, "slot"); });
+  });
+
+  function sync(){
+    var ready = !!(state.day && state.slot);
+    picker.setAttribute("data-ready", ready ? "1" : "0");
+    btn.disabled = !ready;
+    if(ready){
+      resumen.classList.add("ready");
+      resumen.innerHTML = "Clase de prueba · <b>" + state.day + "</b> · <b>" + state.slot + "</b> · CrossFit o Funcional";
+    }else{
+      resumen.classList.remove("ready");
+      resumen.textContent = state.day
+        ? "Elige una hora para el " + state.day + "."
+        : "Elige día y hora para armar tu mensaje.";
+    }
+  }
+  sync();
+
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, text.length);
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error("copy"));
+      }catch(e){ reject(e); }
+    });
+  }
+
+  btn.addEventListener("click", function(){
+    if(btn.disabled) return;
+    var msg = "Hola Nativos 👋 Quiero apartar mi clase de prueba el " + state.day +
+              " a las " + state.slot + ". ¿Tienen cupo?";
+
+    copyText(msg).then(function(){
+      btnTxt.textContent = "Mensaje copiado — pégalo en el chat";
+    }).catch(function(){
+      btnTxt.textContent = "Abriendo WhatsApp — escribe tu hora";
+    });
+
+    window.open(WA, "_blank", "noopener");
+
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(function(){ btnTxt.textContent = baseTxt; }, 2200);
+  });
+})();
+</script>
+</body>
+</html>
