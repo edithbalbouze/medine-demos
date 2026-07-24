@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Calantha — accesorios aesthetic, al detal y al mayor · Nueva Barcelona</title>
+<meta name="description" content="Calantha, tu gift shop de accesorios aesthetic en Nueva Barcelona. Carteras monograma, bandanas de seda, cajas de regalo y más. Al detal y al mayor. Arma tu pedido y escríbenos por Instagram.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calantha — for you · accesorios aesthetic al detal y al mayor">
+<meta property="og:description" content="Recorre el mostrador de Calantha, arma tu pedido al mayor y envíalo por Instagram. Nueva Barcelona, Anzoátegui.">
+<meta property="og:image" content="./assets/calantha-prod-1-carteras.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --base:#FEE2F1;
+    --base-2:#FFF3FA;
+    --paper:#FFFFFF;
+    --ink:#2A1522;
+    --ink-soft:#6C4A5B;
+    --brand:#ED5C85;      /* decorative pink */
+    --brand-hi:#F56E9F;   /* highlight */
+    --pink-text:#C9285F;  /* AA pink for text on light */
+    --red:#D31327;        /* urgency / price */
+    --gold:#C99A3E;
+    --gold-hi:#E7C06B;
+    --line:#F2B9D2;
+    --line-soft:#F7D3E4;
+    --shadow:24px 30px 60px -30px rgba(160,30,80,.42);
+    --r:20px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  html,body{max-width:100%;overflow-x:clip}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 700px at 88% -8%, #FFF6FB 0%, transparent 60%),
+      radial-gradient(900px 600px at 0% 12%, #FFEAF5 0%, transparent 55%),
+      var(--base);
+    color:var(--ink);
+    font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3{font-family:"Gloock",Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--brand);color:#fff}
+  :focus-visible{outline:3px solid var(--pink-text);outline-offset:3px;border-radius:6px}
+
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  @media (max-width:520px){.wrap{width:min(1160px,100% - 32px)}}
+
+  .eyebrow{
+    font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--pink-text);display:inline-flex;align-items:center;gap:.5em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--brand);border-radius:2px}
+  .sec-num{font-family:"Figtree";font-weight:800;font-size:.72rem;letter-spacing:.18em;color:var(--brand);opacity:.85}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    --pad:.85em 1.35em;
+    position:relative;display:inline-flex;align-items:center;gap:.55em;
+    font-family:"Figtree";font-weight:700;font-size:.98rem;letter-spacing:.01em;
+    text-decoration:none;cursor:pointer;border:none;line-height:1;
+    padding:var(--pad);color:#fff;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--pink-text) 92%);
+    /* tag-notch capsule */
+    border-radius:0 999px 999px 0;
+    clip-path:polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+    padding-left:1.7em;
+    box-shadow:0 12px 24px -12px rgba(201,40,95,.75);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+  .btn .hole{width:7px;height:7px;border-radius:50%;background:var(--base-2);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55);flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 30px -12px rgba(201,40,95,.8);filter:saturate(1.06)}
+  .btn:active{transform:translateY(0)}
+  .btn.small{font-size:.86rem;--pad:.7em 1.1em;padding-left:1.5em}
+  .btn.gold{background:linear-gradient(135deg,#946a1c 0%,#70500f 95%);box-shadow:0 12px 24px -12px rgba(143,100,22,.7)}
+
+  .link-underline{
+    font-family:"Figtree";font-weight:700;color:var(--pink-text);text-decoration:none;
+    background-image:linear-gradient(var(--brand),var(--brand));
+    background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;
+    padding-bottom:2px;transition:background-size .25s ease, color .2s ease;
+    display:inline-flex;align-items:center;gap:.4em;cursor:pointer;border:none;background-color:transparent;font-size:.98rem;
+  }
+  .link-underline:hover{background-size:0% 2px;color:var(--ink)}
+  .link-underline svg{transition:transform .25s ease}
+  .link-underline:hover svg{transform:translateX(3px)}
+
+  /* ---------- NAV: category rail ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(254,226,241,.86);
+    backdrop-filter:saturate(1.3) blur(10px);
+    -webkit-backdrop-filter:saturate(1.3) blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-top{display:flex;align-items:center;gap:14px;padding:11px 0 9px}
+  .wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+  .wordmark img{width:44px;height:44px;border-radius:12px;box-shadow:0 6px 14px -8px rgba(201,40,95,.6);border:1px solid #fff}
+  .wordmark .wm-name{font-family:"Gloock";font-size:1.32rem;color:var(--pink-text);line-height:1}
+  .wordmark .wm-sub{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+  .nav-top .spacer{flex:1}
+  .nav-cta{margin-left:auto}
+  @media (max-width:640px){
+    .wordmark .wm-name{font-size:1.12rem}
+    .btn.nav-cta{--pad:.62em .9em;font-size:.82rem;padding-left:1.35em}
+  }
+  @media (max-width:380px){.wordmark .wm-sub{display:none}}
+
+  .rail{
+    display:flex;gap:9px;overflow-x:auto;padding:2px 2px 12px;
+    scroll-snap-type:x proximity;scrollbar-width:none;-ms-overflow-style:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .rail::-webkit-scrollbar{display:none}
+  .chip{
+    scroll-snap-align:start;flex:none;text-decoration:none;
+    font-family:"Figtree";font-weight:600;font-size:.85rem;color:var(--ink);
+    background:var(--paper);border:1px solid var(--line);
+    padding:.5em .95em;border-radius:999px;white-space:nowrap;
+    transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+  }
+  .chip:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-1px)}
+  .chip.gold-chip{border-color:var(--gold-hi);color:#8f6416}
+  .chip.gold-chip:hover{background:#8f6416;color:#fff;border-color:#8f6416}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:34px 0 8px;overflow:hidden}
+  .hero-head{position:relative;z-index:3;max-width:760px}
+  .hero h1{
+    font-size:clamp(3rem,11.5vw,6.6rem);
+    letter-spacing:-.02em;margin:.12em 0 .1em;
+  }
+  .hero h1 .accent{color:var(--pink-text)}
+  .hero .kicker{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .badge-follow{
+    display:inline-flex;align-items:center;gap:7px;background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;padding:.35em .7em;
+    font-size:.78rem;font-weight:700;color:var(--ink)
+  }
+  .badge-follow b{color:var(--pink-text)}
+  .hero-sub{max-width:52ch;color:var(--ink-soft);font-size:1.02rem;margin-top:4px}
+  .hero-sub strong{color:var(--ink)}
+
+  .domain-hook{
+    display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.5em;margin-top:16px;
+    background:linear-gradient(180deg,#fff,#FFF3FA);
+    border:1px dashed var(--brand);border-radius:14px;padding:.7em 1em;
+  }
+  .domain-hook .dom{font-family:"Figtree";font-weight:800;color:var(--pink-text);letter-spacing:-.01em}
+  .domain-hook .msg{color:var(--ink-soft);font-size:.92rem}
+  .domain-hook .msg b{color:var(--ink)}
+
+  /* counter shelf (hero signature) */
+  .counter-label{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
+  .counter-label .txt{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .counter-label .drag-hint{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;color:var(--pink-text);font-weight:700}
+  .counter-label .line{flex:1;height:1px;background:var(--line)}
+
+  .shelf-wrap{position:relative}
+  .shelf{
+    display:flex;gap:16px;overflow-x:auto;padding:8px 2px 26px;
+    scroll-snap-type:x mandatory;scrollbar-width:none;
+    container-type:inline-size;container-name:shelf;
+    cursor:grab;-webkit-overflow-scrolling:touch;
+    scroll-padding-left:2px;
+  }
+  .shelf::-webkit-scrollbar{display:none}
+  .shelf.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+  .shelf.dragging a,.shelf.dragging button{pointer-events:none}
+
+  /* ---------- HANGTAG CARD ---------- */
+  .tag{
+    scroll-snap-align:start;flex:none;width:min(74vw,290px);
+    position:relative;background:var(--paper);border-radius:18px;
+    border:1px solid var(--line-soft);box-shadow:var(--shadow);
+    padding:16px 16px 15px;isolation:isolate;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .shelf .tag{width:min(72vw,262px)}
+  .tag:hover{transform:translateY(-4px);box-shadow:26px 34px 66px -28px rgba(160,30,80,.5)}
+  /* hangtag punch hole + cord */
+  .tag::before{
+    content:"";position:absolute;top:12px;left:16px;width:15px;height:15px;border-radius:50%;
+    background:var(--base);box-shadow:inset 0 0 0 2px var(--brand);z-index:4;
+  }
+  .tag::after{
+    content:"";position:absolute;top:6px;left:20px;width:38px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-hi));transform:rotate(-24deg);
+    transform-origin:left center;opacity:.9;z-index:4;
+  }
+  .tag .media{
+    position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;
+    background:linear-gradient(150deg,#FFE7F2,#FBD1E6);margin-bottom:12px;
+  }
+  .tag .media img{width:100%;height:100%;object-fit:cover}
+  .tag .media .art{position:absolute;inset:0}
+  .tag .cat{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-text)}
+  .tag h3{font-family:"Gloock";font-size:1.32rem;margin:3px 0 2px;color:var(--ink);line-height:1.05}
+  .tag .desc{font-size:.85rem;color:var(--ink-soft);min-height:2.4em}
+  .tag .row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:12px}
+  .price{font-family:"Figtree";font-weight:800;font-size:1.35rem;color:var(--ink);line-height:1}
+  .price .cur{color:var(--pink-text);font-size:.9em}
+  .price small{display:block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:2px}
+  .price.quote{font-size:.98rem;color:var(--pink-text)}
+  .price.quote small{color:var(--ink-soft)}
+  .star-flag{
+    position:absolute;z-index:5;top:12px;right:12px;background:var(--red);color:#fff;
+    font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:.35em .6em;border-radius:8px;box-shadow:0 8px 16px -8px rgba(211,19,39,.7)
+  }
+
+  /* container-query: fat shelf cards get roomier type */
+  @container shelf (min-width:900px){
+    .shelf .tag{width:288px}
+    .shelf .tag h3{font-size:1.44rem}
+  }
+  @container shelf (max-width:360px){
+    .shelf .tag h3{font-size:1.18rem}
+    .shelf .tag .desc{min-height:0}
+  }
+
+  /* CSS product art */
+  .art-sparkle{background:radial-gradient(120% 120% at 30% 20%,#FFF0F7,#FBD1E6 70%)}
+  .art-sparkle::before,.art-sparkle::after{content:"✦";position:absolute;color:var(--brand);opacity:.55;font-size:26px}
+  .art-sparkle::before{top:18%;left:20%}
+  .art-sparkle::after{bottom:20%;right:18%;color:var(--gold);font-size:20px}
+  .silo{position:absolute;inset:0;display:grid;place-items:center}
+  .silo svg{width:64%;height:64%;filter:drop-shadow(0 10px 16px rgba(201,40,95,.25))}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:44px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap}
+  .sec-head .titles{max-width:640px}
+  .sec-head h2{font-size:clamp(1.9rem,6vw,3rem);margin-top:8px}
+  .sec-head .titles p{color:var(--ink-soft);margin-top:8px;font-size:.98rem}
+  .shelf-block{margin-top:22px}
+  .shelf-block .cat-row{display:flex;align-items:baseline;gap:12px;margin-bottom:2px}
+  .shelf-block .cat-row h3{font-family:"Gloock";font-size:1.4rem;color:var(--ink)}
+  .shelf-block .cat-row .meta{font-size:.78rem;color:var(--ink-soft);font-weight:600}
+  .shelf-block .cat-row .meta b{color:var(--pink-text)}
+
+  /* ---------- ORDER BUILDER ---------- */
+  .builder{
+    background:linear-gradient(180deg,#fff,#FFF4FA);
+    border:1px solid var(--line);border-radius:26px;
+    box-shadow:var(--shadow);padding:clamp(18px,4vw,34px);margin-top:26px;
+    display:grid;grid-template-columns:1.25fr .95fr;gap:26px;
+  }
+  @media (max-width:840px){.builder{grid-template-columns:1fr;gap:20px}}
+  .builder .note{
+    font-size:.76rem;color:var(--ink-soft);font-weight:600;margin-top:4px;
+    display:inline-flex;gap:.5em;align-items:baseline;flex-wrap:wrap
+  }
+  .builder .note b{color:var(--pink-text)}
+  .items{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  .item{
+    display:flex;align-items:center;gap:12px;background:#fff;
+    border:1px solid var(--line-soft);border-radius:14px;padding:11px 13px;
+  }
+  .item .info{flex:1;min-width:0}
+  .item .info .nm{font-weight:700;font-size:.96rem}
+  .item .info .pr{font-size:.8rem;color:var(--ink-soft);font-weight:600}
+  .item .info .pr b{color:var(--pink-text)}
+  .item .info .pr.quote b{color:var(--gold);color:#8f6416}
+  .stepper{display:flex;align-items:center;gap:2px;background:var(--base);border-radius:999px;padding:3px;flex:none}
+  .stepper button{
+    width:32px;height:32px;border-radius:50%;border:none;background:#fff;color:var(--pink-text);
+    font-size:1.1rem;font-weight:800;cursor:pointer;line-height:1;display:grid;place-items:center;
+    box-shadow:0 3px 8px -4px rgba(201,40,95,.5);transition:transform .12s ease,background .12s ease
+  }
+  .stepper button:hover{background:var(--brand);color:#fff}
+  .stepper button:active{transform:scale(.9)}
+  .stepper .qty{min-width:30px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums;font-size:1rem}
+
+  .ticket{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 18px 20px;
+    align-self:start;position:sticky;top:150px;
+  }
+  @media (max-width:840px){.ticket{position:static}}
+  .ticket h3{font-family:"Gloock";font-size:1.3rem;margin-bottom:2px}
+  .ticket .mono{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+  .ticket .lines{margin:12px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:12px 0;min-height:56px;display:flex;flex-direction:column;gap:7px}
+  .ticket .lines .empty{color:var(--ink-soft);font-size:.85rem}
+  .tline{display:flex;justify-content:space-between;gap:10px;font-size:.86rem}
+  .tline .l{color:var(--ink)}
+  .tline .r{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+  .tline .r.q{color:#8f6416;font-weight:700}
+  .subtotal{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 2px}
+  .subtotal .lab{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+  .subtotal .val{font-family:"Gloock";font-size:1.9rem;color:var(--pink-text)}
+  .subtotal .val .cur{font-size:.7em}
+  .ticket .disclaimer{font-size:.7rem;color:var(--ink-soft);margin-top:2px;line-height:1.4}
+  .ticket .send{margin-top:14px;width:100%;justify-content:center;padding-left:1.7em}
+  .ticket .copied{font-size:.74rem;color:#8f6416;font-weight:700;margin-top:8px;text-align:center;min-height:1.1em;transition:opacity .3s}
+
+  /* ---------- WHOLESALE (B2B) ---------- */
+  .whole{
+    background:linear-gradient(160deg,#FFFDF8,#FFF7EC);
+    border:1px solid var(--gold-hi);border-radius:28px;
+    padding:clamp(22px,5vw,44px);position:relative;overflow:hidden;
+  }
+  .whole::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(400px 200px at 100% 0,rgba(231,192,107,.28),transparent 70%);pointer-events:none}
+  .whole .eyebrow{color:#8f6416}
+  .whole .eyebrow::before{background:var(--gold)}
+  .whole h2{font-size:clamp(1.9rem,6vw,3rem);margin:10px 0 6px;color:var(--ink)}
+  .whole .lead{color:var(--ink-soft);max-width:52ch}
+  .whole .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 6px}
+  @media (max-width:720px){.whole .grid{grid-template-columns:1fr}}
+  .wcard{background:#fff;border:1px solid #F0E4C8;border-radius:16px;padding:16px}
+  .wcard .n{font-family:"Gloock";font-size:1.05rem;color:#8f6416}
+  .wcard h4{font-family:"Figtree";font-weight:800;font-size:1rem;margin:6px 0 4px;color:var(--ink)}
+  .wcard p{font-size:.86rem;color:var(--ink-soft)}
+  .whole-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:16px}
+  .price-teaser{font-family:"Gloock";font-size:1.6rem;color:var(--ink)}
+  .price-teaser b{color:#8f6416}
+  .price-teaser small{display:block;font-family:"Figtree";font-size:.72rem;color:var(--ink-soft);font-weight:600;letter-spacing:.04em}
+
+  /* ---------- STORE ---------- */
+  .store{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
+  @media (max-width:780px){.store{grid-template-columns:1fr}}
+  .store-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,30px);box-shadow:var(--shadow)}
+  .store dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin:18px 0 0}
+  .store dt{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-text);padding-top:3px}
+  .store dd{margin:0;font-weight:600;color:var(--ink)}
+  .store dd small{display:block;color:var(--ink-soft);font-weight:500;font-size:.86rem}
+  .store-side{background:linear-gradient(160deg,#C9285F,#A81F4E);color:#fff;border-radius:22px;padding:clamp(22px,4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:18px;position:relative;overflow:hidden}
+  .store-side::after{content:"✦";position:absolute;font-size:120px;right:-10px;bottom:-30px;color:rgba(255,255,255,.14)}
+  .store-side .big{font-family:"Gloock";font-size:clamp(2.4rem,9vw,3.4rem);line-height:.95}
+  .store-side .cap{font-size:.92rem;opacity:.95;max-width:26ch}
+  .store-side .foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn.on-dark{background:#fff;color:var(--pink-text);box-shadow:0 12px 24px -12px rgba(0,0,0,.35)}
+  .btn.on-dark .hole{background:var(--brand)}
+  .link-underline.on-dark{color:#fff;background-image:linear-gradient(#fff,#fff)}
+
+  /* ---------- FOOTER RECEIPT ---------- */
+  footer{padding:40px 0 60px}
+  .receipt{
+    width:min(440px,100%);margin-inline:auto;background:#fff;color:var(--ink);
+    font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+    padding:26px 24px 8px;position:relative;
+    box-shadow:0 30px 60px -30px rgba(160,30,80,.5);
+    /* zig-zag tear top & bottom */
+    --z:12px;
+    background-image:
+      linear-gradient(135deg,transparent 50%,#fff 50%),
+      linear-gradient(-135deg,transparent 50%,#fff 50%);
+  }
+  .receipt-inner{background:#fff;position:relative}
+  .tear{height:12px;background:
+    linear-gradient(-45deg,#fff 7px,transparent 0) 0 0/12px 12px repeat-x,
+    linear-gradient(45deg,#fff 7px,transparent 0) 0 0/12px 12px repeat-x;
+    filter:drop-shadow(0 -1px 0 var(--line-soft));
+  }
+  .tear.bottom{transform:scaleY(-1)}
+  .receipt-body{background:#fff;padding:22px 24px;box-shadow:0 30px 60px -34px rgba(160,30,80,.5);font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.82rem;color:#3a2530}
+  .receipt-body .r-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:4px}
+  .receipt-body .r-logo img{width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
+  .receipt-body .r-logo .n{font-family:"Gloock";font-size:1.4rem;color:var(--pink-text)}
+  .receipt-body .r-tag{text-align:center;letter-spacing:.28em;text-transform:uppercase;font-size:.64rem;color:var(--ink-soft);margin-bottom:14px}
+  .r-sep{border:none;border-top:1px dashed #d9b9c8;margin:12px 0}
+  .r-line{display:flex;justify-content:space-between;gap:10px;margin:5px 0}
+  .r-line .k{color:var(--ink-soft)}
+  .r-line .v{text-align:right;color:var(--ink);font-weight:600}
+  .r-social{display:flex;gap:14px;justify-content:center;align-items:center;margin:12px 0 4px}
+  .r-social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--pink-text);font-weight:700}
+  .r-social svg{width:20px;height:20px}
+  .r-thanks{text-align:center;font-weight:700;letter-spacing:.14em;margin:12px 0 2px;color:var(--ink)}
+  .r-barcode{height:34px;margin:12px auto 6px;width:80%;background:repeating-linear-gradient(90deg,#2A1522 0 2px,transparent 2px 4px,#2A1522 4px 5px,transparent 5px 9px,#2A1522 9px 12px,transparent 12px 14px)}
+  .r-seal{text-align:center;font-family:"Figtree";font-size:.68rem;color:var(--ink-soft);line-height:1.5;margin-top:8px}
+  .r-seal a{color:var(--pink-text);font-weight:700;text-decoration:none;border-bottom:1px solid var(--line)}
+
+  /* ---------- FAB (Instagram DM) ---------- */
+  .fab{
+    position:fixed;right:16px;bottom:16px;z-index:80;width:60px;height:60px;border-radius:20px;
+    display:grid;place-items:center;text-decoration:none;
+    background:linear-gradient(135deg,#feda75,#fa7e1e 25%,#d62976 55%,#962fbf 80%,#4f5bd5);
+    box-shadow:0 16px 30px -12px rgba(150,47,191,.7);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .fab:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 22px 36px -12px rgba(150,47,191,.8)}
+  .fab svg{width:30px;height:30px;fill:#fff}
+  .fab .tip{
+    position:absolute;right:70px;background:var(--ink);color:#fff;font-family:"Figtree";
+    font-size:.76rem;font-weight:700;padding:.5em .8em;border-radius:10px;white-space:nowrap;
+    opacity:0;transform:translateX(6px);pointer-events:none;transition:opacity .2s,transform .2s
+  }
+  .fab:hover .tip{opacity:1;transform:translateX(0)}
+  @media (max-width:520px){.fab .tip{display:none}}
+
+  /* ---------- SPARKLES (hero motif) ---------- */
+  .sparkles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .spark{position:absolute;color:var(--brand);opacity:0;font-size:18px;will-change:transform,opacity;
+    animation:drift 7s ease-in-out infinite}
+  .spark.g{color:var(--gold-hi)}
+  .spark.r{color:var(--brand-hi)}
+  @keyframes drift{
+    0%{opacity:0;transform:translateY(10px) scale(.6) rotate(0deg)}
+    25%{opacity:.9}
+    50%{opacity:.55;transform:translateY(-14px) scale(1.05) rotate(90deg)}
+    75%{opacity:.85}
+    100%{opacity:0;transform:translateY(10px) scale(.6) rotate(180deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .spark{animation:none;opacity:.5}
+    .btn,.tag,.chip,.fab{transition:none}
+  }
+
+  .foot-space{height:20px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV: category rail ============ -->
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-top">
+      <a class="wordmark" href="#top" aria-label="Calantha — inicio">
+        <img src="./assets/calantha-logo.jpg" alt="Logo de Calantha">
+        <span>
+          <span class="wm-name">Calantha</span><br>
+          <span class="wm-sub">for you</span>
+        </span>
+      </a>
+      <a class="btn small nav-cta" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">
+        <span class="hole" aria-hidden="true"></span>Escríbenos
+      </a>
+    </div>
+    <nav class="rail" aria-label="Categorías de la tienda">
+      <a class="chip" href="#carteras">Carteras</a>
+      <a class="chip" href="#pijamas">Pijamas</a>
+      <a class="chip" href="#bandanas">Bandanas · $6</a>
+      <a class="chip" href="#termos">Termos</a>
+      <a class="chip" href="#peluches">Peluches</a>
+      <a class="chip" href="#perfumes">Perfumes</a>
+      <a class="chip" href="#cajas">Cajas de regalo</a>
+      <a class="chip" href="#pedido">Arma tu pedido</a>
+      <a class="chip gold-chip" href="#mayoristas">Mayoristas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO: el mostrador ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+  <div class="wrap">
+    <div class="hero-head">
+      <div class="kicker">
+        <span class="eyebrow">Gift shop aesthetic · Nueva Barcelona</span>
+        <span class="badge-follow">✦ <b>+30.400</b>&nbsp;nos siguen en IG</span>
+      </div>
+      <h1 id="h1">El mostrador de <span class="accent">Calantha</span>, ahora en una página.</h1>
+      <p class="hero-sub">Carteras monograma con cadena dorada, bandanas de seda, cajas de regalo y más. <strong>Al detal y al mayor.</strong> Recorre el estante, arrástralo y arma tu pedido sin perderte entre los captions.</p>
+      <div class="domain-hook">
+        <span class="dom">calantha.store</span>
+        <span class="msg"><b>Tu nombre ya existe.</b> Tu web todavía no.</span>
+      </div>
+    </div>
+
+    <div class="counter-label">
+      <span class="txt">El mostrador</span>
+      <span class="drag-hint" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6 4 12l4 6M16 6l4 6-4 6"/></svg>
+        Arrástralo
+      </span>
+      <span class="line"></span>
+    </div>
+
+    <div class="shelf-wrap">
+      <div class="shelf" id="heroShelf" role="list" aria-label="Estante destacado de productos">
+
+        <article class="tag" role="listitem">
+          <span class="star-flag" aria-hidden="true">★ Estrella</span>
+          <div class="media">
+            <img src="./assets/calantha-prod-1-carteras.jpg" alt="Cuatro carteras Calantha de monograma con cadenas doradas sobre peluche rosa" loading="eager">
+          </div>
+          <span class="cat">Carteras</span>
+          <h3>Cartera monograma</h3>
+          <p class="desc">Cadena dorada, correa de piel. La más pedida del feed.</p>
+          <div class="row">
+            <span class="price quote">A cotizar<small>Al detal y al mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <article class="tag" role="listitem">
+          <div class="media">
+            <div class="art art-sparkle">
+              <div class="silo" aria-hidden="true">
+                <svg viewBox="0 0 100 100" fill="none"><path d="M30 42h40l-4 40a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6l-4-40Z" fill="#F56E9F"/><path d="M38 42v-6a12 12 0 0 1 24 0v6" stroke="#C9285F" stroke-width="5"/><circle cx="50" cy="60" r="5" fill="#fff"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="cat">Bandanas</span>
+          <h3>Bandana de seda</h3>
+          <p class="desc">+20 modelos. El detalle que combina con todo.</p>
+          <div class="row">
+            <span class="price"><span class="cur">$</span>6<small>+20 modelos</small></span>
+            <a class="link-underline" href="#pedido">Al pedido
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <article class="tag" role="listitem">
+          <div class="media">
+            <div class="art art-sparkle">
+              <div class="silo" aria-hidden="true">
+                <svg viewBox="0 0 100 100" fill="none"><rect x="24" y="30" width="52" height="52" rx="10" fill="#F7C8DE"/><path d="M24 48h52M50 30v52" stroke="#ED5C85" stroke-width="4"/><path d="M40 20l10 10 10-10" stroke="#C99A3E" stroke-width="5" fill="none"/><circle cx="50" cy="48" r="7" fill="#E7C06B"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="cat">Cajas de regalo</span>
+          <h3>Caja temática</h3>
+          <p class="desc">Termo personalizado + sorpresas. Lista para regalar.</p>
+          <div class="row">
+            <span class="price">desde&nbsp;<span class="cur">$</span>13<small>Personalizable</small></span>
+            <a class="link-underline" href="#pedido">Al pedido
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <article class="tag" role="listitem">
+          <div class="media">
+            <div class="art art-sparkle">
+              <div class="silo" aria-hidden="true">
+                <svg viewBox="0 0 100 100" fill="none"><rect x="36" y="26" width="28" height="54" rx="12" fill="#F56E9F"/><rect x="40" y="20" width="20" height="10" rx="4" fill="#C9285F"/><path d="M36 44h28" stroke="#fff" stroke-width="3"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="cat">Termos</span>
+          <h3>Termo personalizado</h3>
+          <p class="desc">Con tu nombre y tus colores. Ideal en combo.</p>
+          <div class="row">
+            <span class="price quote">A cotizar<small>Al detal y al mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATÁLOGO POR ESTANTES ============ -->
+<section aria-labelledby="cat-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="titles">
+        <span class="sec-num">01 · CATÁLOGO</span>
+        <h2 id="cat-h">Recorre la tienda, estante por estante</h2>
+        <p>Agarra cada fila y deslízala como en el mostrador. Precios de referencia · julio 2026.</p>
+      </div>
+      <a class="btn small" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener"><span class="hole" aria-hidden="true"></span>Pregunta por un modelo</a>
+    </div>
+
+    <!-- Carteras -->
+    <div class="shelf-block" id="carteras">
+      <div class="cat-row"><h3>Carteras</h3><span class="meta">Monograma · cadena dorada · <b>al mayor</b></span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <span class="star-flag" aria-hidden="true">★ Estrella</span>
+          <div class="media"><img src="./assets/calantha-prod-1-carteras.jpg" alt="Carteras Calantha de monograma con cadenas doradas" loading="lazy"></div>
+          <span class="cat">Carteras</span><h3>Cartera monograma</h3>
+          <p class="desc">Blanca, camel, marrón o negra. Cadena dorada.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M26 40h48l-5 42a6 6 0 0 1-6 5H37a6 6 0 0 1-6-5l-5-42Z" fill="#F7C8DE"/><path d="M50 40 26 40M50 40l24 0" stroke="#ED5C85" stroke-width="3"/><path d="M34 40c0-16 32-16 32 0" stroke="#C99A3E" stroke-width="4" fill="none"/></svg></div></div></div>
+          <span class="cat">Carteras</span><h3>Mini bandolera</h3>
+          <p class="desc">Compacta para el día a día. Varios tonos.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="28" y="38" width="44" height="40" rx="8" fill="#F56E9F"/><path d="M40 38v-6a10 10 0 0 1 20 0v6" stroke="#C9285F" stroke-width="5" fill="none"/><rect x="44" y="54" width="12" height="8" rx="2" fill="#E7C06B"/></svg></div></div></div>
+          <span class="cat">Carteras</span><h3>Bolso de mano</h3>
+          <p class="desc">Estructura firme, aire elegante. Para combinar.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Pijamas -->
+    <div class="shelf-block" id="pijamas">
+      <div class="cat-row"><h3>Pijamas</h3><span class="meta">De peluche · suavecitas · <b>aesthetic</b></span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M34 30h32l6 12-8 4v30H36V46l-8-4 6-12Z" fill="#F7C8DE"/><path d="M50 34v46" stroke="#ED5C85" stroke-width="3"/><circle cx="50" cy="46" r="3" fill="#C9285F"/><circle cx="50" cy="56" r="3" fill="#C9285F"/></svg></div></div></div>
+          <span class="cat">Pijamas</span><h3>Pijama de peluche</h3>
+          <p class="desc">Calientita y coqueta. Tallas surtidas.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="34" y="34" width="32" height="24" rx="6" fill="#F56E9F"/><rect x="36" y="60" width="28" height="20" rx="6" fill="#F7C8DE"/><path d="M40 46h20" stroke="#fff" stroke-width="3"/></svg></div></div></div>
+          <span class="cat">Pijamas</span><h3>Conjunto short</h3>
+          <p class="desc">Fresquito para el verano de Anzoátegui.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Bandanas -->
+    <div class="shelf-block" id="bandanas">
+      <div class="cat-row"><h3>Bandanas de seda</h3><span class="meta"><b>$6</b> · +20 modelos</span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M22 38l28 8 28-8-10 22-18 6-18-6-10-22Z" fill="#F56E9F"/><path d="M50 46v30" stroke="#C9285F" stroke-width="3"/><path d="M32 44l36 0" stroke="#fff" stroke-width="2"/></svg></div></div></div>
+          <span class="cat">Bandanas</span><h3>Bandana clásica</h3>
+          <p class="desc">Seda suave. Para el cabello o el bolso.</p>
+          <div class="row"><span class="price"><span class="cur">$</span>6<small>Cada una</small></span>
+            <a class="link-underline" href="#pedido">Al pedido</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M24 40l26 6 26-6-8 20-18 6-18-6-8-20Z" fill="#F7C8DE"/><circle cx="40" cy="52" r="3" fill="#ED5C85"/><circle cx="52" cy="56" r="3" fill="#ED5C85"/><circle cx="60" cy="50" r="3" fill="#C99A3E"/></svg></div></div></div>
+          <span class="cat">Bandanas</span><h3>Estampado floral</h3>
+          <p class="desc">Modelos rotativos cada temporada.</p>
+          <div class="row"><span class="price"><span class="cur">$</span>6<small>Cada una</small></span>
+            <a class="link-underline" href="#pedido">Al pedido</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M26 42l24 5 24-5-7 18-17 6-17-6-7-18Z" fill="#F56E9F"/><path d="M34 46l32 0M38 54l24 0" stroke="#fff" stroke-width="2"/></svg></div></div></div>
+          <span class="cat">Bandanas</span><h3>Lisa premium</h3>
+          <p class="desc">Colores sólidos que combinan con todo.</p>
+          <div class="row"><span class="price"><span class="cur">$</span>6<small>Cada una</small></span>
+            <a class="link-underline" href="#pedido">Al pedido</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Termos -->
+    <div class="shelf-block" id="termos">
+      <div class="cat-row"><h3>Termos & tumblers</h3><span class="meta">Personalizados · <b>combo regalo</b></span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="38" y="26" width="24" height="52" rx="10" fill="#F56E9F"/><rect x="42" y="20" width="16" height="9" rx="3" fill="#C9285F"/><path d="M38 42h24" stroke="#fff" stroke-width="3"/><path d="M62 40c8 2 8 14 0 16" stroke="#E7C06B" stroke-width="4" fill="none"/></svg></div></div></div>
+          <span class="cat">Termos</span><h3>Termo con nombre</h3>
+          <p class="desc">Mantiene frío por horas. Tú eliges el color.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M40 30h20l-3 48a5 5 0 0 1-5 5h-4a5 5 0 0 1-5-5l-3-48Z" fill="#F7C8DE"/><rect x="42" y="24" width="16" height="8" rx="3" fill="#ED5C85"/><path d="M40 44h20" stroke="#C99A3E" stroke-width="3"/></svg></div></div></div>
+          <span class="cat">Termos</span><h3>Tumbler aesthetic</h3>
+          <p class="desc">Con pitillo y tapa a prueba de derrames.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Peluches -->
+    <div class="shelf-block" id="peluches">
+      <div class="cat-row"><h3>Peluches</h3><span class="meta">Suaves · para regalar con la caja</span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="54" r="22" fill="#F7C8DE"/><circle cx="36" cy="34" r="9" fill="#F56E9F"/><circle cx="64" cy="34" r="9" fill="#F56E9F"/><circle cx="44" cy="52" r="3" fill="#2A1522"/><circle cx="56" cy="52" r="3" fill="#2A1522"/><path d="M46 60q4 4 8 0" stroke="#C9285F" stroke-width="2.5" fill="none"/></svg></div></div></div>
+          <span class="cat">Peluches</span><h3>Osito abrazable</h3>
+          <p class="desc">El acompañante perfecto de una caja de regalo.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Varios tamaños</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 32c14 0 22 10 22 24s-10 24-22 24-22-10-22-24 8-24 22-24Z" fill="#F56E9F"/><circle cx="43" cy="52" r="3" fill="#2A1522"/><circle cx="57" cy="52" r="3" fill="#2A1522"/><path d="M50 58v6" stroke="#C9285F" stroke-width="2.5"/><path d="M34 40l8 6M66 40l-8 6" stroke="#C99A3E" stroke-width="3"/></svg></div></div></div>
+          <span class="cat">Peluches</span><h3>Conejo felpa</h3>
+          <p class="desc">Colección aesthetic en tonos pastel.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Varios tamaños</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Perfumes -->
+    <div class="shelf-block" id="perfumes">
+      <div class="cat-row"><h3>Perfumes</h3><span class="meta">Aromas femeninos · detalle final</span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="38" y="40" width="24" height="38" rx="6" fill="#F56E9F"/><rect x="44" y="30" width="12" height="12" fill="#F7C8DE"/><rect x="45" y="24" width="10" height="8" rx="2" fill="#C99A3E"/><path d="M44 56h12" stroke="#fff" stroke-width="3"/></svg></div></div></div>
+          <span class="cat">Perfumes</span><h3>Body mist floral</h3>
+          <p class="desc">Fragancia ligera para todos los días.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M40 44c-4 4-4 30 0 34h20c4-4 4-30 0-34Z" fill="#F7C8DE"/><rect x="43" y="30" width="14" height="14" fill="#F56E9F"/><rect x="44" y="24" width="12" height="8" rx="2" fill="#E7C06B"/></svg></div></div></div>
+          <span class="cat">Perfumes</span><h3>Set mini aromas</h3>
+          <p class="desc">Ideal para llevar en la cartera.</p>
+          <div class="row"><span class="price quote">A cotizar<small>Detal y mayor</small></span>
+            <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Lo quiero</a></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Cajas de regalo -->
+    <div class="shelf-block" id="cajas">
+      <div class="cat-row"><h3>Cajas de regalo</h3><span class="meta"><b>desde $13</b> · temáticas y personalizadas</span></div>
+      <div class="shelf" role="list">
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="26" y="42" width="48" height="40" rx="6" fill="#F56E9F"/><rect x="24" y="34" width="52" height="12" rx="4" fill="#F7C8DE"/><path d="M50 34v48" stroke="#C9285F" stroke-width="4"/><path d="M40 24l10 10 10-10" stroke="#C99A3E" stroke-width="5" fill="none"/></svg></div></div></div>
+          <span class="cat">Cajas de regalo</span><h3>Caja Día del Padre</h3>
+          <p class="desc">Termo personalizado + detalles. Lista para dar.</p>
+          <div class="row"><span class="price">desde&nbsp;<span class="cur">$</span>13<small>Personalizable</small></span>
+            <a class="link-underline" href="#pedido">Al pedido</a></div>
+        </article>
+        <article class="tag" role="listitem">
+          <div class="media"><div class="art art-sparkle"><div class="silo" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="28" y="44" width="44" height="38" rx="6" fill="#F7C8DE"/><rect x="26" y="36" width="48" height="12" rx="4" fill="#ED5C85"/><path d="M50 36v46" stroke="#fff" stroke-width="3"/><circle cx="50" cy="34" r="7" fill="#E7C06B"/></svg></div></div></div>
+          <span class="cat">Cajas de regalo</span><h3>Caja cumpleaños</h3>
+          <p class="desc">Arma la sorpresa con lo que más le guste.</p>
+          <div class="row"><span class="price">desde&nbsp;<span class="cur">$</span>13<small>Personalizable</small></span>
+            <a class="link-underline" href="#pedido">Al pedido</a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARMA TU PEDIDO AL MAYOR ============ -->
+<section id="pedido" aria-labelledby="ped-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="titles">
+        <span class="sec-num">02 · TU PEDIDO</span>
+        <h2 id="ped-h">Arma tu pedido al mayor</h2>
+        <p>Suma cantidades y arma tu lista. Te la copiamos ordenada y abrimos el chat de Instagram para que solo la pegues.</p>
+      </div>
+    </div>
+
+    <div class="builder">
+      <div>
+        <span class="eyebrow">Selecciona tus productos</span>
+        <p class="note">Precios de referencia · <b>julio 2026</b> · el total final lo confirma Calantha.</p>
+        <div class="items" id="items">
+          <!-- items injected by JS from data -->
+        </div>
+      </div>
+
+      <aside class="ticket" aria-label="Resumen de tu pedido">
+        <h3>Tu pedido</h3>
+        <div class="mono" style="font-size:.72rem;color:var(--ink-soft);letter-spacing:.08em">CALANTHA · AL MAYOR</div>
+        <div class="lines" id="ticketLines">
+          <span class="empty">Aún no has agregado productos. Usa los + para empezar.</span>
+        </div>
+        <div class="subtotal">
+          <span class="lab">Subtotal de referencia</span>
+          <span class="val"><span class="cur">$</span><span id="subtotal">0</span></span>
+        </div>
+        <p class="disclaimer" id="quoteNote">Los productos “a cotizar” no suman al subtotal: Calantha te pasa su precio al mayor por el chat.</p>
+        <button class="btn send" id="sendBtn" type="button">
+          <span class="hole" aria-hidden="true"></span>
+          Enviar mi pedido por Instagram
+        </button>
+        <div class="copied" id="copiedMsg" role="status" aria-live="polite"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAYORISTAS / SURTE TU NEGOCIO ============ -->
+<section id="mayoristas" aria-labelledby="may-h">
+  <div class="wrap">
+    <div class="whole">
+      <span class="eyebrow">Para revendedoras</span>
+      <h2 id="may-h">Surte tu negocio y revende</h2>
+      <p class="lead">Miles de clientas ya conocen estos productos. Compra al mayor, elige tus modelos y véndelos en tu ciudad con tu propio margen.</p>
+      <div class="grid">
+        <div class="wcard"><div class="n">01</div><h4>Eliges tu surtido</h4><p>Carteras, bandanas, termos, cajas… armas la mezcla que se vende en tu zona.</p></div>
+        <div class="wcard"><div class="n">02</div><h4>Precio al mayor</h4><p>Mientras más surtes, mejor tu costo por pieza. Te lo confirmamos por el chat.</p></div>
+        <div class="wcard"><div class="n">03</div><h4>Revendes con margen</h4><p>Productos aesthetic con demanda comprobada en Instagram. Tú pones el precio final.</p></div>
+      </div>
+      <div class="whole-cta">
+        <span class="price-teaser"><b>“¿Todo esto por $161?”</b><small>Ejemplo real de surtido al mayor para revender</small></span>
+        <a class="btn gold" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener"><span class="hole" aria-hidden="true"></span>Quiero surtir mi negocio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA TIENDA ============ -->
+<section id="tienda" aria-labelledby="store-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="titles">
+        <span class="sec-num">03 · LA TIENDA</span>
+        <h2 id="store-h">Ven a vernos en Nueva Barcelona</h2>
+      </div>
+    </div>
+    <div class="store">
+      <div class="store-card">
+        <span class="eyebrow">Visítanos</span>
+        <dl>
+          <dt>Dirección</dt><dd>C.C. Camino Real, planta baja, Local A-04<small>Nueva Barcelona, estado Anzoátegui, Venezuela</small></dd>
+          <dt>Horario</dt><dd>Lunes a Sábado<small>10:00 am – 7:00 pm</small></dd>
+          <dt>Contacto</dt><dd>Instagram @calantha.store<small>Te respondemos por mensaje directo</small></dd>
+        </dl>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;align-items:center">
+          <a class="btn small" href="https://www.google.com/maps/search/?api=1&query=C.C.%20Camino%20Real%20Nueva%20Barcelona%20Anzo%C3%A1tegui" target="_blank" rel="noopener"><span class="hole" aria-hidden="true"></span>Cómo llegar</a>
+          <a class="link-underline" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Escríbenos antes de venir
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="store-side">
+        <div>
+          <div class="big">+30.400</div>
+          <p class="cap">clientas nos siguen en Instagram. Ahora también pueden pedirte sin perderse entre los captions.</p>
+        </div>
+        <div class="foot">
+          <a class="btn small on-dark" href="https://www.instagram.com/calantha.store/" target="_blank" rel="noopener"><span class="hole" aria-hidden="true"></span>Ver el perfil</a>
+          <a class="link-underline on-dark" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener">Enviar DM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER: recibo impreso ============ -->
+<footer>
+  <div class="wrap">
+    <div class="receipt-inner">
+      <div class="tear" aria-hidden="true"></div>
+      <div class="receipt-body">
+        <div class="r-logo">
+          <img src="./assets/calantha-logo.jpg" alt="Logo de Calantha">
+          <span class="n">Calantha</span>
+        </div>
+        <div class="r-tag">— for you —</div>
+        <hr class="r-sep">
+        <div class="r-line"><span class="k">TIENDA</span><span class="v">C.C. Camino Real, PB, A-04</span></div>
+        <div class="r-line"><span class="k">CIUDAD</span><span class="v">Nueva Barcelona, Anzoátegui</span></div>
+        <div class="r-line"><span class="k">HORARIO</span><span class="v">Lun–Sáb · 10am–7pm</span></div>
+        <div class="r-line"><span class="k">RUBRO</span><span class="v">Accesorios · detal y mayor</span></div>
+        <hr class="r-sep">
+        <div class="r-social">
+          <a href="https://www.instagram.com/calantha.store/" target="_blank" rel="noopener" aria-label="Instagram de Calantha">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.17-.42-.37-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.5 0-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.43 8.5 3.43 8.86 3.43 12s0 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.07 1.6.07 4.74.07s3.5 0 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.07-1.24.07-1.6.07-4.74s0-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4 15.14 4 12 4Zm0 3.07a4.93 4.93 0 1 1 0 9.86 4.93 4.93 0 0 1 0-9.86Zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26Zm5.14-.9a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>
+            @calantha.store
+          </a>
+        </div>
+        <div class="r-barcode" aria-hidden="true"></div>
+        <div class="r-thanks">GRACIAS POR TU VISITA 💕</div>
+        <hr class="r-sep">
+        <div class="r-seal">
+          Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a><br>
+          Esta es una propuesta de diseño — no es el sitio oficial.
+        </div>
+      </div>
+      <div class="tear bottom" aria-hidden="true"></div>
+    </div>
+    <div class="foot-space"></div>
+  </div>
+</footer>
+
+<!-- ============ FAB: Instagram DM ============ -->
+<a class="fab" href="https://ig.me/m/calantha.store" target="_blank" rel="noopener" aria-label="Escríbenos por Instagram">
+  <span class="tip">Escríbenos por Instagram</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.17-.42-.37-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.42 2.21 8.8 2.2 12 2.2Zm0 4.87a4.93 4.93 0 1 0 0 9.86 4.93 4.93 0 0 0 0-9.86Zm0 1.8a3.13 3.13 0 1 1 0 6.26 3.13 3.13 0 0 1 0-6.26Zm5.14-2.7a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var DM = "https://ig.me/m/calantha.store";
+
+  /* ---------- Sparkles (hero motif) ---------- */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var sk = document.getElementById("sparkles");
+  if(sk){
+    var glyphs = ["✦","✧","❋","✦","✧"];
+    var cls = ["","g","r"];
+    var n = reduce ? 6 : 14;
+    for(var i=0;i<n;i++){
+      var s = document.createElement("span");
+      s.className = "spark " + cls[i%3];
+      s.textContent = glyphs[i%glyphs.length];
+      s.style.left = (5 + Math.random()*90) + "%";
+      s.style.top = (5 + Math.random()*80) + "%";
+      s.style.fontSize = (12 + Math.random()*20) + "px";
+      s.style.animationDelay = (Math.random()*7).toFixed(2) + "s";
+      s.style.animationDuration = (5 + Math.random()*5).toFixed(2) + "s";
+      sk.appendChild(s);
+    }
+  }
+
+  /* ---------- Draggable hero shelf w/ inertia ---------- */
+  function makeDraggable(el){
+    if(!el) return;
+    var down=false, moved=false, startX=0, startScroll=0, lastX=0, lastT=0, vel=0, raf=null;
+    function stopMomentum(){ if(raf){cancelAnimationFrame(raf); raf=null;} }
+    el.addEventListener("pointerdown", function(e){
+      if(e.pointerType==="mouse" && e.button!==0) return;
+      down=true; moved=false; stopMomentum();
+      startX=e.clientX; startScroll=el.scrollLeft; lastX=e.clientX; lastT=e.now||performance.now(); vel=0;
+    });
+    el.addEventListener("pointermove", function(e){
+      if(!down) return;
+      var dx = e.clientX - startX;
+      if(Math.abs(dx)>4 && !moved){ moved=true; el.classList.add("dragging"); try{el.setPointerCapture(e.pointerData||e.pointerId);}catch(_){} }
+      if(moved){
+        el.scrollLeft = startScroll - dx;
+        var now = performance.now();
+        var dt = now - lastT || 16;
+        vel = (e.clientX - lastX) / dt; /* px per ms */
+        lastX = e.clientX; lastT = now;
+        e.preventDefault();
+      }
+    });
+    function release(){
+      if(!down) return;
+      down=false;
+      if(!moved){ el.classList.remove("dragging"); return; }
+      if(reduce){ el.classList.remove("dragging"); return; }
+      var v = -vel * 16; /* per frame */
+      (function momentum(){
+        v *= 0.94;
+        el.scrollLeft += v;
+        if(Math.abs(v) > 0.4){ raf = requestAnimationFrame(momentum); }
+        else { el.classList.remove("dragging"); raf=null; }
+      })();
+    }
+    el.addEventListener("pointerup", release);
+    el.addEventListener("pointercancel", release);
+    el.addEventListener("pointerleave", function(){ if(down && !moved){down=false;} });
+    /* prevent click navigation right after a drag */
+    el.addEventListener("click", function(e){
+      if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; }
+    }, true);
+  }
+  makeDraggable(document.getElementById("heroShelf"));
+
+  /* ---------- Order builder ---------- */
+  var PRODUCTS = [
+    {id:"bandana", name:"Bandana de seda", price:6,  meta:"$6 c/u · +20 modelos"},
+    {id:"caja",    name:"Caja de regalo",  price:13, meta:"desde $13 · personalizable"},
+    {id:"cartera", name:"Cartera monograma", price:0, meta:"a cotizar · detal y mayor"},
+    {id:"termo",   name:"Termo personalizado", price:0, meta:"a cotizar · detal y mayor"},
+    {id:"pijama",  name:"Pijama de peluche", price:0, meta:"a cotizar · detal y mayor"},
+    {id:"perfume", name:"Perfume / body mist", price:0, meta:"a cotizar · detal y mayor"}
+  ];
+  var qty = {};
+  PRODUCTS.forEach(function(p){ qty[p.id]=0; });
+
+  var itemsEl = document.getElementById("items");
+  PRODUCTS.forEach(function(p){
+    var row = document.createElement("div");
+    row.className = "item";
+    var priced = p.price > 0;
+    row.innerHTML =
+      '<div class="info"><div class="nm">'+p.name+'</div>'+
+      '<div class="pr'+(priced?'':' quote')+'">'+
+        (priced ? 'Ref. <b>$'+p.price+'</b> c/u' : 'Precio <b>a cotizar</b>')+
+      '</div></div>'+
+      '<div class="stepper" role="group" aria-label="Cantidad de '+p.name+'">'+
+        '<button type="button" aria-label="Quitar uno de '+p.name+'" data-act="dec" data-id="'+p.id+'">−</button>'+
+        '<span class="qty" id="q-'+p.id+'" aria-live="polite">0</span>'+
+        '<button type="button" aria-label="Agregar uno de '+p.name+'" data-act="inc" data-id="'+p.id+'">+</button>'+
+      '</div>';
+    itemsEl.appendChild(row);
+  });
+
+  var subtotalEl = document.getElementById("subtotal");
+  var linesEl = document.getElementById("ticketLines");
+  var quoteNote = document.getElementById("quoteNote");
+
+  function money(n){ return n.toLocaleString("es-VE"); }
+
+  function render(){
+    var subtotal = 0, hasItems=false, hasQuote=false;
+    linesEl.innerHTML = "";
+    PRODUCTS.forEach(function(p){
+      var q = qty[p.id];
+      document.getElementById("q-"+p.id).textContent = q;
+      if(q<=0) return;
+      hasItems = true;
+      var line = document.createElement("div");
+      line.className = "tline";
+      if(p.price>0){
+        var sum = p.price*q;
+        subtotal += sum;
+        line.innerHTML = '<span class="l">'+q+'× '+p.name+'</span><span class="r">$'+money(sum)+'</span>';
+      }else{
+        hasQuote = true;
+        line.innerHTML = '<span class="l">'+q+'× '+p.name+'</span><span class="r q">a cotizar</span>';
+      }
+      linesEl.appendChild(line);
+    });
+    if(!hasItems){
+      linesEl.innerHTML = '<span class="empty">Aún no has agregado productos. Usa los + para empezar.</span>';
+    }
+    subtotalEl.textContent = money(subtotal);
+    quoteNote.style.display = hasQuote ? "block" : (hasItems ? "none" : "block");
+  }
+
+  itemsEl.addEventListener("click", function(e){
+    var b = e.target.closest("button[data-act]");
+    if(!b) return;
+    var id = b.getAttribute("data-id");
+    if(b.getAttribute("data-act")==="inc"){ qty[id]++; }
+    else { qty[id] = Math.max(0, qty[id]-1); }
+    render();
+  });
+
+  function buildMessage(){
+    var lines = [], subtotal = 0, hasQuote=false;
+    PRODUCTS.forEach(function(p){
+      var q = qty[p.id];
+      if(q<=0) return;
+      if(p.price>0){ subtotal += p.price*q; lines.push(q+"× "+p.name+" ($"+p.price+" c/u)"); }
+      else { hasQuote=true; lines.push(q+"× "+p.name+" (a cotizar)"); }
+    });
+    var msg = "Hola Calantha 💕 quiero al mayor:\n";
+    if(lines.length===0){ msg += "- (aún estoy armando mi pedido)"; }
+    else { msg += "- " + lines.join("\n- "); }
+    if(subtotal>0){ msg += "\n\nSubtotal de referencia: $"+money(subtotal); }
+    if(hasQuote){ msg += "\nLos “a cotizar” me los confirmas por aquí, porfa 🙏"; }
+    msg += "\n\n(Enviado desde su página · precios de referencia julio 2026)";
+    return msg;
+  }
+
+  var sendBtn = document.getElementById("sendBtn");
+  var copiedMsg = document.getElementById("copiedMsg");
+  sendBtn.addEventListener("click", function(){
+    var msg = buildMessage();
+    function openDM(){ window.open(DM, "_blank", "noopener"); }
+    function feedback(ok){
+      copiedMsg.textContent = ok ? "Pedido copiado ✓ pégalo en el chat" : "Abrimos el chat — cuéntanos tu pedido";
+      copiedMsg.style.opacity = "1";
+      setTimeout(function(){ copiedMsg.style.opacity="0"; }, 4000);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg).then(function(){ feedback(true); openDM(); })
+      .catch(function(){
+        try{
+          var ta=document.createElement("textarea"); ta.value=msg; ta.style.position="fixed"; ta.style.opacity="0";
+          document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
+          feedback(true);
+        }catch(_){ feedback(false); }
+        openDM();
+      });
+    }else{
+      try{
+        var ta2=document.createElement("textarea"); ta2.value=msg; ta2.style.position="fixed"; ta2.style.opacity="0";
+        document.body.appendChild(ta2); ta2.select(); document.execCommand("copy"); document.body.removeChild(ta2);
+        feedback(true);
+      }catch(_){ feedback(false); }
+      openDM();
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
