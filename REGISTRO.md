@@ -134,9 +134,16 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 | Dock inferior (nav) | **2** (**Leonardo Bravo** = tab-bar flotante de 3 pestañas · **Dra. Mary Figuera** = barra de acción full-width CTA) | **vetado** para la próxima (formas distintas, pero mismo bucket "dock inferior") |
 | Footer-tarjeta flotante sobre bloque de marca | 1 (**Leonardo Bravo**) | libre — 1 uso (Dra. Mary Figuera lo evitó al detectar la colisión → mega-footer por columnas) |
 | Comparador antes/después ARRASTRABLE (wipe con `width`+`overflow`, sin clip-path) | 1 (**Dra. Mary Figuera**) | libre — 1 uso; firma ideal para antes/después |
-| Container queries (layout interno de tarjeta por ancho de contenedor) | 1 (**Dra. Mary Figuera**) | libre — 1 uso |
+| Container queries (layout interno de tarjeta por ancho de contenedor) | **2** (Dra. Mary Figuera, **Calantha**) | libre — 2 usos, se acerca al techo |
 | `<details>` estilizado (acordeón FAQ sin JS, marcador +/× animado) | 1 (**Dra. Mary Figuera**) | libre — 1 uso |
 | Mega-footer por columnas | 1 (**Dra. Mary Figuera**) | libre — 1 uso |
+| `scroll-snap` horizontal (vitrina/estantes) | **3** (Joyas Cole, Leonardo Bravo, **Calantha**) | libre pero **muy usado** — la próxima busque otro motor de recorrido |
+| Estante arrastrable con inercia (pointer + momentum rAF) | 1 (**Calantha**) | libre — 1 uso; firma del hero-mostrador |
+| Order-builder con subtotal/lista en vivo → copia + DM | 1 (**Calantha**) | libre — 1 uso (pariente lejano del compositor wa.me de gineco/Leonardo; aquí es carrito, no chat) |
+| Sparkles CSS a la deriva (keyframes, off con reduce-motion) | 1 (**Calantha**) | libre — 1 uso |
+| Riel superior de categorías con `scroll-snap` (nav) | 1 (**Calantha**) | libre — 1 uso; nav nueva |
+| Footer-recibo (ticket con corte dentado + código de barras) | 1 (**Calantha**) | libre — 1 uso; footer nuevo |
+| Tarjetas-hangtag (swing-tag con perforación + cordón) | 1 (**Calantha**) | libre — 1 uso |
 
 Dos bases claras seguidas (CETI y Amazonas). **La próxima demo va en base oscura**, salvo
 que la marca del negocio lo prohíba de plano.
@@ -167,6 +174,20 @@ releer el `REGISTRO.md` del HEAD remoto ANTES de publicar — atrapó la colisi�
 Contador de bases: CETI · Apamatte · Amazonas · Leonardo Bravo · **Mary Figuera** = clara → **la
 próxima demo debe ir en base OSCURA** salvo que la marca lo prohíba. Tipografías `Marcellus` y
 `Manrope`, 1 uso cada una.
+
+⚠️ **Calantha (@calantha.store, 2026-07-24) — base CLARA (su marca es rosa pálido; la alternancia
+"toca oscura" cede ante la marca, como permite la regla).** Gift shop aesthetic de accesorios en
+Nueva Barcelona (Anzoátegui), 30.4K seguidores, **sin web y con el dominio `calantha.store` libre**
+→ gancho estrella. Arquetipo **mostrador coquette / lookbook** (estantes `scroll-snap` + bloc "arma
+tu pedido al mayor" con subtotal en vivo), firma = **estante arrastrable con inercia** + sparkles CSS,
+nav = **riel de categorías scroll-snap**, footer = **recibo con código de barras**, tarjetas = **hangtag**.
+Sin WhatsApp público → todos los CTA y el FAB (ícono Instagram) van al **DM de IG**. Ninguna técnica
+vetada. **Colisión tipográfica atrapada por el grep multi-repo:** la asignación inicial era Gloock +
+**Figtree**, pero `grep -l "family=Figtree" */index.html` reveló que **leonardobravov ya usa Figtree**
+→ se cambió a **Gloock + Nunito** (ambas 1 uso, Nunito redondeada dulce, on-brand). Confirma la lección:
+el gate de fuentes se corre contra **todos** los `*/index.html`, no solo la tabla. `scroll-snap` horizontal
+pasa a **3 usos** (muy usado) y container queries a **2**. Contador de bases: …Leonardo Bravo · Mary
+Figuera (claras) · **Calantha (clara)** → la próxima demo **debe ir en base OSCURA** salvo marca que lo prohíba.
 
 ### Gotcha de proceso (2026-07-24) — construir contra el ledger REAL, no el bootstrap
 
