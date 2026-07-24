@@ -12,7 +12,7 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 | Amazonas Pole Academy | `amazonas-pole-academy` | Off-white frío `#F0F0F5` + navy `#12487D` + azul de marca `#03569F` + acero `#566E74`; cian `#36D4EB` con tope de 2 usos | Archivo Black + Yellowtail (script) + Jost · densidad media-alta · base clara high-key con UNA sola banda navy (Exotic) | "El tablero de horarios que no existe" — bandas editoriales numeradas 01–06, grilla filtrable como protagonista | **"El asta"** — línea SVG vertical que se dibuja con el scroll y remata en punta de lanza en el footer, con nodos por sección (tomada del asta real del isotipo) | Píldora flotante centrada / footer-póster con display gigante a sangre + barra de contacto azul full-width | Filas full-width con hairlines de 1px, sin sombra · CTA rectangular duro · píldora reservada SOLO a los chips de horario | 2026-07-23 | demo publicada — mensaje **NO enviado** |
 | Apamatte (Sophia Antonietta) | `apamatte` | Cereza `#B00434` · amarillo `#F8CB65` · coral `#C43C16` · rosa `#D4778D` · verde `#4E6136` sobre crema `#F7EFE7` — muestreados con PIL de su propio mockup de empaque | Fraunces variable (opsz/wght/SOFT/WONK) + Karla · densidad media con aire · base clara | Caja-vitrina con ventanas troqueladas (bento desigual dentro de un "panel de caja") | Apertura de caja: lazo que se desata + tapa que se levanta + foto enmascarada con la silueta del empaque + wordmark variable que gana peso al abrir | Píldora flotante superior centrada que se contrae al scroll / Footer-póster con display gigante + franja floral SVG propia | Fichas tipo etiqueta de caja con hairlines y chips cuadrados · CTA principal = **sello circular** con texto en trayectoria (eco de su sticker) · botón secundario = subrayado tipográfico | 2026-07-23 | por enviar |
 
-| Nativos CF | `nativoscf` | Verde `#25D366` dominante | Anton + Barlow Condensed, base clara | Bandas apiladas (`hero` + `band`) | _(sin firma registrada)_ | _(reconstruir)_ | _(reconstruir)_ | _(retroactivo)_ | _(revisar)_ |
+| Nativos CrossFit | `nativoscf` | Negro `#0A0A0A` + carbón `#181818` · **amarillo de marca `#F8C40D`** (acento 10%, mismo color que la pintura real del rig) · blanco `#FBFBFC` · crema `#F3EFE9` (una sola sección) · rojo `#E50629` de alerta — muestreados con PIL del logo y el feed | **Anton** (display, solo mayúsculas) + **Barlow Condensed** (UI/datos) · densidad media-alta industrial · **base OSCURA** | **"La pizarra del box"** — bandas full-width numeradas 01–06 separadas por reglas de 1px amarillas, etiquetas uppercase con tracking; **cero grid de cards** | **Line-drawing SVG del isotipo** (punta de lanza en aro roto) dibujándose con `stroke-dashoffset` y rellenándose al terminar · corte de "barba de lanza" con `clip-path` entre secciones | **Píldora flotante centrada** / **Footer-póster** con display gigante ("CONTÁCTANOS HOY, TE ESPERAMOS") | **Cajas de borde amarillo 1px sobre negro** (calco de cómo maquetan sus horarios en IG) + filas full-width sin cards · CTA principal = rectángulo duro relleno `#F8C40D` texto negro · secundario = subrayado tipográfico amarillo | 2026-07-24 | demo publicada — **mensaje NO enviado** (Edith debe revisar) |
 | Dayrrig Duarte (Pure Glow Day) | `pureglowday` | Vino `#701A1B` (dominante) · crema `#DCDDD8` · rojo CTA `#931717` · oro `#A8946B` / `#C9B489` · tinta `#2A1416` — muestreados con PIL de su carrusel "QUIEN SOY" (el vino dio sd=0.0) | **Newsreader** variable (opsz 6–72, roman + itálica en pullquotes; sin animar ejes) + Instrument Sans · densidad editorial alta · **base OSCURA** | Dossier editorial por capítulos numerados (00–04), con bloque de respiro en crema | Swash SVG que se dibuja solo (`stroke-dashoffset`) bajo UNA palabra del H1 — calco de su subrayado a pincel; dialoga con el brochazo real de su foto | **Rail lateral fijo** con índice numerado + hilo de progreso vertical (móvil: barra de progreso de 2px con capítulo activo) / **Colofón editorial**: índice numerado repetido + datos + redes en hairlines | Filas full-width con hairlines de oro y numeración colgada — **cero cards, cero sombras** · CTA principal = rectángulo de esquina dura con filete oro · secundario = subrayado tipográfico | 2026-07-23 | por enviar |
 | Amazonas Pole Academy | `amazonas-pole-academy` | **Marca real B&N**: tinta `#14141A` + magenta acento `#C21E63`/`#E0447F` + rosa `#FF7FB0` sobre papel `#F5F4F6` — su logo es blanco y negro puro (muestreado con PIL), el magenta viene de su identidad de app validada por la clienta | **Archivo Black** (display) + **Yellowtail** (script) + cuerpo en sans del sistema · densidad media · base clara con una banda oscura | Bandas numeradas apiladas (01–06) con hero split | Foto del estudio con `mask-image` + reveals scroll-driven + `:has()` para filtros de grilla | Nav en píldora flotante centrada / Footer con datos y sello | Filas y fichas con hairlines; CTA principal = rectángulo relleno magenta, secundario = subrayado | 2026-07-24 | por enviar |
 | Donde Patricio (Beer &amp; Food) | `dondepatricio` | Verde `#3D7038` · verde vivo `#4D9146` · verde claro `#87B870` · dorado `#CB9C34` · azul noche `#475691` · arena `#D0C184` sobre casi-negro `#0F1410` — muestreados con PIL del logo real (insignia del duende) | Bricolage Grotesque variable (`wdth` 76–100) + DM Sans · **densa** · **base oscura** | **Menú-mural nocturno**: bento asimétrico de conceptos + carta en filas de líder punteado + banda full-bleed de la orilla. Sin una sola `<section class="band">` apilada | **Interruptor Día/Noche que reescribe la página**: se autoselecciona con la hora real del visitante (11:30–19h = día) y cambia foto del hero, duotono, acento, copy y las líneas de la carta | **Wordmark suelto sin barra + overlay a pantalla completa** (verde, tipografía display gigante numerada) / **Footer-póster** con display gigante + marquee de contacto | **Filas de carta con líder punteado** (sin cards) — cada fila abre un wa.me con la pregunta escrita · CTA principal = **sello circular** «Abrir en el mapa» · CTA secundario = rectángulo duro | 2026-07-23 | por enviar |
@@ -90,13 +90,32 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 
 | Técnica | Usos | Estado |
 |---|---|---|
-| Scroll-driven animation (`animation-timeline: scroll()`) | 1 (Amazonas) | libre |
-| `:has()` para filtros sin JS | 1 (Amazonas) | libre |
+| Scroll-driven animation (`animation-timeline: scroll()`/`view()`) | 2 (Amazonas, Pure Glow Day + Donde Patricio) | **vetado** |
+| `:has()` (filtros/estado sin JS) | **2** (Apamatte, **Nativos**) | **vetado** — reincidencia, ver gotcha 2026-07-24 |
+| Line-drawing SVG (`stroke-dashoffset`) | **2** (Pure Glow Day, **Nativos**) | **vetado** para la próxima |
+| `clip-path` animado / troquelado | **2** (Donde Patricio, **Nativos**) | **vetado** para la próxima |
+| IntersectionObserver como reveal principal | **1** (**Nativos**) | **prohibido** — solo fallback/plomería (ya estaba en la norma) |
 | `mask-image` con gradiente sobre foto | 1 (Amazonas) | libre |
 | Foto real del local como hero | 1 (Amazonas) | libre — pero variar el tratamiento |
 
 Dos bases claras seguidas (CETI y Amazonas). **La próxima demo va en base oscura**, salvo
 que la marca del negocio lo prohíba de plano.
+
+Contador de bases tras Nativos (base oscura, 2026-07-24): oscura ya van varias seguidas
+(Pure Glow Day, Donde Patricio, Nativos) → **la próxima demo debe ir en base clara** salvo
+que la marca la prohíba.
+
+### Gotcha de proceso (2026-07-24) — construir contra el ledger REAL, no el bootstrap
+
+La demo de **Nativos** repitió `:has()` (vetado), line-drawing SVG y `clip-path` porque su
+brief se diseñó contra una copia local recién bootstrapeada de `REGISTRO.md` (la plantilla
+vacía de la skill), sin ver este ledger compartido —el repo `medine-demos` ya existía en
+remoto con seis demos y un proceso concurrente lo estaba sincronizando. **Antes de escribir
+el brief de una demo, hacer `git pull` del repo de demos y leer el `REGISTRO.md` del HEAD
+remoto, no una plantilla local.** La unicidad visible al prospecto (arquetipo pizarra +
+isotipo de lanza + negro/amarillo) no se vio comprometida —esas tres técnicas son plomería
+invisible—, pero el contador quedó tocado: `:has()`, line-drawing y `clip-path` pasan a
+vetados.
 
 ### Gotcha técnico aprendido (2026-07-23)
 
