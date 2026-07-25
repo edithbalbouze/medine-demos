@@ -622,7 +622,7 @@
   <section class="screen" id="s-abonos">
     <div class="appbar"><button class="ico" onclick="show('home')" data-ic="back"></button><span class="t">Abonos y Pagos</span></div>
     <div class="content">
-      <button class="btn" onclick="sheet('abono')" style="margin-bottom:18px">＋ Nuevo abono</button>
+      <button class="btn" onclick="sheet('abono')" style="margin-bottom:18px">＋ Registrar un pago</button>
       <div class="seg"><button class="on" onclick="seg(this,'sp1')">Pendientes</button><button onclick="seg(this,'sp2')">Aprobados</button><button onclick="seg(this,'sp3')">Cancelados</button></div>
       <div id="sp1">
         <div class="card"><div class="row spread" style="margin-bottom:8px"><b>Abono 8 + 4 free</b><span class="pill warn">Pendiente</span></div>
@@ -1088,10 +1088,12 @@
   function sheet(kind,msg){
     var el=document.getElementById('sheet'),h='';
     if(kind==='abono'){
-      h='<div class="handle"></div><h3>Nuevo abono</h3>'+
-      '<div class="field"><label>Elegí tu abono</label><select><option>Clase de prueba / suelta — $35.000</option><option>Abono 4 clases — $85.000</option><option selected>Abono 8 + 4 free — $150.000</option><option>Abono 16 clases — $210.000</option><option>Clase particular — $50.000</option></select></div>'+
-      '<div class="field"><label>Método de pago</label><select><option>MercadoPago</option><option>Transferencia bancaria</option><option>Efectivo en sede</option></select></div>'+
-      '<button class="btn" onclick="sheet(\'ok\',\'Tu abono quedó registrado. La dueña lo confirma y te avisamos por WhatsApp.\')">Realizar pago</button>';
+      h='<div class="handle"></div><h3>Registrar pago</h3>'+
+      '<p class="muted" style="margin:-6px 0 14px">Elegí tu abono y registrá cómo pagaste. La dueña lo confirma y se activa.</p>'+
+      '<div class="field"><label>Abono</label><select><option>Clase de prueba / suelta — $35.000</option><option>Abono 4 clases — $85.000</option><option selected>Abono 8 + 4 free — $150.000</option><option>Abono 16 clases — $210.000</option><option>Clase particular — $50.000</option></select></div>'+
+      '<div class="field"><label>¿Cómo pagaste?</label><select><option>Transferencia bancaria</option><option>Efectivo en sede</option></select></div>'+
+      '<div class="field"><label>Comprobante</label><input type="file" accept="image/*"></div>'+
+      '<button class="btn" onclick="sheet(\'ok\',\'Pago registrado. La dueña revisa tu comprobante y te avisamos por WhatsApp cuando lo apruebe.\')">Registrar pago</button>';
     } else if(kind==='reserva'){
       h='<div class="handle"></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>'+
       '<h3 style="text-align:center">¡Lugar reservado!</h3><p class="muted" style="text-align:center">'+msg+'. Te esperamos en Amazonas 💗 Te llega el recordatorio por WhatsApp.</p>'+
