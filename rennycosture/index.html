@@ -20,7 +20,7 @@
     --carmesi:#79070C; --velvet:#0e0d0c;
     --line:rgba(12,12,11,.16); --line-soft:rgba(12,12,11,.09);
     --shadow:0 30px 70px -40px rgba(12,12,11,.55);
-    --pad:clamp(20px,5vw,64px);
+    --pad:clamp(24px,5vw,64px);
     --maxw:1180px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -125,7 +125,7 @@
   .band-head h2{font-size:clamp(1.9rem,5vw,3rem); flex:1 1 240px}
   .band-head p{color:var(--tinta-mute); max-width:34ch; font-size:.95rem}
 
-  .manifiesto{padding:clamp(70px,10vw,120px) 0}
+  .manifiesto{padding-block:clamp(70px,10vw,120px)}
   .manifiesto .lead{font-family:"Prata",serif; font-size:clamp(1.5rem,4.4vw,2.5rem); line-height:1.28; color:var(--tinta); max-width:20ch}
   .manifiesto .lead .cr{color:var(--carmesi); font-style:italic}
   .manifiesto .cols{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px); margin-top:clamp(40px,6vw,72px)}
@@ -135,7 +135,7 @@
   .manifiesto .cols .c p{font-size:.9rem; color:var(--tinta-mute)}
 
   /* galería de figurines */
-  .figurines{padding:clamp(30px,6vw,60px) 0 clamp(70px,10vw,120px)}
+  .figurines{padding-block:clamp(30px,6vw,60px) clamp(70px,10vw,120px)}
   .plate-grid{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:clamp(16px,2.2vw,26px)}
   .plate{grid-column:span 2; min-width:0; background:var(--crema); border:1px solid var(--line-soft); box-shadow:0 24px 50px -38px rgba(12,12,11,.5);
     padding:12px 12px 0; transform-style:preserve-3d; transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; will-change:transform}
@@ -180,7 +180,7 @@
   .steps details p{color:#C6BFB0; font-size:.92rem; padding:0 0 20px 46px; max-width:52ch}
 
   /* encargo (hoja de pedido) */
-  .encargo{padding:clamp(70px,10vw,120px) 0}
+  .encargo{padding-block:clamp(70px,10vw,120px)}
   .slip{display:grid; grid-template-columns:1.05fr .95fr; gap:0; border:1px solid var(--tinta); background:var(--crema); box-shadow:var(--shadow)}
   .slip-l{padding:clamp(26px,4vw,46px); border-right:1px solid var(--line)}
   .slip-r{padding:clamp(26px,4vw,46px); background:var(--marfil2); display:flex; flex-direction:column}
