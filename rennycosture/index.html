@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Renny Rojas · Atelier de Costura — Vestuario escénico a medida · Madrid</title>
+<meta property="og:title" content="Renny Rojas · Atelier de Costura">
+<meta property="og:description" content="Vestuario escénico a medida en Madrid — cabaret, drag, teatro y fantasía. Cada traje, una pieza única.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marfil:#FAF6EF; --marfil2:#F2EADD; --crema:#FEFDFD;
+    --tinta:#0C0C0B; --tinta-soft:#33302A; --tinta-mute:#6F685C;
+    --oro:#B8973F; --oro-hi:#E4CE8E; --oro-deep:#8A6B29; --champan:#C9AF98;
+    --carmesi:#79070C; --velvet:#0e0d0c;
+    --line:rgba(12,12,11,.16); --line-soft:rgba(12,12,11,.09);
+    --shadow:0 30px 70px -40px rgba(12,12,11,.55);
+    --pad:clamp(20px,5vw,64px);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--marfil); color:var(--tinta-soft);
+    font-family:"Albert Sans",system-ui,sans-serif; font-weight:400;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:"Prata",Georgia,serif; font-weight:400; color:var(--tinta); line-height:1.02; letter-spacing:-.01em;}
+  img{max-width:100%; display:block}
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad)}
+  .eyebrow{font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; font-weight:600; color:var(--oro-deep)}
+  .rule{height:1px; background:var(--line); border:0}
+  .rule-gold{height:1px; background:linear-gradient(90deg,transparent,var(--oro),transparent)}
+
+  /* ---------- MASTHEAD (nav condensable de dos filas) ---------- */
+  .masthead{position:sticky; top:0; z-index:60; background:color-mix(in srgb,var(--marfil) 88%,transparent);
+    backdrop-filter:saturate(1.1) blur(8px); border-bottom:1px solid var(--line-soft);
+    transition:padding .4s ease, background .4s ease}
+  .mh-top{display:flex; align-items:center; justify-content:center; gap:14px; padding:16px var(--pad) 6px; transition:all .4s ease}
+  .mh-crown{width:30px; height:30px; flex:0 0 auto; transition:all .4s ease}
+  .mh-word{font-family:"Prata",serif; font-size:clamp(1.15rem,3.4vw,1.7rem); letter-spacing:.02em; color:var(--tinta); white-space:nowrap}
+  .mh-bot{display:flex; align-items:center; justify-content:center; gap:16px; padding:0 var(--pad) 12px;
+    max-height:40px; opacity:1; overflow:hidden; transition:max-height .4s ease, opacity .35s ease, padding .4s ease}
+  .mh-index{display:flex; gap:clamp(12px,3vw,30px); align-items:center; font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; color:var(--tinta-mute)}
+  .mh-index a{position:relative; padding:4px 0}
+  .mh-index a .num{color:var(--oro); font-family:"Prata",serif; letter-spacing:normal; margin-right:5px}
+  .mh-index a:hover{color:var(--tinta)}
+  .mh-city{font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--tinta-mute)}
+  html.scrolled .masthead{background:color-mix(in srgb,var(--marfil) 96%,transparent)}
+  html.scrolled .mh-top{padding-top:10px; padding-bottom:10px; gap:11px}
+  html.scrolled .mh-crown{width:22px; height:22px}
+  html.scrolled .mh-word{font-size:1.05rem}
+  html.scrolled .mh-bot{max-height:0; opacity:0; padding-top:0; padding-bottom:0}
+  .mh-dot{width:4px;height:4px;border-radius:50%;background:var(--oro)}
+
+  /* ---------- botones ---------- */
+  .brass{display:inline-flex; align-items:center; gap:10px; font-family:"Albert Sans"; font-weight:600;
+    font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; color:#241c07;
+    padding:15px 26px; border:1px solid var(--oro-deep); cursor:pointer;
+    background:linear-gradient(180deg,var(--oro-hi),var(--oro) 46%,var(--oro-deep));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 3px rgba(0,0,0,.25), 0 12px 26px -14px rgba(138,107,41,.9);
+    transition:transform .25s ease, box-shadow .25s ease}
+  .brass:hover{transform:translateY(-2px); box-shadow:inset 0 1px 0 rgba(255,255,255,.6), inset 0 -2px 3px rgba(0,0,0,.25), 0 18px 30px -14px rgba(138,107,41,.95)}
+  .brass:focus-visible{outline:2px solid var(--tinta); outline-offset:3px}
+  .brass svg{width:16px;height:16px}
+  .underlink{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--tinta);
+    padding-bottom:3px; border-bottom:1.5px solid var(--oro); transition:gap .25s ease}
+  .underlink:hover{gap:13px}
+  .underlink:focus-visible{outline:2px solid var(--oro); outline-offset:4px}
+
+  /* ---------- HERO con telón ---------- */
+  .hero{position:relative; min-height:clamp(560px,92svh,860px); display:flex; align-items:center; overflow:hidden;
+    background:radial-gradient(120% 90% at 72% 30%, #FFFDF8 0%, var(--marfil) 55%, var(--marfil2) 100%)}
+  .hero-grid{position:relative; z-index:4; display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px,4vw,60px); align-items:center; width:100%}
+  .hero-copy{max-width:34ch}
+  .hero h1{font-size:clamp(2.9rem,8.4vw,6.1rem); margin:.28em 0 .32em}
+  .hero h1 em{font-style:italic; color:var(--oro-deep)}
+  .hero-sub{font-size:clamp(1rem,2.4vw,1.12rem); color:var(--tinta-soft); max-width:38ch}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:16px 22px; align-items:center; margin-top:32px}
+  .hero-meta{display:flex; gap:22px; margin-top:34px; padding-top:22px; border-top:1px solid var(--line)}
+  .hero-meta div{font-size:.74rem}
+  .hero-meta b{display:block; font-family:"Prata",serif; font-size:1.5rem; color:var(--tinta); letter-spacing:0}
+  .hero-meta span{color:var(--tinta-mute); text-transform:uppercase; letter-spacing:.14em; font-size:.62rem}
+
+  /* lámina del hero + foco cenital */
+  .hero-stage{position:relative; aspect-ratio:4/5; max-height:74svh; justify-self:center; width:100%; max-width:440px}
+  .hero-plate{position:absolute; inset:0; background:var(--crema); padding:14px; box-shadow:var(--shadow);
+    border:1px solid var(--line-soft)}
+  .hero-plate::after{content:""; position:absolute; inset:14px; border:1px solid var(--oro); opacity:.55; pointer-events:none}
+  .hero-plate figure{position:relative; width:100%; height:100%; overflow:hidden; background:#100f0d}
+  .hero-plate img{width:100%; height:100%; object-fit:cover; object-position:52% 30%}
+  .spot{position:absolute; inset:-30% -10% auto -10%; height:150%; z-index:1; pointer-events:none;
+    background:radial-gradient(60% 46% at 62% 8%, rgba(232,206,142,.5), rgba(232,206,142,0) 70%); mix-blend-mode:multiply; opacity:.0; animation:spotIn 2.4s 1.1s ease both}
+  .plate-tag{position:absolute; left:14px; bottom:14px; z-index:3; background:var(--tinta); color:var(--crema);
+    font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; padding:7px 11px; font-weight:600}
+  .plate-tag b{color:var(--oro-hi); font-family:"Prata",serif; letter-spacing:0; margin-right:6px}
+
+  /* telón */
+  .curtain{position:absolute; top:-2%; bottom:-2%; width:53%; z-index:20; pointer-events:none;
+    background:linear-gradient(90deg,#050505,var(--velvet) 40%,#1a1713 88%,#050505);
+    transition:transform 1.5s cubic-bezier(.76,0,.18,1)}
+  .curtain::before{content:""; position:absolute; inset:0; opacity:.5;
+    background:repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, rgba(0,0,0,.28) 10px 34px)}
+  .curtain.l{left:0; transform:translateX(-102%)}
+  .curtain.r{right:0; transform:translateX(102%); background:linear-gradient(270deg,#050505,var(--velvet) 40%,#1a1713 88%,#050505)}
+  .curtain.r::after,.curtain.l::after{content:""; position:absolute; top:0; bottom:0; width:14px; background:linear-gradient(var(--oro-deep),var(--oro-hi),var(--oro-deep)); opacity:.9}
+  .curtain.l::after{right:0} .curtain.r::after{left:0}
+  .hero[data-closed] .curtain.l{transform:translateX(0)}
+  .hero[data-closed] .curtain.r{transform:translateX(0)}
+  @keyframes spotIn{to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.spot{animation:none; opacity:1}}
+
+  /* ---------- secciones ---------- */
+  section{position:relative}
+  .band-head{display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:clamp(30px,5vw,58px)}
+  .band-head .fig{font-family:"Prata",serif; font-size:clamp(2.4rem,6vw,3.6rem); color:var(--oro); line-height:.8}
+  .band-head h2{font-size:clamp(1.9rem,5vw,3rem); flex:1 1 240px}
+  .band-head p{color:var(--tinta-mute); max-width:34ch; font-size:.95rem}
+
+  .manifiesto{padding:clamp(70px,10vw,120px) 0}
+  .manifiesto .lead{font-family:"Prata",serif; font-size:clamp(1.5rem,4.4vw,2.5rem); line-height:1.28; color:var(--tinta); max-width:20ch}
+  .manifiesto .lead .cr{color:var(--carmesi); font-style:italic}
+  .manifiesto .cols{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px); margin-top:clamp(40px,6vw,72px)}
+  .manifiesto .cols .c{padding-top:20px; border-top:2px solid var(--tinta)}
+  .manifiesto .cols .c .n{font-family:"Prata",serif; color:var(--oro); font-size:1rem}
+  .manifiesto .cols .c h3{font-size:1.15rem; margin:8px 0 8px}
+  .manifiesto .cols .c p{font-size:.9rem; color:var(--tinta-mute)}
+
+  /* galería de figurines */
+  .figurines{padding:clamp(30px,6vw,60px) 0 clamp(70px,10vw,120px)}
+  .plate-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:clamp(16px,2.2vw,26px)}
+  .plate{grid-column:span 2; background:var(--crema); border:1px solid var(--line-soft); box-shadow:0 24px 50px -38px rgba(12,12,11,.5);
+    padding:12px 12px 0; transform-style:preserve-3d; transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; will-change:transform}
+  .plate.tall{grid-row:span 2}
+  .plate:hover{box-shadow:0 40px 70px -40px rgba(12,12,11,.6)}
+  .plate figure{position:relative; overflow:hidden; background:#100f0d; aspect-ratio:3/4}
+  .plate.tall figure{aspect-ratio:3/4.9}
+  .plate figure img{width:100%; height:100%; object-fit:cover; transition:transform 1.1s ease}
+  .plate:hover figure img{transform:scale(1.05)}
+  .plate figure::after{content:""; position:absolute; inset:0; border:1px solid rgba(232,206,142,.35)}
+  .p-cap{display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:12px 4px 14px}
+  .p-cap .l{display:flex; align-items:baseline; gap:9px}
+  .p-cap .fig{font-family:"Prata",serif; color:var(--oro); font-size:.95rem}
+  .p-cap h3{font-size:1rem; letter-spacing:-.01em}
+  .p-cap .mat{font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--tinta-mute); text-align:right; white-space:nowrap}
+  /* láminas "por encargo" sin foto (arte CSS) */
+  .plate.card figure{display:grid; place-items:center; background:
+    radial-gradient(120% 90% at 50% 0,#1c1a16,#0c0c0b 70%)}
+  .plate.card .motif{width:58%; opacity:.92}
+  .plate.card .por{position:absolute; top:12px; left:12px; z-index:2; font-size:.56rem; letter-spacing:.2em; text-transform:uppercase; color:var(--oro-hi); border:1px solid rgba(232,206,142,.5); padding:4px 8px; border-radius:100px}
+
+  /* taller */
+  .taller{background:var(--tinta); color:#E9E3D6; padding:clamp(70px,10vw,120px) 0; position:relative}
+  .taller .eyebrow{color:var(--oro-hi)}
+  .taller h2{color:var(--crema)}
+  .taller-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(30px,5vw,70px); align-items:center}
+  .taller-fig{position:relative; padding:14px; background:#151310; border:1px solid rgba(232,206,142,.25); box-shadow:var(--shadow)}
+  .taller-fig img{aspect-ratio:3/4; object-fit:cover; width:100%}
+  .taller-fig .stamp{position:absolute; right:-14px; bottom:22px; background:var(--oro); color:#241c07; font-weight:700; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; padding:9px 14px; transform:rotate(3deg); box-shadow:0 10px 20px -12px #000}
+  .taller-copy h2{margin-bottom:18px}
+  .taller-copy > p{color:#C6BFB0; max-width:46ch; margin-bottom:26px}
+  .steps{border-top:1px solid rgba(232,206,142,.25)}
+  .steps details{border-bottom:1px solid rgba(232,206,142,.18)}
+  .steps summary{list-style:none; cursor:pointer; padding:18px 0; display:flex; align-items:center; gap:16px; font-family:"Prata",serif; font-size:1.15rem; color:var(--crema)}
+  .steps summary::-webkit-details-marker{display:none}
+  .steps summary .sn{color:var(--oro-hi); font-size:.9rem; min-width:30px}
+  .steps summary .pm{margin-left:auto; width:22px; height:22px; position:relative; flex:0 0 auto}
+  .steps summary .pm::before,.steps summary .pm::after{content:""; position:absolute; inset:0; margin:auto; background:var(--oro-hi); transition:transform .3s ease}
+  .steps summary .pm::before{width:14px; height:1.5px}
+  .steps summary .pm::after{width:1.5px; height:14px}
+  .steps details[open] summary .pm::after{transform:scaleY(0)}
+  .steps details p{color:#C6BFB0; font-size:.92rem; padding:0 0 20px 46px; max-width:52ch}
+
+  /* encargo (hoja de pedido) */
+  .encargo{padding:clamp(70px,10vw,120px) 0}
+  .slip{display:grid; grid-template-columns:1.05fr .95fr; gap:0; border:1px solid var(--tinta); background:var(--crema); box-shadow:var(--shadow)}
+  .slip-l{padding:clamp(26px,4vw,46px); border-right:1px solid var(--line)}
+  .slip-r{padding:clamp(26px,4vw,46px); background:var(--marfil2); display:flex; flex-direction:column}
+  .slip h3{font-size:1.5rem; margin-bottom:4px}
+  .slip .field{margin-top:26px}
+  .slip .field > label{display:block; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--tinta); margin-bottom:12px}
+  .chips{display:flex; flex-wrap:wrap; gap:9px}
+  .chip{font-family:"Albert Sans"; font-size:.82rem; font-weight:500; padding:9px 15px; border:1px solid var(--line); background:var(--crema); color:var(--tinta-soft); cursor:pointer; border-radius:2px; transition:all .18s ease}
+  .chip:hover{border-color:var(--oro)}
+  .chip[aria-pressed="true"]{background:var(--tinta); color:var(--crema); border-color:var(--tinta)}
+  .chip:focus-visible{outline:2px solid var(--oro); outline-offset:2px}
+  .slip input[type=text]{width:100%; padding:13px 15px; border:1px solid var(--line); background:var(--crema); font:inherit; color:var(--tinta); border-radius:2px}
+  .slip input[type=text]:focus{outline:none; border-color:var(--oro)}
+  .slip input::placeholder{color:#a49b8c}
+  .preview-label{font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--tinta); margin-bottom:12px; display:flex; align-items:center; gap:8px}
+  .preview-label .dot{width:6px;height:6px;border-radius:50%;background:var(--oro)}
+  .preview{flex:1; background:var(--crema); border:1px dashed var(--tinta-mute); padding:18px; font-size:.92rem; line-height:1.65; color:var(--tinta-soft); white-space:pre-wrap; min-height:150px}
+  .preview .pk{color:var(--oro-deep); font-weight:600}
+  .slip-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px}
+  .copied{font-size:.78rem; color:var(--carmesi); font-weight:600; opacity:0; transition:opacity .3s; align-self:center}
+  .copied.on{opacity:1}
+  .slip-note{font-size:.72rem; color:var(--tinta-mute); margin-top:16px}
+
+  /* dominio */
+  .dominio{background:radial-gradient(120% 120% at 50% 0,#1a1713,var(--tinta) 60%); color:#E9E3D6; text-align:center; padding:clamp(66px,9vw,110px) 0}
+  .dominio .eyebrow{color:var(--oro-hi)}
+  .dominio h2{color:var(--crema); font-size:clamp(2rem,6vw,3.4rem); margin:16px auto 10px; max-width:16ch}
+  .dominio p{color:#C6BFB0; max-width:44ch; margin:0 auto 12px}
+  .url-plate{display:inline-flex; align-items:center; gap:14px; margin:26px auto 30px; padding:16px 26px; border:1px solid var(--oro); background:rgba(232,206,142,.06)}
+  .url-plate .free{font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:#0c0c0b; background:var(--oro-hi); padding:4px 8px; font-weight:700}
+  .url-plate .u{font-family:"Prata",serif; font-size:clamp(1.1rem,3.4vw,1.7rem); color:var(--crema); letter-spacing:.01em}
+
+  /* footer = etiqueta de sastre */
+  .foot-wrap{padding:clamp(50px,8vw,90px) var(--pad) 40px}
+  .label{max-width:760px; margin:0 auto; background:var(--crema); border:1px solid var(--tinta);
+    position:relative; padding:clamp(26px,4vw,44px)}
+  .label::before{content:""; position:absolute; inset:8px; border:1.5px dashed var(--tinta-mute); pointer-events:none}
+  .label-top{display:flex; align-items:center; justify-content:center; gap:14px; padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:22px}
+  .label-top img{width:40px;height:40px;border-radius:4px}
+  .label-top .lt{text-align:center}
+  .label-top .lt .b{font-family:"Prata",serif; font-size:1.3rem; color:var(--tinta); letter-spacing:.03em}
+  .label-top .lt .s{font-size:.6rem; letter-spacing:.34em; text-transform:uppercase; color:var(--oro-deep)}
+  .label-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; text-align:center}
+  .label-grid .g .k{font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--tinta-mute); margin-bottom:7px}
+  .label-grid .g .v{font-size:.92rem; color:var(--tinta); font-weight:500}
+  .care{display:flex; align-items:center; justify-content:center; gap:20px; margin:26px 0 4px; opacity:.85}
+  .care svg{width:26px;height:26px}
+  .socials{display:flex; justify-content:center; gap:14px; margin-top:24px}
+  .socials a{width:42px;height:42px;border:1px solid var(--line); display:grid; place-items:center; border-radius:50%; transition:all .2s ease}
+  .socials a:hover{background:var(--tinta); border-color:var(--tinta)}
+  .socials a:hover svg{fill:var(--crema)}
+  .socials svg{width:19px;height:19px; fill:var(--tinta)}
+  .seal{max-width:760px; margin:26px auto 0; text-align:center; font-size:.72rem; color:var(--tinta-mute)}
+  .seal a{color:var(--oro-deep); border-bottom:1px solid var(--oro); font-weight:600}
+
+  /* FAB instagram */
+  .fab{position:fixed; right:18px; bottom:18px; z-index:80; width:58px; height:58px; border-radius:50%;
+    display:grid; place-items:center; box-shadow:0 14px 30px -10px rgba(12,12,11,.6);
+    background:linear-gradient(45deg,#f9ce34,#ee2a7b 46%,#6228d7); transition:transform .25s ease}
+  .fab:hover{transform:scale(1.07)}
+  .fab:focus-visible{outline:3px solid var(--tinta); outline-offset:3px}
+  .fab svg{width:28px;height:28px;fill:#fff}
+  .fab .tip{position:absolute; right:70px; background:var(--tinta); color:var(--crema); font-size:.72rem; padding:7px 12px; border-radius:4px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; font-weight:500}
+  .fab:hover .tip{opacity:1}
+
+  /* reveal */
+  .rv{opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1; transform:none; transition:none}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:36px}
+    .hero-stage{grid-row:1; max-width:340px; max-height:56svh}
+    .hero-copy{max-width:none}
+    .taller-grid{grid-template-columns:1fr; gap:36px}
+    .taller-fig{max-width:360px}
+    .slip{grid-template-columns:1fr}
+    .slip-l{border-right:0; border-bottom:1px solid var(--line)}
+    .manifiesto .cols{grid-template-columns:1fr; gap:0}
+    .manifiesto .cols .c{border-top:0; border-bottom:1px solid var(--line); padding:20px 0}
+    .plate-grid{grid-template-columns:repeat(4,1fr)}
+    .plate{grid-column:span 2}
+    .plate.tall{grid-row:span 1}
+  }
+  @media (max-width:560px){
+    .mh-index{gap:12px} .mh-index .lbl{display:none}
+    .hero-meta{flex-wrap:wrap; gap:16px 22px}
+    .plate-grid{grid-template-columns:repeat(2,1fr); gap:14px}
+    .plate{grid-column:span 1}
+    .label-grid{grid-template-columns:1fr; gap:16px}
+    .url-plate{flex-direction:column; gap:10px}
+    .fab .tip{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <div class="mh-top">
+    <img class="mh-crown" src="assets/renny-logo.jpg" alt="Escudo de Renny Rojas — monograma R con corona">
+    <span class="mh-word">Renny Rojas</span>
+  </div>
+  <div class="mh-bot">
+    <nav class="mh-index" aria-label="Secciones">
+      <a href="#atelier"><span class="num">I</span><span class="lbl">Atelier</span></a>
+      <a href="#figurines"><span class="num">II</span><span class="lbl">Figurines</span></a>
+      <a href="#taller"><span class="num">III</span><span class="lbl">Taller</span></a>
+      <a href="#encargo"><span class="num">IV</span><span class="lbl">Encargo</span></a>
+    </nav>
+    <span class="mh-dot" aria-hidden="true"></span>
+    <span class="mh-city">Madrid · Atelier de Costura</span>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Vestuario escénico a medida · Madrid</span>
+      <h1>Trajes que <em>se roban</em> el escenario.</h1>
+      <p class="hero-sub">Atelier de costura para cabaret, drag, teatro y fantasía. Cada pieza se dibuja, se corta y se borda a mano — a la medida exacta de tu show.</p>
+      <div class="hero-cta">
+        <a class="brass" href="#encargo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+          Encargar una pieza
+        </a>
+        <a class="underlink" href="#figurines">Ver los figurines →</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>+1.400</b><span>Piezas cosidas</span></div>
+        <div><b>A medida</b><span>Cada encargo, único</span></div>
+        <div><b>Madrid</b><span>Envíos a escena</span></div>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="hero-plate">
+        <figure>
+          <img src="assets/renny-pieza-01-negro-pedreria.jpg" alt="Casaca negra bordada con aplique dorado barroco y cristales — pieza de Renny Rojas">
+          <div class="spot" aria-hidden="true"></div>
+        </figure>
+        <div class="plate-tag"><b>Fig. 01</b> Casaca de cristal</div>
+      </div>
+      <div class="curtain l" aria-hidden="true"></div>
+      <div class="curtain r" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANIFIESTO ===== -->
+<section class="manifiesto wrap" id="atelier">
+  <span class="eyebrow rv">Fig. I · El atelier</span>
+  <p class="lead rv">Nos traen una idea imposible.<br>Salimos con un <span class="cr">traje que respira luz.</span></p>
+  <div class="cols">
+    <div class="c rv"><div class="n">01</div><h3>Diseño a tu personaje</h3><p>Del boceto a la prueba: partimos de tu show, tu cuerpo y tu tarima. Nada de tallas de percha.</p></div>
+    <div class="c rv"><div class="n">02</div><h3>Pedrería y bordado a mano</h3><p>Cristales, apliques dorados, tul, cuero, satén. La opulencia se cose puntada a puntada.</p></div>
+    <div class="c rv"><div class="n">03</div><h3>Listo para el foco</h3><p>Costuras que aguantan la coreografía y brillan a 20 metros. Vestuario que resiste la gira.</p></div>
+  </div>
+</section>
+
+<hr class="rule wrap" style="max-width:var(--maxw)">
+
+<!-- ===== FIGURINES ===== -->
+<section class="figurines wrap" id="figurines">
+  <div class="band-head">
+    <span class="fig rv">II</span>
+    <h2 class="rv">La carpeta de figurines</h2>
+    <p class="rv">Una muestra del atelier. Cada categoría se confecciona <strong>por encargo</strong>, a tu medida y a tu concepto.</p>
+  </div>
+  <div class="plate-grid">
+
+    <article class="plate tall rv">
+      <figure><img src="assets/renny-pieza-01-negro-pedreria.jpg" alt="Casaca negra con bordado dorado y pedrería"></figure>
+      <div class="p-cap"><div class="l"><span class="fig">01</span><h3>Casaca de cristal</h3></div><span class="mat">Cristal · aplique dorado</span></div>
+    </article>
+
+    <article class="plate card rv">
+      <figure>
+        <span class="por">Por encargo</span>
+        <svg class="motif" viewBox="0 0 100 100" fill="none" stroke="#E4CE8E" stroke-width="1.3" aria-hidden="true">
+          <path d="M50 12l8 16 18 2-13 12 4 18-17-9-17 9 4-18-13-12 18-2z"/>
+          <circle cx="50" cy="62" r="20"/><path d="M30 78c8 8 32 8 40 0"/>
+        </svg>
+      </figure>
+      <div class="p-cap"><div class="l"><span class="fig">02</span><h3>Drag & Showgirl</h3></div><span class="mat">Pedrería · plumas</span></div>
+    </article>
+
+    <article class="plate card rv">
+      <figure>
+        <span class="por">Por encargo</span>
+        <svg class="motif" viewBox="0 0 100 100" fill="none" stroke="#E4CE8E" stroke-width="1.3" aria-hidden="true">
+          <path d="M24 30h52M30 30c0 18-6 40 20 48 26-8 20-30 20-48"/><path d="M50 30v48"/>
+          <path d="M38 44c8 6 16 6 24 0M38 58c8 6 16 6 24 0"/>
+        </svg>
+      </figure>
+      <div class="p-cap"><div class="l"><span class="fig">03</span><h3>Teatro & Musical</h3></div><span class="mat">Época · a medida</span></div>
+    </article>
+
+    <article class="plate tall rv">
+      <figure><img src="assets/renny-taller-01-vestido-rojo.jpg" alt="Estructura escultórica de satén rojo confeccionada en el taller de Renny Rojas"></figure>
+      <div class="p-cap"><div class="l"><span class="fig">04</span><h3>Escultura de escena</h3></div><span class="mat">Satén · estructura</span></div>
+    </article>
+
+    <article class="plate card rv">
+      <figure>
+        <span class="por">Por encargo</span>
+        <svg class="motif" viewBox="0 0 100 100" fill="none" stroke="#E4CE8E" stroke-width="1.3" aria-hidden="true">
+          <path d="M50 16c-6 10-22 12-22 30 0 16 12 24 22 30 10-6 22-14 22-30 0-18-16-20-22-30z"/>
+          <path d="M50 30v46M36 50h28"/><circle cx="50" cy="50" r="4" fill="#E4CE8E" stroke="none"/>
+        </svg>
+      </figure>
+      <div class="p-cap"><div class="l"><span class="fig">05</span><h3>Fantasía & Carnaval</h3></div><span class="mat">Volumen · color</span></div>
+    </article>
+
+    <article class="plate card rv">
+      <figure>
+        <span class="por">Por encargo</span>
+        <svg class="motif" viewBox="0 0 100 100" fill="none" stroke="#E4CE8E" stroke-width="1.3" aria-hidden="true">
+          <path d="M50 22l6 12 13 1-10 9 3 13-12-7-12 7 3-13-10-9 13-1z"/>
+          <path d="M30 70q20-14 40 0v10q-20-8-40 0z"/>
+        </svg>
+      </figure>
+      <div class="p-cap"><div class="l"><span class="fig">06</span><h3>Vestuario infantil</h3></div><span class="mat">Ballet · recitales</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== TALLER ===== -->
+<section class="taller" id="taller">
+  <div class="wrap taller-grid">
+    <div class="taller-fig rv">
+      <img src="assets/renny-taller-02-maquina-coser.jpg" alt="Máquina industrial cosiendo cuero burdeos en el taller de Renny Rojas, de noche">
+      <span class="stamp">22:01 · en la labor</span>
+    </div>
+    <div class="taller-copy">
+      <span class="eyebrow">Fig. III · El taller</span>
+      <h2 class="rv">Hecho a mano, hasta la última puntada.</h2>
+      <p class="rv">Aquí no hay atajos: cada traje pasa por la mesa de corte, la máquina y las horas de pedrería. Así se ve un encargo de principio a fin.</p>
+      <div class="steps rv">
+        <details open>
+          <summary><span class="sn">01</span> Idea y boceto <span class="pm" aria-hidden="true"></span></summary>
+          <p>Nos cuentas tu personaje, el número y la fecha del estreno. Dibujamos el figurín y elegimos telas, cristales y color.</p>
+        </details>
+        <details>
+          <summary><span class="sn">02</span> Patrón y pruebas <span class="pm" aria-hidden="true"></span></summary>
+          <p>Cortamos a tu medida real y ajustamos en prueba. El traje se mueve contigo, no contra ti.</p>
+        </details>
+        <details>
+          <summary><span class="sn">03</span> Bordado y acabado <span class="pm" aria-hidden="true"></span></summary>
+          <p>Pedrería, apliques y remates a mano. La pieza sale lista para el foco — y para la gira.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENCARGO ===== -->
+<section class="encargo wrap" id="encargo">
+  <div class="band-head">
+    <span class="fig rv">IV</span>
+    <h2 class="rv">Empieza tu encargo</h2>
+    <p class="rv">Arma la ficha en 20 segundos. Te preparamos el mensaje listo para enviar por Instagram — sin explicarlo diez veces.</p>
+  </div>
+
+  <div class="slip rv">
+    <div class="slip-l">
+      <h3 class="serif">Ficha de encargo</h3>
+      <div class="field">
+        <label id="l-tipo">¿Qué pieza?</label>
+        <div class="chips" role="group" aria-labelledby="l-tipo" data-group="tipo">
+          <button class="chip" aria-pressed="false">Cabaret</button>
+          <button class="chip" aria-pressed="false">Drag / Show</button>
+          <button class="chip" aria-pressed="false">Teatro</button>
+          <button class="chip" aria-pressed="false">Fantasía</button>
+          <button class="chip" aria-pressed="false">Infantil</button>
+        </div>
+      </div>
+      <div class="field">
+        <label id="l-mat">Acabado</label>
+        <div class="chips" role="group" aria-labelledby="l-mat" data-group="material">
+          <button class="chip" aria-pressed="false">Pedrería</button>
+          <button class="chip" aria-pressed="false">Bordado dorado</button>
+          <button class="chip" aria-pressed="false">Tul / plumas</button>
+          <button class="chip" aria-pressed="false">Cuero / satén</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-evento">Evento y fecha</label>
+        <input type="text" id="f-evento" placeholder="Ej. estreno en Zafyro, 15 de marzo">
+      </div>
+    </div>
+
+    <div class="slip-r">
+      <div class="preview-label"><span class="dot"></span> Tu mensaje</div>
+      <div class="preview" id="preview" aria-live="polite">Elige una opción y escribiremos el mensaje por ti.</div>
+      <div class="slip-actions">
+        <button class="brass" id="copyBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          Copiar mensaje
+        </button>
+        <a class="underlink" id="dmBtn" href="https://www.instagram.com/rennycosture/" target="_blank" rel="noopener">Abrir Instagram →</a>
+        <span class="copied" id="copied">¡Copiado!</span>
+      </div>
+      <p class="slip-note">Pega el mensaje en el chat de Instagram. Te respondemos con boceto y presupuesto a medida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOMINIO ===== -->
+<section class="dominio">
+  <div class="wrap">
+    <span class="eyebrow">Tu nombre, tu casa</span>
+    <h2 class="rv">Tu portfolio merece más que un feed.</h2>
+    <p class="rv">Hoy, quien te busca en Google no encuentra dónde caer. Una página propia convierte tu Instagram en un escaparate que un teatro o una productora ve en cinco segundos.</p>
+    <div class="url-plate rv"><span class="free">Libre ahora</span><span class="u">rennycosture.com</span></div>
+    <div class="rv"><a class="brass" href="#encargo">Reservar mi página</a></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER = etiqueta de sastre ===== -->
+<footer>
+  <div class="foot-wrap">
+    <div class="label">
+      <div class="label-top">
+        <img src="assets/renny-logo.jpg" alt="Escudo Renny Rojas">
+        <div class="lt">
+          <div class="b">Renny Rojas</div>
+          <div class="s">Atelier de Costura</div>
+        </div>
+      </div>
+      <div class="label-grid">
+        <div class="g"><div class="k">Confección</div><div class="v">Hecho a medida en Madrid</div></div>
+        <div class="g"><div class="k">Especialidad</div><div class="v">Vestuario escénico</div></div>
+        <div class="g"><div class="k">Encargos</div><div class="v">Por Instagram · @rennycosture</div></div>
+      </div>
+      <div class="care" aria-hidden="true" title="Hecho a mano">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0B" stroke-width="1.3"><path d="M4 6c4-3 12-3 16 0M4 6v3c4-2 12-2 16 0V6M8 9v10M16 9v10"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0B" stroke-width="1.3"><path d="M3 12l4-7h10l4 7-9 8z"/><path d="M7 5l5 15 5-15"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0B" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0C0C0B" stroke-width="1.3"><path d="M12 3l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z"/></svg>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/rennycosture/" target="_blank" rel="noopener" aria-label="Instagram de Renny Rojas">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/rennycosture/" target="_blank" rel="noopener" aria-label="Enviar mensaje a Renny Rojas">
+          <svg viewBox="0 0 24 24"><path d="M22 3L2 10.5l7 2.5 2.5 7L22 3zm-3.7 3.4l-7.6 7.6"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="seal">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial. Imágenes propiedad de Renny Rojas.</p>
+  </div>
+</footer>
+
+<!-- FAB Instagram -->
+<a class="fab" href="https://www.instagram.com/rennycosture/" target="_blank" rel="noopener" aria-label="Escríbenos por Instagram">
+  <span class="tip">Escríbenos por Instagram</span>
+  <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8zm0 8.1a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm6.2-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* telón: cierra y abre para que "se abra" en el load */
+  var hero = document.getElementById('top');
+  if(hero && !reduce){
+    hero.setAttribute('data-closed','');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      setTimeout(function(){ hero.removeAttribute('data-closed'); }, 260);
+    });});
+  }
+
+  /* masthead condensable */
+  var onScroll = function(){
+    document.documentElement.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* reveal */
+  var rvs = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    rvs.forEach(function(el){ io.observe(el); });
+  } else { rvs.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* tilt 3D en las láminas (solo puntero fino) */
+  if(!reduce && window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.plate').forEach(function(p){
+      p.addEventListener('pointermove', function(ev){
+        var r = p.getBoundingClientRect();
+        var px = (ev.clientX - r.left)/r.width - .5;
+        var py = (ev.clientY - r.top)/r.height - .5;
+        p.style.transform = 'perspective(900px) rotateY('+(px*5).toFixed(2)+'deg) rotateX('+(-py*6).toFixed(2)+'deg) translateY(-4px)';
+      });
+      p.addEventListener('pointerleave', function(){ p.style.transform=''; });
+    });
+  }
+
+  /* hoja de encargo */
+  var state = {tipo:'', material:'', evento:''};
+  function paint(){
+    var pv = document.getElementById('preview');
+    if(!state.tipo && !state.material && !state.evento){
+      pv.textContent = 'Elige una opción y escribiremos el mensaje por ti.';
+      return;
+    }
+    var pieza = state.tipo ? state.tipo.toLowerCase() : 'una pieza';
+    var msg = '¡Hola Renny! 👑 Quiero encargar '+ art(state.tipo) + (state.tipo? ' de '+state.tipo.toLowerCase() : 'una pieza a medida');
+    if(state.material) msg += ' con acabado en '+state.material.toLowerCase();
+    msg += '.';
+    if(state.evento) msg += '\nEs para: '+state.evento+'.';
+    msg += '\n¿Me pasas boceto y presupuesto? ¡Gracias!';
+    // resaltado ligero
+    pv.innerHTML = escapeHtml(msg)
+      .replace(escapeHtml(state.tipo||' '), state.tipo?'<span class="pk">'+escapeHtml(state.tipo.toLowerCase())+'</span>':'')
+      .replace(escapeHtml(state.material||' '), state.material?'<span class="pk">'+escapeHtml(state.material.toLowerCase())+'</span>':'');
+    pv.dataset.raw = msg;
+  }
+  function art(t){ return t ? 'un traje' : ''; }
+  function escapeHtml(s){ return (s||'').replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+  document.querySelectorAll('.chips').forEach(function(group){
+    var key = group.getAttribute('data-group');
+    group.querySelectorAll('.chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        var active = chip.getAttribute('aria-pressed')==='true';
+        group.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+        chip.setAttribute('aria-pressed', active?'false':'true');
+        state[key] = active ? '' : chip.textContent.trim();
+        paint();
+      });
+    });
+  });
+  var ev = document.getElementById('f-evento');
+  ev.addEventListener('input', function(){ state.evento = ev.value.trim(); paint(); });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var pv = document.getElementById('preview');
+    var txt = pv.dataset.raw || pv.textContent;
+    var done = function(){
+      var c = document.getElementById('copied'); c.classList.add('on');
+      setTimeout(function(){ c.classList.remove('on'); }, 1900);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done, done);
+    } else { done(); }
+  });
+})();
+</script>
+</body>
+</html>
