@@ -21,6 +21,7 @@
     --teal:#0E2C37; --ink:#F5F8FC; --muted:#9DB2C4;
     --hair:rgba(121,181,217,.20); --hair-soft:rgba(121,181,217,.10);
     --cashea:#FBF940; --wa:#25D366;
+    --warm:#F2A98C; --warm-200:#F8C9B4; --warm-soft:rgba(242,169,140,.14);
     --mono:'Space Mono',ui-monospace,monospace;
     --sans:'Epilogue',system-ui,sans-serif;
   }
@@ -90,7 +91,8 @@
     content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
     background:
       radial-gradient(60% 55% at 78% 30%, rgba(121,181,217,.14), transparent 70%),
-      radial-gradient(50% 50% at 12% 90%, rgba(31,47,62,.5), transparent 70%);
+      radial-gradient(50% 46% at 4% 66%, rgba(242,169,140,.17), transparent 72%),
+      radial-gradient(50% 50% at 12% 96%, rgba(31,47,62,.5), transparent 70%);
   }
   .hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(28px,4vw,56px); align-items:center}
   .hero h1{font-size:clamp(2.7rem,7.4vw,5.3rem); margin:.5rem 0 0}
@@ -175,6 +177,26 @@
   .tech-list li b{color:var(--ink); font-weight:600}
   .tech-list .k{font-family:var(--mono); color:var(--sky); font-size:.72rem; letter-spacing:.1em; padding-top:3px; min-width:34px}
   @media(max-width:840px){ .tech-grid{grid-template-columns:1fr; gap:30px} }
+
+  /* el trato — sección cálida */
+  .care{position:relative; overflow:hidden; background:linear-gradient(180deg,var(--navy-900),var(--navy-850))}
+  .care::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:radial-gradient(52% 58% at 14% 28%, rgba(242,169,140,.13), transparent 72%),
+              radial-gradient(48% 55% at 94% 88%, rgba(242,169,140,.08), transparent 72%);}
+  .care-grid{position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,5vw,64px); align-items:center}
+  .care-copy .eyebrow.warm{color:var(--warm)}
+  .care-copy h2{font-size:clamp(1.9rem,4vw,3rem); margin-top:14px}
+  .care-copy p{color:var(--muted); margin:18px 0 26px; font-size:1.02rem; max-width:40ch}
+  .btn-warm{background:var(--warm); color:#3a1a0e}
+  .btn-warm:hover{background:var(--warm-200); box-shadow:0 12px 32px rgba(242,169,140,.32); transform:translateY(-1px)}
+  .care-list{list-style:none; padding:0; margin:0; display:grid; gap:14px}
+  .care-list li{display:flex; gap:16px; align-items:flex-start; background:rgba(242,169,140,.055); border:1px solid var(--warm-soft); border-radius:18px; padding:20px 22px; transition:background .25s, transform .25s}
+  .care-list li:hover{background:rgba(242,169,140,.10); transform:translateY(-2px)}
+  .care-list .ci{width:42px; height:42px; border-radius:13px; background:var(--warm-soft); display:grid; place-items:center; flex:none}
+  .care-list .ci svg{width:21px; height:21px; stroke:var(--warm); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+  .care-list b{display:block; font-weight:600; font-size:1.02rem; margin-bottom:4px; color:var(--ink)}
+  .care-list .d{display:block; color:var(--muted); font-size:.92rem; line-height:1.5}
+  @media(max-width:840px){ .care-grid{grid-template-columns:1fr; gap:30px} }
 
   /* cashea band */
   .cashea{border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); background:var(--navy-850)}
@@ -283,7 +305,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Clínica Odontológica · Nueva Barcelona</p>
         <h1>Tu boca, <span class="glow">escaneada</span> al detalle.</h1>
-        <p class="lede">Un equipo multidisciplinario y tecnología intraoral 3D para cuidar tu sonrisa — de la primera limpieza a la ortodoncia, sin moldes incómodos.</p>
+        <p class="lede">Un equipo cercano y tecnología intraoral 3D para cuidar tu sonrisa — de la primera limpieza de tus niños a tu ortodoncia, sin moldes incómodos.</p>
         <div class="hero-meta">
           <span class="tag">Estética</span>
           <span class="tag">Ortodoncia</span>
@@ -369,6 +391,32 @@
           <li><span class="k">+</span><span><b>Más cómodo para ti.</b> Ideal para pacientes con reflejo nauseoso y para los más pequeños.</span></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- EL TRATO (calidez humana) -->
+  <section class="pad care" id="trato">
+    <div class="wrap care-grid">
+      <div class="care-copy rv">
+        <span class="eyebrow warm">— El trato</span>
+        <h2>Detrás de cada sonrisa, alguien que te cuida.</h2>
+        <p>La tecnología está para que estés cómodo. El resto lo pone un equipo cercano que te escucha, te explica cada paso y te recibe con calma — grandes y chiquitos.</p>
+        <a class="btn btn-warm" href="#cita">Agenda con nosotros →</a>
+      </div>
+      <ul class="care-list rv">
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C12 21 4 13.8 4 8.7C4 5.9 6.3 4.2 8.4 5.1C10 5.8 11.1 7.1 12 8.6C12.9 7.1 14 5.8 15.6 5.1C17.7 4.2 20 5.9 20 8.7C20 13.8 12 21 12 21Z"/></svg></span>
+          <div><b>Trato cercano</b><span class="d">Te explicamos todo en palabras simples, sin tecnicismos ni prisa. Sales sabiendo qué necesitas y por qué.</span></div>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c.9 1.2 2.1 1.8 3.5 1.8s2.6-.6 3.5-1.8"/><path d="M9 10h.01M15 10h.01"/></svg></span>
+          <div><b>Niños sin miedo</b><span class="d">Paciencia y cariño en cada consulta de odontopediatría, para que su primera visita sea una buena experiencia.</span></div>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 1.8"/></svg></span>
+          <div><b>Siempre cerca</b><span class="d">Emergencias de lunes a sábado hasta las 9 pm y respuesta rápida por WhatsApp cuando lo necesitas.</span></div>
+        </li>
+      </ul>
     </div>
   </section>
 
