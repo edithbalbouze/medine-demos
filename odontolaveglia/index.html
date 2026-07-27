@@ -9,19 +9,20 @@
 <meta property="og:title" content="Odontolaveglia · Clínica Odontológica">
 <meta property="og:description" content="Escaneamos tu boca en 3D, sin moldes. Estética, ortodoncia y odontopediatría en Nueva Barcelona. Agenda por WhatsApp — en cuotas con Cashea.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23081722'/%3E%3Cg fill='none' stroke='%2379B5D9' stroke-width='1.4'%3E%3Cpath d='M16 5c-4 3-4 12 0 22 4-10 4-19 0-22z'/%3E%3Cpath d='M16 5c4 3 4 12 0 22'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181310'/%3E%3Cg fill='none' stroke='%23EE9B78' stroke-width='1.4'%3E%3Cpath d='M16 5c-4 3-4 12 0 22 4-10 4-19 0-22z'/%3E%3Cpath d='M16 5c4 3 4 12 0 22'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy-900:#081722; --navy-850:#0A1B26; --navy-800:#0E2230;
-    --navy-700:#122A3B; --navy-600:#1F2F3E;
-    --sky:#79B5D9; --sky-200:#A7D3EC;
-    --teal:#0E2C37; --ink:#F5F8FC; --muted:#9DB2C4;
-    --hair:rgba(121,181,217,.20); --hair-soft:rgba(121,181,217,.10);
+    --navy-900:#181310; --navy-850:#201814; --navy-800:#271D18;
+    --navy-700:#2E221C; --navy-600:#3C2C24;
+    --sky:#EE9B78; --sky-200:#F6BE9B;
+    --teal:#2E221C; --ink:#F7EEE6; --muted:#CBB2A4;
+    --hair:rgba(238,155,120,.24); --hair-soft:rgba(238,155,120,.12);
     --cashea:#FBF940; --wa:#25D366;
-    --warm:#F2A98C; --warm-200:#F8C9B4; --warm-soft:rgba(242,169,140,.14);
+    --warm:#EE9B78; --warm-200:#F6BE9B; --warm-soft:rgba(238,155,120,.16);
+    --gold:#E8C07A; --cream:#F5ECE3;
     --mono:'Space Mono',ui-monospace,monospace;
     --sans:'Epilogue',system-ui,sans-serif;
   }
@@ -68,7 +69,7 @@
   .status{
     display:flex; align-items:center; gap:8px;
     font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; color:var(--muted);
-    padding:7px 12px; border:1px solid var(--hair); border-radius:2px;
+    padding:7px 12px; border:1px solid var(--hair); border-radius:10px;
     white-space:nowrap;
   }
   .status .dot{width:7px; height:7px; border-radius:50%; background:var(--muted); flex:none}
@@ -77,7 +78,7 @@
   .status.open{color:var(--ink); border-color:rgba(61,220,132,.35)}
   .nav-cta{
     display:inline-flex; align-items:center; gap:8px; font-size:.82rem; font-weight:600;
-    padding:10px 16px; background:var(--sky); color:var(--navy-900); border-radius:2px;
+    padding:10px 16px; background:var(--sky); color:var(--navy-900); border-radius:10px;
     transition:background .2s, box-shadow .2s;
   }
   .nav-cta:hover{background:var(--sky-200); box-shadow:0 6px 20px rgba(121,181,217,.28)}
@@ -90,20 +91,20 @@
   .hero::before{
     content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
     background:
-      radial-gradient(60% 55% at 78% 30%, rgba(121,181,217,.14), transparent 70%),
-      radial-gradient(50% 46% at 4% 66%, rgba(242,169,140,.17), transparent 72%),
-      radial-gradient(50% 50% at 12% 96%, rgba(31,47,62,.5), transparent 70%);
+      radial-gradient(62% 58% at 80% 26%, rgba(244,183,154,.20), transparent 70%),
+      radial-gradient(54% 50% at 2% 62%, rgba(238,155,120,.22), transparent 72%),
+      radial-gradient(58% 58% at 92% 94%, rgba(232,192,122,.12), transparent 72%);
   }
   .hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(28px,4vw,56px); align-items:center}
   .hero h1{font-size:clamp(2.7rem,7.4vw,5.3rem); margin:.5rem 0 0}
   .hero h1 .glow{color:var(--sky)}
   .hero .lede{color:var(--muted); font-size:clamp(1.02rem,1.6vw,1.2rem); max-width:34ch; margin:22px 0 0}
   .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
-  .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--sky); border:1px solid var(--hair); padding:5px 9px; border-radius:2px}
+  .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--sky); border:1px solid var(--hair); padding:5px 9px; border-radius:10px}
   .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
   .btn{
     display:inline-flex; align-items:center; gap:9px; font-weight:600; font-size:.94rem;
-    padding:14px 22px; border-radius:2px; transition:transform .15s, box-shadow .2s, background .2s; cursor:pointer; border:1px solid transparent;
+    padding:14px 22px; border-radius:10px; transition:transform .15s, box-shadow .2s, background .2s; cursor:pointer; border:1px solid transparent;
   }
   .btn svg{width:18px;height:18px}
   .btn-primary{background:var(--sky); color:var(--navy-900)}
@@ -115,13 +116,13 @@
   .scanner-shell{position:relative; padding:14px}
   .scanner-shell::before{
     content:""; position:absolute; inset:0; border-radius:6px; z-index:0;
-    background:conic-gradient(from var(--aura), transparent 0deg, rgba(121,181,217,.35) 40deg, transparent 120deg, transparent 240deg, rgba(31,47,62,.5) 300deg, transparent 360deg);
+    background:conic-gradient(from var(--aura), transparent 0deg, rgba(238,155,120,.42) 40deg, transparent 120deg, transparent 240deg, rgba(232,192,122,.30) 300deg, transparent 360deg);
     animation:spin 14s linear infinite; opacity:.75; filter:blur(6px);
   }
   .scanner{
     position:relative; z-index:1; aspect-ratio:1/1; width:100%;
-    background:radial-gradient(120% 120% at 50% 40%, #0d2434, #06131d 80%);
-    border:1px solid var(--hair); border-radius:4px; overflow:hidden;
+    background:radial-gradient(120% 120% at 50% 36%, #2a1e18, #140d0a 82%);
+    border:1px solid var(--hair); border-radius:14px; overflow:hidden;
   }
   .scanner canvas{position:absolute; inset:0; width:100%; height:100%}
   .scan-corner{position:absolute; width:22px; height:22px; border:1.5px solid var(--sky); opacity:.7; z-index:3}
@@ -166,9 +167,9 @@
   /* tecnología */
   .tech{background:linear-gradient(180deg,var(--navy-850),var(--navy-900))}
   .tech-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:clamp(28px,4vw,60px); align-items:center}
-  .tech-photo{position:relative; border:1px solid var(--hair); border-radius:4px; overflow:hidden; transform-style:preserve-3d; transition:transform .2s ease-out}
+  .tech-photo{position:relative; border:1px solid var(--hair); border-radius:14px; overflow:hidden; transform-style:preserve-3d; transition:transform .2s ease-out}
   .tech-photo img{width:100%; aspect-ratio:640/574; object-fit:cover; filter:saturate(.7) contrast(1.02)}
-  .tech-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,23,34,.15), rgba(8,23,34,.72)), radial-gradient(80% 60% at 30% 20%, rgba(121,181,217,.28), transparent 70%); mix-blend-mode:multiply}
+  .tech-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(24,19,16,.12), rgba(24,19,16,.68)), radial-gradient(80% 60% at 30% 20%, rgba(238,155,120,.30), transparent 70%); mix-blend-mode:multiply}
   .tech-photo .cap{position:absolute; left:16px; bottom:14px; z-index:2; font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; color:var(--sky); text-transform:uppercase}
   .tech-copy h2{font-size:clamp(1.9rem,4vw,3rem)}
   .tech-copy p{color:var(--muted); margin:18px 0 0; font-size:1.02rem}
@@ -179,23 +180,23 @@
   @media(max-width:840px){ .tech-grid{grid-template-columns:1fr; gap:30px} }
 
   /* el trato — sección cálida */
-  .care{position:relative; overflow:hidden; background:linear-gradient(180deg,var(--navy-900),var(--navy-850))}
+  .care{position:relative; overflow:hidden; background:var(--cream); color:#2b1c16}
   .care::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-    background:radial-gradient(52% 58% at 14% 28%, rgba(242,169,140,.13), transparent 72%),
-              radial-gradient(48% 55% at 94% 88%, rgba(242,169,140,.08), transparent 72%);}
+    background:radial-gradient(50% 56% at 12% 24%, rgba(238,155,120,.20), transparent 72%),
+              radial-gradient(46% 52% at 96% 92%, rgba(232,192,122,.20), transparent 72%);}
   .care-grid{position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,5vw,64px); align-items:center}
-  .care-copy .eyebrow.warm{color:var(--warm)}
-  .care-copy h2{font-size:clamp(1.9rem,4vw,3rem); margin-top:14px}
-  .care-copy p{color:var(--muted); margin:18px 0 26px; font-size:1.02rem; max-width:40ch}
-  .btn-warm{background:var(--warm); color:#3a1a0e}
-  .btn-warm:hover{background:var(--warm-200); box-shadow:0 12px 32px rgba(242,169,140,.32); transform:translateY(-1px)}
+  .care-copy .eyebrow.warm{color:#C25A2E}
+  .care-copy h2{font-size:clamp(1.9rem,4vw,3rem); margin-top:14px; color:#25150F}
+  .care-copy p{color:#6E574C; margin:18px 0 26px; font-size:1.02rem; max-width:40ch}
+  .btn-warm{background:#D8623A; color:#fff}
+  .btn-warm:hover{background:#C6512B; box-shadow:0 14px 34px rgba(216,98,58,.30); transform:translateY(-1px)}
   .care-list{list-style:none; padding:0; margin:0; display:grid; gap:14px}
-  .care-list li{display:flex; gap:16px; align-items:flex-start; background:rgba(242,169,140,.055); border:1px solid var(--warm-soft); border-radius:18px; padding:20px 22px; transition:background .25s, transform .25s}
-  .care-list li:hover{background:rgba(242,169,140,.10); transform:translateY(-2px)}
-  .care-list .ci{width:42px; height:42px; border-radius:13px; background:var(--warm-soft); display:grid; place-items:center; flex:none}
-  .care-list .ci svg{width:21px; height:21px; stroke:var(--warm); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
-  .care-list b{display:block; font-weight:600; font-size:1.02rem; margin-bottom:4px; color:var(--ink)}
-  .care-list .d{display:block; color:var(--muted); font-size:.92rem; line-height:1.5}
+  .care-list li{display:flex; gap:16px; align-items:flex-start; background:#FFFDFB; border:1px solid rgba(43,28,22,.08); border-radius:18px; padding:20px 22px; box-shadow:0 6px 22px rgba(120,70,40,.07); transition:transform .25s, box-shadow .25s}
+  .care-list li:hover{transform:translateY(-2px); box-shadow:0 14px 32px rgba(120,70,40,.13)}
+  .care-list .ci{width:42px; height:42px; border-radius:13px; background:rgba(238,155,120,.20); display:grid; place-items:center; flex:none}
+  .care-list .ci svg{width:21px; height:21px; stroke:#C25A2E; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+  .care-list b{display:block; font-weight:600; font-size:1.02rem; margin-bottom:4px; color:#25150F}
+  .care-list .d{display:block; color:#6E574C; font-size:.92rem; line-height:1.5}
   @media(max-width:840px){ .care-grid{grid-template-columns:1fr; gap:30px} }
 
   /* cashea band */
@@ -212,12 +213,12 @@
   .chips{display:flex; flex-wrap:wrap; gap:9px}
   .chip{
     font-family:var(--sans); font-size:.88rem; color:var(--ink); cursor:pointer;
-    padding:9px 15px; border:1px solid var(--hair); border-radius:2px; background:transparent;
+    padding:9px 15px; border:1px solid var(--hair); border-radius:10px; background:transparent;
     transition:border-color .18s, background .18s, color .18s;
   }
   .chip:hover{border-color:var(--sky)}
   .chip[aria-pressed="true"]{background:var(--sky); color:var(--navy-900); border-color:var(--sky); font-weight:600}
-  .ficha{position:sticky; top:84px; background:var(--navy-850); border:1px solid var(--hair); border-radius:4px; padding:26px}
+  .ficha{position:sticky; top:84px; background:var(--navy-850); border:1px solid var(--hair); border-radius:14px; padding:26px}
   .ficha .fh{display:flex; align-items:center; justify-content:space-between; border-bottom:1px dashed var(--hair); padding-bottom:14px; margin-bottom:16px}
   .ficha .fh .t{font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; color:var(--sky); text-transform:uppercase}
   .ficha .row{display:flex; justify-content:space-between; gap:14px; padding:9px 0; font-size:.92rem; border-bottom:1px solid var(--hair-soft)}
@@ -240,7 +241,7 @@
   .foot-phones a,.foot-phones span{color:var(--ink)}
   .foot-phones .lbl{color:var(--sky); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; margin-right:8px}
   /* weekly hours */
-  .hours{border:1px solid var(--hair); border-radius:4px; overflow:hidden}
+  .hours{border:1px solid var(--hair); border-radius:14px; overflow:hidden}
   .hours .hh{display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1px solid var(--hair); font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sky)}
   .hours .hrow{display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--hair-soft); font-size:.9rem; transition:background .2s}
   .hours .hrow:last-child{border-bottom:0}
@@ -253,7 +254,7 @@
   .hours .emerg{padding:12px 18px; font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; color:var(--cashea); background:rgba(251,249,64,.05)}
   .foot-bottom{border-top:1px solid var(--hair-soft); padding-top:22px; padding-bottom:40px; display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between}
   .socials{display:flex; gap:10px}
-  .socials a{width:38px; height:38px; border:1px solid var(--hair); border-radius:2px; display:grid; place-items:center; transition:border-color .2s, background .2s}
+  .socials a{width:38px; height:38px; border:1px solid var(--hair); border-radius:10px; display:grid; place-items:center; transition:border-color .2s, background .2s}
   .socials a:hover{border-color:var(--sky); background:rgba(121,181,217,.08)}
   .socials svg{width:17px;height:17px; fill:var(--ink)}
   .seal{font-size:.76rem; color:var(--muted); max-width:52ch}
@@ -284,7 +285,7 @@
 <header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Odontolaveglia — inicio">
-      <svg viewBox="0 0 32 42" aria-hidden="true"><g fill="none" stroke="#79B5D9" stroke-width="1.4"><path d="M16 3c-5 4-5 20 0 36 5-16 5-32 0-36z"/><path d="M16 3c5 4 5 20 0 36"/></g></svg>
+      <svg viewBox="0 0 32 42" aria-hidden="true"><g fill="none" stroke="#EE9B78" stroke-width="1.4"><path d="M16 3c-5 4-5 20 0 36 5-16 5-32 0-36z"/><path d="M16 3c5 4 5 20 0 36"/></g></svg>
       <span class="wm">Odontolaveglia</span>
     </a>
     <div class="status" id="navStatus" role="status" aria-live="polite">
@@ -491,7 +492,7 @@
 <footer id="contacto">
   <div class="wrap foot-top">
     <div class="foot-brand">
-      <svg viewBox="0 0 32 42" aria-hidden="true"><g fill="none" stroke="#79B5D9" stroke-width="1.4"><path d="M16 3c-5 4-5 20 0 36 5-16 5-32 0-36z"/><path d="M16 3c5 4 5 20 0 36"/></g></svg>
+      <svg viewBox="0 0 32 42" aria-hidden="true"><g fill="none" stroke="#EE9B78" stroke-width="1.4"><path d="M16 3c-5 4-5 20 0 36 5-16 5-32 0-36z"/><path d="M16 3c5 4 5 20 0 36"/></g></svg>
       <div class="wm">Odontolaveglia</div>
       <p class="addr">C.C. Puente Real, Nivel 2, Local 2-B-32.<br>Av. 5 de Julio cruce con Av. Costanera, Nueva Barcelona, Anzoátegui.</p>
       <div class="foot-phones">
@@ -693,15 +694,15 @@
         var alpha = Math.min(1, 0.30 + tw) * (0.5 + near*0.5);
         var sz = p.s * (1 + near*0.9);
         ctx.beginPath();
-        ctx.fillStyle = near>0.55 ? 'rgba(167,211,236,'+alpha+')' : 'rgba(121,181,217,'+alpha+')';
+        ctx.fillStyle = near>0.55 ? 'rgba(250,210,186,'+alpha+')' : 'rgba(238,155,120,'+alpha+')';
         ctx.arc(p.x,p.y,sz,0,6.283); ctx.fill();
       }
       // haz de escaneo (transform-like: rect con gradiente, sin mask/clip)
       if(!reduce && beamX>0 && beamX<W){
         var g=ctx.createLinearGradient(beamX-half,0,beamX+half,0);
-        g.addColorStop(0,'rgba(121,181,217,0)'); g.addColorStop(.5,'rgba(167,211,236,.16)'); g.addColorStop(1,'rgba(121,181,217,0)');
+        g.addColorStop(0,'rgba(244,183,154,0)'); g.addColorStop(.5,'rgba(250,214,190,.20)'); g.addColorStop(1,'rgba(244,183,154,0)');
         ctx.fillStyle=g; ctx.fillRect(beamX-half,0,half*2,H);
-        ctx.fillStyle='rgba(167,211,236,.55)'; ctx.fillRect(beamX-0.6,H*0.10,1.2,H*0.80);
+        ctx.fillStyle='rgba(250,214,190,.6)'; ctx.fillRect(beamX-0.6,H*0.10,1.2,H*0.80);
       }
       // progreso HUD
       var pct = Math.round(Math.min(1,Math.max(0,(beamX)/(W)))*100);
