@@ -187,10 +187,6 @@
   /* ---------- AGENDA ---------- */
   .agenda .note{font-size:.76rem;color:var(--muted);font-style:italic;margin-top:6px}
   .events{display:grid;grid-template-columns:1fr;gap:20px}
-  .agenda__live{margin-top:26px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;border-top:1px solid var(--line);padding-top:22px}
-  .agenda__live p{margin:0;color:var(--muted);max-width:52ch;font-size:.95rem}
-  .agenda__live .signcta{max-width:100%}
-  .agenda__live .signcta .txt{min-width:0}
   @media(min-width:700px){.events{grid-template-columns:repeat(3,1fr)}}
   .evcard{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
   .evcard__img{aspect-ratio:4/5;background:var(--ivory);overflow:hidden}
@@ -282,6 +278,22 @@
     .fab:hover{transform:none}
     .plate:hover{transform:none}
   }
+
+  /* ---------- AVISO / BANNER (editable desde el panel) ---------- */
+  .aviso{background:var(--red);color:#fff}
+  .aviso[hidden]{display:none}
+  .aviso__in{display:flex;align-items:center;gap:12px;max-width:var(--wrap);margin-inline:auto;padding:10px 20px}
+  .aviso__dot{width:8px;height:8px;border-radius:50%;background:#fff;flex:none;opacity:.9;
+    box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+  .aviso__msg{flex:1;font-size:.86rem;font-weight:500;letter-spacing:.01em;min-width:0}
+  .aviso__x{flex:none;background:rgba(255,255,255,.16);border:0;color:#fff;width:30px;height:30px;
+    border-radius:8px;cursor:pointer;font-size:1.1rem;line-height:1;display:grid;place-items:center;transition:.18s}
+  .aviso__x:hover{background:rgba(255,255,255,.3)}
+
+  /* ---------- placas de locatarios (dinámicas) ---------- */
+  .plate--tenant .plate__ic{overflow:hidden}
+  .plate--tenant .plate__logo{width:100%;height:100%;object-fit:cover}
+  .plate--tenant p{font-family:var(--display);font-weight:500;color:var(--navy);font-size:.9rem}
 </style>
 </head>
 <body>
@@ -304,6 +316,15 @@
     </g>
   </symbol>
 </svg>
+
+<!-- ===== AVISO / BANNER (se renderiza por JS desde cpr_aviso) ===== -->
+<div class="aviso" id="avisoBar" role="region" aria-label="Aviso del centro comercial" hidden>
+  <div class="aviso__in">
+    <span class="aviso__dot" aria-hidden="true"></span>
+    <span class="aviso__msg" id="avisoMsg"></span>
+    <button class="aviso__x" id="avisoClose" type="button" aria-label="Cerrar aviso">&times;</button>
+  </div>
+</div>
 
 <!-- ===== NAV : brand bar + segmented directory rail ===== -->
 <div class="topbar">
@@ -513,56 +534,15 @@
     <div class="wrap">
       <div class="sect__head reveal">
         <div>
-          <span class="snum">03 — Plaza Central</span>
-          <h2>El corazón de los eventos del centro comercial</h2>
+          <span class="snum">03 — Agenda · Lo que viene en Plaza Central</span>
+          <h2>Lo que viene en Plaza Central</h2>
+          <p class="note">Publicada desde el panel de la gerencia — julio 2026</p>
         </div>
-        <p class="lead">Talleres, conferencias, ferias y celebraciones durante todo el mes. La cartelera al día vive en su Instagram — síguela para no perderse nada.</p>
+        <p class="lead">Hoy estos eventos viven solo en las historias que desaparecen. Aquí quedan siempre visibles, con su fecha y su flyer — y la gerencia los edita sin tocar código.</p>
       </div>
 
-      <div class="events">
-        <article class="evcard reveal">
-          <div class="evcard__img"><img src="assets/cpr-foto-1.jpg" alt="Flyer del Taller de Cultura Preventiva en Plaza Central, impartido por Carmen Velásquez" loading="lazy"></div>
-          <div class="evcard__body">
-            <div class="evcard__tags"><span class="tag-pill">Taller</span><span class="tag-pill free">Entrada Libre</span></div>
-            <h3>Taller de Cultura Preventiva</h3>
-            <div class="meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Plaza Central</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Martes 28 de julio</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4:00 – 6:00 PM</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="evcard reveal">
-          <div class="evcard__img"><img src="assets/cpr-foto-2.jpg" alt="Flyer de la conferencia Cómo recuperar la calma con Jennifer Castro, en Sala #2 Supercines" loading="lazy"></div>
-          <div class="evcard__body">
-            <div class="evcard__tags"><span class="tag-pill">Conferencia</span><span class="tag-pill free">Entrada Libre</span></div>
-            <h3>Cómo recuperar la calma</h3>
-            <div class="meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sala #2 · Supercines</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Sábado 25 de julio</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>10:00 AM</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="evcard reveal">
-          <div class="evcard__img"><img src="assets/cpr-foto-3.jpg" alt="Flyer del Día del Niño en Puente Real, con dos niños disfrazados de superhéroes" loading="lazy"></div>
-          <div class="evcard__body">
-            <div class="evcard__tags"><span class="tag-pill">Familia</span><span class="tag-pill">Especial</span></div>
-            <h3>Día del Niño</h3>
-            <div class="meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>En todo el centro comercial</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l2.5 5 5.5.8-4 3.8 1 5.6L12 21l-5-2.4 1-5.6-4-3.8 5.5-.8z"/></svg>Celebración para los pequeños</span>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="agenda__live reveal">
-        <p>Estos son algunos de los eventos recientes. La cartelera y la agenda al día se publican en su Instagram.</p>
-        <a class="signcta" href="https://instagram.com/ciudadpuentereal" target="_blank" rel="noopener"><span class="txt">Ver la agenda en Instagram</span><span class="ar" aria-hidden="true">→</span></a>
-      </div>
+      <div class="events" id="events"></div>
+      <p class="dir-empty" id="agendaEmpty">Aún no hay eventos publicados. Agrégalos desde el panel de administración.</p>
     </div>
   </section>
 
@@ -699,7 +679,7 @@
 
     <div class="foot__seal">
       <span class="demo">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial.</span>
-      <span>Barcelona · Anzoátegui · Venezuela</span>
+      <span><a href="admin.html">Panel de administración</a> · Barcelona · Anzoátegui · Venezuela</span>
     </div>
   </div>
 </footer>
@@ -710,10 +690,135 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor" stroke="none"/></svg>
 </a>
 
+<!-- ===== módulo de datos compartido (idéntico en index.html y admin.html) ===== -->
+<script>
+window.CPR = (function(){
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas' };
+  var SEED = {
+    eventos: [
+      {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
+      {id:'e2', titulo:'Cómo recuperar la calma', tipo:'Conferencia', fecha:'2026-07-25', hora:'10:00 AM', lugar:'Sala #2 · Supercines', entradaLibre:true, img:'assets/cpr-foto-2.jpg'},
+      {id:'e3', titulo:'Día del Niño', tipo:'Familia', fecha:'', hora:'', lugar:'En todo el centro comercial', entradaLibre:false, img:'assets/cpr-foto-3.jpg'}
+    ],
+    aviso: {activo:true, mensaje:'Estacionamiento y WiFi gratis todos los días · Síguenos en @ciudadpuentereal'},
+    tiendas: [
+      {id:'t1', nombre:'Cine Supercines', categoria:'Cine', zona:'Sala #2', logo:''},
+      {id:'t2', nombre:'Tienda de moda (ejemplo)', categoria:'Moda', zona:'Planta 1', logo:''},
+      {id:'t3', nombre:'Tienda de tecnología (ejemplo)', categoria:'Tecnología', zona:'Planta 1', logo:''},
+      {id:'t4', nombre:'Farmacia / salud (ejemplo)', categoria:'Salud', zona:'Planta baja', logo:''}
+    ]
+  };
+  function read(key, def){
+    try{
+      var raw = localStorage.getItem(key);
+      if(raw === null){ localStorage.setItem(key, JSON.stringify(def)); return JSON.parse(JSON.stringify(def)); }
+      return JSON.parse(raw);
+    }catch(e){ return JSON.parse(JSON.stringify(def)); }
+  }
+  function write(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+  var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var dias  = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  return {
+    getEventos: function(){ return read(K.ev, SEED.eventos); },
+    setEventos: function(v){ write(K.ev, v); },
+    getAviso:   function(){ return read(K.av, SEED.aviso); },
+    setAviso:   function(v){ write(K.av, v); },
+    getTiendas: function(){ return read(K.ti, SEED.tiendas); },
+    setTiendas: function(v){ write(K.ti, v); },
+    uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
+    slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
+    fmtFecha: function(iso){
+      if(!iso) return '';
+      var p = String(iso).split('-'); if(p.length !== 3) return iso;
+      var d = new Date(+p[0], +p[1]-1, +p[2]);
+      if(isNaN(d.getTime())) return iso;
+      return dias[d.getDay()] + ' ' + (+p[2]) + ' de ' + meses[+p[1]-1];
+    }
+  };
+})();
+</script>
+
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var CPR = window.CPR;
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  /* ---- aviso / banner descartable ---- */
+  (function(){
+    var bar = document.getElementById('avisoBar');
+    var msg = document.getElementById('avisoMsg');
+    var btn = document.getElementById('avisoClose');
+    if(!bar) return;
+    var av = CPR.getAviso();
+    var dismissed = sessionStorage.getItem('cpr_aviso_cerrado') === '1';
+    if(av && av.activo && av.mensaje && !dismissed){
+      msg.textContent = av.mensaje;
+      bar.hidden = false;
+    }
+    if(btn) btn.addEventListener('click', function(){
+      bar.hidden = true;
+      try{ sessionStorage.setItem('cpr_aviso_cerrado','1'); }catch(e){}
+    });
+  })();
+
+  /* ---- agenda: render de cpr_eventos ---- */
+  (function(){
+    var host = document.getElementById('events');
+    var empty = document.getElementById('agendaEmpty');
+    if(!host) return;
+    var pin   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+    var cal   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>';
+    var clock = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+    var evs = CPR.getEventos() || [];
+    if(!evs.length){ if(empty) empty.classList.add('show'); return; }
+    host.innerHTML = evs.map(function(ev){
+      var tags = '<span class="tag-pill">' + esc(ev.tipo || 'Evento') + '</span>';
+      if(ev.entradaLibre) tags += '<span class="tag-pill free">Entrada Libre</span>';
+      var meta = '<span>' + pin + esc(ev.lugar || 'Puente Real') + '</span>';
+      var f = CPR.fmtFecha(ev.fecha);
+      if(f) meta += '<span>' + cal + esc(f) + '</span>';
+      if(ev.hora) meta += '<span>' + clock + esc(ev.hora) + '</span>';
+      var img = ev.img
+        ? '<img src="' + esc(ev.img) + '" alt="Flyer del evento ' + esc(ev.titulo) + '" loading="lazy">'
+        : '';
+      return '<article class="evcard reveal"><div class="evcard__img">' + img + '</div>' +
+             '<div class="evcard__body"><div class="evcard__tags">' + tags + '</div>' +
+             '<h3>' + esc(ev.titulo) + '</h3><div class="meta">' + meta + '</div></div></article>';
+    }).join('');
+  })();
+
+  /* ---- directorio: placas de locatarios desde cpr_tiendas ---- */
+  (function(){
+    var grid = document.getElementById('plates');
+    if(!grid) return;
+    var CATCOLOR = { cine:'#E1211F', moda:'#12192B', tecnologia:'#A2814B', salud:'#1f6b32',
+      supermercado:'#12192B', parques:'#E1211F', eventos:'#A2814B', servicios:'#5b6070' };
+    var store = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9l1-4h14l1 4M5 9v10h14V9M4 9h16"/></svg>';
+    var anchor = grid.querySelector('.plate--index'); /* insertamos antes de la placa "próximamente" */
+    var tiendas = CPR.getTiendas() || [];
+    tiendas.forEach(function(t){
+      var slug = CPR.slug(t.categoria);
+      var color = CATCOLOR_(slug);
+      var el = document.createElement('article');
+      el.className = 'plate plate--tenant reveal';
+      el.setAttribute('data-cat', slug);
+      el.setAttribute('data-search', (t.nombre + ' ' + t.categoria + ' ' + t.zona).toLowerCase());
+      el.style.setProperty('--cat', color);
+      var ic = t.logo
+        ? '<span class="plate__ic" aria-hidden="true"><img class="plate__logo" src="' + esc(t.logo) + '" alt=""></span>'
+        : '<span class="plate__ic" aria-hidden="true">' + store + '</span>';
+      el.innerHTML =
+        '<div class="plate__top"><span class="plate__zone">' + esc(t.zona || 'Locatario') + '</span>' + ic + '</div>' +
+        '<h3>' + esc(t.nombre) + '</h3>' +
+        '<p>' + esc(t.categoria) + '</p>' +
+        '<span class="tenant"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>Locatario</span>';
+      if(anchor) grid.insertBefore(el, anchor); else grid.appendChild(el);
+    });
+    function CATCOLOR_(s){ return CATCOLOR[s] || '#8a93a6'; }
+  })();
 
   /* ---- split-flap board ---- */
   var tiles = Array.prototype.slice.call(document.querySelectorAll('.flap'));
