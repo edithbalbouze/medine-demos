@@ -41,6 +41,21 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
   evergreen (Plaza Central + agenda viva en Instagram) porque una página estática no puede
   mantener una agenda a mano; la versión con panel la hace editable (localStorage en la demo,
   base de datos en producción). URLs: `.../ciudad-puente-real/` y `.../ciudad-puente-real-panel/`.
+- ℹ️ **`plaza-mayor-panel` NO es una demo nueva — es la variante "con panel administrativo" de
+  `plaza-mayor`** (mismo diseño a propósito: dos tiers del mismo producto — express estática
+  $150 vs. con panel $250, igual que el par Ciudad Puente Real). Comparte paleta noche-marina,
+  fuentes (**DM Serif Display + Onest**), arquetipo (paseo costero nocturno), firma (reflejo
+  waterline + luces de muelle) y componentes con la express **DELIBERADAMENTE**; **no cuenta
+  como segundo uso** de esas fuentes/técnicas para el gate de unicidad. Añade un **panel de
+  administración** (`admin.html`) donde el centro publica/edita **eventos, tiendas/locales por
+  mundo, aviso/banner y horarios**; el sitio público (`index.html`) lee ese contenido de
+  **localStorage** (semilla con los datos reales de la investigación; en producción: base de
+  datos + inicio de sesión) y se **actualiza en vivo** (evento `storage` entre pestañas +
+  re-render al enfocar). Resuelve el dolor central del prospecto ("todo el directorio y los
+  eventos viven en historias que caducan") con un CMS propio: el `index` express reencuadra
+  Los mundos y La agenda a contenido fijo; la versión con panel los hace editables. Módulo de
+  datos `PM` compartido idéntico en ambas páginas. URLs: `.../plaza-mayor/` (express) y
+  `.../plaza-mayor-panel/` (+ `/admin.html`).
 - Los DIEZ campos de la fila importan: una demo nueva no puede repetir arquetipo, firma,
   nav, footer ni tratamiento de tarjetas de ninguna fila anterior (ejes de unicidad de
   `references/diseno.md` de la skill `demo-landing`).

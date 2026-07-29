@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Plaza Mayor · Panel de administración</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c2233'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='%23ebbb11' font-family='Georgia,serif' font-style='italic'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea-900:#08192a;--sea-850:#0a1f30;--sea-800:#0c2233;--sea-700:#102b3f;--sea-600:#163a52;
+  --teal-500:#2e6e6a;--teal-400:#4f9086;--gold:#ebbb11;--gold-soft:#f4d879;--coral:#c97b5a;
+  --cream:#f3e9d8;--cream-90:#efe5d4;--cream-dim:rgba(243,233,216,.62);--cream-faint:rgba(243,233,216,.4);
+  --line:rgba(243,233,216,.14);--line-strong:rgba(243,233,216,.24);--ok:#4f9086;--danger:#e0715f;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:
+  radial-gradient(90% 60% at 90% 0,rgba(36,94,91,.22),transparent 55%),
+  radial-gradient(70% 50% at 0% 5%,rgba(235,187,17,.06),transparent 55%),
+  var(--sea-800);
+  color:var(--cream);font-family:"Onest",system-ui,sans-serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;font-size:15px;min-height:100vh}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;margin:0;letter-spacing:-.01em}
+a{color:var(--gold-soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1000px;margin-inline:auto;padding:0 clamp(16px,4vw,32px)}
+
+/* topbar */
+.top{position:sticky;top:0;z-index:20;background:rgba(8,25,42,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.9rem clamp(16px,4vw,32px);max-width:1000px;margin-inline:auto}
+.brand{font-family:"DM Serif Display",serif;font-size:1.25rem;display:flex;align-items:center;gap:.55rem}
+.brand .p,.brand .m{font-style:italic;color:var(--gold-soft)}
+.brand svg{width:18px;height:18px}
+.top-actions{margin-left:auto;display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.45em;font:inherit;font-weight:600;font-size:.85rem;
+  cursor:pointer;border:1px solid var(--line-strong);border-radius:9px;padding:.55em 1em;
+  background:rgba(243,233,216,.03);color:var(--cream);transition:.25s var(--ease);text-decoration:none}
+.btn:hover{border-color:var(--gold);color:var(--gold-soft)}
+.btn-gold{background:var(--gold);color:var(--sea-900);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-soft);color:var(--sea-900);transform:translateY(-1px)}
+.btn-sm{font-size:.78rem;padding:.4em .7em}
+.btn-danger{color:var(--danger);border-color:rgba(224,113,95,.35)}
+.btn-danger:hover{border-color:var(--danger);color:var(--danger)}
+
+.note{background:rgba(235,187,17,.08);border:1px solid rgba(235,187,17,.3);border-radius:12px;
+  padding:.9rem 1.1rem;margin:1.4rem 0;font-size:.88rem;color:var(--cream-90);display:flex;gap:.7em;align-items:flex-start}
+.note svg{width:20px;height:20px;color:var(--gold);flex:none;margin-top:1px}
+
+h1.page{font-size:clamp(1.9rem,4vw,2.7rem);margin:1.6rem 0 .2rem}
+.page-sub{color:var(--cream-dim);margin:0 0 1.2rem;font-size:.95rem}
+
+.card{background:linear-gradient(160deg,rgba(22,58,82,.4),rgba(10,28,43,.5));
+  border:1px solid var(--line);border-radius:16px;padding:clamp(18px,3vw,28px);margin-bottom:1.4rem}
+.card-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;flex-wrap:wrap}
+.card-head h2{font-size:1.5rem}
+.card-head .count{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--line-strong);border-radius:100px;padding:.2em .7em}
+.card-head .sp{margin-left:auto}
+.hint{color:var(--cream-faint);font-size:.86rem;margin:.2rem 0 1rem}
+
+/* list rows */
+.rows{display:flex;flex-direction:column;gap:.6rem}
+.row{display:flex;align-items:center;gap:.9rem;padding:.8rem .9rem;border:1px solid var(--line);
+  border-radius:11px;background:rgba(8,25,42,.4)}
+.row.off{opacity:.5}
+.row .main{min-width:0;flex:1}
+.row .main b{display:block;font-weight:600;color:var(--cream);font-size:.98rem}
+.row .main small{color:var(--cream-faint);font-size:.8rem}
+.row .tag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);
+  border:1px solid var(--line-strong);border-radius:100px;padding:.2em .6em;white-space:nowrap}
+.row .acts{display:flex;gap:.4rem;flex:none}
+.iconbtn{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line-strong);border-radius:8px;background:none;color:var(--cream-dim);cursor:pointer;transition:.2s}
+.iconbtn:hover{color:var(--gold);border-color:var(--gold)}
+.iconbtn.del:hover{color:var(--danger);border-color:var(--danger)}
+.iconbtn svg{width:16px;height:16px}
+.empty{color:var(--cream-faint);font-size:.9rem;padding:.6rem 0}
+.mundo-group{margin-top:1rem}
+.mundo-group>h3{font-size:1rem;font-family:"Onest",sans-serif;font-weight:600;color:var(--gold-soft);
+  letter-spacing:.02em;margin:0 0 .5rem;display:flex;align-items:center;gap:.5em}
+.mundo-group>h3::before{content:"";width:16px;height:1px;background:var(--gold)}
+
+/* switch */
+.sw{position:relative;width:42px;height:24px;flex:none;cursor:pointer}
+.sw input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sw .track{position:absolute;inset:0;background:rgba(243,233,216,.14);border-radius:100px;transition:.25s}
+.sw .knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--cream-dim);transition:.25s}
+.sw input:checked ~ .track{background:rgba(79,144,134,.5)}
+.sw input:checked ~ .knob{left:21px;background:var(--gold)}
+
+/* form */
+form.editor{margin-top:1.2rem;padding-top:1.2rem;border-top:1px dashed var(--line-strong)}
+.editor h3{font-family:"Onest",sans-serif;font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.9rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field.full{grid-column:1/-1}
+label{font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--cream-dim);font-weight:600}
+input[type=text],input[type=date],textarea,select{
+  font:inherit;color:var(--cream);background:rgba(8,25,42,.6);border:1px solid var(--line-strong);
+  border-radius:9px;padding:.6em .75em;width:100%}
+textarea{resize:vertical;min-height:66px}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);outline:none}
+select option{background:var(--sea-800)}
+.chk{display:flex;align-items:center;gap:.6rem;flex-direction:row}
+.chk label{text-transform:none;font-size:.9rem;letter-spacing:0;color:var(--cream-90);font-weight:500}
+.form-actions{display:flex;gap:.6rem;margin-top:1rem;align-items:center}
+.saved-flash{color:var(--ok);font-size:.82rem;opacity:0;transition:.3s}
+.saved-flash.on{opacity:1}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.row{flex-wrap:wrap}.row .acts{width:100%;justify-content:flex-end}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <span class="brand">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M1 14c3 0 3-3 5.5-3S9 14 11 14s2-3 5.5-3S19 14 22 14" stroke="#ebbb11" stroke-width="1.8" stroke-linecap="round"/><path d="M1 18c3 0 3-3 5.5-3S9 18 11 18s2-3 5.5-3S19 18 22 18" stroke="#4f9086" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span><span class="p">P</span>laza <span class="m">M</span>ayor · Panel</span>
+    </span>
+    <div class="top-actions">
+      <a class="btn" href="./index.html" target="_blank" rel="noopener">Ver el sitio ↗</a>
+      <button class="btn btn-danger btn-sm" id="resetBtn" type="button">Restablecer demo</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 class="page">Administra tu centro comercial</h1>
+  <p class="page-sub">Publica eventos, tiendas y avisos — y aparecen al instante en tu página, sin depender de una historia que caduca.</p>
+
+  <div class="note">
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1" fill="currentColor"/></svg>
+    <span><b>Demo interactiva.</b> Los cambios se guardan en <b>este navegador</b> (no se publican en internet). En la versión final: base de datos real, inicio de sesión para tu equipo y publicación en vivo. Abre <a href="./index.html" target="_blank" rel="noopener">tu página</a> en otra pestaña y verás los cambios aparecer al guardar.</span>
+  </div>
+
+  <!-- ===== AVISO ===== -->
+  <section class="card" id="cardAviso">
+    <div class="card-head"><h2>Aviso / banner</h2></div>
+    <p class="hint">Una franja destacada en la parte superior de tu página. Ideal para horarios especiales, un evento del fin de semana o una bienvenida.</p>
+    <div class="chk" style="margin-bottom:1rem">
+      <span class="sw"><input type="checkbox" id="avActivo"><span class="track"></span><span class="knob"></span></span>
+      <label for="avActivo">Mostrar el aviso en la página</label>
+    </div>
+    <div class="field full">
+      <label for="avTexto">Texto del aviso</label>
+      <input type="text" id="avTexto" maxlength="140" placeholder="Ej: Horario especial este feriado: 11:00 a.m. – 8:00 p.m.">
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-gold" id="avSave" type="button">Guardar aviso</button>
+      <span class="saved-flash" id="avFlash">✓ Guardado</span>
+    </div>
+  </section>
+
+  <!-- ===== EVENTOS ===== -->
+  <section class="card" id="cardEventos">
+    <div class="card-head"><h2>Eventos</h2><span class="count" id="evCount">0</span><span class="sp"></span>
+      <button class="btn btn-sm" id="evNew" type="button">+ Nuevo evento</button></div>
+    <p class="hint">Tu cartelera. Cada evento aparece como un "pase" en la sección Agenda de tu página.</p>
+    <div class="rows" id="evRows"></div>
+
+    <form class="editor" id="evForm" hidden>
+      <h3 id="evFormTitle">Nuevo evento</h3>
+      <input type="hidden" id="evId">
+      <div class="grid">
+        <div class="field">
+          <label for="evEtiqueta">Etiqueta</label>
+          <select id="evEtiqueta"></select>
+        </div>
+        <div class="field">
+          <label for="evIcono">Ícono</label>
+          <select id="evIcono"></select>
+        </div>
+        <div class="field full">
+          <label for="evTitulo">Título</label>
+          <input type="text" id="evTitulo" maxlength="70" placeholder="Ej: Fiebre mundialista">
+        </div>
+        <div class="field">
+          <label for="evFecha">Fecha (opcional)</label>
+          <input type="date" id="evFecha">
+        </div>
+        <div class="field">
+          <label for="evDetalle">Pie / lugar</label>
+          <input type="text" id="evDetalle" maxlength="50" placeholder="Ej: En vivo · Plaza Mayor">
+        </div>
+        <div class="field full">
+          <label for="evDesc">Descripción</label>
+          <textarea id="evDesc" maxlength="240" placeholder="De qué se trata el evento…"></textarea>
+        </div>
+        <div class="field full chk">
+          <span class="sw"><input type="checkbox" id="evActivo" checked><span class="track"></span><span class="knob"></span></span>
+          <label for="evActivo">Visible en la página</label>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-gold" type="submit">Guardar evento</button>
+        <button class="btn" type="button" id="evCancel">Cancelar</button>
+        <span class="saved-flash" id="evFlash">✓ Guardado</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===== LOCALES ===== -->
+  <section class="card" id="cardLocales">
+    <div class="card-head"><h2>Tiendas y locales</h2><span class="count" id="loCount">0</span><span class="sp"></span>
+      <button class="btn btn-sm" id="loNew" type="button">+ Nueva tienda</button></div>
+    <p class="hint">Tu directorio. Cada tienda se ubica en uno de los cuatro mundos y aparece en la sección "Los mundos".</p>
+    <div id="loGroups"></div>
+
+    <form class="editor" id="loForm" hidden>
+      <h3 id="loFormTitle">Nueva tienda</h3>
+      <input type="hidden" id="loId">
+      <div class="grid">
+        <div class="field full">
+          <label for="loNombre">Nombre de la tienda</label>
+          <input type="text" id="loNombre" maxlength="60" placeholder="Ej: Centróptico">
+        </div>
+        <div class="field">
+          <label for="loMundo">Mundo</label>
+          <select id="loMundo"></select>
+        </div>
+        <div class="field">
+          <label for="loUbic">Ubicación (opcional)</label>
+          <input type="text" id="loUbic" maxlength="50" placeholder="Ej: Galería Caribana, nivel 1">
+        </div>
+        <div class="field full chk">
+          <span class="sw"><input type="checkbox" id="loActivo" checked><span class="track"></span><span class="knob"></span></span>
+          <label for="loActivo">Visible en la página</label>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-gold" type="submit">Guardar tienda</button>
+        <button class="btn" type="button" id="loCancel">Cancelar</button>
+        <span class="saved-flash" id="loFlash">✓ Guardado</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===== HORARIOS ===== -->
+  <section class="card" id="cardHorarios">
+    <div class="card-head"><h2>Horario de atención</h2><span class="count" id="hoCount">0</span><span class="sp"></span>
+      <button class="btn btn-sm" id="hoNew" type="button">+ Agregar horario</button></div>
+    <p class="hint">Aparece en la sección "Cómo llegar". Si lo dejas vacío, la página invita a escribir por Instagram.</p>
+    <div class="rows" id="hoRows"></div>
+
+    <form class="editor" id="hoForm" hidden>
+      <h3 id="hoFormTitle">Nuevo horario</h3>
+      <input type="hidden" id="hoId">
+      <div class="grid">
+        <div class="field">
+          <label for="hoDias">Días</label>
+          <input type="text" id="hoDias" maxlength="40" placeholder="Ej: Lunes a Sábado">
+        </div>
+        <div class="field">
+          <label for="hoHorario">Horario</label>
+          <input type="text" id="hoHorario" maxlength="40" placeholder="Ej: 10:00 a.m. – 9:00 p.m.">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-gold" type="submit">Guardar horario</button>
+        <button class="btn" type="button" id="hoCancel">Cancelar</button>
+        <span class="saved-flash" id="hoFlash">✓ Guardado</span>
+      </div>
+    </form>
+  </section>
+
+  <p style="text-align:center;color:var(--cream-faint);font-size:.8rem;margin:2.5rem 0 3rem">
+    Panel de demostración · <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> — propuesta de diseño, no es el sitio oficial.
+  </p>
+</main>
+
+<!-- misma capa de datos que el sitio público -->
+<script>
+window.PM = (function(){
+  var K = { ev:'pm_eventos', lo:'pm_locales', av:'pm_aviso', ho:'pm_horarios', v:'pm_version' };
+  var VERSION = 1;
+  var SEED = {
+    eventos: [
+      {id:'ev1', etiqueta:'Temporada',   titulo:'Fiebre mundialista',      fecha:'', descripcion:'Predicciones, premios y los encuentros en pantalla grande desde las 3:00 p.m. en el centro.', detalle:'En vivo · Plaza Mayor', icono:'balon',    activo:true},
+      {id:'ev2', etiqueta:'De temporada',titulo:'Vuelta a clases',         fecha:'', descripcion:'Mercancía escolar y de graduación en las tiendas del centro. Todo para el nuevo año, en un mismo paseo.', detalle:'Tiendas participantes', icono:'mochila', activo:true},
+      {id:'ev3', etiqueta:'Novedades',   titulo:'Estrenos y lanzamientos', fecha:'', descripcion:'Como el nuevo "Power of You" de Emporio Armani. Paga con Cashea en las tiendas que lo permiten.', detalle:'Consulta en tienda', icono:'estrella', activo:true}
+    ],
+    locales: [
+      {id:'lo1', nombre:'Feria de comida',              mundo:'sabores',   ubicacion:'Nivel 1',                  activo:true},
+      {id:'lo2', nombre:'Restaurantes junto al muelle', mundo:'sabores',   ubicacion:'Frente a los canales',     activo:true},
+      {id:'lo3', nombre:'Cafés',                        mundo:'sabores',   ubicacion:'',                          activo:true},
+      {id:'lo4', nombre:'Bimbi',                        mundo:'moda',      ubicacion:'Zapatería · escolar',       activo:true},
+      {id:'lo5', nombre:'Perfumerías',                  mundo:'moda',      ubicacion:'Con Cashea',                activo:true},
+      {id:'lo6', nombre:'Joyerías',                     mundo:'moda',      ubicacion:'',                          activo:true},
+      {id:'lo7', nombre:'Calzado y moda',               mundo:'moda',      ubicacion:'',                          activo:true},
+      {id:'lo8', nombre:'Supermercados',                mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo9', nombre:'Centróptico',                  mundo:'servicios', ubicacion:'Galería Caribana, nivel 1', activo:true},
+      {id:'lo10',nombre:'Gimnasio',                     mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo11',nombre:'Telefonía',                    mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo12',nombre:'Eventos de temporada',         mundo:'diversion', ubicacion:'',                          activo:true},
+      {id:'lo13',nombre:'Transmisiones en vivo',        mundo:'diversion', ubicacion:'',                          activo:true},
+      {id:'lo14',nombre:'Planes en familia',            mundo:'diversion', ubicacion:'',                          activo:true}
+    ],
+    aviso:    { activo:true, texto:'¡Vive la temporada mundialista en Plaza Mayor! Encuentros en pantalla grande. ⚽' },
+    horarios: []
+  };
+  function read(key, def){
+    try{ var raw = localStorage.getItem(key);
+      if(raw === null){ localStorage.setItem(key, JSON.stringify(def)); return JSON.parse(JSON.stringify(def)); }
+      return JSON.parse(raw);
+    }catch(e){ return JSON.parse(JSON.stringify(def)); }
+  }
+  function write(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+  try{ if(localStorage.getItem(K.v)===null) localStorage.setItem(K.v, String(VERSION)); }catch(e){}
+  var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var dias  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  return {
+    MUNDOS: [
+      {key:'sabores',   label:'Sabores frente al muelle'},
+      {key:'moda',      label:'Moda y tiendas'},
+      {key:'servicios', label:'Servicios y bienestar'},
+      {key:'diversion', label:'Diversión y encuentros'}
+    ],
+    ETIQUETAS: ['Temporada','De temporada','Novedades','Evento','Aviso'],
+    ICONOS: ['balon','mochila','estrella','musica','regalo','generico'],
+    seed: SEED,
+    getEventos:function(){return read(K.ev,SEED.eventos);}, setEventos:function(v){write(K.ev,v);},
+    getLocales:function(){return read(K.lo,SEED.locales);}, setLocales:function(v){write(K.lo,v);},
+    getAviso:function(){return read(K.av,SEED.aviso);},     setAviso:function(v){write(K.av,v);},
+    getHorarios:function(){return read(K.ho,SEED.horarios);},setHorarios:function(v){write(K.ho,v);},
+    resetAll:function(){ [K.ev,K.lo,K.av,K.ho].forEach(function(k){try{localStorage.removeItem(k);}catch(e){}}); },
+    uid:function(){return 'x'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);},
+    fmtFecha:function(iso){ if(!iso) return ''; var p=String(iso).split('-'); if(p.length!==3) return iso;
+      var d=new Date(+p[0],+p[1]-1,+p[2]); if(isNaN(d.getTime())) return iso;
+      return dias[d.getDay()]+' '+(+p[2])+' de '+meses[+p[1]-1]; }
+  };
+})();
+</script>
+
+<script>
+(function(){
+  var PM = window.PM;
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  var ICON_DEL = '<svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var ICON_EDIT= '<svg viewBox="0 0 24 24" fill="none"><path d="M4 20h4L18 10l-4-4L4 16v4zM14 6l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function flash(el){ el.classList.add('on'); setTimeout(function(){ el.classList.remove('on'); }, 1600); }
+  function mundoLabel(k){ var m=PM.MUNDOS.filter(function(x){return x.key===k;})[0]; return m?m.label:k; }
+
+  /* fill selects */
+  (function(){
+    var et=$('evEtiqueta'); PM.ETIQUETAS.forEach(function(e){ var o=document.createElement('option');o.value=e;o.textContent=e;et.appendChild(o); });
+    var ic=$('evIcono'); PM.ICONOS.forEach(function(e){ var o=document.createElement('option');o.value=e;o.textContent=e;ic.appendChild(o); });
+    var mu=$('loMundo'); PM.MUNDOS.forEach(function(m){ var o=document.createElement('option');o.value=m.key;o.textContent=m.label;mu.appendChild(o); });
+  })();
+
+  /* ============ AVISO ============ */
+  function loadAviso(){ var a=PM.getAviso(); $('avActivo').checked=!!a.activo; $('avTexto').value=a.texto||''; }
+  $('avSave').addEventListener('click', function(){
+    PM.setAviso({ activo:$('avActivo').checked, texto:$('avTexto').value.trim() }); flash($('avFlash'));
+  });
+
+  /* ============ EVENTOS ============ */
+  function renderEventos(){
+    var evs=PM.getEventos(); $('evCount').textContent=evs.length;
+    var host=$('evRows');
+    if(!evs.length){ host.innerHTML='<p class="empty">Aún no hay eventos. Agrega el primero.</p>'; return; }
+    host.innerHTML=evs.map(function(e){
+      return '<div class="row '+(e.activo===false?'off':'')+'">'
+        + '<span class="sw" title="Visible"><input type="checkbox" data-tg="ev" data-id="'+e.id+'" '+(e.activo!==false?'checked':'')+'><span class="track"></span><span class="knob"></span></span>'
+        + '<span class="tag">'+esc(e.etiqueta||'Evento')+'</span>'
+        + '<span class="main"><b>'+esc(e.titulo||'(sin título)')+'</b><small>'+esc(e.fecha?PM.fmtFecha(e.fecha)+' · ':'')+esc(e.detalle||'')+'</small></span>'
+        + '<span class="acts"><button class="iconbtn" data-edit="ev" data-id="'+e.id+'" aria-label="Editar">'+ICON_EDIT+'</button>'
+        + '<button class="iconbtn del" data-del="ev" data-id="'+e.id+'" aria-label="Eliminar">'+ICON_DEL+'</button></span>'
+        + '</div>';
+    }).join('');
+  }
+  function evShowForm(ev){
+    $('evForm').hidden=false;
+    $('evFormTitle').textContent = ev ? 'Editar evento' : 'Nuevo evento';
+    $('evId').value    = ev ? ev.id : '';
+    $('evEtiqueta').value = ev ? (ev.etiqueta||'Temporada') : 'Temporada';
+    $('evIcono').value = ev ? (ev.icono||'generico') : 'balon';
+    $('evTitulo').value= ev ? (ev.titulo||'') : '';
+    $('evFecha').value = ev ? (ev.fecha||'') : '';
+    $('evDetalle').value=ev ? (ev.detalle||'') : '';
+    $('evDesc').value  = ev ? (ev.descripcion||'') : '';
+    $('evActivo').checked = ev ? ev.activo!==false : true;
+    $('evForm').scrollIntoView({behavior:'smooth',block:'nearest'});
+    $('evTitulo').focus();
+  }
+  $('evNew').addEventListener('click', function(){ evShowForm(null); });
+  $('evCancel').addEventListener('click', function(){ $('evForm').hidden=true; });
+  $('evForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var titulo=$('evTitulo').value.trim(); if(!titulo){ $('evTitulo').focus(); return; }
+    var evs=PM.getEventos(); var id=$('evId').value;
+    var data={ etiqueta:$('evEtiqueta').value, icono:$('evIcono').value, titulo:titulo,
+      fecha:$('evFecha').value, detalle:$('evDetalle').value.trim(), descripcion:$('evDesc').value.trim(),
+      activo:$('evActivo').checked };
+    if(id){ evs=evs.map(function(x){ return x.id===id ? Object.assign({},x,data) : x; }); }
+    else { data.id=PM.uid(); evs.push(data); }
+    PM.setEventos(evs); renderEventos(); flash($('evFlash')); $('evForm').hidden=true;
+  });
+
+  /* ============ LOCALES ============ */
+  function renderLocales(){
+    var locs=PM.getLocales(); $('loCount').textContent=locs.length;
+    var host=$('loGroups');
+    host.innerHTML=PM.MUNDOS.map(function(m){
+      var items=locs.filter(function(l){return l.mundo===m.key;});
+      var rows = items.length ? items.map(function(l){
+        return '<div class="row '+(l.activo===false?'off':'')+'">'
+          + '<span class="sw" title="Visible"><input type="checkbox" data-tg="lo" data-id="'+l.id+'" '+(l.activo!==false?'checked':'')+'><span class="track"></span><span class="knob"></span></span>'
+          + '<span class="main"><b>'+esc(l.nombre)+'</b>'+(l.ubicacion?'<small>'+esc(l.ubicacion)+'</small>':'')+'</span>'
+          + '<span class="acts"><button class="iconbtn" data-edit="lo" data-id="'+l.id+'" aria-label="Editar">'+ICON_EDIT+'</button>'
+          + '<button class="iconbtn del" data-del="lo" data-id="'+l.id+'" aria-label="Eliminar">'+ICON_DEL+'</button></span>'
+          + '</div>';
+      }).join('') : '<p class="empty">Sin tiendas en este mundo.</p>';
+      return '<div class="mundo-group"><h3>'+esc(m.label)+'</h3><div class="rows">'+rows+'</div></div>';
+    }).join('');
+  }
+  function loShowForm(lo){
+    $('loForm').hidden=false;
+    $('loFormTitle').textContent = lo ? 'Editar tienda' : 'Nueva tienda';
+    $('loId').value    = lo ? lo.id : '';
+    $('loNombre').value= lo ? (lo.nombre||'') : '';
+    $('loMundo').value = lo ? (lo.mundo||'sabores') : 'sabores';
+    $('loUbic').value  = lo ? (lo.ubicacion||'') : '';
+    $('loActivo').checked = lo ? lo.activo!==false : true;
+    $('loForm').scrollIntoView({behavior:'smooth',block:'nearest'});
+    $('loNombre').focus();
+  }
+  $('loNew').addEventListener('click', function(){ loShowForm(null); });
+  $('loCancel').addEventListener('click', function(){ $('loForm').hidden=true; });
+  $('loForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre=$('loNombre').value.trim(); if(!nombre){ $('loNombre').focus(); return; }
+    var locs=PM.getLocales(); var id=$('loId').value;
+    var data={ nombre:nombre, mundo:$('loMundo').value, ubicacion:$('loUbic').value.trim(), activo:$('loActivo').checked };
+    if(id){ locs=locs.map(function(x){ return x.id===id ? Object.assign({},x,data) : x; }); }
+    else { data.id=PM.uid(); locs.push(data); }
+    PM.setLocales(locs); renderLocales(); flash($('loFlash')); $('loForm').hidden=true;
+  });
+
+  /* ============ HORARIOS ============ */
+  function renderHorarios(){
+    var hs=PM.getHorarios(); $('hoCount').textContent=hs.length;
+    var host=$('hoRows');
+    if(!hs.length){ host.innerHTML='<p class="empty">Sin horarios. La página invita a escribir por Instagram.</p>'; return; }
+    host.innerHTML=hs.map(function(h){
+      return '<div class="row"><span class="main"><b>'+esc(h.dias)+'</b><small>'+esc(h.horario)+'</small></span>'
+        + '<span class="acts"><button class="iconbtn" data-edit="ho" data-id="'+h.id+'" aria-label="Editar">'+ICON_EDIT+'</button>'
+        + '<button class="iconbtn del" data-del="ho" data-id="'+h.id+'" aria-label="Eliminar">'+ICON_DEL+'</button></span></div>';
+    }).join('');
+  }
+  function hoShowForm(ho){
+    $('hoForm').hidden=false;
+    $('hoFormTitle').textContent = ho ? 'Editar horario' : 'Nuevo horario';
+    $('hoId').value=ho?ho.id:''; $('hoDias').value=ho?ho.dias:''; $('hoHorario').value=ho?ho.horario:'';
+    $('hoForm').scrollIntoView({behavior:'smooth',block:'nearest'}); $('hoDias').focus();
+  }
+  $('hoNew').addEventListener('click', function(){ hoShowForm(null); });
+  $('hoCancel').addEventListener('click', function(){ $('hoForm').hidden=true; });
+  $('hoForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var dias=$('hoDias').value.trim(), horario=$('hoHorario').value.trim();
+    if(!dias||!horario){ return; }
+    var hs=PM.getHorarios(); var id=$('hoId').value;
+    if(id){ hs=hs.map(function(x){ return x.id===id ? {id:id,dias:dias,horario:horario} : x; }); }
+    else { hs.push({id:PM.uid(),dias:dias,horario:horario}); }
+    PM.setHorarios(hs); renderHorarios(); flash($('hoFlash')); $('hoForm').hidden=true;
+  });
+
+  /* ============ delegación: editar / eliminar / toggle ============ */
+  document.addEventListener('click', function(e){
+    var ed=e.target.closest('[data-edit]'); var dl=e.target.closest('[data-del]');
+    if(ed){
+      var id=ed.getAttribute('data-id'), t=ed.getAttribute('data-edit');
+      if(t==='ev') evShowForm(PM.getEventos().filter(function(x){return x.id===id;})[0]);
+      if(t==='lo') loShowForm(PM.getLocales().filter(function(x){return x.id===id;})[0]);
+      if(t==='ho') hoShowForm(PM.getHorarios().filter(function(x){return x.id===id;})[0]);
+    }
+    if(dl){
+      var id2=dl.getAttribute('data-id'), t2=dl.getAttribute('data-del');
+      if(!confirm('¿Eliminar este elemento?')) return;
+      if(t2==='ev'){ PM.setEventos(PM.getEventos().filter(function(x){return x.id!==id2;})); renderEventos(); }
+      if(t2==='lo'){ PM.setLocales(PM.getLocales().filter(function(x){return x.id!==id2;})); renderLocales(); }
+      if(t2==='ho'){ PM.setHorarios(PM.getHorarios().filter(function(x){return x.id!==id2;})); renderHorarios(); }
+    }
+  });
+  document.addEventListener('change', function(e){
+    var tg=e.target.closest('[data-tg]'); if(!tg) return;
+    var id=tg.getAttribute('data-id'), t=tg.getAttribute('data-tg'), on=tg.checked;
+    if(t==='ev'){ PM.setEventos(PM.getEventos().map(function(x){return x.id===id?Object.assign({},x,{activo:on}):x;})); renderEventos(); }
+    if(t==='lo'){ PM.setLocales(PM.getLocales().map(function(x){return x.id===id?Object.assign({},x,{activo:on}):x;})); renderLocales(); }
+  });
+
+  /* ============ reset ============ */
+  $('resetBtn').addEventListener('click', function(){
+    if(!confirm('Restablecer todo el contenido a los datos de ejemplo de la demo?')) return;
+    PM.resetAll(); loadAviso(); renderEventos(); renderLocales(); renderHorarios();
+  });
+
+  /* init */
+  loadAviso(); renderEventos(); renderLocales(); renderHorarios();
+})();
+</script>
+</body>
+</html>

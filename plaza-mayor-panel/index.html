@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Plaza Mayor · El clásico frente al mar — Lechería, El Morro</title>
+<meta property="og:title" content="Plaza Mayor — Centro Comercial · Lechería">
+<meta property="og:description" content="El centro comercial más icónico de Anzoátegui, mediterráneo y frente a los canales de El Morro. Tiendas, sabores junto al muelle y eventos, por primera vez en una sola página.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c2233'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='%23ebbb11' font-family='Georgia,serif' font-style='italic'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea-900:#08192a; --sea-850:#0a1f30; --sea-800:#0c2233; --sea-700:#102b3f; --sea-600:#163a52;
+  --teal-600:#245e5b; --teal-500:#2e6e6a; --teal-400:#4f9086;
+  --gold:#ebbb11; --gold-soft:#f4d879; --coral:#c97b5a;
+  --cream:#f3e9d8; --cream-90:#efe5d4; --cream-dim:rgba(243,233,216,.62); --cream-faint:rgba(243,233,216,.4);
+  --line:rgba(243,233,216,.14); --line-strong:rgba(243,233,216,.24);
+  --glow:0 0 40px rgba(235,187,17,.35);
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--sea-800);color:var(--cream);
+  font-family:"Onest",system-ui,sans-serif;font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-size:clamp(15px,1vw + 13px,17px);
+}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;margin:0;overflow-wrap:break-word}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--sea-900)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,5vw,64px)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  font-weight:600;display:flex;align-items:center;gap:.8em}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+.serif-i{font-style:italic}
+.gold{color:var(--gold)}
+
+/* ---------- WORDMARK ---------- */
+.wordmark{font-family:"DM Serif Display",Georgia,serif;letter-spacing:.01em;white-space:nowrap}
+.wordmark .p,.wordmark .m{font-style:italic}
+
+/* ---------- NAV : barra horizonte ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .5s var(--ease),backdrop-filter .5s}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(235,187,17,.06) 12%,var(--gold) 50%,rgba(235,187,17,.06) 88%,transparent);
+  background-size:200% 100%;opacity:0;transition:opacity .6s var(--ease);animation:horizonSlide 7s linear infinite}
+.nav.stuck{background:rgba(8,25,42,.82);backdrop-filter:blur(14px) saturate(1.2)}
+.nav.stuck::after{opacity:.9}
+@keyframes horizonSlide{to{background-position:200% 0}}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:clamp(14px,2vw,20px) clamp(20px,5vw,64px)}
+.nav-brand{display:flex;align-items:center;gap:.6rem;font-size:1.28rem}
+.nav-brand .tide{width:18px;height:18px;flex:none}
+.nav-links{display:flex;align-items:center;gap:clamp(1.2rem,2.4vw,2.3rem)}
+.nav-links a.lnk{font-size:.86rem;letter-spacing:.02em;color:var(--cream-dim);font-weight:500;
+  position:relative;padding-bottom:3px;transition:color .3s}
+.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a.lnk:hover{color:var(--cream)}
+.nav-links a.lnk:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:"Onest",sans-serif;font-weight:600;
+  font-size:.9rem;cursor:pointer;border:0;transition:transform .3s var(--ease),box-shadow .4s,background .3s;
+  text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--sea-900);padding:.82em 1.5em;border-radius:10px;
+  box-shadow:0 8px 22px -8px rgba(235,187,17,.6), inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(235,187,17,.75), inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--cream);padding:.82em 1.4em;border-radius:10px;
+  background:rgba(243,233,216,.03)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+.nav .btn-gold{padding:.6em 1.15em;font-size:.82rem}
+.nav-toggle{display:none;background:none;border:1px solid var(--line-strong);border-radius:9px;
+  width:42px;height:38px;color:var(--cream);cursor:pointer;align-items:center;justify-content:center}
+.nav-toggle svg{width:20px;height:20px}
+.nav-panel{display:none}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav .btn-gold{display:none}
+  .nav-toggle{display:inline-flex}
+  .nav-panel{display:block;position:absolute;top:100%;left:0;right:0;
+    background:rgba(8,25,42,.96);backdrop-filter:blur(16px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--gold);
+    padding:.5rem clamp(20px,5vw,64px) 1.4rem;
+    clip-path:inset(0 0 100% 0);transition:clip-path .45s var(--ease);pointer-events:none}
+  .nav-panel.open{clip-path:inset(0 0 0 0);pointer-events:auto}
+  .nav-panel a{display:block;padding:.85rem 0;border-bottom:1px solid var(--line);
+    font-size:1rem;color:var(--cream-90)}
+  .nav-panel a.cta{color:var(--gold);border-bottom:0;font-weight:600}
+}
+
+/* ---------- HERO : marina nocturna ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:flex-end;overflow:hidden;isolation:isolate}
+.sky{position:absolute;inset:0;z-index:-3;
+  background:
+    radial-gradient(120% 80% at 50% 8%, #123049 0%, transparent 55%),
+    radial-gradient(140% 70% at 78% 40%, rgba(235,187,17,.14) 0%, transparent 46%),
+    radial-gradient(90% 60% at 20% 30%, rgba(79,144,134,.18) 0%, transparent 55%),
+    linear-gradient(#081826 0%, #0b2337 44%, #0e2c40 55%, #0a1f30 62%, #07141f 100%)}
+/* stars */
+.sky::before{content:"";position:absolute;inset:0 0 46% 0;
+  background-image:radial-gradient(1px 1px at 20% 30%,rgba(243,233,216,.5),transparent),
+    radial-gradient(1px 1px at 65% 18%,rgba(243,233,216,.4),transparent),
+    radial-gradient(1px 1px at 82% 42%,rgba(243,233,216,.35),transparent),
+    radial-gradient(1px 1px at 42% 12%,rgba(243,233,216,.45),transparent),
+    radial-gradient(1px 1px at 90% 22%,rgba(243,233,216,.3),transparent),
+    radial-gradient(1px 1px at 8% 20%,rgba(243,233,216,.35),transparent);
+  opacity:.8}
+/* horizon glow line */
+.horizon-glow{position:absolute;left:0;right:0;top:54%;height:2px;z-index:-2;
+  background:linear-gradient(90deg,transparent,rgba(235,187,17,.55),rgba(244,216,121,.85),rgba(235,187,17,.55),transparent);
+  filter:blur(.4px);box-shadow:0 0 24px 4px rgba(235,187,17,.28)}
+/* distant mediterranean skyline */
+.skyline{position:absolute;left:0;right:0;top:calc(54% - 84px);height:88px;z-index:-2;
+  color:#0a1b28}
+.skyline svg{width:100%;height:100%;display:block}
+/* WATER */
+.water{position:absolute;left:0;right:0;top:54%;bottom:0;z-index:-2;overflow:hidden;
+  background:linear-gradient(#0a2233 0%, #0a1c2b 40%, #060f18 100%)}
+.water::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:
+    repeating-linear-gradient(97deg, rgba(79,144,134,.12) 0 2px, transparent 2px 26px),
+    repeating-linear-gradient(-97deg, rgba(235,187,17,.08) 0 2px, transparent 2px 40px);
+  background-size:200% 100%,200% 100%;
+  animation:caustic1 14s linear infinite, caustic2 22s linear infinite}
+.water::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(6,15,24,0) 0%, rgba(6,15,24,.65) 78%, #060f18 100%)}
+@keyframes caustic1{to{background-position:200% 0, 0 0}}
+@keyframes caustic2{to{background-position:0 0, -200% 0}}
+/* dock lights + reflections */
+.lights{position:absolute;left:0;right:0;top:54%;height:130px;z-index:-1;pointer-events:none;mix-blend-mode:screen}
+.lights i{position:absolute;top:2px;width:7px;height:7px;border-radius:50%;
+  background:radial-gradient(circle,var(--gold-soft),rgba(235,187,17,.2) 60%,transparent 72%);
+  box-shadow:0 0 12px 3px rgba(235,187,17,.5)}
+.lights i::after{content:"";position:absolute;left:50%;top:7px;transform:translateX(-50%);
+  width:3px;height:118px;
+  background:linear-gradient(rgba(244,216,121,.7),rgba(235,187,17,.12) 40%,transparent);
+  filter:blur(1.5px);transform-origin:top;animation:shimmer 3.2s ease-in-out infinite}
+@keyframes shimmer{0%,100%{transform:translateX(-50%) scaleY(1) skewX(0deg);opacity:.75}
+  50%{transform:translateX(-50%) scaleY(1.35) skewX(3deg);opacity:.4}}
+
+.hero-inner{position:relative;z-index:2;padding-bottom:clamp(46px,9vh,110px);padding-top:120px}
+.hero-eyebrow{margin-bottom:1.4rem}
+.hero h1{margin:0}
+.hero .mark{display:block;font-size:clamp(3.4rem,14vw,10.5rem);line-height:.9;color:var(--cream);
+  white-space:normal;overflow-wrap:break-word;text-shadow:0 2px 40px rgba(7,20,31,.6)}
+.hero .mark .p,.hero .mark .m{color:var(--gold-soft)}
+/* reflected wordmark */
+.mark-reflect{position:relative;height:0;overflow:visible}
+.mark-reflect span{display:block;font-family:"DM Serif Display",serif;
+  font-size:clamp(3.6rem,15vw,10.5rem);line-height:.9;color:var(--gold);
+  transform:scaleY(-1);opacity:.14;filter:blur(1px);margin-top:.04em}
+.mark-reflect::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(8,25,42,0),var(--sea-800) 82%)}
+.hero-tag{max-width:min(44ch,100%);margin:1.7rem 0 0;font-size:clamp(1.05rem,1vw + .9rem,1.32rem);
+  color:var(--cream-90);line-height:1.5}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.2rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:2.4rem;
+  font-size:.82rem;letter-spacing:.04em;color:var(--cream-dim)}
+.hero-meta span{display:inline-flex;align-items:center;gap:.5em}
+.pin{width:13px;height:13px;flex:none;color:var(--gold)}
+.scrollcue{position:absolute;right:clamp(20px,5vw,64px);bottom:clamp(28px,5vh,54px);z-index:3;
+  writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--cream-faint);display:flex;align-items:center;gap:1rem}
+.scrollcue::after{content:"";width:1px;height:52px;background:linear-gradient(var(--gold),transparent);
+  animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.5);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+@media(max-width:560px){.scrollcue{display:none}}
+@media(max-width:600px){.mark-reflect{display:none}.hero-inner{padding-top:104px}}
+
+/* ---------- SECTION SHELL ---------- */
+section{position:relative}
+.band{padding-block:clamp(74px,12vh,140px)}
+.sec-head{max-width:46ch}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.9rem);margin-top:1.1rem;color:var(--cream)}
+.sec-head p{color:var(--cream-dim);margin:1.1rem 0 0;font-size:1.05rem;max-width:40ch}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- 00 DESTINO ---------- */
+.destino{display:block}
+.destino-copy{max-width:66ch}
+.destino-copy p{color:var(--cream-dim);font-size:1.08rem;line-height:1.68}
+.destino-copy p.lead{color:var(--cream-90);font-size:clamp(1.2rem,1.6vw,1.5rem);
+  font-family:"DM Serif Display",serif;line-height:1.32;margin-bottom:1.1rem}
+.destino-stats{display:flex;gap:2.4rem;margin-top:2.2rem;flex-wrap:wrap}
+.destino-stats div{}
+.destino-stats b{display:block;font-family:"DM Serif Display",serif;font-size:2.1rem;color:var(--gold)}
+.destino-stats small{color:var(--cream-faint);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.photo-frame{position:relative;border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;
+  box-shadow:0 30px 70px -30px #000}
+.photo-frame::before{content:"";position:absolute;inset:0;z-index:2;mix-blend-mode:soft-light;
+  background:linear-gradient(150deg,#0c2233,#245e5b 55%,#ebbb11)}
+.photo-frame::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(rgba(6,15,24,0) 46%, rgba(6,15,24,.4) 74%, rgba(6,15,24,.86) 100%)}
+.photo-frame{margin-top:clamp(34px,6vh,58px)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  filter:saturate(.98) contrast(1.05) brightness(1.05);aspect-ratio:480/174}
+.photo-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:1.4rem 1.4rem;
+  font-size:.82rem;color:var(--cream-90);letter-spacing:.02em;
+  display:flex;align-items:center;gap:.6em;background:linear-gradient(transparent,rgba(6,15,24,.8))}
+.photo-cap .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;box-shadow:var(--glow)}
+@media(max-width:640px){.photo-frame img{aspect-ratio:480/230}}
+
+/* ---------- 01 LOS MUNDOS : vitrinas nocturnas ---------- */
+.mundos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.2vw,26px);margin-top:clamp(38px,6vh,62px)}
+.mundos-grid .vitrina:first-child{grid-row:span 2}
+.vitrina{position:relative;border:1px solid var(--line);border-radius:14px;padding:clamp(24px,3vw,38px);
+  background:linear-gradient(160deg,rgba(22,58,82,.5),rgba(10,28,43,.6));overflow:hidden;
+  transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;isolation:isolate;min-height:210px;
+  display:flex;flex-direction:column}
+.vitrina::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.35;transition:opacity .5s}
+/* warm interior light */
+.vitrina::after{content:"";position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);
+  width:130%;height:80%;z-index:-1;
+  background:radial-gradient(60% 100% at 50% 100%,rgba(235,187,17,.16),transparent 70%);
+  opacity:.5;transition:opacity .6s}
+.vitrina:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:0 26px 50px -28px #000}
+.vitrina:hover::before{opacity:1}
+.vitrina:hover::after{opacity:1}
+.vitrina .vnum{font-size:.72rem;letter-spacing:.2em;color:var(--gold);font-weight:600}
+.vitrina .vico{width:38px;height:38px;color:var(--gold-soft);margin:.3rem 0 1.1rem}
+.vitrina h3{font-size:clamp(1.4rem,2.2vw,1.9rem);color:var(--cream)}
+.vitrina p{color:var(--cream-dim);margin:.7rem 0 0;font-size:.98rem}
+.vitrina .tenants{margin-top:auto;padding-top:1.3rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font-size:.72rem;letter-spacing:.03em;padding:.4em .8em;border:1px solid var(--line-strong);
+  border-radius:100px;color:var(--cream-90);background:rgba(243,233,216,.03)}
+.mundos-note{margin-top:1.8rem;color:var(--cream-faint);font-size:.9rem;display:flex;align-items:center;gap:.6em}
+.mundos-note::before{content:"";width:22px;height:1px;background:var(--gold);flex:none}
+@media(max-width:720px){.mundos-grid{grid-template-columns:1fr}.mundos-grid .vitrina:first-child{grid-row:auto}}
+
+/* ---------- 02 AGENDA : pases ---------- */
+.agenda-band{background:
+  radial-gradient(90% 60% at 85% 0,rgba(36,94,91,.28),transparent 60%),
+  linear-gradient(#0a1f30,#081826)}
+.pases{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,22px);margin-top:clamp(38px,6vh,58px)}
+.pase{position:relative;background:linear-gradient(165deg,rgba(18,48,73,.6),rgba(8,22,38,.75));
+  border:1px solid var(--line);border-radius:12px;padding:1.6rem 1.5rem 1.5rem;overflow:hidden}
+.pase::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(var(--gold),var(--coral))}
+/* perforation between stub */
+.pase::after{content:"";position:absolute;left:16px;right:16px;bottom:56px;height:0;
+  border-top:1.5px dashed rgba(243,233,216,.22)}
+.pase .ptag{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.pase h3{font-size:1.35rem;color:var(--cream);margin:.7rem 0 .5rem}
+.pase p{color:var(--cream-dim);font-size:.92rem;margin:0}
+.pase .stub{margin-top:1.5rem;padding-top:1rem;font-size:.76rem;color:var(--cream-faint);
+  display:flex;align-items:center;gap:.5em;letter-spacing:.02em}
+.pase .stub svg{width:13px;height:13px;color:var(--gold)}
+@media(max-width:760px){.pases{grid-template-columns:1fr}.pase::after{display:none}}
+
+/* ---------- 03 PLANIFICA ---------- */
+.plan{background:
+  radial-gradient(80% 70% at 15% 20%,rgba(235,187,17,.08),transparent 55%),
+  linear-gradient(#081826,#0a2233)}
+.plan-grid{display:grid;grid-template-columns:1fr .9fr;gap:clamp(30px,5vw,64px);align-items:start;margin-top:clamp(34px,5vh,54px)}
+.plan-q{font-family:"DM Serif Display",serif;font-size:1.3rem;color:var(--cream);margin:0 0 1.2rem}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.opt{cursor:pointer;border:1px solid var(--line-strong);border-radius:12px;padding:1.1rem 1.1rem;
+  background:rgba(243,233,216,.02);transition:border-color .3s,background .3s,transform .3s;
+  display:flex;align-items:center;gap:.85rem;user-select:none}
+.opt:hover{transform:translateY(-2px);border-color:var(--teal-400)}
+.opt .oico{width:28px;height:28px;color:var(--gold-soft);flex:none}
+.opt .otxt b{display:block;font-weight:600;font-size:.98rem;color:var(--cream)}
+.opt .otxt small{color:var(--cream-faint);font-size:.76rem}
+.opt[aria-pressed="true"]{border-color:var(--gold);background:rgba(235,187,17,.08)}
+.opt[aria-pressed="true"] .oico{color:var(--gold)}
+/* pase preview */
+.plan-card{position:relative;border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
+  background:linear-gradient(165deg,#123049,#081826);box-shadow:0 30px 60px -30px #000}
+.plan-card .pc-top{padding:1.5rem 1.6rem 1.2rem;border-bottom:1.5px dashed var(--line-strong);position:relative}
+.plan-card .pc-top::after{content:"";position:absolute;left:-9px;bottom:-9px;width:18px;height:18px;border-radius:50%;background:var(--sea-800)}
+.plan-card .pc-top::before{content:"";position:absolute;right:-9px;bottom:-9px;width:18px;height:18px;border-radius:50%;background:var(--sea-800)}
+.pc-label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.pc-title{font-family:"DM Serif Display",serif;font-size:1.7rem;color:var(--cream);margin:.5rem 0 0}
+.pc-body{padding:1.4rem 1.6rem 1.5rem}
+.pc-msg{color:var(--cream-90);font-size:.98rem;line-height:1.55;min-height:3.2em}
+.pc-msg .hl{color:var(--gold-soft)}
+.pc-actions{display:flex;gap:.7rem;margin-top:1.4rem;flex-wrap:wrap}
+.btn-sm{font-size:.82rem;padding:.7em 1.1em;border-radius:9px}
+.copied{font-size:.78rem;color:var(--teal-400);opacity:0;transition:opacity .3s;align-self:center}
+.copied.on{opacity:1}
+@media(max-width:820px){.plan-grid{grid-template-columns:1fr}.opt-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.opt-grid{grid-template-columns:1fr}}
+
+/* ---------- 04 COMO LLEGAR ---------- */
+.llegar-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center;margin-top:clamp(30px,5vh,50px)}
+.map-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(#0a2233,#060f18);position:relative}
+.map-card svg{width:100%;height:auto;display:block}
+.addr-row{display:flex;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.addr-row:last-child{border-bottom:0}
+.addr-row .ai{width:20px;height:20px;color:var(--gold);flex:none;margin-top:2px}
+.addr-row b{display:block;color:var(--cream);font-weight:600;margin-bottom:.15rem}
+.addr-row span{color:var(--cream-dim);font-size:.94rem}
+.llegar-cta{margin-top:1.8rem}
+@media(max-width:820px){.llegar-grid{grid-template-columns:1fr}}
+
+/* ---------- FOOTER : postal reflejada ---------- */
+.foot{position:relative;padding:clamp(70px,10vh,120px) 0 2.5rem;overflow:hidden;
+  background:linear-gradient(#060f18,#040a12)}
+.foot .horizon-glow{position:absolute;top:34%;opacity:.5}
+.foot-mark{text-align:center;position:relative;z-index:2}
+.foot-mark .fm{font-family:"DM Serif Display",serif;font-size:clamp(2.6rem,9vw,6rem);color:var(--cream);line-height:.9}
+.foot-mark .fm .p,.foot-mark .fm .m{color:var(--gold-soft)}
+.foot-reflect{font-family:"DM Serif Display",serif;font-size:clamp(2.6rem,9vw,6rem);line-height:.9;
+  color:var(--gold);transform:scaleY(-1);opacity:.12;filter:blur(1px);text-align:center;margin-top:.05em;
+  position:relative}
+.foot-reflect::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(4,10,18,0),#040a12 80%)}
+.foot-sub{text-align:center;color:var(--cream-dim);margin:1.4rem auto 0;max-width:40ch;font-size:.96rem;position:relative;z-index:2}
+.foot-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem 2rem;margin-top:2rem;position:relative;z-index:2}
+.foot-contact a{display:inline-flex;align-items:center;gap:.55em;font-size:.9rem;color:var(--cream-90)}
+.foot-contact a:hover{color:var(--gold-soft)}
+.foot-contact svg{width:17px;height:17px}
+.foot-legal{margin-top:clamp(38px,6vh,64px);padding-top:1.6rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;position:relative;z-index:2;
+  font-size:.76rem;color:var(--cream-faint)}
+.foot-legal a{color:var(--cream-dim);border-bottom:1px solid var(--line-strong)}
+.foot-legal a:hover{color:var(--gold-soft)}
+
+/* ---------- FAB ---------- */
+.fab{position:fixed;right:clamp(16px,3vw,26px);bottom:clamp(16px,3vw,26px);z-index:70;
+  width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#feda75,#d62976 45%,#962fbf 75%,#4f5bd5);color:#fff;
+  box-shadow:0 14px 30px -8px rgba(214,41,118,.6);transition:transform .3s var(--ease)}
+.fab:hover{transform:translateY(-3px) scale(1.04)}
+.fab svg{width:28px;height:28px}
+.fab .lbl{position:absolute;right:66px;white-space:nowrap;background:var(--sea-900);color:var(--cream);
+  font-size:.78rem;padding:.5em .8em;border-radius:8px;border:1px solid var(--line);opacity:0;
+  transform:translateX(6px);transition:.3s;pointer-events:none;font-weight:500}
+.fab:hover .lbl{opacity:1;transform:none}
+@media(max-width:560px){.fab .lbl{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .water::before,.lights i::after,.nav::after,.scrollcue::after,.horizon-glow{animation:none!important}
+}
+
+/* ---- panel-tier additions ---- */
+.lnk-panel{color:var(--gold-soft)!important}
+.lnk-panel::after{background:var(--gold-soft)!important}
+.aviso{position:fixed;top:0;left:0;right:0;z-index:65;background:var(--gold);color:var(--sea-900);
+  box-shadow:0 6px 22px -6px rgba(0,0,0,.5)}
+.aviso-in{display:flex;align-items:center;gap:.7em;padding:.6rem clamp(20px,5vw,64px);font-size:.9rem;font-weight:600}
+.aviso-in svg{width:18px;height:18px;flex:none}
+.aviso-x{margin-left:auto;background:none;border:0;color:var(--sea-900);font-size:1.5rem;line-height:1;
+  cursor:pointer;padding:0 .2em;opacity:.7}
+.aviso-x:hover{opacity:1}
+body.has-aviso .nav{top:var(--aviso-h,44px)}
+/* store chip with optional location */
+.tenants .chip .loc{display:block;font-weight:400;color:var(--cream-faint);font-size:.66rem;letter-spacing:.02em;margin-top:.15em}
+.tenants .chip{display:inline-flex;flex-direction:column;line-height:1.2}
+.tenants .chip.more{border-style:dashed;color:var(--gold-soft)}
+.tenants:empty::after{content:"Publica las tiendas de este mundo desde el panel.";color:var(--cream-faint);font-size:.82rem}
+/* pases with date */
+.pase .pdate{font-size:.78rem;color:var(--gold-soft);margin:.2rem 0 .4rem;letter-spacing:.02em;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="nav-brand wordmark" href="#top" aria-label="Plaza Mayor, inicio">
+      <svg class="tide" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M1 14c3 0 3-3 5.5-3S9 14 11 14s2-3 5.5-3S19 14 22 14" stroke="#ebbb11" stroke-width="1.8" stroke-linecap="round"/><path d="M1 18c3 0 3-3 5.5-3S9 18 11 18s2-3 5.5-3S19 18 22 18" stroke="#4f9086" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span><span class="p">P</span>laza <span class="m">M</span>ayor</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a class="lnk" href="#destino">El destino</a>
+      <a class="lnk" href="#mundos">Los mundos</a>
+      <a class="lnk" href="#agenda">Agenda</a>
+      <a class="lnk" href="#llegar">Cómo llegar</a>
+      <a class="lnk lnk-panel" href="./admin.html">Panel</a>
+      <a class="btn btn-gold" href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener">Escríbenos</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="nav-panel" id="navPanel">
+    <a href="#destino">El destino</a>
+    <a href="#mundos">Los mundos</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#llegar">Cómo llegar</a>
+    <a href="./admin.html">Panel de administración</a>
+    <a class="cta" href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener">Escríbenos por Instagram →</a>
+  </div>
+</header>
+
+<!-- aviso / banner administrable -->
+<div class="aviso" id="avisoBar" hidden role="status">
+  <div class="wrap aviso-in">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16.6" r="1" fill="currentColor"/></svg>
+    <span id="avisoText"></span>
+    <button class="aviso-x" id="avisoClose" type="button" aria-label="Cerrar aviso">&times;</button>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero" aria-label="Plaza Mayor, centro comercial en Lechería">
+  <div class="sky" aria-hidden="true"></div>
+  <div class="skyline" aria-hidden="true">
+    <svg viewBox="0 0 1200 88" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0 88V54h40v-10h6v10h30V40l14-12 14 12v14h34V46h44v-8l10-8 10 8v8h40V52h30v-8h6v8h40V38l16-12 16 12v14h40V48h50v-6h6v6h40V54h34V44l12-10 12 10v10h40V50h44v-8h6v8h40V54h40V42l14-11 14 11v12h40V50h44v38z"/>
+      <g fill="currentColor"><circle cx="150" cy="30" r="3"/><rect x="149" y="30" width="2" height="14"/><circle cx="600" cy="26" r="3"/><rect x="599" y="26" width="2" height="12"/><circle cx="1010" cy="30" r="3"/><rect x="1009" y="30" width="2" height="14"/></g>
+    </svg>
+  </div>
+  <div class="horizon-glow" aria-hidden="true"></div>
+  <div class="water" aria-hidden="true"></div>
+  <div class="lights" id="lights" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <p class="eyebrow hero-eyebrow">Lechería · Complejo El Morro</p>
+    <h1>
+      <span class="mark wordmark"><span class="p">P</span>laza <span class="m">M</span>ayor</span>
+    </h1>
+    <div class="mark-reflect" aria-hidden="true"><span class="wordmark"><span class="p">P</span>laza <span class="m">M</span>ayor</span></div>
+    <p class="hero-tag">El centro comercial más icónico de Anzoátegui: mediterráneo, de baja altura y asomado a los canales de El Morro. Comprar, comer junto al muelle y pasear — en un solo lugar.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#plan">Planifica tu visita</a>
+      <a class="btn btn-ghost" href="#mundos">Ver los mundos</a>
+    </div>
+    <div class="hero-meta">
+      <span><svg class="pin" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>Av. Daniel Camejo Octavio, Lechería</span>
+      <span>Frente al mar, desde 1996</span>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true">Baja al paseo</div>
+</section>
+
+<!-- ============ 00 DESTINO ============ -->
+<section class="band wrap" id="destino">
+  <div class="destino">
+    <div class="destino-copy reveal">
+      <p class="eyebrow">00 — El destino</p>
+      <h2 style="font-size:clamp(2.1rem,4.6vw,3.9rem);margin:1.1rem 0 0;color:var(--cream)">Un pedazo del <span class="serif-i gold">Mediterráneo</span> sobre el agua.</h2>
+      <p class="lead">Arcos, palmeras y locales asomados a los canales — el punto de encuentro de El Morro desde hace casi tres décadas.</p>
+      <p>Plaza Mayor no se parece a ningún otro centro de Anzoátegui: arquitectura mediterránea de baja altura, frente a los canales, con la brisa del mar entre las tiendas. A un paso de Barcelona, Lechería y Puerto La Cruz — fácil de llegar, difícil de olvidar.</p>
+      <div class="destino-stats">
+        <div><b>1996</b><small>Frente al mar</small></div>
+        <div><b>El Morro</b><small>Corazón turístico</small></div>
+        <div><b>+50 mil</b><small>Nos siguen en redes</small></div>
+      </div>
+    </div>
+    <figure class="photo-frame reveal">
+      <img src="./assets/plazamayor-canal.jpg" alt="Vista aérea de Plaza Mayor: sus techos mediterráneos sobre los canales de El Morro, en Lechería" loading="lazy">
+      <figcaption class="photo-cap"><span class="dot"></span>Plaza Mayor sobre los canales de El Morro — foto real del centro.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 01 LOS MUNDOS ============ -->
+<section class="band wrap" id="mundos">
+  <div class="sec-head reveal">
+    <p class="eyebrow">01 — Qué encontrarás</p>
+    <h2>Cuatro mundos bajo <span class="serif-i gold">un mismo cielo.</span></h2>
+    <p>Todo lo que hoy vive suelto en tus historias, ordenado por primera vez en una sola página.</p>
+  </div>
+  <div class="mundos-grid">
+    <article class="vitrina reveal" data-mundo="sabores">
+      <span class="vnum">M·01</span>
+      <svg class="vico" viewBox="0 0 32 32" fill="none"><path d="M8 4v9a3 3 0 003 3v12M8 4v6M12 4v6M20 4c-2 2-2 6-2 8s1 4 3 4v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 26c3 0 3-2 5-2s2 2 5 2 3-2 5-2 2 2 5 2 3-2 5-2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".5"/></svg>
+      <h3>Sabores frente al muelle</h3>
+      <p>Feria de comida y restaurantes con las mesas asomadas al agua. Del almuerzo del mediodía a la cena con vista a los canales.</p>
+      <div class="tenants" data-tenants="sabores"></div>
+    </article>
+    <article class="vitrina reveal" data-mundo="moda">
+      <span class="vnum">M·02</span>
+      <svg class="vico" viewBox="0 0 32 32" fill="none"><path d="M10 10V8a6 6 0 0112 0v2M6 10h20l-1.5 16a2 2 0 01-2 1.8H9.5a2 2 0 01-2-1.8L6 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <h3>Moda y tiendas</h3>
+      <p>Ropa, calzado, joyerías y perfumerías con las marcas y lanzamientos del momento — desde lo escolar hasta el estreno de temporada.</p>
+      <div class="tenants" data-tenants="moda"></div>
+    </article>
+    <article class="vitrina reveal" data-mundo="servicios">
+      <span class="vnum">M·03</span>
+      <svg class="vico" viewBox="0 0 32 32" fill="none"><path d="M16 3l11 4v7c0 7-4.6 12.4-11 15C9.6 26.4 5 21 5 14V7l11-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M11.5 16l3 3 6-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Servicios y bienestar</h3>
+      <p>Supermercados, óptica, peluquerías, gimnasio y telefonía. Todo lo del día a día, resuelto en la misma parada.</p>
+      <div class="tenants" data-tenants="servicios"></div>
+    </article>
+    <article class="vitrina reveal" data-mundo="diversion">
+      <span class="vnum">M·04</span>
+      <svg class="vico" viewBox="0 0 32 32" fill="none"><path d="M4 8h24v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 8l4-4h16l4 4M13 14l6 3.5-6 3.5v-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <h3>Diversión y encuentros</h3>
+      <p>Eventos de temporada, transmisiones en vivo y planes en familia. El lugar donde Lechería se junta cada fin de semana.</p>
+      <div class="tenants" data-tenants="diversion"></div>
+    </article>
+  </div>
+  <p class="mundos-note" id="mundosNote">Directorio administrable — el centro publica y edita sus tiendas desde el panel.</p>
+</section>
+
+<!-- ============ 02 AGENDA ============ -->
+<section class="band agenda-band" id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">02 — La agenda</p>
+      <h2>Lo que pasa aquí, sin depender <span class="serif-i gold">de una historia.</span></h2>
+      <p>Hoy tus eventos desaparecen en 24 horas. En tu página quedan fijos, con su fecha, para que nadie se los pierda.</p>
+    </div>
+    <div class="pases" id="pasesHost"></div>
+    <p class="mundos-note" id="agendaEmpty" hidden>Aún no hay eventos publicados — se agregan desde el panel de administración.</p>
+  </div>
+</section>
+
+<!-- ============ 03 PLANIFICA ============ -->
+<section class="band plan" id="plan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">03 — Tu plan</p>
+      <h2>¿A qué vienes <span class="serif-i gold">hoy?</span></h2>
+      <p>Arma tu paseo en dos toques y escríbenos. Te decimos dónde y a qué hora.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="reveal">
+        <p class="plan-q">Elige lo que buscas — puedes marcar varios:</p>
+        <div class="opt-grid" id="optGrid">
+          <div class="opt" role="button" tabindex="0" aria-pressed="false" data-key="comer" data-label="comer junto al muelle">
+            <svg class="oico" viewBox="0 0 32 32" fill="none"><path d="M8 4v9a3 3 0 003 3v12M20 4c-2 2-2 6-2 8s1 4 3 4v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span class="otxt"><b>Comer</b><small>Junto al muelle</small></span>
+          </div>
+          <div class="opt" role="button" tabindex="0" aria-pressed="false" data-key="compras" data-label="ir de compras">
+            <svg class="oico" viewBox="0 0 32 32" fill="none"><path d="M10 10V8a6 6 0 0112 0v2M6 10h20l-1.5 16a2 2 0 01-2 1.8H9.5a2 2 0 01-2-1.8L6 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span class="otxt"><b>De compras</b><small>Moda y tiendas</small></span>
+          </div>
+          <div class="opt" role="button" tabindex="0" aria-pressed="false" data-key="servicios" data-label="resolver servicios">
+            <svg class="oico" viewBox="0 0 32 32" fill="none"><path d="M16 3l11 4v7c0 7-4.6 12.4-11 15C9.6 26.4 5 21 5 14V7l11-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span class="otxt"><b>Servicios</b><small>Súper, óptica, gym</small></span>
+          </div>
+          <div class="opt" role="button" tabindex="0" aria-pressed="false" data-key="evento" data-label="disfrutar un evento">
+            <svg class="oico" viewBox="0 0 32 32" fill="none"><path d="M4 8h24v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8zM13 14l6 3.5-6 3.5v-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span class="otxt"><b>Un evento</b><small>Planes en familia</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="plan-card reveal" id="planCard">
+        <div class="pc-top">
+          <span class="pc-label">Pase de paseo</span>
+          <p class="pc-title wordmark"><span class="p">P</span>laza <span class="m">M</span>ayor</p>
+        </div>
+        <div class="pc-body">
+          <p class="pc-msg" id="pcMsg">Toca una opción y armamos tu mensaje para escribirnos por Instagram.</p>
+          <div class="pc-actions">
+            <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">Copiar mensaje</button>
+            <a class="btn btn-gold btn-sm" id="dmBtn" href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener">Abrir Instagram DM</a>
+            <span class="copied" id="copied">¡Copiado!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 COMO LLEGAR ============ -->
+<section class="band wrap" id="llegar">
+  <div class="sec-head reveal">
+    <p class="eyebrow">04 — Cómo llegar</p>
+    <h2>En el corazón <span class="serif-i gold">de El Morro.</span></h2>
+  </div>
+  <div class="llegar-grid">
+    <div class="map-card reveal" aria-hidden="true">
+      <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice">
+        <rect width="640" height="420" fill="#081826"/>
+        <path d="M0 130 C120 110 180 175 300 165 C420 155 480 90 640 120 L640 0 L0 0 Z" fill="#0c2233"/>
+        <path d="M0 300 C140 280 200 340 340 330 C470 321 520 360 640 345 L640 420 L0 420 Z" fill="#0a1c2b"/>
+        <g stroke="#163a52" stroke-width="2" fill="none" opacity=".7">
+          <path d="M-20 210 C160 200 200 230 330 222 C470 214 520 235 660 226"/>
+          <path d="M120 -10 C130 120 100 180 150 300 C175 360 160 400 170 440"/>
+          <path d="M470 -10 C460 120 500 190 460 300 C440 360 470 410 460 440"/>
+        </g>
+        <!-- canals -->
+        <path d="M-20 230 C160 220 210 250 340 244 C480 238 520 258 660 250" stroke="#245e5b" stroke-width="10" fill="none" opacity=".45" stroke-linecap="round"/>
+        <!-- mall blocks -->
+        <g fill="#123049" stroke="#2e6e6a" stroke-width="1.5">
+          <rect x="270" y="176" width="110" height="66" rx="6"/>
+          <rect x="300" y="150" width="52" height="30" rx="4"/>
+        </g>
+        <g fill="none" stroke="#4f9086" stroke-width="1.2" opacity=".6"><path d="M282 188h86M282 200h86M282 212h86M282 224h86"/></g>
+        <!-- pin -->
+        <g transform="translate(325 150)">
+          <path d="M0 34 C0 34 15 18 15 6 A15 15 0 10-15 6 C-15 18 0 34 0 34Z" fill="#ebbb11"/>
+          <circle cx="0" cy="6" r="5.5" fill="#0c2233"/>
+          <ellipse cx="0" cy="40" rx="12" ry="3.5" fill="#000" opacity=".35"/>
+        </g>
+        <text x="325" y="112" text-anchor="middle" fill="#f3e9d8" font-family="DM Serif Display,serif" font-size="19">Plaza Mayor</text>
+        <text x="325" y="300" text-anchor="middle" fill="#4f9086" font-family="Onest,sans-serif" font-size="12" letter-spacing="2">CANALES DE EL MORRO</text>
+      </svg>
+    </div>
+    <div class="reveal">
+      <div class="addr-row">
+        <svg class="ai" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div><b>Dirección</b><span>Av. Daniel Camejo Octavio, Complejo Turístico El Morro, Lechería, Anzoátegui.</span></div>
+      </div>
+      <div class="addr-row">
+        <svg class="ai" viewBox="0 0 24 24" fill="none"><path d="M4 17l6-6-6-6M12 19h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Fácil acceso</b><span>A pocos minutos desde Barcelona, Lechería y Puerto La Cruz.</span></div>
+      </div>
+      <div class="addr-row">
+        <svg class="ai" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div><b>Horario</b><span id="horarioHost">Escríbenos por Instagram y te confirmamos el horario del día.</span></div>
+      </div>
+      <div class="llegar-cta">
+        <a class="btn btn-gold" href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener">Escríbenos por Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="horizon-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="foot-mark">
+      <div class="fm wordmark"><span class="p">P</span>laza <span class="m">M</span>ayor</div>
+      <div class="foot-reflect wordmark" aria-hidden="true"><span class="p">P</span>laza <span class="m">M</span>ayor</div>
+    </div>
+    <p class="foot-sub">El clásico frente al mar de Lechería. Te esperamos en El Morro. 🌴</p>
+    <div class="foot-contact">
+      <a href="https://instagram.com/centrocomercialplazamayor" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        @centrocomercialplazamayor
+      </a>
+      <a href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3V4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Escríbenos por DM
+      </a>
+      <span style="display:inline-flex;align-items:center;gap:.55em;font-size:.9rem;color:var(--cream-90)">
+        <svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M12 22s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+        Lechería · El Morro, Anzoátegui
+      </span>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Centro Comercial Plaza Mayor · Lechería, Venezuela · <a href="./admin.html">Panel de administración</a></span>
+      <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Es una propuesta de diseño — no es el sitio oficial.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FAB ============ -->
+<a class="fab" href="https://ig.me/m/centrocomercialplazamayor" target="_blank" rel="noopener" aria-label="Escríbenos por Instagram">
+  <span class="lbl">Escríbenos por Instagram</span>
+  <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- nav stuck + mobile panel ---- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('stuck', window.scrollY > 40); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var tog = document.getElementById('navToggle'), panel = document.getElementById('navPanel');
+  tog.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    tog.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); tog.setAttribute('aria-expanded','false'); });
+  });
+
+  /* ---- dock lights ---- */
+  var lights = document.getElementById('lights');
+  var xs = [6,15,23,34,44,52,63,72,79,88,95];
+  xs.forEach(function(x,i){
+    var el = document.createElement('i');
+    el.style.left = x + '%';
+    el.style.animationDelay = (i*0.27)+'s';
+    var q = el.querySelector; // no-op
+    lights.appendChild(el);
+    if(!reduce){ /* stagger the shimmer child */ }
+  });
+  if(!reduce){
+    lights.querySelectorAll('i').forEach(function(el,i){
+      el.style.setProperty('--d', i);
+    });
+  }
+
+  /* ---- reveal on scroll (IO as plumbing; fallback = visible) ---- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(r){ io.observe(r); });
+  } else {
+    reveals.forEach(function(r){ r.classList.add('in'); });
+  }
+
+  /* ---- Planifica tu visita ---- */
+  var opts = Array.prototype.slice.call(document.querySelectorAll('.opt'));
+  var pcMsg = document.getElementById('pcMsg');
+  var dmBtn = document.getElementById('dmBtn');
+  var copyBtn = document.getElementById('copyBtn');
+  var copied = document.getElementById('copied');
+  var selected = [];
+
+  function humanList(arr){
+    if(arr.length === 1) return arr[0];
+    return arr.slice(0,-1).join(', ') + ' y ' + arr[arr.length-1];
+  }
+  function buildMsg(){
+    var labels = selected.map(function(k){
+      var o = opts.filter(function(x){return x.dataset.key===k;})[0];
+      return o ? o.dataset.label : k;
+    });
+    if(!labels.length){
+      return {html:'Toca una opción y armamos tu mensaje para escribirnos por Instagram.', text:''};
+    }
+    var plan = humanList(labels);
+    var text = '¡Hola Plaza Mayor! Quiero pasar a ' + plan + '. ¿Qué me recomiendan y en qué horario? 🌴';
+    var html = '¡Hola Plaza Mayor! Quiero pasar a <span class="hl">' + plan + '</span>. ¿Qué me recomiendan y en qué horario? 🌴';
+    return {html:html, text:text};
+  }
+  function render(){
+    var m = buildMsg();
+    var apply = function(){ pcMsg.innerHTML = m.html; };
+    if(!reduce && document.startViewTransition){ document.startViewTransition(apply); }
+    else { apply(); }
+    copied.classList.remove('on');
+  }
+  function toggle(o){
+    var k = o.dataset.key;
+    var idx = selected.indexOf(k);
+    if(idx>-1){ selected.splice(idx,1); o.setAttribute('aria-pressed','false'); }
+    else { selected.push(k); o.setAttribute('aria-pressed','true'); }
+    render();
+  }
+  opts.forEach(function(o){
+    o.addEventListener('click', function(){ toggle(o); });
+    o.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(o); } });
+  });
+  copyBtn.addEventListener('click', function(){
+    var m = buildMsg();
+    var txt = m.text || '¡Hola Plaza Mayor! Quiero ir a pasear. ¿Qué me recomiendan hoy? 🌴';
+    if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){ copied.classList.add('on'); }); }
+    else { copied.classList.add('on'); }
+  });
+})();
+</script>
+
+<!-- ============ DATOS ADMINISTRABLES (localStorage) ============ -->
+<script>
+window.PM = (function(){
+  var K = { ev:'pm_eventos', lo:'pm_locales', av:'pm_aviso', ho:'pm_horarios', v:'pm_version' };
+  var VERSION = 1;
+  var SEED = {
+    eventos: [
+      {id:'ev1', etiqueta:'Temporada',   titulo:'Fiebre mundialista',      fecha:'', descripcion:'Predicciones, premios y los encuentros en pantalla grande desde las 3:00 p.m. en el centro.', detalle:'En vivo · Plaza Mayor', icono:'balon',    activo:true},
+      {id:'ev2', etiqueta:'De temporada',titulo:'Vuelta a clases',         fecha:'', descripcion:'Mercancía escolar y de graduación en las tiendas del centro. Todo para el nuevo año, en un mismo paseo.', detalle:'Tiendas participantes', icono:'mochila', activo:true},
+      {id:'ev3', etiqueta:'Novedades',   titulo:'Estrenos y lanzamientos', fecha:'', descripcion:'Como el nuevo "Power of You" de Emporio Armani. Paga con Cashea en las tiendas que lo permiten.', detalle:'Consulta en tienda', icono:'estrella', activo:true}
+    ],
+    locales: [
+      {id:'lo1', nombre:'Feria de comida',              mundo:'sabores',   ubicacion:'Nivel 1',                  activo:true},
+      {id:'lo2', nombre:'Restaurantes junto al muelle', mundo:'sabores',   ubicacion:'Frente a los canales',     activo:true},
+      {id:'lo3', nombre:'Cafés',                        mundo:'sabores',   ubicacion:'',                          activo:true},
+      {id:'lo4', nombre:'Bimbi',                        mundo:'moda',      ubicacion:'Zapatería · escolar',       activo:true},
+      {id:'lo5', nombre:'Perfumerías',                  mundo:'moda',      ubicacion:'Con Cashea',                activo:true},
+      {id:'lo6', nombre:'Joyerías',                     mundo:'moda',      ubicacion:'',                          activo:true},
+      {id:'lo7', nombre:'Calzado y moda',               mundo:'moda',      ubicacion:'',                          activo:true},
+      {id:'lo8', nombre:'Supermercados',                mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo9', nombre:'Centróptico',                  mundo:'servicios', ubicacion:'Galería Caribana, nivel 1', activo:true},
+      {id:'lo10',nombre:'Gimnasio',                     mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo11',nombre:'Telefonía',                    mundo:'servicios', ubicacion:'',                          activo:true},
+      {id:'lo12',nombre:'Eventos de temporada',         mundo:'diversion', ubicacion:'',                          activo:true},
+      {id:'lo13',nombre:'Transmisiones en vivo',        mundo:'diversion', ubicacion:'',                          activo:true},
+      {id:'lo14',nombre:'Planes en familia',            mundo:'diversion', ubicacion:'',                          activo:true}
+    ],
+    aviso:    { activo:true, texto:'¡Vive la temporada mundialista en Plaza Mayor! Encuentros en pantalla grande. ⚽' },
+    horarios: []
+  };
+  function read(key, def){
+    try{
+      var raw = localStorage.getItem(key);
+      if(raw === null){ localStorage.setItem(key, JSON.stringify(def)); return JSON.parse(JSON.stringify(def)); }
+      return JSON.parse(raw);
+    }catch(e){ return JSON.parse(JSON.stringify(def)); }
+  }
+  function write(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+  try{ if(localStorage.getItem(K.v)===null) localStorage.setItem(K.v, String(VERSION)); }catch(e){}
+  var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var dias  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  return {
+    MUNDOS: [
+      {key:'sabores',   label:'Sabores frente al muelle'},
+      {key:'moda',      label:'Moda y tiendas'},
+      {key:'servicios', label:'Servicios y bienestar'},
+      {key:'diversion', label:'Diversión y encuentros'}
+    ],
+    ETIQUETAS: ['Temporada','De temporada','Novedades','Evento','Aviso'],
+    ICONOS: ['balon','mochila','estrella','musica','regalo','generico'],
+    seed: SEED,
+    getEventos:  function(){ return read(K.ev, SEED.eventos); },
+    setEventos:  function(v){ write(K.ev, v); },
+    getLocales:  function(){ return read(K.lo, SEED.locales); },
+    setLocales:  function(v){ write(K.lo, v); },
+    getAviso:    function(){ return read(K.av, SEED.aviso); },
+    setAviso:    function(v){ write(K.av, v); },
+    getHorarios: function(){ return read(K.ho, SEED.horarios); },
+    setHorarios: function(v){ write(K.ho, v); },
+    resetAll:    function(){ [K.ev,K.lo,K.av,K.ho].forEach(function(k){ try{localStorage.removeItem(k);}catch(e){} }); },
+    uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
+    fmtFecha: function(iso){
+      if(!iso) return '';
+      var p = String(iso).split('-'); if(p.length !== 3) return iso;
+      var d = new Date(+p[0], +p[1]-1, +p[2]);
+      if(isNaN(d.getTime())) return iso;
+      return dias[d.getDay()] + ' ' + (+p[2]) + ' de ' + meses[+p[1]-1];
+    }
+  };
+})();
+
+(function(){
+  var PM = window.PM;
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  var STUB_ICONS = {
+    balon:'<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.3" opacity=".5"/>',
+    mochila:'<path d="M3 8l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5" stroke="currentColor" stroke-width="1.5"/>',
+    estrella:'<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.5-.5L12 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>',
+    musica:'<path d="M9 18V6l10-2v12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="16" r="2.5" stroke="currentColor" stroke-width="1.5"/>',
+    regalo:'<rect x="4" y="9" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 13h16M12 9v12M12 9c-2-4-6-4-6-1 0 2 4 1 6 1zm0 0c2-4 6-4 6-1 0 2-4 1-6 1z" stroke="currentColor" stroke-width="1.4"/>',
+    generico:'<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1" fill="currentColor"/>'
+  };
+  function stubIcon(k){ return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">'+(STUB_ICONS[k]||STUB_ICONS.generico)+'</svg>'; }
+
+  function renderAviso(){
+    var bar = document.getElementById('avisoBar'), txt = document.getElementById('avisoText');
+    if(!bar) return;
+    var a = PM.getAviso();
+    var closed = false; try{ closed = sessionStorage.getItem('pm_aviso_cerrado')==='1'; }catch(e){}
+    if(a && a.activo && a.texto && !closed){
+      txt.textContent = a.texto;
+      bar.hidden = false;
+      document.body.classList.add('has-aviso');
+      var h = bar.getBoundingClientRect().height || 44;
+      document.documentElement.style.setProperty('--aviso-h', h + 'px');
+    } else {
+      bar.hidden = true;
+      document.body.classList.remove('has-aviso');
+    }
+  }
+  function renderEventos(){
+    var host = document.getElementById('pasesHost'); if(!host) return;
+    var evs = (PM.getEventos()||[]).filter(function(e){ return e.activo!==false; });
+    var empty = document.getElementById('agendaEmpty');
+    host.innerHTML = evs.map(function(e){
+      var fecha = e.fecha ? '<p class="pdate">'+esc(PM.fmtFecha(e.fecha))+'</p>' : '';
+      return '<article class="pase">'
+        + '<span class="ptag">'+esc(e.etiqueta||'Evento')+'</span>'
+        + '<h3>'+esc(e.titulo||'')+'</h3>'
+        + fecha
+        + '<p>'+esc(e.descripcion||'')+'</p>'
+        + '<div class="stub">'+stubIcon(e.icono)+esc(e.detalle||'Plaza Mayor')+'</div>'
+        + '</article>';
+    }).join('');
+    if(empty) empty.hidden = evs.length>0;
+  }
+  function renderLocales(){
+    var locs = PM.getLocales()||[];
+    document.querySelectorAll('[data-tenants]').forEach(function(box){
+      var mundo = box.getAttribute('data-tenants');
+      var items = locs.filter(function(l){ return l.mundo===mundo && l.activo!==false; });
+      box.innerHTML = items.map(function(l){
+        var loc = l.ubicacion ? '<span class="loc">'+esc(l.ubicacion)+'</span>' : '';
+        return '<span class="chip">'+esc(l.nombre)+loc+'</span>';
+      }).join('');
+    });
+  }
+  function renderHorarios(){
+    var host = document.getElementById('horarioHost'); if(!host) return;
+    var hs = PM.getHorarios()||[];
+    if(hs.length){
+      host.innerHTML = hs.map(function(h){ return '<span style="display:block">'+esc(h.dias)+': <b style="color:var(--cream-90);font-weight:600">'+esc(h.horario)+'</b></span>'; }).join('');
+    } else {
+      host.textContent = 'Escríbenos por Instagram y te confirmamos el horario del día.';
+    }
+  }
+  function renderAll(){ renderAviso(); renderEventos(); renderLocales(); renderHorarios(); }
+
+  var closeBtn = document.getElementById('avisoClose');
+  if(closeBtn) closeBtn.addEventListener('click', function(){
+    try{ sessionStorage.setItem('pm_aviso_cerrado','1'); }catch(e){}
+    var bar=document.getElementById('avisoBar'); if(bar) bar.hidden=true;
+    document.body.classList.remove('has-aviso');
+  });
+
+  renderAll();
+  // vivir en tiempo real cuando el panel guarda en otra pestaña / al volver
+  window.addEventListener('storage', function(e){ if(!e.key || e.key.indexOf('pm_')===0) renderAll(); });
+  window.addEventListener('focus', renderAll);
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) renderAll(); });
+})();
+</script>
+</body>
+</html>
