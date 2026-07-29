@@ -269,6 +269,18 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6"/></svg>
           Locales <span class="nav__count" id="cLo">0</span>
         </button>
+        <button class="nav__btn" data-pane="servicios" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          Servicios <span class="nav__count" id="cSe">0</span>
+        </button>
+        <button class="nav__btn" data-pane="promociones" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12l-8 8-9-9V4h7z"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg>
+          Promociones <span class="nav__count" id="cPr">0</span>
+        </button>
+        <button class="nav__btn" data-pane="horarios" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Horarios <span class="nav__count" id="cHo">0</span>
+        </button>
       </nav>
 
       <main>
@@ -336,6 +348,45 @@
           </div>
           <div class="callout">Los ejemplos son editables — reemplácelos con sus locales reales.</div>
           <div class="list" id="listLo"></div>
+        </section>
+
+        <!-- ===== SERVICIOS / AMENIDADES ===== -->
+        <section class="pane" id="pane-servicios" tabindex="-1" aria-label="Servicios y amenidades">
+          <div class="pane__head">
+            <div>
+              <h2>Servicios y amenidades</h2>
+              <p>Las amenidades que aparecen en la sección "Servicios" de la página, cada una con su ícono.</p>
+            </div>
+            <button class="btn btn--primary" id="addSe" type="button">＋ Agregar servicio</button>
+          </div>
+          <div class="callout">Los ejemplos son editables — reemplácelos con sus datos reales.</div>
+          <div class="list" id="listSe"></div>
+        </section>
+
+        <!-- ===== PROMOCIONES ===== -->
+        <section class="pane" id="pane-promociones" tabindex="-1" aria-label="Promociones y ofertas">
+          <div class="pane__head">
+            <div>
+              <h2>Promociones y ofertas</h2>
+              <p>Publica las ofertas del mes que aparecen en la sección "Promociones" de la página.</p>
+            </div>
+            <button class="btn btn--primary" id="addPr" type="button">＋ Agregar promoción</button>
+          </div>
+          <div class="callout">Los ejemplos son editables — reemplácelos con sus ofertas reales.</div>
+          <div class="list" id="listPr"></div>
+        </section>
+
+        <!-- ===== HORARIOS ===== -->
+        <section class="pane" id="pane-horarios" tabindex="-1" aria-label="Horario de atención">
+          <div class="pane__head">
+            <div>
+              <h2>Horario de atención</h2>
+              <p>Los días y horas que aparecen en la sección "Horarios" de la página.</p>
+            </div>
+            <button class="btn btn--primary" id="addHo" type="button">＋ Agregar horario</button>
+          </div>
+          <div class="callout">Horario de referencia — ajústelo con sus horas reales.</div>
+          <div class="list" id="listHo"></div>
         </section>
       </main>
     </div>
@@ -477,6 +528,108 @@
   </div>
 </div>
 
+<!-- ===== MODAL SERVICIO ===== -->
+<div class="modal" id="modalSe" role="dialog" aria-modal="true" aria-labelledby="mSeTitle">
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__card">
+    <h3 id="mSeTitle">Nuevo servicio</h3>
+    <form id="formSe" novalidate>
+      <input type="hidden" id="seId">
+      <div class="field">
+        <label for="seNombre">Nombre</label>
+        <input id="seNombre" type="text" required placeholder="Ej. Estacionamiento gratis">
+      </div>
+      <div class="field">
+        <label for="seIcono">Ícono</label>
+        <select id="seIcono">
+          <option value="parqueo">Estacionamiento</option>
+          <option value="wifi">WiFi</option>
+          <option value="seguridad">Seguridad</option>
+          <option value="pago">Puntos de pago</option>
+          <option value="perdidos">Objetos perdidos</option>
+          <option value="ev">Cargador eléctrico</option>
+          <option value="banos">Baños</option>
+          <option value="accesibilidad">Accesibilidad</option>
+          <option value="generico">Genérico</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="seDesc">Descripción</label>
+        <input id="seDesc" type="text" placeholder="Ej. Llega en carro sin pensar en el reloj.">
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Guardar servicio</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== MODAL PROMOCIÓN ===== -->
+<div class="modal" id="modalPr" role="dialog" aria-modal="true" aria-labelledby="mPrTitle">
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__card">
+    <h3 id="mPrTitle">Nueva promoción</h3>
+    <form id="formPr" novalidate>
+      <input type="hidden" id="prId">
+      <div class="field">
+        <label for="prTitulo">Título</label>
+        <input id="prTitulo" type="text" required placeholder="Ej. 2x1 en heladería">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="prTienda">Tienda / local</label>
+          <input id="prTienda" type="text" placeholder="Ej. Heladería Central">
+        </div>
+        <div class="field">
+          <label for="prVigencia">Vigencia</label>
+          <input id="prVigencia" type="text" placeholder="Ej. Julio 2026">
+        </div>
+      </div>
+      <div class="field">
+        <label for="prDesc">Descripción</label>
+        <textarea id="prDesc" placeholder="Ej. Válido de lunes a viernes presentando el flyer."></textarea>
+      </div>
+      <div class="field">
+        <label for="prImgFile">Imagen (opcional)</label>
+        <input id="prImgFile" type="file" accept="image/*">
+        <span class="hint">O pega una URL de imagen:</span>
+        <input id="prImgUrl" type="text" placeholder="https://… (opcional)">
+        <div class="imgprev" id="prImgPrev"><img id="prImgPrevImg" alt="Vista previa de la promoción"></div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Guardar promoción</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== MODAL HORARIO ===== -->
+<div class="modal" id="modalHo" role="dialog" aria-modal="true" aria-labelledby="mHoTitle">
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__card">
+    <h3 id="mHoTitle">Nuevo horario</h3>
+    <form id="formHo" novalidate>
+      <input type="hidden" id="hoId">
+      <div class="row2">
+        <div class="field">
+          <label for="hoDias">Días</label>
+          <input id="hoDias" type="text" required placeholder="Ej. Lunes a Jueves">
+        </div>
+        <div class="field">
+          <label for="hoHorario">Horario</label>
+          <input id="hoHorario" type="text" placeholder="Ej. 10:00 AM – 8:00 PM">
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Guardar horario</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div class="toast" id="toast" role="status" aria-live="polite">
   <b>Guardado ✓</b>
@@ -486,7 +639,7 @@
 <!-- ===================== módulo de datos compartido (idéntico a index.html) ===================== -->
 <script>
 window.CPR = (function(){
-  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales' };
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales', se:'cpr_servicios', pr:'cpr_promos', ho:'cpr_horarios' };
   var SEED = {
     eventos: [
       {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
@@ -504,6 +657,22 @@ window.CPR = (function(){
       {id:'l1', nombre:'Local 12', zona:'Planta 1', tamano:'45 m²', estado:'Disponible', nota:'Ideal para tienda de moda o accesorios (ejemplo)'},
       {id:'l2', nombre:'Local 23', zona:'Planta baja', tamano:'80 m²', estado:'Disponible', nota:'Alto flujo, cerca de la entrada principal (ejemplo)'},
       {id:'l3', nombre:'Kiosco central', zona:'Plaza Central', tamano:'12 m²', estado:'Reservado', nota:'Isla comercial en el corazón del mall (ejemplo)'}
+    ],
+    servicios: [
+      {id:'s1', nombre:'Estacionamiento gratis', icono:'parqueo', descripcion:'Llega en carro sin pensar en el reloj.'},
+      {id:'s2', nombre:'WiFi gratis', icono:'wifi', descripcion:'Conéctate en todo el centro comercial.'},
+      {id:'s3', nombre:'Ambiente seguro', icono:'seguridad', descripcion:'Un espacio pensado para disfrutar en familia.'},
+      {id:'s4', nombre:'Puntos de pago', icono:'pago', descripcion:'Cajeros y puntos de pago dentro del mall. (ejemplo)'},
+      {id:'s5', nombre:'Objetos perdidos', icono:'perdidos', descripcion:'¿Perdiste algo? Pregunta en información. (ejemplo)'}
+    ],
+    promos: [
+      {id:'pr1', titulo:'2x1 en heladería', tienda:'Local de ejemplo', descripcion:'Promoción de ejemplo — reemplácela con sus ofertas reales desde el panel.', vigencia:'Julio 2026', img:''},
+      {id:'pr2', titulo:'20% en tecnología', tienda:'Local de ejemplo', descripcion:'Promoción de ejemplo — edítela desde el panel.', vigencia:'Este fin de semana', img:''}
+    ],
+    horarios: [
+      {id:'ho1', dias:'Lunes a Jueves', horario:'10:00 AM – 8:00 PM'},
+      {id:'ho2', dias:'Viernes y Sábado', horario:'10:00 AM – 9:00 PM'},
+      {id:'ho3', dias:'Domingos y feriados', horario:'11:00 AM – 8:00 PM'}
     ]
   };
   function read(key, def){
@@ -525,6 +694,12 @@ window.CPR = (function(){
     setTiendas: function(v){ write(K.ti, v); },
     getLocales: function(){ return read(K.lo, SEED.locales); },
     setLocales: function(v){ write(K.lo, v); },
+    getServicios: function(){ return read(K.se, SEED.servicios); },
+    setServicios: function(v){ write(K.se, v); },
+    getPromos: function(){ return read(K.pr, SEED.promos); },
+    setPromos: function(v){ write(K.pr, v); },
+    getHorarios: function(){ return read(K.ho, SEED.horarios); },
+    setHorarios: function(v){ write(K.ho, v); },
     uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
     slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
     fmtFecha: function(iso){
@@ -545,6 +720,23 @@ window.CPR = (function(){
   function $(id){ return document.getElementById(id); }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  /* ---------- set de iconos de servicios (clave → svg de trazo simple) ---------- */
+  var SVC_ICONS = {
+    parqueo:'<path d="M8 20V4h6a4 4 0 0 1 0 8H8"/>',
+    wifi:'<path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8 15.5a5 5 0 0 1 8 0"/><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/>',
+    seguridad:'<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
+    pago:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/>',
+    perdidos:'<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/>',
+    ev:'<path d="M13 2L5 13h5l-1 9 8-11h-5z"/>',
+    banos:'<path d="M12 3s6 6 6 10a6 6 0 0 1-12 0c0-4 6-10 6-10z"/>',
+    accesibilidad:'<circle cx="12" cy="4.5" r="2"/><path d="M5 9l7 1 7-1"/><path d="M12 10v4l3 6"/><path d="M12 14l-3 6"/>',
+    generico:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.6" r="0.7" fill="currentColor" stroke="none"/>'
+  };
+  function svcIcon(k){
+    var inner = SVC_ICONS[k] || SVC_ICONS.generico;
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' + inner + '</svg>';
+  }
 
   /* ---------- LOGIN ---------- */
   var login = $('login'), app = $('app');
@@ -614,6 +806,7 @@ window.CPR = (function(){
   }
   wireImg($('evImgFile'), $('evImgUrl'), $('evImgPrev'), $('evImgPrevImg'));
   wireImg($('tiLogoFile'), $('tiLogoUrl'), $('tiLogoPrev'), $('tiLogoPrevImg'));
+  wireImg($('prImgFile'), $('prImgUrl'), $('prImgPrev'), $('prImgPrevImg'));
 
   /* ============================================================= EVENTOS */
   var modalEv = $('modalEv');
@@ -874,8 +1067,212 @@ window.CPR = (function(){
     closeModal(modalLo); renderLocales(); showToast();
   });
 
+  /* ============================================================= SERVICIOS */
+  var modalSe = $('modalSe');
+  function renderServicios(){
+    var ss = CPR.getServicios() || [];
+    $('cSe').textContent = ss.length;
+    var host = $('listSe');
+    if(!ss.length){ host.innerHTML = '<div class="empty">Aún no hay servicios. Pulsa “＋ Agregar servicio”.</div>'; return; }
+    host.innerHTML = ss.map(function(s){
+      return '<div class="item item--store">' +
+        '<div class="item__thumb">' + svcIcon(s.icono) + '</div>' +
+        '<div class="item__body"><p class="item__title">' + esc(s.nombre) + '</p>' +
+        '<div class="item__meta"><span class="pill">' + esc(s.icono || 'generico') + '</span>' +
+        (s.descripcion ? '<span>' + esc(s.descripcion) + '</span>' : '') + '</div></div>' +
+        '<div class="item__actions">' +
+          '<button class="btn btn--sm btn--ghost" type="button" data-edit="' + esc(s.id) + '">Editar</button>' +
+          '<button class="btn btn--sm btn--danger" type="button" data-del="' + esc(s.id) + '">Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+    host.querySelectorAll('[data-edit]').forEach(function(b){
+      b.addEventListener('click', function(){ openSe(b.getAttribute('data-edit')); }); });
+    host.querySelectorAll('[data-del]').forEach(function(b){
+      b.addEventListener('click', function(){ delSe(b.getAttribute('data-del')); }); });
+  }
+  function clearSeForm(){
+    $('seId').value=''; $('seNombre').value=''; $('seIcono').value='parqueo'; $('seDesc').value='';
+  }
+  function openSe(id){
+    clearSeForm();
+    if(id){
+      var s = (CPR.getServicios()||[]).filter(function(x){ return x.id===id; })[0];
+      if(s){
+        $('mSeTitle').textContent = 'Editar servicio';
+        $('seId').value = s.id;
+        $('seNombre').value = s.nombre || '';
+        $('seIcono').value = s.icono || 'generico';
+        $('seDesc').value = s.descripcion || '';
+      }
+    } else {
+      $('mSeTitle').textContent = 'Nuevo servicio';
+    }
+    openModal(modalSe);
+    $('seNombre').focus();
+  }
+  function delSe(id){
+    if(!window.confirm('¿Eliminar este servicio?')) return;
+    CPR.setServicios((CPR.getServicios()||[]).filter(function(x){ return x.id!==id; }));
+    renderServicios(); showToast();
+  }
+  $('addSe').addEventListener('click', function(){ openSe(null); });
+  $('formSe').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre = $('seNombre').value.trim();
+    if(!nombre){ $('seNombre').focus(); return; }
+    var ss = CPR.getServicios() || [];
+    var id = $('seId').value;
+    var data = { nombre: nombre, icono: $('seIcono').value, descripcion: $('seDesc').value.trim() };
+    if(id){
+      ss = ss.map(function(x){ return x.id===id ? Object.assign({}, x, data) : x; });
+    } else {
+      data.id = CPR.uid(); ss.push(data);
+    }
+    CPR.setServicios(ss);
+    closeModal(modalSe); renderServicios(); showToast();
+  });
+
+  /* ============================================================= PROMOCIONES */
+  var modalPr = $('modalPr');
+  function renderPromos(){
+    var ps = CPR.getPromos() || [];
+    $('cPr').textContent = ps.length;
+    var host = $('listPr');
+    if(!ps.length){ host.innerHTML = '<div class="empty">Aún no hay promociones. Pulsa “＋ Agregar promoción”.</div>'; return; }
+    host.innerHTML = ps.map(function(p){
+      var thumb = p.img
+        ? '<img src="' + esc(p.img) + '" alt="">'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12l-8 8-9-9V4h7z"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg>';
+      var line = [];
+      if(p.tienda) line.push(esc(p.tienda));
+      if(p.vigencia) line.push(esc(p.vigencia));
+      return '<div class="item">' +
+        '<div class="item__thumb">' + thumb + '</div>' +
+        '<div class="item__body"><p class="item__title">' + esc(p.titulo) + '</p>' +
+        '<div class="item__meta">' + (line.length ? '<span>' + line.join(' · ') + '</span>' : '') +
+        (p.descripcion ? '<span>' + esc(p.descripcion) + '</span>' : '') + '</div></div>' +
+        '<div class="item__actions">' +
+          '<button class="btn btn--sm btn--ghost" type="button" data-edit="' + esc(p.id) + '">Editar</button>' +
+          '<button class="btn btn--sm btn--danger" type="button" data-del="' + esc(p.id) + '">Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+    host.querySelectorAll('[data-edit]').forEach(function(b){
+      b.addEventListener('click', function(){ openPr(b.getAttribute('data-edit')); }); });
+    host.querySelectorAll('[data-del]').forEach(function(b){
+      b.addEventListener('click', function(){ delPr(b.getAttribute('data-del')); }); });
+  }
+  function clearPrForm(){
+    $('prId').value=''; $('prTitulo').value=''; $('prTienda').value=''; $('prVigencia').value='';
+    $('prDesc').value=''; $('prImgFile').value=''; $('prImgUrl').value='';
+    $('prImgPrev').classList.remove('is-on');
+  }
+  function openPr(id){
+    clearPrForm();
+    if(id){
+      var p = (CPR.getPromos()||[]).filter(function(x){ return x.id===id; })[0];
+      if(p){
+        $('mPrTitle').textContent = 'Editar promoción';
+        $('prId').value = p.id;
+        $('prTitulo').value = p.titulo || '';
+        $('prTienda').value = p.tienda || '';
+        $('prVigencia').value = p.vigencia || '';
+        $('prDesc').value = p.descripcion || '';
+        if(p.img){ $('prImgUrl').value = p.img; $('prImgPrevImg').src = p.img; $('prImgPrev').classList.add('is-on'); }
+      }
+    } else {
+      $('mPrTitle').textContent = 'Nueva promoción';
+    }
+    openModal(modalPr);
+    $('prTitulo').focus();
+  }
+  function delPr(id){
+    if(!window.confirm('¿Eliminar esta promoción?')) return;
+    CPR.setPromos((CPR.getPromos()||[]).filter(function(x){ return x.id!==id; }));
+    renderPromos(); showToast();
+  }
+  $('addPr').addEventListener('click', function(){ openPr(null); });
+  $('formPr').addEventListener('submit', function(e){
+    e.preventDefault();
+    var titulo = $('prTitulo').value.trim();
+    if(!titulo){ $('prTitulo').focus(); return; }
+    var ps = CPR.getPromos() || [];
+    var id = $('prId').value;
+    var data = { titulo: titulo, tienda: $('prTienda').value.trim(), descripcion: $('prDesc').value.trim(),
+      vigencia: $('prVigencia').value.trim(), img: $('prImgUrl').value.trim() };
+    if(id){
+      ps = ps.map(function(x){ return x.id===id ? Object.assign({}, x, data) : x; });
+    } else {
+      data.id = CPR.uid(); ps.push(data);
+    }
+    CPR.setPromos(ps);
+    closeModal(modalPr); renderPromos(); showToast();
+  });
+
+  /* ============================================================= HORARIOS */
+  var modalHo = $('modalHo');
+  function renderHorarios(){
+    var hs = CPR.getHorarios() || [];
+    $('cHo').textContent = hs.length;
+    var host = $('listHo');
+    if(!hs.length){ host.innerHTML = '<div class="empty">Aún no hay horarios. Pulsa “＋ Agregar horario”.</div>'; return; }
+    host.innerHTML = hs.map(function(h){
+      return '<div class="item">' +
+        '<div class="item__thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>' +
+        '<div class="item__body"><p class="item__title">' + esc(h.dias) + '</p>' +
+        '<div class="item__meta">' + (h.horario ? '<span>' + esc(h.horario) + '</span>' : '') + '</div></div>' +
+        '<div class="item__actions">' +
+          '<button class="btn btn--sm btn--ghost" type="button" data-edit="' + esc(h.id) + '">Editar</button>' +
+          '<button class="btn btn--sm btn--danger" type="button" data-del="' + esc(h.id) + '">Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+    host.querySelectorAll('[data-edit]').forEach(function(b){
+      b.addEventListener('click', function(){ openHo(b.getAttribute('data-edit')); }); });
+    host.querySelectorAll('[data-del]').forEach(function(b){
+      b.addEventListener('click', function(){ delHo(b.getAttribute('data-del')); }); });
+  }
+  function clearHoForm(){
+    $('hoId').value=''; $('hoDias').value=''; $('hoHorario').value='';
+  }
+  function openHo(id){
+    clearHoForm();
+    if(id){
+      var h = (CPR.getHorarios()||[]).filter(function(x){ return x.id===id; })[0];
+      if(h){
+        $('mHoTitle').textContent = 'Editar horario';
+        $('hoId').value = h.id;
+        $('hoDias').value = h.dias || '';
+        $('hoHorario').value = h.horario || '';
+      }
+    } else {
+      $('mHoTitle').textContent = 'Nuevo horario';
+    }
+    openModal(modalHo);
+    $('hoDias').focus();
+  }
+  function delHo(id){
+    if(!window.confirm('¿Eliminar este horario?')) return;
+    CPR.setHorarios((CPR.getHorarios()||[]).filter(function(x){ return x.id!==id; }));
+    renderHorarios(); showToast();
+  }
+  $('addHo').addEventListener('click', function(){ openHo(null); });
+  $('formHo').addEventListener('submit', function(e){
+    e.preventDefault();
+    var dias = $('hoDias').value.trim();
+    if(!dias){ $('hoDias').focus(); return; }
+    var hs = CPR.getHorarios() || [];
+    var id = $('hoId').value;
+    var data = { dias: dias, horario: $('hoHorario').value.trim() };
+    if(id){
+      hs = hs.map(function(x){ return x.id===id ? Object.assign({}, x, data) : x; });
+    } else {
+      data.id = CPR.uid(); hs.push(data);
+    }
+    CPR.setHorarios(hs);
+    closeModal(modalHo); renderHorarios(); showToast();
+  });
+
   /* ---------- init ---------- */
-  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); renderLocales(); }
+  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); renderLocales(); renderServicios(); renderPromos(); renderHorarios(); }
   renderAll(); /* precarga contadores aun antes de entrar */
 })();
 </script>
