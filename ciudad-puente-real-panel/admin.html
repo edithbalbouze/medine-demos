@@ -265,6 +265,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9l1-4h14l1 4M5 9v10h14V9M4 9h16"/></svg>
           Directorio <span class="nav__count" id="cTi">0</span>
         </button>
+        <button class="nav__btn" data-pane="locales" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6"/></svg>
+          Locales <span class="nav__count" id="cLo">0</span>
+        </button>
       </nav>
 
       <main>
@@ -319,6 +323,19 @@
           </div>
           <div class="callout">Los ejemplos son editables — reemplácelos con sus locatarios reales.</div>
           <div class="list" id="listTi"></div>
+        </section>
+
+        <!-- ===== LOCALES DISPONIBLES ===== -->
+        <section class="pane" id="pane-locales" tabindex="-1" aria-label="Locales disponibles">
+          <div class="pane__head">
+            <div>
+              <h2>Locales disponibles</h2>
+              <p>Publica los espacios que están libres para alquilar. Aparecen en la sección "Locales disponibles" de la página.</p>
+            </div>
+            <button class="btn btn--primary" id="addLo" type="button">＋ Agregar local</button>
+          </div>
+          <div class="callout">Los ejemplos son editables — reemplácelos con sus locales reales.</div>
+          <div class="list" id="listLo"></div>
         </section>
       </main>
     </div>
@@ -421,6 +438,45 @@
   </div>
 </div>
 
+<!-- ===== MODAL LOCAL ===== -->
+<div class="modal" id="modalLo" role="dialog" aria-modal="true" aria-labelledby="mLoTitle">
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__card">
+    <h3 id="mLoTitle">Nuevo local</h3>
+    <form id="formLo" novalidate>
+      <input type="hidden" id="loId">
+      <div class="field">
+        <label for="loNombre">Nombre</label>
+        <input id="loNombre" type="text" required placeholder="Ej. Local 12">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="loZona">Zona / planta</label>
+          <input id="loZona" type="text" placeholder="Ej. Planta 1">
+        </div>
+        <div class="field">
+          <label for="loTamano">Tamaño</label>
+          <input id="loTamano" type="text" placeholder="Ej. 45 m²">
+        </div>
+      </div>
+      <div class="field">
+        <label for="loEstado">Estado</label>
+        <select id="loEstado">
+          <option>Disponible</option><option>Reservado</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="loNota">Nota</label>
+        <textarea id="loNota" placeholder="Ej. Ideal para tienda de moda o accesorios"></textarea>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Guardar local</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div class="toast" id="toast" role="status" aria-live="polite">
   <b>Guardado ✓</b>
@@ -430,7 +486,7 @@
 <!-- ===================== módulo de datos compartido (idéntico a index.html) ===================== -->
 <script>
 window.CPR = (function(){
-  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas' };
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales' };
   var SEED = {
     eventos: [
       {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
@@ -443,6 +499,11 @@ window.CPR = (function(){
       {id:'t2', nombre:'Tienda de moda (ejemplo)', categoria:'Moda', zona:'Planta 1', logo:''},
       {id:'t3', nombre:'Tienda de tecnología (ejemplo)', categoria:'Tecnología', zona:'Planta 1', logo:''},
       {id:'t4', nombre:'Farmacia / salud (ejemplo)', categoria:'Salud', zona:'Planta baja', logo:''}
+    ],
+    locales: [
+      {id:'l1', nombre:'Local 12', zona:'Planta 1', tamano:'45 m²', estado:'Disponible', nota:'Ideal para tienda de moda o accesorios (ejemplo)'},
+      {id:'l2', nombre:'Local 23', zona:'Planta baja', tamano:'80 m²', estado:'Disponible', nota:'Alto flujo, cerca de la entrada principal (ejemplo)'},
+      {id:'l3', nombre:'Kiosco central', zona:'Plaza Central', tamano:'12 m²', estado:'Reservado', nota:'Isla comercial en el corazón del mall (ejemplo)'}
     ]
   };
   function read(key, def){
@@ -462,6 +523,8 @@ window.CPR = (function(){
     setAviso:   function(v){ write(K.av, v); },
     getTiendas: function(){ return read(K.ti, SEED.tiendas); },
     setTiendas: function(v){ write(K.ti, v); },
+    getLocales: function(){ return read(K.lo, SEED.locales); },
+    setLocales: function(v){ write(K.lo, v); },
     uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
     slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
     fmtFecha: function(iso){
@@ -736,8 +799,83 @@ window.CPR = (function(){
     closeModal(modalTi); renderTiendas(); showToast();
   });
 
+  /* ============================================================= LOCALES */
+  var modalLo = $('modalLo');
+  function renderLocales(){
+    var ls = CPR.getLocales() || [];
+    $('cLo').textContent = ls.length;
+    var host = $('listLo');
+    if(!ls.length){ host.innerHTML = '<div class="empty">Aún no hay locales. Pulsa “＋ Agregar local”.</div>'; return; }
+    host.innerHTML = ls.map(function(l){
+      var free = (l.estado || 'Disponible') === 'Disponible';
+      var stateCls = free ? 'pill pill--on' : 'pill';
+      var line = [];
+      if(l.zona) line.push(esc(l.zona));
+      if(l.tamano) line.push(esc(l.tamano));
+      return '<div class="item item--store">' +
+        '<div class="item__thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6"/></svg></div>' +
+        '<div class="item__body"><p class="item__title">' + esc(l.nombre) + '</p>' +
+        '<div class="item__meta"><span class="' + stateCls + '">' + esc(l.estado || 'Disponible') + '</span>' +
+        (line.length ? '<span>' + line.join(' · ') + '</span>' : '') +
+        (l.nota ? '<span>' + esc(l.nota) + '</span>' : '') + '</div></div>' +
+        '<div class="item__actions">' +
+          '<button class="btn btn--sm btn--ghost" type="button" data-edit="' + esc(l.id) + '">Editar</button>' +
+          '<button class="btn btn--sm btn--danger" type="button" data-del="' + esc(l.id) + '">Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+    host.querySelectorAll('[data-edit]').forEach(function(b){
+      b.addEventListener('click', function(){ openLo(b.getAttribute('data-edit')); }); });
+    host.querySelectorAll('[data-del]').forEach(function(b){
+      b.addEventListener('click', function(){ delLo(b.getAttribute('data-del')); }); });
+  }
+  function clearLoForm(){
+    $('loId').value=''; $('loNombre').value=''; $('loZona').value='';
+    $('loTamano').value=''; $('loEstado').value='Disponible'; $('loNota').value='';
+  }
+  function openLo(id){
+    clearLoForm();
+    if(id){
+      var l = (CPR.getLocales()||[]).filter(function(x){ return x.id===id; })[0];
+      if(l){
+        $('mLoTitle').textContent = 'Editar local';
+        $('loId').value = l.id;
+        $('loNombre').value = l.nombre || '';
+        $('loZona').value = l.zona || '';
+        $('loTamano').value = l.tamano || '';
+        $('loEstado').value = l.estado || 'Disponible';
+        $('loNota').value = l.nota || '';
+      }
+    } else {
+      $('mLoTitle').textContent = 'Nuevo local';
+    }
+    openModal(modalLo);
+    $('loNombre').focus();
+  }
+  function delLo(id){
+    if(!window.confirm('¿Eliminar este local?')) return;
+    CPR.setLocales((CPR.getLocales()||[]).filter(function(x){ return x.id!==id; }));
+    renderLocales(); showToast();
+  }
+  $('addLo').addEventListener('click', function(){ openLo(null); });
+  $('formLo').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre = $('loNombre').value.trim();
+    if(!nombre){ $('loNombre').focus(); return; }
+    var ls = CPR.getLocales() || [];
+    var id = $('loId').value;
+    var data = { nombre: nombre, zona: $('loZona').value.trim(), tamano: $('loTamano').value.trim(),
+      estado: $('loEstado').value, nota: $('loNota').value.trim() };
+    if(id){
+      ls = ls.map(function(x){ return x.id===id ? Object.assign({}, x, data) : x; });
+    } else {
+      data.id = CPR.uid(); ls.push(data);
+    }
+    CPR.setLocales(ls);
+    closeModal(modalLo); renderLocales(); showToast();
+  });
+
   /* ---------- init ---------- */
-  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); }
+  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); renderLocales(); }
   renderAll(); /* precarga contadores aun antes de entrar */
 })();
 </script>

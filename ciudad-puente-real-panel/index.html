@@ -294,6 +294,34 @@
   .plate--tenant .plate__ic{overflow:hidden}
   .plate--tenant .plate__logo{width:100%;height:100%;object-fit:cover}
   .plate--tenant p{font-family:var(--display);font-weight:500;color:var(--navy);font-size:.9rem}
+
+  /* ---------- LOCALES DISPONIBLES (alquila tu local) ---------- */
+  .locales{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .locales-container{container-type:inline-size}
+  .vacants{display:grid;grid-template-columns:1fr;gap:14px}
+  @container (min-width:520px){.vacants{grid-template-columns:repeat(2,1fr)}}
+  @container (min-width:820px){.vacants{grid-template-columns:repeat(3,1fr)}}
+  .vacant{position:relative;background:var(--white);border:1px dashed var(--gold);border-radius:13px;
+    padding:20px 18px 18px;display:flex;flex-direction:column;gap:9px;
+    transition:transform .18s ease,box-shadow .18s ease}
+  .vacant:hover{transform:translateY(-3px);box-shadow:0 18px 34px -26px rgba(18,25,43,.5)}
+  .vacant--reserved{border-style:solid;border-color:var(--line);background:var(--ivory);opacity:.85}
+  .vacant__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .vacant__zone{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:.56rem;font-weight:600;
+    color:var(--navy);background:var(--ivory);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
+  .vacant--reserved .vacant__zone{background:var(--white)}
+  .vacant__state{font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-size:.56rem;font-weight:700;
+    padding:4px 9px;border-radius:6px;flex:none}
+  .vacant__state--free{color:#fff;background:var(--red)}
+  .vacant__state--reserved{color:var(--muted);background:var(--white);border:1px solid var(--line)}
+  .vacant h3{font-size:1.22rem;font-weight:600;letter-spacing:-.01em}
+  .vacant__meta{font-family:var(--display);font-size:.72rem;letter-spacing:.04em;color:var(--gold);
+    text-transform:uppercase;font-weight:600}
+  .vacant p{margin:0;color:var(--muted);font-size:.9rem}
+  .vacant__cta{margin-top:auto;padding-top:4px;text-decoration:none;font-family:var(--display);font-weight:600;
+    font-size:.86rem;color:var(--red);display:inline-flex;align-items:center;gap:7px}
+  .vacant__cta:hover{color:#b5170f}
+  .locales__foot{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 </style>
 </head>
 <body>
@@ -341,6 +369,7 @@
       <a class="seg-link" href="#diferenciales">Servicios</a>
       <a class="seg-link" href="#agenda">Eventos</a>
       <a class="seg-link" href="#cine">Cine</a>
+      <a class="seg-link" href="#locales">Locales</a>
       <a class="seg-link" href="#llegar">Cómo llegar</a>
     </div>
   </nav>
@@ -566,12 +595,34 @@
     </div>
   </section>
 
-  <!-- ===== 05 · CÓMO LLEGAR / CONTACTO ===== -->
+  <!-- ===== 05 · LOCALES DISPONIBLES ===== -->
+  <section class="sect locales" id="locales" data-spy>
+    <div class="wrap">
+      <div class="sect__head reveal">
+        <div>
+          <span class="snum">05 — Locales disponibles</span>
+          <h2>¿Quieres tu local en Puente Real?</h2>
+        </div>
+        <p class="lead">Espacios disponibles para alquilar dentro del centro comercial. Estos son ejemplos — el listado real lo administra la gerencia desde su panel.</p>
+      </div>
+
+      <div class="locales-container">
+        <div class="vacants" id="vacants"></div>
+        <p class="dir-empty" id="localesEmpty">Por ahora no hay locales publicados. Escríbenos por Instagram para conocer disponibilidad.</p>
+      </div>
+
+      <div class="locales__foot reveal">
+        <a class="signcta" href="https://ig.me/m/ciudadpuentereal" target="_blank" rel="noopener"><span class="txt">Alquila tu local — escríbenos</span><span class="ar" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 · CÓMO LLEGAR / CONTACTO ===== -->
   <section class="sect" id="llegar" data-spy style="background:var(--ivory)">
     <div class="wrap">
       <div class="sect__head reveal">
         <div>
-          <span class="snum">05 — Cómo llegar</span>
+          <span class="snum">06 — Cómo llegar</span>
           <h2>Ubicación y contacto</h2>
         </div>
         <p class="lead">Estamos en Barcelona, Anzoátegui. Escríbenos por Instagram o llámanos y con gusto te orientamos.</p>
@@ -644,6 +695,7 @@
           <li><a href="#diferenciales">Estacionamiento gratis</a></li>
           <li><a href="#diferenciales">WiFi gratis</a></li>
           <li><a href="#diferenciales">Ambiente seguro</a></li>
+          <li><a href="#locales">Locales disponibles</a></li>
         </ul>
       </div>
       <div class="footcol">
@@ -693,7 +745,7 @@
 <!-- ===== módulo de datos compartido (idéntico en index.html y admin.html) ===== -->
 <script>
 window.CPR = (function(){
-  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas' };
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales' };
   var SEED = {
     eventos: [
       {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
@@ -706,6 +758,11 @@ window.CPR = (function(){
       {id:'t2', nombre:'Tienda de moda (ejemplo)', categoria:'Moda', zona:'Planta 1', logo:''},
       {id:'t3', nombre:'Tienda de tecnología (ejemplo)', categoria:'Tecnología', zona:'Planta 1', logo:''},
       {id:'t4', nombre:'Farmacia / salud (ejemplo)', categoria:'Salud', zona:'Planta baja', logo:''}
+    ],
+    locales: [
+      {id:'l1', nombre:'Local 12', zona:'Planta 1', tamano:'45 m²', estado:'Disponible', nota:'Ideal para tienda de moda o accesorios (ejemplo)'},
+      {id:'l2', nombre:'Local 23', zona:'Planta baja', tamano:'80 m²', estado:'Disponible', nota:'Alto flujo, cerca de la entrada principal (ejemplo)'},
+      {id:'l3', nombre:'Kiosco central', zona:'Plaza Central', tamano:'12 m²', estado:'Reservado', nota:'Isla comercial en el corazón del mall (ejemplo)'}
     ]
   };
   function read(key, def){
@@ -725,6 +782,8 @@ window.CPR = (function(){
     setAviso:   function(v){ write(K.av, v); },
     getTiendas: function(){ return read(K.ti, SEED.tiendas); },
     setTiendas: function(v){ write(K.ti, v); },
+    getLocales: function(){ return read(K.lo, SEED.locales); },
+    setLocales: function(v){ write(K.lo, v); },
     uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
     slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
     fmtFecha: function(iso){
@@ -818,6 +877,32 @@ window.CPR = (function(){
       if(anchor) grid.insertBefore(el, anchor); else grid.appendChild(el);
     });
     function CATCOLOR_(s){ return CATCOLOR[s] || '#8a93a6'; }
+  })();
+
+  /* ---- locales disponibles: render de cpr_locales ---- */
+  (function(){
+    var host = document.getElementById('vacants');
+    var empty = document.getElementById('localesEmpty');
+    if(!host) return;
+    var locales = CPR.getLocales() || [];
+    if(!locales.length){ if(empty) empty.classList.add('show'); return; }
+    host.innerHTML = locales.map(function(l){
+      var free = (l.estado || 'Disponible') === 'Disponible';
+      var stateCls = free ? 'vacant__state--free' : 'vacant__state--reserved';
+      var cardCls = free ? 'vacant' : 'vacant vacant--reserved';
+      var meta = [];
+      if(l.zona) meta.push(esc(l.zona));
+      if(l.tamano) meta.push(esc(l.tamano));
+      var cta = free
+        ? '<a class="vacant__cta" href="https://ig.me/m/ciudadpuentereal" target="_blank" rel="noopener">Me interesa este local <span aria-hidden="true">→</span></a>'
+        : '';
+      return '<article class="' + cardCls + ' reveal">' +
+        '<div class="vacant__top"><span class="vacant__zone">' + esc(l.zona || 'Local') + '</span>' +
+        '<span class="vacant__state ' + stateCls + '">' + esc(l.estado || 'Disponible') + '</span></div>' +
+        '<h3>' + esc(l.nombre) + '</h3>' +
+        (meta.length ? '<span class="vacant__meta">' + meta.join(' · ') + '</span>' : '') +
+        '<p>' + esc(l.nota || '') + '</p>' + cta + '</article>';
+    }).join('');
   })();
 
   /* ---- split-flap board ---- */
