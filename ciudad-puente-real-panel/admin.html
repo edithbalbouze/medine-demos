@@ -281,6 +281,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           Horarios <span class="nav__count" id="cHo">0</span>
         </button>
+        <button class="nav__btn" data-pane="banners" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l4-4 4 4 5-5 5 5"/></svg>
+          Banner / Carrusel <span class="nav__count" id="cBa">0</span>
+        </button>
       </nav>
 
       <main>
@@ -387,6 +391,19 @@
           </div>
           <div class="callout">Horario de referencia — ajústelo con sus horas reales.</div>
           <div class="list" id="listHo"></div>
+        </section>
+
+        <!-- ===== BANNER / CARRUSEL ===== -->
+        <section class="pane" id="pane-banners" tabindex="-1" aria-label="Banner / Carrusel">
+          <div class="pane__head">
+            <div>
+              <h2>Banner / Carrusel</h2>
+              <p>Los banners destacados que rotan al inicio de la página.</p>
+            </div>
+            <button class="btn btn--primary" id="addBa" type="button">＋ Agregar banner</button>
+          </div>
+          <div class="callout">Sin imagen, el banner usa un fondo de marca.</div>
+          <div class="list" id="listBa"></div>
         </section>
       </main>
     </div>
@@ -630,6 +647,47 @@
   </div>
 </div>
 
+<!-- ===== MODAL BANNER ===== -->
+<div class="modal" id="modalBa" role="dialog" aria-modal="true" aria-labelledby="mBaTitle">
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__card">
+    <h3 id="mBaTitle">Nuevo banner</h3>
+    <form id="formBa" novalidate>
+      <input type="hidden" id="baId">
+      <div class="field">
+        <label for="baTitulo">Título</label>
+        <input id="baTitulo" type="text" required placeholder="Ej. Bienvenido a Puente Real">
+      </div>
+      <div class="field">
+        <label for="baSubtitulo">Subtítulo</label>
+        <input id="baSubtitulo" type="text" placeholder="Ej. El punto de encuentro favorito de Barcelona">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="baCta">Texto del botón</label>
+          <input id="baCta" type="text" placeholder="Ej. Ver el directorio">
+        </div>
+        <div class="field">
+          <label for="baLink">Enlace del botón</label>
+          <input id="baLink" type="text" placeholder="#directorio">
+          <span class="hint">#directorio, #agenda, #locales o una URL</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="baImgFile">Imagen (opcional)</label>
+        <input id="baImgFile" type="file" accept="image/*">
+        <span class="hint">O pega una URL de imagen:</span>
+        <input id="baImgUrl" type="text" placeholder="https://… (opcional)">
+        <div class="imgprev" id="baImgPrev"><img id="baImgPrevImg" alt="Vista previa del banner"></div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Guardar banner</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <!-- ===== TOAST ===== -->
 <div class="toast" id="toast" role="status" aria-live="polite">
   <b>Guardado ✓</b>
@@ -639,7 +697,7 @@
 <!-- ===================== módulo de datos compartido (idéntico a index.html) ===================== -->
 <script>
 window.CPR = (function(){
-  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales', se:'cpr_servicios', pr:'cpr_promos', ho:'cpr_horarios' };
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales', se:'cpr_servicios', pr:'cpr_promos', ho:'cpr_horarios', ba:'cpr_banners' };
   var SEED = {
     eventos: [
       {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
@@ -673,6 +731,11 @@ window.CPR = (function(){
       {id:'ho1', dias:'Lunes a Jueves', horario:'10:00 AM – 8:00 PM'},
       {id:'ho2', dias:'Viernes y Sábado', horario:'10:00 AM – 9:00 PM'},
       {id:'ho3', dias:'Domingos y feriados', horario:'11:00 AM – 8:00 PM'}
+    ],
+    banners: [
+      {id:'b1', titulo:'Bienvenido a Puente Real', subtitulo:'El punto de encuentro favorito de Barcelona, Anzoátegui', cta_texto:'Ver el directorio', cta_link:'#directorio', img:''},
+      {id:'b2', titulo:'Eventos en Plaza Central', subtitulo:'Talleres, conferencias y ferias durante todo el mes', cta_texto:'Ver la agenda', cta_link:'#agenda', img:''},
+      {id:'b3', titulo:'¿Quieres tu local en Puente Real?', subtitulo:'Espacios disponibles para alquilar dentro del centro comercial', cta_texto:'Alquila tu local', cta_link:'#locales', img:''}
     ]
   };
   function read(key, def){
@@ -700,6 +763,8 @@ window.CPR = (function(){
     setPromos: function(v){ write(K.pr, v); },
     getHorarios: function(){ return read(K.ho, SEED.horarios); },
     setHorarios: function(v){ write(K.ho, v); },
+    getBanners: function(){ return read(K.ba, SEED.banners); },
+    setBanners: function(v){ write(K.ba, v); },
     uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
     slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
     fmtFecha: function(iso){
@@ -807,6 +872,7 @@ window.CPR = (function(){
   wireImg($('evImgFile'), $('evImgUrl'), $('evImgPrev'), $('evImgPrevImg'));
   wireImg($('tiLogoFile'), $('tiLogoUrl'), $('tiLogoPrev'), $('tiLogoPrevImg'));
   wireImg($('prImgFile'), $('prImgUrl'), $('prImgPrev'), $('prImgPrevImg'));
+  wireImg($('baImgFile'), $('baImgUrl'), $('baImgPrev'), $('baImgPrevImg'));
 
   /* ============================================================= EVENTOS */
   var modalEv = $('modalEv');
@@ -1271,8 +1337,85 @@ window.CPR = (function(){
     closeModal(modalHo); renderHorarios(); showToast();
   });
 
+  /* ============================================================= BANNERS */
+  var modalBa = $('modalBa');
+  function renderBanners(){
+    var bs = CPR.getBanners() || [];
+    $('cBa').textContent = bs.length;
+    var host = $('listBa');
+    if(!bs.length){ host.innerHTML = '<div class="empty">Aún no hay banners. Pulsa “＋ Agregar banner”.</div>'; return; }
+    host.innerHTML = bs.map(function(bn){
+      var thumb = bn.img
+        ? '<img src="' + esc(bn.img) + '" alt="">'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l4-4 4 4 5-5 5 5"/></svg>';
+      var line = [];
+      if(bn.cta_texto) line.push(esc(bn.cta_texto));
+      if(bn.cta_link) line.push(esc(bn.cta_link));
+      return '<div class="item">' +
+        '<div class="item__thumb">' + thumb + '</div>' +
+        '<div class="item__body"><p class="item__title">' + esc(bn.titulo) + '</p>' +
+        '<div class="item__meta">' + (bn.img ? '' : '<span class="pill">Fondo de marca</span>') +
+        (bn.subtitulo ? '<span>' + esc(bn.subtitulo) + '</span>' : '') +
+        (line.length ? '<span>' + line.join(' · ') + '</span>' : '') + '</div></div>' +
+        '<div class="item__actions">' +
+          '<button class="btn btn--sm btn--ghost" type="button" data-edit="' + esc(bn.id) + '">Editar</button>' +
+          '<button class="btn btn--sm btn--danger" type="button" data-del="' + esc(bn.id) + '">Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+    host.querySelectorAll('[data-edit]').forEach(function(b){
+      b.addEventListener('click', function(){ openBa(b.getAttribute('data-edit')); }); });
+    host.querySelectorAll('[data-del]').forEach(function(b){
+      b.addEventListener('click', function(){ delBa(b.getAttribute('data-del')); }); });
+  }
+  function clearBaForm(){
+    $('baId').value=''; $('baTitulo').value=''; $('baSubtitulo').value='';
+    $('baCta').value=''; $('baLink').value=''; $('baImgFile').value=''; $('baImgUrl').value='';
+    $('baImgPrev').classList.remove('is-on');
+  }
+  function openBa(id){
+    clearBaForm();
+    if(id){
+      var bn = (CPR.getBanners()||[]).filter(function(x){ return x.id===id; })[0];
+      if(bn){
+        $('mBaTitle').textContent = 'Editar banner';
+        $('baId').value = bn.id;
+        $('baTitulo').value = bn.titulo || '';
+        $('baSubtitulo').value = bn.subtitulo || '';
+        $('baCta').value = bn.cta_texto || '';
+        $('baLink').value = bn.cta_link || '';
+        if(bn.img){ $('baImgUrl').value = bn.img; $('baImgPrevImg').src = bn.img; $('baImgPrev').classList.add('is-on'); }
+      }
+    } else {
+      $('mBaTitle').textContent = 'Nuevo banner';
+    }
+    openModal(modalBa);
+    $('baTitulo').focus();
+  }
+  function delBa(id){
+    if(!window.confirm('¿Eliminar este banner?')) return;
+    CPR.setBanners((CPR.getBanners()||[]).filter(function(x){ return x.id!==id; }));
+    renderBanners(); showToast();
+  }
+  $('addBa').addEventListener('click', function(){ openBa(null); });
+  $('formBa').addEventListener('submit', function(e){
+    e.preventDefault();
+    var titulo = $('baTitulo').value.trim();
+    if(!titulo){ $('baTitulo').focus(); return; }
+    var bs = CPR.getBanners() || [];
+    var id = $('baId').value;
+    var data = { titulo: titulo, subtitulo: $('baSubtitulo').value.trim(),
+      cta_texto: $('baCta').value.trim(), cta_link: $('baLink').value.trim(), img: $('baImgUrl').value.trim() };
+    if(id){
+      bs = bs.map(function(x){ return x.id===id ? Object.assign({}, x, data) : x; });
+    } else {
+      data.id = CPR.uid(); bs.push(data);
+    }
+    CPR.setBanners(bs);
+    closeModal(modalBa); renderBanners(); showToast();
+  });
+
   /* ---------- init ---------- */
-  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); renderLocales(); renderServicios(); renderPromos(); renderHorarios(); }
+  function renderAll(){ renderEventos(); loadAviso(); renderTiendas(); renderLocales(); renderServicios(); renderPromos(); renderHorarios(); renderBanners(); }
   renderAll(); /* precarga contadores aun antes de entrar */
 })();
 </script>

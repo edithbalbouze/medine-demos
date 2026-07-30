@@ -348,6 +348,48 @@
   .hours__row:last-child{border-bottom:0}
   .hours__d{font-family:var(--display);font-weight:600;color:var(--navy)}
   .hours__h{font-family:var(--display);font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+
+  /* ---------- DESTACADOS : carrusel de banners (editable desde el panel) ---------- */
+  .destacados{background:var(--ivory);padding:26px 0 8px}
+  .destacados[hidden]{display:none}
+  .carousel{position:relative}
+  .carousel__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:18px}
+  .carousel__track::-webkit-scrollbar{display:none}
+  .slide{position:relative;flex:0 0 100%;scroll-snap-align:center;isolation:isolate;
+    height:clamp(240px,44vh,400px);border-radius:18px;overflow:hidden;
+    display:flex;align-items:flex-end;color:#fff;
+    box-shadow:0 24px 60px -40px rgba(18,25,43,.7);border:1px solid #26314b}
+  .slide__bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+  .slide__grad{position:absolute;inset:0;z-index:-2}
+  .slide__bridge{position:absolute;right:-4%;bottom:-14%;width:min(430px,62%);
+    color:rgba(255,255,255,.10);z-index:-1;pointer-events:none}
+  .slide::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(90deg,rgba(9,13,24,.72) 0%,rgba(9,13,24,.38) 56%,rgba(9,13,24,.12) 100%)}
+  .slide--img::after{background:linear-gradient(90deg,rgba(9,13,24,.84) 0%,rgba(9,13,24,.52) 56%,rgba(9,13,24,.2) 100%)}
+  .slide__inner{position:relative;z-index:1;max-width:620px;
+    padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;gap:12px}
+  .slide__eyebrow{font-family:var(--display);text-transform:uppercase;letter-spacing:.28em;
+    font-size:.62rem;font-weight:600;color:#fff;opacity:.82}
+  .slide h2{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.02;
+    font-size:clamp(1.6rem,5.6vw,2.7rem);max-width:16ch}
+  .slide p{margin:0;color:rgba(255,255,255,.9);font-size:clamp(.92rem,2.4vw,1.08rem);max-width:42ch}
+  .slide .signcta{margin-top:6px;align-self:flex-start}
+  .carousel__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
+    background:rgba(9,13,24,.42);color:#fff;cursor:pointer;font-size:1.5rem;line-height:1;
+    display:grid;place-items:center;transition:.18s}
+  .carousel__nav:hover{background:rgba(9,13,24,.72)}
+  .carousel__nav--prev{left:12px}
+  .carousel__nav--next{right:12px}
+  .carousel__dots{display:flex;gap:9px;justify-content:center;padding:16px 0 4px}
+  .carousel__dot{width:9px;height:9px;padding:0;border-radius:50%;cursor:pointer;
+    border:1px solid var(--navy);background:transparent;transition:.18s}
+  .carousel__dot:hover{background:rgba(18,25,43,.25)}
+  .carousel__dot[aria-current="true"]{background:var(--red);border-color:var(--red);transform:scale(1.18)}
+  .carousel[data-single] .carousel__nav,.carousel[data-single] .carousel__dots{display:none}
+  @media(max-width:560px){.carousel__nav{display:none}}
+  @media (prefers-reduced-motion:reduce){.carousel__dot{transition:none}.carousel__nav{transition:none}}
 </style>
 </head>
 <body>
@@ -447,6 +489,18 @@
       </div>
     </div>
   </header>
+
+  <!-- ===== BANNERS DESTACADOS (carrusel, editable desde el panel) ===== -->
+  <section class="destacados" id="destacados">
+    <div class="wrap">
+      <div class="carousel" id="carousel" role="region" aria-label="Destacados" aria-roledescription="carrusel">
+        <button class="carousel__nav carousel__nav--prev" id="carPrev" type="button" aria-label="Banner anterior">&lsaquo;</button>
+        <div class="carousel__track" id="carTrack"></div>
+        <button class="carousel__nav carousel__nav--next" id="carNext" type="button" aria-label="Banner siguiente">&rsaquo;</button>
+      </div>
+      <div class="carousel__dots" id="carDots" aria-label="Seleccionar banner"></div>
+    </div>
+  </section>
 
   <!-- ===== 01 · DIRECTORIO-GUÍA ===== -->
   <section class="sect dir" id="directorio" data-spy>
@@ -796,7 +850,7 @@
 <!-- ===== módulo de datos compartido (idéntico en index.html y admin.html) ===== -->
 <script>
 window.CPR = (function(){
-  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales', se:'cpr_servicios', pr:'cpr_promos', ho:'cpr_horarios' };
+  var K = { ev:'cpr_eventos', av:'cpr_aviso', ti:'cpr_tiendas', lo:'cpr_locales', se:'cpr_servicios', pr:'cpr_promos', ho:'cpr_horarios', ba:'cpr_banners' };
   var SEED = {
     eventos: [
       {id:'e1', titulo:'Taller de Cultura Preventiva', tipo:'Taller', fecha:'2026-07-28', hora:'4:00 – 6:00 PM', lugar:'Plaza Central', entradaLibre:true, img:'assets/cpr-foto-1.jpg'},
@@ -830,6 +884,11 @@ window.CPR = (function(){
       {id:'ho1', dias:'Lunes a Jueves', horario:'10:00 AM – 8:00 PM'},
       {id:'ho2', dias:'Viernes y Sábado', horario:'10:00 AM – 9:00 PM'},
       {id:'ho3', dias:'Domingos y feriados', horario:'11:00 AM – 8:00 PM'}
+    ],
+    banners: [
+      {id:'b1', titulo:'Bienvenido a Puente Real', subtitulo:'El punto de encuentro favorito de Barcelona, Anzoátegui', cta_texto:'Ver el directorio', cta_link:'#directorio', img:''},
+      {id:'b2', titulo:'Eventos en Plaza Central', subtitulo:'Talleres, conferencias y ferias durante todo el mes', cta_texto:'Ver la agenda', cta_link:'#agenda', img:''},
+      {id:'b3', titulo:'¿Quieres tu local en Puente Real?', subtitulo:'Espacios disponibles para alquilar dentro del centro comercial', cta_texto:'Alquila tu local', cta_link:'#locales', img:''}
     ]
   };
   function read(key, def){
@@ -857,6 +916,8 @@ window.CPR = (function(){
     setPromos: function(v){ write(K.pr, v); },
     getHorarios: function(){ return read(K.ho, SEED.horarios); },
     setHorarios: function(v){ write(K.ho, v); },
+    getBanners: function(){ return read(K.ba, SEED.banners); },
+    setBanners: function(v){ write(K.ba, v); },
     uid: function(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); },
     slug: function(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,''); },
     fmtFecha: function(iso){
@@ -1043,6 +1104,119 @@ window.CPR = (function(){
         (meta.length ? '<span class="vacant__meta">' + meta.join(' · ') + '</span>' : '') +
         '<p>' + esc(l.nota || '') + '</p>' + cta + '</article>';
     }).join('');
+  })();
+
+  /* ---- destacados: carrusel de banners desde cpr_banners ---- */
+  (function(){
+    var section = document.getElementById('destacados');
+    var carousel = document.getElementById('carousel');
+    var track = document.getElementById('carTrack');
+    var dotsWrap = document.getElementById('carDots');
+    var prevBtn = document.getElementById('carPrev');
+    var nextBtn = document.getElementById('carNext');
+    if(!section || !track) return;
+    var banners = CPR.getBanners() || [];
+    if(!banners.length){ section.hidden = true; return; }
+
+    var accents = ['#E1211F','#A2814B','#2b3d63'];
+    var n = banners.length;
+
+    banners.forEach(function(b, i){
+      var slide = document.createElement('article');
+      slide.className = 'slide';
+      slide.setAttribute('role','group');
+      slide.setAttribute('aria-roledescription','diapositiva');
+      slide.setAttribute('aria-label', (i+1) + ' de ' + n);
+
+      var hasImg = b.img && String(b.img).trim();
+      if(hasImg){
+        slide.classList.add('slide--img');
+        var bg = document.createElement('div');
+        bg.className = 'slide__bg';
+        bg.style.backgroundImage = 'url("' + String(b.img).replace(/"/g,'%22') + '")';
+        slide.appendChild(bg);
+      } else {
+        var grad = document.createElement('div');
+        grad.className = 'slide__grad';
+        var accent = accents[i % accents.length];
+        grad.style.background = 'radial-gradient(130% 150% at 84% 8%, ' + accent + '5c 0%, rgba(28,39,64,0) 48%),' +
+          'linear-gradient(135deg, #12192B 0%, #1c2740 58%, ' + accent + ' 165%)';
+        slide.appendChild(grad);
+        slide.insertAdjacentHTML('beforeend',
+          '<svg class="slide__bridge" viewBox="0 0 120 60" aria-hidden="true"><use href="#bridge"/></svg>');
+      }
+
+      var inner = document.createElement('div');
+      inner.className = 'slide__inner';
+      var html = '<span class="slide__eyebrow">Destacado</span>';
+      html += '<h2>' + esc(b.titulo || '') + '</h2>';
+      if(b.subtitulo) html += '<p>' + esc(b.subtitulo) + '</p>';
+      if(b.cta_texto) html += '<a class="signcta" href="' + esc(b.cta_link || '#') + '">' +
+        '<span class="txt">' + esc(b.cta_texto) + '</span><span class="ar" aria-hidden="true">&rarr;</span></a>';
+      inner.innerHTML = html;
+      slide.appendChild(inner);
+      track.appendChild(slide);
+    });
+
+    var current = 0, dots = [];
+    if(n <= 1){
+      carousel.setAttribute('data-single','');
+      return; /* un solo banner: sin flechas, dots ni auto-avance */
+    }
+
+    for(var d=0; d<n; d++){
+      (function(idx){
+        var dot = document.createElement('button');
+        dot.className = 'carousel__dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Ir al banner ' + (idx+1));
+        dot.setAttribute('aria-current', idx===0 ? 'true' : 'false');
+        dot.addEventListener('click', function(){ goTo(idx, true); });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      })(d);
+    }
+
+    function slideStep(){
+      var s = track.children[0];
+      return s ? s.getBoundingClientRect().width + 14 : track.clientWidth;
+    }
+    function setActive(i){
+      dots.forEach(function(dot, di){ dot.setAttribute('aria-current', di===i ? 'true' : 'false'); });
+    }
+    function goTo(i, user){
+      current = (i + n) % n;
+      var target = track.children[current];
+      if(target) track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+      setActive(current);
+      if(user) restart();
+    }
+    if(prevBtn) prevBtn.addEventListener('click', function(){ goTo(current-1, true); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ goTo(current+1, true); });
+
+    /* actualizar el dot activo con el scroll del track (rAF-debounced) */
+    var scrollRAF = null;
+    track.addEventListener('scroll', function(){
+      if(scrollRAF) return;
+      scrollRAF = requestAnimationFrame(function(){
+        scrollRAF = null;
+        var idx = Math.round(track.scrollLeft / slideStep());
+        idx = Math.max(0, Math.min(n-1, idx));
+        if(idx !== current){ current = idx; setActive(current); }
+      });
+    });
+
+    /* auto-avance (desactivado con prefers-reduced-motion) */
+    var timer = null;
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+    function restart(){ stop(); if(!reduce) timer = setInterval(function(){ goTo(current+1, false); }, 5500); }
+    if(!reduce){
+      restart();
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', restart);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', restart);
+    }
   })();
 
   /* ---- split-flap board ---- */
