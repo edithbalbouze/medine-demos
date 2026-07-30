@@ -1,0 +1,704 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Centro Médico Almenara · Tu salud, en manos de un equipo</title>
+<meta name="description" content="Centro Médico Almenara — policlínica multidisciplinar. Pide tu cita por WhatsApp: elige especialidad, escríbenos y confirmamos día y hora.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Centro Médico Almenara · Tu salud, en manos de un equipo">
+<meta property="og:description" content="Policlínica multidisciplinar. Pide cita en minutos por WhatsApp — 12 especialidades, atención cercana.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F5F8B'/%3E%3Cpath d='M10 54 H34 l5 -20 l8 40 l7 -30 l6 14 h24' fill='none' stroke='%23EF7A5A' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-2:#F4F8FA;
+    --blue:#1F5F8B;
+    --blue-2:#2E7DB0;
+    --coral:#EF7A5A;
+    --ink:#14212B;
+    --muted:#54646F;
+    --line:#D7E1E8;
+    --line-strong:#BFCFD9;
+    --shadow: 0 18px 48px -22px rgba(20,33,43,.28);
+    --radius:14px;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Red Hat Text",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Red Hat Display","Red Hat Text",sans-serif;line-height:1.06;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .eyebrow{
+    font-family:"Red Hat Text",sans-serif;
+    font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--blue);margin:0 0 14px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--coral);flex:0 0 auto}
+  .sec-num{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.8rem;letter-spacing:.04em}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:"Red Hat Text";font-weight:600;font-size:.95rem;
+    padding:13px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    text-decoration:none;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+  }
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-primary:hover{background:#184c70}
+  .btn-ghost{background:transparent;color:var(--blue);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--blue);background:var(--bg-2)}
+  .btn svg{width:18px;height:18px;flex:0 0 auto}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:6px}
+
+  /* ---------- NAV : slim sticky + mega-menu ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:6px}
+  .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);margin-right:auto}
+  .brand .mark{width:32px;height:32px;flex:0 0 auto}
+  .brand b{font-family:"Red Hat Display";font-weight:800;font-size:.98rem;letter-spacing:-.01em;line-height:1}
+  .brand span{display:block;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .nav-tools{display:flex;align-items:center;gap:4px}
+  .mega-trigger{
+    display:inline-flex;align-items:center;gap:5px;background:none;border:0;cursor:pointer;white-space:nowrap;
+    font-family:"Red Hat Text";font-weight:600;font-size:.82rem;color:var(--ink);padding:8px 6px;border-radius:8px;
+  }
+  .mega-trigger .chev{width:11px;height:11px;transition:transform .25s ease}
+  .mega-trigger[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .nav-cta{padding:9px 14px;font-size:.82rem}
+  @media (min-width:520px){
+    .nav-in{padding:10px 20px;gap:14px}
+    .brand{gap:10px}
+    .brand .mark{width:34px;height:34px}
+    .brand b{font-size:1.02rem}
+    .brand span{font-size:.62rem;letter-spacing:.18em}
+    .nav-tools{gap:8px}
+    .mega-trigger{gap:7px;font-size:.92rem;padding:9px 8px}
+    .nav-cta{padding:10px 18px;font-size:.9rem}
+  }
+
+  /* mega panel */
+  .mega{
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .22s ease,transform .22s ease,visibility .22s;
+  }
+  .mega.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .mega-in{max-width:var(--maxw);margin:0 auto;padding:22px 20px 26px;
+    display:grid;grid-template-columns:1fr;gap:18px}
+  .mega-lead{max-width:520px}
+  .mega-lead h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+  .mega-lead p{color:var(--muted);font-size:.92rem}
+  .mega-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px}
+  .mega-cols a{
+    text-decoration:none;color:var(--ink);font-weight:500;font-size:.92rem;
+    padding:8px 6px;border-radius:8px;display:flex;align-items:center;gap:10px;
+    border-bottom:1px solid var(--line);transition:background .18s ease,color .18s ease;
+  }
+  .mega-cols a:hover{background:var(--bg-2);color:var(--blue)}
+  .mega-cols a i{width:6px;height:6px;border-radius:2px;background:var(--coral);flex:0 0 auto;transform:rotate(45deg)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--bg-2) 100%);border-bottom:1px solid var(--line)}
+  .hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:40px 20px 44px}
+  .hero h1{
+    font-size:clamp(2.5rem,11.5vw,5.4rem);font-weight:800;letter-spacing:-.025em;
+    margin:14px 0 0;max-width:12ch;
+  }
+  .hero h1 .tint{color:var(--blue)}
+  .hero-sub{margin-top:20px;font-size:1.06rem;color:var(--muted);max-width:42ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .hero-figure{position:relative;margin-top:34px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .hero-figure img{width:100%;height:100%;object-fit:cover;object-position:center 62%;aspect-ratio:16/11}
+  .hero-figure::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(31,95,139,.30),rgba(46,125,176,.10) 55%,rgba(255,255,255,0))}
+  .hero-figure .cap{
+    position:absolute;left:16px;bottom:16px;z-index:2;color:#fff;
+    background:rgba(20,33,43,.42);backdrop-filter:blur(4px);
+    padding:8px 14px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.02em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .hero-figure .cap::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral)}
+
+  /* ECG signature strip */
+  .ecg-band{position:absolute;left:50%;transform:translateX(-50%);width:1200px;height:160px;z-index:1;pointer-events:none;opacity:.4}
+  .ecg-band.top{top:150px}
+  .ecg-svg{width:1200px;height:160px;display:block}
+  .ecg-line{fill:none;stroke:var(--blue-2);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .ecg-dot{
+    position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 50% 50%,#fff 0%,var(--coral) 42%,rgba(239,122,90,0) 72%);
+    filter:drop-shadow(0 0 8px rgba(239,122,90,.85));
+    offset-path:path('M 0 90 L 60 90 L 72 81 L 84 90 L 100 90 L 106 98 L 114 32 L 122 124 L 128 90 L 156 90 L 172 74 L 188 90 L 200 90 L 260 90 L 272 81 L 284 90 L 300 90 L 306 98 L 314 32 L 322 124 L 328 90 L 356 90 L 372 74 L 388 90 L 400 90 L 460 90 L 472 81 L 484 90 L 500 90 L 506 98 L 514 32 L 522 124 L 528 90 L 556 90 L 572 74 L 588 90 L 600 90 L 660 90 L 672 81 L 684 90 L 700 90 L 706 98 L 714 32 L 722 124 L 728 90 L 756 90 L 772 74 L 788 90 L 800 90 L 860 90 L 872 81 L 884 90 L 900 90 L 906 98 L 914 32 L 922 124 L 928 90 L 956 90 L 972 74 L 988 90 L 1000 90 L 1060 90 L 1072 81 L 1084 90 L 1100 90 L 1106 98 L 1114 32 L 1122 124 L 1128 90 L 1156 90 L 1172 74 L 1188 90 L 1200 90');
+    offset-rotate:0deg;offset-distance:0%;
+    animation:ecgTravel 7s linear infinite;
+  }
+  @keyframes ecgTravel{to{offset-distance:100%}}
+
+  /* ---------- INDICATORS ---------- */
+  .stats{background:var(--ink);color:#fff}
+  .stats-in{max-width:var(--maxw);margin:0 auto;padding:34px 20px;
+    display:grid;grid-template-columns:1fr 1fr;gap:26px 18px}
+  .stat .n{font-family:"Red Hat Display";font-weight:800;font-size:clamp(2rem,9vw,2.9rem);letter-spacing:-.02em;line-height:1;color:#fff}
+  .stat .n .u{color:var(--coral)}
+  .stat .l{margin-top:8px;font-size:.82rem;color:#B9C6CF;letter-spacing:.02em;font-weight:500}
+  .stat.qual .n{display:flex;align-items:center;gap:10px;font-size:1.5rem}
+  .stat.qual .n svg{width:34px;height:34px;flex:0 0 auto;color:var(--coral)}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:64px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head h2{font-size:clamp(1.7rem,5.5vw,2.5rem);font-weight:800;letter-spacing:-.02em}
+  .sec-intro{color:var(--muted);max-width:52ch;margin:12px 0 30px;font-size:1.02rem}
+
+  /* ---------- SPECIALTIES INDEX ---------- */
+  .index{border-top:1px solid var(--line-strong)}
+  .index-row{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;
+    padding:18px 4px;border-bottom:1px solid var(--line);
+    transition:background .18s ease,padding .18s ease;
+  }
+  .index-row:hover{background:var(--bg-2)}
+  .index-row .rn{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.95rem;letter-spacing:.03em}
+  .index-row .body h3{font-size:1.14rem;font-weight:700;letter-spacing:-.01em}
+  .index-row .body p{color:var(--muted);font-size:.92rem;margin-top:3px;max-width:60ch}
+  .index-row .ic{width:40px;height:40px;border-radius:11px;background:var(--bg-2);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--blue);flex:0 0 auto}
+  .index-row .ic svg{width:22px;height:22px}
+
+  /* ---------- STEPS : flat clinical fichas ---------- */
+  .steps{display:grid;grid-template-columns:1fr;gap:16px}
+  .ficha{
+    position:relative;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 22px 28px;overflow:hidden;
+  }
+  .ficha::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--coral)}
+  .ficha .tag{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .ficha .tag .ic{width:34px;height:34px;border-radius:9px;background:var(--bg-2);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--blue)}
+  .ficha .tag .ic svg{width:19px;height:19px}
+  .ficha .tag .st{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.85rem}
+  .ficha h3{font-size:1.16rem;font-weight:700;margin-bottom:5px}
+  .ficha p{color:var(--muted);font-size:.94rem}
+
+  /* ---------- FINDER : encuentra tu especialista ---------- */
+  .finder{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .finder-grid{display:grid;grid-template-columns:1fr;gap:26px}
+  .chips-label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+  .chip{
+    font-family:"Red Hat Text";font-weight:500;font-size:.9rem;color:var(--ink);
+    background:var(--bg);border:1.5px solid var(--line-strong);border-radius:999px;
+    padding:9px 15px;cursor:pointer;transition:all .18s ease;
+  }
+  .chip:hover{border-color:var(--blue-2)}
+  .chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+  .chip.turn[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+
+  /* appointment card w/ depth */
+  .apt-card{
+    background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    padding:24px;position:relative;
+  }
+  .apt-card .rx{position:absolute;right:18px;top:14px;font-family:"Red Hat Display";font-weight:800;
+    font-size:2.4rem;color:var(--line-strong);line-height:1}
+  .apt-card h3{font-size:1.05rem;font-weight:800;letter-spacing:.01em;margin-bottom:2px}
+  .apt-card .sm{font-size:.82rem;color:var(--muted);margin-bottom:18px}
+  .apt-row{display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding:13px 0;border-bottom:1px dashed var(--line-strong)}
+  .apt-row .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .apt-row .v{font-family:"Red Hat Display";font-weight:700;font-size:1.05rem;text-align:right}
+  .apt-row .v.pending{color:var(--line-strong);font-weight:600;font-family:"Red Hat Text";font-size:.95rem}
+  .apt-card .go{margin-top:20px;width:100%}
+
+  /* ---------- CONSULTA image band ---------- */
+  .band{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .band img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,95,139,.62),rgba(31,95,139,.12) 60%,transparent)}
+  .band .txt{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
+  .band .txt .e{color:#cfe4f1;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+  .band .txt h3{color:#fff;font-size:clamp(1.4rem,5vw,2rem);font-weight:800;max-width:16ch}
+  .band .txt p{color:#e7f0f6;margin-top:8px;max-width:34ch;font-size:.95rem}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .info{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--bg)}
+  .info .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px;
+    display:flex;align-items:center;gap:9px}
+  .info .k svg{width:17px;height:17px;color:var(--coral)}
+  .info .v{font-family:"Red Hat Display";font-weight:700;font-size:1.12rem}
+  .info .v.small{font-size:1rem}
+
+  /* ---------- FOOTER : prescription pad ---------- */
+  footer.rx-pad{background:var(--bg-2);border-top:2px solid var(--ink);padding:44px 0 30px}
+  .pad{max-width:760px;margin:0 auto;padding:0 20px}
+  .pad-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    padding-bottom:16px;border-bottom:1px dashed var(--line-strong)}
+  .pad-top .who b{font-family:"Red Hat Display";font-weight:800;font-size:1.2rem;letter-spacing:-.01em;display:block}
+  .pad-top .who span{font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+  .pad-top .rxsym{font-family:"Red Hat Display";font-weight:800;font-size:3rem;color:var(--blue);line-height:.8}
+  .pad-lines{margin:18px 0}
+  .pad-line{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line-strong)}
+  .pad-line .lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;flex:0 0 108px}
+  .pad-line .val{font-family:"Red Hat Display";font-weight:600;font-size:1rem}
+  .pad-line a{color:var(--blue);text-decoration:none}
+  .pad-line a:hover{text-decoration:underline}
+  .pad-foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px}
+  .socials{display:flex;gap:10px}
+  .socials a{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:11px;display:grid;place-items:center;
+    color:var(--blue);background:var(--bg);transition:all .18s ease}
+  .socials a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .socials a svg{width:20px;height:20px}
+  .stamp{
+    width:118px;height:118px;flex:0 0 auto;border:2px solid var(--coral);border-radius:50%;
+    display:grid;place-items:center;text-align:center;color:var(--coral);transform:rotate(-9deg);
+    opacity:.9;
+  }
+  .stamp b{font-family:"Red Hat Display";font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.25}
+  .stamp small{display:block;font-size:.55rem;letter-spacing:.14em;margin-top:4px}
+  .seal{margin-top:26px;padding-top:18px;border-top:1px dashed var(--line-strong);text-align:center;
+    font-size:.78rem;color:var(--muted);line-height:1.6}
+  .seal a{color:var(--blue);font-weight:600;text-decoration:none}
+  .seal a:hover{text-decoration:underline}
+
+  /* ---------- FAB WhatsApp ---------- */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;
+    background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
+    transition:transform .2s ease;
+  }
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:32px;height:32px}
+  .fab-label{position:absolute;right:70px;top:50%;transform:translateY(-50%);white-space:nowrap;
+    background:var(--ink);color:#fff;font-size:.8rem;font-weight:600;padding:7px 12px;border-radius:8px;
+    opacity:0;pointer-events:none;transition:opacity .2s ease}
+  .fab:hover .fab-label{opacity:1}
+
+  /* ---------- responsive grow ---------- */
+  @media (min-width:720px){
+    .stats-in{grid-template-columns:repeat(4,1fr)}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .contact-grid{grid-template-columns:repeat(3,1fr)}
+    .mega-in{grid-template-columns:1fr 1.3fr;align-items:start}
+  }
+  @media (min-width:900px){
+    .hero-in{padding:64px 20px 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    .hero-copy{grid-column:1}
+    .hero-figure{margin-top:0;grid-column:2}
+    .hero h1{font-size:clamp(3.2rem,5.4vw,4.9rem)}
+    .ecg-band.top{top:auto;bottom:36px}
+    .index-wrap{columns:auto}
+    .finder-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:44px}
+    .index-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+    .index-list .index-row:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--line)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .ecg-dot{display:none}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  }
+</style>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Centro Médico Almenara, inicio">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="24" fill="#1F5F8B"/>
+        <path d="M12 56 H34 l5 -22 l9 44 l7 -32 l6 14 h20" fill="none" stroke="#EF7A5A" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <span class="tt">
+        <b>Almenara</b>
+        <span>Centro Médico</span>
+      </span>
+    </a>
+    <nav class="nav-tools" aria-label="Principal">
+      <button class="mega-trigger" id="megaBtn" aria-expanded="false" aria-controls="megaPanel" aria-haspopup="true">
+        Especialidades
+        <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn-primary nav-cta" href="#pedir-cita">Pedir cita</a>
+    </nav>
+  </div>
+  <!-- mega menu -->
+  <div class="mega" id="megaPanel" role="region" aria-label="Listado de especialidades">
+    <div class="mega-in">
+      <div class="mega-lead">
+        <h3>12 especialidades, un solo equipo</h3>
+        <p>Elige el área que necesitas y coordina tu cita por WhatsApp. Atención de lunes a sábado en Av. de los Almendros 120.</p>
+      </div>
+      <div class="mega-cols">
+        <a href="#especialidades"><i></i>Medicina General</a>
+        <a href="#especialidades"><i></i>Pediatría</a>
+        <a href="#especialidades"><i></i>Ginecología</a>
+        <a href="#especialidades"><i></i>Cardiología</a>
+        <a href="#especialidades"><i></i>Dermatología</a>
+        <a href="#especialidades"><i></i>Traumatología</a>
+        <a href="#especialidades"><i></i>Nutrición</a>
+        <a href="#especialidades"><i></i>Laboratorio</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="ecg-band top" aria-hidden="true">
+    <svg class="ecg-svg" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path class="ecg-line" d="M 0 90 L 60 90 L 72 81 L 84 90 L 100 90 L 106 98 L 114 32 L 122 124 L 128 90 L 156 90 L 172 74 L 188 90 L 200 90 L 260 90 L 272 81 L 284 90 L 300 90 L 306 98 L 314 32 L 322 124 L 328 90 L 356 90 L 372 74 L 388 90 L 400 90 L 460 90 L 472 81 L 484 90 L 500 90 L 506 98 L 514 32 L 522 124 L 528 90 L 556 90 L 572 74 L 588 90 L 600 90 L 660 90 L 672 81 L 684 90 L 700 90 L 706 98 L 714 32 L 722 124 L 728 90 L 756 90 L 772 74 L 788 90 L 800 90 L 860 90 L 872 81 L 884 90 L 900 90 L 906 98 L 914 32 L 922 124 L 928 90 L 956 90 L 972 74 L 988 90 L 1000 90 L 1060 90 L 1072 81 L 1084 90 L 1100 90 L 1106 98 L 1114 32 L 1122 124 L 1128 90 L 1156 90 L 1172 74 L 1188 90 L 1200 90"/>
+    </svg>
+    <span class="ecg-dot"></span>
+  </div>
+
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow">Policlínica multidisciplinar</p>
+      <h1>Tu salud, en manos de <span class="tint">un equipo.</span></h1>
+      <p class="hero-sub">Un mismo centro para toda la familia: doce especialidades coordinadas, historia clínica compartida y una cita que pides en minutos por WhatsApp.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#pedir-cita">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v3M16 2v3M3 9h18M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pedir cita
+        </a>
+        <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400&q=80&auto=format&fit=crop" alt="Recepción luminosa de una clínica con mostrador curvo y señalización de plantas" width="1400" height="960">
+      <figcaption class="cap">Recepción · Av. de los Almendros 120</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ INDICATORS ============ -->
+<section class="stats" style="padding:0" aria-label="Indicadores del centro">
+  <div class="stats-in" id="stats">
+    <div class="stat"><div class="n"><span class="u">+</span><span class="c" data-to="15">0</span></div><div class="l">Años de experiencia</div></div>
+    <div class="stat"><div class="n"><span class="c" data-to="12">0</span></div><div class="l">Especialidades médicas</div></div>
+    <div class="stat"><div class="n"><span class="c" data-to="8000" data-sep="1">0</span></div><div class="l">Pacientes al año</div></div>
+    <div class="stat qual"><div class="n">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Seguros aceptados</div><div class="l">Trabajamos con las principales aseguradoras</div></div>
+  </div>
+</section>
+
+<!-- ============ ESPECIALIDADES (index) ============ -->
+<section id="especialidades">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Especialidades</h2></div>
+    <p class="sec-intro">Un directorio claro, como el panel de recepción. Cada área con su propio equipo y agenda; toda tu atención en un mismo lugar.</p>
+    <div class="index">
+      <div class="index-list">
+        <div class="index-row">
+          <span class="rn">01</span>
+          <div class="body"><h3>Medicina General</h3><p>Tu primer punto de contacto: diagnóstico, controles y seguimiento continuo.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v6a4 4 0 008 0V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 13v3a4 4 0 008 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">02</span>
+          <div class="body"><h3>Pediatría</h3><p>Acompañamiento del crecimiento sano, vacunas y control del niño.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">03</span>
+          <div class="body"><h3>Ginecología</h3><p>Salud femenina integral, revisiones y control preventivo.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 12.6V21M8.5 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">04</span>
+          <div class="body"><h3>Cardiología</h3><p>Cuidado del corazón: electrocardiograma, presión y valoración de riesgo.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20S4 14.5 4 9a4 4 0 018-1 4 4 0 018 1c0 5.5-8 11-8 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12h3l1.5-3 2 5 1.5-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">05</span>
+          <div class="body"><h3>Dermatología</h3><p>Revisión de piel, control de lunares y tratamientos dermatológicos.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">06</span>
+          <div class="body"><h3>Traumatología</h3><p>Lesiones, dolor articular y recuperación del movimiento.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8l8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 8a2.4 2.4 0 10-2-2 2.4 2.4 0 002 2zM16 16a2.4 2.4 0 102 2 2.4 2.4 0 00-2-2z" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">07</span>
+          <div class="body"><h3>Nutrición</h3><p>Planes de alimentación adaptados a tu objetivo y tu ritmo.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8c-3-3-8-1-8 4 0 4 4 9 8 9s8-5 8-9c0-5-5-7-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8c0-2 1-4 3-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="index-row">
+          <span class="rn">08</span>
+          <div class="body"><h3>Laboratorio</h3><p>Análisis clínicos con resultados claros y a tiempo.</p></div>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-4.5 8A2 2 0 007.3 20h9.4a2 2 0 001.8-3L14 9V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 15h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSULTA band ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1400&q=80&auto=format&fit=crop" alt="Dos profesionales de la salud revisan resultados en pantalla durante una consulta" loading="lazy" width="1400" height="875">
+      <div class="txt">
+        <span class="e">Atención cercana</span>
+        <h3>Te explicamos cada resultado, sin prisa.</h3>
+        <p>Historia clínica compartida entre especialidades para un seguimiento sin repetir pruebas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO PEDIR CITA ============ -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Cómo pedir cita</h2></div>
+    <p class="sec-intro">Tres pasos, sin llamadas en espera ni formularios largos.</p>
+    <div class="steps">
+      <article class="ficha">
+        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span class="st">01</span></div>
+        <h3>Elige especialidad</h3>
+        <p>Revisa el directorio y ubica el área que necesitas para ti o tu familia.</p>
+      </article>
+      <article class="ficha">
+        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a8 8 0 00-7 12l-1 5 5-1a8 8 0 103-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="st">02</span></div>
+        <h3>Escríbenos por WhatsApp</h3>
+        <p>Nos dices la especialidad y tu turno preferido; el mensaje ya viene listo.</p>
+      </article>
+      <article class="ficha">
+        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="st">03</span></div>
+        <h3>Confirmamos día y hora</h3>
+        <p>Recepción te devuelve la confirmación con fecha, hora y recomendaciones previas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINDER : encuentra tu especialista ============ -->
+<section class="finder" id="pedir-cita">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Encuentra tu especialista</h2></div>
+    <p class="sec-intro">Elige especialidad y turno: preparamos tu mensaje de cita y solo tienes que enviarlo.</p>
+    <div class="finder-grid">
+      <div>
+        <p class="chips-label">Especialidad</p>
+        <div class="chips" id="espChips" role="group" aria-label="Elige una especialidad">
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Medicina General">Medicina General</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Pediatría">Pediatría</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Ginecología">Ginecología</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Cardiología">Cardiología</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Dermatología">Dermatología</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Traumatología">Traumatología</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Nutrición">Nutrición</button>
+          <button class="chip esp" type="button" aria-pressed="false" data-v="Laboratorio">Laboratorio</button>
+        </div>
+        <p class="chips-label">Turno</p>
+        <div class="chips" id="turnChips" role="group" aria-label="Elige un turno">
+          <button class="chip turn" type="button" aria-pressed="false" data-v="la mañana">Mañana · 8:00–13:00</button>
+          <button class="chip turn" type="button" aria-pressed="false" data-v="la tarde">Tarde · 15:00–20:00</button>
+        </div>
+      </div>
+
+      <aside class="apt-card" aria-live="polite">
+        <span class="rx" aria-hidden="true">℞</span>
+        <h3>Ficha de cita</h3>
+        <p class="sm">Centro Médico Almenara</p>
+        <div class="apt-row"><span class="k">Especialidad</span><span class="v pending" id="outEsp">Sin elegir</span></div>
+        <div class="apt-row"><span class="k">Turno</span><span class="v pending" id="outTurn">Sin elegir</span></div>
+        <div class="apt-row"><span class="k">Vía</span><span class="v">WhatsApp</span></div>
+        <a class="btn btn-primary go" id="aptGo" href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
+          Pedir cita por WhatsApp
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Dónde estamos</h2></div>
+    <p class="sec-intro">Atención presencial en un mismo edificio, con recepción y sala de espera renovadas.</p>
+    <div class="contact-grid">
+      <div class="info">
+        <div class="k"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Dirección</div>
+        <div class="v">Av. de los Almendros 120</div>
+      </div>
+      <div class="info">
+        <div class="k"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Horario</div>
+        <div class="v small">Lun–Vie 8:00–20:00<br>Sábado 9:00–13:00</div>
+      </div>
+      <div class="info">
+        <div class="k"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>WhatsApp</div>
+        <div class="v small"><a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none">Escríbenos y coordinamos tu cita</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER : recetario ============ -->
+<footer class="rx-pad">
+  <div class="pad">
+    <div class="pad-top">
+      <div class="who">
+        <b>Centro Médico Almenara</b>
+        <span>Policlínica multidisciplinar</span>
+      </div>
+      <div class="rxsym" aria-hidden="true">℞</div>
+    </div>
+
+    <div class="pad-lines">
+      <div class="pad-line"><span class="lbl">Dirección</span><span class="val">Av. de los Almendros 120</span></div>
+      <div class="pad-line"><span class="lbl">Horario</span><span class="val">Lun–Vie 8:00–20:00 · Sáb 9:00–13:00</span></div>
+      <div class="pad-line"><span class="lbl">WhatsApp</span><span class="val"><a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener">+34 960 555 210</a></span></div>
+      <div class="pad-line"><span class="lbl">Instagram</span><span class="val"><a href="https://instagram.com/centromedicoalmenara" target="_blank" rel="noopener">@centromedicoalmenara</a></span></div>
+    </div>
+
+    <div class="pad-foot">
+      <div class="socials">
+        <a href="https://instagram.com/centromedicoalmenara" target="_blank" rel="noopener" aria-label="Instagram de Centro Médico Almenara">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+        </a>
+        <a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" aria-label="WhatsApp de Centro Médico Almenara">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
+        </a>
+      </div>
+      <div class="stamp" aria-hidden="true">
+        <div><b>Centro Médico<br>Almenara</b><small>Recepción</small></div>
+      </div>
+    </div>
+
+    <p class="seal">
+      Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial
+    </p>
+  </div>
+</footer>
+
+<!-- ============ FAB WhatsApp ============ -->
+<a class="fab" href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <span class="fab-label">Pide tu cita por WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- mega menu ---- */
+  var megaBtn = document.getElementById("megaBtn");
+  var mega = document.getElementById("megaPanel");
+  var hoverCapable = window.matchMedia && window.matchMedia("(hover:hover)").matches;
+  function setMega(open){
+    mega.classList.toggle("open", open);
+    megaBtn.setAttribute("aria-expanded", open ? "true":"false");
+  }
+  megaBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    setMega(!mega.classList.contains("open"));
+  });
+  if(hoverCapable){
+    var head = document.querySelector("header.nav");
+    head.addEventListener("mouseleave", function(){ setMega(false); });
+    megaBtn.addEventListener("mouseenter", function(){ setMega(true); });
+  }
+  document.addEventListener("click", function(e){
+    if(!mega.contains(e.target) && e.target !== megaBtn) setMega(false);
+  });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMega(false); });
+  mega.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMega(false); }); });
+
+  /* ---- finder ---- */
+  var esp = null, turn = null;
+  var outEsp = document.getElementById("outEsp");
+  var outTurn = document.getElementById("outTurn");
+  var go = document.getElementById("aptGo");
+  var base = "https://wa.me/34960555210?text=";
+
+  function singleSelect(group, cb){
+    group.querySelectorAll(".chip").forEach(function(c){
+      c.addEventListener("click", function(){
+        var already = c.getAttribute("aria-pressed") === "true";
+        group.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+        c.setAttribute("aria-pressed", already ? "false":"true");
+        cb(already ? null : c.getAttribute("data-v"));
+      });
+    });
+  }
+  singleSelect(document.getElementById("espChips"), function(v){ esp = v; render(); });
+  singleSelect(document.getElementById("turnChips"), function(v){ turn = v; render(); });
+
+  function render(){
+    outEsp.textContent = esp || "Sin elegir";
+    outEsp.classList.toggle("pending", !esp);
+    outTurn.textContent = turn ? (turn === "la mañana" ? "Mañana" : "Tarde") : "Sin elegir";
+    outTurn.classList.toggle("pending", !turn);
+    var msg;
+    if(esp && turn){
+      msg = "Hola, quisiera pedir una cita de " + esp + " en el turno de " + turn + " en Centro Médico Almenara.";
+    } else if(esp){
+      msg = "Hola, quisiera pedir una cita de " + esp + " en Centro Médico Almenara.";
+    } else {
+      msg = "Hola, quisiera pedir una cita en Centro Médico Almenara.";
+    }
+    go.setAttribute("href", base + encodeURIComponent(msg));
+  }
+
+  /* ---- count-up (plumbing via IntersectionObserver) ---- */
+  var counters = Array.prototype.slice.call(document.querySelectorAll(".stat .c"));
+  function fmt(n, sep){
+    n = Math.round(n);
+    if(sep) return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return String(n);
+  }
+  function runCount(el){
+    var to = parseInt(el.getAttribute("data-to"),10) || 0;
+    var sep = el.getAttribute("data-sep") === "1";
+    if(reduce){ el.textContent = fmt(to, sep); return; }
+    var dur = 1300, start = null;
+    function step(ts){
+      if(start === null) start = ts;
+      var p = Math.min((ts - start)/dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * eased, sep);
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(to, sep);
+    }
+    requestAnimationFrame(step);
+  }
+  function fireAll(){ counters.forEach(runCount); }
+
+  if("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ runCount(en.target); obs.unobserve(en.target); }
+      });
+    }, {threshold:0.5});
+    counters.forEach(function(c){ io.observe(c); });
+  } else {
+    fireAll();
+  }
+})();
+</script>
+</html>

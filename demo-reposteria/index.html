@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Migalé · Repostería Artesanal — Hecho a mano, horneado del día</title>
+<meta name="description" content="Migalé · Repostería Artesanal. Tartas, cupcakes, galletas y bollería horneados del día en Calle del Horno 8. Encargos por evento y tortas a medida por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Migalé · Repostería Artesanal">
+<meta property="og:description" content="Hecho a mano, horneado del día. Vitrina de temporada y encargos a medida.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1200&q=80&auto=format&fit=crop">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Sen:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crema:#FBF3E7;
+    --crema-2:#FDF8F0;
+    --cacao:#4A2E22;
+    --cacao-soft:#6b4a3a;
+    --frambuesa:#D8617A;
+    --frambuesa-ink:#B23A56;
+    --caramelo:#C98A3C;
+    --pistacho:#9CB56B;
+    --linea:rgba(74,46,34,.14);
+    --sombra-cristal:inset 0 1px 0 rgba(255,255,255,.65), inset 0 -14px 24px rgba(74,46,34,.10), 0 18px 34px -20px rgba(74,46,34,.5);
+    --radio:18px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Sen',system-ui,sans-serif;
+    background:var(--crema);
+    color:var(--cacao);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Gilda Display',Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--caramelo)}
+  .num{font-family:'Gilda Display',serif;color:var(--frambuesa);opacity:.9}
+
+  /* focus */
+  a:focus-visible,button:focus-visible,input:focus-visible,.chip:focus-visible{
+    outline:3px solid var(--frambuesa-ink);outline-offset:3px;border-radius:6px;
+  }
+
+  /* ---------- NAV: barra slim + sheet superior ---------- */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(251,243,231,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
+  .badge{display:inline-flex;flex-direction:column;line-height:1;padding:8px 14px;border:1.5px solid var(--cacao);border-radius:12px;background:var(--crema-2);box-shadow:2px 2px 0 var(--cacao)}
+  .badge b{font-family:'Gilda Display',serif;font-size:1.15rem;letter-spacing:.01em}
+  .badge span{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramelo);font-weight:700;margin-top:3px}
+  .nav-links{display:none;gap:26px;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+  .nav-links a:hover{border-bottom-color:var(--frambuesa)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Sen',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:none;border:none;transition:transform .18s ease,box-shadow .18s ease,background .18s}
+  .btn-pill{background:var(--frambuesa-ink);color:#fff;padding:12px 22px;border-radius:999px;box-shadow:0 10px 20px -8px rgba(178,58,86,.7)}
+  .btn-pill:hover{transform:translateY(-2px);box-shadow:0 16px 26px -10px rgba(178,58,86,.85)}
+  .btn-caramelo{background:var(--caramelo);color:#2c1a10}
+  .hamb{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:42px;background:var(--crema-2);border:1.5px solid var(--cacao);border-radius:12px;cursor:pointer;padding:0 11px}
+  .hamb span{height:2.5px;background:var(--cacao);border-radius:2px;transition:transform .3s,opacity .2s}
+  .nav.open .hamb span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav.open .hamb span:nth-child(2){opacity:0}
+  .nav.open .hamb span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sheet{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1);background:var(--crema-2);border-bottom:1px solid var(--linea)}
+  .nav.open .sheet{max-height:440px}
+  .sheet-inner{padding:8px 20px 22px;display:flex;flex-direction:column}
+  .sheet-inner a{text-decoration:none;font-family:'Gilda Display',serif;font-size:1.5rem;padding:13px 0;border-bottom:1px solid var(--linea);display:flex;justify-content:space-between;align-items:center}
+  .sheet-inner a .num{font-size:.85rem;font-family:'Sen',sans-serif;letter-spacing:.2em;font-weight:700}
+  .sheet-inner .btn-pill{margin-top:18px;justify-content:center}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:44px 0 30px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+  .hero-copy .eyebrow{margin-bottom:16px;display:block}
+  .hero h1{font-size:clamp(2.9rem,12vw,5.6rem);margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--frambuesa-ink)}
+  .hero-lead{font-size:1.08rem;max-width:34ch;color:var(--cacao-soft);margin-bottom:26px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}
+  .link-underline{font-weight:700;text-decoration:none;border-bottom:2px solid var(--caramelo);padding-bottom:2px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:.86rem;color:var(--cacao-soft)}
+  .hero-meta b{color:var(--cacao)}
+  .hero-media{position:relative}
+  .hero-photo{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--sombra-cristal);border:1px solid rgba(255,255,255,.5);aspect-ratio:4/5}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.03)}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 66%,rgba(255,255,255,.22) 100%);pointer-events:none}
+  .price-float{position:absolute;left:-8px;bottom:20px;background:var(--crema-2);border:1.5px solid var(--cacao);border-radius:14px;padding:11px 15px;box-shadow:3px 3px 0 var(--cacao);transform:rotate(-4deg)}
+  .price-float small{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caramelo);font-weight:700}
+  .price-float b{font-family:'Gilda Display',serif;font-size:1.3rem;color:var(--frambuesa-ink)}
+
+  /* steam */
+  .steam{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:90px;height:120px;pointer-events:none;z-index:3}
+  .steam i{position:absolute;bottom:0;width:11px;height:11px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85),rgba(255,255,255,0) 70%);filter:blur(2px);opacity:0;animation:rise 4.2s ease-in infinite}
+  .steam i:nth-child(1){left:20px;animation-delay:0s}
+  .steam i:nth-child(2){left:42px;animation-delay:1.1s}
+  .steam i:nth-child(3){left:60px;animation-delay:2.1s}
+  .steam i:nth-child(4){left:34px;animation-delay:3s}
+  @keyframes rise{
+    0%{transform:translateY(0) scale(.7);opacity:0}
+    18%{opacity:.75}
+    60%{opacity:.4}
+    100%{transform:translateY(-110px) scale(2.2);opacity:0}
+  }
+
+  /* ---------- VITRINA (glass case shelves) ---------- */
+  .vitrina-sec{padding:22px 0 46px}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .sec-head h2{font-size:clamp(2rem,7vw,3.1rem)}
+  .sec-head p{max-width:38ch;color:var(--cacao-soft);font-size:.95rem}
+  .ref-note{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--caramelo);font-weight:700;margin-top:6px}
+
+  .case{position:relative;margin-top:26px;padding:8px 0;border-radius:24px}
+  /* glass sheen over the whole case */
+  .case::before{content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;z-index:5;
+    background:linear-gradient(107deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,0) 60%,rgba(255,255,255,.16) 78%,rgba(255,255,255,0) 100%);
+    mix-blend-mode:screen}
+
+  .shelf{position:relative;padding:0 4px 30px}
+  .shelf-row{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;position:relative;z-index:2}
+  .shelf-photo{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--sombra-cristal);aspect-ratio:16/10;background:#e9ddcb}
+  .shelf-photo img{width:100%;height:100%;object-fit:cover}
+  .shelf-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.34),rgba(255,255,255,0) 40%);pointer-events:none}
+  .shelf-body h3{font-size:1.55rem;margin-bottom:6px}
+  .shelf-body p{color:var(--cacao-soft);font-size:.95rem;margin-bottom:12px;max-width:42ch}
+  .tag{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;max-width:100%;background:var(--crema-2);border:1.5px solid var(--cacao);border-radius:12px;padding:8px 14px;box-shadow:2px 2px 0 var(--cacao)}
+  .tag small{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--caramelo);font-weight:700}
+  .tag b{font-family:'Gilda Display',serif;font-size:1.32rem;color:var(--frambuesa-ink);line-height:1}
+  .tag .plus{font-size:.8rem;color:var(--cacao-soft);font-weight:700}
+  /* wooden shelf plank */
+  .plank{height:12px;border-radius:6px;margin-top:6px;position:relative;z-index:1;
+    background:linear-gradient(180deg,#d8a760,var(--caramelo) 45%,#9c6a2c);
+    box-shadow:0 12px 18px -12px rgba(74,46,34,.65),inset 0 1px 0 rgba(255,255,255,.4)}
+  .plank::after{content:"";position:absolute;left:6%;right:6%;top:-3px;height:3px;border-radius:3px;background:rgba(255,255,255,.25)}
+
+  /* ---------- PROCESO ---------- */
+  .proceso{background:var(--cacao);color:var(--crema);padding:56px 0;position:relative}
+  .proceso h2{font-size:clamp(1.9rem,6vw,2.8rem);color:var(--crema);margin-bottom:6px}
+  .proceso .eyebrow{color:var(--caramelo)}
+  .pasos{display:grid;grid-template-columns:1fr;gap:4px;margin-top:30px}
+  .paso{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(251,243,231,.18)}
+  .paso:last-child{border-bottom:1px solid rgba(251,243,231,.18)}
+  .paso .pn{font-family:'Gilda Display',serif;font-size:2.6rem;color:var(--frambuesa);line-height:.9}
+  .paso h3{color:var(--crema);font-size:1.3rem;margin-bottom:4px}
+  .paso p{color:rgba(251,243,231,.78);font-size:.95rem;max-width:44ch}
+
+  /* ---------- EVENTOS ---------- */
+  .eventos{padding:56px 0}
+  .eventos-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:26px}
+  .evento{border:1px solid var(--linea);border-radius:var(--radio);padding:22px;background:var(--crema-2);box-shadow:var(--sombra-cristal)}
+  .evento h3{font-size:1.35rem;margin-bottom:6px}
+  .evento p{color:var(--cacao-soft);font-size:.93rem}
+  .evento .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-bottom:14px}
+
+  /* ---------- ENCARGA TU TORTA ---------- */
+  .builder{background:linear-gradient(180deg,var(--crema-2),var(--crema));padding:52px 0}
+  .builder-card{border:1.5px solid var(--cacao);border-radius:22px;background:var(--crema-2);box-shadow:6px 6px 0 rgba(74,46,34,.12),var(--sombra-cristal);overflow:hidden}
+  .builder-head{padding:26px 24px 6px}
+  .builder-head h2{font-size:clamp(1.8rem,6vw,2.6rem)}
+  .builder-head p{color:var(--cacao-soft);font-size:.95rem;margin-top:6px}
+  .builder-body{display:grid;grid-template-columns:1fr;gap:20px;padding:20px 24px 26px}
+  .field label{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--caramelo);margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:'Sen',sans-serif;font-size:.9rem;font-weight:600;padding:9px 15px;border-radius:999px;border:1.5px solid var(--linea);background:var(--crema);color:var(--cacao);cursor:pointer;transition:all .16s}
+  .chip:hover{border-color:var(--frambuesa)}
+  .chip[aria-pressed="true"]{background:var(--frambuesa-ink);color:#fff;border-color:var(--frambuesa-ink)}
+  .field input[type="date"]{font-family:'Sen',sans-serif;font-size:1rem;padding:11px 14px;border:1.5px solid var(--linea);border-radius:12px;background:var(--crema);color:var(--cacao);width:100%;max-width:280px}
+  .ticket{background:var(--crema);border-top:1px dashed var(--cacao);padding:20px 24px 26px}
+  .ticket h3{font-family:'Sen',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caramelo);font-weight:800;margin-bottom:12px}
+  .ticket ul{list-style:none;display:grid;gap:7px;margin-bottom:18px}
+  .ticket li{display:flex;justify-content:space-between;gap:12px;font-size:.95rem;border-bottom:1px dotted var(--linea);padding-bottom:7px}
+  .ticket li span:first-child{color:var(--cacao-soft)}
+  .ticket li b{font-weight:700;text-align:right}
+  .builder .btn-pill{width:100%;justify-content:center;font-size:1rem;padding:15px}
+  .builder .btn-pill[aria-disabled="true"]{opacity:.5;pointer-events:none}
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{padding:52px 0}
+  .contacto-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  .contacto h2{font-size:clamp(1.9rem,6vw,2.8rem);margin-bottom:10px}
+  .info-list{list-style:none;display:grid;gap:14px;margin-top:8px}
+  .info-list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+  .info-list .ic{width:34px;height:34px;border-radius:10px;background:var(--crema-2);border:1px solid var(--linea);display:grid;place-items:center;color:var(--frambuesa-ink)}
+  .info-list small{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--caramelo);font-weight:700}
+  .map{border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-cristal);min-height:220px;position:relative;background:#e9ddcb}
+  .map img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+  /* ---------- FOOTER: mantel gingham + tarjeta de horno ---------- */
+  footer{position:relative;margin-top:20px}
+  .gingham{
+    padding:60px 0 30px;
+    background-color:var(--frambuesa);
+    background-image:
+      repeating-linear-gradient(0deg,rgba(255,255,255,.55) 0 22px,transparent 22px 44px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 22px,transparent 22px 44px);
+    background-blend-mode:screen;
+  }
+  .bakery-card{background:var(--crema-2);border-radius:20px;border:1.5px solid var(--cacao);box-shadow:6px 6px 0 rgba(74,46,34,.22);padding:30px 26px;max-width:560px;margin:0 auto;text-align:center}
+  .bakery-card .stamp{font-family:'Gilda Display',serif;font-size:2rem;margin-bottom:4px}
+  .bakery-card .stamp span{color:var(--frambuesa-ink)}
+  .bakery-card .claim{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--caramelo);font-weight:700;margin-bottom:20px}
+  .bakery-card .cx{display:grid;gap:6px;font-size:.95rem;color:var(--cacao-soft);margin-bottom:20px}
+  .bakery-card .cx b{color:var(--cacao)}
+  .socials{display:flex;justify-content:center;gap:14px;margin-bottom:8px}
+  .socials a{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--cacao);display:grid;place-items:center;color:var(--cacao);background:var(--crema);transition:transform .18s,background .18s,color .18s}
+  .socials a:hover{transform:translateY(-2px);background:var(--frambuesa-ink);color:#fff;border-color:var(--frambuesa-ink)}
+  .seal{background:var(--cacao);color:rgba(251,243,231,.85);text-align:center;padding:16px 20px;font-size:.78rem}
+  .seal a{color:var(--crema);font-weight:700}
+
+  /* ---------- FAB ---------- */
+  .fab{position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(37,211,102,.7);transition:transform .2s}
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:32px;height:32px}
+
+  /* ---------- reveal ---------- */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:720px){
+    .eventos-grid{grid-template-columns:repeat(3,1fr)}
+    .pasos{gap:0}
+  }
+  @media(min-width:860px){
+    .nav-links{display:flex}
+    .hamb{display:none}
+    .hero{padding:64px 0 40px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:44px}
+    .shelf-row{grid-template-columns:1fr 1fr;gap:38px}
+    .shelf:nth-child(even) .shelf-photo{order:2}
+    .builder-body{grid-template-columns:1fr}
+    .contacto-grid{grid-template-columns:1fr 1fr}
+    .map{min-height:340px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .steam{display:none}
+    .rv{opacity:1;transform:none;transition:none}
+    *{scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="badge" aria-label="Migalé Repostería Artesanal, inicio">
+      <b>Migalé</b><span>Repostería Artesanal</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#vitrina">Vitrina</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#eventos">Encargos</a>
+      <a href="#contacto">Visítanos</a>
+    </nav>
+    <a class="btn btn-pill" href="#encarga" style="display:none" id="navcta-desktop">Encargar</a>
+    <button class="hamb" id="hamb" aria-expanded="false" aria-controls="sheet" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="sheet" id="sheet">
+    <div class="sheet-inner">
+      <a href="#vitrina">Vitrina <span class="num">01</span></a>
+      <a href="#proceso">Proceso <span class="num">02</span></a>
+      <a href="#eventos">Encargos por evento <span class="num">03</span></a>
+      <a href="#encarga">Encarga tu torta <span class="num">04</span></a>
+      <a href="#contacto">Visítanos <span class="num">05</span></a>
+      <a class="btn btn-pill" href="#encarga">Encargar por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Calle del Horno 8 · Horneado del día</span>
+      <h1>Hecho a mano,<br><em>horneado del día.</em></h1>
+      <p class="hero-lead">Masa madre, materia prima local y decoración a mano. Cada tarta sale del horno el mismo día que la llevas a tu mesa.</p>
+      <div class="hero-cta">
+        <a class="btn btn-pill" href="#encarga">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          Encargar por WhatsApp
+        </a>
+        <a class="link-underline" href="#vitrina">Ver la vitrina</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>Mar–Dom</b> 9:00–20:00</span>
+        <span><b>Lunes</b> cerrado</span>
+        <span><b>@migale.reposteria</b></span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1000&q=80&auto=format&fit=crop" alt="Porción de tarta de capas con crema y frambuesas frescas sobre un plato oscuro" width="1000" height="1250">
+      </div>
+      <div class="price-float">
+        <small>Porción de temporada</small>
+        <b>3,50 €</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VITRINA -->
+<section class="vitrina-sec" id="vitrina">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">01 · La vitrina</span>
+        <h2>Lo que reposa hoy en el escaparate</h2>
+      </div>
+      <div>
+        <p>Recién salido del horno y colocado a mano. Precios por unidad y encargos a medida.</p>
+        <div class="ref-note">Precios de referencia — julio 2026</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <!-- shelf 1 -->
+      <article class="shelf rv" data-par="0.5">
+        <div class="shelf-row">
+          <div class="shelf-photo">
+            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=900&q=80&auto=format&fit=crop" alt="Tarta de merengue dorada recién horneada con una porción cortada" width="900" height="563" loading="lazy">
+          </div>
+          <div class="shelf-body">
+            <h3>Tarta de temporada</h3>
+            <p>La estrella de la casa: bizcocho tierno, relleno del día y decoración a mano según la fruta de temporada.</p>
+            <div class="tag"><small>Porción</small><b>3,50 €</b><span class="plus">· entera desde 28 €</span></div>
+          </div>
+        </div>
+        <div class="plank" aria-hidden="true"></div>
+      </article>
+
+      <!-- shelf 2 -->
+      <article class="shelf rv" data-par="0.8">
+        <div class="shelf-row">
+          <div class="shelf-photo">
+            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=900&q=80&auto=format&fit=crop" alt="Fila de cupcakes con betún y fideos de colores" width="900" height="563" loading="lazy">
+          </div>
+          <div class="shelf-body">
+            <h3>Cupcakes</h3>
+            <p>Base esponjosa y buttercream montado a mano. Ideales para detalles, mesas dulces y antojos de tarde.</p>
+            <div class="tag"><small>Unidad</small><b>2,80 €</b></div>
+          </div>
+        </div>
+        <div class="plank" aria-hidden="true"></div>
+      </article>
+
+      <!-- shelf 3 -->
+      <article class="shelf rv" data-par="0.6">
+        <div class="shelf-row">
+          <div class="shelf-photo">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=900&q=80&auto=format&fit=crop" alt="Galletas artesanas con trozos de chocolate en una cesta con papel" width="900" height="563" loading="lazy">
+          </div>
+          <div class="shelf-body">
+            <h3>Galletas artesanas</h3>
+            <p>Horneadas cada mañana, crujientes por fuera y tiernas por dentro. Se llevan en caja para regalar.</p>
+            <div class="tag"><small>Caja 12 ud.</small><b>12 €</b></div>
+          </div>
+        </div>
+        <div class="plank" aria-hidden="true"></div>
+      </article>
+
+      <!-- shelf 4 -->
+      <article class="shelf rv" data-par="0.9">
+        <div class="shelf-row">
+          <div class="shelf-photo">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=80&auto=format&fit=crop" alt="Panes y bollería artesana de corteza dorada con espigas de trigo" width="900" height="563" loading="lazy">
+          </div>
+          <div class="shelf-body">
+            <h3>Cruasán y bollería</h3>
+            <p>Hojaldre trabajado con mantequilla y horneado del día. El desayuno que huele a horno recién abierto.</p>
+            <div class="tag"><small>Desde</small><b>1,90 €</b></div>
+          </div>
+        </div>
+        <div class="plank" aria-hidden="true"></div>
+      </article>
+
+      <!-- shelf 5 -->
+      <article class="shelf rv" data-par="0.5">
+        <div class="shelf-row">
+          <div class="shelf-photo">
+            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=900&q=80&auto=format&fit=crop" alt="Porción de tarta de queso con mermelada de frutos rojos" width="900" height="563" loading="lazy">
+          </div>
+          <div class="shelf-body">
+            <h3>Tarta de queso</h3>
+            <p>Cremosa por dentro, dorada por fuera, con mermelada casera de frutos rojos. Se encarga entera.</p>
+            <div class="tag"><small>Entera</small><b>24 €</b></div>
+          </div>
+        </div>
+        <div class="plank" aria-hidden="true"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <span class="eyebrow">02 · Proceso artesanal</span>
+    <h2>Tres pasos, sin atajos</h2>
+    <div class="pasos">
+      <div class="paso rv">
+        <div class="pn">01</div>
+        <div><h3>Masa madre y materia prima local</h3><p>Empezamos por lo básico bien hecho: fermentos propios y proveedores de cercanía. El sabor arranca en la despensa.</p></div>
+      </div>
+      <div class="paso rv">
+        <div class="pn">02</div>
+        <div><h3>Horneado del día</h3><p>Nada se hornea de víspera. Lo que ves en la vitrina salió del horno esta misma mañana.</p></div>
+      </div>
+      <div class="paso rv">
+        <div class="pn">03</div>
+        <div><h3>Decoración a mano</h3><p>Cada pieza se termina a mano, una a una. Por eso ninguna tarta sale igual a la anterior.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="eventos" id="eventos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">03 · Encargos por evento</span>
+        <h2>Para las fechas que se recuerdan</h2>
+      </div>
+      <p>Diseñamos la tarta contigo y preparamos el presupuesto por WhatsApp, según sabores, tamaño y decoración.</p>
+    </div>
+    <div class="eventos-grid">
+      <div class="evento rv"><span class="dot" style="background:var(--frambuesa)"></span><h3>Bodas</h3><p>Tartas de varios pisos y mesas dulces a juego con vuestra paleta. Degustación previa disponible.</p></div>
+      <div class="evento rv"><span class="dot" style="background:var(--caramelo)"></span><h3>Cumpleaños</h3><p>Del número favorito al personaje del momento: la tarta que pide quien cumple, hecha realidad.</p></div>
+      <div class="evento rv"><span class="dot" style="background:var(--pistacho)"></span><h3>Comuniones</h3><p>Piezas elegantes para la celebración, con detalles individuales para los invitados.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENCARGA TU TORTA -->
+<section class="builder" id="encarga">
+  <div class="wrap">
+    <div class="builder-card rv">
+      <div class="builder-head">
+        <span class="eyebrow">04 · A tu medida</span>
+        <h2>Encarga tu torta</h2>
+        <p>Arma tu pedido en tres toques y te lo enviamos por WhatsApp para confirmar disponibilidad y presupuesto.</p>
+      </div>
+      <div class="builder-body">
+        <div class="field">
+          <label id="lbl-sabor">Sabor</label>
+          <div class="chips" role="group" aria-labelledby="lbl-sabor" data-group="sabor">
+            <button type="button" class="chip" aria-pressed="false">Chocolate</button>
+            <button type="button" class="chip" aria-pressed="false">Vainilla</button>
+            <button type="button" class="chip" aria-pressed="false">Frambuesa</button>
+            <button type="button" class="chip" aria-pressed="false">Tres leches</button>
+            <button type="button" class="chip" aria-pressed="false">Zanahoria</button>
+            <button type="button" class="chip" aria-pressed="false">Red velvet</button>
+          </div>
+        </div>
+        <div class="field">
+          <label id="lbl-tam">Tamaño</label>
+          <div class="chips" role="group" aria-labelledby="lbl-tam" data-group="tamano">
+            <button type="button" class="chip" aria-pressed="false">8 porciones</button>
+            <button type="button" class="chip" aria-pressed="false">12 porciones</button>
+            <button type="button" class="chip" aria-pressed="false">20 porciones</button>
+            <button type="button" class="chip" aria-pressed="false">30 porciones</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fecha">Fecha de entrega</label>
+          <input type="date" id="fecha">
+        </div>
+      </div>
+      <div class="ticket">
+        <h3>Tu pedido</h3>
+        <ul>
+          <li><span>Sabor</span><b id="t-sabor">Por elegir</b></li>
+          <li><span>Tamaño</span><b id="t-tam">Por elegir</b></li>
+          <li><span>Fecha</span><b id="t-fecha">Por elegir</b></li>
+        </ul>
+        <a class="btn btn-pill" id="order-cta" href="#" aria-disabled="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          Enviar pedido por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap contacto-grid">
+    <div>
+      <span class="eyebrow">05 · Visítanos</span>
+      <h2>Te esperamos en el horno</h2>
+      <ul class="info-list">
+        <li>
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><small>Dirección</small><b>Calle del Horno 8</b></div>
+        </li>
+        <li>
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><small>Horario</small><b>Mar–Dom · 9:00–20:00</b><br><span style="color:var(--cacao-soft);font-size:.9rem">Lunes cerrado</span></div>
+        </li>
+        <li>
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+          <div><small>Instagram</small><b>@migale.reposteria</b></div>
+        </li>
+      </ul>
+      <div style="margin-top:22px"><a class="btn btn-pill" id="contacto-cta" href="#">Escríbenos por WhatsApp</a></div>
+    </div>
+    <div class="map">
+      <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=900&q=80&auto=format&fit=crop" alt="Interior cálido de una pastelería con vitrina de dulces" width="900" height="600" loading="lazy">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="gingham">
+    <div class="wrap">
+      <div class="bakery-card">
+        <div class="stamp">Migal<span>é</span></div>
+        <div class="claim">Hecho a mano · Horneado del día</div>
+        <div class="cx">
+          <span><b>Calle del Horno 8</b></span>
+          <span>Mar–Dom · 9:00–20:00 · <b>Lunes cerrado</b></span>
+          <span>WhatsApp <b>+34 660 555 230</b></span>
+        </div>
+        <div class="socials">
+          <a id="foot-wa" href="#" aria-label="WhatsApp de Migalé">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          </a>
+          <a href="https://instagram.com/migale.reposteria" target="_blank" rel="noopener" aria-label="Instagram de Migalé">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="seal">
+    Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio oficial ·
+    <a href="https://medine.tech" target="_blank" rel="noopener">medine.tech</a>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" id="fab" href="#" aria-label="Escribir a Migalé por WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA="https://wa.me/34660555230";
+  var GEN=WA+"?text="+encodeURIComponent("Hola Migalé, quiero encargar repostería artesanal.");
+  // static WhatsApp links
+  ["fab","foot-wa","contacto-cta"].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.setAttribute("href",GEN);
+  });
+  // hero + nav sheet CTAs that point to #encarga stay as anchors (scroll to builder)
+
+  // NAV sheet toggle
+  var nav=document.getElementById("nav"), hamb=document.getElementById("hamb");
+  hamb.addEventListener("click",function(){
+    var open=nav.classList.toggle("open");
+    hamb.setAttribute("aria-expanded",open?"true":"false");
+    hamb.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");
+  });
+  document.querySelectorAll(".sheet-inner a").forEach(function(a){
+    a.addEventListener("click",function(){
+      nav.classList.remove("open");
+      hamb.setAttribute("aria-expanded","false");
+      hamb.setAttribute("aria-label","Abrir menú");
+    });
+  });
+  // show desktop cta
+  var navctaD=document.getElementById("navcta-desktop");
+  function syncNavCta(){ navctaD.style.display = window.innerWidth>=860 ? "inline-flex":"none"; }
+  syncNavCta(); window.addEventListener("resize",syncNavCta);
+
+  // ORDER BUILDER
+  var state={sabor:null,tamano:null,fecha:null};
+  document.querySelectorAll(".chips").forEach(function(group){
+    var key=group.getAttribute("data-group");
+    group.querySelectorAll(".chip").forEach(function(chip){
+      chip.addEventListener("click",function(){
+        var already=chip.getAttribute("aria-pressed")==="true";
+        group.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed","false");});
+        if(already){ state[key]=null; }
+        else{ chip.setAttribute("aria-pressed","true"); state[key]=chip.textContent.trim(); }
+        render();
+      });
+    });
+  });
+  var fecha=document.getElementById("fecha");
+  var today=new Date(); today.setDate(today.getDate()+2);
+  fecha.min=new Date().toISOString().split("T")[0];
+  fecha.addEventListener("change",function(){ state.fecha=fecha.value||null; render(); });
+
+  function fmtDate(v){
+    if(!v) return null;
+    var p=v.split("-");
+    return p[2]+"/"+p[1]+"/"+p[0];
+  }
+  var tSabor=document.getElementById("t-sabor"),
+      tTam=document.getElementById("t-tam"),
+      tFecha=document.getElementById("t-fecha"),
+      cta=document.getElementById("order-cta");
+
+  function render(){
+    tSabor.textContent=state.sabor||"Por elegir";
+    tTam.textContent=state.tamano||"Por elegir";
+    tFecha.textContent=fmtDate(state.fecha)||"Por elegir";
+    var ready=state.sabor&&state.tamano&&state.fecha;
+    if(ready){
+      var msg="Hola Migalé, quiero encargar una torta a medida.\n\n"+
+              "• Sabor: "+state.sabor+"\n"+
+              "• Tamaño: "+state.tamano+"\n"+
+              "• Fecha de entrega: "+fmtDate(state.fecha)+"\n\n"+
+              "¿Me confirman disponibilidad y presupuesto? Gracias.";
+      cta.setAttribute("href",WA+"?text="+encodeURIComponent(msg));
+      cta.setAttribute("target","_blank");
+      cta.setAttribute("rel","noopener");
+      cta.setAttribute("aria-disabled","false");
+    }else{
+      cta.setAttribute("href","#encarga");
+      cta.setAttribute("aria-disabled","true");
+    }
+  }
+  render();
+
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // REVEAL on scroll
+  if("IntersectionObserver" in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.14});
+    document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});
+  }
+
+  // PARALLAX vitrina (rect-based, no IO as effect)
+  if(!reduce){
+    var shelves=[].slice.call(document.querySelectorAll(".shelf[data-par]"));
+    var ticking=false;
+    function parallax(){
+      var vh=window.innerHeight;
+      shelves.forEach(function(s){
+        var r=s.getBoundingClientRect();
+        if(r.bottom<-60||r.top>vh+60) return;
+        var center=r.top+r.height/2;
+        var prog=(center-vh/2)/vh; // -~.5..+.5
+        var amt=parseFloat(s.getAttribute("data-par"))||0.6;
+        var photo=s.querySelector(".shelf-photo");
+        if(photo){ photo.style.transform="translateY("+(prog*-18*amt).toFixed(2)+"px)"; }
+      });
+      ticking=false;
+    }
+    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(parallax); } }
+    window.addEventListener("scroll",onScroll,{passive:true});
+    window.addEventListener("resize",onScroll,{passive:true});
+    parallax();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Halo Store — Cosas que te hacen ilusión</title>
+<meta name="description" content="Halo Store — tienda de estilo de vida: moda, accesorios, hogar y regalos. Envíos a toda la isla, cambios en 30 días y atención por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Halo Store — Cosas que te hacen ilusión">
+<meta property="og:description" content="Moda, accesorios, hogar y regalos. Envíos a toda la isla y atención por WhatsApp.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%8D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E10;
+    --bone:#F3F1EA;
+    --lima:#C7F045;
+    --cobalt:#2B4CF0;
+    --line:3px solid var(--ink);
+    --line-bone:3px solid var(--bone);
+    --shadow: 8px 8px 0 var(--ink);
+    --shadow-bone: 8px 8px 0 var(--bone);
+    --shadow-lima: 8px 8px 0 var(--lima);
+    --shadow-cobalt: 8px 8px 0 var(--cobalt);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Public Sans',system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--lima);color:var(--ink)}
+
+  :focus-visible{outline:3px solid var(--lima);outline-offset:3px}
+
+  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:18px}
+
+  .label{
+    font-family:'Public Sans',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.7rem;
+  }
+  .display{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;
+    line-height:.9;
+    letter-spacing:-.01em;
+  }
+
+  /* ===== ANNOUNCEMENT RIBBON / MARQUEE ===== */
+  .ribbon{
+    background:var(--lima);
+    color:var(--ink);
+    border-bottom:var(--line);
+    overflow:hidden;
+    padding:9px 0;
+    white-space:nowrap;
+  }
+  .marquee{
+    display:inline-flex;
+    will-change:transform;
+    animation:scroll 26s linear infinite;
+  }
+  .marquee span{
+    font-family:'Public Sans',sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.8rem;
+    padding-inline:1.4rem;
+  }
+  @keyframes scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+
+  /* ===== STICKY NAV ===== */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);
+    border-bottom:var(--line-bone);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;height:64px;
+  }
+  .wordmark{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;
+    font-size:1.7rem;
+    letter-spacing:-.02em;
+    line-height:1;
+    color:var(--bone);
+  }
+  .wordmark b{color:var(--lima)}
+  .nav-links{display:none;gap:26px;align-items:center}
+  .nav-links a{
+    font-weight:600;font-size:.9rem;
+    padding-bottom:2px;border-bottom:2px solid transparent;
+    transition:border-color .15s ease;
+  }
+  .nav-links a:hover{border-color:var(--lima)}
+  .btn{
+    display:inline-block;
+    font-family:'Public Sans',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.8rem;
+    background:var(--lima);
+    color:var(--ink);
+    border:var(--line);
+    padding:11px 18px;
+    box-shadow:4px 4px 0 var(--bone);
+    transition:transform .1s ease, box-shadow .1s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bone)}
+  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--bone)}
+  .btn-cobalt{background:var(--cobalt);color:var(--bone)}
+
+  /* ===== HERO ===== */
+  .hero{padding-top:34px;padding-bottom:14px}
+  .hero-tag{
+    display:inline-block;
+    border:var(--line-bone);
+    padding:6px 12px;
+    margin-bottom:20px;
+    color:var(--bone);
+  }
+  h1.hero-title{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;
+    line-height:.86;
+    letter-spacing:-.02em;
+    font-size:clamp(2.6rem,12.5vw,8.5rem);
+    text-transform:uppercase;
+    color:var(--bone);
+  }
+  h1.hero-title em{
+    font-style:normal;
+    color:var(--lima);
+    -webkit-text-stroke:0;
+  }
+  .hero-sub{
+    margin-top:22px;
+    max-width:44ch;
+    font-size:1.05rem;
+    color:var(--bone);
+    opacity:.85;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+  .hero-strip{
+    margin-top:34px;
+    border:var(--line-bone);
+    background:var(--cobalt);
+    box-shadow:var(--shadow-lima);
+    display:grid;grid-template-columns:1fr;
+  }
+  .hero-strip div{
+    padding:16px 18px;
+    border-bottom:var(--line-bone);
+  }
+  .hero-strip div:last-child{border-bottom:0}
+  .hero-strip b{
+    display:block;
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:800;font-size:1.5rem;line-height:1;
+    color:var(--lima);
+  }
+  .hero-strip small{font-size:.82rem;color:var(--bone);opacity:.9}
+
+  /* ===== SECTION HEADS ===== */
+  section{padding-block:46px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+  .sec-num{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:800;font-size:1.1rem;color:var(--lima);
+  }
+  h2{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;line-height:.9;letter-spacing:-.02em;
+    text-transform:uppercase;
+    font-size:clamp(2.2rem,9vw,4rem);
+    color:var(--bone);
+  }
+  .sec-desc{color:var(--bone);opacity:.8;max-width:52ch;margin-bottom:6px}
+
+  /* ===== CATEGORIES ===== */
+  .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat{
+    border:var(--line-bone);
+    background:var(--ink);
+    box-shadow:6px 6px 0 var(--bone);
+    padding:18px 16px;
+    min-height:120px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+  }
+  .cat:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--lima);background:var(--lima);color:var(--ink)}
+  .cat .idx{font-weight:700;font-size:.75rem;opacity:.7}
+  .cat h3{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;font-size:2rem;line-height:.9;text-transform:uppercase;
+  }
+
+  /* ===== BENTO COLLECTIONS ===== */
+  .bento{display:grid;grid-template-columns:1fr;gap:16px}
+  .tile{
+    position:relative;
+    border:var(--line-bone);
+    box-shadow:var(--shadow-bone);
+    overflow:hidden;
+    background:var(--cobalt);
+    min-height:230px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    transition:transform .14s ease, box-shadow .14s ease;
+  }
+  .tile:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--lima)}
+  .tile .photo{
+    position:absolute;inset:0;
+    background:var(--cobalt);
+  }
+  .tile .photo img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(1) contrast(1.15);
+    mix-blend-mode:multiply;
+  }
+  .tile.limaduo .photo{background:var(--lima)}
+  .tile-body{
+    position:relative;z-index:2;
+    padding:16px;
+    background:var(--ink);
+    border-top:var(--line-bone);
+    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+  }
+  .tile-body h3{
+    font-family:'Darker Grotesque',sans-serif;
+    font-weight:900;font-size:1.9rem;line-height:.88;text-transform:uppercase;color:var(--bone);
+  }
+  .tag-chip{
+    flex:none;
+    font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.65rem;
+    background:var(--lima);color:var(--ink);
+    border:2px solid var(--ink);
+    padding:5px 8px;
+  }
+  .tile.limaduo .tag-chip{background:var(--cobalt);color:var(--bone);border-color:var(--bone)}
+
+  /* ===== ADVANTAGES ===== */
+  .adv{display:grid;grid-template-columns:1fr;gap:0;border:var(--line-bone)}
+  .adv div{
+    padding:20px 18px;
+    border-bottom:var(--line-bone);
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .adv div:last-child{border-bottom:0}
+  .adv .n{
+    font-family:'Darker Grotesque',sans-serif;font-weight:900;
+    font-size:1.6rem;line-height:1;color:var(--lima);flex:none;width:2ch;
+  }
+  .adv h3{font-family:'Darker Grotesque',sans-serif;font-weight:800;font-size:1.4rem;line-height:1;text-transform:uppercase;color:var(--bone);margin-bottom:4px}
+  .adv p{font-size:.92rem;color:var(--bone);opacity:.8}
+
+  /* ===== PRICES ===== */
+  .prices{display:grid;grid-template-columns:1fr;gap:14px}
+  .price{
+    border:var(--line-bone);
+    background:var(--ink);
+    box-shadow:6px 6px 0 var(--cobalt);
+    padding:20px 18px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .price .pl .label{color:var(--lima);display:block;margin-bottom:6px}
+  .price .pl b{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:1.7rem;line-height:1;text-transform:uppercase;color:var(--bone)}
+  .price .pr{
+    font-family:'Darker Grotesque',sans-serif;font-weight:900;
+    font-size:2.3rem;line-height:1;color:var(--lima);text-align:right;flex:none;
+  }
+  .price .pr small{display:block;font-family:'Public Sans',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);opacity:.7}
+  .note{margin-top:16px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);opacity:.6;font-weight:600}
+
+  /* ===== COMPOSER / TICKET ===== */
+  .ticket{
+    border:var(--line-bone);
+    background:var(--bone);
+    color:var(--ink);
+    box-shadow:var(--shadow-lima);
+  }
+  .ticket-head{
+    background:var(--ink);color:var(--bone);
+    padding:16px 18px;border-bottom:var(--line-bone);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .ticket-head .label{color:var(--lima)}
+  .ticket-head .dots{letter-spacing:.3em;color:var(--lima)}
+  .ticket-body{padding:18px}
+  .ticket-body .q{
+    font-family:'Darker Grotesque',sans-serif;font-weight:900;
+    font-size:2.2rem;line-height:.9;text-transform:uppercase;margin-bottom:4px;
+  }
+  .ticket-body .qsub{font-size:.9rem;opacity:.8;margin-bottom:18px}
+  .field{margin-bottom:18px}
+  .field > .label{display:block;margin-bottom:10px;color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-family:'Public Sans',sans-serif;font-weight:700;font-size:.85rem;
+    background:var(--bone);color:var(--ink);
+    border:2px solid var(--ink);
+    padding:9px 13px;cursor:pointer;
+    transition:transform .1s ease, box-shadow .1s ease, background .1s ease, color .1s ease;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .chip:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--cobalt);color:var(--bone);box-shadow:3px 3px 0 var(--lima)}
+  .ticket-total{
+    border-top:2px dashed var(--ink);
+    padding-top:16px;margin-top:4px;
+  }
+  .ticket-preview{
+    background:var(--ink);color:var(--bone);
+    border:2px solid var(--ink);
+    padding:12px 14px;margin-bottom:16px;
+    font-size:.92rem;min-height:52px;
+  }
+  .ticket-preview b{color:var(--lima)}
+  .ticket .btn{width:100%;text-align:center;box-shadow:5px 5px 0 var(--ink)}
+  .ticket .btn:hover{box-shadow:7px 7px 0 var(--ink)}
+  .ticket .btn:active{box-shadow:0 0 0 var(--ink)}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .info-block{border:var(--line-bone);padding:20px 18px}
+  .info-block .label{color:var(--lima);display:block;margin-bottom:8px}
+  .info-block p{color:var(--bone);font-size:1rem}
+  .info-block b{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:1.6rem;line-height:1;text-transform:uppercase;color:var(--bone);display:block}
+
+  /* ===== FOOTER (brutalist grid) ===== */
+  footer{border-top:var(--line-bone);margin-top:20px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr}
+  .fcell{border-right:var(--line-bone);border-bottom:var(--line-bone);padding:22px 18px;min-height:120px}
+  .fcell:nth-child(2n){border-right:0}
+  .fcell.brand{
+    grid-column:1 / -1;
+    background:var(--lima);color:var(--ink);
+    border-right:0;
+    display:flex;align-items:center;
+    overflow:hidden;padding:14px 18px;
+  }
+  .fcell.brand .big{
+    font-family:'Darker Grotesque',sans-serif;font-weight:900;
+    font-size:clamp(3.6rem,22vw,9rem);line-height:.8;letter-spacing:-.03em;
+    text-transform:uppercase;white-space:nowrap;
+  }
+  .fcell .label{color:var(--lima);display:block;margin-bottom:10px}
+  .fcell p{color:var(--bone);font-size:.95rem}
+  .socials{display:flex;gap:10px;margin-top:4px}
+  .socials a{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border:var(--line-bone);color:var(--bone);
+    transition:transform .1s ease, background .1s ease, color .1s ease;
+  }
+  .socials a:hover{background:var(--lima);color:var(--ink);transform:translate(-2px,-2px)}
+  .socials svg{width:20px;height:20px;fill:currentColor}
+  .seal{
+    grid-column:1 / -1;border-right:0;border-bottom:0;
+    background:var(--ink);
+    display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;
+    padding:16px 18px;
+  }
+  .seal p{font-size:.72rem;color:var(--bone);opacity:.65;max-width:60ch}
+  .seal a{color:var(--lima);font-weight:700;border-bottom:1px solid var(--lima)}
+
+  /* ===== WHATSAPP FAB ===== */
+  .fab{
+    position:fixed;right:16px;bottom:16px;z-index:100;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;border:3px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .fab:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .fab:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .fab svg{width:32px;height:32px;fill:#fff}
+
+  /* ===== RESPONSIVE ===== */
+  @media(min-width:680px){
+    .cats{grid-template-columns:repeat(4,1fr)}
+    .adv{grid-template-columns:repeat(3,1fr)}
+    .adv div{border-bottom:0;border-right:var(--line-bone)}
+    .adv div:last-child{border-right:0}
+    .prices{grid-template-columns:repeat(3,1fr)}
+    .price{flex-direction:column;align-items:flex-start;gap:18px}
+    .price .pr{text-align:left}
+    .hero-strip{grid-template-columns:repeat(3,1fr)}
+    .hero-strip div{border-bottom:0;border-right:var(--line-bone)}
+    .hero-strip div:last-child{border-right:0}
+    .contact-grid{grid-template-columns:repeat(3,1fr)}
+    .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:190px}
+    .tile{min-height:0}
+    .tile.t1{grid-column:span 4;grid-row:span 2}
+    .tile.t2{grid-column:span 2;grid-row:span 1}
+    .tile.t3{grid-column:span 2;grid-row:span 1}
+    .tile.t4{grid-column:span 6;grid-row:span 1}
+  }
+  @media(min-width:900px){
+    .nav-links{display:flex}
+    .hero{padding-top:56px}
+    .hero-inner{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:end}
+    .hero-strip{margin-top:0}
+    .ticket-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+    .ticket-cols .left{border-right:var(--line-bone);padding:18px}
+    .ticket-cols .right{padding:18px}
+    .fgrid{grid-template-columns:2fr 1fr 1fr}
+    .fcell{border-right:var(--line-bone)}
+    .fcell:nth-child(2n){border-right:var(--line-bone)}
+    .bento .tile.t4{grid-column:span 6}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .marquee{animation:none!important;transform:none!important}
+    .btn,.cat,.tile,.chip,.fab,.socials a{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT RIBBON -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="marquee">
+      <span>Envíos a toda la isla</span><span>·</span><span>Nueva colección</span><span>·</span><span>−20% primera compra</span><span>·</span><span>Cambios en 30 días</span><span>·</span>
+      <span>Envíos a toda la isla</span><span>·</span><span>Nueva colección</span><span>·</span><span>−20% primera compra</span><span>·</span><span>Cambios en 30 días</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- STICKY NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="wordmark" aria-label="Halo Store, inicio">Halo<b>.</b>Store</a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#categorias">Categorías</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#precios">Precios</a>
+        <a href="#buscas">¿Qué buscas?</a>
+        <a href="#contacto">Visítanos</a>
+      </nav>
+      <a class="btn" href="#buscas">Comprar</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero wrap" aria-labelledby="h1">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-tag label">Tienda de estilo de vida</span>
+          <h1 class="hero-title" id="h1">Cosas que te<br><em>hacen ilusión.</em></h1>
+          <p class="hero-sub">Moda, accesorios, hogar y regalos elegidos con cariño. Pasa por el local o pídelo por WhatsApp: te lo llevamos a toda la isla.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#colecciones">Ver colecciones</a>
+            <a class="btn btn-cobalt" href="#buscas">Arma tu pedido</a>
+          </div>
+        </div>
+        <div class="hero-strip" role="list">
+          <div role="listitem"><b>+400</b><small>Productos en tienda</small></div>
+          <div role="listitem"><b>30 días</b><small>Para cambios</small></div>
+          <div role="listitem"><b>L–S</b><small>10:00 – 21:00</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categorias" class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2>Categorías</h2>
+      </div>
+      <p class="sec-desc">Cuatro mundos dentro de una misma tienda. Elige por dónde empezar.</p>
+      <div class="cats">
+        <a class="cat" href="#buscas"><span class="idx">01 / Vestir</span><h3>Ropa</h3></a>
+        <a class="cat" href="#buscas"><span class="idx">02 / Detalles</span><h3>Accesorios</h3></a>
+        <a class="cat" href="#buscas"><span class="idx">03 / Tu espacio</span><h3>Hogar</h3></a>
+        <a class="cat" href="#buscas"><span class="idx">04 / Para dar</span><h3>Regalos</h3></a>
+      </div>
+    </section>
+
+    <!-- BENTO COLLECTIONS -->
+    <section id="colecciones" class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2>Novedades</h2>
+      </div>
+      <p class="sec-desc">Lo que acaba de llegar y lo que no dura en el estante. Fotos de referencia de nuestras colecciones.</p>
+      <div class="bento">
+        <article class="tile t1">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80" alt="Perchero con prendas de la nueva temporada en Halo Store" loading="lazy"></div>
+          <div class="tile-body"><h3>Nueva<br>temporada</h3><span class="tag-chip">Recién llegado</span></div>
+        </article>
+        <article class="tile t2 limaduo">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&q=80" alt="Prendas básicas colgadas en percha" loading="lazy"></div>
+          <div class="tile-body"><h3>Básicos</h3><span class="tag-chip">Siempre</span></div>
+        </article>
+        <article class="tile t3">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80" alt="Accesorio de edición limitada sobre fondo neutro" loading="lazy"></div>
+          <div class="tile-body"><h3>Edición<br>limitada</h3><span class="tag-chip">Pocas unidades</span></div>
+        </article>
+        <article class="tile t4 limaduo">
+          <div class="photo"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&q=80" alt="Prendas de colores en sección de rebajas" loading="lazy"></div>
+          <div class="tile-body"><h3>Rebajas</h3><span class="tag-chip">Hasta −40%</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="wrap" aria-labelledby="ventajas">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2 id="ventajas">Cómo compras</h2>
+      </div>
+      <div class="adv">
+        <div><span class="n">A</span><div><h3>Envíos a toda la isla</h3><p>Coordinamos la entrega donde estés. Rápido y con seguimiento por WhatsApp.</p></div></div>
+        <div><span class="n">B</span><div><h3>Cambios en 30 días</h3><p>¿No era lo que esperabas? Lo cambias sin dramas dentro de los 30 días.</p></div></div>
+        <div><span class="n">C</span><div><h3>Atención por WhatsApp</h3><p>Te reservamos tallas, resolvemos dudas y armamos tu pedido por chat.</p></div></div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section id="precios" class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2>Precios</h2>
+      </div>
+      <p class="sec-desc">Algunos puntos de partida para que te hagas una idea.</p>
+      <div class="prices">
+        <div class="price">
+          <div class="pl"><span class="label">Ropa</span><b>Camisetas</b></div>
+          <div class="pr">19€<small>Desde</small></div>
+        </div>
+        <div class="price">
+          <div class="pl"><span class="label">Accesorios</span><b>Detalles</b></div>
+          <div class="pr">9€<small>Desde</small></div>
+        </div>
+        <div class="price">
+          <div class="pl"><span class="label">Hogar</span><b>Decoración</b></div>
+          <div class="pr">14€<small>Desde</small></div>
+        </div>
+      </div>
+      <p class="note">Precios de referencia — julio 2026</p>
+    </section>
+
+    <!-- COMPOSER / TICKET -->
+    <section id="buscas" class="wrap" aria-labelledby="buscas-h">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <h2 id="buscas-h">¿Qué buscas?</h2>
+      </div>
+      <p class="sec-desc">Marca lo que te interesa y te armamos un mensaje listo para enviarnos por WhatsApp. Sin cuentas, sin líos.</p>
+
+      <div class="ticket">
+        <div class="ticket-head">
+          <span class="label">Ticket Halo</span>
+          <span class="dots" aria-hidden="true">· · · · ·</span>
+        </div>
+        <div class="ticket-cols">
+          <div class="left">
+            <p class="q">Tu pedido</p>
+            <p class="qsub">Elige categoría y ocasión o talla. Puedes cambiar tus elecciones cuando quieras.</p>
+
+            <div class="field">
+              <span class="label">Categoría</span>
+              <div class="chips" role="group" aria-label="Categoría" data-group="cat" data-single="true">
+                <button type="button" class="chip" aria-pressed="false" data-val="Ropa">Ropa</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="Accesorios">Accesorios</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="Hogar">Hogar</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="Regalos">Regalos</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <span class="label">Ocasión / talla</span>
+              <div class="chips" role="group" aria-label="Ocasión o talla" data-group="occ">
+                <button type="button" class="chip" aria-pressed="false" data-val="para el día a día">Día a día</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="para un regalo">Un regalo</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="talla S">Talla S</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="talla M">Talla M</button>
+                <button type="button" class="chip" aria-pressed="false" data-val="talla L">Talla L</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="ticket-total">
+              <span class="label" style="display:block;margin-bottom:8px;color:var(--ink)">Vista previa del mensaje</span>
+              <p class="ticket-preview" id="preview" aria-live="polite">Hola Halo, busco algo en la tienda 👀</p>
+              <a class="btn" id="waSend" href="https://wa.me/34640555220?text=Hola%20Halo%2C%20busco%20algo%20en%20la%20tienda" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contacto" class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">06</span>
+        <h2>Visítanos</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="info-block">
+          <span class="label">Dónde estamos</span>
+          <b>C.C. Centro</b>
+          <p>Planta 1 · Local de Halo Store</p>
+        </div>
+        <div class="info-block">
+          <span class="label">Horario</span>
+          <b>L – S</b>
+          <p>10:00 – 21:00</p>
+        </div>
+        <div class="info-block">
+          <span class="label">Escríbenos</span>
+          <b>WhatsApp</b>
+          <p>Te atendemos por chat todos los días de tienda.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (brutalist grid) -->
+  <footer>
+    <div class="fgrid">
+      <div class="fcell brand"><span class="big">Halo.Store</span></div>
+      <div class="fcell">
+        <span class="label">Contacto</span>
+        <p>C.C. Centro, planta 1</p>
+        <p>WhatsApp: +34 640 555 220</p>
+        <p>Instagram: @halo.store</p>
+      </div>
+      <div class="fcell">
+        <span class="label">Horario</span>
+        <p>Lunes a sábado</p>
+        <p>10:00 – 21:00</p>
+        <p>Domingos cerrado</p>
+      </div>
+      <div class="fcell">
+        <span class="label">Síguenos</span>
+        <div class="socials">
+          <a href="https://instagram.com/halo.store" target="_blank" rel="noopener" aria-label="Instagram de Halo Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.86.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52.01-4.76.07-.9.04-1.38.19-1.7.32-.43.16-.74.37-1.06.69-.32.32-.53.63-.69 1.06-.13.32-.28.8-.32 1.7C3.41 8.48 3.4 8.85 3.4 12s.01 3.52.07 4.76c.04.9.19 1.38.32 1.7.16.43.37.74.69 1.06.32.32.63.53 1.06.69.32.13.8.28 1.7.32 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.37 1.06-.69.32-.32.53-.63.69-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.19-1.38-.32-1.7a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.32-.13-.8-.28-1.7-.32C15.52 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.14A3.2 3.2 0 1 0 8.8 12 3.2 3.2 0 0 0 12 15.2Zm6.29-8.34a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
+          </a>
+          <a href="https://wa.me/34640555220" target="_blank" rel="noopener" aria-label="WhatsApp de Halo Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-2.85.89.9-2.78-.19-.31A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fcell seal">
+        <p>Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio oficial</p>
+        <p><a href="https://medine.tech" target="_blank" rel="noopener">medine.tech</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a class="fab" href="https://wa.me/34640555220?text=Hola%20Halo%2C%20me%20interesa%20la%20tienda%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg>
+  </a>
+
+  <script>
+    (function(){
+      var WA = "https://wa.me/34640555220?text=";
+      var state = { cat: null, occ: [] };
+      var preview = document.getElementById('preview');
+      var waSend = document.getElementById('waSend');
+
+      function build(){
+        var msg = "Hola Halo, busco";
+        if(state.cat){ msg += " " + state.cat.toLowerCase(); } else { msg += " algo en la tienda"; }
+        if(state.occ.length){ msg += " " + state.occ.join(" y "); }
+        msg += ".";
+        preview.textContent = msg;
+        waSend.setAttribute('href', WA + encodeURIComponent(msg));
+      }
+
+      document.querySelectorAll('.chips').forEach(function(group){
+        var single = group.getAttribute('data-single') === 'true';
+        var kind = group.getAttribute('data-group');
+        group.addEventListener('click', function(e){
+          var btn = e.target.closest('.chip');
+          if(!btn) return;
+          var val = btn.getAttribute('data-val');
+          var on = btn.getAttribute('aria-pressed') === 'true';
+          if(single){
+            group.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+            if(on){ state.cat = null; }
+            else { btn.setAttribute('aria-pressed','true'); state.cat = val; }
+          } else {
+            if(on){ btn.setAttribute('aria-pressed','false'); state.occ = state.occ.filter(function(v){ return v!==val; }); }
+            else { btn.setAttribute('aria-pressed','true'); state.occ.push(val); }
+          }
+          build();
+        });
+      });
+      build();
+    })();
+  </script>
+
+</body>
+</html>

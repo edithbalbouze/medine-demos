@@ -1,0 +1,652 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bufete Marín Alcázar · Abogados — Las Palmas de Gran Canaria</title>
+<meta name="description" content="Bufete Marín Alcázar · Abogados. Derecho con criterio. Defensa cercana. Colegiados en el ICALPA, ejerciendo desde 2004 en Las Palmas de Gran Canaria.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bufete Marín Alcázar · Abogados">
+<meta property="og:description" content="Derecho con criterio. Defensa cercana. Colegiados en el ICALPA desde 2004. Las Palmas de Gran Canaria.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ivory:#FBF9F3;
+    --ivory-2:#F6F2E9;
+    --ink:#14202E;
+    --ink-soft:#3a4653;
+    --gold:#A8863F;
+    --gold-deep:#8a6d30;
+    --burgundy:#6E1E28;
+    --hair:rgba(20,32,46,.14);
+    --measure:34rem;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:"Libre Caslon Display",Georgia,"Times New Roman",serif;font-weight:400;line-height:1.08;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--gold);color:var(--ivory);}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:1px;}
+
+  /* ---- shared layout: narrow editorial column ---- */
+  .col{width:100%;max-width:var(--measure);margin-inline:auto;padding-inline:22px;}
+  .rule{height:1px;background:var(--gold);opacity:.55;border:0;margin:0;}
+  .rule-soft{height:1px;background:var(--hair);border:0;margin:0;}
+
+  .kicker{
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:600;margin:0 0 .9rem;
+  }
+  .roman{
+    font-family:"Libre Caslon Display",serif;
+    color:var(--gold-deep);
+    font-size:.95rem;letter-spacing:.15em;
+  }
+
+  /* =================== NAV / LETTERHEAD =================== */
+  header.letterhead{
+    position:sticky;top:0;z-index:60;
+    background:var(--ivory);
+    border-bottom:1px solid transparent;
+    transition:box-shadow .35s ease,background .35s ease;
+  }
+  .lh-inner{max-width:52rem;margin-inline:auto;padding:14px 22px 10px;}
+  .lh-full{display:block;text-align:center;transition:opacity .3s ease;}
+  .lh-links{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:12px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .lh-links a{text-decoration:none;color:var(--ink-soft);white-space:nowrap;padding:4px 0;}
+  .lh-links a:hover{color:var(--gold-deep);}
+  .lh-group{display:flex;gap:20px;}
+  .lh-word{
+    font-family:"Libre Caslon Display",serif;
+    font-size:clamp(1.15rem,5.6vw,1.5rem);
+    letter-spacing:.02em;margin:.15rem 0 .1rem;
+  }
+  .lh-word small{display:block;font-size:.5em;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-deep);margin-top:.35rem;}
+  .lh-sub{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);opacity:.75;margin-top:.5rem;}
+  .lh-rule{margin-top:11px;}
+
+  /* slim condensed bar (revealed on scroll) */
+  .lh-slim{
+    display:flex;justify-content:space-between;align-items:center;
+    max-width:52rem;margin-inline:auto;padding:0 22px;
+    height:0;overflow:hidden;opacity:0;
+    transition:height .35s ease,opacity .3s ease;
+  }
+  .lh-slim .lh-slim-word{font-family:"Libre Caslon Display",serif;font-size:1.05rem;letter-spacing:.02em;}
+  header.condensed .lh-full{display:none;}
+  header.condensed .lh-slim{height:56px;opacity:1;}
+  header.condensed{box-shadow:0 1px 0 var(--hair),0 6px 20px -14px rgba(20,32,46,.4);}
+
+  /* buttons */
+  .btn-cita{
+    display:inline-block;background:var(--ink);color:var(--ivory);
+    font-family:"Work Sans",sans-serif;font-size:.7rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+    padding:11px 20px;border:1px solid var(--gold);border-radius:0;
+    box-shadow:inset 0 0 0 1px rgba(168,134,63,.0);
+    transition:background .25s ease,color .25s ease;
+  }
+  .btn-cita:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--ivory);}
+  .btn-under{
+    display:inline-block;text-decoration:none;color:var(--ink);
+    font-weight:500;letter-spacing:.03em;
+    background-image:linear-gradient(var(--gold),var(--gold));
+    background-repeat:no-repeat;background-position:0 100%;
+    background-size:100% 1.5px;padding-bottom:2px;
+    transition:background-size .3s ease;
+  }
+  .btn-under:hover{background-size:100% 100%;color:var(--ivory);}
+
+  /* =================== HERO (typographic) =================== */
+  .hero{padding:52px 0 46px;position:relative;}
+  .hero .col{max-width:38rem;}
+  .hero-kicker{opacity:0;animation:rise .8s ease forwards;animation-delay:.15s;}
+  .hero h1{
+    font-size:clamp(3rem,15vw,5.2rem);
+    letter-spacing:-.01em;margin:0;
+  }
+  .hero h1 .l1,.hero h1 .l2{display:block;opacity:0;animation:rise .9s ease forwards;}
+  .hero h1 .l1{animation-delay:.35s;}
+  .hero h1 .l2{color:var(--gold-deep);font-style:italic;animation-delay:.6s;}
+  .hero-lead{
+    max-width:26rem;margin:1.6rem 0 0;color:var(--ink-soft);font-size:1.06rem;
+    opacity:0;animation:rise .9s ease forwards;animation-delay:.95s;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:1.7rem;
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;
+    opacity:0;animation:rise .9s ease forwards;animation-delay:1.15s;
+  }
+  .hero-cta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:2.2rem;
+    opacity:0;animation:rise .9s ease forwards;animation-delay:1.35s;
+  }
+
+  /* balance SVG */
+  .scale-wrap{margin:2.6rem auto 0;max-width:280px;opacity:0;animation:fade 1s ease forwards;animation-delay:1.1s;}
+  .scale-svg{width:100%;height:auto;}
+  .scale-beam{transform-origin:150px 46px;animation:swing 3.2s cubic-bezier(.36,.07,.28,1) forwards;}
+  @keyframes swing{
+    0%{transform:rotate(13deg);}
+    22%{transform:rotate(-10deg);}
+    44%{transform:rotate(6deg);}
+    64%{transform:rotate(-3.5deg);}
+    82%{transform:rotate(1.5deg);}
+    100%{transform:rotate(0deg);}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fade{from{opacity:0;}to{opacity:1;}}
+
+  /* keyword underline (painted on scroll into view) */
+  .mark{
+    background-image:linear-gradient(var(--gold),var(--gold));
+    background-repeat:no-repeat;background-position:0 92%;
+    background-size:0% .16em;
+    transition:background-size .9s cubic-bezier(.2,.7,.2,1);
+    padding:0 .04em;
+  }
+  .mark.lit{background-size:100% .16em;}
+
+  /* =================== SECTIONS =================== */
+  section{padding:46px 0;}
+  .sec-head{margin-bottom:2rem;}
+  .sec-head h2{font-size:clamp(1.9rem,7.5vw,2.7rem);margin:.2rem 0 0;letter-spacing:-.005em;}
+  .sec-head p{color:var(--ink-soft);margin:1rem 0 0;max-width:30rem;}
+
+  .band{background:var(--ivory-2);}
+
+  /* practice rows (full-width hairline rows w/ roman numerals) */
+  .rows{border-top:1px solid var(--gold);}
+  .row{
+    display:grid;grid-template-columns:2.6rem 1fr;gap:14px;
+    padding:20px 0;border-bottom:1px solid var(--hair);
+    align-items:start;
+  }
+  .row-n{font-family:"Libre Caslon Display",serif;color:var(--gold-deep);font-size:1.1rem;padding-top:.15rem;}
+  .row-t{font-family:"Libre Caslon Display",serif;font-size:1.4rem;margin:0 0 .35rem;}
+  .row-d{color:var(--ink-soft);font-size:.98rem;margin:0;max-width:28rem;}
+
+  /* steps */
+  .steps{border-top:1px solid var(--gold);}
+  .step{padding:22px 0;border-bottom:1px solid var(--hair);}
+  .step-n{font-family:"Libre Caslon Display",serif;color:var(--gold-deep);font-size:2rem;line-height:1;}
+  .step h3{font-size:1.35rem;margin:.5rem 0 .4rem;}
+  .step p{color:var(--ink-soft);margin:0;max-width:28rem;}
+
+  /* honorarios */
+  .fees{border:1px solid var(--gold);padding:26px 22px;background:var(--ivory);position:relative;}
+  .fees .fee-lead{font-family:"Libre Caslon Display",serif;font-size:1.55rem;line-height:1.25;margin:0 0 1rem;}
+  .fees ul{list-style:none;margin:0;padding:0;}
+  .fees li{padding:12px 0;border-top:1px solid var(--hair);color:var(--ink-soft);display:flex;gap:12px;align-items:baseline;}
+  .fees li b{color:var(--ink);font-weight:600;}
+  .fees li::before{content:"";flex:0 0 8px;height:8px;margin-top:.45rem;background:var(--gold);}
+  .fee-note{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin:1.3rem 0 0;}
+
+  /* team */
+  .team{border-top:1px solid var(--gold);}
+  .member{
+    display:flex;gap:16px;align-items:center;
+    padding:18px 0;border-bottom:1px solid var(--hair);
+  }
+  .avatar{
+    flex:0 0 52px;height:52px;border:1px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;font-family:"Libre Caslon Display",serif;
+    color:var(--gold-deep);font-size:1.2rem;background:var(--ivory-2);
+  }
+  .member h3{font-size:1.2rem;margin:0 0 .15rem;}
+  .member span{font-size:.82rem;letter-spacing:.06em;color:var(--ink-soft);}
+
+  /* consulta interaction */
+  .consulta .col{max-width:38rem;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:1.6rem 0;}
+  .chip{
+    font-family:"Work Sans",sans-serif;font-size:.82rem;letter-spacing:.04em;
+    background:transparent;color:var(--ink);
+    border:1px solid var(--hair);border-radius:0;
+    padding:10px 15px;cursor:pointer;
+    transition:border-color .2s ease,background .2s ease,color .2s ease;
+  }
+  .chip:hover{border-color:var(--gold);}
+  .chip.active{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
+  .chip.active::before{content:"—  ";color:var(--gold);}
+  .consulta label{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin:1.4rem 0 .5rem;}
+  .consulta textarea{
+    width:100%;min-height:92px;resize:vertical;
+    font-family:"Work Sans",sans-serif;font-size:1rem;line-height:1.5;color:var(--ink);
+    background:var(--ivory);border:1px solid var(--hair);border-radius:0;padding:13px 14px;
+  }
+  .consulta textarea:focus{border-color:var(--gold);outline:none;}
+  .preview{
+    margin-top:1.3rem;border:1px solid var(--gold);background:var(--ivory-2);
+    padding:16px 16px 18px;font-size:.92rem;color:var(--ink-soft);
+  }
+  .preview .pv-h{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:.6rem;}
+  .preview .pv-body{white-space:pre-wrap;color:var(--ink);font-size:.95rem;}
+  .consulta .send-row{margin-top:1.5rem;}
+  .btn-solid{
+    display:inline-block;background:var(--ink);color:var(--ivory);text-decoration:none;
+    font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    padding:14px 26px;border:1px solid var(--gold);border-radius:0;
+    transition:background .25s ease,border-color .25s ease;
+  }
+  .btn-solid:hover{background:var(--gold-deep);border-color:var(--gold-deep);}
+
+  /* contact quick block */
+  .contact-grid{border-top:1px solid var(--gold);}
+  .contact-grid .row{grid-template-columns:2.6rem 1fr;}
+  .contact-grid .row-t{font-size:1.1rem;}
+
+  /* =================== FOOTER / COLOFÓN =================== */
+  footer.colofon{background:var(--ivory-2);border-top:1px solid var(--gold);padding:44px 0 40px;}
+  footer .col{max-width:38rem;text-align:center;}
+  .colofon-line{font-family:"Libre Caslon Display",serif;font-style:italic;font-size:1.15rem;color:var(--ink);margin:0 0 1.4rem;}
+  .seal{
+    width:96px;height:96px;margin:0 auto 1.3rem;border:1px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;text-align:center;position:relative;
+  }
+  .seal::after{content:"";position:absolute;inset:6px;border:1px solid rgba(168,134,63,.4);border-radius:50%;}
+  .seal span{font-family:"Libre Caslon Display",serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);line-height:1.35;padding:0 8px;}
+  .col-data{font-size:.9rem;color:var(--ink-soft);line-height:1.75;margin:0 0 1.2rem;}
+  .col-data b{color:var(--ink);font-weight:600;}
+  .socials{display:flex;justify-content:center;gap:16px;margin:1.2rem 0 1.6rem;}
+  .socials a{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--hair);border-radius:50%;color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .socials a:hover{border-color:var(--gold);color:var(--gold-deep);}
+  .socials svg{width:18px;height:18px;}
+  .stamp{font-size:.74rem;color:var(--ink-soft);line-height:1.7;border-top:1px solid var(--hair);padding-top:1.3rem;margin-top:.4rem;}
+  .stamp a{color:var(--gold-deep);}
+
+  /* =================== WHATSAPP FAB =================== */
+  .fab{
+    position:fixed;right:16px;bottom:16px;z-index:80;
+    width:56px;height:56px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;
+    box-shadow:0 8px 22px -6px rgba(0,0,0,.4);
+    transition:transform .2s ease;
+  }
+  .fab:hover{transform:scale(1.06);}
+  .fab svg{width:30px;height:30px;}
+
+  @media (min-width:620px){
+    :root{--measure:38rem;}
+    .steps,.rows{display:block;}
+    .member{gap:20px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .scale-beam{animation:none;transform:rotate(0deg);}
+    .hero-kicker,.hero h1 .l1,.hero h1 .l2,.hero-lead,.hero-meta,.hero-cta,.scale-wrap{
+      animation:none;opacity:1;transform:none;
+    }
+    .mark{transition:none;}
+    .mark.lit{background-size:100% .16em;}
+    *{scroll-behavior:auto;}
+  }
+</style>
+
+<header class="letterhead" id="hdr">
+  <div class="lh-inner lh-full" id="lhFull">
+    <div class="lh-links">
+      <div class="lh-group">
+        <a href="#areas">Áreas</a>
+        <a href="#metodo">Método</a>
+      </div>
+      <div class="lh-group">
+        <a href="#equipo">Equipo</a>
+        <a href="#consulta">Consulta</a>
+      </div>
+    </div>
+    <div class="lh-word">Marín Alcázar<small>Abogados</small></div>
+    <hr class="rule lh-rule">
+    <p class="lh-sub">Col. ICALPA · desde 2004</p>
+  </div>
+  <div class="lh-slim">
+    <span class="lh-slim-word">Marín Alcázar</span>
+    <a class="btn-cita" href="#consulta">Pedir cita</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="col">
+      <p class="kicker hero-kicker">Bufete Marín Alcázar · Las Palmas de Gran Canaria</p>
+      <h1 id="h1">
+        <span class="l1">Derecho con</span>
+        <span class="l2">criterio.</span>
+      </h1>
+      <p class="hero-lead">Defensa cercana y estrategia clara. Le acompañamos con rigor técnico y trato directo, del primer análisis a la última gestión.</p>
+      <div class="hero-meta">
+        <span>Colegiados ICALPA</span>
+        <span>Ejerciendo desde 2004</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-cita" href="#consulta">Pedir cita</a>
+        <a class="btn-under" href="#areas">Ver áreas de práctica</a>
+      </div>
+
+      <div class="scale-wrap" aria-hidden="true">
+        <svg class="scale-svg" viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" role="img">
+          <!-- column -->
+          <rect x="147" y="46" width="6" height="126" fill="#14202E"/>
+          <rect x="120" y="176" width="60" height="6" fill="#14202E"/>
+          <rect x="112" y="182" width="76" height="8" fill="#A8863F"/>
+          <!-- fulcrum knob -->
+          <circle cx="150" cy="46" r="7" fill="#A8863F"/>
+          <g class="scale-beam">
+            <!-- beam -->
+            <rect x="46" y="44" width="208" height="4" rx="2" fill="#14202E"/>
+            <!-- left hanger + pan -->
+            <line x1="70" y1="46" x2="70" y2="92" stroke="#A8863F" stroke-width="1.5"/>
+            <path d="M46 92 h48 a24 12 0 0 1 -48 0 z" fill="none" stroke="#14202E" stroke-width="2"/>
+            <line x1="46" y1="92" x2="70" y2="80" stroke="#A8863F" stroke-width="1.2"/>
+            <line x1="94" y1="92" x2="70" y2="80" stroke="#A8863F" stroke-width="1.2"/>
+            <!-- right hanger + pan -->
+            <line x1="230" y1="46" x2="230" y2="92" stroke="#A8863F" stroke-width="1.5"/>
+            <path d="M206 92 h48 a24 12 0 0 1 -48 0 z" fill="none" stroke="#14202E" stroke-width="2"/>
+            <line x1="206" y1="92" x2="230" y2="80" stroke="#A8863F" stroke-width="1.2"/>
+            <line x1="254" y1="92" x2="230" y2="80" stroke="#A8863F" stroke-width="1.2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule-soft">
+
+  <!-- I. AREAS -->
+  <section id="areas" aria-labelledby="areas-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">I</span>
+        <p class="kicker" style="margin-top:.6rem">Áreas de práctica</p>
+        <h2 id="areas-t">Seis frentes, <span class="mark" data-mark>un mismo criterio</span>.</h2>
+        <p>Trabajamos cada asunto con el mismo estándar: análisis previo honesto, estrategia por escrito y comunicación en lenguaje claro.</p>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <div class="row-n">I</div>
+          <div><h3 class="row-t">Mercantil</h3><p class="row-d">Constitución de sociedades, contratos, reclamación de impagos y conflictos entre socios.</p></div>
+        </div>
+        <div class="row">
+          <div class="row-n">II</div>
+          <div><h3 class="row-t">Laboral</h3><p class="row-d">Despidos, reclamaciones de cantidad, negociación de acuerdos y defensa ante la jurisdicción social.</p></div>
+        </div>
+        <div class="row">
+          <div class="row-n">III</div>
+          <div><h3 class="row-t">Civil</h3><p class="row-d">Responsabilidad contractual, reclamaciones de daños, arrendamientos y defensa de sus intereses en juicio.</p></div>
+        </div>
+        <div class="row">
+          <div class="row-n">IV</div>
+          <div><h3 class="row-t">Inmobiliario</h3><p class="row-d">Compraventa, revisión de contratos, comunidades de propietarios y regularización de fincas.</p></div>
+        </div>
+        <div class="row">
+          <div class="row-n">V</div>
+          <div><h3 class="row-t">Extranjería</h3><p class="row-d">Residencia, reagrupación familiar, nacionalidad y recursos ante resoluciones desfavorables.</p></div>
+        </div>
+        <div class="row">
+          <div class="row-n">VI</div>
+          <div><h3 class="row-t">Herencias y sucesiones</h3><p class="row-d">Testamentos, aceptación y partición de herencia, y mediación entre coherederos.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- II. COMO TRABAJAMOS -->
+  <section id="metodo" class="band" aria-labelledby="metodo-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">II</span>
+        <p class="kicker" style="margin-top:.6rem">Cómo trabajamos</p>
+        <h2 id="metodo-t">Un proceso <span class="mark" data-mark>sin sorpresas</span>.</h2>
+        <p>Antes de que tome una decisión, sabrá qué hacemos, cuánto cuesta y qué puede esperar.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <h3>Primera consulta valorada</h3>
+          <p>Escuchamos su caso, revisamos la documentación y le damos una lectura jurídica honesta de su posición.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <h3>Estrategia y presupuesto de honorarios</h3>
+          <p>Definimos la vía de actuación por escrito y le entregamos un presupuesto cerrado antes de empezar.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <h3>Representación y seguimiento</h3>
+          <p>Asumimos su defensa y le mantenemos informado en cada hito, con acceso directo a su letrado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- III. HONORARIOS -->
+  <section id="honorarios" aria-labelledby="hon-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">III</span>
+        <p class="kicker" style="margin-top:.6rem">Honorarios</p>
+        <h2 id="hon-t">Claros y <span class="mark" data-mark>pactados de antemano</span>.</h2>
+      </div>
+      <div class="fees">
+        <p class="fee-lead">Primera consulta 60&nbsp;€ — se descuenta si contrata con nosotros.</p>
+        <ul>
+          <li><span>Minutas <b>por acuerdo</b>, adaptadas a la complejidad real de su asunto.</span></li>
+          <li><span><b>Presupuesto cerrado</b> por escrito antes de iniciar cualquier actuación.</span></li>
+          <li><span>Sin sorpresas: si el alcance cambia, lo revisamos <b>con usted</b> primero.</span></li>
+        </ul>
+        <p class="fee-note">Honorarios de referencia — julio 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IV. EQUIPO -->
+  <section id="equipo" class="band" aria-labelledby="eq-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">IV</span>
+        <p class="kicker" style="margin-top:.6rem">El equipo</p>
+        <h2 id="eq-t">Quién le <span class="mark" data-mark>defiende</span>.</h2>
+      </div>
+      <div class="team">
+        <div class="member">
+          <div class="avatar" aria-hidden="true">EM</div>
+          <div><h3>Lda. Elena Marín</h3><span>Mercantil y Laboral</span></div>
+        </div>
+        <div class="member">
+          <div class="avatar" aria-hidden="true">DA</div>
+          <div><h3>Ldo. Diego Alcázar</h3><span>Civil e Inmobiliario</span></div>
+        </div>
+        <div class="member">
+          <div class="avatar" aria-hidden="true">SP</div>
+          <div><h3>Lda. Sofía Perera</h3><span>Extranjería y Familia</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V. CONSULTA -->
+  <section id="consulta" class="consulta" aria-labelledby="cons-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">V</span>
+        <p class="kicker" style="margin-top:.6rem">Cuéntenos su caso</p>
+        <h2 id="cons-t">Prepare su <span class="mark" data-mark>hoja de consulta</span>.</h2>
+        <p>Elija el área o áreas de su asunto, añada dos líneas y le abriremos un mensaje de WhatsApp listo para enviar.</p>
+      </div>
+
+      <label id="chipsLabel">Área del asunto</label>
+      <div class="chips" role="group" aria-labelledby="chipsLabel" id="chips">
+        <button type="button" class="chip" data-area="Mercantil">Mercantil</button>
+        <button type="button" class="chip" data-area="Laboral">Laboral</button>
+        <button type="button" class="chip" data-area="Civil">Civil</button>
+        <button type="button" class="chip" data-area="Inmobiliario">Inmobiliario</button>
+        <button type="button" class="chip" data-area="Extranjería">Extranjería</button>
+        <button type="button" class="chip" data-area="Herencias y sucesiones">Herencias</button>
+      </div>
+
+      <label for="detalle">Su asunto, en breve</label>
+      <textarea id="detalle" placeholder="Ej.: Necesito revisar un contrato de arrendamiento antes de firmar."></textarea>
+
+      <div class="preview" aria-live="polite">
+        <div class="pv-h">Vista previa del mensaje</div>
+        <div class="pv-body" id="pvBody"></div>
+      </div>
+
+      <div class="send-row">
+        <a class="btn-solid" id="sendWa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VI. CONTACTO -->
+  <section id="contacto" class="band" aria-labelledby="cont-t">
+    <div class="col">
+      <div class="sec-head">
+        <span class="roman">VI</span>
+        <p class="kicker" style="margin-top:.6rem">Dónde encontrarnos</p>
+        <h2 id="cont-t">Visítenos en <span class="mark" data-mark>Triana</span>.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="row"><div class="row-n">·</div><div><h3 class="row-t">Dirección</h3><p class="row-d">Calle Triana 45, Las Palmas de Gran Canaria, Islas Canarias.</p></div></div>
+        <div class="row"><div class="row-n">·</div><div><h3 class="row-t">Horario</h3><p class="row-d">Lunes a viernes, 9:00 – 18:00.</p></div></div>
+        <div class="row"><div class="row-n">·</div><div><h3 class="row-t">WhatsApp e Instagram</h3><p class="row-d"><a class="btn-under" href="https://wa.me/34928555123?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita%20en%20el%20Bufete%20Mar%C3%ADn%20Alc%C3%A1zar." target="_blank" rel="noopener">Escríbanos por WhatsApp</a> · @bufetemarinalcazar</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="colofon">
+  <div class="col">
+    <p class="colofon-line">En Las Palmas de Gran Canaria, a julio de 2026.</p>
+    <div class="seal" aria-hidden="true"><span>Bufete<br>Marín<br>Alcázar</span></div>
+    <p class="col-data">
+      <b>Bufete Marín Alcázar · Abogados</b><br>
+      Calle Triana 45 · Las Palmas de Gran Canaria<br>
+      Ilustre Colegio de Abogados de Las Palmas (ICALPA) · Col. nº 4021<br>
+      Ejerciendo desde 2004 · L–V 9:00–18:00
+    </p>
+    <div class="socials">
+      <a href="https://wa.me/34928555123?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita%20en%20el%20Bufete%20Mar%C3%ADn%20Alc%C3%A1zar." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.66.99 3.25 1.58 5.45 1.58 5.45 0 9.9-4.44 9.9-9.9a9.84 9.84 0 0 0-2.9-7 9.82 9.82 0 0 0-7-2.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.31.64 4.04 1.72 5.85l-.99 3.62 3.72-.99zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.29-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.29-.76.96-.93 1.16-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.37-1.46-.87-.78-1.47-1.74-1.64-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.19.05-.36-.02-.51-.07-.15-.66-1.6-.9-2.19-.24-.57-.48-.49-.66-.5l-.56-.01c-.2 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.43 0 1.44 1.05 2.83 1.19 3.02.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.75-.72 2-1.41.24-.69.24-1.28.17-1.41z"/></svg>
+      </a>
+      <a href="https://instagram.com/bufetemarinalcazar" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <p class="stamp">
+      Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio oficial ·
+      <a href="https://medine.tech" target="_blank" rel="noopener">medine.tech</a>
+    </p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/34928555123?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita%20en%20el%20Bufete%20Mar%C3%ADn%20Alc%C3%A1zar." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.66.99 3.25 1.58 5.45 1.58 5.45 0 9.9-4.44 9.9-9.9a9.84 9.84 0 0 0-2.9-7 9.82 9.82 0 0 0-7-2.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.31.64 4.04 1.72 5.85l-.99 3.62 3.72-.99zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.29-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.29-.76.96-.93 1.16-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.37-1.46-.87-.78-1.47-1.74-1.64-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.19.05-.36-.02-.51-.07-.15-.66-1.6-.9-2.19-.24-.57-.48-.49-.66-.5l-.56-.01c-.2 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.43 0 1.44 1.05 2.83 1.19 3.02.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.75-.72 2-1.41.24-.69.24-1.28.17-1.41z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "https://wa.me/34928555123?text=";
+
+  /* ---- condensed letterhead on scroll ---- */
+  var hdr = document.getElementById("hdr");
+  function onScrollHdr(){
+    if(window.scrollY > 90){ hdr.classList.add("condensed"); }
+    else{ hdr.classList.remove("condensed"); }
+  }
+  onScrollHdr();
+
+  /* ---- gold underline: paint when section enters viewport (getBoundingClientRect on scroll) ---- */
+  var marks = Array.prototype.slice.call(document.querySelectorAll("[data-mark]"));
+  function litMarks(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    for(var i=marks.length-1;i>=0;i--){
+      var r = marks[i].getBoundingClientRect();
+      if(r.top < vh*0.82 && r.bottom > 0){
+        marks[i].classList.add("lit");
+        marks.splice(i,1);
+      }
+    }
+  }
+  litMarks();
+
+  var ticking=false;
+  window.addEventListener("scroll", function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        onScrollHdr();
+        litMarks();
+        ticking=false;
+      });
+      ticking=true;
+    }
+  }, {passive:true});
+
+  /* ---- consulta builder: chips + textarea -> WhatsApp ---- */
+  var chipsWrap = document.getElementById("chips");
+  var chips = Array.prototype.slice.call(chipsWrap.querySelectorAll(".chip"));
+  var detalle = document.getElementById("detalle");
+  var pvBody = document.getElementById("pvBody");
+  var sendWa = document.getElementById("sendWa");
+
+  function selectedAreas(){
+    return chips.filter(function(c){return c.classList.contains("active");})
+                .map(function(c){return c.getAttribute("data-area");});
+  }
+
+  function buildMessage(){
+    var areas = selectedAreas();
+    var txt = "";
+    if(areas.length){
+      txt += "Área" + (areas.length>1?"s":"") + ": " + areas.join(", ") + ".\n";
+    }else{
+      txt += "Consulta jurídica.\n";
+    }
+    var d = detalle.value.trim();
+    if(d){ txt += "Mi caso: " + d + "\n"; }
+    txt += "¿Podrían darme cita en el Bufete Marín Alcázar?";
+    return txt;
+  }
+
+  function refresh(){
+    var msg = buildMessage();
+    pvBody.textContent = msg;
+    sendWa.setAttribute("href", WA + encodeURIComponent(msg));
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener("click", function(){
+      c.classList.toggle("active");
+      c.setAttribute("aria-pressed", c.classList.contains("active") ? "true":"false");
+      refresh();
+    });
+    c.setAttribute("aria-pressed","false");
+  });
+  detalle.addEventListener("input", refresh);
+  refresh();
+})();
+</script>
+</html>

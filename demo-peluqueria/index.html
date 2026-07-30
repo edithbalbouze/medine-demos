@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Fibra · Estudio de Peluquería — Tu pelo, tu firma.</title>
+<meta name="description" content="Fibra · Estudio de Peluquería. Corte, color, mechas y tratamientos con productos profesionales sin sulfatos. Calle Luz 22. Reserva por WhatsApp o Instagram.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fibra · Estudio de Peluquería — Tu pelo, tu firma.">
+<meta property="og:description" content="Estudio editorial de peluquería capilar. Color, mechas, balayage y tratamientos con productos sin sulfatos. Calle Luz 22.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%82%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --carbon:#141216;
+    --carbon-2:#1C1A20;
+    --hueso:#EDE7DE;
+    --hueso-dim:#B9B2A8;
+    --cobre:#C6864F;
+    --cobre-hi:#D89A63;
+    --rosa:#D6A3A0;
+    --vino:#7A3B44;
+    --line:rgba(237,231,222,.16);
+    --line-soft:rgba(237,231,222,.09);
+    --grade:contrast(1.06) saturate(1.04) sepia(.12) brightness(.97);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--carbon);
+    color:var(--hueso);
+    font-family:"Be Vietnam Pro",system-ui,sans-serif;
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--cobre);color:var(--carbon)}
+  :focus-visible{outline:2px solid var(--cobre-hi);outline-offset:3px;border-radius:2px}
+
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+  .eyebrow{
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--cobre);font-weight:600;
+  }
+  .num{font-family:"Syne",sans-serif;font-weight:600;color:var(--cobre);font-size:.8rem;letter-spacing:.1em}
+  .display{font-family:"Syne",sans-serif;line-height:.95;font-weight:800;letter-spacing:-.01em}
+
+  /* ---------- wordmark (top-left, minimal) ---------- */
+  .brandbar{
+    position:absolute;top:0;left:0;width:100%;z-index:40;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 22px;pointer-events:none;
+  }
+  .brandbar *{pointer-events:auto}
+  .wordmark{display:flex;align-items:baseline;gap:.5ch;font-family:"Syne",sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.02em}
+  .wordmark .dot{color:var(--cobre)}
+  .wordmark small{font-family:"Be Vietnam Pro",sans-serif;font-weight:400;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--hueso-dim)}
+  .brandbar .ig{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hueso-dim)}
+  .brandbar .ig:hover{color:var(--hueso)}
+
+  /* ---------- vertical RESERVAR tab (fixed right) ---------- */
+  .rtab{
+    position:fixed;top:50%;right:0;z-index:60;
+    transform-origin:100% 0;
+    transform:translateY(-50%) rotate(-90deg) translateX(50%);
+    background:var(--cobre);color:var(--carbon);
+    font-family:"Syne",sans-serif;font-weight:700;
+    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    padding:10px 20px;white-space:nowrap;
+    border-radius:0 0 4px 4px;
+    box-shadow:0 6px 24px rgba(0,0,0,.4);
+    transition:background .25s ease;
+  }
+  .rtab:hover{background:var(--cobre-hi)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:96px 0 40px;overflow:hidden}
+  .hero-grid{display:grid;gap:26px}
+  .hero-copy .eyebrow{display:block;margin-bottom:18px}
+  h1.hero-title{
+    font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:.9;
+    font-size:clamp(3.3rem,17vw,9rem);
+  }
+  h1.hero-title .it{font-style:italic;font-weight:600;color:var(--cobre)}
+  h1.hero-title .thin{display:block;font-weight:500;color:var(--hueso-dim);font-size:.5em;letter-spacing:.02em;margin-top:.1em}
+  .hero-lede{max-width:44ch;margin-top:20px;color:var(--hueso-dim);font-size:1.02rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:28px}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.6ch;
+    font-family:"Syne",sans-serif;font-weight:700;font-size:.82rem;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:15px 26px;background:var(--cobre);color:var(--carbon);
+    border:none;cursor:pointer;transition:background .2s ease,transform .2s ease;
+  }
+  .btn:hover{background:var(--cobre-hi)}
+  .btn:active{transform:translateY(1px)}
+  .btn-underline{
+    font-weight:500;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+    padding-bottom:3px;border-bottom:1px solid var(--cobre);color:var(--hueso);
+  }
+  .btn-underline:hover{border-color:var(--hueso)}
+
+  /* hero portrait + prueba tu color */
+  .hero-shot{position:relative}
+  .shot-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--carbon-2)}
+  .shot-frame::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    box-shadow:inset 0 0 120px 30px rgba(20,18,22,.72);
+  }
+  .shot-frame img{width:100%;height:100%;object-fit:cover;filter:var(--grade);transition:filter .6s ease}
+  @media (prefers-reduced-motion:reduce){.shot-frame img{transition:none}}
+  .shot-tag{
+    position:absolute;left:14px;bottom:14px;z-index:3;
+    display:flex;align-items:center;gap:.6ch;
+    background:rgba(20,18,22,.68);backdrop-filter:blur(3px);
+    border:1px solid var(--line);padding:7px 13px;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .shot-tag .swatch{width:13px;height:13px;border-radius:50%;background:var(--cobre);border:1px solid rgba(237,231,222,.4)}
+  .shot-tag b{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:.06em}
+
+  .color-lab{margin-top:16px}
+  .color-lab .lab-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hueso-dim);display:flex;align-items:center;gap:.7ch;margin-bottom:12px}
+  .color-lab .lab-label::before{content:"";width:22px;height:1px;background:var(--cobre)}
+  .tones{display:flex;flex-wrap:wrap;gap:9px}
+  .tone{
+    display:inline-flex;align-items:center;gap:.55ch;
+    background:transparent;border:1px solid var(--line);
+    color:var(--hueso);cursor:pointer;
+    padding:8px 13px;font-family:"Be Vietnam Pro",sans-serif;font-size:.78rem;
+    transition:border-color .2s ease,background .2s ease;
+  }
+  .tone .chip{width:14px;height:14px;border-radius:50%;border:1px solid rgba(237,231,222,.35)}
+  .tone:hover{border-color:var(--hueso-dim)}
+  .tone[aria-pressed="true"]{border-color:var(--cobre);background:rgba(198,134,79,.14)}
+
+  /* ---------- section framing ---------- */
+  section{position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:14px;padding:0 0 22px}
+  .sec-head h2{font-family:"Syne",sans-serif;font-weight:700;font-size:clamp(1.7rem,6vw,3rem);letter-spacing:-.01em;line-height:1}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* ---------- lookbook rows (full-bleed editorial) ---------- */
+  .lookbook{padding:64px 0 20px}
+  .look-row{position:relative;margin:0 0 4px}
+  .look-media{position:relative;overflow:hidden;background:var(--carbon-2)}
+  .look-media img{width:100%;height:100%;object-fit:cover;filter:var(--grade)}
+  .look-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,22,.66) 0%,rgba(20,18,22,.1) 55%,rgba(20,18,22,0) 100%)}
+  .look-cap{position:absolute;left:20px;bottom:20px;z-index:2;max-width:80%}
+  .look-cap .num{display:block;margin-bottom:6px}
+  .look-cap h3{font-family:"Syne",sans-serif;font-weight:700;font-size:clamp(1.4rem,5vw,2.2rem);line-height:1;letter-spacing:-.01em}
+  .look-cap p{color:var(--hueso-dim);font-size:.9rem;margin-top:7px;max-width:34ch}
+  .look-a .look-media{aspect-ratio:16/13}
+  .look-b .look-media{aspect-ratio:16/11}
+  .look-c .look-media{aspect-ratio:16/13}
+
+  /* ---------- servicios (carta tipográfica) ---------- */
+  .carta{padding:78px 0 30px}
+  .carta-list{border-top:1px solid var(--line)}
+  .carta-item{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;
+    gap:14px;padding:20px 4px;border-bottom:1px solid var(--line-soft);
+    transition:padding-left .25s ease,background .25s ease;
+  }
+  .carta-item:hover{padding-left:14px;background:linear-gradient(90deg,rgba(198,134,79,.07),transparent 60%)}
+  .carta-item .c-num{font-family:"Syne",sans-serif;color:var(--cobre);font-size:.82rem;font-weight:600}
+  .carta-item .c-name{font-family:"Syne",sans-serif;font-weight:600;font-size:1.15rem}
+  .carta-item .c-name span{display:block;font-family:"Be Vietnam Pro",sans-serif;font-weight:300;font-size:.82rem;color:var(--hueso-dim);letter-spacing:0;margin-top:3px}
+  .carta-item .c-price{font-family:"Syne",sans-serif;font-weight:700;font-size:1.05rem;white-space:nowrap;color:var(--hueso)}
+  .carta-item .c-price small{color:var(--hueso-dim);font-weight:400;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;display:block;text-align:right}
+  .carta-note{margin-top:18px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--hueso-dim)}
+
+  /* ---------- estudio ---------- */
+  .estudio{padding:70px 0}
+  .estudio-grid{display:grid;gap:30px}
+  .estudio-text p{color:var(--hueso-dim);margin-top:16px;max-width:52ch}
+  .estudio-text .big{font-family:"Syne",sans-serif;font-weight:600;font-size:clamp(1.4rem,5vw,2rem);color:var(--hueso);line-height:1.15;letter-spacing:-.01em}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+  .fact{background:var(--carbon);padding:20px}
+  .fact .k{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cobre)}
+  .fact .v{font-family:"Syne",sans-serif;font-weight:600;font-size:1.02rem;margin-top:8px}
+  .fact .v small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-weight:300;color:var(--hueso-dim);font-size:.82rem;letter-spacing:0;margin-top:2px}
+
+  /* ---------- reserva (chips → whatsapp) ---------- */
+  .reserva{padding:78px 0 20px}
+  .reserva-panel{border:1px solid var(--line);background:linear-gradient(160deg,var(--carbon-2),var(--carbon))}
+  .reserva-inner{padding:30px 22px}
+  .reserva-inner h2{font-family:"Syne",sans-serif;font-weight:700;font-size:clamp(1.9rem,7vw,3.2rem);line-height:.98;letter-spacing:-.01em}
+  .reserva-inner .lede{color:var(--hueso-dim);margin-top:12px;max-width:46ch}
+  .field{margin-top:26px}
+  .field > .flabel{display:flex;align-items:center;gap:.7ch;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hueso-dim);margin-bottom:12px}
+  .field > .flabel .n{font-family:"Syne",sans-serif;color:var(--cobre);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip-b{
+    background:transparent;border:1px solid var(--line);color:var(--hueso);
+    font-family:"Be Vietnam Pro",sans-serif;font-size:.85rem;cursor:pointer;
+    padding:11px 15px;transition:border-color .2s ease,background .2s ease,color .2s ease;
+  }
+  .chip-b:hover{border-color:var(--hueso-dim)}
+  .chip-b[aria-pressed="true"]{background:var(--cobre);border-color:var(--cobre);color:var(--carbon);font-weight:500}
+  .reserva-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+  .reserva-summary{font-size:.86rem;color:var(--hueso-dim);flex:1 1 220px;min-width:0}
+  .reserva-summary b{color:var(--hueso);font-weight:500}
+
+  /* ---------- footer: espejo de tocador ---------- */
+  .vanity{padding:60px 0 40px}
+  .mirror{
+    position:relative;
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:46px 26px 40px;
+    background:radial-gradient(120% 90% at 50% 0%,rgba(198,134,79,.10),transparent 60%),var(--carbon-2);
+  }
+  .bulbs{position:absolute;inset:0;pointer-events:none}
+  .bulb{
+    position:absolute;width:12px;height:12px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#fff5e4,var(--cobre) 65%,#6b451f 100%);
+    box-shadow:0 0 8px 2px rgba(216,154,99,.45);
+    transform:translate(-50%,-50%);
+  }
+  .mirror-inner{position:relative;text-align:center;z-index:2}
+  .mirror-inner .eyebrow{display:block;margin-bottom:14px}
+  .mirror-inner .mk{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,9vw,3.4rem);letter-spacing:.01em;line-height:1}
+  .mirror-inner .mk .dot{color:var(--cobre)}
+  .mirror-claim{color:var(--hueso-dim);margin-top:8px;font-style:italic}
+  .mirror-contact{display:flex;flex-direction:column;gap:6px;align-items:center;margin-top:22px;font-size:.92rem}
+  .mirror-contact a:hover,.mirror-contact .li:hover{color:var(--cobre-hi)}
+  .mirror-contact .li{color:var(--hueso)}
+  .mirror-contact .muted{color:var(--hueso-dim);font-size:.82rem}
+  .socials{display:flex;gap:14px;justify-content:center;margin-top:22px}
+  .socials a{
+    width:42px;height:42px;border:1px solid var(--line);border-radius:50%;
+    display:grid;place-items:center;color:var(--hueso);transition:border-color .2s ease,color .2s ease,transform .2s ease;
+  }
+  .socials a:hover{border-color:var(--cobre);color:var(--cobre-hi);transform:translateY(-2px)}
+  .socials svg{width:19px;height:19px}
+
+  .sello{margin-top:34px;text-align:center;font-size:.72rem;line-height:1.6;color:var(--hueso-dim);letter-spacing:.02em}
+  .sello a{color:var(--hueso);border-bottom:1px solid var(--cobre)}
+  .sello a:hover{color:var(--cobre-hi)}
+
+  /* ---------- WhatsApp FAB ---------- */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:80;
+    width:56px;height:56px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+    transition:transform .2s ease;
+  }
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:30px;height:30px}
+
+  /* ---------- reveal (staggered on load, CSS only) ---------- */
+  .rv{opacity:0;transform:translateY(26px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rv{animation:none;opacity:1;transform:none}
+  }
+
+  /* ---------- responsive up ---------- */
+  @media (min-width:760px){
+    .wrap{padding:0 40px}
+    .brandbar{padding:26px 40px}
+    .hero{padding:120px 0 60px}
+    .hero-grid{grid-template-columns:1.15fr .85fr;align-items:end;gap:44px}
+    .hero-shot{align-self:stretch}
+    .look-a,.look-c{width:82%}
+    .look-b{width:82%;margin-left:auto}
+    .look-a .look-media{aspect-ratio:16/9}
+    .look-b .look-media{aspect-ratio:2/1}
+    .look-c .look-media{aspect-ratio:16/9}
+    .look-cap{left:32px;bottom:32px}
+    .estudio-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+    .reserva-inner{padding:52px 48px}
+    .facts{margin-top:0}
+    .mirror{padding:60px 48px 52px}
+  }
+  @media (min-width:1024px){
+    .look-a,.look-b,.look-c{width:74%}
+  }
+</style>
+</head>
+<body>
+
+  <!-- wordmark -->
+  <header class="brandbar">
+    <a class="wordmark" href="#top" aria-label="Fibra, Estudio de Peluquería — inicio">
+      Fibra<span class="dot">.</span>&nbsp;<small>Estudio</small>
+    </a>
+    <a class="ig" href="https://instagram.com/fibra.estudio" target="_blank" rel="noopener">@fibra.estudio</a>
+  </header>
+
+  <!-- vertical fixed RESERVAR tab -->
+  <a class="rtab" href="#reserva">Reservar</a>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow rv" style="--d:60ms">Estudio de peluquería · Calle Luz 22</span>
+          <h1 class="hero-title">
+            <span class="rv" style="--d:140ms">Tu pelo,</span>
+            <span class="it rv" style="--d:260ms">tu firma.</span>
+            <span class="thin rv" style="--d:400ms">Color, corte y textura hechos a tu medida.</span>
+          </h1>
+          <p class="hero-lede rv" style="--d:520ms">
+            Un estudio pequeño donde cada cabeza se piensa por separado. Trabajamos con
+            productos profesionales sin sulfatos y con estilistas que escuchan antes de cortar.
+          </p>
+          <div class="hero-cta rv" style="--d:640ms">
+            <a class="btn" href="#reserva">Reservar cita</a>
+            <a class="btn-underline" href="#carta">Ver la carta</a>
+          </div>
+        </div>
+
+        <div class="hero-shot rv" style="--d:340ms">
+          <div class="shot-frame">
+            <img id="colorShot"
+                 src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1100&q=80"
+                 alt="Retrato editorial de una clienta con el cabello voluminoso y natural sobre fondo rosado">
+            <div class="shot-tag">
+              <span class="swatch" id="toneSwatch"></span>
+              <span>Tono: <b id="toneName">Natural</b></span>
+            </div>
+          </div>
+
+          <!-- FIRMA: prueba tu color -->
+          <div class="color-lab">
+            <span class="lab-label">Prueba tu color</span>
+            <div class="tones" id="tones" role="group" aria-label="Prueba un tono de color sobre el retrato">
+              <button class="tone" type="button" aria-pressed="true"  data-name="Natural"     data-filter="none"                                               style="--sw:#b98a5e"><span class="chip" style="background:#b98a5e"></span>Natural</button>
+              <button class="tone" type="button" aria-pressed="false" data-name="Cobre"       data-filter="hue-rotate(-18deg) saturate(1.5) sepia(.28)"        style="--sw:#c6864f"><span class="chip" style="background:#c6864f"></span>Cobre</button>
+              <button class="tone" type="button" aria-pressed="false" data-name="Caramelo"    data-filter="hue-rotate(-8deg) saturate(1.35) sepia(.4) brightness(1.05)" style="--sw:#c99a66"><span class="chip" style="background:#c99a66"></span>Caramelo</button>
+              <button class="tone" type="button" aria-pressed="false" data-name="Rubio miel"  data-filter="hue-rotate(10deg) saturate(1.35) sepia(.5) brightness(1.12)" style="--sw:#d8b276"><span class="chip" style="background:#d8b276"></span>Rubio miel</button>
+              <button class="tone" type="button" aria-pressed="false" data-name="Rosa palo"   data-filter="hue-rotate(-42deg) saturate(1.4) sepia(.22)"        style="--sw:#d6a3a0"><span class="chip" style="background:#d6a3a0"></span>Rosa palo</button>
+              <button class="tone" type="button" aria-pressed="false" data-name="Cereza vino" data-filter="hue-rotate(-58deg) saturate(1.6) sepia(.3)"          style="--sw:#7a3b44"><span class="chip" style="background:#7a3b44"></span>Cereza vino</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOOKBOOK -->
+    <section class="lookbook">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="num">01</span>
+          <h2>Lookbook</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <article class="look-row look-a">
+          <div class="look-media">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1300&q=80"
+                 alt="Cabello ondulado en tonos cálidos peinado con cepillo redondo y secador">
+          </div>
+          <div class="look-cap">
+            <span class="num">A / Color</span>
+            <h3>Balayage que crece bonito</h3>
+            <p>Degradados a mano que respetan tu base y se ven naturales entre cita y cita.</p>
+          </div>
+        </article>
+
+        <article class="look-row look-b">
+          <div class="look-media">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1300&q=80"
+                 alt="Lavado de cabello en el estudio antes del corte">
+          </div>
+          <div class="look-cap">
+            <span class="num">B / Corte</span>
+            <h3>Cortes con intención</h3>
+            <p>Forma pensada para tu textura real, no para la foto de una revista.</p>
+          </div>
+        </article>
+
+        <article class="look-row look-c">
+          <div class="look-media">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1300&q=80"
+                 alt="Estilista peinando a una clienta con secador en el estudio">
+          </div>
+          <div class="look-cap">
+            <span class="num">C / Evento</span>
+            <h3>Recogidos y peinados</h3>
+            <p>Para la boda, el grado o la noche que no se repite. Prueba previa incluida.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="carta" id="carta">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="num">02</span>
+          <h2>Carta de servicios</h2>
+        </div>
+        <div class="carta-list">
+          <div class="carta-item">
+            <span class="c-num">01</span>
+            <span class="c-name">Corte y peinado<span>Lavado, corte y acabado a tu textura</span></span>
+            <span class="c-price">22&euro;<small>desde</small></span>
+          </div>
+          <div class="carta-item">
+            <span class="c-num">02</span>
+            <span class="c-name">Color<span>Raíz o tono completo con productos sin sulfatos</span></span>
+            <span class="c-price">45&euro;<small>desde</small></span>
+          </div>
+          <div class="carta-item">
+            <span class="c-num">03</span>
+            <span class="c-name">Mechas / balayage<span>Iluminaciones y degradados a mano</span></span>
+            <span class="c-price">70&euro;<small>desde</small></span>
+          </div>
+          <div class="carta-item">
+            <span class="c-num">04</span>
+            <span class="c-name">Tratamientos<span>Hidratación profunda y keratina</span></span>
+            <span class="c-price">35&euro;<small>desde</small></span>
+          </div>
+          <div class="carta-item">
+            <span class="c-num">05</span>
+            <span class="c-name">Recogidos y peinados de evento<span>Con prueba previa opcional</span></span>
+            <span class="c-price">40&euro;<small>desde</small></span>
+          </div>
+        </div>
+        <p class="carta-note">Precios de referencia — julio 2026</p>
+      </div>
+    </section>
+
+    <!-- ESTUDIO -->
+    <section class="estudio">
+      <div class="wrap estudio-grid">
+        <div class="estudio-text">
+          <div class="sec-head" style="padding-bottom:16px">
+            <span class="num">03</span>
+            <h2>El estudio</h2>
+          </div>
+          <p class="big">Un equipo pequeño de estilistas y una regla: el cabello sano manda sobre la moda.</p>
+          <p>
+            En Fibra trabajamos con productos profesionales sin sulfatos y con tiempos que no se
+            comprimen: cada cita tiene el espacio para diagnosticar, proponer y ejecutar sin prisa.
+            Preferimos hacer menos cabezas y hacerlas bien.
+          </p>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <div class="k">Dirección</div>
+            <div class="v">Calle Luz 22</div>
+          </div>
+          <div class="fact">
+            <div class="k">Horario</div>
+            <div class="v">Mar &ndash; Sáb<small>10:00 &ndash; 20:00</small></div>
+          </div>
+          <div class="fact">
+            <div class="k">Productos</div>
+            <div class="v">Sin sulfatos<small>Línea profesional</small></div>
+          </div>
+          <div class="fact">
+            <div class="k">Reservas</div>
+            <div class="v">WhatsApp<small>o Instagram DM</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVA (chips → WhatsApp) -->
+    <section class="reserva" id="reserva">
+      <div class="wrap">
+        <div class="reserva-panel">
+          <div class="reserva-inner">
+            <span class="num">04</span>
+            <h2>Reserva tu cita</h2>
+            <p class="lede">Arma tu cita en tres toques y te llevamos directo a WhatsApp con el mensaje listo. Confirmamos disponibilidad y hora exacta por ahí.</p>
+
+            <div class="field">
+              <div class="flabel"><span class="n">01</span> Servicio</div>
+              <div class="chips" id="fService" role="group" aria-label="Elige un servicio">
+                <button class="chip-b" type="button" aria-pressed="false">Corte y peinado</button>
+                <button class="chip-b" type="button" aria-pressed="false">Color</button>
+                <button class="chip-b" type="button" aria-pressed="false">Mechas / balayage</button>
+                <button class="chip-b" type="button" aria-pressed="false">Tratamiento</button>
+                <button class="chip-b" type="button" aria-pressed="false">Recogido de evento</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="flabel"><span class="n">02</span> Estilista</div>
+              <div class="chips" id="fStylist" role="group" aria-label="Elige estilista">
+                <button class="chip-b" type="button" aria-pressed="false">Lucía</button>
+                <button class="chip-b" type="button" aria-pressed="false">Marco</button>
+                <button class="chip-b" type="button" aria-pressed="false">Sin preferencia</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="flabel"><span class="n">03</span> Franja horaria</div>
+              <div class="chips" id="fSlot" role="group" aria-label="Elige franja horaria">
+                <button class="chip-b" type="button" aria-pressed="false">Mañana · 10–13h</button>
+                <button class="chip-b" type="button" aria-pressed="false">Mediodía · 13–16h</button>
+                <button class="chip-b" type="button" aria-pressed="false">Tarde · 16–20h</button>
+              </div>
+            </div>
+
+            <div class="reserva-foot">
+              <p class="reserva-summary" id="summary">Elige servicio, estilista y franja — o escríbenos directo, como prefieras.</p>
+              <a class="btn" id="bookBtn" href="https://wa.me/34680555240" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER: espejo de tocador -->
+    <footer class="vanity">
+      <div class="wrap">
+        <div class="mirror">
+          <div class="bulbs" id="bulbs" aria-hidden="true"></div>
+          <div class="mirror-inner">
+            <span class="eyebrow">Fibra · Estudio de Peluquería</span>
+            <div class="mk">Fibra<span class="dot">.</span></div>
+            <p class="mirror-claim">Tu pelo, tu firma.</p>
+
+            <div class="mirror-contact">
+              <span class="li">Calle Luz 22 · Mar–Sáb 10:00–20:00</span>
+              <a href="https://wa.me/34680555240" target="_blank" rel="noopener">WhatsApp · +34 680 555 240</a>
+              <a href="https://instagram.com/fibra.estudio" target="_blank" rel="noopener">Instagram · @fibra.estudio</a>
+              <span class="muted">Precios de referencia — julio 2026</span>
+            </div>
+
+            <div class="socials">
+              <a href="https://instagram.com/fibra.estudio" target="_blank" rel="noopener" aria-label="Instagram de Fibra Estudio">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </a>
+              <a href="https://wa.me/34680555240" target="_blank" rel="noopener" aria-label="WhatsApp de Fibra Estudio">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="sello">
+          Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio oficial<br>
+          <a href="https://medine.tech" target="_blank" rel="noopener">medine.tech</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp FAB -->
+  <a class="fab" href="https://wa.me/34680555240?text=Hola%20Fibra%2C%20vengo%20desde%20su%20p%C3%A1gina%20web%20y%20quiero%20reservar%20una%20cita." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+    </svg>
+  </a>
+
+<script>
+(function(){
+  "use strict";
+  var GRADE = "contrast(1.06) saturate(1.04) sepia(.12) brightness(.97)";
+
+  /* ---- FIRMA: Prueba tu color ---- */
+  var shot = document.getElementById("colorShot");
+  var toneName = document.getElementById("toneName");
+  var toneSwatch = document.getElementById("toneSwatch");
+  var tones = document.getElementById("tones");
+  if (tones && shot){
+    tones.addEventListener("click", function(e){
+      var b = e.target.closest(".tone");
+      if(!b) return;
+      var btns = tones.querySelectorAll(".tone");
+      for(var i=0;i<btns.length;i++){ btns[i].setAttribute("aria-pressed","false"); }
+      b.setAttribute("aria-pressed","true");
+      var f = b.getAttribute("data-filter");
+      shot.style.filter = (f === "none") ? GRADE : (GRADE + " " + f);
+      toneName.textContent = b.getAttribute("data-name");
+      toneSwatch.style.background = b.style.getPropertyValue("--sw") || "var(--cobre)";
+    });
+  }
+
+  /* ---- Reserva: chips → WhatsApp ---- */
+  var PHONE = "34680555240";
+  var picks = { servicio:null, estilista:null, franja:null };
+  function wireGroup(id, key){
+    var g = document.getElementById(id);
+    if(!g) return;
+    g.addEventListener("click", function(e){
+      var b = e.target.closest(".chip-b");
+      if(!b) return;
+      var pressed = b.getAttribute("aria-pressed") === "true";
+      var all = g.querySelectorAll(".chip-b");
+      for(var i=0;i<all.length;i++){ all[i].setAttribute("aria-pressed","false"); }
+      if(pressed){ picks[key] = null; }
+      else { b.setAttribute("aria-pressed","true"); picks[key] = b.textContent.trim(); }
+      update();
+    });
+  }
+  var summary = document.getElementById("summary");
+  var bookBtn = document.getElementById("bookBtn");
+  function update(){
+    var parts = [];
+    if(picks.servicio) parts.push(picks.servicio);
+    if(picks.estilista && picks.estilista !== "Sin preferencia") parts.push("con " + picks.estilista);
+    if(picks.franja) parts.push("("+picks.franja+")");
+
+    if(parts.length){
+      summary.innerHTML = "Tu cita: <b>" + parts.join(" ") + "</b>";
+    } else {
+      summary.textContent = "Elige servicio, estilista y franja — o escríbenos directo, como prefieras.";
+    }
+
+    var msg = "Hola Fibra, quiero reservar una cita";
+    if(picks.servicio) msg += " de " + picks.servicio.toLowerCase();
+    if(picks.estilista && picks.estilista !== "Sin preferencia") msg += " con " + picks.estilista;
+    if(picks.franja) msg += " en la franja de " + picks.franja.toLowerCase();
+    msg += ". ¿Qué disponibilidad tienen?";
+    bookBtn.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+  }
+  wireGroup("fService","servicio");
+  wireGroup("fStylist","estilista");
+  wireGroup("fSlot","franja");
+  update();
+
+  /* ---- Footer: bombillas del espejo ---- */
+  var bulbs = document.getElementById("bulbs");
+  if(bulbs){
+    var frag = document.createDocumentFragment();
+    var perX = 9, perY = 6, m = 4; // margen % desde el borde
+    function bulb(xp, yp){
+      var el = document.createElement("span");
+      el.className = "bulb";
+      el.style.left = xp + "%";
+      el.style.top = yp + "%";
+      frag.appendChild(el);
+    }
+    var i;
+    for(i=0;i<=perX;i++){ var x = m + (100-2*m)*i/perX; bulb(x, m*0.9); bulb(x, 100-m*0.9); }
+    for(i=1;i<perY;i++){ var y = m + (100-2*m)*i/perY; bulb(m*0.7, y); bulb(100-m*0.7, y); }
+    bulbs.appendChild(frag);
+  }
+})();
+</script>
+</body>
+</html>
