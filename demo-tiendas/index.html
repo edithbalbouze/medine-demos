@@ -1,722 +1,673 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Halo Store — Cosas que te hacen ilusión</title>
-<meta name="description" content="Halo Store — tienda de estilo de vida: moda, accesorios, hogar y regalos. Envíos a toda la isla, cambios en 30 días y atención por WhatsApp.">
+<title>Halo · concept store — Objetos con alma, para el día a día</title>
+<meta name="description" content="Halo, concept store de estilo de vida: curaduría premium de moda, hogar, accesorios y regalos. Personal shopper por WhatsApp.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Halo Store — Cosas que te hacen ilusión">
-<meta property="og:description" content="Moda, accesorios, hogar y regalos. Envíos a toda la isla y atención por WhatsApp.">
+<meta property="og:title" content="Halo · concept store">
+<meta property="og:description" content="Objetos con alma, para el día a día. Curaduría de moda, hogar, accesorios y regalos.">
 <meta property="og:locale" content="es_ES">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%8D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23F4F0E8'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%2363614A' stroke-width='5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0E0E10;
-    --bone:#F3F1EA;
-    --lima:#C7F045;
-    --cobalt:#2B4CF0;
-    --line:3px solid var(--ink);
-    --line-bone:3px solid var(--bone);
-    --shadow: 8px 8px 0 var(--ink);
-    --shadow-bone: 8px 8px 0 var(--bone);
-    --shadow-lima: 8px 8px 0 var(--lima);
-    --shadow-cobalt: 8px 8px 0 var(--cobalt);
+    --greige:#F4F0E8;
+    --ivory:#FBFAF5;
+    --taupe:#ECE6D9;
+    --taupe-deep:#E2DBCB;
+    --espresso:#26231D;
+    --gray:#615B4F;
+    --olive:#63614A;
+    --clay:#B0714F;
+    --dark:#2B2822;
+    --dark-soft:#E8E2D5;
+    --maxw:1180px;
+    --pad:clamp(20px,5vw,64px);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
   body{
-    background:var(--ink);
-    color:var(--bone);
-    font-family:'Public Sans',system-ui,sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    margin:0;background:var(--greige);color:var(--espresso);
+    font-family:"Golos Text",system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;font-weight:400;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  ::selection{background:var(--lima);color:var(--ink)}
+  h1,h2,h3,.serif{font-family:"Italiana",Georgia,"Times New Roman",serif;font-weight:400;line-height:1.02;letter-spacing:.01em;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ::selection{background:var(--olive);color:var(--ivory);}
+  :focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:2px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);}
+  .eyebrow{
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--olive);font-weight:600;margin:0;
+  }
+  .muted{color:var(--gray);}
+  .idx{font-family:"Italiana",serif;color:var(--olive);font-size:.95rem;letter-spacing:.05em;}
 
-  :focus-visible{outline:3px solid var(--lima);outline-offset:3px}
-
-  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:18px}
-
-  .label{
-    font-family:'Public Sans',sans-serif;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.18em;
-    font-size:.7rem;
-  }
-  .display{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;
-    line-height:.9;
-    letter-spacing:-.01em;
-  }
-
-  /* ===== ANNOUNCEMENT RIBBON / MARQUEE ===== */
-  .ribbon{
-    background:var(--lima);
-    color:var(--ink);
-    border-bottom:var(--line);
-    overflow:hidden;
-    padding:9px 0;
-    white-space:nowrap;
-  }
-  .marquee{
-    display:inline-flex;
-    will-change:transform;
-    animation:scroll 26s linear infinite;
-  }
-  .marquee span{
-    font-family:'Public Sans',sans-serif;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    font-size:.8rem;
-    padding-inline:1.4rem;
-  }
-  @keyframes scroll{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
-  }
-
-  /* ===== STICKY NAV ===== */
+  /* ---------- NAV : boutique bar with live list counter ---------- */
   .nav{
-    position:sticky;top:0;z-index:50;
-    background:var(--ink);
-    border-bottom:var(--line-bone);
+    position:sticky;top:0;z-index:60;background:rgba(244,240,232,.86);
+    backdrop-filter:saturate(1.1) blur(9px);-webkit-backdrop-filter:saturate(1.1) blur(9px);
+    transition:border-color .4s ease, box-shadow .4s ease;
+    border-bottom:1px solid transparent;
   }
-  .nav-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:12px;height:64px;
-  }
-  .wordmark{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;
-    font-size:1.7rem;
-    letter-spacing:-.02em;
-    line-height:1;
-    color:var(--bone);
-  }
-  .wordmark b{color:var(--lima)}
-  .nav-links{display:none;gap:26px;align-items:center}
+  .nav.stuck{border-bottom-color:rgba(99,97,74,.28);box-shadow:0 1px 0 rgba(38,35,29,.02);}
+  .nav-in{display:flex;align-items:center;gap:16px;height:60px;}
+  .brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;margin-right:auto;}
+  .brand b{font-family:"Italiana",serif;font-weight:400;font-size:1.7rem;letter-spacing:.02em;}
+  .brand small{font-size:.54rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gray);margin-top:3px;}
+  .nav-links{display:none;gap:26px;align-items:center;}
   .nav-links a{
-    font-weight:600;font-size:.9rem;
-    padding-bottom:2px;border-bottom:2px solid transparent;
-    transition:border-color .15s ease;
+    text-decoration:none;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--espresso);font-weight:500;padding:6px 0;position:relative;
   }
-  .nav-links a:hover{border-color:var(--lima)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--olive);transition:width .3s ease;}
+  .nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%;}
+  .bag{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    border:1px solid rgba(99,97,74,.5);border-radius:999px;padding:7px 14px;
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    color:var(--espresso);background:transparent;cursor:pointer;transition:background .25s,border-color .25s;white-space:nowrap;
+  }
+  .bag:hover{background:var(--taupe);border-color:var(--olive);}
+  .bag svg{width:15px;height:15px;}
+  .bag .cnt{font-variant-numeric:tabular-nums;}
+  .bag.pulse{animation:bagpulse .5s ease;}
+  @keyframes bagpulse{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:clamp(30px,7vw,78px) 0 clamp(48px,9vw,96px);}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,40px);align-items:center;}
+  .hero h1{font-size:clamp(3rem,14vw,7.4rem);margin:.5rem 0 0;letter-spacing:-.005em;}
+  .hero h1 em{font-style:normal;color:var(--olive);}
+  .hero-lead{font-size:clamp(1rem,2.4vw,1.18rem);color:var(--gray);max-width:34ch;margin:1.4rem 0 0;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:2rem;}
+
   .btn{
-    display:inline-block;
-    font-family:'Public Sans',sans-serif;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    font-size:.8rem;
-    background:var(--lima);
-    color:var(--ink);
-    border:var(--line);
-    padding:11px 18px;
-    box-shadow:4px 4px 0 var(--bone);
-    transition:transform .1s ease, box-shadow .1s ease;
-    cursor:pointer;
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;
+    background:var(--espresso);color:var(--ivory);border:1px solid var(--espresso);
+    font-family:"Golos Text";font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    padding:14px 26px;border-radius:2px;transition:background .28s ease, transform .28s ease;
   }
-  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bone)}
-  .btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--bone)}
-  .btn-cobalt{background:var(--cobalt);color:var(--bone)}
+  .btn:hover{background:#3a362d;transform:translateY(-1px);}
+  .link-arrow{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--espresso);
+    border-bottom:1px solid var(--olive);padding-bottom:3px;transition:gap .25s ease,color .25s;
+  }
+  .link-arrow:hover{gap:14px;color:var(--olive);}
 
-  /* ===== HERO ===== */
-  .hero{padding-top:34px;padding-bottom:14px}
+  .hero-media{position:relative;justify-self:center;width:min(430px,86vw);}
+  .hero-stage{position:relative;padding-bottom:8%;}
+  .hero-stage::after{
+    content:"";position:absolute;left:50%;bottom:2%;transform:translateX(-50%);
+    width:64%;height:34px;border-radius:50%;
+    background:radial-gradient(ellipse at center,rgba(38,35,29,.34),rgba(38,35,29,0) 70%);
+    filter:blur(9px);z-index:0;
+  }
+  .float{
+    position:relative;z-index:1;border-radius:4px;overflow:hidden;
+    aspect-ratio:4/5;object-fit:cover;width:100%;
+    box-shadow:0 40px 70px -30px rgba(38,35,29,.42),0 14px 30px -18px rgba(38,35,29,.3);
+    animation:floaty 6s ease-in-out infinite;
+    filter:saturate(.94) contrast(1.02);
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   .hero-tag{
-    display:inline-block;
-    border:var(--line-bone);
-    padding:6px 12px;
-    margin-bottom:20px;
-    color:var(--bone);
+    position:absolute;left:0;bottom:-14px;z-index:2;background:var(--ivory);
+    padding:8px 14px;border-radius:2px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gray);box-shadow:0 10px 24px -14px rgba(38,35,29,.4);
   }
-  h1.hero-title{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;
-    line-height:.86;
-    letter-spacing:-.02em;
-    font-size:clamp(2.6rem,12.5vw,8.5rem);
-    text-transform:uppercase;
-    color:var(--bone);
-  }
-  h1.hero-title em{
-    font-style:normal;
-    color:var(--lima);
-    -webkit-text-stroke:0;
-  }
-  .hero-sub{
-    margin-top:22px;
-    max-width:44ch;
-    font-size:1.05rem;
-    color:var(--bone);
-    opacity:.85;
-  }
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
-  .hero-strip{
-    margin-top:34px;
-    border:var(--line-bone);
-    background:var(--cobalt);
-    box-shadow:var(--shadow-lima);
-    display:grid;grid-template-columns:1fr;
-  }
-  .hero-strip div{
-    padding:16px 18px;
-    border-bottom:var(--line-bone);
-  }
-  .hero-strip div:last-child{border-bottom:0}
-  .hero-strip b{
-    display:block;
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:800;font-size:1.5rem;line-height:1;
-    color:var(--lima);
-  }
-  .hero-strip small{font-size:.82rem;color:var(--bone);opacity:.9}
+  .hero-tag b{color:var(--espresso);font-weight:600;}
 
-  /* ===== SECTION HEADS ===== */
-  section{padding-block:46px}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
-  .sec-num{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:800;font-size:1.1rem;color:var(--lima);
-  }
-  h2{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;line-height:.9;letter-spacing:-.02em;
-    text-transform:uppercase;
-    font-size:clamp(2.2rem,9vw,4rem);
-    color:var(--bone);
-  }
-  .sec-desc{color:var(--bone);opacity:.8;max-width:52ch;margin-bottom:6px}
+  /* ---------- SECTION HEAD ---------- */
+  section{padding:clamp(48px,9vw,104px) 0;}
+  .shead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(26px,5vw,46px);}
+  .shead h2{font-size:clamp(2.2rem,7vw,4rem);margin:.4rem 0 0;}
+  .shead .side{max-width:38ch;color:var(--gray);font-size:.98rem;}
 
-  /* ===== CATEGORIES ===== */
-  .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .cat{
-    border:var(--line-bone);
-    background:var(--ink);
-    box-shadow:6px 6px 0 var(--bone);
-    padding:18px 16px;
-    min-height:120px;
-    display:flex;flex-direction:column;justify-content:space-between;
-    transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
+  /* ---------- SELECCIÓN : editorial asymmetric grid ---------- */
+  .selection{display:grid;grid-template-columns:1fr;gap:clamp(34px,6vw,58px);}
+  .piece{margin:0;}
+  .plate{
+    position:relative;overflow:hidden;border-radius:4px;background:var(--taupe);
+    aspect-ratio:4/5;box-shadow:0 26px 46px -30px rgba(38,35,29,.38);
   }
-  .cat:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--lima);background:var(--lima);color:var(--ink)}
-  .cat .idx{font-weight:700;font-size:.75rem;opacity:.7}
-  .cat h3{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;font-size:2rem;line-height:.9;text-transform:uppercase;
+  .plate--sq{aspect-ratio:1/1;}
+  .plate--tall{aspect-ratio:3/4;}
+  .plate img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:saturate(.92) contrast(1.02);transition:opacity .75s ease, transform 6s ease;
   }
+  .plate .img-b{opacity:0;}
+  .plate:hover .img-a{opacity:0;}
+  .plate:hover .img-b{opacity:1;}
+  .plate:hover img{transform:scale(1.03);}
+  .plate .views{
+    position:absolute;top:12px;right:12px;z-index:2;background:rgba(251,250,245,.9);
+    font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);
+    padding:4px 9px;border-radius:999px;
+  }
+  .p-meta{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:16px;}
+  .p-name{font-family:"Italiana",serif;font-size:1.5rem;line-height:1.1;}
+  .p-price{font-size:.95rem;color:var(--espresso);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .p-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-top:4px;}
+  .p-actions{display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap;}
+  .add-mini{
+    background:none;border:0;cursor:pointer;font-family:"Golos Text";font-weight:600;
+    font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--espresso);
+    display:inline-flex;align-items:center;gap:7px;padding:2px 0;border-bottom:1px solid transparent;transition:border-color .25s;
+  }
+  .add-mini:hover{border-bottom-color:var(--olive);}
+  .add-mini .plus{color:var(--olive);font-size:1rem;line-height:1;}
+  .reserve{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid rgba(99,97,74,.35);padding-bottom:2px;transition:color .25s,border-color .25s;}
+  .reserve:hover{color:var(--olive);border-bottom-color:var(--olive);}
+  .ref-note{margin-top:clamp(24px,4vw,40px);font-size:.72rem;letter-spacing:.06em;color:var(--gray);}
 
-  /* ===== BENTO COLLECTIONS ===== */
-  .bento{display:grid;grid-template-columns:1fr;gap:16px}
-  .tile{
-    position:relative;
-    border:var(--line-bone);
-    box-shadow:var(--shadow-bone);
-    overflow:hidden;
-    background:var(--cobalt);
-    min-height:230px;
-    display:flex;flex-direction:column;justify-content:flex-end;
-    transition:transform .14s ease, box-shadow .14s ease;
-  }
-  .tile:hover{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--lima)}
-  .tile .photo{
-    position:absolute;inset:0;
-    background:var(--cobalt);
-  }
-  .tile .photo img{
-    width:100%;height:100%;object-fit:cover;
-    filter:grayscale(1) contrast(1.15);
-    mix-blend-mode:multiply;
-  }
-  .tile.limaduo .photo{background:var(--lima)}
-  .tile-body{
-    position:relative;z-index:2;
-    padding:16px;
-    background:var(--ink);
-    border-top:var(--line-bone);
-    display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
-  }
-  .tile-body h3{
-    font-family:'Darker Grotesque',sans-serif;
-    font-weight:900;font-size:1.9rem;line-height:.88;text-transform:uppercase;color:var(--bone);
-  }
-  .tag-chip{
-    flex:none;
-    font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.65rem;
-    background:var(--lima);color:var(--ink);
-    border:2px solid var(--ink);
-    padding:5px 8px;
-  }
-  .tile.limaduo .tag-chip{background:var(--cobalt);color:var(--bone);border-color:var(--bone)}
-
-  /* ===== ADVANTAGES ===== */
-  .adv{display:grid;grid-template-columns:1fr;gap:0;border:var(--line-bone)}
-  .adv div{
-    padding:20px 18px;
-    border-bottom:var(--line-bone);
-    display:flex;gap:14px;align-items:flex-start;
-  }
-  .adv div:last-child{border-bottom:0}
-  .adv .n{
-    font-family:'Darker Grotesque',sans-serif;font-weight:900;
-    font-size:1.6rem;line-height:1;color:var(--lima);flex:none;width:2ch;
-  }
-  .adv h3{font-family:'Darker Grotesque',sans-serif;font-weight:800;font-size:1.4rem;line-height:1;text-transform:uppercase;color:var(--bone);margin-bottom:4px}
-  .adv p{font-size:.92rem;color:var(--bone);opacity:.8}
-
-  /* ===== PRICES ===== */
-  .prices{display:grid;grid-template-columns:1fr;gap:14px}
-  .price{
-    border:var(--line-bone);
-    background:var(--ink);
-    box-shadow:6px 6px 0 var(--cobalt);
-    padding:20px 18px;
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
-  }
-  .price .pl .label{color:var(--lima);display:block;margin-bottom:6px}
-  .price .pl b{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:1.7rem;line-height:1;text-transform:uppercase;color:var(--bone)}
-  .price .pr{
-    font-family:'Darker Grotesque',sans-serif;font-weight:900;
-    font-size:2.3rem;line-height:1;color:var(--lima);text-align:right;flex:none;
-  }
-  .price .pr small{display:block;font-family:'Public Sans',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);opacity:.7}
-  .note{margin-top:16px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);opacity:.6;font-weight:600}
-
-  /* ===== COMPOSER / TICKET ===== */
-  .ticket{
-    border:var(--line-bone);
-    background:var(--bone);
-    color:var(--ink);
-    box-shadow:var(--shadow-lima);
-  }
-  .ticket-head{
-    background:var(--ink);color:var(--bone);
-    padding:16px 18px;border-bottom:var(--line-bone);
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .ticket-head .label{color:var(--lima)}
-  .ticket-head .dots{letter-spacing:.3em;color:var(--lima)}
-  .ticket-body{padding:18px}
-  .ticket-body .q{
-    font-family:'Darker Grotesque',sans-serif;font-weight:900;
-    font-size:2.2rem;line-height:.9;text-transform:uppercase;margin-bottom:4px;
-  }
-  .ticket-body .qsub{font-size:.9rem;opacity:.8;margin-bottom:18px}
-  .field{margin-bottom:18px}
-  .field > .label{display:block;margin-bottom:10px;color:var(--ink)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  /* ---------- PERSONAL SHOPPER ---------- */
+  .shopper{background:var(--ivory);}
+  .shop-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,54px);align-items:start;}
+  .chip-group{margin-bottom:22px;}
+  .chip-group > span{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:600;margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
   .chip{
-    font-family:'Public Sans',sans-serif;font-weight:700;font-size:.85rem;
-    background:var(--bone);color:var(--ink);
-    border:2px solid var(--ink);
-    padding:9px 13px;cursor:pointer;
-    transition:transform .1s ease, box-shadow .1s ease, background .1s ease, color .1s ease;
-    box-shadow:3px 3px 0 var(--ink);
+    font-family:"Golos Text";font-size:.8rem;letter-spacing:.02em;color:var(--espresso);
+    background:var(--taupe);border:1px solid transparent;border-radius:999px;padding:9px 16px;cursor:pointer;
+    transition:background .22s,border-color .22s,color .22s;
   }
-  .chip:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
-  .chip[aria-pressed="true"]{background:var(--cobalt);color:var(--bone);box-shadow:3px 3px 0 var(--lima)}
-  .ticket-total{
-    border-top:2px dashed var(--ink);
-    padding-top:16px;margin-top:4px;
+  .chip:hover{border-color:rgba(99,97,74,.5);}
+  .chip.active{background:var(--espresso);color:var(--ivory);}
+  .chip.active::before{content:"— ";color:var(--olive);}
+  .note{
+    background:var(--taupe);border-radius:4px;padding:clamp(22px,4vw,34px);
+    box-shadow:0 30px 54px -34px rgba(38,35,29,.4);
   }
-  .ticket-preview{
-    background:var(--ink);color:var(--bone);
-    border:2px solid var(--ink);
-    padding:12px 14px;margin-bottom:16px;
-    font-size:.92rem;min-height:52px;
+  .note h3{font-size:1.7rem;margin:0 0 4px;}
+  .note .note-sub{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin:0 0 18px;}
+  .note ul{list-style:none;margin:0;padding:0;min-height:56px;}
+  .note li{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid rgba(99,97,74,.28);font-size:.92rem;}
+  .note li:first-child{border-top:0;}
+  .note li .x{background:none;border:0;cursor:pointer;color:var(--gray);font-size:1rem;line-height:1;padding:0 2px;transition:color .2s;}
+  .note li .x:hover{color:var(--clay);}
+  .note .empty{color:var(--gray);font-size:.9rem;padding:14px 0;}
+  .note-cta{margin-top:20px;}
+  .wa-btn{
+    display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;text-decoration:none;
+    background:var(--espresso);color:var(--ivory);border-radius:2px;padding:15px 22px;
+    font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;transition:background .28s;
   }
-  .ticket-preview b{color:var(--lima)}
-  .ticket .btn{width:100%;text-align:center;box-shadow:5px 5px 0 var(--ink)}
-  .ticket .btn:hover{box-shadow:7px 7px 0 var(--ink)}
-  .ticket .btn:active{box-shadow:0 0 0 var(--ink)}
+  .wa-btn:hover{background:#3a362d;}
+  .wa-btn svg{width:16px;height:16px;}
 
-  /* ===== CONTACT ===== */
-  .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
-  .info-block{border:var(--line-bone);padding:20px 18px}
-  .info-block .label{color:var(--lima);display:block;margin-bottom:8px}
-  .info-block p{color:var(--bone);font-size:1rem}
-  .info-block b{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:1.6rem;line-height:1;text-transform:uppercase;color:var(--bone);display:block}
+  /* ---------- LA CASA (editorial column) ---------- */
+  .casa{background:var(--taupe-deep);}
+  .casa-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,52px);align-items:center;}
+  .casa-media{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 56px -34px rgba(38,35,29,.42);}
+  .casa-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02);}
+  .casa-copy h2{font-size:clamp(2rem,6vw,3.4rem);margin:.6rem 0 0;}
+  .casa-copy p{color:var(--gray);margin:1.1rem 0 0;max-width:46ch;}
+  .casa-copy p strong{color:var(--espresso);font-weight:500;}
 
-  /* ===== FOOTER (brutalist grid) ===== */
-  footer{border-top:var(--line-bone);margin-top:20px}
-  .fgrid{display:grid;grid-template-columns:1fr 1fr}
-  .fcell{border-right:var(--line-bone);border-bottom:var(--line-bone);padding:22px 18px;min-height:120px}
-  .fcell:nth-child(2n){border-right:0}
-  .fcell.brand{
-    grid-column:1 / -1;
-    background:var(--lima);color:var(--ink);
-    border-right:0;
-    display:flex;align-items:center;
-    overflow:hidden;padding:14px 18px;
-  }
-  .fcell.brand .big{
-    font-family:'Darker Grotesque',sans-serif;font-weight:900;
-    font-size:clamp(3.6rem,22vw,9rem);line-height:.8;letter-spacing:-.03em;
-    text-transform:uppercase;white-space:nowrap;
-  }
-  .fcell .label{color:var(--lima);display:block;margin-bottom:10px}
-  .fcell p{color:var(--bone);font-size:.95rem}
-  .socials{display:flex;gap:10px;margin-top:4px}
-  .socials a{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:44px;height:44px;border:var(--line-bone);color:var(--bone);
-    transition:transform .1s ease, background .1s ease, color .1s ease;
-  }
-  .socials a:hover{background:var(--lima);color:var(--ink);transform:translate(-2px,-2px)}
-  .socials svg{width:20px;height:20px;fill:currentColor}
-  .seal{
-    grid-column:1 / -1;border-right:0;border-bottom:0;
-    background:var(--ink);
-    display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;
-    padding:16px 18px;
-  }
-  .seal p{font-size:.72rem;color:var(--bone);opacity:.65;max-width:60ch}
-  .seal a{color:var(--lima);font-weight:700;border-bottom:1px solid var(--lima)}
+  /* ---------- VENTAJAS ---------- */
+  .adv{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid rgba(99,97,74,.32);}
+  .adv-row{display:grid;grid-template-columns:auto 1fr;gap:16px 22px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(99,97,74,.32);}
+  .adv-row .n{font-family:"Italiana",serif;color:var(--olive);font-size:1.1rem;}
+  .adv-row h3{font-family:"Italiana",serif;font-size:1.35rem;margin:0;font-weight:400;}
+  .adv-row p{margin:6px 0 0;color:var(--gray);font-size:.92rem;}
 
-  /* ===== WHATSAPP FAB ===== */
+  /* ---------- VISITA ---------- */
+  .visit{background:var(--ivory);}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,5vw,44px);}
+  .vcard{border-top:1px solid rgba(99,97,74,.32);padding-top:16px;}
+  .vcard span{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:600;}
+  .vcard p{margin:8px 0 0;font-size:1.05rem;}
+  .vcard a{color:var(--espresso);text-decoration:none;border-bottom:1px solid var(--olive);}
+
+  /* ---------- FOOTER : magazine back cover ---------- */
+  .backcover{background:var(--dark);color:var(--dark-soft);padding:clamp(52px,9vw,96px) 0 clamp(30px,5vw,44px);}
+  .bc-top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+  .bc-word{font-family:"Italiana",serif;font-size:clamp(3.4rem,14vw,7rem);line-height:.9;color:var(--ivory);}
+  .bc-vol{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:#9c968a;}
+  .bc-line{height:1px;background:rgba(232,226,213,.18);border:0;margin:clamp(28px,5vw,44px) 0;}
+  .bc-cols{display:grid;grid-template-columns:1fr;gap:26px;}
+  .bc-cols h4{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#9c968a;font-weight:600;margin:0 0 10px;}
+  .bc-cols p{margin:0;font-size:.95rem;line-height:1.7;color:var(--dark-soft);}
+  .socials{display:flex;gap:14px;margin-top:4px;flex-wrap:wrap;}
+  .socials a{display:inline-flex;align-items:center;gap:8px;color:var(--dark-soft);text-decoration:none;font-size:.9rem;transition:color .25s;}
+  .socials a:hover{color:var(--ivory);}
+  .socials svg{width:18px;height:18px;}
+  .seal{margin-top:clamp(32px,6vw,52px);padding-top:22px;border-top:1px solid rgba(232,226,213,.18);font-size:.74rem;color:#9c968a;line-height:1.6;}
+  .seal a{color:var(--dark-soft);text-decoration:none;border-bottom:1px solid rgba(232,226,213,.4);}
+  .seal a:hover{color:var(--ivory);}
+
+  /* ---------- FAB WhatsApp ---------- */
   .fab{
-    position:fixed;right:16px;bottom:16px;z-index:100;
-    width:58px;height:58px;border-radius:50%;
-    background:#25D366;border:3px solid var(--ink);
-    box-shadow:4px 4px 0 var(--ink);
-    display:flex;align-items:center;justify-content:center;
-    transition:transform .12s ease, box-shadow .12s ease;
+    position:fixed;right:18px;bottom:18px;z-index:80;width:56px;height:56px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;text-decoration:none;
+    box-shadow:0 12px 28px -8px rgba(37,211,102,.6),0 6px 14px -6px rgba(0,0,0,.3);
+    transition:transform .25s ease;
   }
-  .fab:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-  .fab:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
-  .fab svg{width:32px;height:32px;fill:#fff}
+  .fab:hover{transform:scale(1.06);}
+  .fab svg{width:30px;height:30px;}
 
-  /* ===== RESPONSIVE ===== */
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- RESPONSIVE ---------- */
   @media(min-width:680px){
-    .cats{grid-template-columns:repeat(4,1fr)}
-    .adv{grid-template-columns:repeat(3,1fr)}
-    .adv div{border-bottom:0;border-right:var(--line-bone)}
-    .adv div:last-child{border-right:0}
-    .prices{grid-template-columns:repeat(3,1fr)}
-    .price{flex-direction:column;align-items:flex-start;gap:18px}
-    .price .pr{text-align:left}
-    .hero-strip{grid-template-columns:repeat(3,1fr)}
-    .hero-strip div{border-bottom:0;border-right:var(--line-bone)}
-    .hero-strip div:last-child{border-right:0}
-    .contact-grid{grid-template-columns:repeat(3,1fr)}
-    .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:190px}
-    .tile{min-height:0}
-    .tile.t1{grid-column:span 4;grid-row:span 2}
-    .tile.t2{grid-column:span 2;grid-row:span 1}
-    .tile.t3{grid-column:span 2;grid-row:span 1}
-    .tile.t4{grid-column:span 6;grid-row:span 1}
+    .selection{grid-template-columns:repeat(12,1fr);align-items:start;}
+    .piece--a{grid-column:1 / span 7;}
+    .piece--b{grid-column:8 / span 5;margin-top:52px;}
+    .piece--c{grid-column:1 / span 5;}
+    .piece--d{grid-column:6 / span 7;margin-top:40px;}
+    .piece--e{grid-column:2 / span 5;}
+    .piece--f{grid-column:8 / span 5;margin-top:56px;}
+    .visit-grid{grid-template-columns:repeat(3,1fr);}
+    .bc-cols{grid-template-columns:repeat(3,1fr);}
+    .adv{grid-template-columns:1fr 1fr;column-gap:52px;}
   }
   @media(min-width:900px){
-    .nav-links{display:flex}
-    .hero{padding-top:56px}
-    .hero-inner{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:end}
-    .hero-strip{margin-top:0}
-    .ticket-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
-    .ticket-cols .left{border-right:var(--line-bone);padding:18px}
-    .ticket-cols .right{padding:18px}
-    .fgrid{grid-template-columns:2fr 1fr 1fr}
-    .fcell{border-right:var(--line-bone)}
-    .fcell:nth-child(2n){border-right:var(--line-bone)}
-    .bento .tile.t4{grid-column:span 6}
+    .nav-links{display:flex;}
+    .hero-grid{grid-template-columns:1.05fr .95fr;}
+    .hero-media{width:min(460px,42vw);justify-self:end;}
+    .shop-grid{grid-template-columns:1.15fr .85fr;}
+    .casa-grid{grid-template-columns:.85fr 1.15fr;}
   }
-
-  @media(prefers-reduced-motion:reduce){
-    *{scroll-behavior:auto!important}
-    .marquee{animation:none!important;transform:none!important}
-    .btn,.cat,.tile,.chip,.fab,.socials a{transition:none!important}
+  @media (prefers-reduced-motion:reduce){
+    .float{animation:none;}
+    *{transition-duration:.001ms !important;animation-duration:.001ms !important;animation-iteration-count:1 !important;}
+    .reveal{opacity:1;transform:none;}
   }
 </style>
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT RIBBON -->
-  <div class="ribbon" aria-hidden="true">
-    <div class="marquee">
-      <span>Envíos a toda la isla</span><span>·</span><span>Nueva colección</span><span>·</span><span>−20% primera compra</span><span>·</span><span>Cambios en 30 días</span><span>·</span>
-      <span>Envíos a toda la isla</span><span>·</span><span>Nueva colección</span><span>·</span><span>−20% primera compra</span><span>·</span><span>Cambios en 30 días</span><span>·</span>
-    </div>
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Halo, inicio">
+      <b>Halo</b><small>concept store</small>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#seleccion">Selección</a>
+      <a href="#casa">La casa</a>
+      <a href="#visita">Visita</a>
+    </nav>
+    <button class="bag" id="bagBtn" aria-label="Ver mi lista de personal shopper">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      Lista (<span class="cnt" id="bagCount">0</span>)
+    </button>
   </div>
+</header>
 
-  <!-- STICKY NAV -->
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="wordmark" aria-label="Halo Store, inicio">Halo<b>.</b>Store</a>
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#categorias">Categorías</a>
-        <a href="#colecciones">Colecciones</a>
-        <a href="#precios">Precios</a>
-        <a href="#buscas">¿Qué buscas?</a>
-        <a href="#contacto">Visítanos</a>
-      </nav>
-      <a class="btn" href="#buscas">Comprar</a>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Concept store · Calle del Mercado 12</p>
+        <h1 id="h1">Objetos con <em>alma</em>, para el día a día.</h1>
+        <p class="hero-lead">Curaduría propia de moda, hogar, accesorios y regalos. Una selección pequeña, elegida a mano, para vestir la vida cotidiana con intención.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#shopper">Personal shopper</a>
+          <a class="link-arrow" href="#seleccion">Ver la selección →</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-stage">
+          <img class="float" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1100&q=80&auto=format&fit=crop" alt="Bolso de piel de la selección Halo sobre fondo neutro" width="900" height="1125" loading="eager">
+          <span class="hero-tag">Pieza del mes · <b>Bolso de piel — 120 €</b></span>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero wrap" aria-labelledby="h1">
-      <div class="hero-inner">
+  <!-- SELECCIÓN -->
+  <section id="seleccion" aria-labelledby="sel-h">
+    <div class="wrap">
+      <div class="shead reveal">
         <div>
-          <span class="hero-tag label">Tienda de estilo de vida</span>
-          <h1 class="hero-title" id="h1">Cosas que te<br><em>hacen ilusión.</em></h1>
-          <p class="hero-sub">Moda, accesorios, hogar y regalos elegidos con cariño. Pasa por el local o pídelo por WhatsApp: te lo llevamos a toda la isla.</p>
-          <div class="hero-cta">
-            <a class="btn" href="#colecciones">Ver colecciones</a>
-            <a class="btn btn-cobalt" href="#buscas">Arma tu pedido</a>
+          <span class="idx">01 — Curaduría</span>
+          <h2 id="sel-h">La selección</h2>
+        </div>
+        <p class="side">Piezas que rotan cada temporada. Pasa el cursor o toca una para verla en dos vistas y súmala a tu lista de personal shopper.</p>
+      </div>
+
+      <div class="selection">
+        <!-- 1 -->
+        <figure class="piece piece--a reveal">
+          <div class="plate plate--tall">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=900&q=80&auto=format&fit=crop" alt="Jersey de lino doblado, tono natural" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=900&q=80&auto=format&fit=crop" alt="Jersey de lino, detalle del tejido" loading="lazy">
           </div>
+          <div class="p-meta"><span class="p-name">Jersey de lino</span><span class="p-price">68 &euro;</span></div>
+          <p class="p-cat">Moda</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Jersey de lino" data-price="68 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Jersey de lino (68 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+        <!-- 2 -->
+        <figure class="piece piece--b reveal">
+          <div class="plate plate--sq">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=900&q=80&auto=format&fit=crop" alt="Vela de cera de soja encendida" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=900&q=80&auto=format&fit=crop" alt="Vela de cera de soja en soporte de cerámica" loading="lazy">
+          </div>
+          <div class="p-meta"><span class="p-name">Vela de cera de soja</span><span class="p-price">24 &euro;</span></div>
+          <p class="p-cat">Hogar</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Vela de cera de soja" data-price="24 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Vela de cera de soja (24 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+        <!-- 3 -->
+        <figure class="piece piece--c reveal">
+          <div class="plate plate--sq">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=900&q=80&auto=format&fit=crop" alt="Cesta trenzada a mano" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=900&q=80&auto=format&fit=crop" alt="Cesta trenzada, detalle del trenzado" loading="lazy">
+          </div>
+          <div class="p-meta"><span class="p-name">Cesta trenzada a mano</span><span class="p-price">39 &euro;</span></div>
+          <p class="p-cat">Hogar</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Cesta trenzada a mano" data-price="39 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Cesta trenzada a mano (39 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+        <!-- 4 -->
+        <figure class="piece piece--d reveal">
+          <div class="plate plate--tall">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=900&q=80&auto=format&fit=crop" alt="Pañuelo de seda estampado" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&q=80&auto=format&fit=crop" alt="Pañuelo de seda anudado" loading="lazy">
+          </div>
+          <div class="p-meta"><span class="p-name">Pañuelo de seda</span><span class="p-price">45 &euro;</span></div>
+          <p class="p-cat">Accesorios</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Pañuelo de seda" data-price="45 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Pañuelo de seda (45 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+        <!-- 5 -->
+        <figure class="piece piece--e reveal">
+          <div class="plate plate--sq">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=900&q=80&auto=format&fit=crop" alt="Taza de gres artesanal" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=900&q=80&auto=format&fit=crop" alt="Taza de gres, detalle del esmalte" loading="lazy">
+          </div>
+          <div class="p-meta"><span class="p-name">Taza de gres</span><span class="p-price">18 &euro;</span></div>
+          <p class="p-cat">Hogar</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Taza de gres" data-price="18 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Taza de gres (18 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+        <!-- 6 -->
+        <figure class="piece piece--f reveal">
+          <div class="plate plate--tall">
+            <span class="views">2 vistas</span>
+            <img class="img-a" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&q=80&auto=format&fit=crop" alt="Bolso de piel colgado" loading="lazy">
+            <img class="img-b" src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=900&q=80&auto=format&fit=crop" alt="Bolso de piel, detalle del asa" loading="lazy">
+          </div>
+          <div class="p-meta"><span class="p-name">Bolso de piel</span><span class="p-price">120 &euro;</span></div>
+          <p class="p-cat">Accesorios</p>
+          <div class="p-actions">
+            <button class="add-mini" data-name="Bolso de piel" data-price="120 &euro;"><span class="plus">+</span> Añadir a la lista</button>
+            <a class="reserve" href="#" data-wa="Bolso de piel (120 euros)">Reservar pieza</a>
+          </div>
+        </figure>
+      </div>
+      <p class="ref-note">Precios de referencia — julio 2026.</p>
+    </div>
+  </section>
+
+  <!-- PERSONAL SHOPPER -->
+  <section id="shopper" class="shopper" aria-labelledby="shop-h">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div>
+          <span class="idx">02 — Asesoría</span>
+          <h2 id="shop-h">Personal shopper</h2>
         </div>
-        <div class="hero-strip" role="list">
-          <div role="listitem"><b>+400</b><small>Productos en tienda</small></div>
-          <div role="listitem"><b>30 días</b><small>Para cambios</small></div>
-          <div role="listitem"><b>L–S</b><small>10:00 – 21:00</small></div>
-        </div>
+        <p class="side">Cuéntanos qué buscas y para quién. Armamos una nota de estilismo y seguimos la conversación por WhatsApp, sin compromiso.</p>
       </div>
-    </section>
 
-    <!-- CATEGORIES -->
-    <section id="categorias" class="wrap">
-      <div class="sec-head">
-        <span class="sec-num">01</span>
-        <h2>Categorías</h2>
-      </div>
-      <p class="sec-desc">Cuatro mundos dentro de una misma tienda. Elige por dónde empezar.</p>
-      <div class="cats">
-        <a class="cat" href="#buscas"><span class="idx">01 / Vestir</span><h3>Ropa</h3></a>
-        <a class="cat" href="#buscas"><span class="idx">02 / Detalles</span><h3>Accesorios</h3></a>
-        <a class="cat" href="#buscas"><span class="idx">03 / Tu espacio</span><h3>Hogar</h3></a>
-        <a class="cat" href="#buscas"><span class="idx">04 / Para dar</span><h3>Regalos</h3></a>
-      </div>
-    </section>
-
-    <!-- BENTO COLLECTIONS -->
-    <section id="colecciones" class="wrap">
-      <div class="sec-head">
-        <span class="sec-num">02</span>
-        <h2>Novedades</h2>
-      </div>
-      <p class="sec-desc">Lo que acaba de llegar y lo que no dura en el estante. Fotos de referencia de nuestras colecciones.</p>
-      <div class="bento">
-        <article class="tile t1">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80" alt="Perchero con prendas de la nueva temporada en Halo Store" loading="lazy"></div>
-          <div class="tile-body"><h3>Nueva<br>temporada</h3><span class="tag-chip">Recién llegado</span></div>
-        </article>
-        <article class="tile t2 limaduo">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&q=80" alt="Prendas básicas colgadas en percha" loading="lazy"></div>
-          <div class="tile-body"><h3>Básicos</h3><span class="tag-chip">Siempre</span></div>
-        </article>
-        <article class="tile t3">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80" alt="Accesorio de edición limitada sobre fondo neutro" loading="lazy"></div>
-          <div class="tile-body"><h3>Edición<br>limitada</h3><span class="tag-chip">Pocas unidades</span></div>
-        </article>
-        <article class="tile t4 limaduo">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&q=80" alt="Prendas de colores en sección de rebajas" loading="lazy"></div>
-          <div class="tile-body"><h3>Rebajas</h3><span class="tag-chip">Hasta −40%</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ADVANTAGES -->
-    <section class="wrap" aria-labelledby="ventajas">
-      <div class="sec-head">
-        <span class="sec-num">03</span>
-        <h2 id="ventajas">Cómo compras</h2>
-      </div>
-      <div class="adv">
-        <div><span class="n">A</span><div><h3>Envíos a toda la isla</h3><p>Coordinamos la entrega donde estés. Rápido y con seguimiento por WhatsApp.</p></div></div>
-        <div><span class="n">B</span><div><h3>Cambios en 30 días</h3><p>¿No era lo que esperabas? Lo cambias sin dramas dentro de los 30 días.</p></div></div>
-        <div><span class="n">C</span><div><h3>Atención por WhatsApp</h3><p>Te reservamos tallas, resolvemos dudas y armamos tu pedido por chat.</p></div></div>
-      </div>
-    </section>
-
-    <!-- PRICES -->
-    <section id="precios" class="wrap">
-      <div class="sec-head">
-        <span class="sec-num">04</span>
-        <h2>Precios</h2>
-      </div>
-      <p class="sec-desc">Algunos puntos de partida para que te hagas una idea.</p>
-      <div class="prices">
-        <div class="price">
-          <div class="pl"><span class="label">Ropa</span><b>Camisetas</b></div>
-          <div class="pr">19€<small>Desde</small></div>
-        </div>
-        <div class="price">
-          <div class="pl"><span class="label">Accesorios</span><b>Detalles</b></div>
-          <div class="pr">9€<small>Desde</small></div>
-        </div>
-        <div class="price">
-          <div class="pl"><span class="label">Hogar</span><b>Decoración</b></div>
-          <div class="pr">14€<small>Desde</small></div>
-        </div>
-      </div>
-      <p class="note">Precios de referencia — julio 2026</p>
-    </section>
-
-    <!-- COMPOSER / TICKET -->
-    <section id="buscas" class="wrap" aria-labelledby="buscas-h">
-      <div class="sec-head">
-        <span class="sec-num">05</span>
-        <h2 id="buscas-h">¿Qué buscas?</h2>
-      </div>
-      <p class="sec-desc">Marca lo que te interesa y te armamos un mensaje listo para enviarnos por WhatsApp. Sin cuentas, sin líos.</p>
-
-      <div class="ticket">
-        <div class="ticket-head">
-          <span class="label">Ticket Halo</span>
-          <span class="dots" aria-hidden="true">· · · · ·</span>
-        </div>
-        <div class="ticket-cols">
-          <div class="left">
-            <p class="q">Tu pedido</p>
-            <p class="qsub">Elige categoría y ocasión o talla. Puedes cambiar tus elecciones cuando quieras.</p>
-
-            <div class="field">
-              <span class="label">Categoría</span>
-              <div class="chips" role="group" aria-label="Categoría" data-group="cat" data-single="true">
-                <button type="button" class="chip" aria-pressed="false" data-val="Ropa">Ropa</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="Accesorios">Accesorios</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="Hogar">Hogar</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="Regalos">Regalos</button>
-              </div>
-            </div>
-
-            <div class="field">
-              <span class="label">Ocasión / talla</span>
-              <div class="chips" role="group" aria-label="Ocasión o talla" data-group="occ">
-                <button type="button" class="chip" aria-pressed="false" data-val="para el día a día">Día a día</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="para un regalo">Un regalo</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="talla S">Talla S</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="talla M">Talla M</button>
-                <button type="button" class="chip" aria-pressed="false" data-val="talla L">Talla L</button>
-              </div>
+      <div class="shop-grid">
+        <div class="reveal">
+          <div class="chip-group">
+            <span>Busco para</span>
+            <div class="chips" data-group="cat">
+              <button class="chip" data-val="Moda">Moda</button>
+              <button class="chip" data-val="Hogar">Hogar</button>
+              <button class="chip" data-val="Accesorios">Accesorios</button>
+              <button class="chip" data-val="Regalos">Regalos</button>
             </div>
           </div>
-
-          <div class="right">
-            <div class="ticket-total">
-              <span class="label" style="display:block;margin-bottom:8px;color:var(--ink)">Vista previa del mensaje</span>
-              <p class="ticket-preview" id="preview" aria-live="polite">Hola Halo, busco algo en la tienda 👀</p>
-              <a class="btn" id="waSend" href="https://wa.me/34640555220?text=Hola%20Halo%2C%20busco%20algo%20en%20la%20tienda" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <div class="chip-group">
+            <span>Ocasión y estilo</span>
+            <div class="chips" data-group="occ">
+              <button class="chip" data-val="Es un regalo">Es un regalo</button>
+              <button class="chip" data-val="Para mí">Para mí</button>
+              <button class="chip" data-val="Talla S–M">Talla S–M</button>
+              <button class="chip" data-val="Talla L–XL">Talla L–XL</button>
+              <button class="chip" data-val="Tonos neutros cálidos">Tonos neutros cálidos</button>
             </div>
           </div>
+          <button class="add-mini" id="addPrefs" style="margin-top:6px"><span class="plus">+</span> Añadir esta preferencia a la lista</button>
         </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contacto" class="wrap">
-      <div class="sec-head">
-        <span class="sec-num">06</span>
-        <h2>Visítanos</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="info-block">
-          <span class="label">Dónde estamos</span>
-          <b>C.C. Centro</b>
-          <p>Planta 1 · Local de Halo Store</p>
-        </div>
-        <div class="info-block">
-          <span class="label">Horario</span>
-          <b>L – S</b>
-          <p>10:00 – 21:00</p>
-        </div>
-        <div class="info-block">
-          <span class="label">Escríbenos</span>
-          <b>WhatsApp</b>
-          <p>Te atendemos por chat todos los días de tienda.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER (brutalist grid) -->
-  <footer>
-    <div class="fgrid">
-      <div class="fcell brand"><span class="big">Halo.Store</span></div>
-      <div class="fcell">
-        <span class="label">Contacto</span>
-        <p>C.C. Centro, planta 1</p>
-        <p>WhatsApp: +34 640 555 220</p>
-        <p>Instagram: @halo.store</p>
-      </div>
-      <div class="fcell">
-        <span class="label">Horario</span>
-        <p>Lunes a sábado</p>
-        <p>10:00 – 21:00</p>
-        <p>Domingos cerrado</p>
-      </div>
-      <div class="fcell">
-        <span class="label">Síguenos</span>
-        <div class="socials">
-          <a href="https://instagram.com/halo.store" target="_blank" rel="noopener" aria-label="Instagram de Halo Store">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.86.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52.01-4.76.07-.9.04-1.38.19-1.7.32-.43.16-.74.37-1.06.69-.32.32-.53.63-.69 1.06-.13.32-.28.8-.32 1.7C3.41 8.48 3.4 8.85 3.4 12s.01 3.52.07 4.76c.04.9.19 1.38.32 1.7.16.43.37.74.69 1.06.32.32.63.53 1.06.69.32.13.8.28 1.7.32 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.37 1.06-.69.32-.32.53-.63.69-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.19-1.38-.32-1.7a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.32-.13-.8-.28-1.7-.32C15.52 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.14A3.2 3.2 0 1 0 8.8 12 3.2 3.2 0 0 0 12 15.2Zm6.29-8.34a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
-          </a>
-          <a href="https://wa.me/34640555220" target="_blank" rel="noopener" aria-label="WhatsApp de Halo Store">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-2.85.89.9-2.78-.19-.31A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="fcell seal">
-        <p>Demo diseñada por Medine.tech · Esta es una propuesta de diseño — no es el sitio oficial</p>
-        <p><a href="https://medine.tech" target="_blank" rel="noopener">medine.tech</a></p>
+        <aside class="note reveal" aria-live="polite">
+          <h3>Tu nota de estilismo</h3>
+          <p class="note-sub">Halo · concept store</p>
+          <ul id="noteList">
+            <li class="empty" id="noteEmpty">Aún no has añadido piezas ni preferencias.</li>
+          </ul>
+          <div class="note-cta">
+            <a class="wa-btn" id="waSend" href="https://wa.me/34640555220" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3Zm4.6-6.1c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3Z"/></svg>
+              Pedir asesoría por WhatsApp
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- WHATSAPP FAB -->
-  <a class="fab" href="https://wa.me/34640555220?text=Hola%20Halo%2C%20me%20interesa%20la%20tienda%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg>
-  </a>
+  <!-- LA CASA -->
+  <section id="casa" class="casa" aria-labelledby="casa-h">
+    <div class="wrap casa-grid">
+      <div class="casa-media reveal">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1000&q=80&auto=format&fit=crop" alt="Interior cálido de la tienda Halo con objetos de la selección" loading="lazy">
+      </div>
+      <div class="casa-copy reveal">
+        <span class="idx">03 — La casa</span>
+        <h2 id="casa-h">La casa Halo</h2>
+        <p>Nacimos como una tienda pequeña con una idea grande: que lo cotidiano también merece belleza. Elegimos cada pieza a mano, <strong>por su material y su historia</strong> antes que por su etiqueta.</p>
+        <p>Trabajamos con lino lavado, cera de soja, gres esmaltado, seda y pieles de curtido vegetal. Menos piezas, mejor elegidas. <strong>Objetos pensados para durar</strong> y para acompañarte muchos años.</p>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    (function(){
-      var WA = "https://wa.me/34640555220?text=";
-      var state = { cat: null, occ: [] };
-      var preview = document.getElementById('preview');
-      var waSend = document.getElementById('waSend');
+  <!-- VENTAJAS -->
+  <section aria-labelledby="adv-h">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div>
+          <span class="idx">04 — Por qué Halo</span>
+          <h2 id="adv-h">Cómo cuidamos la compra</h2>
+        </div>
+      </div>
+      <div class="adv reveal">
+        <div class="adv-row"><span class="n">i</span><div><h3>Curaduría propia</h3><p>Nada llega por catálogo: cada pieza pasa por nuestras manos antes que por las tuyas.</p></div></div>
+        <div class="adv-row"><span class="n">ii</span><div><h3>Envíos a toda la isla</h3><p>Preparamos y enviamos tu pedido a cualquier punto de la isla, con embalaje cuidado.</p></div></div>
+        <div class="adv-row"><span class="n">iii</span><div><h3>Cambios en 30 días</h3><p>Si algo no encaja, lo cambiamos dentro de los primeros 30 días. Sin complicaciones.</p></div></div>
+        <div class="adv-row"><span class="n">iv</span><div><h3>Atención personal por WhatsApp</h3><p>Te asesoramos una a una: tallas, regalos y combinaciones, a tu ritmo.</p></div></div>
+      </div>
+    </div>
+  </section>
 
-      function build(){
-        var msg = "Hola Halo, busco";
-        if(state.cat){ msg += " " + state.cat.toLowerCase(); } else { msg += " algo en la tienda"; }
-        if(state.occ.length){ msg += " " + state.occ.join(" y "); }
-        msg += ".";
-        preview.textContent = msg;
-        waSend.setAttribute('href', WA + encodeURIComponent(msg));
-      }
+  <!-- VISITA -->
+  <section id="visita" class="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="shead reveal">
+        <div>
+          <span class="idx">05 — Visítanos</span>
+          <h2 id="visit-h">Pasa por la tienda</h2>
+        </div>
+        <p class="side">Te esperamos en el centro. Escríbenos antes si quieres que te reservemos una pieza.</p>
+      </div>
+      <div class="visit-grid reveal">
+        <div class="vcard"><span>Dirección</span><p>Calle del Mercado 12</p></div>
+        <div class="vcard"><span>Horario</span><p>Lunes a sábado<br>10:00 – 21:00</p></div>
+        <div class="vcard"><span>Escríbenos</span><p><a href="https://wa.me/34640555220?text=Hola%20Halo%2C%20quiero%20pasar%20por%20la%20tienda." target="_blank" rel="noopener">WhatsApp</a> · <a href="https://instagram.com/halo.store" target="_blank" rel="noopener">@halo.store</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-      document.querySelectorAll('.chips').forEach(function(group){
-        var single = group.getAttribute('data-single') === 'true';
-        var kind = group.getAttribute('data-group');
-        group.addEventListener('click', function(e){
-          var btn = e.target.closest('.chip');
-          if(!btn) return;
-          var val = btn.getAttribute('data-val');
-          var on = btn.getAttribute('aria-pressed') === 'true';
-          if(single){
-            group.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
-            if(on){ state.cat = null; }
-            else { btn.setAttribute('aria-pressed','true'); state.cat = val; }
-          } else {
-            if(on){ btn.setAttribute('aria-pressed','false'); state.occ = state.occ.filter(function(v){ return v!==val; }); }
-            else { btn.setAttribute('aria-pressed','true'); state.occ.push(val); }
-          }
-          build();
-        });
+<!-- FOOTER : back cover -->
+<footer class="backcover">
+  <div class="wrap">
+    <div class="bc-top">
+      <div class="bc-word">Halo</div>
+      <div class="bc-vol">Vol. 01 — 2026</div>
+    </div>
+    <hr class="bc-line">
+    <div class="bc-cols">
+      <div>
+        <h4>La tienda</h4>
+        <p>Calle del Mercado 12<br>Lunes a sábado · 10:00 – 21:00</p>
+      </div>
+      <div>
+        <h4>Escríbenos</h4>
+        <div class="socials">
+          <a href="https://instagram.com/halo.store" target="_blank" rel="noopener" aria-label="Instagram de Halo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            @halo.store
+          </a>
+          <a href="https://wa.me/34640555220?text=Hola%20Halo%2C%20vengo%20de%20la%20web." target="_blank" rel="noopener" aria-label="WhatsApp de Halo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3Zm4.6-6.1c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Concept store</h4>
+        <p>Moda · Hogar · Accesorios · Regalos.<br>Objetos con alma, para el día a día.</p>
+      </div>
+    </div>
+    <p class="seal">
+      Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial
+    </p>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" href="https://wa.me/34640555220?text=Hola%20Halo%2C%20vengo%20de%20la%20web%20y%20quiero%20que%20me%20asesoren." target="_blank" rel="noopener" aria-label="Escribir a Halo por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3Zm4.6-6.1c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA="34640555220";
+  var list=[];
+  var noteList=document.getElementById("noteList");
+  var bagCount=document.getElementById("bagCount");
+  var bagBtn=document.getElementById("bagBtn");
+  var waSend=document.getElementById("waSend");
+
+  function decode(s){var t=document.createElement("textarea");t.innerHTML=s;return t.value;}
+
+  function render(){
+    bagCount.textContent=list.length;
+    bagBtn.classList.remove("pulse");void bagBtn.offsetWidth;bagBtn.classList.add("pulse");
+    noteList.innerHTML="";
+    if(list.length===0){
+      var li=document.createElement("li");
+      li.className="empty";
+      li.textContent="Aún no has añadido piezas ni preferencias.";
+      noteList.appendChild(li);
+    }else{
+      list.forEach(function(it,i){
+        var li=document.createElement("li");
+        var span=document.createElement("span");
+        span.textContent=it;
+        var btn=document.createElement("button");
+        btn.className="x";btn.type="button";btn.setAttribute("aria-label","Quitar "+it);
+        btn.textContent="✕";
+        btn.addEventListener("click",function(){list.splice(i,1);render();});
+        li.appendChild(span);li.appendChild(btn);
+        noteList.appendChild(li);
       });
-      build();
-    })();
-  </script>
+    }
+    var msg="Hola Halo, me interesa:";
+    if(list.length){msg+="\n"+list.map(function(it){return "- "+it;}).join("\n");}
+    msg+="\n\n¿Me pueden asesorar?";
+    waSend.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+  }
 
+  function add(label){list.push(label);render();}
+
+  document.querySelectorAll(".add-mini[data-name]").forEach(function(b){
+    b.addEventListener("click",function(){
+      add(decode(b.getAttribute("data-name"))+" ("+decode(b.getAttribute("data-price"))+")");
+    });
+  });
+
+  document.querySelectorAll(".reserve[data-wa]").forEach(function(a){
+    a.addEventListener("click",function(e){
+      e.preventDefault();
+      var t="Hola Halo, quiero reservar: "+a.getAttribute("data-wa")+".";
+      window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank","noopener");
+    });
+  });
+
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.addEventListener("click",function(){c.classList.toggle("active");});
+  });
+  document.getElementById("addPrefs").addEventListener("click",function(){
+    var vals=[];
+    document.querySelectorAll(".chip.active").forEach(function(c){vals.push(c.getAttribute("data-val"));});
+    if(vals.length===0){return;}
+    add("Preferencia: "+vals.join(" · "));
+    document.querySelectorAll(".chip.active").forEach(function(c){c.classList.remove("active");});
+  });
+
+  bagBtn.addEventListener("click",function(){
+    document.getElementById("shopper").scrollIntoView({behavior:"smooth",block:"start"});
+  });
+
+  render();
+
+  var nav=document.getElementById("nav");
+  window.addEventListener("scroll",function(){
+    if(window.scrollY>8)nav.classList.add("stuck");else nav.classList.remove("stuck");
+  },{passive:true});
+
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var els=document.querySelectorAll(".reveal");
+  if(reduce || !("IntersectionObserver" in window)){
+    els.forEach(function(el){el.classList.add("in");});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}
+      });
+    },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    els.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
 </body>
 </html>
