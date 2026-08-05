@@ -374,6 +374,13 @@ navegador real a 390px (`scrollWidth==clientWidth`, 0 overflow, 0 offenders) y s
 | Cross-fade de imagen de producto al hover (2 imgs, `opacity`) | 1 (**demo-tiendas v2**) | libre — 1 uso |
 | Nav con contador "Lista/bolsa (n)" en vivo | 1 (**demo-tiendas v2**) | libre — 1 uso; nav nueva |
 | Footer "contraportada de revista" (back cover, "Vol. N") | 1 (**demo-tiendas v2**) | libre — 1 uso; footer nuevo |
+| Body-map anatómico interactivo (SVG región → resalta + `wa.me`, teclado+ARIA) | **2** (Zapdent = odontograma dental · **Dr. Tovar** = miembro superior atlas) | libre — familia body-map; visual/rubro opuestos, documentado |
+| Duotono navy↔bone en foto real (`mix-blend` screen+multiply) | 1 (**Dr. Tovar**) | libre — familia duotono-foto (Darieth gris→rosa · Eunice plum→magenta), visual distinto |
+| Reveal de callouts por `animation-delay` escalonado (CSS al load, no IO) | 1 (**Dr. Tovar**) | libre — precedente sancionado (abogados/peluquería reveal por delay) |
+| Nav "barra-leyenda anatómica / figure-key" (puntos de color + abreviaturas de región) | 1 (**Dr. Tovar**) | libre — 1 uso; nav nueva |
+| Footer "pie de atlas" (margen de lámina + barra de escala cm + crédito LÁM.) | 1 (**Dr. Tovar**) | libre — 1 uso; footer nuevo |
+| Tarjetas "ficha-espécimen" (tab REG.0X + icono anatómico SVG + lead-line) | 1 (**Dr. Tovar**) | libre — 1 uso |
+| CTA "botón-lámina" (relleno + doble filete inset tipo borde de lámina) | 1 (**Dr. Tovar**) | libre — 1 uso |
 
 Dos bases claras seguidas (CETI y Amazonas). **La próxima demo va en base oscura**, salvo
 que la marca del negocio lo prohíba de plano.
