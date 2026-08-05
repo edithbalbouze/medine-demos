@@ -45,6 +45,8 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 | Dr. Wilfredo Hernández (@dr.wilfredohernandez_endo) · C.C. Plaza Mayor local 47, Lechería · endocrinología pediátrica | `wilfredo-hernandez` | **Base CLARA** blanco/hueso `#F5F7FA` (60) · **granate `#6C0E0E`** (30, autoridad académica; coincide con el edificio "vinotinto") · dorado `#C9A24B` (10) — dirección de arte (marca inexistente) | **Petrona** (display serif académico) + **Signika** (cuerpo humanista redondeado, calidez sin infantilizar) · densidad editorial · base clara | **Autoridad + "convierte tu divulgación en citas"** (hero de ponente + motivos pediátricos) — ≠ CETI (lab endocrino lavanda), ≠ demo-medicos, ≠ NR, ≠ Anaixa (azul) | **Curva de crecimiento (percentiles) SVG** revelada por width (`clipPath` rect + rAF, rect nace full → visible sin JS) + selector motivos→wa.me | **Nav slim granate** / **Footer "cómo llegar" con mini-mapa SVG** (Plaza Mayor local 47, al lado de Tokyo Park) | Tarjetas hueso hairline · CTA granate · FAB WhatsApp · JAMÁS fotos de menores | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa) |
 | Dra. Geraldine Naveda / **NAVEDA Dental Clinic** (@drageraldinenaveda · @naveda.dentalclinic) · Lechería · odontología estética de lujo + curso | `geraldine-naveda` | **Base OSCURA** negro `#0D0B0C`/`#000` (60) · blanco `#FFF` (30, serif/aire) · **fuchsia `#C44F96`** + malva `#C598AD` (10) — muestreados PIL del logo/feed | **Yeseva One** (display serif de lujo) + **Wix Madefor Text** (cuerpo) · densidad editorial de revista · **base OSCURA** (única oscura de la Ola 2) | **Editorial de lujo monocromo / revista de belleza dental** (doble oferta pacientes + curso Composite Live) — ≠ Mary Figuera (berenjena lookbook claro + comparador), ≠ Odontolaveglia, ≠ Odontolaser, ≠ Zapdent | **Portada kinética** (wordmark NAVEDA gigante, "D" fuchsia) + **glow fuchsia** sobre bonding + **módulo "Composite Live · ed. 39"** (selector cita/curso → wa.me con asunto) | **Nav negra editorial** (wordmark NAVEDA + línea fuchsia) / **Footer de dos marcas** (Dra. Geraldine COV 38726 + NAVEDA/CIOES) | Tarjetas de lujo sobre negro · CTA píldora fuchsia · FAB WhatsApp · **reveal reforzado** (posición + red de seguridad; `scroll-behavior:smooth`) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; excluida la foto del curso por rostros) |
 | Dra. Beatriz González · Centro de Especialidades Anzoátegui, Lechería · ginecología | `beatriz-gonzalez` | **Base CLARA** crema cálida `#FAF7F2` (60) · tinta/carbón cálido `#2C2620` (30) · **camel/mostaza `#8D6D3F`** (10, de su blazer real) — SIN rosa cliché, SIN salvia dominante (evita rozar Odontolaveglia) | **Besley** (display slab editorial) + **Reddit Sans** (cuerpo) · densidad editorial · base clara | **"Recupera tu nombre" — nameplate editorial tipográfico** (su nombre protagoniza; casi sin fotos) — ≠ portrait-led Darieth, ≠ soft-UI gineco-lau | **Nameplate editorial gigante** (nombre kinético) + **motivo botánico de línea SVG estático** camel + selector motivos→wa.me | **Nav wordmark + CTA** / **Footer editorial con dirección del CEA** | Tarjetas editoriales camel/crema · tarjeta de precio consulta $60 · CTA camel · FAB WhatsApp · retrato recortado (marca de agua eliminada) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; **conseguir WhatsApp directo** — el actual es la línea del portal citamedica) |
+| Dr. Pedro Tovar (@drpedrotovar) · CEACA, Lechería, Anzoátegui · traumatólogo — **cirugía de mano y miembro superior** | `dr-pedro-tovar` | **Base CLARA bone/aged-paper** `#F1EADA`/`#E7DDC9` (60) · **surgical steel-navy `#152F49`** tinta (30, anclada a su navy real de quirófano `#0C1E35`/`#202D3A`) · **carmín arterial `#9E2B2B`** (10) · slate `#5B6B7A` — el código anatómico vena/arteria | **Fahkwang** (display serif académico) + **Overpass** (UI/labels técnicos, voz de "etiqueta de espécimen") · densidad editorial aireada · **base clara cálida (bone)** | **Atlas anatómico / láminas del miembro superior** (LÁM. 01–06) — ≠ expediente (NR/CETI), ≠ agenda-ECG (demo-medicos), ≠ eye-chart (UMOLCA), ≠ odontograma-página (Zapdent), ≠ bento (Leticia), ≠ nameplate (Beatriz), ≠ portrait-led (Darieth) | **Mapa anatómico interactivo del miembro superior** (SVG line-art, teclado+ARIA; tap Hombro/Codo/Muñeca/Mano → resalta región + callout + arma `wa.me` específico de la región) + **reveal de callouts anatómicos por `animation-delay` escalonado** (CSS load, reduce-motion safe) + **duotono navy↔bone** (`mix-blend` screen+multiply) sobre sus fotos reales | **Barra-leyenda anatómica (figure-key: puntos de color + abreviaturas de región)** / **Pie de atlas (margen de lámina con barra de escala en cm + crédito "LÁM. 06 — COLOFÓN")** | **Fichas-espécimen** (tab REG.0X + icono anatómico SVG propio + hairline + lead-line carmín) · CTA **botón-lámina** (relleno carmín con doble filete inset tipo borde de lámina, NO píldora) · secundario subrayado | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; **confirmar WhatsApp 584148063568**) |
+| Pediatría con Amor · Dra. Mariaelpi Benítez (@pediatriaconamor.1) · Cantaura + Barcelona, Anzoátegui · pediatría | `pediatria-con-amor` | **Base CLARA tierna** blanco hueso `#FAFAFA` (60) · **magenta/fucsia `#B02EA6`** (30) · **rosa `#D81483`** + **cian `#35D7FA`** (10) · marino `#131D39` texto — muestreados PIL del logo | **Baloo 2** (display redondeado) + **Lexend** (cuerpo) · densidad cálida redondeada · base clara | **Consultorio tierno con mascota / storybook cálido** (mascota-bebé del logo como motivo) — OPUESTO al granate académico de Wilfredo (endocrino pediátrico), ≠ soft-UI gineco-lau, ≠ Eunice plum | **Calendario de vacunas interactivo** (6 pestañas de edad `role=tablist` → vacunas + arma wa.me) + **mascota SVG con bob** | **Nav barra redondeada** (mascota + wordmark + píldora "Escríbeme") / **Footer nota-sticker** (mascota + 2 sedes como pins en mapita SVG + WhatsApp corregido) | Tarjetas muy redondeadas + íconos pastel · CTA píldora magenta/cian · FAB WhatsApp · **reveal por posición + red de seguridad**; wa.me corregido `584265834809` (su bio lo tiene roto sin el 58) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa) |
 
 ## Notas de unicidad
 
@@ -265,6 +267,50 @@ tanda 1 antes de repartir ejes. Todas verificadas o reforzadas contra el bug de 
   `584223338000` — reemplazar). Geraldine excluyó del repo la imagen del curso por rostros de
   estudiantes identificables.
 
+### Demo suelta 2026-08-05 — Dr. Pedro Tovar (traumatólogo · mano y miembro superior)
+
+Prospección médica Lechería (demo individual, fuera de ola). Ledger congelado; gate de fuentes
+corrido con `grep family= */index.html` sobre los 38 index.html ANTES de construir. Verificada en
+navegador real a 390px (`scrollWidth==clientWidth`, 0 overflow, 0 offenders) y sin técnica vetada.
+
+- **Prospecto:** real y verificado (IG `/embed` 200: "Pedro G. Tovar M.", 3.663 seg.). Traumatólogo/
+  ortopedista **sub-especializado en cirugía de mano y reconstrucción de miembro superior** — ese es el
+  diferenciador (online aparece como traumatólogo genérico entre ~6 de CEACA). **Sin web propia, sin
+  linktree, sin Google Business** → fit ALTO, ángulo NEW LANDING, ciclo individual/corto. Caveat: ejerce
+  **dentro de CEACA (no es dueño)** → vender marca personal. ⚠️ Homónimos descartados (Tovar Inserri
+  internista Maracay; Torres Tovar médico general Neiva-Colombia; un cantante en EEUU).
+- **WhatsApp:** primario `wa.me/584148063568` (Movistar 0414-806-3568, la línea que **CEACA publica para
+  él**) — **Edith debe confirmarla**. Descartada `584223338000` = concierge del portal citamedica (**la
+  MISMA que se usó para Beatriz**, no es personal). Href real en todos los CTA (nunca `#`).
+- **Base CLARA bone/aged-paper** — alternancia sin deuda tras la tanda 2; distinta del *pile* clara
+  clínica **fría** por su **calidez de papel de atlas** (bone+navy+carmín, no blanco-cian). El único
+  ancla de marca real es su **navy de quirófano** (`#0C1E35`/`#202D3A` muestreado con PIL) → tinta navy
+  fiel; bone y carmín son dirección de arte del arquetipo (no tiene marca ni logo).
+- **Arquetipo NUEVO: atlas anatómico / láminas** (LÁM. 01–06 del miembro superior). Construido como
+  distinto de TODOS los médicos previos (ver fila). La firma es un **mapa anatómico interactivo del
+  miembro superior** — **misma FAMILIA "body-map interactivo → `wa.me`" que el odontograma de Zapdent**
+  (único precedente), pero **visual/rubro/mecánica opuestos**: line-art SVG de brazo+mano en lámina de
+  atlas vs arcada dental nítida; documentado aceptable como las familias previas (chips→wa.me, etc.).
+- **Técnicas (ninguna vetada):** (1) **duotono navy↔bone** con `mix-blend` (screen+multiply) sobre sus
+  fotos reales de baja res (unifica selfie 612 + avatar OR 100 + Rx/eco 444) → **`mix-blend` pasa a 2
+  usos** (Plaza Mayor `screen` + esta) → **variar la próxima**; familia **duotono-foto** con Darieth
+  (gris→rosa) y Eunice (plum→magenta), visual distinto. (2) **reveal de callouts por `animation-delay`
+  escalonado** (CSS al load, no IO, no scroll-driven; precedente sancionado abogados/peluquería). (3) el
+  **mapa interactivo** (firma). Reveal de secciones = **rect-based en scroll + red de seguridad 2.5s**,
+  con `.reveal` Y `.reveal.in` scopeadas bajo `html.js` (cumple el fix del bug de reveals de la tanda 2);
+  sin `scroll-behavior:smooth`. Las líneas del limb son `<path>` **estáticos** — NO `stroke-dashoffset`.
+  NO se usó: scroll-driven `animation-timeline`, `:has()`, `stroke-dashoffset`, clip-path animado,
+  `offset-path`, `mask-image` gradiente, container queries, typeahead-filtro, `@property`, `<details>`,
+  dock inferior, View Transitions, 3D tilt, corner-brackets, `scroll-snap` (verificado por grep).
+- **Fuentes `Fahkwang` + `Overpass`**, 1 uso cada una (verificadas libres en los 38 `*/index.html`).
+- **Nav "barra-leyenda anatómica" (figure-key)** y **footer "pie de atlas" (margen de lámina con barra de
+  escala cm + crédito LÁM. 06)** ESTRENAN. **Tarjetas "ficha-espécimen"** y **CTA "botón-lámina" (doble
+  filete inset)** ESTRENAN.
+- **Assets:** sin logo → wordmark Fahkwang + arte SVG anatómico propio. Fotos reales en duotono. **JAMÁS
+  fotos de menores/pacientes** (su feed es pediátrico-adyacente; no se descargó ninguna imagen de menor).
+- **Contador de bases:** …tanda 2 (4 claras/1 oscura) · **Tovar (CLARA bone)** → la próxima puede ir
+  clara u oscura sin deuda.
+
 ### Técnicas quemadas (contador)
 
 | Técnica | Usos | Estado |
@@ -318,7 +364,7 @@ tanda 1 antes de repartir ejes. Todas verificadas o reforzadas contra el bug de 
 | Tarjetas "pieza de patrón" (borde dashed + pestaña PIEZA 0X + muesca + grainline) | 1 (**Promoda**) | libre — 1 uso |
 | Constructor "hoja de inscripción" chips → mensaje con *fills* → copiar + DM | +1 familia (Leonardo/gineco/Calantha/Odontolaveglia/Renny) | libre — visual distinto (hoja de patrón), documentado |
 | `offset-path` (punto que viaja por una trayectoria) | **2** (CETI v2 = señal endocrina · **demo-medicos** = punto del latido ECG) | **VETADO** |
-| `mix-blend-mode` (duotono/glow) | 1 (Plaza Mayor = `screen` luces) · _(demo-tiendas v1 `multiply` **rechazada → void**)_ | libre — 1 uso |
+| `mix-blend-mode` (duotono/glow) | **2** (Plaza Mayor = `screen` luces · **Dr. Tovar** = duotono navy↔bone screen+multiply) · _(demo-tiendas v1 `multiply` **rechazada → void**)_ | **al techo — variar la próxima** |
 | CSS `filter` recolor en vivo (`hue-rotate`/`sepia` sobre foto) | 1 (**demo-peluqueria** = "prueba tu color") | ESTRENA — libre; firma de rubro belleza/capilar |
 | Parallax rect-based (`getBoundingClientRect`, no IO/scroll-timeline) | +1 (**demo-reposteria** = vitrina; precedente Leonardo Bravo) | libre — alternativa sancionada a scroll-driven |
 | Balanza/física por `@keyframes` transform + vapor CSS | 1 c/u (**demo-abogados** balanza · **demo-reposteria** vapor) | libre — 1 uso c/u |

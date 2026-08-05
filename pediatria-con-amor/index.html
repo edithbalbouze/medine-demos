@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pediatría con Amor — Dra. Mariaelpi Benítez · Cantaura y Barcelona</title>
+<meta name="description" content="Pediatría y puericultura con amor para tu pequeño, en Cantaura y Barcelona (Anzoátegui). Control del niño sano, vacunación y crianza con la Dra. Mariaelpi Benítez.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pediatría con Amor — Dra. Mariaelpi Benítez">
+<meta property="og:description" content="Pediatría y puericultura con amor para tu pequeño, en Cantaura y Barcelona.">
+<meta property="og:locale" content="es_VE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<style>
+  :root{
+    --hueso:#FAFAFA; --blanco:#FFFFFF;
+    --magenta:#B02EA6; --magenta-deep:#8A1F82;
+    --rosa:#D81483; --cian:#35D7FA; --cian-deep:#01ACBE;
+    --marino:#131D39; --marino-soft:#4A5378;
+    --turquesa-suave:#E8FBFE; --rosa-suave:#FDEBF5; --magenta-suave:#F6E9F5; --amarillo:#FFE6A8;
+    --wa:#25D366;
+    --r-lg:34px; --r-md:24px; --r-sm:16px;
+    --sombra:0 18px 50px -22px rgba(19,29,57,.28);
+    --sombra-soft:0 10px 30px -18px rgba(19,29,57,.30);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--hueso); color:var(--marino);
+    font-family:'Lexend',system-ui,sans-serif; font-weight:400; line-height:1.65;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Baloo 2',system-ui,sans-serif; line-height:1.08; margin:0; letter-spacing:-.01em}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .wrap{width:min(100% - 40px, var(--maxw)); margin-inline:auto}
+  .eyebrow{
+    font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--cian-deep); display:inline-flex; align-items:center; gap:9px;
+  }
+  .eyebrow::before{content:""; width:26px; height:3px; border-radius:3px; background:var(--cian); display:inline-block}
+  .snum{font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--rosa); opacity:.6; font-size:.9rem}
+
+  /* ---- botones ---- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; font-family:'Baloo 2',sans-serif; font-weight:700;
+    font-size:1.02rem; padding:15px 26px; border-radius:999px; border:0; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease;
+    line-height:1;
+  }
+  .btn:focus-visible{outline:3px solid var(--marino); outline-offset:3px}
+  .btn-primary{background:linear-gradient(120deg,var(--rosa),var(--magenta)); color:#fff; box-shadow:0 14px 26px -12px rgba(216,20,131,.65)}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 20px 32px -12px rgba(216,20,131,.7)}
+  .btn-cian{background:var(--cian); color:var(--marino); box-shadow:0 12px 22px -12px rgba(1,172,190,.7)}
+  .btn-cian:hover{transform:translateY(-2px)}
+  .btn-ghost{background:#fff; color:var(--magenta); border:2px solid var(--magenta-suave)}
+  .btn-ghost:hover{border-color:var(--magenta); transform:translateY(-2px)}
+  .wa-ico{width:20px;height:20px;flex:none}
+
+  /* ---- reveal (gateado en html.js, ambas reglas) ---- */
+  html.js .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+  html.js .reveal.in{opacity:1; transform:none}
+  .reveal:nth-child(2){transition-delay:.06s}
+
+  /* ---- mascota bob ---- */
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+  @keyframes bobslow{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .bob{animation:bob 5s ease-in-out infinite}
+  .bob-slow{animation:bobslow 6.5s ease-in-out infinite}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+  /* ================= NAV (barra redondeada mascota + Escríbeme) ================= */
+  .nav-shell{position:sticky; top:14px; z-index:60; padding-inline:20px}
+  .nav{
+    width:min(100%, var(--maxw)); margin-inline:auto; background:rgba(255,255,255,.86);
+    -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+    border:1.5px solid #fff; box-shadow:var(--sombra-soft); border-radius:999px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 9px 9px 16px;
+  }
+  .brand{display:flex; align-items:center; gap:11px; min-width:0}
+  .brand .m{width:42px;height:42px;flex:none}
+  .brand .txt{display:flex; flex-direction:column; line-height:1; min-width:0}
+  .brand .txt b{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.06rem; color:var(--magenta); white-space:nowrap}
+  .brand .txt span{font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--cian-deep); font-weight:600}
+  .nav-links{display:flex; align-items:center; gap:4px}
+  .nav-links a.lnk{padding:9px 14px; border-radius:999px; font-size:.92rem; color:var(--marino-soft); font-weight:500; transition:background .15s,color .15s}
+  .nav-links a.lnk:hover{background:var(--turquesa-suave); color:var(--magenta)}
+  .nav-cta{background:linear-gradient(120deg,var(--cian),var(--rosa)); color:#fff; font-family:'Baloo 2',sans-serif; font-weight:700; padding:11px 20px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 20px -12px rgba(216,20,131,.6); transition:transform .18s}
+  .nav-cta:hover{transform:translateY(-1px)}
+  a:focus-visible,.lnk:focus-visible,.nav-cta:focus-visible{outline:3px solid var(--marino); outline-offset:2px; border-radius:999px}
+  @media(max-width:820px){ .nav-links a.lnk{display:none} }
+  @media(max-width:520px){
+    .nav{padding:8px 8px 8px 12px; gap:8px}
+    .brand .m{width:38px;height:38px}
+    .brand .txt b{white-space:normal; font-size:.98rem; line-height:1.02}
+    .brand .txt span{display:none}
+    .nav-cta{padding:10px 15px; font-size:.92rem}
+  }
+
+  /* ================= HERO ================= */
+  .hero{position:relative; padding:54px 0 40px; overflow:hidden}
+  .hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(60% 55% at 85% 12%, var(--rosa-suave) 0%, transparent 60%),
+      radial-gradient(55% 50% at 8% 20%, var(--turquesa-suave) 0%, transparent 60%),
+      radial-gradient(70% 60% at 50% 105%, var(--magenta-suave) 0%, transparent 55%);
+  }
+  .hero-inner{position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:center}
+  .hero-badge{display:inline-flex; align-items:center; gap:9px; background:#fff; border:1.5px solid var(--magenta-suave); border-radius:999px; padding:7px 15px 7px 9px; font-size:.82rem; font-weight:500; color:var(--marino-soft); box-shadow:var(--sombra-soft)}
+  .hero-badge b{color:var(--magenta); font-family:'Baloo 2',sans-serif}
+  .hero-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--cian);box-shadow:0 0 0 4px var(--turquesa-suave)}
+  .hero h1{font-weight:800; font-size:clamp(2.5rem,7.2vw,4.5rem); margin:20px 0 0; color:var(--marino)}
+  .hero h1 .amor{color:var(--rosa)}
+  .hero h1 .con{color:var(--magenta)}
+  .hero-sub{font-size:clamp(1.02rem,2.4vw,1.16rem); color:var(--marino-soft); margin-top:18px; max-width:34ch}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-top:28px}
+  .hero-trust{display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:26px}
+  .hero-trust li{list-style:none; display:flex; align-items:center; gap:9px; font-size:.9rem; color:var(--marino-soft); font-weight:500}
+  .hero-trust svg{width:20px;height:20px;flex:none}
+  .hero-art{position:relative; display:flex; justify-content:center; align-items:center}
+  .hero-card{position:relative; background:#fff; border-radius:44px; padding:26px; box-shadow:var(--sombra); border:6px solid #fff; width:min(100%,400px)}
+  .hero-card .logo-real{border-radius:30px; width:100%; background:var(--hueso)}
+  .float-chip{position:absolute; background:#fff; border-radius:18px; padding:11px 15px; box-shadow:var(--sombra-soft); display:flex; align-items:center; gap:10px; font-weight:600; font-size:.86rem; border:1.5px solid #fff}
+  .float-chip small{display:block; font-size:.68rem; color:var(--marino-soft); font-weight:400; letter-spacing:.04em}
+  .float-chip .ic{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;flex:none}
+  .fc-1{top:-14px; left:-16px; animation:floaty 6s ease-in-out infinite}
+  .fc-2{bottom:14px; right:-18px; animation:floaty 7s ease-in-out infinite .6s}
+  @media(max-width:860px){
+    .hero-inner{grid-template-columns:1fr; text-align:left}
+    .hero-art{order:-1; margin-bottom:6px}
+    .hero-card{width:min(100%,340px)}
+    .fc-1{left:2px} .fc-2{right:2px}
+  }
+
+  /* ---- secciones genéricas ---- */
+  section.block{padding:64px 0}
+  .sec-head{display:flex; flex-direction:column; gap:12px; margin-bottom:34px}
+  .sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem); font-weight:700; color:var(--magenta-deep)}
+  .sec-head p{color:var(--marino-soft); max-width:58ch}
+
+  /* ================= SOBRE LA DRA ================= */
+  .about{background:linear-gradient(180deg,#fff, var(--turquesa-suave))}
+  .about-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:38px; align-items:center}
+  .doc-card{position:relative; background:#fff; border-radius:var(--r-lg); padding:22px; box-shadow:var(--sombra); text-align:center; border:1.5px solid var(--magenta-suave)}
+  .doc-photo{width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto; border:5px solid #fff; box-shadow:0 10px 26px -14px rgba(176,46,166,.55); background:var(--magenta-suave)}
+  .doc-card h3{margin-top:16px; color:var(--magenta); font-size:1.4rem; font-weight:700}
+  .doc-card .role{color:var(--cian-deep); font-weight:600; font-size:.92rem; letter-spacing:.02em}
+  .doc-card .cred{margin-top:12px; display:inline-flex; gap:8px; align-items:center; background:var(--rosa-suave); color:var(--rosa); border-radius:999px; padding:7px 14px; font-size:.8rem; font-weight:600}
+  .about-body h2{font-size:clamp(1.8rem,4.4vw,2.7rem); font-weight:700; color:var(--marino)}
+  .about-quote{margin-top:18px; font-family:'Baloo 2',sans-serif; font-weight:600; font-size:1.24rem; color:var(--magenta); line-height:1.4}
+  .about-body p.lead{margin-top:16px; color:var(--marino-soft); font-size:1.04rem}
+  .about-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+  .tag{background:#fff; border:1.5px solid var(--magenta-suave); border-radius:999px; padding:9px 16px; font-size:.88rem; font-weight:500; color:var(--marino); display:inline-flex; gap:8px; align-items:center}
+  .tag svg{width:17px;height:17px}
+  @media(max-width:820px){ .about-grid{grid-template-columns:1fr} .doc-card{max-width:320px;margin-inline:auto} }
+
+  /* ================= SERVICIOS ================= */
+  .serv-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  .serv-card{background:#fff; border-radius:var(--r-lg); padding:26px; border:1.5px solid #f0e6ef; box-shadow:var(--sombra-soft); transition:transform .2s ease, box-shadow .2s ease}
+  .serv-card:hover{transform:translateY(-5px); box-shadow:var(--sombra)}
+  .serv-ic{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin-bottom:16px}
+  .serv-ic svg{width:30px;height:30px}
+  .serv-card h3{font-size:1.22rem; font-weight:700; color:var(--marino)}
+  .serv-card p{margin-top:9px; color:var(--marino-soft); font-size:.95rem}
+  .serv-card.wide{grid-column:span 3; display:flex; align-items:center; gap:24px; background:linear-gradient(120deg,var(--magenta),var(--magenta-deep)); color:#fff; border:0}
+  .serv-card.wide .serv-ic{background:rgba(255,255,255,.16); margin:0}
+  .serv-card.wide h3{color:#fff} .serv-card.wide p{color:rgba(255,255,255,.86)}
+  .serv-card.wide .txt{flex:1}
+  @media(max-width:820px){ .serv-grid{grid-template-columns:1fr 1fr} .serv-card.wide{grid-column:span 2; flex-direction:column; text-align:center} }
+  @media(max-width:520px){ .serv-grid{grid-template-columns:1fr} .serv-card.wide{grid-column:span 1} }
+
+  /* ================= CALENDARIO DE VACUNAS (firma) ================= */
+  .vac{background:linear-gradient(180deg, var(--rosa-suave), #fff)}
+  .vac-panel{background:#fff; border-radius:var(--r-lg); box-shadow:var(--sombra); border:1.5px solid var(--magenta-suave); overflow:hidden}
+  .vac-top{padding:24px 26px; background:linear-gradient(120deg,var(--cian),var(--cian-deep)); color:#fff; display:flex; align-items:center; gap:16px}
+  .vac-top .vic{width:52px;height:52px;background:rgba(255,255,255,.2);border-radius:16px;display:grid;place-items:center;flex:none}
+  .vac-top h3{font-size:1.3rem; font-weight:700}
+  .vac-top p{font-size:.88rem; color:rgba(255,255,255,.9)}
+  .vac-ages{display:flex; gap:10px; overflow-x:auto; padding:20px 26px 6px; scrollbar-width:thin}
+  .age-btn{flex:none; border:2px solid var(--magenta-suave); background:#fff; color:var(--marino); font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.92rem; padding:11px 18px; border-radius:999px; cursor:pointer; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.1}
+  .age-btn small{font-size:.66rem; font-weight:400; font-family:'Lexend',sans-serif; color:var(--marino-soft); letter-spacing:.02em}
+  .age-btn:hover{border-color:var(--cian)}
+  .age-btn[aria-selected="true"]{background:linear-gradient(120deg,var(--magenta),var(--rosa)); border-color:transparent; color:#fff}
+  .age-btn[aria-selected="true"] small{color:rgba(255,255,255,.85)}
+  .age-btn:focus-visible{outline:3px solid var(--marino); outline-offset:2px}
+  .vac-body{padding:8px 26px 26px}
+  .vac-etapa{font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--magenta); font-size:1.15rem; margin:16px 0 4px}
+  .vac-etapa small{display:block; font-family:'Lexend',sans-serif; font-weight:400; font-size:.85rem; color:var(--marino-soft)}
+  .vac-list{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; list-style:none; padding:0}
+  .vac-item{display:flex; align-items:flex-start; gap:12px; background:var(--hueso); border:1.5px solid #f0e6ef; border-radius:var(--r-sm); padding:14px 16px}
+  .vac-item .vb{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;flex:none;background:var(--turquesa-suave)}
+  .vac-item .vb svg{width:18px;height:18px}
+  .vac-item b{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.98rem; color:var(--marino); display:block}
+  .vac-item span{font-size:.83rem; color:var(--marino-soft)}
+  .vac-foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; margin-top:22px; padding-top:20px; border-top:1.5px dashed var(--magenta-suave)}
+  .vac-note{font-size:.8rem; color:var(--marino-soft); max-width:44ch; display:flex; gap:9px; align-items:flex-start}
+  .vac-note svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--cian-deep)}
+  @media(max-width:640px){ .vac-list{grid-template-columns:1fr} .vac-foot .btn{width:100%; justify-content:center} }
+
+  /* ================= DÓNDE TE ATIENDO ================= */
+  .sedes-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:stretch}
+  .sede-list{display:flex; flex-direction:column; gap:18px}
+  .sede{background:#fff; border-radius:var(--r-lg); padding:24px; box-shadow:var(--sombra-soft); border:1.5px solid #f0e6ef; display:flex; gap:16px}
+  .sede .pin{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex:none;color:#fff}
+  .sede.s1 .pin{background:linear-gradient(120deg,var(--magenta),var(--rosa))}
+  .sede.s2 .pin{background:linear-gradient(120deg,var(--cian-deep),var(--cian))}
+  .sede h3{font-size:1.22rem; font-weight:700; color:var(--marino)}
+  .sede .loc{color:var(--cian-deep); font-weight:600; font-size:.86rem; letter-spacing:.04em; text-transform:uppercase}
+  .sede p{color:var(--marino-soft); font-size:.94rem; margin-top:7px}
+  .map-card{background:linear-gradient(160deg,var(--turquesa-suave),#fff); border-radius:var(--r-lg); border:1.5px solid var(--magenta-suave); box-shadow:var(--sombra-soft); position:relative; overflow:hidden; min-height:320px; display:flex; flex-direction:column; justify-content:flex-end; padding:22px}
+  .map-card svg.mapdraw{position:absolute; inset:0; width:100%; height:100%}
+  .map-card .cap{position:relative; z-index:2; background:rgba(255,255,255,.9); border-radius:16px; padding:12px 16px; font-size:.84rem; color:var(--marino-soft); display:inline-flex; gap:9px; align-items:center; -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px)}
+  .map-card .cap b{color:var(--magenta); font-family:'Baloo 2',sans-serif}
+  @media(max-width:820px){ .sedes-grid{grid-template-columns:1fr} .map-card{min-height:240px} }
+
+  /* ================= CTA FINAL ================= */
+  .final{padding:16px 0 64px}
+  .final-card{position:relative; background:linear-gradient(130deg,var(--magenta),var(--magenta-deep) 60%, #6d1866); border-radius:44px; padding:52px 40px; text-align:center; overflow:hidden; box-shadow:var(--sombra)}
+  .final-card .halo{position:absolute; inset:0; pointer-events:none; background:radial-gradient(40% 60% at 80% 10%, rgba(53,215,250,.35), transparent 60%), radial-gradient(40% 60% at 12% 90%, rgba(216,20,131,.4), transparent 60%)}
+  .final-card .content{position:relative; z-index:2}
+  .final-card h2{color:#fff; font-size:clamp(1.9rem,5vw,3rem); font-weight:800}
+  .final-card p{color:rgba(255,255,255,.9); margin:16px auto 0; max-width:46ch; font-size:1.05rem}
+  .final-card .btn{margin-top:28px}
+  .final-mascot{width:78px;height:78px;margin:0 auto 6px}
+
+  /* ================= FOOTER nota-sticker ================= */
+  footer.foot{padding:0 0 40px}
+  .sticker{position:relative; background:#fff; border-radius:var(--r-lg); box-shadow:var(--sombra); border:1.5px solid var(--magenta-suave); padding:34px; overflow:hidden}
+  .sticker::before{content:""; position:absolute; top:-30px; left:50%; transform:translateX(-50%) rotate(-3deg); width:150px; height:40px; background:rgba(53,215,250,.35); border-radius:8px}
+  .sticker-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center}
+  .note h3{font-size:1.5rem; color:var(--magenta); font-weight:700; display:flex; align-items:center; gap:12px}
+  .note h3 .m{width:44px;height:44px;flex:none}
+  .note .hand{font-family:'Baloo 2',sans-serif; font-weight:500; font-size:1.05rem; color:var(--marino); margin-top:12px; line-height:1.5}
+  .note .sign{margin-top:14px; font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--rosa); font-size:1.15rem}
+  .note .sign small{display:block; font-family:'Lexend',sans-serif; font-weight:400; color:var(--marino-soft); font-size:.82rem}
+  .foot-pins{display:flex; flex-direction:column; gap:12px}
+  .foot-pin{display:flex; gap:12px; align-items:center; background:var(--hueso); border:1.5px solid #f0e6ef; border-radius:var(--r-sm); padding:12px 15px}
+  .foot-pin .p{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;color:#fff}
+  .foot-pin.s1 .p{background:linear-gradient(120deg,var(--magenta),var(--rosa))}
+  .foot-pin.s2 .p{background:linear-gradient(120deg,var(--cian-deep),var(--cian))}
+  .foot-pin b{font-family:'Baloo 2',sans-serif; font-size:.98rem; color:var(--marino)}
+  .foot-pin span{font-size:.8rem; color:var(--marino-soft); display:block}
+  .foot-contact{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; padding-top:22px; border-top:1.5px dashed var(--magenta-suave); align-items:center}
+  .foot-contact .btn{font-size:.95rem; padding:12px 20px}
+  .foot-social{display:flex; gap:10px; margin-left:auto}
+  .foot-social a{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--hueso);border:1.5px solid #f0e6ef;color:var(--magenta);transition:transform .18s,background .18s}
+  .foot-social a:hover{transform:translateY(-2px); background:var(--magenta-suave)}
+  .foot-social svg{width:20px;height:20px}
+  .medine{text-align:center; margin-top:24px; font-size:.8rem; color:var(--marino-soft)}
+  .medine a{color:var(--magenta); font-weight:600}
+  @media(max-width:820px){ .sticker-grid{grid-template-columns:1fr} .foot-social{margin-left:0} }
+
+  /* ================= FAB WhatsApp ================= */
+  .fab{position:fixed; right:18px; bottom:18px; z-index:80; width:60px; height:60px; border-radius:50%; background:var(--wa); box-shadow:0 14px 30px -8px rgba(37,211,102,.6); display:grid; place-items:center; transition:transform .2s}
+  .fab:hover{transform:scale(1.08)}
+  .fab svg{width:32px;height:32px}
+  .fab::after{content:""; position:absolute; inset:0; border-radius:50%; border:2px solid var(--wa); animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+
+  /* ---- reduced motion ---- */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none !important; transition:none !important}
+    html.js .reveal{opacity:1 !important; transform:none !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="nav-shell">
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#top" aria-label="Pediatría con Amor — inicio">
+      <span class="m bob-slow" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="42" height="42">
+          <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D81483"/><stop offset="1" stop-color="#B02EA6"/></linearGradient></defs>
+          <path d="M32 7c-3 0-6 1.4-6 4.4 0 1.6 1 2.7 1 2.7C18 15.6 12 22 12 31.5 12 44 21 55 32 55s20-11 20-23.5C52 20 45 13.6 37 14.1c1.4-1.2 2-2.4 2-3.7C39 7.9 35.6 7 32 7z" fill="url(#mg)"/>
+          <circle cx="24.5" cy="33" r="3.4" fill="#fff"/><circle cx="39.5" cy="33" r="3.4" fill="#fff"/>
+          <circle cx="24.5" cy="33.6" r="1.5" fill="#131D39"/><circle cx="39.5" cy="33.6" r="1.5" fill="#131D39"/>
+          <path d="M25 42c2.4 2.6 11.6 2.6 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="20" cy="39" r="2.6" fill="#35D7FA" opacity=".85"/><circle cx="44" cy="39" r="2.6" fill="#35D7FA" opacity=".85"/>
+        </svg>
+      </span>
+      <span class="txt"><b>Pediatría con Amor</b><span>Dra. Mariaelpi Benítez</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="lnk" href="#sobre">La doctora</a>
+      <a class="lnk" href="#servicios">Servicios</a>
+      <a class="lnk" href="#vacunas">Vacunas</a>
+      <a class="lnk" href="#sedes">Sedes</a>
+      <a class="nav-cta" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        Escríbeme
+      </a>
+    </div>
+  </nav>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal">
+      <span class="hero-badge"><span class="dot"></span> Pediatra y Puericultor · <b>Anzoátegui</b></span>
+      <h1>Pediatría <span class="con">con amor</span> para tu <span class="amor">pequeño</span>, en Cantaura y Barcelona</h1>
+      <p class="hero-sub">Consulta pediátrica, control del niño sano y crianza acompañada, con calidez y confianza en cada etapa.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Agenda por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#vacunas">Ver calendario de vacunas</a>
+      </div>
+      <ul class="hero-trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#D81483" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg> Control del niño sano</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-3 3-4-4zM15 5L4 16l-1 5 5-1L19 9"/></svg> Vacunación</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#B02EA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M8 5l1 3M16 5l-1 3M6 10h12l-1 8a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3z"/></svg> Puericultura</li>
+      </ul>
+    </div>
+    <div class="hero-art reveal">
+      <div class="hero-card bob">
+        <img class="logo-real" src="assets/pediatria-logo-crop.png" alt="Logo de Pediatría con Amor: mascota bebé sonriente en magenta con la palabra Amor en rosa">
+        <div class="float-chip fc-1">
+          <span class="ic" style="background:var(--rosa-suave)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D81483" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+          </span>
+          <span>Con amor<small>en cada consulta</small></span>
+        </div>
+        <div class="float-chip fc-2">
+          <span class="ic" style="background:var(--turquesa-suave)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+          </span>
+          <span>2 sedes<small>Cantaura · Barcelona</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE LA DRA ============ -->
+<section class="block about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="doc-card reveal">
+      <img class="doc-photo" src="assets/pediatria-avatar.jpg" alt="Dra. Mariaelpi Benítez, pediatra y puericultor">
+      <h3>Dra. Mariaelpi Benítez</h3>
+      <div class="role">Pediatra y Puericultor</div>
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.3 7.2 17.7l.9-5.4L4.2 8.5l5.4-.8z"/></svg>
+        Especialista de confianza
+      </div>
+    </div>
+    <div class="about-body reveal">
+      <span class="eyebrow">01 · Sobre la doctora</span>
+      <h2 style="margin-top:14px">Cada niño merece un acompañamiento cercano</h2>
+      <p class="about-quote">"Siempre disponible para atender a tu pequeño; su salud es mi prioridad."</p>
+      <p class="lead">Soy la Dra. Mariaelpi Benítez, pediatra y puericultor. Acompaño a las familias de Cantaura y Barcelona en el crecimiento sano de sus hijos: desde el recién nacido hasta la etapa escolar, con controles, vacunación y orientación de crianza explicada con calma y sin apuros.</p>
+      <div class="about-tags">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#B02EA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg> Trato cálido</span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/><path d="M3 20a7 7 0 0 1 18 0"/></svg> Puericultura</span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#D81483" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M8 12h8M4 4h16v16H4z"/></svg> Crianza acompañada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="block" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">02 · Lo que hacemos</span>
+      <h2>Cuidado pediátrico para cada etapa</h2>
+      <p>Atención integral, cercana y clara para acompañar a tu pequeño en su crecimiento — sin apuros y con mucho amor.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-ic" style="background:var(--rosa-suave)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D81483" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+        </div>
+        <h3>Control del niño sano</h3>
+        <p>Seguimiento de peso, talla y desarrollo en cada etapa, para detectar a tiempo y celebrar cada logro.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic" style="background:var(--turquesa-suave)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-3 3-4-4zM15 5L4 16l-1 5 5-1L19 9M9 11l4 4"/></svg>
+        </div>
+        <h3>Vacunación</h3>
+        <p>Esquema orientado etapa por etapa, incluyendo la vacuna antigripal, con explicación para cada familia.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic" style="background:var(--magenta-suave)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B02EA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M8 5l1 3M16 5l-1 3M6 10h12l-1 8a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3z"/></svg>
+        </div>
+        <h3>Puericultura</h3>
+        <p>Orientación en lactancia, alimentación, sueño y hábitos para acompañar la crianza con seguridad.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic" style="background:var(--turquesa-suave)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6a6 6 0 0 0 12 0V2M9 22a3 3 0 0 1 6 0M12 14v8"/><circle cx="18" cy="6" r="2"/></svg>
+        </div>
+        <h3>Consulta pediátrica</h3>
+        <p>Evaluación completa cuando tu pequeño lo necesita, con tiempo para escuchar y resolver tus dudas.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic" style="background:var(--rosa-suave)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D81483" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 8-4-16-3 8H2"/></svg>
+        </div>
+        <h3>Divulgación de crianza</h3>
+        <p>Contenido y consejos claros para mamás y papás, para criar con información confiable y tranquilidad.</p>
+      </article>
+      <article class="serv-card wide reveal">
+        <div class="serv-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 19H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h1l2-3h6l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="15" r="3"/></svg>
+        </div>
+        <div class="txt">
+          <h3>Emergencias pediátricas</h3>
+          <p>Cuando tu pequeño no puede esperar, escríbeme por WhatsApp: siempre disponible para orientarte y atenderte.</p>
+        </div>
+        <a class="btn btn-cian" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20tengo%20una%20emergencia%20con%20mi%20peque%C3%B1o(a)%20y%20necesito%20orientaci%C3%B3n" target="_blank" rel="noopener">Escríbeme ahora</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALENDARIO DE VACUNAS (firma) ============ -->
+<section class="block vac" id="vacunas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">03 · Calendario de vacunas</span>
+      <h2>¿Qué toca a la edad de tu pequeño?</h2>
+      <p>Toca la edad de tu hijo y verás una guía orientativa de controles y vacunas para esa etapa. Luego agenda esa visita directo por WhatsApp.</p>
+    </div>
+
+    <div class="vac-panel reveal">
+      <div class="vac-top">
+        <span class="vic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M8 14l2 2 4-4"/></svg>
+        </span>
+        <div>
+          <h3>Guía por edad</h3>
+          <p>Orientativa · siempre confirmada en consulta con la doctora</p>
+        </div>
+      </div>
+
+      <div class="vac-ages" role="tablist" aria-label="Elige la edad de tu pequeño" id="ageTabs">
+        <button class="age-btn" role="tab" id="tab-0" aria-controls="vac-content" aria-selected="true" data-age="0">Recién nacido<small>0 – 1 mes</small></button>
+        <button class="age-btn" role="tab" id="tab-1" aria-controls="vac-content" aria-selected="false" data-age="1" tabindex="-1">2 meses<small>lactante</small></button>
+        <button class="age-btn" role="tab" id="tab-2" aria-controls="vac-content" aria-selected="false" data-age="2" tabindex="-1">6 meses<small>lactante</small></button>
+        <button class="age-btn" role="tab" id="tab-3" aria-controls="vac-content" aria-selected="false" data-age="3" tabindex="-1">1 año<small>12 meses</small></button>
+        <button class="age-btn" role="tab" id="tab-4" aria-controls="vac-content" aria-selected="false" data-age="4" tabindex="-1">2 años<small>preescolar</small></button>
+        <button class="age-btn" role="tab" id="tab-5" aria-controls="vac-content" aria-selected="false" data-age="5" tabindex="-1">4 – 6 años<small>escolar</small></button>
+      </div>
+
+      <div class="vac-body" id="vac-content" role="tabpanel" aria-live="polite" tabindex="0">
+        <div class="vac-etapa" id="vacEtapa"></div>
+        <ul class="vac-list" id="vacList"></ul>
+        <div class="vac-foot">
+          <p class="vac-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Guía informativa general. El esquema exacto de tu pequeño se define en consulta con la Dra. Mariaelpi.
+          </p>
+          <a class="btn btn-primary" id="vacCta" href="#" target="_blank" rel="noopener">
+            <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Agendar esta etapa
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DÓNDE TE ATIENDO ============ -->
+<section class="block" id="sedes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">04 · Dónde te atiendo</span>
+      <h2>Cerca de tu familia, en dos ciudades</h2>
+      <p>Atiendo en Cantaura y en Barcelona, en el estado Anzoátegui. Coordinamos día y sede por WhatsApp según lo que te quede mejor.</p>
+    </div>
+    <div class="sedes-grid">
+      <div class="sede-list">
+        <article class="sede s1 reveal">
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div>
+            <div class="loc">Sede 1</div>
+            <h3>Cantaura</h3>
+            <p>Anzoátegui. Jornadas de consulta y vacunación en Farmacia Virgen del Valle. Confirma fecha por WhatsApp.</p>
+          </div>
+        </article>
+        <article class="sede s2 reveal">
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div>
+            <div class="loc">Sede 2</div>
+            <h3>Barcelona</h3>
+            <p>Av. Caracas, Anzoátegui. Consulta pediátrica y control del niño sano. Agenda tu cita con tiempo.</p>
+          </div>
+        </article>
+      </div>
+      <div class="map-card reveal" role="img" aria-label="Mapita ilustrado con las dos sedes: Cantaura y Barcelona, en Anzoátegui">
+        <svg class="mapdraw" viewBox="0 0 300 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M-10 200 C60 170 90 210 150 190 S250 150 320 180" fill="none" stroke="#B02EA6" stroke-width="2.5" stroke-dasharray="7 9" opacity=".45" stroke-linecap="round"/>
+          <path d="M-10 250 C70 240 120 270 180 250 S270 230 320 250" fill="none" stroke="#35D7FA" stroke-width="2.5" stroke-dasharray="7 9" opacity=".55" stroke-linecap="round"/>
+          <circle cx="70" cy="120" r="3" fill="#01ACBE" opacity=".5"/>
+          <circle cx="220" cy="90" r="3" fill="#D81483" opacity=".5"/>
+          <circle cx="255" cy="220" r="3" fill="#B02EA6" opacity=".4"/>
+          <!-- pin Cantaura -->
+          <g transform="translate(78 128)">
+            <path d="M0 0c-11 0-20 9-20 20 0 14 20 34 20 34s20-20 20-34C20 9 11 0 0 0z" fill="#B02EA6"/>
+            <circle cx="0" cy="20" r="8" fill="#fff"/>
+            <text x="0" y="72" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="15" font-weight="700" fill="#131D39">Cantaura</text>
+          </g>
+          <!-- pin Barcelona -->
+          <g transform="translate(212 150)">
+            <path d="M0 0c-11 0-20 9-20 20 0 14 20 34 20 34s20-20 20-34C20 9 11 0 0 0z" fill="#01ACBE"/>
+            <circle cx="0" cy="20" r="8" fill="#fff"/>
+            <text x="0" y="72" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="15" font-weight="700" fill="#131D39">Barcelona</text>
+          </g>
+        </svg>
+        <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="#B02EA6" stroke-width="2" width="16" height="16" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/></svg> Estado <b>Anzoátegui</b>, Venezuela</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <span class="halo" aria-hidden="true"></span>
+      <div class="content">
+        <span class="final-mascot bob-slow" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="78" height="78">
+            <path d="M32 7c-3 0-6 1.4-6 4.4 0 1.6 1 2.7 1 2.7C18 15.6 12 22 12 31.5 12 44 21 55 32 55s20-11 20-23.5C52 20 45 13.6 37 14.1c1.4-1.2 2-2.4 2-3.7C39 7.9 35.6 7 32 7z" fill="#fff"/>
+            <circle cx="24.5" cy="33" r="3.2" fill="#B02EA6"/><circle cx="39.5" cy="33" r="3.2" fill="#B02EA6"/>
+            <path d="M25 42c2.4 2.6 11.6 2.6 14 0" stroke="#B02EA6" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="39" r="2.6" fill="#35D7FA"/><circle cx="44" cy="39" r="2.6" fill="#D81483"/>
+          </svg>
+        </span>
+        <h2>Escríbeme y agenda a tu pequeño</h2>
+        <p>Un mensaje y coordinamos la consulta, el control o la vacuna en la sede que mejor te quede. Siempre disponible para atenderte.</p>
+        <a class="btn btn-cian" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Escríbeme por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER nota-sticker ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="sticker reveal">
+      <div class="sticker-grid">
+        <div class="note">
+          <h3>
+            <span class="m bob-slow" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="44" height="44">
+                <path d="M32 7c-3 0-6 1.4-6 4.4 0 1.6 1 2.7 1 2.7C18 15.6 12 22 12 31.5 12 44 21 55 32 55s20-11 20-23.5C52 20 45 13.6 37 14.1c1.4-1.2 2-2.4 2-3.7C39 7.9 35.6 7 32 7z" fill="#B02EA6"/>
+                <circle cx="24.5" cy="33" r="3.2" fill="#fff"/><circle cx="39.5" cy="33" r="3.2" fill="#fff"/>
+                <path d="M25 42c2.4 2.6 11.6 2.6 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="20" cy="39" r="2.4" fill="#35D7FA"/><circle cx="44" cy="39" r="2.4" fill="#D81483"/>
+              </svg>
+            </span>
+            Una nota de la doctora
+          </h3>
+          <p class="hand">Gracias por cuidar la salud de tu pequeño. Aquí siempre habrá un espacio cálido para ustedes: escríbeme cuando lo necesites y con gusto te oriento.</p>
+          <p class="sign">— Dra. Mariaelpi Benítez<small>Pediatra y Puericultor · @pediatriaconamor.1</small></p>
+        </div>
+        <div class="foot-pins">
+          <div class="foot-pin s1">
+            <span class="p" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><b>Cantaura</b><span>Anzoátegui · Farmacia Virgen del Valle</span></span>
+          </div>
+          <div class="foot-pin s2">
+            <span class="p" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><b>Barcelona</b><span>Anzoátegui · Av. Caracas</span></span>
+          </div>
+          <div class="foot-pin" style="border-style:dashed">
+            <span class="p" style="background:var(--wa)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg></span>
+            <span><b>Siempre disponible</b><span>Agenda y orientación por WhatsApp</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot-contact">
+        <a class="btn btn-primary" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          0426 583 4809
+        </a>
+        <div class="foot-social">
+          <a href="https://instagram.com/pediatriaconamor.1" target="_blank" rel="noopener" aria-label="Instagram @pediatriaconamor.1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="medine">Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Propuesta de diseño con datos de sus redes públicas — no es el sitio oficial.</p>
+  </div>
+</footer>
+
+<!-- ============ FAB WhatsApp ============ -->
+<a class="fab" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a la Dra. Mariaelpi">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.56-.48-.48-.65-.49l-.56-.01c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42 0 1.43 1.03 2.8 1.17 3 .15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.56-.35z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-2.85.9.9-2.78-.2-.32A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "https://wa.me/584265834809";
+
+  /* ---------- Calendario de vacunas (firma) ---------- */
+  var DATA = [
+    { etapa:"Recién nacido", sub:"0 a 1 mes de vida", items:[
+      {t:"BCG", d:"Protección contra formas graves de tuberculosis."},
+      {t:"Hepatitis B", d:"Primera dosis en las primeras horas de vida."},
+      {t:"Tamizaje neonatal", d:"Pesquisa para detectar a tiempo."},
+      {t:"Control del recién nacido", d:"Peso, talla y lactancia."}
+    ]},
+    { etapa:"2 meses", sub:"lactante menor", items:[
+      {t:"Pentavalente (1ª)", d:"Difteria, tétanos, tosferina, Hib y hepatitis B."},
+      {t:"Antipolio (1ª)", d:"Primera dosis del esquema."},
+      {t:"Rotavirus (1ª)", d:"Protege frente a diarreas graves."},
+      {t:"Neumococo (1ª)", d:"Contra infecciones neumocócicas."}
+    ]},
+    { etapa:"6 meses", sub:"lactante", items:[
+      {t:"Refuerzos del esquema", d:"Continúa Pentavalente y Antipolio."},
+      {t:"Vacuna antigripal", d:"Influenza estacional para el bebé."},
+      {t:"Control de crecimiento", d:"Alimentación complementaria y desarrollo."},
+      {t:"Orientación de crianza", d:"Sueño, hierro y nuevos alimentos."}
+    ]},
+    { etapa:"1 año", sub:"12 meses", items:[
+      {t:"Trivalente viral (SRP)", d:"Sarampión, rubéola y paperas."},
+      {t:"Neumococo (refuerzo)", d:"Dosis de refuerzo."},
+      {t:"Hepatitis A", d:"Según indicación."},
+      {t:"Control del niño sano", d:"Hitos del desarrollo del primer año."}
+    ]},
+    { etapa:"2 años", sub:"preescolar temprano", items:[
+      {t:"Refuerzos (DPT · Antipolio)", d:"Refuerzos del esquema básico."},
+      {t:"Evaluación del desarrollo", d:"Lenguaje, motricidad y hábitos."},
+      {t:"Orientación nutricional", d:"Alimentación de la familia."},
+      {t:"Control del niño sano", d:"Seguimiento de peso y talla."}
+    ]},
+    { etapa:"4 a 6 años", sub:"edad escolar", items:[
+      {t:"Refuerzo DPT", d:"Refuerzo previo a la etapa escolar."},
+      {t:"Trivalente viral (2ª)", d:"Segunda dosis de SRP."},
+      {t:"Evaluación preescolar", d:"Visión, audición y desarrollo."},
+      {t:"Control del niño sano", d:"Preparación para el colegio."}
+    ]}
+  ];
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.age-btn'));
+  var etapaEl = document.getElementById('vacEtapa');
+  var listEl = document.getElementById('vacList');
+  var ctaEl = document.getElementById('vacCta');
+  var current = 0;
+
+  function vIcon(){
+    return '<span class="vb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-3 3-4-4zM15 5L4 16l-1 5 5-1L19 9M9 11l4 4"/></svg></span>';
+  }
+
+  function render(i){
+    var d = DATA[i];
+    etapaEl.innerHTML = 'Etapa: ' + d.etapa + '<small>' + d.sub + '</small>';
+    var html = '';
+    for(var k=0;k<d.items.length;k++){
+      html += '<li class="vac-item">' + vIcon() +
+              '<div><b>'+d.items[k].t+'</b><span>'+d.items[k].d+'</span></div></li>';
+    }
+    listEl.innerHTML = html;
+    var msg = 'Hola Dra. Mariaelpi, quisiera agendar el control y las vacunas de la etapa "'+d.etapa+'" para mi pequeño(a).';
+    ctaEl.href = WA + '?text=' + encodeURIComponent(msg);
+  }
+
+  function select(i, focus){
+    current = i;
+    for(var k=0;k<tabs.length;k++){
+      var on = (k===i);
+      tabs[k].setAttribute('aria-selected', on ? 'true':'false');
+      tabs[k].tabIndex = on ? 0 : -1;
+    }
+    render(i);
+    if(focus){ tabs[i].focus(); }
+  }
+
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ select(i, false); });
+    tab.addEventListener('keydown', function(e){
+      var n = null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown') n = (i+1)%tabs.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp') n = (i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home') n = 0;
+      else if(e.key==='End') n = tabs.length-1;
+      if(n!==null){ e.preventDefault(); select(n, true); }
+    });
+  });
+  render(0);
+
+  /* ---------- Reveal por POSICIÓN en scroll (robusto) ---------- */
+  var revs = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function reveal(){
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    for(var i=0;i<revs.length;i++){
+      var el = revs[i];
+      if(el.classList.contains('in')) continue;
+      var top = el.getBoundingClientRect().top;
+      if(top < h*0.9){ el.classList.add('in'); }
+    }
+  }
+  window.addEventListener('scroll', reveal, {passive:true});
+  window.addEventListener('resize', reveal);
+  window.addEventListener('load', reveal);
+  reveal();
+  /* red de seguridad: revelar TODO pase lo que pase */
+  setTimeout(function(){ for(var i=0;i<revs.length;i++){ revs[i].classList.add('in'); } }, 2500);
+})();
+</script>
+</body>
+</html>
