@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Beatriz González — Ginecología y Obstetricia · Lechería</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Dra. Beatriz González, Ginecología y Obstetricia en Lechería, Anzoátegui. Atención integral de la salud femenina en el Centro de Especialidades Anzoátegui. Agenda tu consulta.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dra. Beatriz González — Ginecología y Obstetricia">
+<meta property="og:description" content="Atención integral de la salud femenina en Lechería, Anzoátegui. Agenda tu consulta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238D6D3F'/%3E%3Cpath d='M16 6c0 6-4 8-4 12a4 4 0 0 0 8 0c0-4-4-6-4-12z' fill='none' stroke='%23FAF7F2' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M16 12v12' stroke='%23FAF7F2' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Reddit+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --crema:#FAF7F2;
+    --crema-2:#F3ECE0;
+    --papel:#FBF9F5;
+    --tinta:#2C2620;
+    --tinta-70:rgba(44,38,32,.70);
+    --tinta-50:rgba(44,38,32,.52);
+    --camel:#8D6D3F;
+    --camel-d:#6E5330;
+    --camel-tint:rgba(141,109,63,.12);
+    --linea:rgba(44,38,32,.16);
+    --linea-camel:rgba(141,109,63,.32);
+    --wa:#25D366;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--crema);
+    color:var(--tinta);
+    font-family:"Reddit Sans",system-ui,sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Besley",Georgia,serif;font-weight:600;line-height:1.02;margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--camel);color:var(--crema)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+
+  .eyebrow{
+    font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--camel);display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--camel);opacity:.7}
+  .secnum{
+    font-family:"Besley",serif;font-style:italic;font-weight:500;
+    font-size:.95rem;color:var(--camel);letter-spacing:.02em;
+  }
+
+  /* focus */
+  a:focus-visible,button:focus-visible{outline:2px solid var(--camel);outline-offset:3px;border-radius:3px}
+
+  /* ---------- reveals (gated to html.js only) ---------- */
+  html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .reveal.d1{transition-delay:.08s}
+  html.js .reveal.d2{transition-delay:.16s}
+  html.js .reveal.d3{transition-delay:.24s}
+  html.js .reveal.d4{transition-delay:.32s}
+  @media (prefers-reduced-motion:reduce){
+    html.js .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    html *{scroll-behavior:auto !important}
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,242,.82);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--linea);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+  .wordmark{display:flex;align-items:baseline;gap:.5em;min-width:0}
+  .wordmark .wm-name{font-family:"Besley",serif;font-weight:600;font-size:1.06rem;letter-spacing:.01em;white-space:nowrap}
+  .wordmark .wm-sub{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tinta-50);white-space:nowrap}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.5em;
+    background:var(--camel);color:var(--crema);
+    padding:.6em 1.15em;border-radius:999px;
+    font-size:.86rem;font-weight:600;letter-spacing:.01em;
+    transition:background .25s ease,transform .25s ease;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--camel-d);transform:translateY(-1px)}
+  .nav-cta svg{width:15px;height:15px}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:clamp(48px,9vw,110px) 0 clamp(40px,7vw,86px);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,48px);position:relative;z-index:2}
+  .hero-eyebrow{margin-bottom:clamp(20px,4vw,34px)}
+  .nameplate{
+    font-weight:600;
+    font-size:clamp(3.3rem,17vw,11.2rem);
+    line-height:.9;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+  .nameplate .ln{display:block}
+  .nameplate .ln-2{color:var(--camel);font-style:italic;font-weight:500;margin-left:.02em}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:.55em 1em;
+    margin-top:clamp(22px,4vw,34px);
+    font-size:clamp(1rem,2.4vw,1.28rem);
+    font-family:"Besley",serif;font-weight:400;color:var(--tinta-70);
+  }
+  .hero-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--camel);flex:none}
+  .hero-lede{
+    max-width:44ch;margin-top:clamp(20px,3.5vw,30px);
+    color:var(--tinta-70);font-size:clamp(1rem,2.2vw,1.14rem);
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,4vw,40px)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    padding:.92em 1.5em;border-radius:999px;
+    font-weight:600;font-size:.96rem;letter-spacing:.01em;
+    transition:transform .25s ease,background .25s ease,border-color .25s ease,color .25s ease;
+  }
+  .btn-primary{background:var(--camel);color:var(--crema)}
+  .btn-primary:hover{background:var(--camel-d);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--linea);color:var(--tinta)}
+  .btn-ghost:hover{border-color:var(--camel);color:var(--camel);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px;flex:none}
+
+  /* botanical line motif */
+  .botanic{
+    position:absolute;pointer-events:none;z-index:1;color:var(--camel);
+    opacity:.5;
+  }
+  .botanic.b-hero{top:-2%;right:-4%;width:min(46vw,430px);height:auto}
+  @media (max-width:720px){.botanic.b-hero{width:64vw;right:-14%;top:auto;bottom:-2%;opacity:.32}}
+
+  .hero-note{
+    margin-top:clamp(30px,5vw,44px);padding-top:20px;border-top:1px solid var(--linea);
+    display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.82rem;color:var(--tinta-50);
+    letter-spacing:.02em;
+  }
+  .hero-note b{color:var(--tinta-70);font-weight:600}
+
+  /* ---------- section frame ---------- */
+  section{position:relative}
+  .band{padding:clamp(56px,9vw,110px) 0}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(30px,5vw,52px)}
+  .sec-head .secnum{flex:none}
+  .sec-head h2{font-size:clamp(1.9rem,5vw,3.1rem);letter-spacing:-.015em;max-width:22ch}
+  .rule{height:1px;background:var(--linea);border:0;margin:0}
+
+  /* ---------- about ---------- */
+  .about{background:var(--papel)}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,60px);align-items:start}
+  .about-body p{margin:0 0 1.1em;color:var(--tinta-70);max-width:58ch}
+  .about-body p.lead{font-family:"Besley",serif;font-size:clamp(1.25rem,3.2vw,1.7rem);line-height:1.35;color:var(--tinta);font-weight:400;max-width:26ch}
+  .about-body p.lead em{color:var(--camel);font-style:italic}
+  .portrait-card{position:relative}
+  .portrait-frame{
+    position:relative;width:min(78%,300px);margin:0 auto;
+    aspect-ratio:172/228;border-radius:200px 200px 14px 14px;overflow:hidden;
+    background:var(--crema-2);border:1px solid var(--linea-camel);
+    box-shadow:0 24px 60px -34px rgba(44,38,32,.5);
+  }
+  .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+  .portrait-tag{
+    text-align:center;margin-top:16px;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--tinta-50);
+  }
+  .portrait-tag b{color:var(--camel);font-weight:600;letter-spacing:.1em}
+  .about-signals{list-style:none;margin:clamp(24px,4vw,34px) 0 0;padding:0;display:grid;gap:0}
+  .about-signals li{
+    display:flex;gap:16px;align-items:flex-start;
+    padding:18px 0;border-top:1px solid var(--linea);
+  }
+  .about-signals li:last-child{border-bottom:1px solid var(--linea)}
+  .about-signals .k{font-family:"Besley",serif;font-style:italic;color:var(--camel);font-size:.95rem;flex:none;width:34px}
+  .about-signals .v{color:var(--tinta-70);font-size:.98rem}
+  .about-signals .v b{color:var(--tinta);font-weight:600}
+
+  /* ---------- services ---------- */
+  .serv-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--linea)}
+  .serv{
+    display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:baseline;
+    padding:clamp(22px,3.4vw,30px) 0;border-bottom:1px solid var(--linea);
+    transition:padding-left .3s ease;
+  }
+  .serv:hover{padding-left:10px}
+  .serv .s-num{font-family:"Besley",serif;font-style:italic;color:var(--linea-camel);font-size:1rem;color:var(--camel);opacity:.6}
+  .serv .s-name{font-family:"Besley",serif;font-weight:600;font-size:clamp(1.15rem,3vw,1.55rem);letter-spacing:-.01em}
+  .serv .s-desc{grid-column:2;color:var(--tinta-70);font-size:.96rem;max-width:52ch;margin-top:2px}
+  .price-card{
+    margin-top:clamp(34px,5vw,50px);
+    display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;justify-content:space-between;
+    background:var(--tinta);color:var(--crema);
+    border-radius:20px;padding:clamp(26px,4vw,38px) clamp(24px,4vw,42px);
+  }
+  .price-card .pc-l{display:flex;align-items:baseline;gap:.5em;flex-wrap:wrap}
+  .price-card .pc-label{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,.6);display:block;width:100%;margin-bottom:6px}
+  .price-card .pc-amt{font-family:"Besley",serif;font-size:clamp(2.4rem,7vw,3.4rem);color:#E8C98A;font-weight:600;line-height:1}
+  .price-card .pc-cur{font-family:"Besley",serif;font-size:1.4rem;color:#E8C98A}
+  .price-card .pc-meta{font-size:.92rem;color:rgba(250,247,242,.72);max-width:30ch}
+  .price-card .pc-note{display:block;font-size:.76rem;color:rgba(250,247,242,.5);margin-top:6px;letter-spacing:.02em}
+
+  /* ---------- motivos (selector) ---------- */
+  .motivos{background:var(--papel)}
+  .motivos-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,46px);align-items:start}
+  .chips{display:flex;flex-wrap:wrap;gap:12px}
+  .chip{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:"Reddit Sans",sans-serif;font-size:.95rem;font-weight:500;
+    padding:.7em 1.15em;border-radius:999px;cursor:pointer;
+    background:var(--crema);color:var(--tinta);
+    border:1px solid var(--linea);
+    transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+  }
+  .chip:hover{border-color:var(--camel);transform:translateY(-1px)}
+  .chip[aria-pressed="true"]{background:var(--camel);color:var(--crema);border-color:var(--camel)}
+  .chip .dotm{width:7px;height:7px;border-radius:50%;background:var(--camel);flex:none;transition:background .22s ease}
+  .chip[aria-pressed="true"] .dotm{background:var(--crema)}
+  .motivo-panel{
+    background:var(--crema);border:1px solid var(--linea-camel);border-radius:20px;
+    padding:clamp(26px,4vw,38px);position:relative;
+  }
+  .motivo-panel .mp-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--camel);font-weight:600}
+  .motivo-panel .mp-title{font-family:"Besley",serif;font-size:clamp(1.5rem,4vw,2rem);margin:.35em 0 .3em;letter-spacing:-.01em}
+  .motivo-panel .mp-text{color:var(--tinta-70);margin:0 0 1.4em;max-width:40ch}
+  .motivo-panel .mp-msg{
+    font-size:.88rem;color:var(--tinta-50);background:var(--crema-2);
+    border-radius:12px;padding:12px 15px;margin:0 0 1.3em;border:1px solid var(--linea);
+  }
+  .motivo-panel .mp-msg span{color:var(--camel-d);font-weight:500}
+
+  /* ---------- agenda ---------- */
+  .agenda-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,54px)}
+  .info-list{list-style:none;margin:0;padding:0}
+  .info-list li{padding:20px 0;border-top:1px solid var(--linea);display:grid;grid-template-columns:1fr;gap:4px}
+  .info-list li:last-child{border-bottom:1px solid var(--linea)}
+  .info-list .il-k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--camel);font-weight:600}
+  .info-list .il-v{font-size:1.06rem;color:var(--tinta)}
+  .info-list .il-v small{display:block;color:var(--tinta-50);font-size:.86rem;margin-top:2px;letter-spacing:0}
+  .agenda-cta{
+    background:var(--camel);color:var(--crema);border-radius:20px;
+    padding:clamp(28px,4vw,42px);align-self:start;
+  }
+  .agenda-cta h3{font-family:"Besley",serif;font-size:clamp(1.6rem,4.5vw,2.2rem);margin:0 0 .4em;color:var(--crema)}
+  .agenda-cta p{color:rgba(250,247,242,.82);margin:0 0 1.5em;max-width:34ch}
+  .agenda-cta .btn-wa{
+    display:inline-flex;align-items:center;gap:.6em;background:var(--crema);color:var(--camel-d);
+    padding:.92em 1.5em;border-radius:999px;font-weight:600;transition:transform .25s ease,background .25s ease;
+  }
+  .agenda-cta .btn-wa:hover{transform:translateY(-2px);background:#fff}
+  .agenda-cta .btn-wa svg{width:18px;height:18px}
+
+  /* map-ish visual (CSS, not real map) */
+  .place{
+    margin-top:24px;border:1px solid rgba(250,247,242,.25);border-radius:14px;
+    padding:18px 20px;background:rgba(250,247,242,.08);
+  }
+  .place .p-code{font-family:"Besley",serif;font-style:italic;color:#E8C98A;font-size:.95rem}
+  .place .p-addr{color:rgba(250,247,242,.85);font-size:.95rem;margin-top:4px}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--tinta);color:var(--crema);padding:clamp(54px,8vw,88px) 0 34px}
+  .foot-top{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,54px)}
+  .foot-name{font-family:"Besley",serif;font-size:clamp(2.2rem,8vw,4.2rem);line-height:.98;letter-spacing:-.02em;color:var(--crema)}
+  .foot-name em{font-style:italic;color:#E8C98A;font-weight:500}
+  .foot-sub{color:rgba(250,247,242,.7);margin-top:16px;max-width:40ch}
+  .foot-col h4{font-family:"Reddit Sans",sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,.5);margin:0 0 14px;font-weight:600}
+  .foot-col p,.foot-col a{color:rgba(250,247,242,.85);font-size:.98rem;margin:0 0 8px}
+  .foot-col a{display:inline-flex;align-items:center;gap:.5em;transition:color .2s ease}
+  .foot-col a:hover{color:#E8C98A}
+  .foot-rule{height:1px;background:rgba(250,247,242,.16);margin:clamp(40px,6vw,60px) 0 26px;border:0}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center}
+  .foot-seal{font-size:.82rem;color:rgba(250,247,242,.6);max-width:52ch;line-height:1.5}
+  .foot-seal a{color:#E8C98A;border-bottom:1px solid rgba(232,201,138,.4)}
+  .foot-disclaimer{font-size:.76rem;color:rgba(250,247,242,.42);letter-spacing:.02em}
+
+  /* ---------- FAB ---------- */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:60;
+    width:58px;height:58px;border-radius:50%;
+    background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
+    transition:transform .25s ease;
+  }
+  .fab:hover{transform:scale(1.06)}
+  .fab svg{width:30px;height:30px}
+  .fab::after{
+    content:"Agenda por WhatsApp";position:absolute;right:70px;white-space:nowrap;
+    background:var(--tinta);color:var(--crema);font-size:.78rem;font-weight:500;
+    padding:.5em .8em;border-radius:8px;opacity:0;pointer-events:none;transform:translateX(6px);
+    transition:opacity .25s ease,transform .25s ease;
+  }
+  .fab:hover::after{opacity:1;transform:translateX(0)}
+  @media (max-width:600px){.fab::after{display:none}}
+
+  /* ---------- responsive up ---------- */
+  @media (min-width:760px){
+    .hero-note{gap:10px 34px}
+    .about-grid{grid-template-columns:1.3fr .9fr}
+    .serv-grid{grid-template-columns:1fr 1fr;column-gap:clamp(30px,5vw,64px)}
+    .serv-grid .price-card{grid-column:1 / -1}
+    .motivos-grid{grid-template-columns:.95fr 1.05fr}
+    .agenda-grid{grid-template-columns:1fr 1fr}
+    .foot-top{grid-template-columns:1.5fr 1fr 1fr}
+  }
+  @media (min-width:1024px){
+    .hero-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="wordmark" href="#top" aria-label="Dra. Beatriz González, inicio">
+      <span class="wm-name">Dra. Beatriz González</span>
+      <span class="wm-sub">Ginecología</span>
+    </a>
+    <a class="nav-cta" href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Agenda
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <!-- botanical line motif (static SVG, camel) -->
+  <svg class="botanic b-hero" viewBox="0 0 300 460" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+    <path d="M186 452 C 168 380 158 300 172 214 C 182 150 210 96 246 40" stroke-width="1.6"/>
+    <g opacity="0.95">
+      <path d="M175 360 C 140 352 118 330 108 298 C 146 300 172 318 186 352 Z"/>
+      <path d="M177 360 C 208 344 224 316 226 282 C 194 292 176 320 173 356"/>
+      <path d="M170 296 C 138 292 116 272 108 244 C 144 246 168 264 181 294 Z"/>
+      <path d="M180 250 C 210 236 226 208 226 176 C 196 188 180 214 176 246"/>
+      <path d="M182 196 C 154 190 134 170 128 144 C 160 148 180 166 191 194 Z"/>
+      <path d="M198 150 C 226 134 240 106 238 76 C 210 90 196 116 194 148"/>
+      <circle cx="246" cy="40" r="6" fill="currentColor" stroke="none" opacity="0.9"/>
+      <path d="M232 58 C 236 44 246 34 262 30 C 258 46 248 56 234 60 Z"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow hero-eyebrow reveal">Consultorio propio · Recupera tu nombre</span>
+      <h1 class="nameplate reveal d1">
+        <span class="ln">Beatriz</span>
+        <span class="ln ln-2">González</span>
+      </h1>
+      <div class="hero-meta reveal d2">
+        <span>Ginecología y Obstetricia</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Lechería, Anzoátegui</span>
+      </div>
+      <p class="hero-lede reveal d2">
+        Atención integral y serena de la salud femenina, en cada etapa. Tu propia página, tu propia agenda —
+        no un nombre prestado en un portal ajeno.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-primary" href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          Agenda tu consulta
+        </a>
+        <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="hero-note reveal d4">
+        <span><b>Consulta $60</b> · pago en consultorio</span>
+        <span>Centro de Especialidades Anzoátegui</span>
+        <span>Precios de referencia · agosto 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ELLA ================= -->
+<section class="band about" id="enfoque">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum">01 —</span>
+      <h2>Un acompañamiento cercano en la salud de la mujer</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p class="lead">Cada consulta es un espacio de <em>confianza y escucha</em>, sin apuros.</p>
+        <p>
+          La Dra. Beatriz González ejerce la ginecología y obstetricia en el Centro de Especialidades
+          Anzoátegui, en Lechería. Su enfoque es integral: acompañar a la mujer en el control del embarazo,
+          la planificación familiar, la prevención y el seguimiento —con la calma y el tiempo que cada
+          etapa merece.
+        </p>
+        <p>
+          Esta página reúne, en un solo lugar que le pertenece, su enfoque, sus servicios y una vía directa
+          para agendar. Sin intermediarios, sin listas donde su nombre se pierde entre muchos.
+        </p>
+        <ul class="about-signals">
+          <li><span class="k">i.</span><span class="v"><b>Atención integral</b> — prevención, embarazo y planificación en un mismo acompañamiento.</span></li>
+          <li><span class="k">ii.</span><span class="v"><b>Trato humano</b> — consulta serena, con tiempo para escuchar y explicar.</span></li>
+          <li><span class="k">iii.</span><span class="v"><b>Agenda directa</b> — una vía propia para reservar tu cita, sin portales de por medio.</span></li>
+        </ul>
+      </div>
+      <aside class="portrait-card reveal d2">
+        <div class="portrait-frame">
+          <img src="assets/beatriz-retrato.webp" width="300" height="398" alt="Retrato de la Dra. Beatriz González, ginecóloga y obstetra en Lechería.">
+        </div>
+        <p class="portrait-tag">Dra. Beatriz González · <b>Ginecología &amp; Obstetricia</b></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="band" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum">02 —</span>
+      <h2>Servicios de consulta ginecológica y obstétrica</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv reveal">
+        <span class="s-num">01</span>
+        <span class="s-name">Control del embarazo</span>
+        <span class="s-desc">Atención prenatal y seguimiento del embarazo, etapa por etapa.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">02</span>
+        <span class="s-name">Consulta preconcepcional</span>
+        <span class="s-desc">Preparación y orientación antes de buscar un embarazo.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">03</span>
+        <span class="s-name">Planificación familiar</span>
+        <span class="s-desc">Métodos y asesoría para decidir con información y tranquilidad.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">04</span>
+        <span class="s-name">Colocación de DIU</span>
+        <span class="s-desc">Dispositivo intrauterino, colocación y control.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">05</span>
+        <span class="s-name">Citología</span>
+        <span class="s-desc">Prueba de prevención para el cuidado del cuello uterino.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">06</span>
+        <span class="s-name">Colposcopia</span>
+        <span class="s-desc">Estudio detallado cuando la prevención lo requiere.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">07</span>
+        <span class="s-name">Consulta de infertilidad</span>
+        <span class="s-desc">Orientación y acompañamiento en la búsqueda de un embarazo.</span>
+      </div>
+      <div class="serv reveal">
+        <span class="s-num">08</span>
+        <span class="s-name">Cesárea</span>
+        <span class="s-desc">Atención obstétrica quirúrgica cuando está indicada.</span>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="pc-l">
+          <span class="pc-label">Consulta ginecológica</span>
+          <span class="pc-cur">$</span><span class="pc-amt">60</span>
+        </div>
+        <div class="pc-meta">
+          Pago en consultorio.
+          <span class="pc-note">Precios de referencia · agosto 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MOTIVOS DE CONSULTA ================= -->
+<section class="band motivos" id="motivos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum">03 —</span>
+      <h2>¿Cuál es tu motivo de consulta?</h2>
+    </div>
+    <div class="motivos-grid">
+      <div class="reveal">
+        <p style="color:var(--tinta-70);max-width:38ch;margin:0 0 22px">
+          Elige el motivo que mejor describe tu cita. Prepararemos tu mensaje de WhatsApp para agendar más rápido.
+        </p>
+        <div class="chips" role="group" aria-label="Motivos de consulta">
+          <button class="chip" type="button" data-motivo="prenatal" aria-pressed="true"><span class="dotm" aria-hidden="true"></span>Control prenatal</button>
+          <button class="chip" type="button" data-motivo="diu" aria-pressed="false"><span class="dotm" aria-hidden="true"></span>Planificación y DIU</button>
+          <button class="chip" type="button" data-motivo="citologia" aria-pressed="false"><span class="dotm" aria-hidden="true"></span>Citología</button>
+          <button class="chip" type="button" data-motivo="colposcopia" aria-pressed="false"><span class="dotm" aria-hidden="true"></span>Colposcopia</button>
+          <button class="chip" type="button" data-motivo="infertilidad" aria-pressed="false"><span class="dotm" aria-hidden="true"></span>Infertilidad</button>
+        </div>
+      </div>
+      <div class="motivo-panel reveal d2">
+        <span class="mp-label">Motivo seleccionado</span>
+        <h3 class="mp-title" id="mp-title">Control prenatal</h3>
+        <p class="mp-text" id="mp-text">Seguimiento del embarazo con la calma y el detalle que cada etapa necesita.</p>
+        <p class="mp-msg">Tu mensaje: “<span id="mp-msg">Hola, quisiera agendar una consulta de control prenatal con la Dra. Beatriz González</span>”</p>
+        <a class="btn btn-primary" id="mp-cta" href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20de%20control%20prenatal%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+          Agendar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENDA / UBICACIÓN ================= -->
+<section class="band" id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="secnum">04 —</span>
+      <h2>Agenda y ubicación</h2>
+    </div>
+    <div class="agenda-grid">
+      <ul class="info-list reveal">
+        <li>
+          <span class="il-k">Centro</span>
+          <span class="il-v">Centro de Especialidades Anzoátegui<small>Edif. Centro Médico Anzoátegui, planta baja</small></span>
+        </li>
+        <li>
+          <span class="il-k">Dirección</span>
+          <span class="il-v">Av. Principal de Lechería con Av. Diego Bautista Urbaneja<small>Lechería, Anzoátegui — Venezuela</small></span>
+        </li>
+        <li>
+          <span class="il-k">Consulta</span>
+          <span class="il-v">$60 · pago en consultorio<small>Precios de referencia · agosto 2026</small></span>
+        </li>
+        <li>
+          <span class="il-k">Reservas</span>
+          <span class="il-v">Por WhatsApp<small>Línea de reservas del centro</small></span>
+        </li>
+      </ul>
+      <div class="agenda-cta reveal d2">
+        <h3>Reserva tu cita</h3>
+        <p>Escríbenos y coordinamos el día y la hora de tu consulta con la Dra. Beatriz González.</p>
+        <a class="btn-wa" href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+          Agendar por WhatsApp
+        </a>
+        <div class="place">
+          <div class="p-code">Plus Code · 58G8+7FM</div>
+          <div class="p-addr">Lechería (Diego B. Urbaneja), Anzoátegui</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot" id="contacto">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="reveal">
+        <div class="foot-name">Beatriz <em>González</em></div>
+        <p class="foot-sub">Ginecología y Obstetricia · Atención integral de la salud femenina en Lechería, Anzoátegui.</p>
+      </div>
+      <div class="foot-col reveal d1">
+        <h4>Consultorio</h4>
+        <p>Centro de Especialidades Anzoátegui</p>
+        <p>Av. Principal de Lechería con Av. Diego Bautista Urbaneja</p>
+        <p>Edif. Centro Médico Anzoátegui, PB</p>
+        <p>Lechería, Anzoátegui · Venezuela</p>
+      </div>
+      <div class="foot-col reveal d2">
+        <h4>Agenda</h4>
+        <a href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <p style="margin-top:12px">Consulta $60 · pago en consultorio</p>
+        <p style="color:rgba(250,247,242,.5);font-size:.82rem">Precios de referencia · agosto 2026</p>
+      </div>
+    </div>
+    <hr class="foot-rule">
+    <div class="foot-bottom">
+      <p class="foot-seal">
+        Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> ·
+        Esta es una propuesta de diseño — no es el sitio oficial. Datos de fuentes públicas.
+      </p>
+      <p class="foot-disclaimer">Propuesta de diseño · agosto 2026</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FAB ================= -->
+<a class="fab" href="https://wa.me/584223338000?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Beatriz%20Gonz%C3%A1lez" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var docEl = document.documentElement;
+
+  /* ---- reveal on scroll (gated: styles only apply under html.js) ---- */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if ('IntersectionObserver' in window && reveals.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- motivos selector -> builds wa.me link ---- */
+  var WA = 'https://wa.me/584223338000?text=';
+  var base = 'Hola, quisiera agendar una consulta';
+  var doctor = 'con la Dra. Beatriz González';
+  var motivos = {
+    prenatal:    {t:'Control prenatal',    m:'de control prenatal',        d:'Seguimiento del embarazo con la calma y el detalle que cada etapa necesita.'},
+    diu:         {t:'Planificación y DIU',  m:'de planificación familiar / DIU', d:'Asesoría en métodos y colocación de DIU para decidir con tranquilidad.'},
+    citologia:   {t:'Citología',            m:'de citología',               d:'Prueba de prevención para el cuidado del cuello uterino.'},
+    colposcopia: {t:'Colposcopia',          m:'de colposcopia',             d:'Estudio detallado cuando la prevención lo requiere.'},
+    infertilidad:{t:'Consulta de infertilidad', m:'de infertilidad',        d:'Orientación y acompañamiento en la búsqueda de un embarazo.'}
+  };
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var elTitle = document.getElementById('mp-title');
+  var elText  = document.getElementById('mp-text');
+  var elMsg   = document.getElementById('mp-msg');
+  var elCta   = document.getElementById('mp-cta');
+
+  function select(key){
+    var mo = motivos[key]; if(!mo) return;
+    var phrase = base + ' ' + mo.m + ' ' + doctor;
+    elTitle.textContent = mo.t;
+    elText.textContent  = mo.d;
+    elMsg.textContent   = phrase;
+    elCta.setAttribute('href', WA + encodeURIComponent(phrase));
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-motivo')===key)); });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){ select(c.getAttribute('data-motivo')); });
+  });
+
+  /* ---- smooth anchor scroll (respects reduced motion via CSS) ---- */
+  Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var id = a.getAttribute('href');
+      if(id.length>1){
+        var t = document.querySelector(id);
+        if(t){ ev.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>NAVEDA Dental Clinic · Dra. Geraldine Naveda — Diseño de sonrisa & Composite Live</title>
+<meta name="description" content="Odontología estética y restauradora de lujo en Lechería. Diseño de sonrisa, carillas en composite y el taller internacional Composite Live, edición 39.">
+<meta property="og:title" content="NAVEDA Dental Clinic — Dra. Geraldine Naveda">
+<meta property="og:description" content="Diseño de sonrisa que se nota, sin que se note. Carillas en composite y formación Composite Live.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D0B0C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23C44F96' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --ink:#0D0B0C;
+    --black:#000000;
+    --white:#FFFFFF;
+    --fuchsia:#C44F96;
+    --malva:#C598AD;
+    --line:rgba(255,255,255,.14);
+    --line-strong:rgba(255,255,255,.28);
+    --mute:rgba(255,255,255,.62);
+    --mute-2:rgba(255,255,255,.44);
+    --serif:'Yeseva One',Georgia,'Times New Roman',serif;
+    --sans:'Wix Madefor Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --pad:clamp(20px,5vw,72px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--fuchsia);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--fuchsia);outline-offset:3px;border-radius:2px}
+
+  /* ---------- reveal gating (only when JS is present) ---------- */
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.19,1,.22,1),transform .9s cubic-bezier(.19,1,.22,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .reveal.d1{transition-delay:.08s}
+  html.js .reveal.d2{transition-delay:.16s}
+  html.js .reveal.d3{transition-delay:.24s}
+
+  .eyebrow{
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--malva);font-weight:600;
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--fuchsia)}
+  .idx{font-family:var(--serif);color:var(--fuchsia);font-size:13px;letter-spacing:.05em}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.02em;
+    padding:14px 26px;border-radius:999px;
+    background:var(--fuchsia);color:var(--ink);
+    border:1px solid var(--fuchsia);
+    transition:transform .3s ease,box-shadow .3s ease,background .3s ease;
+    box-shadow:0 0 0 rgba(196,79,150,0);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(196,79,150,.6)}
+  .btn--ghost{background:transparent;color:var(--white);border-color:var(--line-strong)}
+  .btn--ghost:hover{border-color:var(--fuchsia);color:var(--fuchsia);box-shadow:none}
+
+  .section{padding:clamp(72px,11vw,140px) var(--pad);position:relative}
+  .sec-head{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;margin-bottom:clamp(36px,6vw,64px)}
+  .sec-head h2{
+    font-family:var(--serif);font-weight:400;line-height:.98;
+    font-size:clamp(34px,7vw,72px);letter-spacing:-.01em;
+    flex:1 1 320px;min-width:0;
+  }
+  .sec-head h2 em{font-style:normal;color:var(--fuchsia)}
+
+  /* =================== NAV =================== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:15px var(--pad);
+    background:rgba(13,11,12,.72);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    transition:background .4s ease,border-color .4s ease;
+  }
+  .nav.scrolled{background:rgba(6,5,6,.92)}
+  .nav__brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .nav__logo{height:26px;width:auto;filter:invert(1) brightness(1.9);flex:none}
+  .nav__tag{
+    display:none;font-size:10px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--mute-2);padding-left:12px;border-left:1px solid var(--line);
+  }
+  .nav__links{display:none;gap:30px;align-items:center}
+  .nav__links a{font-size:13px;letter-spacing:.04em;color:var(--mute);transition:color .25s}
+  .nav__links a:hover{color:var(--white)}
+  .nav__cta{display:inline-flex}
+  .nav__cta .btn{padding:11px 20px;font-size:13px}
+  @media(min-width:900px){
+    .nav__links{display:flex}
+    .nav__tag{display:inline-block}
+  }
+
+  /* =================== HERO (magazine cover) =================== */
+  .hero{
+    position:relative;min-height:100svh;
+    padding:120px var(--pad) 56px;
+    display:flex;flex-direction:column;justify-content:center;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero__glow{
+    position:absolute;z-index:0;pointer-events:none;
+    width:min(70vw,560px);aspect-ratio:1;border-radius:50%;
+    top:-14%;right:-12%;
+    background:radial-gradient(circle,rgba(196,79,150,.55) 0%,rgba(196,79,150,.16) 42%,transparent 70%);
+    filter:blur(30px);
+    animation:drift 16s ease-in-out infinite alternate;
+  }
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-6%,7%) scale(1.12)}}
+  .hero__topline{
+    position:relative;z-index:2;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute-2);
+    border-top:1px solid var(--line);padding-top:14px;margin-bottom:auto;
+  }
+  .hero__topline b{color:var(--malva);font-weight:600}
+  .hero__center{position:relative;z-index:2;padding:clamp(24px,7vw,60px) 0}
+  .hero__wordmark{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(58px,20vw,230px);line-height:.8;letter-spacing:-.02em;
+    color:var(--white);
+    display:block;margin:0 0 6px -.02em;
+  }
+  .hero__wordmark .k{color:var(--fuchsia)}
+  .hero__sub-word{
+    font-size:clamp(11px,2.4vw,16px);letter-spacing:.55em;text-transform:uppercase;
+    color:var(--mute);padding-left:.4em;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(26px,4.6vw,46px);line-height:1.06;letter-spacing:-.01em;
+    max-width:16ch;margin:clamp(26px,5vw,44px) 0 0;
+  }
+  .hero h1 em{font-style:normal;color:var(--fuchsia)}
+  .hero__lede{color:var(--mute);max-width:46ch;margin-top:20px;font-size:clamp(15px,1.7vw,17px)}
+  .hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero__foot{
+    position:relative;z-index:2;margin-top:auto;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    border-top:1px solid var(--line);padding-top:16px;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute-2);
+  }
+  /* kinetic entrance */
+  html.js .hero__center>*{opacity:0;transform:translateY(30px);animation:rise .95s cubic-bezier(.19,1,.22,1) forwards}
+  html.js .hero__wordmark{animation-delay:.05s}
+  html.js .hero__sub-word{animation-delay:.18s}
+  html.js .hero h1{animation-delay:.30s}
+  html.js .hero__lede{animation-delay:.42s}
+  html.js .hero__actions{animation-delay:.54s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* =================== TRATAMIENTOS =================== */
+  .treat-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+  .treat{
+    display:grid;grid-template-columns:auto 1fr;gap:20px 26px;align-items:start;
+    padding:30px 4px;border-bottom:1px solid var(--line);
+    transition:padding-left .4s ease;
+  }
+  .treat__num{font-family:var(--serif);color:var(--fuchsia);font-size:clamp(22px,3vw,30px);line-height:1}
+  .treat__body h3{font-family:var(--serif);font-weight:400;font-size:clamp(21px,3vw,28px);margin-bottom:8px}
+  .treat__body p{color:var(--mute);max-width:52ch}
+  .treat__tag{
+    display:inline-block;margin-top:12px;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--malva);
+    border:1px solid var(--line);border-radius:999px;padding:5px 12px;
+  }
+  @media(min-width:760px){.treat:hover{padding-left:20px}}
+
+  /* =================== TÉCNICA (bonding + glow) =================== */
+  .tech{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,56px);align-items:center;overflow:clip}
+  .tech__media{position:relative;isolation:isolate}
+  .tech__media img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;
+    border:1px solid var(--line-strong);
+    box-shadow:0 40px 90px -30px rgba(196,79,150,.5);
+    position:relative;z-index:1;
+  }
+  .tech__media::before{
+    content:"";position:absolute;z-index:0;inset:-14% -10% -18% -14%;
+    background:radial-gradient(60% 55% at 55% 45%,rgba(196,79,150,.55),transparent 72%);
+    filter:blur(26px);
+  }
+  .tech__media figcaption{
+    position:absolute;z-index:2;left:14px;bottom:14px;
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);
+    background:rgba(6,5,6,.6);backdrop-filter:blur(6px);
+    padding:7px 12px;border-radius:8px;border:1px solid var(--line);
+  }
+  .tech__body p{color:var(--mute);margin-bottom:18px;max-width:52ch}
+  .tech__list{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
+  .tech__list li{
+    display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .tech__list li b{font-family:var(--serif);font-weight:400;color:var(--fuchsia);flex:none}
+  @media(min-width:860px){.tech{grid-template-columns:.9fr 1.1fr}}
+
+  /* =================== COMPOSITE LIVE (módulo) =================== */
+  .cl{position:relative;border:1px solid var(--line-strong);border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#141012,#0a080a)}
+  .cl__glow{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(50% 60% at 88% 8%,rgba(196,79,150,.3),transparent 60%)}
+  .cl__inner{position:relative;z-index:1;padding:clamp(26px,5vw,52px)}
+  .cl__badge{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+    background:var(--fuchsia);border-radius:999px;padding:6px 14px;font-weight:600;
+  }
+  .cl__title{font-family:var(--serif);font-weight:400;line-height:.98;
+    font-size:clamp(38px,8vw,86px);letter-spacing:-.01em;margin:22px 0 4px}
+  .cl__title em{font-style:normal;color:var(--fuchsia)}
+  .cl__ed{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);margin-bottom:26px}
+  .cl__lede{color:var(--mute);max-width:56ch;margin-bottom:30px}
+  .cl__pick{
+    display:inline-flex;background:rgba(255,255,255,.04);border:1px solid var(--line);
+    border-radius:999px;padding:5px;gap:5px;margin-bottom:24px;flex-wrap:wrap;
+  }
+  .cl__pick button{
+    font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.02em;
+    color:var(--mute);background:transparent;border:0;cursor:pointer;
+    padding:11px 20px;border-radius:999px;transition:color .3s,background .3s;
+  }
+  .cl__pick button[aria-pressed="true"]{background:var(--fuchsia);color:var(--ink)}
+  .cl__panel{
+    display:grid;grid-template-columns:1fr;gap:22px 40px;align-items:start;
+    border-top:1px solid var(--line);padding-top:28px;
+  }
+  .cl__panel h3{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3vw,30px);margin-bottom:8px;transition:opacity .3s}
+  .cl__panel p{color:var(--mute);max-width:48ch;transition:opacity .3s}
+  .cl__meta{list-style:none;display:grid;gap:12px}
+  .cl__meta li{display:flex;gap:12px;font-size:14px;color:var(--mute);align-items:flex-start}
+  .cl__meta li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--fuchsia);margin-top:8px;flex:none}
+  .cl__cta{margin-top:8px}
+  @media(min-width:820px){.cl__panel{grid-template-columns:1.3fr 1fr}}
+
+  /* =================== SOBRE LA DRA =================== */
+  .about{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,56px);align-items:center}
+  .about__card{
+    border:1px solid var(--line-strong);border-radius:18px;
+    padding:clamp(30px,5vw,48px);text-align:center;
+    background:radial-gradient(120% 100% at 50% 0%,rgba(196,79,150,.14),transparent 60%);
+  }
+  .about__card img{height:34px;width:auto;margin:0 auto 22px;filter:invert(1) brightness(1.9)}
+  .about__cov{font-family:var(--serif);font-size:clamp(40px,7vw,68px);color:var(--fuchsia);line-height:1}
+  .about__cov span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+  .about__name{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.5vw,44px);line-height:1.05;margin-bottom:6px}
+  .about__role{color:var(--malva);font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px}
+  .about__body p{color:var(--mute);margin-bottom:16px;max-width:54ch}
+  .about__stats{display:flex;flex-wrap:wrap;gap:26px 40px;margin-top:26px;border-top:1px solid var(--line);padding-top:26px}
+  .about__stats div span{display:block}
+  .about__stats .n{font-family:var(--serif);font-size:clamp(28px,4vw,40px);color:var(--white);line-height:1}
+  .about__stats .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute-2);margin-top:6px}
+  @media(min-width:860px){.about{grid-template-columns:1fr 1.15fr}}
+
+  /* =================== CITA / UBICACIÓN =================== */
+  .cita{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,54px)}
+  .cita__panel h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.05;margin-bottom:16px}
+  .cita__panel h3 em{font-style:normal;color:var(--fuchsia)}
+  .cita__panel p{color:var(--mute);margin-bottom:26px;max-width:46ch}
+  .cita__rows{list-style:none;border-top:1px solid var(--line)}
+  .cita__rows li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .cita__rows .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-2);width:88px;flex:none}
+  .cita__rows .v{color:var(--white)}
+  .cita__rows .v small{display:block;color:var(--mute);font-size:13px;letter-spacing:0;text-transform:none;margin-top:2px}
+  .cita__side{
+    border:1px solid var(--line-strong);border-radius:18px;padding:clamp(26px,4vw,40px);
+    background:linear-gradient(160deg,rgba(196,79,150,.1),transparent);
+    display:flex;flex-direction:column;gap:20px;justify-content:center;
+  }
+  .cita__side .lg{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);line-height:1.1}
+  .cita__side .lg em{font-style:normal;color:var(--fuchsia)}
+  @media(min-width:820px){.cita{grid-template-columns:1.2fr .8fr}}
+
+  /* =================== FOOTER (dos marcas) =================== */
+  .footer{border-top:1px solid var(--line-strong);padding:clamp(56px,8vw,96px) var(--pad) 40px;background:var(--black)}
+  .footer__brands{display:grid;grid-template-columns:1fr;gap:clamp(34px,5vw,60px);padding-bottom:clamp(40px,6vw,64px);border-bottom:1px solid var(--line)}
+  .fbrand__k{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute-2);margin-bottom:16px}
+  .fbrand__name{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);line-height:1.06;margin-bottom:6px}
+  .fbrand__meta{color:var(--mute);font-size:14px;margin-bottom:18px}
+  .fbrand__logo{height:30px;width:auto;filter:invert(1) brightness(1.9);margin-bottom:16px}
+  .fsocial{display:inline-flex;align-items:center;gap:9px;color:var(--mute);font-size:14px;transition:color .25s}
+  .fsocial:hover{color:var(--fuchsia)}
+  .fsocial svg{width:18px;height:18px;flex:none}
+  .footer__bottom{display:flex;flex-wrap:wrap;gap:14px 24px;justify-content:space-between;align-items:center;padding-top:28px}
+  .footer__seal{font-size:12px;color:var(--mute-2);max-width:52ch;line-height:1.5}
+  .footer__seal a{color:var(--malva);text-decoration:underline;text-underline-offset:3px}
+  .footer__seal a:hover{color:var(--fuchsia)}
+  .footer__mk{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute-2)}
+  @media(min-width:760px){.footer__brands{grid-template-columns:1fr 1fr}}
+
+  /* =================== FAB =================== */
+  .fab{
+    position:fixed;right:18px;bottom:18px;z-index:70;
+    display:inline-flex;align-items:center;gap:10px;
+    background:#25D366;color:#04220f;font-weight:700;font-size:14px;
+    padding:13px 18px;border-radius:999px;
+    box-shadow:0 14px 40px -10px rgba(37,211,102,.6);
+    transition:transform .3s ease;
+  }
+  .fab:hover{transform:translateY(-3px)}
+  .fab svg{width:22px;height:22px}
+  .fab span{display:none}
+  @media(min-width:560px){.fab span{display:inline}}
+
+  .disclaim{
+    text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--mute-2);padding:22px var(--pad);border-top:1px solid var(--line);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    html.js .reveal{opacity:1;transform:none}
+    html.js .hero__center>*{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="nav__brand">
+    <img class="nav__logo" src="assets/geraldine-clinic-logo-100.jpg" alt="NAVEDA Dental Clinic" width="120" height="26">
+    <span class="nav__tag">Lechería · VE</span>
+  </div>
+  <div class="nav__links">
+    <a href="#tratamientos">Tratamientos</a>
+    <a href="#tecnica">La técnica</a>
+    <a href="#composite">Composite Live</a>
+    <a href="#cita">Cita</a>
+  </div>
+  <div class="nav__cta">
+    <a class="btn" href="https://wa.me/584149843040?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20una%20cita%20en%20NAVEDA%20Dental%20Clinic." target="_blank" rel="noopener">Agendar</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="hero__topline">
+    <span>NAVEDA <b>Dental Clinic</b> · CIOES</span>
+    <span>Odontología estética & restauradora</span>
+    <span>Edición <b>39</b> · Composite Live</span>
+  </div>
+
+  <div class="hero__center">
+    <span class="hero__wordmark">NAVE<span class="k">D</span>A</span>
+    <span class="hero__sub-word">Dental Clinic</span>
+    <h1>Diseño de sonrisa que <em>se nota</em>, sin que se note.</h1>
+    <p class="hero__lede">Odontología estética de lujo y carillas en composite hechas a mano, en Lechería. Y la escuela donde otros odontólogos aprenden a hacerlas: Composite Live.</p>
+    <div class="hero__actions">
+      <a class="btn" href="https://wa.me/584149843040?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa%20y%20carillas%20en%20NAVEDA." target="_blank" rel="noopener">Reservar tu cita</a>
+      <a class="btn btn--ghost" href="#composite">Composite Live · ed. 39</a>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <span>Dra. Geraldine Naveda · COV 38726</span>
+    <span>Conferencista GNYDM</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 02 TRATAMIENTOS ===== -->
+<section class="section" id="tratamientos">
+  <div class="sec-head reveal">
+    <span class="idx">01 — Tratamientos</span>
+    <h2>Estética que <em>respeta</em> tu rostro.</h2>
+  </div>
+
+  <div class="treat-grid">
+    <article class="treat reveal">
+      <span class="treat__num">01</span>
+      <div class="treat__body">
+        <h3>Diseño de sonrisa</h3>
+        <p>Un plan pensado para tus facciones, no una plantilla. Proporción, color y textura estudiados antes de tocar un diente, para que el resultado se vea tuyo.</p>
+        <span class="treat__tag">Planificación estética</span>
+      </div>
+    </article>
+    <article class="treat reveal">
+      <span class="treat__num">02</span>
+      <div class="treat__body">
+        <h3>Carillas directas en composite</h3>
+        <p>Resina modelada a mano, capa por capa, en la misma silla. Mínimo desgaste, máxima naturalidad y una sonrisa reversible que envejece contigo.</p>
+        <span class="treat__tag">Bonding · Resina</span>
+      </div>
+    </article>
+    <article class="treat reveal">
+      <span class="treat__num">03</span>
+      <div class="treat__body">
+        <h3>Blanqueamiento</h3>
+        <p>Aclarado profesional que ilumina sin agredir el esmalte, calibrado a tu tono real. Un brillo que se nota en cámara y en persona.</p>
+        <span class="treat__tag">Estética del color</span>
+      </div>
+    </article>
+    <article class="treat reveal">
+      <span class="treat__num">04</span>
+      <div class="treat__body">
+        <h3>Restauración</h3>
+        <p>Odontología restauradora que devuelve función y armonía a dientes fracturados o desgastados, con el mismo criterio estético de una carilla.</p>
+        <span class="treat__tag">Función & estética</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 03 LA TÉCNICA ===== -->
+<section class="section" id="tecnica">
+  <div class="sec-head reveal">
+    <span class="idx">02 — La técnica</span>
+    <h2>El <em>bonding</em>, gota a gota.</h2>
+  </div>
+
+  <div class="tech">
+    <figure class="tech__media reveal">
+      <img src="assets/geraldine-feed-bonding-magenta.jpg" alt="Aplicación de adhesivo dental (bonding) durante un procedimiento de carilla en composite" loading="lazy" width="700" height="875">
+      <figcaption>Bonding en resina · procedimiento real</figcaption>
+    </figure>
+    <div class="tech__body reveal d1">
+      <p>Las carillas en composite no salen de un laboratorio: se construyen en la boca, gota a gota, con un pulso que solo dan años de práctica. Por eso el detalle importa tanto como el diseño.</p>
+      <p>Cada capa de resina se elige por color y traslucidez para imitar el esmalte natural. El resultado no grita "trabajo dental": se integra.</p>
+      <ul class="tech__list">
+        <li><b>01</b><span>Adhesión controlada, capa por capa, para una unión duradera.</span></li>
+        <li><b>02</b><span>Estratificación de resinas por opacidad y color natural.</span></li>
+        <li><b>03</b><span>Pulido y textura finales que devuelven el brillo del esmalte.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 COMPOSITE LIVE ===== -->
+<section class="section" id="composite">
+  <div class="cl reveal">
+    <div class="cl__glow" aria-hidden="true"></div>
+    <div class="cl__inner">
+      <span class="cl__badge">Composite Live · Edición 39</span>
+      <h2 class="cl__title">Una sonrisa, <em>dos caminos</em>.</h2>
+      <p class="cl__ed">Formación internacional en vivo · Carillas en composite</p>
+      <p class="cl__lede">NAVEDA trabaja en dos frentes: pacientes que quieren su mejor sonrisa, y odontólogos que quieren aprender a crearla. Elige tu camino y te escribimos por WhatsApp con la información correcta.</p>
+
+      <div class="cl__pick" role="group" aria-label="Elige el motivo de tu mensaje">
+        <button type="button" data-mode="cita" aria-pressed="true">Cita estética</button>
+        <button type="button" data-mode="curso" aria-pressed="false">Inscripción al curso</button>
+      </div>
+
+      <div class="cl__panel">
+        <div>
+          <h3 id="cl-title">Tu sonrisa, diseñada a mano</h3>
+          <p id="cl-copy">Reserva una valoración para diseño de sonrisa o carillas en composite con la Dra. Geraldine Naveda en Lechería. Sin plantillas: un plan pensado para tu rostro.</p>
+          <a class="btn cl__cta" id="cl-cta" href="https://wa.me/584149843040?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20una%20cita%20de%20dise%C3%B1o%20de%20sonrisa." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <ul class="cl__meta" id="cl-meta">
+          <li>Valoración personalizada de tu caso</li>
+          <li>Carillas directas en composite, mínimo desgaste</li>
+          <li>Atención en Lechería, Anzoátegui</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 SOBRE LA DRA ===== -->
+<section class="section" id="dra">
+  <div class="sec-head reveal">
+    <span class="idx">03 — La figura</span>
+    <h2>Detrás de <em>NAVEDA</em>.</h2>
+  </div>
+
+  <div class="about">
+    <div class="about__card reveal">
+      <img src="assets/geraldine-clinic-logo-100.jpg" alt="NAVEDA Dental Clinic" width="150" height="34">
+      <div class="about__cov">38726<span>Colegio de Odontólogos de Venezuela</span></div>
+    </div>
+    <div class="about__body reveal d1">
+      <div class="about__name">Dra. Geraldine Naveda Ardito</div>
+      <div class="about__role">Odontología estética & restauradora</div>
+      <p>Especialista en odontología estética y restauradora, la Dra. Naveda ha convertido el diseño de sonrisa y las carillas en composite en su firma. Su trabajo vive entre la clínica y el aula.</p>
+      <p>Como docente y conferencista, forma a otros odontólogos en su técnica de carillas en vivo —Composite Live, ya en su edición 39— y ha llevado su nombre a escenarios internacionales del gremio.</p>
+      <div class="about__stats">
+        <div><span class="n">28K+</span><span class="l">Comunidad</span></div>
+        <div><span class="n">39</span><span class="l">Ediciones Composite Live</span></div>
+        <div><span class="n">GNYDM</span><span class="l">Conferencista</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 CITA / UBICACIÓN ===== -->
+<section class="section" id="cita">
+  <div class="sec-head reveal">
+    <span class="idx">04 — Tu cita</span>
+    <h2>Empecemos por <em>hablar</em>.</h2>
+  </div>
+
+  <div class="cita">
+    <div class="cita__panel reveal">
+      <h3>Atención en <em>Lechería</em>, Anzoátegui.</h3>
+      <p>Las citas se coordinan directamente por WhatsApp. Cuéntanos qué te gustaría mejorar de tu sonrisa y te orientamos.</p>
+      <ul class="cita__rows">
+        <li><span class="k">Ciudad</span><span class="v">Lechería <small>Anzoátegui · Venezuela</small></span></li>
+        <li><span class="k">Citas</span><span class="v">WhatsApp <small>0414-984 30 40</small></span></li>
+        <li><span class="k">Clínica</span><span class="v">NAVEDA Dental Clinic <small>@naveda.dentalclinic</small></span></li>
+        <li><span class="k">Docencia</span><span class="v">Composite Live <small>@drageraldinenaveda</small></span></li>
+      </ul>
+    </div>
+    <aside class="cita__side reveal d1">
+      <p class="lg">Tu sonrisa <em>merece</em> un plan a la medida.</p>
+      <p style="color:var(--mute)">Escríbenos y agenda tu valoración estética.</p>
+      <a class="btn" href="https://wa.me/584149843040?text=Hola%2C%20quisiera%20agendar%20una%20valoraci%C3%B3n%20est%C3%A9tica%20en%20NAVEDA%20Dental%20Clinic." target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER (dos marcas) ===== -->
+<footer class="footer">
+  <div class="footer__brands">
+    <div>
+      <div class="fbrand__k">La figura</div>
+      <div class="fbrand__name">Dra. Geraldine Naveda</div>
+      <div class="fbrand__meta">Odontóloga estética & restauradora · COV 38726</div>
+      <a class="fsocial" href="https://instagram.com/drageraldinenaveda" target="_blank" rel="noopener" aria-label="Instagram de la Dra. Geraldine Naveda">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        @drageraldinenaveda
+      </a>
+    </div>
+    <div>
+      <div class="fbrand__k">La clínica</div>
+      <img class="fbrand__logo" src="assets/geraldine-clinic-logo-100.jpg" alt="NAVEDA Dental Clinic" width="132" height="30">
+      <div class="fbrand__meta">NAVEDA Dental Clinic · CIOES · Lechería, Anzoátegui</div>
+      <a class="fsocial" href="https://instagram.com/naveda.dentalclinic" target="_blank" rel="noopener" aria-label="Instagram de NAVEDA Dental Clinic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        @naveda.dentalclinic
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__seal">
+      Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial. Contenido basado en sus redes públicas.
+    </p>
+    <span class="footer__mk">Medine.tech</span>
+  </div>
+</footer>
+
+<div class="disclaim">Propuesta de diseño · Datos tomados de sus redes públicas</div>
+
+<!-- ===== FAB WhatsApp ===== -->
+<a class="fab" href="https://wa.me/584149843040?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20NAVEDA%20Dental%20Clinic." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 01-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 01-1.44-5.01c0-5.2 4.24-9.44 9.46-9.44 2.53 0 4.9.99 6.68 2.78a9.38 9.38 0 012.77 6.67c0 5.21-4.24 9.45-9.46 9.45zM20.5 3.49A11.28 11.28 0 0012.05 0C5.8 0 .72 5.08.72 11.32c0 1.99.52 3.94 1.51 5.66L.63 24l7.18-1.88a11.33 11.33 0 005.24 1.33h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.03-1.18-5.87-3.32-8z"/></svg>
+  <span>Escríbenos</span>
+</a>
+
+<script>
+(function(){
+  var root=document.documentElement;
+
+  // nav scrolled state
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ if(window.scrollY>40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // reveal on scroll — position-based (robust; no dependency on IO visibility semantics)
+  var reveals=[].slice.call(document.querySelectorAll('.reveal'));
+  function revealCheck(){
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    for(var i=reveals.length-1;i>=0;i--){
+      var el=reveals[i];
+      if(el.getBoundingClientRect().top < vh*0.92){ el.classList.add('in'); reveals.splice(i,1); }
+    }
+  }
+  revealCheck();
+  window.addEventListener('scroll',revealCheck,{passive:true});
+  window.addEventListener('resize',revealCheck,{passive:true});
+  window.addEventListener('load',revealCheck);
+  // safety net: reveal everything shortly after load so content is never stuck hidden
+  setTimeout(function(){ reveals.slice().forEach(function(el){ el.classList.add('in'); }); reveals.length=0; }, 2500);
+
+  // Composite Live smart CTA
+  var wa='https://wa.me/584149843040?text=';
+  var modes={
+    cita:{
+      title:'Tu sonrisa, diseñada a mano',
+      copy:'Reserva una valoración para diseño de sonrisa o carillas en composite con la Dra. Geraldine Naveda en Lechería. Sin plantillas: un plan pensado para tu rostro.',
+      meta:['Valoración personalizada de tu caso','Carillas directas en composite, mínimo desgaste','Atención en Lechería, Anzoátegui'],
+      cta:'Escribir por WhatsApp',
+      msg:'Hola, quisiera información sobre una cita de diseño de sonrisa en NAVEDA Dental Clinic.'
+    },
+    curso:{
+      title:'Aprende a hacer carillas en vivo',
+      copy:'Composite Live, edición 39: la formación en vivo de la Dra. Naveda para odontólogos que quieren dominar las carillas en composite. Consulta fechas, cupos e inscripción.',
+      meta:['Carillas en composite paso a paso, en vivo','Programa dictado por la Dra. Geraldine Naveda','Formación internacional · edición 39'],
+      cta:'Consultar inscripción',
+      msg:'Hola, quisiera información sobre la inscripción al Composite Live (edición 39).'
+    }
+  };
+  var elTitle=document.getElementById('cl-title'),
+      elCopy=document.getElementById('cl-copy'),
+      elMeta=document.getElementById('cl-meta'),
+      elCta=document.getElementById('cl-cta'),
+      picks=[].slice.call(document.querySelectorAll('.cl__pick button'));
+
+  function apply(mode){
+    var m=modes[mode]; if(!m) return;
+    elTitle.textContent=m.title;
+    elCopy.textContent=m.copy;
+    elMeta.innerHTML=m.meta.map(function(t){return '<li>'+t+'</li>';}).join('');
+    elCta.textContent=m.cta;
+    elCta.setAttribute('href',wa+encodeURIComponent(m.msg));
+    picks.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-mode')===mode?'true':'false'); });
+  }
+  picks.forEach(function(b){ b.addEventListener('click',function(){ apply(b.getAttribute('data-mode')); }); });
+  apply('cita');
+})();
+</script>
+</body>
+</html>
