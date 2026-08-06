@@ -50,6 +50,21 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 
 ## Notas de unicidad
 
+- ℹ️ **`dr-pedro-tovar-panel` NO es una demo nueva — es la variante "con panel administrativo"
+  de `dr-pedro-tovar`** (mismo diseño a propósito: dos tiers del mismo producto — express
+  estática **$150** vs. **con panel $250 + $25/mes** o **$250/año**, alineado a la propuesta
+  Paola García del KB `projects/digital-agency/service-catalog-and-pricing.md` +
+  `landing-page-proposal-paola-garcia.md`). Comparte fuentes (**Fahkwang + Overpass**),
+  arquetipo (atlas anatómico) y firma (mapa interactivo) con la express DELIBERADAMENTE; **no
+  cuenta como segundo uso** de esas fuentes/técnicas para el gate de unicidad. La versión con
+  panel hace editables **aviso, precio de consulta, motivos por región, datos de consultorio y
+  contenido educativo** desde `admin.html` (módulo de datos compartido `window.PT`,
+  **localStorage en la demo, base de datos/Supabase en producción**; claves namespaced `pt_*`
+  para no colisionar con otras demos en el mismo origin github.io). Añade una **barra de aviso**
+  (banner editable) que la express no tiene. El botón/FAB de WhatsApp se recomputan desde el
+  número guardado. URLs: `.../dr-pedro-tovar/` (express) y `.../dr-pedro-tovar-panel/`
+  (+ `.../dr-pedro-tovar-panel/admin.html`). **Mensaje NO enviado — Edith revisa; confirmar
+  WhatsApp 584148063568.**
 - ℹ️ **`ciudad-puente-real-panel` NO es una demo nueva — es la variante "con panel
   administrativo" de `ciudad-puente-real`** (mismo diseño a propósito: dos tiers del mismo
   producto — express estática $150 vs. con panel $250). Comparte fuentes (Chivo + IBM Plex
