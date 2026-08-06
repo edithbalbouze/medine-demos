@@ -99,6 +99,12 @@ a{color:inherit}
 .saved{font-size:12.5px;color:#1c7a4a;font-weight:600;opacity:0;transition:opacity .3s}
 .saved.show{opacity:1}
 
+/* faq editor rows */
+.faqrow{border:1px solid var(--line-2);background:var(--bone);padding:14px 14px 2px;margin-bottom:12px}
+.faqrow .del{float:right;font-family:var(--sans);font-size:11px;color:var(--carmine);background:none;border:0;cursor:pointer;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.faqrow .del:hover{text-decoration:underline}
+.faqrow .field textarea{min-height:80px}
+
 /* toast */
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
   background:var(--navy);color:var(--bone);padding:13px 22px;border-radius:3px;font-size:14px;font-weight:500;
@@ -224,6 +230,16 @@ a{color:inherit}
       </div>
       <div class="card__f"><button class="btn btn--primary btn--sm" data-save="educacion">Guardar contenido</button><span class="saved" data-saved="educacion">Guardado ✓</span></div>
     </section>
+
+    <!-- FAQ -->
+    <section class="card">
+      <div class="card__h"><h3>Preguntas frecuentes</h3><span class="n">Lámina 06</span></div>
+      <div class="card__b">
+        <div id="faqRows"></div>
+        <button type="button" class="btn btn--ghost btn--sm" id="faqAdd">+ Agregar pregunta</button>
+      </div>
+      <div class="card__f"><button class="btn btn--primary btn--sm" data-save="faq">Guardar FAQ</button><span class="saved" data-saved="faq">Guardado ✓</span></div>
+    </section>
   </main>
 </div>
 
@@ -232,7 +248,7 @@ a{color:inherit}
 <!-- ===== módulo de datos compartido (idéntico en index.html y admin.html) ===== -->
 <script>
 window.PT = (function(){
-  var K={av:'pt_aviso', co:'pt_consulta', rg:'pt_regiones', cs:'pt_consultorio', ed:'pt_educacion'};
+  var K={av:'pt_aviso', co:'pt_consulta', rg:'pt_regiones', cs:'pt_consultorio', ed:'pt_educacion', fq:'pt_faq'};
   var SEED={
     aviso:{activo:false, mensaje:'Esta semana estaré en congreso — agenda para la próxima por WhatsApp.'},
     consulta:{monto:'$60', unidad:'Consulta<br>de valoración', nota:'Precio de referencia — agosto 2026'},
@@ -261,7 +277,15 @@ window.PT = (function(){
     educacion:{
       cita:'“Tendinitis calcificada del manguito rotador” — un caso, una radiografía, una ecografía y una explicación clara.',
       texto:'Es exactamente el tipo de autoridad que un paciente busca antes de operarse. El problema no es el contenido: es que se pierde en un feed que él no controla y que Google no indexa. Una página propia convierte cada publicación en un activo permanente — y en una razón más para elegirlo a él.'
-    }
+    },
+    faq:[
+      {q:'¿Qué hace un cirujano de mano y miembro superior?', a:'Es un traumatólogo con formación adicional enfocada en la mano, la muñeca, el codo y el hombro: desde un túnel carpiano o un dedo en gatillo hasta fracturas complejas y reconstrucciones. Es un terreno donde el detalle marca la diferencia.'},
+      {q:'¿Qué problemas atiende con más frecuencia?', a:'Túnel carpiano, dedo en gatillo, tendinitis, fracturas de mano y muñeca, lesiones de tendones, problemas del manguito rotador y del codo, y secuelas de traumatismos del miembro superior.'},
+      {q:'¿Toda lesión necesita cirugía?', a:'No. Muchos problemas de mano, muñeca y hombro se resuelven sin cirugía. En la consulta se evalúa tu caso y se define el mejor plan para ti — que a veces es terapia, y a veces sí es quirófano.'},
+      {q:'¿Cuánto cuesta la consulta y cómo agendo?', a:'La consulta de valoración tiene un costo de referencia indicado en la sección de agenda. Escríbeme por WhatsApp y coordinamos día y hora — la atención es con cita previa.'},
+      {q:'¿Dónde queda el consultorio?', a:'En el Centro de Especialidades Anzoátegui (CEACA), en Lechería, Anzoátegui — Av. Principal de Lecherías con Av. Diego Bautista Urbaneja.'},
+      {q:'¿Debo llevar radiografías o estudios?', a:'Si ya tienes radiografías, resonancias o informes, tráelos a la consulta. Si no tienes, no te preocupes: en la valoración se indica qué estudios hacen falta.'}
+    ]
   };
   function clone(x){ return JSON.parse(JSON.stringify(x)); }
   function read(key, def){
@@ -278,6 +302,7 @@ window.PT = (function(){
     getRegiones:function(){return read(K.rg,SEED.regiones);}, setRegiones:function(v){write(K.rg,v);},
     getConsultorio:function(){return read(K.cs,SEED.consultorio);}, setConsultorio:function(v){write(K.cs,v);},
     getEducacion:function(){return read(K.ed,SEED.educacion);}, setEducacion:function(v){write(K.ed,v);},
+    getFaq:function(){return read(K.fq,SEED.faq);}, setFaq:function(v){write(K.fq,v);},
     resetAll:function(){ Object.keys(K).forEach(function(k){ localStorage.removeItem(K[k]); }); }
   };
 })();
@@ -327,7 +352,23 @@ window.PT = (function(){
     setv('csCentro',cs.centro); setv('csDir',cs.direccion); setv('csWa',cs.whatsapp);
     setv('csIg',cs.instagram); setv('csAt',cs.atencion); setv('csEsp',cs.especialidad);
     var ed=PT.getEducacion(); setv('edCita',ed.cita); setv('edTexto',ed.texto);
+    loadFaq();
   }
+
+  /* ---- FAQ editor ---- */
+  var faqRows=document.getElementById('faqRows');
+  function addFaqRow(q,a){
+    var row=document.createElement('div'); row.className='faqrow';
+    var del=document.createElement('button'); del.type='button'; del.className='del'; del.textContent='Eliminar';
+    del.addEventListener('click',function(){ row.remove(); });
+    var f1=document.createElement('div'); f1.className='field'; f1.innerHTML='<label>Pregunta</label>';
+    var qi=document.createElement('input'); qi.type='text'; qi.className='fq-q'; qi.value=q||''; f1.appendChild(qi);
+    var f2=document.createElement('div'); f2.className='field'; f2.innerHTML='<label>Respuesta</label>';
+    var at=document.createElement('textarea'); at.className='fq-a'; at.value=a||''; f2.appendChild(at);
+    row.appendChild(del); row.appendChild(f1); row.appendChild(f2); faqRows.appendChild(row);
+  }
+  function loadFaq(){ faqRows.innerHTML=''; PT.getFaq().forEach(function(f){ addFaqRow(f.q,f.a); }); }
+  document.getElementById('faqAdd').addEventListener('click',function(){ addFaqRow('',''); });
 
   document.querySelectorAll('[data-save]').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -348,6 +389,12 @@ window.PT = (function(){
         });
       }
       else if(kind==='educacion'){ PT.setEducacion({cita:val('edCita'), texto:val('edTexto')}); }
+      else if(kind==='faq'){
+        var arr=[].slice.call(document.querySelectorAll('#faqRows .faqrow')).map(function(r){
+          return {q:r.querySelector('.fq-q').value.trim(), a:r.querySelector('.fq-a').value.trim()};
+        }).filter(function(x){return x.q;});
+        PT.setFaq(arr);
+      }
       flag(kind); ping('Guardado ✓ — ábralo en “Ver la página”.');
     });
   });

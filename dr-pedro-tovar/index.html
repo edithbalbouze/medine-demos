@@ -240,6 +240,47 @@ section.plate{padding:clamp(40px,7vw,84px) 0;border-top:1px solid var(--line)}
 .foot-seal a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--carmine)}
 .plate-credit{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);font-weight:600}
 
+/* ---------- whatsapp message builder ---------- */
+.builder{display:grid;grid-template-columns:1fr .92fr;gap:clamp(22px,3vw,40px);
+  border:1px solid var(--line-2);background:var(--paper-hi);padding:clamp(22px,3vw,34px)}
+.builder-fields{display:flex;flex-direction:column;gap:20px}
+.bfield{display:flex;flex-direction:column;gap:10px}
+.blabel{font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.blabel b{color:var(--carmine);margin-right:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--navy);background:var(--bone);
+  border:1px solid var(--line-2);border-radius:2px;padding:9px 14px;cursor:pointer;transition:.16s}
+.chip:hover{border-color:var(--navy)}
+.chip.on{background:var(--navy);color:var(--paper-hi);border-color:var(--navy)}
+.builder-preview{border-left:1px solid var(--line);padding-left:clamp(18px,2.4vw,28px);display:flex;flex-direction:column}
+.builder-preview .msg{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2vw,21px);
+  line-height:1.42;color:var(--navy);background:var(--bone);border:1px solid var(--line);padding:16px 18px;margin:8px 0 18px;flex:1}
+.builder-actions{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.builder-actions .btn-ghost{border:0;background:none;cursor:pointer;font:inherit}
+.copied{font-size:12px;color:#1c7a4a;font-weight:600;opacity:0;transition:.2s}
+.copied.show{opacity:1}
+@media (max-width:820px){ .builder{grid-template-columns:1fr}
+  .builder-preview{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:20px} }
+
+/* ---------- faq ---------- */
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;align-items:center;gap:16px;text-align:left;background:none;border:0;
+  cursor:pointer;padding:20px 4px;font-family:var(--serif);font-size:clamp(17px,2.1vw,22px);color:var(--navy);font-weight:400}
+.faq-q .faq-n{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--carmine);flex:0 0 auto}
+.faq-q .faq-t{flex:1}
+.faq-ico{flex:0 0 auto;width:26px;height:26px;border:1px solid var(--line-2);border-radius:50%;
+  display:grid;place-items:center;position:relative;transition:.2s}
+.faq-ico::before,.faq-ico::after{content:"";position:absolute;background:var(--carmine);transition:.25s}
+.faq-ico::before{width:12px;height:2px}.faq-ico::after{width:2px;height:12px}
+.faq-item.open .faq-ico{background:var(--navy);border-color:var(--navy)}
+.faq-item.open .faq-ico::before,.faq-item.open .faq-ico::after{background:var(--paper-hi)}
+.faq-item.open .faq-ico::after{transform:scaleY(0)}
+.faq-a{overflow:hidden}
+html.js .faq-a{max-height:0;transition:max-height .3s ease}
+.faq-a p{margin:0;padding:14px 4px 24px 46px;color:#2b3d4d;font-size:15px;max-width:70ch}
+@media (max-width:560px){.faq-a p{padding-left:4px}}
+
 /* FAB */
 .fab{position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;
   background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
@@ -512,13 +553,105 @@ section.plate{padding:clamp(40px,7vw,84px) 0;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<!-- ===== LÁMINA 05 · AGENDA ===== -->
+<!-- ===== LÁMINA 05 · ARMA TU CONSULTA ===== -->
+<section class="plate" id="armar">
+  <div class="wrap">
+    <div class="phead reveal">
+      <h2>Arma tu consulta</h2>
+      <div class="mid"></div>
+      <span class="no plate-no">Lám. 05</span>
+      <p class="phead-lead">Elige y te escribo listo por WhatsApp — sin llamadas ni formularios largos.</p>
+    </div>
+    <div class="builder reveal">
+      <div class="builder-fields">
+        <div class="bfield">
+          <span class="blabel"><b>01</b>¿Qué región?</span>
+          <div class="chips" data-group="region" role="group" aria-label="Región">
+            <button type="button" class="chip" data-val="del hombro" aria-pressed="false">Hombro</button>
+            <button type="button" class="chip" data-val="del codo" aria-pressed="false">Codo</button>
+            <button type="button" class="chip" data-val="de la muñeca" aria-pressed="false">Muñeca</button>
+            <button type="button" class="chip on" data-val="de la mano" aria-pressed="true">Mano</button>
+            <button type="button" class="chip" data-val="" aria-pressed="false">Otro</button>
+          </div>
+        </div>
+        <div class="bfield">
+          <span class="blabel"><b>02</b>¿Qué necesitas?</span>
+          <div class="chips" data-group="necesidad" role="group" aria-label="Necesidad">
+            <button type="button" class="chip on" data-val="una primera consulta" aria-pressed="true">Primera consulta</button>
+            <button type="button" class="chip" data-val="una segunda opinión" aria-pressed="false">Segunda opinión</button>
+            <button type="button" class="chip" data-val="un control post-operatorio" aria-pressed="false">Control post-op</button>
+            <button type="button" class="chip" data-val="orientación antes de operarme" aria-pressed="false">Dudas antes de operarme</button>
+          </div>
+        </div>
+        <div class="bfield">
+          <span class="blabel"><b>03</b>Preferencia de horario</span>
+          <div class="chips" data-group="horario" role="group" aria-label="Horario">
+            <button type="button" class="chip" data-val="en la mañana" aria-pressed="false">Mañana</button>
+            <button type="button" class="chip" data-val="en la tarde" aria-pressed="false">Tarde</button>
+            <button type="button" class="chip on" data-val="" aria-pressed="true">Cualquiera</button>
+          </div>
+        </div>
+      </div>
+      <div class="builder-preview">
+        <span class="blabel">Tu mensaje</span>
+        <p class="msg" id="builderMsg">Hola Dr. Tovar, quisiera una primera consulta por un tema de la mano.</p>
+        <div class="builder-actions">
+          <a class="btn-plate" id="builderSend" href="https://wa.me/584148063568?text=Hola%20Dr.%20Tovar%2C%20quisiera%20una%20primera%20consulta%20por%20un%20tema%20de%20la%20mano." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/></svg>
+            Enviar por WhatsApp
+          </a>
+          <button type="button" class="btn-ghost" id="builderCopy">Copiar mensaje</button>
+          <span class="copied" id="builderCopied">Copiado ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LÁMINA 06 · PREGUNTAS FRECUENTES ===== -->
+<section class="plate" id="faq">
+  <div class="wrap">
+    <div class="phead reveal">
+      <h2>Preguntas frecuentes</h2>
+      <div class="mid"></div>
+      <span class="no plate-no">Lám. 06</span>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa1"><span class="faq-n">01</span><span class="faq-t">¿Qué hace un cirujano de mano y miembro superior?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa1"><p>Es un traumatólogo con formación adicional enfocada en la mano, la muñeca, el codo y el hombro: desde un túnel carpiano o un dedo en gatillo hasta fracturas complejas y reconstrucciones. Es un terreno donde el detalle marca la diferencia.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa2"><span class="faq-n">02</span><span class="faq-t">¿Qué problemas atiende con más frecuencia?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa2"><p>Túnel carpiano, dedo en gatillo, tendinitis, fracturas de mano y muñeca, lesiones de tendones, problemas del manguito rotador y del codo, y secuelas de traumatismos del miembro superior.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa3"><span class="faq-n">03</span><span class="faq-t">¿Toda lesión necesita cirugía?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa3"><p>No. Muchos problemas de mano, muñeca y hombro se resuelven sin cirugía. En la consulta se evalúa tu caso y se define el mejor plan para ti — que a veces es terapia, y a veces sí es quirófano.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa4"><span class="faq-n">04</span><span class="faq-t">¿Cuánto cuesta la consulta y cómo agendo?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa4"><p>La consulta de valoración tiene un costo de referencia indicado en la sección de agenda. Escríbeme por WhatsApp y coordinamos día y hora — la atención es con cita previa.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa5"><span class="faq-n">05</span><span class="faq-t">¿Dónde queda el consultorio?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa5"><p>En el Centro de Especialidades Anzoátegui (CEACA), en Lechería, Anzoátegui — Av. Principal de Lecherías con Av. Diego Bautista Urbaneja.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa6"><span class="faq-n">06</span><span class="faq-t">¿Debo llevar radiografías o estudios?</span><span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a" id="fa6"><p>Si ya tienes radiografías, resonancias o informes, tráelos a la consulta. Si no tienes, no te preocupes: en la valoración se indica qué estudios hacen falta.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LÁMINA 07 · AGENDA ===== -->
 <section class="plate" id="agenda">
   <div class="wrap">
     <div class="agenda reveal">
       <div class="agenda-in">
         <div>
-          <span class="eyebrow">Lámina 05 — Agenda tu consulta</span>
+          <span class="eyebrow">Lámina 07 — Agenda tu consulta</span>
           <h2>Una sola vía directa contigo.</h2>
           <p>Sin depender de portales de terceros ni de la centralita del hospital. El paciente entra, entiende y te escribe — a ti.</p>
           <div class="price">
@@ -593,11 +726,13 @@ section.plate{padding:clamp(40px,7vw,84px) 0;border-top:1px solid var(--line)}
         <p><a class="lk" href="#atlas">Hombro · Codo</a></p>
         <p><a class="lk" href="#atlas">Muñeca · Mano</a></p>
         <p><a class="lk" href="#areas">Motivos de consulta</a></p>
+        <p><a class="lk" href="#armar">Arma tu consulta</a></p>
+        <p><a class="lk" href="#faq">Preguntas frecuentes</a></p>
         <p><a class="lk" href="#educacion">Contenido educativo</a></p>
       </div>
     </div>
     <div class="foot-seal">
-      <p class="plate-credit">Lám. 06 — Colofón · Miembro superior</p>
+      <p class="plate-credit">Lám. 08 — Colofón · Miembro superior</p>
       <p>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial. Imágenes y contenido: Dr. Pedro Tovar (@drpedrotovar).</p>
     </div>
   </div>
@@ -664,8 +799,51 @@ section.plate{padding:clamp(40px,7vw,84px) 0;border-top:1px solid var(--line)}
   }
   regions.forEach(bind);
   callouts.forEach(function(c){c.style.cursor='pointer';bind(c);});
-
   setActive('mano'); // default
+
+  /* ---- whatsapp message builder ---- */
+  (function(){
+    var out=document.getElementById('builderMsg'); if(!out) return;
+    var sel={region:'de la mano', necesidad:'una primera consulta', horario:''};
+    var send=document.getElementById('builderSend');
+    var copyBtn=document.getElementById('builderCopy');
+    var copied=document.getElementById('builderCopied');
+    function compose(){
+      var m='Hola Dr. Tovar, quisiera '+sel.necesidad;
+      if(sel.region) m+=' por un tema '+sel.region;
+      if(sel.horario) m+=', preferiblemente '+sel.horario;
+      m+='.';
+      out.textContent=m;
+      if(send) send.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(m);
+      return m;
+    }
+    [].slice.call(document.querySelectorAll('.builder .chips')).forEach(function(g){
+      var grp=g.getAttribute('data-group');
+      [].slice.call(g.querySelectorAll('.chip')).forEach(function(ch){
+        ch.addEventListener('click',function(){
+          [].slice.call(g.querySelectorAll('.chip')).forEach(function(c){c.classList.remove('on');c.setAttribute('aria-pressed','false');});
+          ch.classList.add('on');ch.setAttribute('aria-pressed','true');
+          sel[grp]=ch.getAttribute('data-val');compose();
+        });
+      });
+    });
+    if(copyBtn) copyBtn.addEventListener('click',function(){
+      var m=compose(), done=function(){ if(copied){copied.classList.add('show');setTimeout(function(){copied.classList.remove('show');},1600);} };
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(m).then(done,done); }
+      else { var t=document.createElement('textarea');t.value=m;document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(t);done(); }
+    });
+    compose();
+  })();
+
+  /* ---- faq accordion (buttons, no <details>) ---- */
+  [].slice.call(document.querySelectorAll('.faq-q')).forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.faq-item'), a=item.querySelector('.faq-a');
+      var open=item.classList.toggle('open');
+      q.setAttribute('aria-expanded',open?'true':'false');
+      a.style.maxHeight=open?(a.scrollHeight+'px'):'0px';
+    });
+  });
 })();
 </script>
 </body>

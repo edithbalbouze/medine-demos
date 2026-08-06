@@ -65,6 +65,15 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
   número guardado. URLs: `.../dr-pedro-tovar/` (express) y `.../dr-pedro-tovar-panel/`
   (+ `.../dr-pedro-tovar-panel/admin.html`). **Mensaje NO enviado — Edith revisa; confirmar
   WhatsApp 584148063568.**
+  · **Iteración 2026-08-06 (feedback de Edith):** se añadió a AMBOS tiers una sección
+  **"Arma tu consulta"** (builder de mensaje de WhatsApp por chips región/necesidad/horario →
+  familia chips→wa.me ya documentada) y **"Preguntas frecuentes"** (acordeón por **botones con
+  `aria-expanded`, NO `<details>`** — respeta el veto de `<details>` estilizado; colapso scopeado
+  bajo `html.js` para ser visible sin JS). En el panel la FAQ es **editable desde admin.html** y
+  se renderiza de `PT.getFaq()` (nueva clave `pt_faq`). El **acceso al panel se volvió discreto**
+  (link "Acceso" 10px, opacity .55, en el colofón; ya no un botón con engranaje) para que los
+  pacientes no lo pulsen. Láminas renumeradas 01–08. Verificado en navegador (0 overflow 390px,
+  builder+acordeón OK, round-trip admin→página OK, 0 errores de consola).
 - ℹ️ **`ciudad-puente-real-panel` NO es una demo nueva — es la variante "con panel
   administrativo" de `ciudad-puente-real`** (mismo diseño a propósito: dos tiers del mismo
   producto — express estática $150 vs. con panel $250). Comparte fuentes (Chivo + IBM Plex
