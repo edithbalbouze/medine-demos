@@ -46,6 +46,7 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
 | Dra. Geraldine Naveda / **NAVEDA Dental Clinic** (@drageraldinenaveda · @naveda.dentalclinic) · Lechería · odontología estética de lujo + curso | `geraldine-naveda` | **Base OSCURA** negro `#0D0B0C`/`#000` (60) · blanco `#FFF` (30, serif/aire) · **fuchsia `#C44F96`** + malva `#C598AD` (10) — muestreados PIL del logo/feed | **Yeseva One** (display serif de lujo) + **Wix Madefor Text** (cuerpo) · densidad editorial de revista · **base OSCURA** (única oscura de la Ola 2) | **Editorial de lujo monocromo / revista de belleza dental** (doble oferta pacientes + curso Composite Live) — ≠ Mary Figuera (berenjena lookbook claro + comparador), ≠ Odontolaveglia, ≠ Odontolaser, ≠ Zapdent | **Portada kinética** (wordmark NAVEDA gigante, "D" fuchsia) + **glow fuchsia** sobre bonding + **módulo "Composite Live · ed. 39"** (selector cita/curso → wa.me con asunto) | **Nav negra editorial** (wordmark NAVEDA + línea fuchsia) / **Footer de dos marcas** (Dra. Geraldine COV 38726 + NAVEDA/CIOES) | Tarjetas de lujo sobre negro · CTA píldora fuchsia · FAB WhatsApp · **reveal reforzado** (posición + red de seguridad; `scroll-behavior:smooth`) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; excluida la foto del curso por rostros) |
 | Dra. Beatriz González · Centro de Especialidades Anzoátegui, Lechería · ginecología | `beatriz-gonzalez` | **Base CLARA** crema cálida `#FAF7F2` (60) · tinta/carbón cálido `#2C2620` (30) · **camel/mostaza `#8D6D3F`** (10, de su blazer real) — SIN rosa cliché, SIN salvia dominante (evita rozar Odontolaveglia) | **Besley** (display slab editorial) + **Reddit Sans** (cuerpo) · densidad editorial · base clara | **"Recupera tu nombre" — nameplate editorial tipográfico** (su nombre protagoniza; casi sin fotos) — ≠ portrait-led Darieth, ≠ soft-UI gineco-lau | **Nameplate editorial gigante** (nombre kinético) + **motivo botánico de línea SVG estático** camel + selector motivos→wa.me | **Nav wordmark + CTA** / **Footer editorial con dirección del CEA** | Tarjetas editoriales camel/crema · tarjeta de precio consulta $60 · CTA camel · FAB WhatsApp · retrato recortado (marca de agua eliminada) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; **conseguir WhatsApp directo** — el actual es la línea del portal citamedica) |
 | Dr. Pedro Tovar (@drpedrotovar) · CEACA, Lechería, Anzoátegui · traumatólogo — **cirugía de mano y miembro superior** | `dr-pedro-tovar` | **Base CLARA bone/aged-paper** `#F1EADA`/`#E7DDC9` (60) · **surgical steel-navy `#152F49`** tinta (30, anclada a su navy real de quirófano `#0C1E35`/`#202D3A`) · **carmín arterial `#9E2B2B`** (10) · slate `#5B6B7A` — el código anatómico vena/arteria | **Fahkwang** (display serif académico) + **Overpass** (UI/labels técnicos, voz de "etiqueta de espécimen") · densidad editorial aireada · **base clara cálida (bone)** | **Atlas anatómico / láminas del miembro superior** (LÁM. 01–06) — ≠ expediente (NR/CETI), ≠ agenda-ECG (demo-medicos), ≠ eye-chart (UMOLCA), ≠ odontograma-página (Zapdent), ≠ bento (Leticia), ≠ nameplate (Beatriz), ≠ portrait-led (Darieth) | **Mapa anatómico interactivo del miembro superior** (SVG line-art, teclado+ARIA; tap Hombro/Codo/Muñeca/Mano → resalta región + callout + arma `wa.me` específico de la región) + **reveal de callouts anatómicos por `animation-delay` escalonado** (CSS load, reduce-motion safe) + **duotono navy↔bone** (`mix-blend` screen+multiply) sobre sus fotos reales | **Barra-leyenda anatómica (figure-key: puntos de color + abreviaturas de región)** / **Pie de atlas (margen de lámina con barra de escala en cm + crédito "LÁM. 06 — COLOFÓN")** | **Fichas-espécimen** (tab REG.0X + icono anatómico SVG propio + hairline + lead-line carmín) · CTA **botón-lámina** (relleno carmín con doble filete inset tipo borde de lámina, NO píldora) · secundario subrayado | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa; **confirmar WhatsApp 584148063568**) |
+| Karen Stylos · Peluquería unisex (@karenstylos2023) · Calle Acosta N° 34, Carúpano, Sucre | `karen-stylos` | **Base OSCURA noir berenjena** `#14161B`/`#2E1D26` (60) · plata/perla `#E0E6F1` + bordes metálicos plata (30) · **neón magenta `#B42784`/tubo `#FFACFB`** CTA (10) + gotas cian `#268EC9`/verde `#3FCB4D` — muestreados PIL de su avatar-letrero neón real | **Great Vibes** (script, SOLO wordmark) + **Tenor Sans** (caps espaciadas eco de su "PELUQUERÍA" + cuerpo; un solo peso, jerarquía por tamaño/tracking) · densidad aireada glam · base oscura | **"El salón después de las seis — joyero nocturno de neón"** (escenas 01–05: letrero → rituales → trabajos → salón → carné de cita; sin bandas apiladas, sin carta de precios ni lookbook full-bleed — ≠ `demo-peluqueria`, ≠ `geraldine-naveda`, ≠ `derma-eunice`) | **"El letrero se enciende"** — wordmark Great Vibes como tubo de neón CSS (text-shadow multicapa núcleo/halo/resplandor) con secuencia de encendido con parpadeo escalonado al load (kicker plata → iconos cian → script magenta) + pulso perpetuo mínimo; bookend narrativo: el footer lo muestra APAGADO. Reduce-motion = encendido estático | **Barra-tubo de neón** (slim; tubo inferior 2px que cambia de color por scroll-spy magenta→cian→verde→magenta) / **Footer "cierre del salón"** (letrero apagado en vidrio berenjena-gris + "Hasta mañana — atendemos hasta las 6:00 p. m.") | **Placas de neón** (superficie `#1C252D` + borde 1px plata metálico estático + icono SVG de neón propio cian/verde con drop-shadow — SIN glow interior cálido ni oro, ≠ vitrinas Plaza Mayor; sin corner-brackets) · galería en **marcos de reel** (marco negro redondeado + insignia plateada real de sello) · CTA principal = **tubo de neón outline magenta que "se enciende"** al hover/focus · secundario subrayado · **carné de cita nocturno** chips→`wa.me` · FAB WhatsApp | 2026-08-07 | demo construida — **mensaje NO enviado** (Edith revisa; ⚠️ confirmar cuál WhatsApp es real: 0424-8725795 de la bio [usado en la demo] vs 0412-1800178 de Maps) |
 | Pediatría con Amor · Dra. Mariaelpi Benítez (@pediatriaconamor.1) · Cantaura + Barcelona, Anzoátegui · pediatría | `pediatria-con-amor` | **Base CLARA tierna** blanco hueso `#FAFAFA` (60) · **magenta/fucsia `#B02EA6`** (30) · **rosa `#D81483`** + **cian `#35D7FA`** (10) · marino `#131D39` texto — muestreados PIL del logo | **Baloo 2** (display redondeado) + **Lexend** (cuerpo) · densidad cálida redondeada · base clara | **Consultorio tierno con mascota / storybook cálido** (mascota-bebé del logo como motivo) — OPUESTO al granate académico de Wilfredo (endocrino pediátrico), ≠ soft-UI gineco-lau, ≠ Eunice plum | **Calendario de vacunas interactivo** (6 pestañas de edad `role=tablist` → vacunas + arma wa.me) + **mascota SVG con bob** | **Nav barra redondeada** (mascota + wordmark + píldora "Escríbeme") / **Footer nota-sticker** (mascota + 2 sedes como pins en mapita SVG + WhatsApp corregido) | Tarjetas muy redondeadas + íconos pastel · CTA píldora magenta/cian · FAB WhatsApp · **reveal por posición + red de seguridad**; wa.me corregido `584265834809` (su bio lo tiene roto sin el 58) | 2026-08-05 | demo construida — **mensaje NO enviado** (Edith revisa) |
 
 ## Notas de unicidad
@@ -334,6 +335,47 @@ navegador real a 390px (`scrollWidth==clientWidth`, 0 overflow, 0 offenders) y s
   fotos de menores/pacientes** (su feed es pediátrico-adyacente; no se descargó ninguna imagen de menor).
 - **Contador de bases:** …tanda 2 (4 claras/1 oscura) · **Tovar (CLARA bone)** → la próxima puede ir
   clara u oscura sin deuda.
+
+### Demo suelta 2026-08-07 — Karen Stylos (peluquería unisex · Carúpano, Sucre)
+
+Prospección individual (fuera de ola). Ledger congelado y `git pull` corrido antes del brief;
+gate de fuentes contra TODOS los `*/index.html` (42) antes de construir. QA fail-closed OK +
+barrido de vetos (21 patrones, 0 ocurrencias) + verificación en navegador real a 390px
+(`scrollWidth===clientWidth`, un fix de overflow por `translateX` aplicado, 0 errores de consola).
+
+- **Prospecto:** real y verificado en vivo (perfil IG + ficha Maps coinciden en Calle Acosta 34,
+  Carúpano). SEGUNDA demo de peluquería del repo → construida como OPUESTA a `demo-peluqueria`
+  (showcase): aquella = carbón+cobre, lookbook full-bleed, carta con precios, "prueba tu color"
+  `hue-rotate`, pestaña vertical RESERVAR, footer espejo de bombillas; Karen = berenjena+plata+neón,
+  arquetipo letrero nocturno, SIN precios (no publica ninguno — no se inventan), firma neón,
+  nav barra-tubo, footer letrero apagado. Cero solapamiento en los 4 ejes.
+  ⚠️ Homónimas descartadas: karenstylos.es (Logroño, ES) y @karenstylos (Chile) — y son el gancho
+  de venta ("el nombre se lo roba una peluquería de España en Google").
+- **Base OSCURA mandada por la marca** (su logo ES un letrero de neón sobre berenjena). Venía
+  Tovar (clara) sin deuda → tras esta, la próxima puede ir clara u oscura. Distinta de las otras
+  oscuras: ≠ Geraldine (negro+fuchsia editorial revista), ≠ Eunice (plum+magenta con grano —
+  aquí SIN feTurbulence, SIN masthead), ≠ Plaza Mayor (navy marina, oro), ≠ VaneRedLady (neón
+  gamer HUD — aquí neón boutique sin glitch/scanlines/HUD), ≠ demo-peluqueria (carbón+cobre).
+- **Técnicas (ninguna vetada; ESTRENAN, 1 uso cada una):** **letrero de neón CSS** (text-shadow
+  multicapa + `@keyframes` de encendido con parpadeo escalonado por `animation-delay` — keyframes
+  puros al load, patrón sancionado) · **bordes plata metálica estáticos** (gradiente lineal, sin
+  `@property`, sin animación continua) · **iconografía SVG de neón estática** (glow por
+  `filter: drop-shadow`, trazos SIN `stroke-dashoffset`). Reveal = **rect-based en scroll + red
+  de seguridad 2.5s**, con `.reveal` Y `.reveal.in` scopeadas bajo `html.js` (cumple el fix del
+  bug de reveals). **Familia "chips→`wa.me`"** suma el **carné de cita nocturno** (visual nuevo:
+  tarjetita con marco plata que se llena en vivo — documentado aceptable como las previas).
+- **Fuentes `Great Vibes` + `Tenor Sans`**, 1 uso cada una (verificadas libres con grep multi-repo).
+  Tenor Sans es de UN solo peso → jerarquía por tamaño/tracking/color, sin bold (decisión de brief).
+- **Nav "barra-tubo de neón" (scroll-spy de color)** y **footer "cierre del salón / letrero
+  apagado"** ESTRENAN. Tarjetas **"placa de neón"** y **"marco de reel"** ESTRENAN. CTA **"tubo
+  de neón"** ESTRENA (outline que se enciende — distinto del botón-luz dorado RELLENO de Plaza Mayor).
+- **Contenido:** CERO precios (no publica) y CERO testimonios (Maps sin reseñas — no se inventan).
+  Fotos = 4 assets reales de su feed (trabajos + local, sin rostros identificables) + su insignia
+  plateada como sello de galería. Copy que no inventa horario (solo "hasta las 6:00 p. m.", lo
+  único verificado).
+- **Contacto:** demo y FAB usan `wa.me/584248725795` (el 0424 de SU bio). ⚠️ Su ficha de Maps
+  publica OTRO número (0412-1800178) — mostrado como alternativo en la sección de contacto.
+  **Edith debe confirmar cuál es el WhatsApp real antes de enviar el mensaje.**
 
 ### Técnicas quemadas (contador)
 
