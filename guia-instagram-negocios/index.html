@@ -1,0 +1,670 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guía de Instagram para tu negocio — Medine.tech</title>
+<meta name="description" content="Guía práctica para que cualquier negocio o profesional mejore su Instagram y consiga más clientes.">
+
+<style>
+  :root{
+    --bg:#F5F8FC; --surface:#FFFFFF; --surface-2:#EDF3FA;
+    --ink:#132539; --ink-soft:#5A6B80; --line:#DCE6F0;
+    --brand:#1F62C9; --brand-2:#0EA5B7; --cyan:#0C86A4; --cyan-fill:#35C6E6;
+    --good:#128A5E; --good-bg:#E4F4EC; --bad:#C43B1E; --bad-bg:#FBEBE6;
+    --shadow:0 6px 22px rgba(20,50,90,.10);
+    --font-display:ui-rounded,"SF Pro Rounded","Segoe UI",system-ui,sans-serif;
+    --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --maxw:640px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0E1826; --surface:#152438; --surface-2:#1C2E44; --ink:#EAF1F9; --ink-soft:#A6B6C8;
+      --line:#27394F; --brand:#5A9BFF; --brand-2:#37CBDD; --cyan:#5AD3EE; --cyan-fill:#35C6E6;
+      --good:#4CCB92; --good-bg:#123026; --bad:#FF7A5C; --bad-bg:#33201A;
+      --shadow:0 8px 26px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F8FC; --surface:#FFFFFF; --surface-2:#EDF3FA; --ink:#132539; --ink-soft:#5A6B80; --line:#DCE6F0;
+    --brand:#1F62C9; --brand-2:#0EA5B7; --cyan:#0C86A4; --good:#128A5E; --good-bg:#E4F4EC; --bad:#C43B1E; --bad-bg:#FBEBE6;
+    --shadow:0 6px 22px rgba(20,50,90,.10);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1826; --surface:#152438; --surface-2:#1C2E44; --ink:#EAF1F9; --ink-soft:#A6B6C8;
+    --line:#27394F; --brand:#5A9BFF; --brand-2:#37CBDD; --cyan:#5AD3EE; --good:#4CCB92; --good-bg:#123026; --bad:#FF7A5C; --bad-bg:#33201A;
+    --shadow:0 8px 26px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px 72px}
+
+  header.top{position:relative;overflow:hidden;background:
+    radial-gradient(120% 120% at 100% -10%, color-mix(in srgb,var(--cyan-fill) 40%, transparent), transparent 55%),
+    radial-gradient(120% 120% at -10% 110%, color-mix(in srgb,var(--brand-2) 34%, transparent), transparent 55%),
+    linear-gradient(150deg, #0E2A50, var(--brand));
+    color:#fff;padding:34px 20px 40px;text-align:center;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+  header.top .mascot{width:76px;height:76px;margin:0 auto 12px;display:block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+  header.top .eyebrow{font-family:var(--font-display);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    font-size:.7rem;opacity:.92;margin:0 0 6px}
+  header.top h1{font-family:var(--font-display);font-weight:800;font-size:clamp(1.7rem,6vw,2.4rem);
+    margin:0 0 8px;text-wrap:balance;line-height:1.12}
+  header.top p.sub{margin:0 auto;max-width:42ch;font-size:1rem;opacity:.95}
+  header.top .who{margin-top:16px;display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+
+  .intro{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 18px 14px;
+    margin:22px 0 8px;box-shadow:var(--shadow)}
+  .intro h2{font-family:var(--font-display);margin:.1em 0 .4em;font-size:1.15rem}
+  .intro p{margin:.3em 0}
+  .intro .mini{font-size:.92rem;color:var(--ink-soft)}
+  .intro .tagchip{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;
+    padding:1px 8px;font-family:var(--font-mono);font-size:.86em;color:var(--brand)}
+
+  nav.toc{margin:20px 0}
+  nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  nav.toc a{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:11px 14px;font-weight:600;
+    transition:transform .12s ease, border-color .12s ease}
+  nav.toc a:hover{transform:translateX(3px);border-color:var(--brand)}
+  nav.toc .n{flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    font-family:var(--font-display);font-weight:800;color:#fff;background:var(--brand);font-size:.95rem}
+
+  section.step{background:var(--surface);border:1px solid var(--line);border-radius:22px;
+    padding:20px 18px 22px;margin:16px 0;box-shadow:var(--shadow);scroll-margin-top:14px}
+  .step-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
+  .badge{flex:0 0 auto;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+    font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:#fff;
+    background:linear-gradient(150deg,var(--brand),var(--brand-2));box-shadow:0 4px 12px color-mix(in srgb,var(--brand) 40%,transparent)}
+  .step-head h2{font-family:var(--font-display);font-weight:800;font-size:1.32rem;margin:2px 0 2px;line-height:1.15;text-wrap:balance}
+  .step-head .tag{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+  .why{background:var(--surface-2);border-left:4px solid var(--brand-2);border-radius:0 12px 12px 0;
+    padding:10px 14px;margin:12px 0 16px;font-size:.95rem}
+  .why b{color:var(--ink)}
+
+  h3.mini{font-family:var(--font-display);font-weight:800;font-size:1rem;margin:18px 0 8px;
+    display:flex;align-items:center;gap:8px}
+  h3.mini::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--brand-2)}
+
+  ol.steps{margin:8px 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:9px}
+  ol.steps li{position:relative;padding-left:38px;font-size:.97rem}
+  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-1px;
+    width:26px;height:26px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);
+    color:var(--brand);font-family:var(--font-display);font-weight:800;font-size:.85rem;display:grid;place-items:center}
+  ol.steps li b{color:var(--ink)}
+  .kbd{font-family:var(--font-mono);background:var(--surface-2);border:1px solid var(--line);
+    border-radius:7px;padding:1px 7px;font-size:.86em;white-space:nowrap}
+
+  ul.tips{margin:8px 0;padding:0;list-style:none;display:grid;gap:9px}
+  ul.tips li{position:relative;padding-left:30px;font-size:.96rem}
+  ul.tips li::before{content:"";position:absolute;left:6px;top:.62em;width:9px;height:9px;border-radius:50%;
+    background:var(--cyan-fill);box-shadow:0 0 0 4px color-mix(in srgb,var(--cyan-fill) 22%,transparent)}
+
+  .copy{margin:12px 0}
+  .copy .lbl{font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+  .copy .box{position:relative;background:var(--surface-2);border:1px dashed color-mix(in srgb,var(--brand) 45%,var(--line));
+    border-radius:14px;padding:14px 14px 12px}
+  .copy pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--font-body);font-size:.98rem;line-height:1.5}
+  .copy pre .ph{color:var(--brand);font-weight:700}
+  .copy .cbtn{margin-top:10px;display:inline-flex;align-items:center;gap:7px;border:none;cursor:pointer;
+    background:var(--brand);color:#fff;font-family:var(--font-display);font-weight:800;font-size:.9rem;
+    padding:9px 15px;border-radius:11px;transition:transform .12s ease, background .2s ease}
+  .copy .cbtn:hover{transform:translateY(-1px)}
+  .copy .cbtn.ok{background:var(--good)}
+  .charcount{font-size:.82rem;color:var(--ink-soft);margin-top:7px}
+  .charcount b{color:var(--ink)}
+  .eg{margin-top:8px;font-size:.9rem;background:color-mix(in srgb,var(--brand-2) 10%,var(--surface));
+    border:1px solid color-mix(in srgb,var(--brand-2) 30%,var(--line));border-radius:12px;padding:9px 12px}
+  .eg b{color:var(--brand-2)}
+
+  .compare{display:grid;gap:10px;margin:12px 0}
+  @media(min-width:520px){.compare{grid-template-columns:1fr 1fr}}
+  .gb{border-radius:14px;padding:12px 14px;font-size:.93rem;border:1px solid}
+  .gb .h{font-family:var(--font-display);font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:5px}
+  .gb.bad{background:var(--bad-bg);border-color:color-mix(in srgb,var(--bad) 40%,transparent)}
+  .gb.bad .h{color:var(--bad)}
+  .gb.good{background:var(--good-bg);border-color:color-mix(in srgb,var(--good) 40%,transparent)}
+  .gb.good .h{color:var(--good)}
+  .gb code{font-family:var(--font-mono);font-size:.86em;word-break:break-all}
+
+  .callout-note{display:flex;gap:10px;background:color-mix(in srgb,var(--brand-2) 12%,var(--surface));
+    border:1px solid color-mix(in srgb,var(--brand-2) 35%,var(--line));border-radius:14px;padding:12px 14px;margin:14px 0;font-size:.94rem}
+  .callout-note.warn{background:var(--bad-bg);border-color:color-mix(in srgb,var(--bad) 40%,transparent)}
+  .callout-note .ic{flex:0 0 auto;font-size:1.2rem;line-height:1.3}
+
+  figure.shot{margin:16px 0 6px;text-align:center}
+  figure.shot svg{width:100%;height:auto;max-width:300px;display:block;margin:0 auto;
+    border-radius:18px;box-shadow:0 10px 30px rgba(20,50,90,.16)}
+  figure.shot figcaption{margin-top:10px;font-size:.85rem;color:var(--ink-soft);max-width:34ch;margin-inline:auto}
+
+  .week{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+  @media(min-width:520px){.week{grid-template-columns:repeat(3,1fr)}}
+  .week .d{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px}
+  .week .d .day{font-family:var(--font-display);font-weight:800;color:var(--brand);font-size:.92rem;margin-bottom:3px}
+  .week .d .what{font-size:.9rem}
+
+  footer.end{text-align:center;margin-top:34px;padding:26px 18px;background:var(--surface);
+    border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+  footer.end .heart{font-size:1.5rem}
+  footer.end h2{font-family:var(--font-display);margin:.3em 0 .2em;font-size:1.2rem}
+  footer.end p{margin:.3em auto;max-width:40ch;color:var(--ink-soft);font-size:.95rem}
+  footer.end .cta{display:inline-flex;align-items:center;gap:9px;margin-top:14px;text-decoration:none;
+    background:linear-gradient(150deg,var(--brand),var(--brand-2));color:#fff;font-family:var(--font-display);font-weight:800;padding:12px 22px;border-radius:14px}
+  .sig{margin-top:16px;font-size:.82rem;color:var(--ink-soft)}
+  .sig b{color:var(--brand)}
+
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;
+    background:var(--ink);color:var(--bg);font-family:var(--font-display);font-weight:700;padding:11px 20px;border-radius:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.3);transition:opacity .2s ease, transform .2s ease;pointer-events:none;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  @page{ size:A4; margin:12mm 11mm; }
+  @media print{
+    :root, :root[data-theme="dark"]{
+      --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#EEF3F9; --ink:#132539; --ink-soft:#54657A; --line:#DAE3EE;
+      --brand:#1A5AB8; --brand-2:#0C93A4; --cyan:#0C86A4; --cyan-fill:#35C6E6;
+      --good:#0F7A52; --good-bg:#E4F4EC; --bad:#B8351A; --bad-bg:#FBEBE6; --shadow:none;
+    }
+    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    html,body{ background:#fff !important; }
+    .wrap{ max-width:none; padding:0 6mm 6mm; }
+    header.top{ border-radius:0; margin-bottom:6mm; }
+    .intro, nav.toc, section.step, footer.end{ box-shadow:none !important; }
+    section.step, .intro, footer.end, nav.toc a, figure.shot, .compare, .callout-note, .week{
+      break-inside:avoid; page-break-inside:avoid; }
+    .step-head{ break-after:avoid; page-break-after:avoid; }
+    figure.shot svg{ box-shadow:none !important; border:1px solid #eee; }
+    .copy .cbtn, .toast{ display:none !important; }
+    a{ color:inherit; text-decoration:none; }
+  }
+</style>
+
+<header class="top">
+  <svg class="mascot" viewBox="0 0 100 100" aria-hidden="true">
+    <rect x="22" y="22" width="56" height="56" rx="17" fill="none" stroke="#fff" stroke-width="5"/>
+    <path d="M35 63 L47 51 L57 59 L70 41" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M60 41 L70 41 L70 51" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="35" cy="63" r="3.6" fill="#fff"/>
+  </svg>
+  <p class="eyebrow">Guía práctica</p>
+  <h1>Tu Instagram, con más alcance</h1>
+  <p class="sub">Para cualquier negocio o profesional: convierte tu perfil en un imán de clientes. Sin tecnicismos.</p>
+  <div class="who">✨ Una cortesía de Medine.tech</div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <h2>Cómo usar esta guía</h2>
+    <p>Ábrela en tu teléfono con Instagram al lado. Ve punto por punto; cada uno te dice <b>qué escribir</b> y te muestra con un dibujo <b>dónde tocar</b> en la app.</p>
+    <p>Los textos en recuadro son <b>plantillas</b>: reemplaza lo que está entre corchetes <span class="tagchip">[así]</span> por lo de tu negocio. Debajo de cada una hay un ejemplo.</p>
+    <p class="mini">Sirve para cualquier rubro: restaurante, tienda, salón, consultorio, taller, servicios profesionales… En una tarde queda todo listo. 🚀</p>
+  </div>
+
+  <nav class="toc" aria-label="Contenido">
+    <ol>
+      <li><a href="#s1"><span class="n">1</span> Cambia a cuenta profesional</a></li>
+      <li><a href="#s2"><span class="n">2</span> El Nombre (lo que la gente busca)</a></li>
+      <li><a href="#s3"><span class="n">3</span> La Bio (tu tarjeta de presentación)</a></li>
+      <li><a href="#s4"><span class="n">4</span> Enlaces, categoría y botón de WhatsApp</a></li>
+      <li><a href="#s5"><span class="n">5</span> Las Destacadas</a></li>
+      <li><a href="#s6"><span class="n">6</span> Historias</a></li>
+      <li><a href="#s7"><span class="n">7</span> Carruseles</a></li>
+      <li><a href="#s8"><span class="n">8</span> Reels</a></li>
+      <li><a href="#s9"><span class="n">9</span> Tu rutina de la semana</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 PROFESIONAL -->
+  <section class="step" id="s1">
+    <div class="step-head">
+      <div class="badge">1</div>
+      <div><span class="tag">Empieza por aquí</span>
+      <h2>Cambia a cuenta profesional</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> La cuenta profesional es <b>gratis</b> y te da tres cosas que una cuenta normal no tiene: un botón de <b>contacto/WhatsApp</b> en tu perfil, <b>estadísticas</b> (saber qué publicación funcionó) y mostrar tu <b>categoría</b> (tu rubro).</div>
+    <h3 class="mini">Dónde tocar</h3>
+    <ol class="steps">
+      <li>En tu perfil, toca las <b>tres rayitas</b> <span class="kbd">☰</span> (arriba a la derecha) y entra en <span class="kbd">Configuración y actividad</span>.</li>
+      <li><b>Truco rápido:</b> en el buscador de arriba escribe <span class="kbd">tipo</span> y toca <b>Tipo de cuenta y herramientas</b>.</li>
+      <li>Toca <b>Cambiar a cuenta profesional</b> y sigue los pasos.</li>
+      <li>Cuando pida la categoría, elige la de tu rubro (ej. <b>Restaurante</b>, <b>Tienda</b>, <b>Odontólogo</b>, <b>Abogado</b>…).</li>
+      <li>Elige <b>Empresa</b> (así aparece el botón de <b>contacto</b> y tu dirección). “Creador” es más para influencers.</li>
+      <li>Revisa que tu cuenta quede <b>Pública</b> (no privada): así te encuentran y se activan las <b>Estadísticas</b>.</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 300" role="img" aria-label="Pantalla Tipo de cuenta y herramientas con la opción Cambiar a cuenta profesional señalada">
+        <rect width="300" height="300" rx="18" fill="#ffffff"/>
+        <path d="M22 24 l-8 7 l8 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="156" y="36" font-family="system-ui" font-weight="700" font-size="12.5" fill="#111" text-anchor="middle">Tipo de cuenta y herramientas</text>
+        <line x1="0" y1="54" x2="300" y2="54" stroke="#eee"/>
+        <text x="18" y="80" font-family="system-ui" font-size="11" fill="#8a8a8a" font-weight="600">Tu cuenta</text>
+        <circle cx="34" cy="104" r="12" fill="#E6EEF9"/><text x="34" y="109" font-size="12" text-anchor="middle">⚙️</text>
+        <text x="55" y="101" font-family="system-ui" font-size="12.5" fill="#111" font-weight="600">Tipo de cuenta</text>
+        <text x="284" y="101" font-family="system-ui" font-size="10.5" fill="#8a8a8a" text-anchor="end">Personal (privado)</text>
+        <text x="55" y="116" font-family="system-ui" font-size="9.5" fill="#8aa0c0">→ ponla en Pública</text>
+        <line x1="18" y1="130" x2="282" y2="130" stroke="#f0f0f0"/>
+        <rect x="10" y="138" width="280" height="40" rx="10" fill="#EAF1FB"/>
+        <circle cx="34" cy="158" r="12" fill="#D6E2F3"/><text x="34" y="163" font-size="12" text-anchor="middle">⚙️</text>
+        <text x="55" y="163" font-family="system-ui" font-size="12.5" fill="#111" font-weight="700">Cambiar a cuenta profesional</text>
+        <text x="278" y="163" font-family="system-ui" font-size="15" fill="#1F62C9" text-anchor="end">›</text>
+        <text x="18" y="210" font-family="system-ui" font-size="11" fill="#8a8a8a" font-weight="600">Obtén acceso a más herramientas</text>
+        <circle cx="34" cy="238" r="12" fill="#f0f0f0"/><text x="34" y="243" font-size="11" text-anchor="middle">📊</text>
+        <text x="55" y="235" font-family="system-ui" font-size="12" fill="#9a9a9a" font-weight="600">Estadísticas</text>
+        <text x="55" y="249" font-family="system-ui" font-size="9.5" fill="#b9b9b9">Disponible para las cuentas públicas</text>
+        <rect x="10" y="138" width="280" height="40" rx="10" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="16" cy="142" r="12" fill="#E4144B"/><text x="16" y="147" font-family="system-ui" font-weight="800" font-size="13" fill="#fff" text-anchor="middle">1</text>
+      </svg>
+      <figcaption><b>Atajo:</b> en Configuración escribe <b>“tipo”</b>, entra a <b>Tipo de cuenta y herramientas</b> y toca <b>Cambiar a cuenta profesional</b>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 2 NOMBRE -->
+  <section class="step" id="s2">
+    <div class="step-head">
+      <div class="badge">2</div>
+      <div><span class="tag">Botón “Editar”</span>
+      <h2>El Nombre: lo que la gente busca</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> El <b>Nombre</b> (distinto a tu <span class="kbd">@usuario</span>) es lo que Instagram usa para <b>buscar</b>. Si alguien escribe “restaurante [tu ciudad]” o “abogado [tu ciudad]”, solo te encuentra si esas palabras están en tu Nombre.</div>
+
+    <div class="copy">
+      <div class="lbl">Plantilla para el campo “Nombre”</div>
+      <div class="box"><pre><span class="ph">[Tu negocio]</span> · <span class="ph">[Qué haces]</span> <span class="ph">[Ciudad]</span></pre></div>
+      <div class="eg"><b>Ejemplo:</b> “Sabor Criollo · Restaurante Valencia” · o · “Dra. Ana Ríos · Odontóloga Maracay” · o · “Glow · Tienda de ropa Caracas”.</div>
+      <div class="charcount">Mete tu <b>rubro</b> y tu <b>ciudad</b>: son las palabras que te hacen aparecer en las búsquedas.</div>
+    </div>
+
+    <div class="callout-note warn"><span class="ic">⚠️</span><div>Instagram solo te deja cambiar el <b>Nombre 2 veces cada 14 días</b>. Escríbelo bien la primera vez.</div></div>
+
+    <h3 class="mini">Dónde tocar</h3>
+    <ol class="steps">
+      <li>En tu perfil toca el botón <span class="kbd">Editar</span>.</li>
+      <li>Toca el campo <b>Nombre</b> (el primero de arriba).</li>
+      <li>Escribe tu versión y toca el <b>✓</b> (arriba a la derecha).</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 210" role="img" aria-label="Pantalla del campo Nombre con el texto y el botón de confirmar señalados">
+        <rect width="300" height="210" rx="18" fill="#ffffff"/>
+        <path d="M22 24 l-8 7 l8 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="150" y="35" font-family="system-ui" font-weight="700" font-size="13" fill="#111" text-anchor="middle">Nombre</text>
+        <circle cx="278" cy="30" r="15" fill="#111"/><path d="M271 30 l5 5 l9 -10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="16" y="56" width="268" height="46" rx="10" fill="#fff" stroke="#111" stroke-width="1.5"/>
+        <text x="26" y="72" font-family="system-ui" font-size="9.5" fill="#8a8a8a">Nombre</text>
+        <text x="26" y="90" font-family="system-ui" font-size="12" fill="#111" font-weight="600">Tu Negocio · Rubro Ciudad</text>
+        <text x="18" y="128" font-family="system-ui" font-size="10" fill="#8a8a8a">Usa el nombre por el que te conocen.</text>
+        <text x="18" y="146" font-family="system-ui" font-size="10" fill="#8a8a8a">Solo puedes cambiarlo 2 veces en 14 días.</text>
+        <circle cx="278" cy="79" r="13" fill="#E4144B"/><text x="278" y="84" font-family="system-ui" font-weight="800" font-size="13" fill="#fff" text-anchor="middle">1</text>
+        <circle cx="278" cy="30" r="20" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="256" cy="14" r="11" fill="#E4144B"/><text x="256" y="19" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">2</text>
+      </svg>
+      <figcaption><b>1</b> Escribe tu Nombre con rubro + ciudad. <b>2</b> Guarda con el <b>✓</b> de arriba.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 3 BIO -->
+  <section class="step" id="s3">
+    <div class="step-head">
+      <div class="badge">3</div>
+      <div><span class="tag">Editar → Presentación</span>
+      <h2>La Bio: tu tarjeta de presentación</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Instagram llama a la bio <b>“Presentación”</b>. En 4 líneas debe decir <b>quién eres, qué ofreces, dónde y cómo contactarte</b>. Tienes hasta <b>150 letras</b>.</div>
+
+    <div class="copy">
+      <div class="lbl">Plantilla para “Presentación”</div>
+      <div class="box"><pre><span class="ph">[Emoji]</span> <span class="ph">[Tu negocio]</span> · <span class="ph">[Rubro]</span>
+<span class="ph">[Emoji]</span> <span class="ph">[Servicio 1]</span> · <span class="ph">[Servicio 2]</span> · <span class="ph">[Servicio 3]</span>
+📍 <span class="ph">[Tu ciudad / dónde estás]</span>
+📲 <span class="ph">[Llamado a la acción]</span> 👇</pre></div>
+      <div class="eg"><b>Ejemplo:</b><br>🍔 Sabor Criollo · Comida casera<br>🥘 Almuerzos · Pedidos · Eventos<br>📍 Valencia (a domicilio)<br>📲 Haz tu pedido 👇</div>
+      <div class="charcount">Cabe en las 150 letras. Los emojis funcionan como “viñetas” y hacen la bio fácil de leer.</div>
+    </div>
+
+    <h3 class="mini">Dónde tocar</h3>
+    <ol class="steps">
+      <li>Perfil → <span class="kbd">Editar</span> → toca <b>Presentación</b>.</li>
+      <li>Escribe tu bio y toca el <b>✓</b>. El contador te dice cuánto espacio te queda (150 letras).</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 220" role="img" aria-label="Pantalla Presentación con el contador de 150 letras y el texto de la bio">
+        <rect width="300" height="220" rx="18" fill="#ffffff"/>
+        <path d="M22 24 l-8 7 l8 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="150" y="35" font-family="system-ui" font-weight="700" font-size="13" fill="#111" text-anchor="middle">Presentación</text>
+        <circle cx="278" cy="30" r="15" fill="#2E7DF0"/><path d="M271 30 l5 5 l9 -10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="16" y="54" width="268" height="118" rx="10" fill="#fff" stroke="#111" stroke-width="1.5"/>
+        <text x="26" y="72" font-family="system-ui" font-size="9.5" fill="#8a8a8a">Presentación</text>
+        <text x="274" y="72" font-family="system-ui" font-size="9.5" fill="#8a8a8a" text-anchor="end">128 / 150</text>
+        <text x="26" y="94" font-family="system-ui" font-size="10.5" fill="#111">🍔 Sabor Criollo · Comida casera</text>
+        <text x="26" y="110" font-family="system-ui" font-size="10.5" fill="#111">🥘 Almuerzos · Pedidos · Eventos</text>
+        <text x="26" y="126" font-family="system-ui" font-size="10.5" fill="#111">📍 Valencia (a domicilio)</text>
+        <text x="26" y="142" font-family="system-ui" font-size="10.5" fill="#111">📲 Haz tu pedido 👇</text>
+        <circle cx="255" cy="66" r="12" fill="#E4144B"/><text x="255" y="71" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+      </svg>
+      <figcaption>El contador <b>128/150</b> te dice cuánto espacio te queda. Escribe corto y claro.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 4 ENLACES + CATEGORIA + CONTACTO -->
+  <section class="step" id="s4">
+    <div class="step-head">
+      <div class="badge">4</div>
+      <div><span class="tag">Editar → Información pública</span>
+      <h2>Enlaces, categoría y botón de WhatsApp</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Aquí pones tu <b>link de WhatsApp</b>, le dices a Instagram tu <b>rubro</b> (para salir en más búsquedas) y activas el <b>botón de contacto</b> que aparece en tu perfil.</div>
+
+    <h3 class="mini">A · Enlaces (tu WhatsApp que sí abre)</h3>
+    <div class="callout-note warn"><span class="ic">⚠️</span><div><b>Error muy común:</b> un link de WhatsApp que no abre porque le falta el <b>código de país</b>. El formato correcto es <b>wa.me/</b> + <b>código de país</b> + tu número <b>sin el 0</b> del inicio.</div></div>
+    <div class="compare">
+      <div class="gb bad"><div class="h">✗ No abre</div><code>wa.me/04141234567</code></div>
+      <div class="gb good"><div class="h">✓ Sí abre</div><code>wa.me/584141234567</code></div>
+    </div>
+    <div class="eg"><b>Códigos de país:</b> Venezuela <b>58</b> · Colombia <b>57</b> · México <b>52</b> · Perú <b>51</b> · España <b>34</b> · EE.UU. <b>1</b>. Quita el <b>0</b> inicial de tu número y pega el código adelante.</div>
+    <h3 class="mini" style="margin-top:14px">Dónde tocar</h3>
+    <ol class="steps">
+      <li>Perfil → <span class="kbd">Editar</span> → toca <b>Enlaces</b> → <span class="kbd">＋ Agregar enlace</span>.</li>
+      <li>En <b>Título</b> pon algo como <b>“Escríbenos”</b> o <b>“Agenda tu cita”</b>.</li>
+      <li>En la <b>URL</b> pega tu WhatsApp con el formato correcto de arriba.</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 200" role="img" aria-label="Pantalla Enlaces con Agregar enlace y un enlace de WhatsApp">
+        <rect width="300" height="200" rx="18" fill="#ffffff"/>
+        <path d="M22 24 l-8 7 l8 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="150" y="35" font-family="system-ui" font-weight="700" font-size="13" fill="#111" text-anchor="middle">Enlaces</text>
+        <line x1="0" y1="52" x2="300" y2="52" stroke="#eee"/>
+        <circle cx="36" cy="86" r="15" fill="none" stroke="#1F62C9" stroke-width="1.6"/>
+        <line x1="36" y1="79" x2="36" y2="93" stroke="#1F62C9" stroke-width="2.4" stroke-linecap="round"/><line x1="29" y1="86" x2="43" y2="86" stroke="#1F62C9" stroke-width="2.4" stroke-linecap="round"/>
+        <text x="60" y="91" font-family="system-ui" font-size="12.5" fill="#111" font-weight="700">Agregar enlace</text>
+        <circle cx="16" cy="72" r="12" fill="#E4144B"/><text x="16" y="77" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+        <line x1="16" y1="112" x2="284" y2="112" stroke="#f2f2f2"/>
+        <circle cx="36" cy="146" r="15" fill="#E6EEF9"/><text x="36" y="151" font-size="13" text-anchor="middle">🔗</text>
+        <text x="60" y="143" font-family="system-ui" font-size="12" fill="#111" font-weight="700">Escríbenos</text>
+        <text x="60" y="159" font-family="system-ui" font-size="10" fill="#0C86A4">wa.me/58XXXXXXXXXX</text>
+        <text x="278" y="151" font-family="system-ui" font-size="15" fill="#bbb" text-anchor="end">›</text>
+      </svg>
+      <figcaption>Toca <b>＋ Agregar enlace</b>, ponle un título y pega tu WhatsApp bien formado.</figcaption>
+    </figure>
+
+    <h3 class="mini">B · Categoría (di cuál es tu rubro)</h3>
+    <ol class="steps">
+      <li>Perfil → <span class="kbd">Editar</span> → baja hasta <b>Categoría</b> (en “Información pública de la empresa”).</li>
+      <li>En el buscador escribe tu rubro (ej. <b>Restaurante</b>, <b>Tienda de ropa</b>, <b>Odontólogo</b>) y selecciónalo.</li>
+      <li>Activa <b>Mostrar en el perfil</b> y guarda con el <b>✓</b>.</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 190" role="img" aria-label="Pantalla de categoría con Mostrar en el perfil activado y una categoría seleccionada">
+        <rect width="300" height="190" rx="18" fill="#ffffff"/>
+        <text x="18" y="34" font-family="system-ui" font-weight="800" font-size="15" fill="#111">¿Qué categoría te describe?</text>
+        <text x="18" y="66" font-family="system-ui" font-size="11.5" fill="#111" font-weight="600">Mostrar en el perfil</text>
+        <rect x="238" y="56" width="46" height="24" rx="12" fill="#111"/><circle cx="272" cy="68" r="9" fill="#fff"/>
+        <circle cx="256" cy="68" r="12" fill="#E4144B"/><text x="256" y="73" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+        <rect x="18" y="92" width="264" height="28" rx="9" fill="#F1F1F3"/>
+        <circle cx="36" cy="106" r="6" fill="none" stroke="#999" stroke-width="1.6"/><line x1="40" y1="110" x2="45" y2="115" stroke="#999" stroke-width="1.6"/>
+        <text x="54" y="110" font-family="system-ui" font-size="11.5" fill="#111" font-weight="600">Tu rubro…</text>
+        <line x1="18" y1="132" x2="282" y2="132" stroke="#f2f2f2"/>
+        <text x="18" y="158" font-family="system-ui" font-size="12.5" fill="#111" font-weight="700">Restaurante</text>
+        <circle cx="270" cy="153" r="9" fill="#111"/><circle cx="270" cy="153" r="3.4" fill="#fff"/>
+        <circle cx="16" cy="98" r="12" fill="#E4144B"/><text x="16" y="103" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">2</text>
+      </svg>
+      <figcaption><b>1</b> Activa “Mostrar en el perfil”. <b>2</b> Busca y selecciona tu rubro.</figcaption>
+    </figure>
+
+    <h3 class="mini">C · Botón de contacto (WhatsApp en tu perfil)</h3>
+    <div class="why" style="border-left-color:var(--good)"><b>Esto es lo mejor:</b> agrega tu WhatsApp aquí y a tu perfil le sale un botón grande de <b>“Contacto”</b>. Tus clientes te escriben con un solo toque.</div>
+    <ol class="steps">
+      <li>Perfil → <span class="kbd">Editar</span> → toca <b>Opciones de contacto</b>.</li>
+      <li>Toca <b>WhatsApp</b> y escribe tu número con el código de país.</li>
+      <li>Guarda. Verás aparecer el botón <b>Contacto</b> en tu perfil. ✓</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 210" role="img" aria-label="Pantalla Opciones de contacto con la fila de WhatsApp señalada">
+        <rect width="300" height="210" rx="18" fill="#ffffff"/>
+        <path d="M22 24 l-8 7 l8 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="150" y="35" font-family="system-ui" font-weight="700" font-size="13" fill="#111" text-anchor="middle">Opciones de contacto</text>
+        <line x1="0" y1="52" x2="300" y2="52" stroke="#eee"/>
+        <text x="52" y="82" font-family="system-ui" font-size="11.5" fill="#bcbcbc">✉️  Correo electrónico</text>
+        <text x="52" y="108" font-family="system-ui" font-size="11.5" fill="#bcbcbc">📞  Número de teléfono</text>
+        <text x="52" y="134" font-family="system-ui" font-size="11.5" fill="#bcbcbc">📍  Dirección</text>
+        <rect x="10" y="146" width="280" height="38" rx="10" fill="#EAF8EF"/>
+        <circle cx="36" cy="165" r="13" fill="#25D366"/>
+        <path d="M31 168l.6-2.1a4 4 0 1 1 1.5 1.4l-2.1.7zm2.2-1.2l.15.09a3.3 3.3 0 1 0-1.1-1.1l.08.14-.32 1.2 1.2-.33z" fill="#fff"/>
+        <text x="56" y="169" font-family="system-ui" font-size="12.5" fill="#111" font-weight="700">WhatsApp · tu número</text>
+        <text x="278" y="169" font-family="system-ui" font-size="15" fill="#25D366" text-anchor="end">›</text>
+        <rect x="10" y="146" width="280" height="38" rx="10" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="16" cy="150" r="12" fill="#E4144B"/><text x="16" y="155" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+      </svg>
+      <figcaption>En <b>Opciones de contacto</b> agrega tu WhatsApp. Así tu perfil muestra el botón <b>“Contacto”</b>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 5 DESTACADAS -->
+  <section class="step" id="s5">
+    <div class="step-head">
+      <div class="badge">5</div>
+      <div><span class="tag">Tu perfil ordenado</span>
+      <h2>Las Destacadas (los círculos)</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Las historias se borran en 24 horas. Las <b>Destacadas</b> son círculos fijos bajo tu bio donde guardas lo importante para siempre. Es lo primero que mira quien llega a tu perfil.</div>
+
+    <h3 class="mini">Crea estas 5 (adáptalas a tu negocio)</h3>
+    <ul class="tips">
+      <li><b>🛍️ Servicios / Productos</b> — qué ofreces, con fotos claras.</li>
+      <li><b>📍 Ubicación</b> — dónde estás, con dirección escrita y mapa (o “a domicilio”).</li>
+      <li><b>💲 Precios / Info</b> — precios o rangos, horarios y formas de pago.</li>
+      <li><b>⭐ Opiniones</b> — capturas de clientes felices (con permiso).</li>
+      <li><b>❓ Preguntas frecuentes</b> — responde de una las dudas que más te escriben.</li>
+    </ul>
+
+    <h3 class="mini">Dónde tocar</h3>
+    <ol class="steps">
+      <li>Sube primero una <b>historia</b> con esa información (ver punto 6).</li>
+      <li>En tu perfil toca el círculo <span class="kbd">＋ Nueva</span> (debajo de la bio).</li>
+      <li>Elige la historia, ponle <b>nombre corto</b> y una portada bonita. Toca <b>Añadir</b>.</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Fila de círculos de destacadas bajo la bio, con el botón de añadir nueva señalado">
+        <rect width="300" height="150" rx="18" fill="#ffffff"/>
+        <g font-family="system-ui" text-anchor="middle">
+          <circle cx="46" cy="58" r="26" fill="#EEF3FA" stroke="#C7D6E8" stroke-width="2" stroke-dasharray="4 4"/>
+          <line x1="46" y1="48" x2="46" y2="68" stroke="#1F62C9" stroke-width="3" stroke-linecap="round"/>
+          <line x1="36" y1="58" x2="56" y2="58" stroke="#1F62C9" stroke-width="3" stroke-linecap="round"/>
+          <text x="46" y="98" font-size="10.5" fill="#555">Nueva</text>
+          <circle cx="110" cy="58" r="26" fill="#E6F3F8"/><text x="110" y="64" font-size="20">🛍️</text><text x="110" y="98" font-size="10.5" fill="#111">Servicios</text>
+          <circle cx="174" cy="58" r="26" fill="#EAF1FB"/><text x="174" y="64" font-size="20">📍</text><text x="174" y="98" font-size="10.5" fill="#111">Ubicación</text>
+          <circle cx="238" cy="58" r="26" fill="#E7F5EE"/><text x="238" y="64" font-size="20">💲</text><text x="238" y="98" font-size="10.5" fill="#111">Precios</text>
+        </g>
+        <circle cx="46" cy="58" r="34" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="20" cy="30" r="12" fill="#E4144B"/><text x="20" y="35" font-family="system-ui" font-weight="800" font-size="13" fill="#fff" text-anchor="middle">1</text>
+      </svg>
+      <figcaption>El círculo con <b>＋</b> crea una destacada nueva. Ponle portadas del mismo estilo para que tu perfil se vea ordenado.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 6 HISTORIAS -->
+  <section class="step" id="s6">
+    <div class="step-head">
+      <div class="badge">6</div>
+      <div><span class="tag">Todos los días</span>
+      <h2>Historias: constancia y cercanía</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Las historias te mantienen presente. No necesitan producción: son del día a día. <b>Publicar 1–3 al día</b> es lo que más ayuda al alcance de una cuenta pequeña.</div>
+
+    <h3 class="mini">Qué publicar (rota entre estas)</h3>
+    <ul class="tips">
+      <li>Un <b>tip útil</b> de tu rubro (algo que tu cliente no sabe).</li>
+      <li>Una <b>promo o novedad</b>: “Hoy tenemos…”, con la ubicación.</li>
+      <li><b>Detrás de cámara</b>: cómo trabajas, tu local, tu día.</li>
+      <li>Responde una <b>duda frecuente</b> mirando a la cámara.</li>
+    </ul>
+
+    <h3 class="mini">Usa estos “stickers” (dan más alcance)</h3>
+    <ul class="tips">
+      <li><b>Ubicación</b> — pon tu ciudad: te muestra a gente de la zona.</li>
+      <li><b>Encuesta</b> o <b>Preguntas</b> — que la gente toque e interactúe.</li>
+      <li><b>Hashtags</b> pequeños de tu rubro y ciudad.</li>
+    </ul>
+
+    <figure class="shot">
+      <svg viewBox="0 0 200 300" role="img" aria-label="Historia vertical con sticker de ubicación y encuesta">
+        <rect width="200" height="300" rx="20" fill="#13233b"/>
+        <rect width="200" height="300" rx="20" fill="url(#g6)"/>
+        <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F62C9"/><stop offset="1" stop-color="#35C6E6"/></linearGradient></defs>
+        <rect x="150" y="14" width="34" height="20" rx="10" fill="rgba(255,255,255,.25)"/>
+        <text x="167" y="28" font-size="13" text-anchor="middle">😊</text>
+        <text x="100" y="52" font-family="system-ui" font-size="10" fill="#fff" text-anchor="middle" opacity=".9">toca aquí para stickers →</text>
+        <rect x="30" y="120" width="120" height="30" rx="15" fill="#fff"/>
+        <text x="90" y="139" font-family="system-ui" font-weight="700" font-size="12" fill="#111" text-anchor="middle">📍 Tu ciudad</text>
+        <rect x="26" y="168" width="148" height="56" rx="12" fill="rgba(255,255,255,.95)"/>
+        <text x="100" y="186" font-family="system-ui" font-weight="700" font-size="10.5" fill="#111" text-anchor="middle">¿Cuál prefieres?</text>
+        <rect x="36" y="194" width="60" height="22" rx="11" fill="#E6EEF9"/><text x="66" y="209" font-family="system-ui" font-size="10" fill="#111" text-anchor="middle">Esta 👈</text>
+        <rect x="104" y="194" width="60" height="22" rx="11" fill="#E6EEF9"/><text x="134" y="209" font-family="system-ui" font-size="10" fill="#111" text-anchor="middle">Esa 👉</text>
+        <circle cx="167" cy="24" r="15" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="186" cy="10" r="11" fill="#E4144B"/><text x="186" y="15" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+      </svg>
+      <figcaption>La carita 😊 arriba abre los stickers. Los de <b>ubicación</b> y <b>encuesta</b> son los que más alcance te dan.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 7 CARRUSELES -->
+  <section class="step" id="s7">
+    <div class="step-head">
+      <div class="badge">7</div>
+      <div><span class="tag">1–2 por semana</span>
+      <h2>Carruseles: para enseñar y que te guarden</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Un carrusel son varias imágenes que se deslizan. Son ideales para <b>explicar</b> (consejos, comparaciones, pasos). Cuando alguien los <b>guarda</b> o <b>comparte</b>, Instagram te muestra a más gente.</div>
+
+    <h3 class="mini">La fórmula que funciona</h3>
+    <ol class="steps">
+      <li><b>Portada con gancho</b> (lámina 1): una pregunta o promesa. Ej: <i>“5 cosas que debes saber antes de [contratar / comprar X]”</i>.</li>
+      <li><b>Una idea por lámina</b>, letras grandes, pocas palabras.</li>
+      <li><b>Última lámina = invitación</b>: “Escríbenos 👇” y tu @usuario.</li>
+      <li>En el pie de foto pide la acción: <b>“Guarda esto para cuando lo necesites”</b>.</li>
+    </ol>
+
+    <figure class="shot">
+      <svg viewBox="0 0 300 200" role="img" aria-label="Tres láminas de un carrusel: gancho, contenido e invitación final">
+        <rect width="300" height="200" rx="18" fill="#ffffff"/>
+        <rect x="14" y="24" width="86" height="150" rx="12" fill="#1F62C9"/>
+        <text x="57" y="70" font-family="system-ui" font-weight="800" font-size="26" fill="#fff" text-anchor="middle">5</text>
+        <text x="57" y="96" font-family="system-ui" font-weight="700" font-size="9" fill="#fff" text-anchor="middle">cosas antes</text>
+        <text x="57" y="108" font-family="system-ui" font-weight="700" font-size="9" fill="#fff" text-anchor="middle">de comprar</text>
+        <text x="57" y="164" font-family="system-ui" font-size="9" fill="#fff" text-anchor="middle" opacity=".8">desliza →</text>
+        <text x="57" y="192" font-family="system-ui" font-weight="700" font-size="9" fill="#1F62C9" text-anchor="middle">Gancho</text>
+        <rect x="107" y="24" width="86" height="150" rx="12" fill="#EAF1FB"/>
+        <text x="150" y="58" font-size="22" text-anchor="middle">✅</text>
+        <text x="150" y="86" font-family="system-ui" font-weight="700" font-size="11" fill="#13233b" text-anchor="middle">Consejo 1</text>
+        <text x="150" y="104" font-family="system-ui" font-size="8.5" fill="#555" text-anchor="middle">breve y claro</text>
+        <text x="150" y="192" font-family="system-ui" font-weight="700" font-size="9" fill="#1F62C9" text-anchor="middle">1 idea</text>
+        <rect x="200" y="24" width="86" height="150" rx="12" fill="#35C6E6"/>
+        <text x="243" y="74" font-size="20" text-anchor="middle">💬</text>
+        <text x="243" y="100" font-family="system-ui" font-weight="800" font-size="9.5" fill="#0a3947" text-anchor="middle">Escríbenos</text>
+        <text x="243" y="112" font-family="system-ui" font-weight="800" font-size="9.5" fill="#0a3947" text-anchor="middle">👇</text>
+        <text x="243" y="192" font-family="system-ui" font-weight="700" font-size="9" fill="#0C86A4" text-anchor="middle">Invitación</text>
+      </svg>
+      <figcaption>Empieza fuerte, explica simple, cierra invitando a escribirte. Para crearlo: botón <b>＋</b> → <b>Publicación</b> → selecciona <b>varias fotos</b>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 8 REELS -->
+  <section class="step" id="s8">
+    <div class="step-head">
+      <div class="badge">8</div>
+      <div><span class="tag">Lo que más alcance da</span>
+      <h2>Reels: videos cortos</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> Hoy Instagram muestra los <b>Reels</b> (videos verticales cortos) a mucha más gente que las fotos, incluso a quien no te sigue. Es tu mejor herramienta para <b>llegar a clientes nuevos</b>.</div>
+
+    <h3 class="mini">Reglas de oro</h3>
+    <ul class="tips">
+      <li><b>Los primeros 3 segundos</b> deciden todo: empieza con la frase más fuerte, sin saludos largos.</li>
+      <li><b>Cortos</b>: de 15 a 30 segundos. Una sola idea por video.</li>
+      <li><b>Subtítulos siempre</b> (muchos ven sin sonido). Instagram los pone solos con el sticker <b>“Subtítulos”</b>.</li>
+      <li>Usa un <b>audio en tendencia</b> (la flechita ↗ al lado del audio indica que está de moda).</li>
+      <li>Vertical, buena luz (de frente a una ventana), y grabado con calma.</li>
+    </ul>
+
+    <div class="callout-note"><span class="ic">🎬</span><div><b>Ideas de Reels (adáptalas):</b> “3 mitos sobre [tu rubro]”, “Cómo elegir [tu producto/servicio]”, “Detrás de cámara de un día”, “Antes y después de [un trabajo tuyo]”.</div></div>
+
+    <figure class="shot">
+      <svg viewBox="0 0 200 300" role="img" aria-label="Un reel vertical con gancho arriba y subtítulos abajo">
+        <rect width="200" height="300" rx="20" fill="#13233b"/>
+        <rect x="0" y="0" width="200" height="300" rx="20" fill="url(#g8)"/>
+        <defs><linearGradient id="g8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0EA5B7" stop-opacity=".92"/><stop offset="1" stop-color="#0E2A50"/></linearGradient></defs>
+        <rect x="18" y="26" width="150" height="44" rx="10" fill="rgba(0,0,0,.35)"/>
+        <text x="93" y="45" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">El error #1 que</text>
+        <text x="93" y="61" font-family="system-ui" font-weight="800" font-size="12" fill="#FFE04D" text-anchor="middle">todos cometen</text>
+        <text x="100" y="94" font-family="system-ui" font-size="8.5" fill="#fff" text-anchor="middle" opacity=".85">⏱ primeros 3 seg = el gancho</text>
+        <rect x="30" y="232" width="140" height="22" rx="6" fill="rgba(0,0,0,.5)"/>
+        <text x="100" y="247" font-family="system-ui" font-weight="700" font-size="10" fill="#fff" text-anchor="middle">…y cómo evitarlo hoy mismo</text>
+        <rect x="30" y="264" width="120" height="18" rx="9" fill="rgba(255,255,255,.2)"/>
+        <text x="90" y="277" font-family="system-ui" font-size="9" fill="#fff" text-anchor="middle">🎵 audio en tendencia ↗</text>
+        <rect x="18" y="26" width="150" height="44" rx="10" fill="none" stroke="#E4144B" stroke-width="3"/>
+        <circle cx="176" cy="30" r="12" fill="#E4144B"/><text x="176" y="35" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">1</text>
+        <circle cx="176" cy="243" r="12" fill="#E4144B"/><text x="176" y="248" font-family="system-ui" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">2</text>
+      </svg>
+      <figcaption><b>1</b> El gancho arriba en los primeros segundos. <b>2</b> Subtítulos abajo para quien ve sin sonido.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 9 RUTINA -->
+  <section class="step" id="s9">
+    <div class="step-head">
+      <div class="badge">9</div>
+      <div><span class="tag">Sin agobios</span>
+      <h2>Tu rutina de la semana</h2></div>
+    </div>
+    <div class="why"><b>¿Por qué?</b> La constancia gana. No necesitas publicar mucho, sino <b>seguido</b>. Con este plan sencillo tu cuenta crece sin quitarte tiempo de tu negocio.</div>
+    <div class="week">
+      <div class="d"><div class="day">Lunes</div><div class="what">1 Reel (un consejo)</div></div>
+      <div class="d"><div class="day">Miércoles</div><div class="what">1 Carrusel útil</div></div>
+      <div class="d"><div class="day">Viernes</div><div class="what">1 Reel o foto de tu trabajo</div></div>
+      <div class="d"><div class="day">Cada día</div><div class="what">1–2 Historias</div></div>
+      <div class="d"><div class="day">Domingo</div><div class="what">Responde comentarios y DMs</div></div>
+      <div class="d"><div class="day">Siempre</div><div class="what">Invita a escribir por WhatsApp</div></div>
+    </div>
+    <div class="callout-note"><span class="ic">✅</span><div><b>Regla de oro:</b> en cada publicación, di siempre <b>cómo comprar o contactarte</b>. La gente no escribe si no se lo pides.</div></div>
+  </section>
+
+  <footer class="end">
+    <div class="heart">🚀</div>
+    <h2>¡Manos a la obra!</h2>
+    <p>No tienes que hacerlo todo hoy. Empieza por el <b>punto 1</b> y avanza a tu ritmo. Cada cambio suma para que más clientes te encuentren.</p>
+    <a class="cta" href="https://medine.tech" target="_blank" rel="noopener">
+      ¿Prefieres que lo hagamos por ti? → medine.tech
+    </a>
+    <p class="sig">Una cortesía de <b>Medine.tech</b> · software y presencia digital para tu negocio.</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast">¡Copiado! ✓</div>
+
+<script>
+  (function(){
+    var toast=document.getElementById('toast');
+    function show(){toast.classList.add('show');clearTimeout(show._t);show._t=setTimeout(function(){toast.classList.remove('show');},1600);}
+    document.querySelectorAll('.cbtn[data-copy]').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var el=document.getElementById(btn.getAttribute('data-copy'));
+        var txt=el.innerText;
+        var done=function(){var o=btn.innerHTML;btn.innerHTML='✓ ¡Copiado!';btn.classList.add('ok');show();
+          setTimeout(function(){btn.innerHTML=o;btn.classList.remove('ok');},1600);};
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback(txt,done);});}
+        else{fallback(txt,done);}
+      });
+    });
+    function fallback(txt,done){var t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.focus();t.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(t);}
+  })();
+</script>
