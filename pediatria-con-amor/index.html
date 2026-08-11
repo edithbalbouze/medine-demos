@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Pediatría con Amor — Dra. Mariaelpi Benítez · Cantaura y Barcelona</title>
-<meta name="description" content="Pediatría y puericultura con amor para tu pequeño, en Cantaura y Barcelona (Anzoátegui). Control del niño sano, vacunación y crianza con la Dra. Mariaelpi Benítez.">
+<title>Pediatría con Amor — Dra. Mariaelpi Benítez · Barcelona, Anzoátegui</title>
+<meta name="description" content="Pediatría y puericultura con amor para tu pequeño, en Barcelona (Anzoátegui). Control del niño sano, vacunación y crianza con la Dra. Mariaelpi Benítez.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pediatría con Amor — Dra. Mariaelpi Benítez">
-<meta property="og:description" content="Pediatría y puericultura con amor para tu pequeño, en Cantaura y Barcelona.">
+<meta property="og:description" content="Pediatría y puericultura con amor para tu pequeño, en Barcelona, Anzoátegui.">
 <meta property="og:locale" content="es_VE">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,6 +202,17 @@
   .vac-note svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--cian-deep)}
   @media(max-width:640px){ .vac-list{grid-template-columns:1fr} .vac-foot .btn{width:100%; justify-content:center} }
 
+  /* espacio (placeholder) para las fotos reales de las vacunas */
+  .vac-photo{margin:0 0 26px; border-radius:var(--r-lg); overflow:hidden; border:2px dashed var(--magenta-suave);
+    box-shadow:var(--sombra-soft); background:linear-gradient(135deg,var(--rosa-suave),var(--turquesa-suave));
+    aspect-ratio:16/6; display:grid; place-items:center; text-align:center}
+  .vac-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .vac-photo .ph{display:flex; flex-direction:column; align-items:center; gap:9px; padding:22px}
+  .vac-photo .ph .pic{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:#fff;box-shadow:var(--sombra-soft);color:var(--magenta)}
+  .vac-photo .ph b{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.05rem; color:var(--marino)}
+  .vac-photo .ph small{font-family:'Lexend',sans-serif; font-size:.82rem; color:var(--marino-soft)}
+  @media(max-width:640px){ .vac-photo{aspect-ratio:4/3} }
+
   /* ================= DÓNDE TE ATIENDO ================= */
   .sedes-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:stretch}
   .sede-list{display:flex; flex-direction:column; gap:18px}
@@ -310,7 +321,7 @@
   <div class="wrap hero-inner">
     <div class="hero-copy reveal">
       <span class="hero-badge"><span class="dot"></span> Pediatra y Puericultor · <b>Anzoátegui</b></span>
-      <h1>Pediatría <span class="con">con amor</span> para tu <span class="amor">pequeño</span>, en Cantaura y Barcelona</h1>
+      <h1>Pediatría <span class="con">con amor</span> para tu <span class="amor">pequeño</span>, en Barcelona</h1>
       <p class="hero-sub">Consulta pediátrica, control del niño sano y crianza acompañada, con calidez y confianza en cada etapa.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://wa.me/584265834809?text=Hola%20Dra.%20Mariaelpi%2C%20quisiera%20agendar%20una%20consulta%20para%20mi%20peque%C3%B1o%28a%29" target="_blank" rel="noopener">
@@ -338,7 +349,7 @@
           <span class="ic" style="background:var(--turquesa-suave)">
             <svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
           </span>
-          <span>2 sedes<small>Cantaura · Barcelona</small></span>
+          <span>Consultorio<small>Barcelona · Anzoátegui</small></span>
         </div>
       </div>
     </div>
@@ -361,7 +372,7 @@
       <span class="eyebrow">01 · Sobre la doctora</span>
       <h2 style="margin-top:14px">Cada niño merece un acompañamiento cercano</h2>
       <p class="about-quote">"Siempre disponible para atender a tu pequeño; su salud es mi prioridad."</p>
-      <p class="lead">Soy la Dra. Mariaelpi Benítez, pediatra y puericultor. Acompaño a las familias de Cantaura y Barcelona en el crecimiento sano de sus hijos: desde el recién nacido hasta la etapa escolar, con controles, vacunación y orientación de crianza explicada con calma y sin apuros.</p>
+      <p class="lead">Soy la Dra. Mariaelpi Benítez, pediatra y puericultor. Acompaño a las familias de Barcelona (Anzoátegui) en el crecimiento sano de sus hijos: desde el recién nacido hasta la etapa escolar, con controles, vacunación y orientación de crianza explicada con calma y sin apuros.</p>
       <div class="about-tags">
         <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#B02EA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg> Trato cálido</span>
         <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="#01ACBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/><path d="M3 20a7 7 0 0 1 18 0"/></svg> Puericultura</span>
@@ -438,6 +449,17 @@
       <p>Toca la edad de tu hijo y verás una guía orientativa de controles y vacunas para esa etapa. Luego agenda esa visita directo por WhatsApp.</p>
     </div>
 
+    <!-- Espacio para las fotos reales de las vacunas que aplica la Dra. (reemplazar el div .ph por <img src="assets/pediatria-vacunas.jpg" alt="Vacunas que aplicamos"> cuando lleguen) -->
+    <figure class="vac-photo reveal" aria-label="Fotos de las vacunas que aplica la doctora">
+      <div class="ph">
+        <span class="pic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.5 19.5a2.12 2.12 0 0 1-3-3L16 6"/><path d="m12 6 6 6"/><path d="M8.5 15.5 6 13"/><path d="m2 22 3-3"/></svg>
+        </span>
+        <b>Las vacunas que aplicamos</b>
+        <small>Aquí irán las fotos reales de la Dra. Mariaelpi — próximamente 💜</small>
+      </div>
+    </figure>
+
     <div class="vac-panel reveal">
       <div class="vac-top">
         <span class="vic" aria-hidden="true">
@@ -481,44 +503,30 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">04 · Dónde te atiendo</span>
-      <h2>Cerca de tu familia, en dos ciudades</h2>
-      <p>Atiendo en Cantaura y en Barcelona, en el estado Anzoátegui. Coordinamos día y sede por WhatsApp según lo que te quede mejor.</p>
+      <h2>Cerca de tu familia, en Barcelona</h2>
+      <p>Atiendo en Barcelona, estado Anzoátegui. Coordinamos tu cita por WhatsApp según lo que te quede mejor.</p>
     </div>
     <div class="sedes-grid">
       <div class="sede-list">
         <article class="sede s1 reveal">
           <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <div>
-            <div class="loc">Sede 1</div>
-            <h3>Cantaura</h3>
-            <p>Anzoátegui. Jornadas de consulta y vacunación en Farmacia Virgen del Valle. Confirma fecha por WhatsApp.</p>
-          </div>
-        </article>
-        <article class="sede s2 reveal">
-          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <div>
-            <div class="loc">Sede 2</div>
+            <div class="loc">Consultorio</div>
             <h3>Barcelona</h3>
-            <p>Av. Caracas, Anzoátegui. Consulta pediátrica y control del niño sano. Agenda tu cita con tiempo.</p>
+            <p>Av. Caracas, estado Anzoátegui. Consulta pediátrica, control del niño sano y vacunación. Agenda tu cita con tiempo por WhatsApp.</p>
           </div>
         </article>
       </div>
-      <div class="map-card reveal" role="img" aria-label="Mapita ilustrado con las dos sedes: Cantaura y Barcelona, en Anzoátegui">
+      <div class="map-card reveal" role="img" aria-label="Mapita ilustrado de la sede en Barcelona, Anzoátegui">
         <svg class="mapdraw" viewBox="0 0 300 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <path d="M-10 200 C60 170 90 210 150 190 S250 150 320 180" fill="none" stroke="#B02EA6" stroke-width="2.5" stroke-dasharray="7 9" opacity=".45" stroke-linecap="round"/>
           <path d="M-10 250 C70 240 120 270 180 250 S270 230 320 250" fill="none" stroke="#35D7FA" stroke-width="2.5" stroke-dasharray="7 9" opacity=".55" stroke-linecap="round"/>
           <circle cx="70" cy="120" r="3" fill="#01ACBE" opacity=".5"/>
-          <circle cx="220" cy="90" r="3" fill="#D81483" opacity=".5"/>
-          <circle cx="255" cy="220" r="3" fill="#B02EA6" opacity=".4"/>
-          <!-- pin Cantaura -->
-          <g transform="translate(78 128)">
-            <path d="M0 0c-11 0-20 9-20 20 0 14 20 34 20 34s20-20 20-34C20 9 11 0 0 0z" fill="#B02EA6"/>
-            <circle cx="0" cy="20" r="8" fill="#fff"/>
-            <text x="0" y="72" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="15" font-weight="700" fill="#131D39">Cantaura</text>
-          </g>
+          <circle cx="230" cy="90" r="3" fill="#D81483" opacity=".5"/>
+          <circle cx="60" cy="230" r="3" fill="#B02EA6" opacity=".4"/>
           <!-- pin Barcelona -->
-          <g transform="translate(212 150)">
-            <path d="M0 0c-11 0-20 9-20 20 0 14 20 34 20 34s20-20 20-34C20 9 11 0 0 0z" fill="#01ACBE"/>
+          <g transform="translate(150 128)">
+            <path d="M0 0c-11 0-20 9-20 20 0 14 20 34 20 34s20-20 20-34C20 9 11 0 0 0z" fill="#B02EA6"/>
             <circle cx="0" cy="20" r="8" fill="#fff"/>
             <text x="0" y="72" text-anchor="middle" font-family="'Baloo 2',sans-serif" font-size="15" font-weight="700" fill="#131D39">Barcelona</text>
           </g>
@@ -577,10 +585,6 @@
           <p class="sign">— Dra. Mariaelpi Benítez<small>Pediatra y Puericultor · @pediatriaconamor.1</small></p>
         </div>
         <div class="foot-pins">
-          <div class="foot-pin s1">
-            <span class="p" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <span><b>Cantaura</b><span>Anzoátegui · Farmacia Virgen del Valle</span></span>
-          </div>
           <div class="foot-pin s2">
             <span class="p" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
             <span><b>Barcelona</b><span>Anzoátegui · Av. Caracas</span></span>
