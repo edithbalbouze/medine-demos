@@ -1,15 +1,3 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1E5C48">
-<title>Galeno — Expediente clínico y agenda</title>
-<meta name="description" content="Prototipo de app para médicos: expediente clínico, agenda de citas, recordatorios por WhatsApp y récipes en PDF. Datos ficticios.">
-<meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
-</head>
-<body>
 <!--
 DIRECTION CONTRACT — Galeno (prototipo MedineTech)
 THESIS: El expediente médico como ficha con pestañas, no como dashboard de tarjetas. Refusa el azul de hospital y el crema+serif de IA.
@@ -679,6 +667,7 @@ FORM: Ficha clínica con pestañas + shell de app (rail en escritorio, tabs abaj
           <button class="tab-btn active" data-tab="resumen" onclick="expTab('resumen')">Resumen</button>
           <button class="tab-btn" data-tab="consultas" onclick="expTab('consultas')">Consultas</button>
           <button class="tab-btn" data-tab="recetas" onclick="expTab('recetas')">Récipes</button>
+          <button class="tab-btn" data-tab="informes" onclick="expTab('informes')">Informes</button>
           <button class="tab-btn" data-tab="adjuntos" onclick="expTab('adjuntos')">Adjuntos</button>
         </div>
         <div class="tab-panel" id="exp-panel"></div>
@@ -883,6 +872,39 @@ FORM: Ficha clínica con pestañas + shell de app (rail en escritorio, tabs abaj
     </div>
   </div>
 
+  <div class="scrim" id="inf-form-scrim" onclick="if(event.target===this)closeModal('inf-form-scrim')">
+    <div class="sheet">
+      <div class="sheet__grip"></div>
+      <div class="sheet__head"><h3>Nuevo informe</h3>
+        <button class="iconbtn" onclick="closeModal('inf-form-scrim')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="sheet__body">
+        <label class="form-label" for="inf-tipo" style="margin-top:0">Tipo de documento</label>
+        <select class="select" id="inf-tipo"></select>
+        <label class="form-label" for="inf-dx">Diagnóstico</label>
+        <input class="input" id="inf-dx" placeholder="Ej. Hipertensión arterial controlada (I10)" />
+        <label class="form-label" for="inf-cuerpo">Contenido del informe</label>
+        <textarea class="textarea" id="inf-cuerpo" placeholder="Redacta el informe, o déjalo vacío para usar una plantilla estándar…"></textarea>
+        <label class="form-label" for="inf-reposo">Días de reposo <span style="color:var(--ink-faint);font-weight:500">(0 si no aplica)</span></label>
+        <input class="input mono" id="inf-reposo" inputmode="numeric" value="0" style="max-width:120px" />
+        <button class="btn btn--primary btn--block" style="margin-top:18px" onclick="saveInforme()">Generar documento</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scrim recipe-scrim" id="inf-doc-scrim" onclick="if(event.target===this)closeModal('inf-doc-scrim')">
+    <div class="sheet recipe-sheet">
+      <div class="sheet__head"><h3>Informe médico</h3>
+        <button class="iconbtn" onclick="closeModal('inf-doc-scrim')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg></button>
+      </div>
+      <div id="inf-doc-body"></div>
+      <div class="recipe-actions">
+        <button class="btn btn--ghost" onclick="toast('Enviado al paciente por WhatsApp')">Enviar al paciente</button>
+        <button class="btn btn--primary" onclick="toast('Generando PDF…')">Descargar PDF</button>
+      </div>
+    </div>
+  </div>
+
   <div class="toast-wrap"><div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="toast-msg"></span></div></div>
 </div>
 
@@ -956,6 +978,21 @@ const patients = [
     recetas:[{id:"r7", fecha:"05 jul 2026", titulo:"Omeprazol", meds:[["Omeprazol 20 mg","1 cápsula VO en ayunas · 28 días"]]}],
     adjuntos:[],
   },
+];
+
+// Informes médicos / documentos (constancias, reposos, referencias)
+patients.forEach(p => { p.informes = []; });
+patients[0].informes = [
+  {id:"inf1", fecha:"14 jul 2026", tipo:"Constancia médica", titulo:"Constancia de control de HTA",
+   diagnostico:"Hipertensión arterial controlada (I10)",
+   cuerpo:"Se hace constar que la paciente asiste a control periódico de su hipertensión arterial, la cual se encuentra controlada con tratamiento farmacológico. Se encuentra en condiciones estables para realizar sus actividades habituales.",
+   reposo:0}
+];
+patients[3].informes = [
+  {id:"inf2", fecha:"19 jul 2026", tipo:"Reposo médico", titulo:"Reposo por descompensación de EPOC",
+   diagnostico:"EPOC descompensada (J44.1)",
+   cuerpo:"El paciente presenta disnea de esfuerzo por descompensación de su enfermedad pulmonar obstructiva crónica. Se ajusta el tratamiento broncodilatador y se indica reposo domiciliario.",
+   reposo:3}
 ];
 
 const citasHoy = [
@@ -1085,7 +1122,7 @@ function saveNuevoPaciente(){
     alergias: list(document.getElementById("np-alergias").value),
     cronicos: list(document.getElementById("np-cronicos").value),
     antecedentes: document.getElementById("np-antecedentes").value.split(/[\n,]/).map(s=>s.trim()).filter(Boolean),
-    medicacion: [], consultas: [], recetas: [], adjuntos: [],
+    medicacion: [], consultas: [], recetas: [], adjuntos: [], informes: [],
   };
   if(!p.antecedentes.length) p.antecedentes = ["Sin antecedentes registrados"];
   patients.push(p);
@@ -1154,6 +1191,16 @@ function renderExpPanel(p){
         <div class="doc-row__body"><div class="doc-row__t">${r.titulo}</div><div class="doc-row__s mono">${r.fecha} · ${r.meds.length} medicamento(s)</div></div>
         <span class="cita__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </button>`).join("") : `<div class="empty">Sin récipes emitidos aún</div>`;
+  }
+  if(currentTab==="informes"){
+    el.innerHTML = `
+      <button class="btn btn--primary" style="width:100%;margin-bottom:14px" onclick="openNuevoInforme('${p.id}')">+ Nuevo informe / constancia</button>
+      ${p.informes.length ? p.informes.map(inf=>`
+      <button class="doc-row" onclick="openInforme('${p.id}','${inf.id}')">
+        <div class="doc-ic doc-ic--file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="doc-row__body"><div class="doc-row__t">${inf.titulo}</div><div class="doc-row__s mono">${inf.tipo} · ${inf.fecha}</div></div>
+        <span class="cita__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>`).join("") : `<div class="empty">Sin informes emitidos aún</div>`}`;
   }
   if(currentTab==="adjuntos"){
     el.innerHTML = p.adjuntos.length ? p.adjuntos.map(a=>`
@@ -1237,15 +1284,20 @@ function renderAgenda(){
 }
 
 /* ---------------- RECETAS GLOBAL ---------------- */
+const CHEV = `<span class="cita__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
+const IC_RX = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 3v6l-3 3v7a2 2 0 002 2h10a2 2 0 002-2v-7l-3-3V3M6 3h12M9 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const IC_DOC = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 function renderRecetasGlobal(){
   const all = [];
-  patients.forEach(p => p.recetas.forEach(r => all.push({p, r})));
-  all.sort((a,b)=>0);
-  $("#recetas-global").innerHTML = all.map(({p,r})=>`
-    <button class="doc-row" onclick="openRecipe('${p.id}','${r.id}')">
-      <div class="doc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 3v6l-3 3v7a2 2 0 002 2h10a2 2 0 002-2v-7l-3-3V3M6 3h12M9 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="doc-row__body"><div class="doc-row__t">${r.titulo}</div><div class="doc-row__s mono">${first2(p.nombre)} · ${r.fecha}</div></div>
-      <span class="cita__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  patients.forEach(p => {
+    p.recetas.forEach(r => all.push({p, kind:"receta", id:r.id, titulo:r.titulo, fecha:r.fecha}));
+    p.informes.forEach(inf => all.push({p, kind:"informe", id:inf.id, titulo:inf.titulo, fecha:inf.fecha, tipo:inf.tipo}));
+  });
+  $("#recetas-global").innerHTML = all.map(d=>`
+    <button class="doc-row" onclick="${d.kind==='receta' ? `openRecipe('${d.p.id}','${d.id}')` : `openInforme('${d.p.id}','${d.id}')`}">
+      <div class="doc-ic ${d.kind==='informe'?'doc-ic--file':''}">${d.kind==='receta'?IC_RX:IC_DOC}</div>
+      <div class="doc-row__body"><div class="doc-row__t">${d.titulo}</div><div class="doc-row__s mono">${first2(d.p.nombre)} · ${d.kind==='informe'?d.tipo+' · ':''}${d.fecha}</div></div>
+      ${CHEV}
     </button>`).join("");
 }
 
@@ -1285,6 +1337,70 @@ function openRecipe(pid, rid){
       </div>
     </div>`;
   openModal("rx-scrim");
+}
+
+/* ---------------- INFORMES MÉDICOS ---------------- */
+let currentInformePatient = null;
+const TIPOS_INFORME = ["Informe médico","Constancia médica","Reposo médico","Referencia a especialista"];
+function openNuevoInforme(pid){
+  currentInformePatient = pid;
+  const p = P(pid);
+  $("#inf-tipo").innerHTML = TIPOS_INFORME.map(t=>`<option>${t}</option>`).join("");
+  $("#inf-dx").value = p.consultas[0] ? p.consultas[0].dx : "";
+  $("#inf-cuerpo").value = "";
+  $("#inf-reposo").value = "0";
+  openModal("inf-form-scrim");
+}
+function saveInforme(){
+  const p = P(currentInformePatient);
+  const tipo = $("#inf-tipo").value;
+  const dx = $("#inf-dx").value.trim() || "—";
+  const reposo = parseInt($("#inf-reposo").value) || 0;
+  const cuerpo = $("#inf-cuerpo").value.trim() ||
+    ("Se hace constar que " + p.nombre + ", portador(a) de la cédula " + p.cedula + ", fue evaluado(a) en consulta médica en la fecha indicada, encontrándose en condiciones acordes a su diagnóstico.");
+  const inf = { id: "inf_" + p.id + "_" + (p.informes.length + 1), fecha: "5 ago 2026", tipo, titulo: tipo, diagnostico: dx, cuerpo, reposo };
+  p.informes.unshift(inf);
+  closeModal("inf-form-scrim");
+  currentTab = "informes";
+  if(currentPatient === p.id) renderExpediente();
+  openInforme(p.id, inf.id);
+  toast("Informe generado");
+}
+function openInforme(pid, iid){
+  const p = P(pid); const inf = p.informes.find(x=>x.id===iid) || p.informes[0];
+  $("#inf-doc-body").innerHTML = `
+    <div class="rx-doc">
+      <div class="rx-head">
+        <div class="rx-head__doc">
+          <div class="dn">${consultorio.medico}</div>
+          <div class="sp">${consultorio.especialidad}</div>
+          <div class="mp">${consultorio.mpps}</div>
+        </div>
+        <div class="rx-head__mark">
+          <div class="lg">Galeno</div>
+          <div class="ad">${consultorio.direccion.replace(/\n/g,"<br>")}</div>
+        </div>
+      </div>
+      <div style="font-family:var(--serif);text-align:center;font-size:1.1rem;font-weight:600;color:#103729;letter-spacing:.03em;text-transform:uppercase;margin:16px 0 10px">${inf.tipo}</div>
+      <div class="rx-patient">
+        <span>Paciente: <b>${p.nombre}</b></span>
+        <span>C.I. <b>${p.cedula}</b> · ${p.edad} años</span>
+      </div>
+      <div style="font-size:.9rem;line-height:1.75;color:#333d35;padding:16px 0">
+        <p style="margin:0 0 10px"><b>Diagnóstico:</b> ${inf.diagnostico}</p>
+        <p style="margin:0">${inf.cuerpo}</p>
+        ${inf.reposo>0 ? `<p style="margin:12px 0 0;color:#1a221d"><b>Se indica reposo médico por ${inf.reposo} día(s)</b> a partir de la fecha.</p>` : ""}
+      </div>
+      <div class="rx-foot">
+        <div class="rx-date">Mérida, ${inf.fecha}</div>
+        <div class="rx-sign">
+          <div class="sc">R. Belandria</div>
+          <div class="line"></div>
+          <div class="lb">Firma y sello</div>
+        </div>
+      </div>
+    </div>`;
+  openModal("inf-doc-scrim");
 }
 
 /* ---------------- NUEVA CITA ---------------- */
@@ -1339,7 +1455,7 @@ function closeModal(id){ $("#"+id).classList.remove("open"); document.body.style
 let toastT;
 function toast(msg){ $("#toast-msg").textContent = msg; const t=$("#toast"); t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2600); }
 
-document.addEventListener("keydown", e => { if(e.key==="Escape"){ closeModal("wa-scrim"); closeModal("rx-scrim"); closeModal("nc-scrim"); } });
+document.addEventListener("keydown", e => { if(e.key==="Escape"){ closeModal("wa-scrim"); closeModal("rx-scrim"); closeModal("nc-scrim"); closeModal("inf-form-scrim"); closeModal("inf-doc-scrim"); } });
 
 /* ---------------- TEMA CLARO / OSCURO ---------------- */
 const ICON_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"/></svg>';
