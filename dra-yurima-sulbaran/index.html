@@ -28,7 +28,9 @@ body{
   font-family:var(--cuerpo); font-size:17.5px; line-height:1.66;
   -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-h1,h2,h3{margin:0; font-family:var(--disp); font-weight:500; line-height:1.02; text-transform:uppercase}
+/* line-height holgado a propósito: las mayúsculas acentuadas del español
+   (Ñ, Ó, Á) sobresalen de la altura de caja y con 1.02 se recortaban */
+h1,h2,h3{margin:0; font-family:var(--disp); font-weight:500; line-height:1.14; text-transform:uppercase}
 p{margin:0 0 1em}
 a{color:inherit}
 .wrap{width:min(1120px,100% - 2.2rem); margin-inline:auto}
