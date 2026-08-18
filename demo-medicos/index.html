@@ -1,398 +1,266 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Centro Médico Almenara · Tu salud, en manos de un equipo</title>
-<meta name="description" content="Centro Médico Almenara — policlínica multidisciplinar. Pide tu cita por WhatsApp: elige especialidad, escríbenos y confirmamos día y hora.">
+<title>Dra. Valentina Sáez · Ginecología y Obstetricia</title>
+<meta name="description" content="Dra. Valentina Sáez, ginecóloga y obstetra. Revisión, embarazo, anticoncepción y menopausia — una consulta cercana, sin prisa. Pide cita por WhatsApp.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Centro Médico Almenara · Tu salud, en manos de un equipo">
-<meta property="og:description" content="Policlínica multidisciplinar. Pide cita en minutos por WhatsApp — 8 especialidades, cada una con su médico.">
+<meta property="og:title" content="Dra. Valentina Sáez · Ginecología y Obstetricia">
+<meta property="og:description" content="Una consulta ginecológica cercana y sin prisa, en cada etapa. Pide tu cita por WhatsApp.">
 <meta property="og:locale" content="es_ES">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F5F8B'/%3E%3Cpath d='M10 54 H34 l5 -20 l8 40 l7 -30 l6 14 h24' fill='none' stroke='%23EF7A5A' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23BE7C74'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23FBF6EF' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Spline+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#FFFFFF;
-    --bg-2:#F4F8FA;
-    --blue:#1F5F8B;
-    --blue-2:#2E7DB0;
-    --coral:#EF7A5A;
-    --ink:#14212B;
-    --muted:#54646F;
-    --line:#D7E1E8;
-    --line-strong:#BFCFD9;
-    --shadow: 0 18px 48px -22px rgba(20,33,43,.28);
-    --radius:14px;
-    --maxw:1140px;
+    --cream:#FBF6EF;
+    --cream-2:#F3EADD;
+    --ink:#322A24;
+    --muted:#6E6156;
+    --clay:#BE7C74;
+    --clay-deep:#A05C55;
+    --brass:#B08A4F;
+    --plum:#3E262A;
+    --line:#E7DACA;
+    --line-strong:#D6C4AC;
+    --maxw:1120px;
+    --shadow:0 26px 60px -30px rgba(62,38,42,.42);
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:"Red Hat Text",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    font-size:16px;
-    line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Spline Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16.5px;line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  h1,h2,h3,.display{font-family:"Red Hat Display","Red Hat Text",sans-serif;line-height:1.06;margin:0}
+  h1,h2,h3,.serif{font-family:"Libre Baskerville",Georgia,serif;font-weight:400;margin:0;line-height:1.12}
   p{margin:0}
   a{color:inherit}
   img{max-width:100%;display:block}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-  .eyebrow{
-    font-family:"Red Hat Text",sans-serif;
-    font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--blue);margin:0 0 14px;display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--coral);flex:0 0 auto}
-  .sec-num{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.8rem;letter-spacing:.04em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--clay-deep);
+    display:flex;align-items:center;gap:12px;margin:0 0 18px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--brass)}
+  .num{font-family:"Libre Baskerville",serif;font-style:italic;color:var(--brass);font-size:1rem}
 
   /* buttons */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:"Red Hat Text";font-weight:600;font-size:.95rem;
-    padding:13px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
-    text-decoration:none;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
-  }
-  .btn-primary{background:var(--blue);color:#fff}
-  .btn-primary:hover{background:#184c70}
-  .btn-ghost{background:transparent;color:var(--blue);border-color:var(--line-strong)}
-  .btn-ghost:hover{border-color:var(--blue);background:var(--bg-2)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:"Spline Sans";font-weight:500;font-size:.95rem;letter-spacing:.01em;
+    padding:14px 24px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;
+    text-decoration:none;white-space:nowrap;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
+  .btn-primary{background:var(--clay);color:#fff}
+  .btn-primary:hover{background:var(--clay-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--clay);color:var(--clay-deep)}
   .btn svg{width:18px;height:18px;flex:0 0 auto}
-  :focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:6px}
+  .ul-link{display:inline-flex;align-items:center;gap:7px;font-weight:500;color:var(--clay-deep);
+    text-decoration:none;border-bottom:1.5px solid var(--line-strong);padding-bottom:2px;transition:border-color .2s}
+  .ul-link:hover{border-color:var(--clay)}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:6px}
 
-  /* ---------- NAV : slim sticky + mega-menu ---------- */
-  header.nav{
-    position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);
+  /* ---------- NAV : mini-retrato + nombre + cita ---------- */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(251,246,239,.9);
+    backdrop-filter:saturate(1.3) blur(9px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:9px 18px;display:flex;align-items:center;gap:12px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);margin-right:auto;min-width:0}
+  .brand .pic{width:38px;height:38px;border-radius:50%;flex:0 0 auto;object-fit:cover;
+    border:1.5px solid var(--brass);filter:saturate(.92) sepia(.1)}
+  .brand .tt b{font-family:"Libre Baskerville",serif;font-weight:700;font-size:.96rem;letter-spacing:.01em;line-height:1;display:block}
+  .brand .tt span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .nav-cta{padding:9px 16px;font-size:.82rem;border-radius:10px}
+  .nav-phone{display:none;font-size:.84rem;font-weight:500;color:var(--muted);text-decoration:none}
+  .nav-phone:hover{color:var(--clay-deep)}
+  @media(min-width:640px){
+    .nav-in{padding:11px 22px}
+    .brand .tt b{font-size:1.04rem}
+    .nav-cta{padding:10px 20px;font-size:.9rem}
+    .nav-phone{display:inline}
   }
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:6px}
-  .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);margin-right:auto}
-  .brand .mark{width:32px;height:32px;flex:0 0 auto}
-  .brand b{font-family:"Red Hat Display";font-weight:800;font-size:.98rem;letter-spacing:-.01em;line-height:1}
-  .brand span{display:block;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .nav-tools{display:flex;align-items:center;gap:4px}
-  .mega-trigger{
-    display:inline-flex;align-items:center;gap:5px;background:none;border:0;cursor:pointer;white-space:nowrap;
-    font-family:"Red Hat Text";font-weight:600;font-size:.82rem;color:var(--ink);padding:8px 6px;border-radius:8px;
-  }
-  .mega-trigger .chev{width:11px;height:11px;transition:transform .25s ease}
-  .mega-trigger[aria-expanded="true"] .chev{transform:rotate(180deg)}
-  .nav-cta{padding:9px 14px;font-size:.82rem}
-  @media (min-width:520px){
-    .nav-in{padding:10px 20px;gap:14px}
-    .brand{gap:10px}
-    .brand .mark{width:34px;height:34px}
-    .brand b{font-size:1.02rem}
-    .brand span{font-size:.62rem;letter-spacing:.18em}
-    .nav-tools{gap:8px}
-    .mega-trigger{gap:7px;font-size:.92rem;padding:9px 8px}
-    .nav-cta{padding:10px 18px;font-size:.9rem}
-  }
-
-  /* mega panel */
-  .mega{
-    position:absolute;left:0;right:0;top:100%;
-    background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow);
-    opacity:0;visibility:hidden;transform:translateY(-8px);
-    transition:opacity .22s ease,transform .22s ease,visibility .22s;
-  }
-  .mega.open{opacity:1;visibility:visible;transform:translateY(0)}
-  .mega-in{max-width:var(--maxw);margin:0 auto;padding:22px 20px 26px;
-    display:grid;grid-template-columns:1fr;gap:18px}
-  .mega-lead{max-width:520px}
-  .mega-lead h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
-  .mega-lead p{color:var(--muted);font-size:.92rem}
-  .mega-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px 26px}
-  .mega-cols a{
-    text-decoration:none;color:var(--ink);font-weight:500;font-size:.92rem;
-    padding:8px 6px;border-radius:8px;display:flex;align-items:center;gap:10px;
-    border-bottom:1px solid var(--line);transition:background .18s ease,color .18s ease;
-  }
-  .mega-cols a:hover{background:var(--bg-2);color:var(--blue)}
-  .mega-cols a i{width:6px;height:6px;border-radius:2px;background:var(--coral);flex:0 0 auto;transform:rotate(45deg)}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--bg-2) 100%);border-bottom:1px solid var(--line)}
-  .hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:40px 20px 44px}
-  .hero h1{
-    font-size:clamp(2.5rem,11.5vw,5.4rem);font-weight:800;letter-spacing:-.025em;
-    margin:14px 0 0;max-width:12ch;
-  }
-  .hero h1 .tint{color:var(--blue)}
-  .hero-sub{margin-top:20px;font-size:1.06rem;color:var(--muted);max-width:42ch}
+  .hero{position:relative;padding:26px 0 40px;background:
+    radial-gradient(120% 80% at 82% 8%,rgba(190,124,116,.10),transparent 60%),var(--cream)}
+  .hero-in{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,10vw,4.6rem);letter-spacing:-.01em;margin:12px 0 0}
+  .hero h1 em{font-style:italic;color:var(--clay-deep)}
+  .hero .role{font-family:"Spline Sans";font-weight:500;letter-spacing:.02em;color:var(--muted);
+    margin-top:16px;font-size:1.05rem}
+  .hero .lede{margin-top:16px;font-size:1.08rem;color:var(--ink);max-width:44ch;opacity:.9}
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-  .hero-figure{position:relative;margin-top:34px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
-  .hero-figure img{width:100%;height:100%;object-fit:cover;object-position:center 62%;aspect-ratio:16/11}
-  .hero-figure::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(31,95,139,.30),rgba(46,125,176,.10) 55%,rgba(255,255,255,0))}
-  .hero-figure .cap{
-    position:absolute;left:16px;bottom:16px;z-index:2;color:#fff;
-    background:rgba(20,33,43,.42);backdrop-filter:blur(4px);
-    padding:8px 14px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.02em;
-    display:flex;align-items:center;gap:8px;
-  }
-  .hero-figure .cap::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral)}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .hero-badges span{font-size:.8rem;color:var(--ink);background:var(--cream-2);border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px}
+  /* portrait + breathing halo */
+  .portrait{position:relative;justify-self:center;width:min(88%,420px)}
+  .portrait::before{content:"";position:absolute;inset:-9% -9% -5% -9%;z-index:0;border-radius:40% 42% 44% 40%;
+    background:radial-gradient(circle at 50% 42%,rgba(176,138,79,.5),rgba(190,124,116,.22) 55%,transparent 72%);
+    filter:blur(10px);animation:breathe 6.5s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(.97);opacity:.7}50%{transform:scale(1.04);opacity:1}}
+  .portrait figure{position:relative;z-index:1;margin:0;border-radius:20px 20px 22px 22px;overflow:hidden;
+    border:1px solid var(--line-strong);box-shadow:var(--shadow)}
+  .portrait img{width:100%;aspect-ratio:4/4.7;object-fit:cover;object-position:center 20%;
+    filter:saturate(.9) contrast(1.02) sepia(.12) brightness(1.02)}
+  .portrait .sig{position:absolute;z-index:2;left:14px;bottom:12px;color:#fff;
+    font-family:"Libre Baskerville",serif;font-style:italic;font-size:1.15rem;
+    text-shadow:0 2px 10px rgba(62,38,42,.5)}
+  .rise{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.27s}.d4{animation-delay:.4s}.d5{animation-delay:.52s}
+  @keyframes rise{to{opacity:1;transform:none}}
 
-  /* ECG signature strip */
-  .ecg-band{position:absolute;left:50%;transform:translateX(-50%);width:1200px;height:160px;z-index:1;pointer-events:none;opacity:.4}
-  .ecg-band.top{top:150px}
-  .ecg-svg{width:1200px;height:160px;display:block}
-  .ecg-line{fill:none;stroke:var(--blue-2);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-  .ecg-dot{
-    position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;
-    background:radial-gradient(circle at 50% 50%,#fff 0%,var(--coral) 42%,rgba(239,122,90,0) 72%);
-    filter:drop-shadow(0 0 8px rgba(239,122,90,.85));
-    offset-path:path('M 0 90 L 60 90 L 72 81 L 84 90 L 100 90 L 106 98 L 114 32 L 122 124 L 128 90 L 156 90 L 172 74 L 188 90 L 200 90 L 260 90 L 272 81 L 284 90 L 300 90 L 306 98 L 314 32 L 322 124 L 328 90 L 356 90 L 372 74 L 388 90 L 400 90 L 460 90 L 472 81 L 484 90 L 500 90 L 506 98 L 514 32 L 522 124 L 528 90 L 556 90 L 572 74 L 588 90 L 600 90 L 660 90 L 672 81 L 684 90 L 700 90 L 706 98 L 714 32 L 722 124 L 728 90 L 756 90 L 772 74 L 788 90 L 800 90 L 860 90 L 872 81 L 884 90 L 900 90 L 906 98 L 914 32 L 922 124 L 928 90 L 956 90 L 972 74 L 988 90 L 1000 90 L 1060 90 L 1072 81 L 1084 90 L 1100 90 L 1106 98 L 1114 32 L 1122 124 L 1128 90 L 1156 90 L 1172 74 L 1188 90 L 1200 90');
-    offset-rotate:0deg;offset-distance:0%;
-    animation:ecgTravel 7s linear infinite;
-  }
-  @keyframes ecgTravel{to{offset-distance:100%}}
-
-  /* ---------- INDICATORS ---------- */
-  .stats{background:var(--ink);color:#fff}
-  .stats-in{max-width:var(--maxw);margin:0 auto;padding:34px 20px;
-    display:grid;grid-template-columns:1fr 1fr;gap:26px 18px}
-  .stat .n{font-family:"Red Hat Display";font-weight:800;font-size:clamp(2rem,9vw,2.9rem);letter-spacing:-.02em;line-height:1;color:#fff}
-  .stat .n .u{color:var(--coral)}
-  .stat .l{margin-top:8px;font-size:.82rem;color:#B9C6CF;letter-spacing:.02em;font-weight:500}
-  .stat.qual .n{display:flex;align-items:center;gap:10px;font-size:1.5rem}
-  .stat.qual .n svg{width:34px;height:34px;flex:0 0 auto;color:var(--coral)}
+  /* ---------- STATS ---------- */
+  .stats{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stats-in{max-width:var(--maxw);margin:0 auto;padding:30px 22px;display:grid;grid-template-columns:1fr 1fr;gap:24px 18px}
+  .stat .n{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,7vw,2.7rem);color:var(--clay-deep);line-height:1}
+  .stat .n .u{color:var(--brass)}
+  .stat .l{margin-top:7px;font-size:.82rem;color:var(--muted);letter-spacing:.02em}
+  .stat.q .n{font-size:1.2rem;color:var(--ink);display:flex;align-items:center;gap:9px;font-family:"Spline Sans";font-weight:600}
+  .stat.q .n svg{width:26px;height:26px;color:var(--clay);flex:0 0 auto}
 
   /* ---------- SECTION SHELL ---------- */
-  section{padding:64px 0}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
-  .sec-head h2{font-size:clamp(1.7rem,5.5vw,2.5rem);font-weight:800;letter-spacing:-.02em}
-  .sec-intro{color:var(--muted);max-width:52ch;margin:12px 0 30px;font-size:1.02rem}
+  section{padding:66px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .sec-head h2{font-size:clamp(1.8rem,5.6vw,2.7rem);letter-spacing:-.01em}
+  .sec-intro{color:var(--muted);max-width:56ch;margin:14px 0 34px;font-size:1.04rem}
 
-  /* ---------- SPECIALTIES INDEX ---------- */
-  .index{border-top:1px solid var(--line-strong)}
-  .index-row{
-    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;
-    padding:18px 4px;border-bottom:1px solid var(--line);
-    transition:background .18s ease,padding .18s ease;
-  }
-  .index-row:hover{background:var(--bg-2)}
-  .index-row .rn{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.95rem;letter-spacing:.03em}
-  .index-row .body h3{font-size:1.14rem;font-weight:700;letter-spacing:-.01em}
-  .index-row .body p{color:var(--muted);font-size:.92rem;margin-top:3px;max-width:60ch}
-  .index-row .ic{width:40px;height:40px;border-radius:11px;background:var(--bg-2);border:1px solid var(--line);
-    display:grid;place-items:center;color:var(--blue);flex:0 0 auto}
-  .index-row .ic svg{width:22px;height:22px}
+  /* ---------- LA DOCTORA ---------- */
+  .about{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+  .about-figure{border-radius:18px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:var(--shadow);order:-1}
+  .about-figure img{width:100%;aspect-ratio:5/5.4;object-fit:cover;object-position:center 22%;filter:saturate(.9) sepia(.1)}
+  .about h2{font-size:clamp(1.8rem,5.6vw,2.6rem)}
+  .about .quote{font-family:"Libre Baskerville",serif;font-style:italic;font-size:1.25rem;line-height:1.5;
+    color:var(--ink);margin:18px 0;padding-left:18px;border-left:2px solid var(--brass)}
+  .about p.body{color:var(--muted);margin-bottom:14px}
+  .creds{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:0}
+  .creds li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .creds li::before{content:"";width:7px;height:7px;margin-top:8px;border-radius:2px;background:var(--clay);transform:rotate(45deg);flex:0 0 auto}
 
-  /* ---------- ESPECIALIDADES : consultas por especialidad (doctor-forward) ---------- */
-  .dep-grid{display:grid;grid-template-columns:1fr;gap:14px}
-  .dep{
-    position:relative;background:var(--bg);border:1px solid var(--line);border-radius:16px;
-    padding:20px;display:flex;flex-direction:column;gap:13px;
-    transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease;
-  }
-  .dep:hover{box-shadow:var(--shadow);border-color:var(--line-strong);transform:translateY(-2px)}
-  .dep-top{display:flex;align-items:center;gap:12px}
-  .dep-ic{width:44px;height:44px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);
-    display:grid;place-items:center;color:var(--blue);flex:0 0 auto}
-  .dep-ic svg{width:24px;height:24px}
-  .dep-top .t{flex:1;min-width:0}
-  .dep-top .t .n{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.7rem;letter-spacing:.16em}
-  .dep-top .t h3{font-size:1.16rem;font-weight:800;letter-spacing:-.01em;margin-top:2px}
-  .dep-doc{display:flex;align-items:center;gap:11px;padding:12px 0;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .dep-doc .av{width:40px;height:40px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
-    background:linear-gradient(145deg,var(--blue),var(--blue-2));color:#fff;
-    font-family:"Red Hat Display";font-weight:800;font-size:.86rem;letter-spacing:.01em}
-  .dep-doc .who{min-width:0}
-  .dep-doc .who b{display:block;font-family:"Red Hat Display";font-weight:700;font-size:.98rem;line-height:1.15}
-  .dep-doc .who span{font-size:.8rem;color:var(--muted)}
-  .dep-treat{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .dep-tags{display:flex;flex-wrap:wrap;gap:7px}
-  .dep-tags span{font-size:.8rem;color:var(--blue);background:var(--bg-2);border:1px solid var(--line);
-    border-radius:999px;padding:5px 11px;line-height:1.2}
-  .dep-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
-  .dep-foot .hrs{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:7px}
-  .dep-foot .hrs svg{width:14px;height:14px;color:var(--coral);flex:0 0 auto}
-  .dep-cta{display:inline-flex;align-items:center;gap:7px;font-family:"Red Hat Text";font-weight:600;
-    font-size:.86rem;color:var(--blue);text-decoration:none;white-space:nowrap}
-  .dep-cta:hover{text-decoration:underline}
-  .dep-cta svg{width:15px;height:15px;flex:0 0 auto}
+  /* ---------- ACOMPAÑAMIENTO : fichas editoriales ---------- */
+  .care{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line-strong)}
+  .care-row{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:24px 6px;border-bottom:1px solid var(--line);
+    transition:background .2s ease,padding-left .2s ease}
+  .care-row:hover{background:var(--cream-2);padding-left:14px}
+  .care-row .rn{font-family:"Libre Baskerville",serif;font-style:italic;color:var(--brass);font-size:1.1rem;padding-top:2px}
+  .care-row h3{font-size:1.28rem;margin-bottom:6px}
+  .care-row p{color:var(--muted);font-size:.97rem;max-width:60ch}
+  .care-row .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+  .care-row .tags span{font-size:.78rem;color:var(--clay-deep);background:var(--cream);border:1px solid var(--line-strong);
+    border-radius:999px;padding:4px 11px}
 
-  /* ---------- STEPS : flat clinical fichas ---------- */
-  .steps{display:grid;grid-template-columns:1fr;gap:16px}
-  .ficha{
-    position:relative;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
-    padding:22px 22px 22px 28px;overflow:hidden;
-  }
-  .ficha::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--coral)}
-  .ficha .tag{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-  .ficha .tag .ic{width:34px;height:34px;border-radius:9px;background:var(--bg-2);border:1px solid var(--line);
-    display:grid;place-items:center;color:var(--blue)}
-  .ficha .tag .ic svg{width:19px;height:19px}
-  .ficha .tag .st{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.85rem}
-  .ficha h3{font-size:1.16rem;font-weight:700;margin-bottom:5px}
-  .ficha p{color:var(--muted);font-size:.94rem}
+  /* ---------- CÓMO ES LA CONSULTA ---------- */
+  .values{display:grid;grid-template-columns:1fr;gap:16px}
+  .value{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .value .ic{width:46px;height:46px;border-radius:12px;background:var(--cream-2);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--clay-deep);margin-bottom:14px}
+  .value .ic svg{width:24px;height:24px}
+  .value h3{font-size:1.22rem;margin-bottom:6px}
+  .value p{color:var(--muted);font-size:.95rem}
 
-  /* ---------- FINDER : encuentra tu especialista ---------- */
-  .finder{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .finder-grid{display:grid;grid-template-columns:1fr;gap:26px}
-  .chips-label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
-  .chip{
-    font-family:"Red Hat Text";font-weight:500;font-size:.9rem;color:var(--ink);
-    background:var(--bg);border:1.5px solid var(--line-strong);border-radius:999px;
-    padding:9px 15px;cursor:pointer;transition:all .18s ease;
-  }
-  .chip:hover{border-color:var(--blue-2)}
-  .chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
-  .chip.turn[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+  /* ---------- TESTIMONIAL ---------- */
+  .quote-band{background:var(--plum);color:#F4E9DF}
+  .quote-band .wrap{padding:60px 22px;text-align:center}
+  .quote-band blockquote{font-family:"Libre Baskerville",serif;font-style:italic;
+    font-size:clamp(1.4rem,4.6vw,2.1rem);line-height:1.5;max-width:22ch;margin:0 auto;color:#FBF6EF}
+  .quote-band .who{margin-top:20px;font-family:"Spline Sans";font-weight:500;font-size:.86rem;
+    letter-spacing:.16em;text-transform:uppercase;color:#C9A98F}
+  .quote-band .mk{font-family:"Libre Baskerville",serif;font-size:3.4rem;color:var(--brass);line-height:.6;opacity:.85}
 
-  /* appointment card w/ depth */
-  .apt-card{
-    background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
-    padding:24px;position:relative;
-  }
-  .apt-card .rx{position:absolute;right:18px;top:14px;font-family:"Red Hat Display";font-weight:800;
-    font-size:2.4rem;color:var(--line-strong);line-height:1}
-  .apt-card h3{font-size:1.05rem;font-weight:800;letter-spacing:.01em;margin-bottom:2px}
-  .apt-card .sm{font-size:.82rem;color:var(--muted);margin-bottom:18px}
-  .apt-row{display:flex;justify-content:space-between;align-items:center;gap:14px;
-    padding:13px 0;border-bottom:1px dashed var(--line-strong)}
-  .apt-row .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .apt-row .v{font-family:"Red Hat Display";font-weight:700;font-size:1.05rem;text-align:right}
-  .apt-row .v.pending{color:var(--line-strong);font-weight:600;font-family:"Red Hat Text";font-size:.95rem}
-  .apt-card .go{margin-top:20px;width:100%}
-
-  /* ---------- CONSULTA image band ---------- */
-  .band{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
-  .band img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
-  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,95,139,.62),rgba(31,95,139,.12) 60%,transparent)}
-  .band .txt{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
-  .band .txt .e{color:#cfe4f1;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
-  .band .txt h3{color:#fff;font-size:clamp(1.4rem,5vw,2rem);font-weight:800;max-width:16ch}
-  .band .txt p{color:#e7f0f6;margin-top:8px;max-width:34ch;font-size:.95rem}
+  /* ---------- FINDER : ¿qué te trae a consulta? ---------- */
+  .finder{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .finder-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  .chips-label{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 13px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:"Spline Sans";font-weight:500;font-size:.92rem;color:var(--ink);background:var(--cream);
+    border:1.5px solid var(--line-strong);border-radius:999px;padding:10px 17px;cursor:pointer;transition:all .18s ease}
+  .chip:hover{border-color:var(--clay)}
+  .chip[aria-pressed="true"]{background:var(--clay);border-color:var(--clay);color:#fff}
+  .apt{background:var(--cream);border:1px solid var(--line-strong);border-radius:18px;box-shadow:var(--shadow);padding:26px;position:relative}
+  .apt .mono{position:absolute;right:20px;top:16px;font-family:"Libre Baskerville",serif;font-style:italic;color:var(--line-strong);font-size:2.2rem}
+  .apt h3{font-size:1.16rem;margin-bottom:2px}
+  .apt .sm{font-size:.84rem;color:var(--muted);margin-bottom:18px}
+  .apt-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line-strong)}
+  .apt-row .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .apt-row .v{font-family:"Libre Baskerville",serif;font-size:1.02rem;text-align:right}
+  .apt-row .v.pending{color:var(--line-strong);font-family:"Spline Sans";font-size:.95rem}
+  .apt .go{margin-top:20px;width:100%}
 
   /* ---------- CONTACT ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr;gap:16px}
-  .info{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--bg)}
-  .info .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px;
-    display:flex;align-items:center;gap:9px}
-  .info .k svg{width:17px;height:17px;color:var(--coral)}
-  .info .v{font-family:"Red Hat Display";font-weight:700;font-size:1.12rem}
-  .info .v.small{font-size:1rem}
+  .info{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--cream)}
+  .info .k{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;
+    margin-bottom:7px;display:flex;align-items:center;gap:9px}
+  .info .k svg{width:17px;height:17px;color:var(--clay)}
+  .info .v{font-family:"Libre Baskerville",serif;font-size:1.08rem}
+  .info .v.sm{font-size:.98rem}
+  .info a{color:var(--clay-deep);text-decoration:none}
+  .info a:hover{text-decoration:underline}
 
-  /* ---------- FOOTER : prescription pad ---------- */
-  footer.rx-pad{background:var(--bg-2);border-top:2px solid var(--ink);padding:44px 0 30px}
-  .pad{max-width:760px;margin:0 auto;padding:0 20px}
-  .pad-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
-    padding-bottom:16px;border-bottom:1px dashed var(--line-strong)}
-  .pad-top .who b{font-family:"Red Hat Display";font-weight:800;font-size:1.2rem;letter-spacing:-.01em;display:block}
-  .pad-top .who span{font-size:.78rem;color:var(--muted);letter-spacing:.04em}
-  .pad-top .rxsym{font-family:"Red Hat Display";font-weight:800;font-size:3rem;color:var(--blue);line-height:.8}
-  .pad-lines{margin:18px 0}
-  .pad-line{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line-strong)}
-  .pad-line .lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;flex:0 0 108px}
-  .pad-line .val{font-family:"Red Hat Display";font-weight:600;font-size:1rem}
-  .pad-line a{color:var(--blue);text-decoration:none}
-  .pad-line a:hover{text-decoration:underline}
-  .pad-foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px}
-  .socials{display:flex;gap:10px}
-  .socials a{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:11px;display:grid;place-items:center;
-    color:var(--blue);background:var(--bg);transition:all .18s ease}
-  .socials a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  /* ---------- FOOTER : firma de la doctora ---------- */
+  footer.signoff{background:var(--plum);color:#EADFD3;padding:56px 0 30px}
+  .so{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .so-sig{font-family:"Libre Baskerville",serif;font-style:italic;font-size:clamp(2.6rem,9vw,4.4rem);
+    color:#FBF6EF;line-height:.95;margin-bottom:6px}
+  .so-role{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#C9A98F;margin-bottom:30px}
+  .so-cols{display:grid;grid-template-columns:1fr;gap:22px;border-top:1px solid rgba(201,169,143,.28);padding-top:26px}
+  .so-col h4{font-family:"Spline Sans";font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:#C9A98F;margin:0 0 10px}
+  .so-col p,.so-col a{font-size:.96rem;color:#EADFD3;text-decoration:none;display:block;margin-bottom:5px}
+  .so-col a:hover{color:#fff;text-decoration:underline}
+  .socials{display:flex;gap:10px;margin-top:4px}
+  .socials a{width:42px;height:42px;border:1px solid rgba(201,169,143,.4);border-radius:12px;display:grid;place-items:center;
+    color:#EADFD3;transition:all .2s ease}
+  .socials a:hover{background:var(--clay);border-color:var(--clay);color:#fff}
   .socials a svg{width:20px;height:20px}
-  .stamp{
-    width:118px;height:118px;flex:0 0 auto;border:2px solid var(--coral);border-radius:50%;
-    display:grid;place-items:center;text-align:center;color:var(--coral);transform:rotate(-9deg);
-    opacity:.9;
-  }
-  .stamp b{font-family:"Red Hat Display";font-weight:800;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.25}
-  .stamp small{display:block;font-size:.55rem;letter-spacing:.14em;margin-top:4px}
-  .seal{margin-top:26px;padding-top:18px;border-top:1px dashed var(--line-strong);text-align:center;
-    font-size:.78rem;color:var(--muted);line-height:1.6}
-  .seal a{color:var(--blue);font-weight:600;text-decoration:none}
+  .seal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(201,169,143,.28);text-align:center;
+    font-size:.78rem;color:#C9A98F;line-height:1.6}
+  .seal a{color:#EADFD3;font-weight:500;text-decoration:none}
   .seal a:hover{text-decoration:underline}
 
   /* ---------- FAB WhatsApp ---------- */
-  .fab{
-    position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;
-    background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
-    transition:transform .2s ease;
-  }
+  .fab{position:fixed;right:18px;bottom:18px;z-index:80;width:58px;height:58px;border-radius:50%;
+    background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .2s ease}
   .fab:hover{transform:scale(1.06)}
   .fab svg{width:32px;height:32px}
   .fab-label{position:absolute;right:70px;top:50%;transform:translateY(-50%);white-space:nowrap;
-    background:var(--ink);color:#fff;font-size:.8rem;font-weight:600;padding:7px 12px;border-radius:8px;
-    opacity:0;pointer-events:none;transition:opacity .2s ease}
+    background:var(--ink);color:#fff;font-size:.8rem;font-weight:500;padding:7px 12px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s ease}
   .fab:hover .fab-label{opacity:1}
 
   /* ---------- responsive grow ---------- */
-  @media (min-width:720px){
+  @media(min-width:760px){
     .stats-in{grid-template-columns:repeat(4,1fr)}
-    .dep-grid{grid-template-columns:1fr 1fr}
-    .steps{grid-template-columns:repeat(3,1fr)}
+    .values{grid-template-columns:repeat(3,1fr)}
     .contact-grid{grid-template-columns:repeat(3,1fr)}
-    .mega-in{grid-template-columns:1fr 1.3fr;align-items:start}
+    .so-cols{grid-template-columns:1.4fr 1fr 1fr}
+    .finder-grid{grid-template-columns:1.1fr .9fr;align-items:start;gap:44px}
+    .care-row{grid-template-columns:auto 1fr;gap:22px}
   }
-  @media (min-width:900px){
-    .hero-in{padding:64px 20px 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-    .hero-copy{grid-column:1}
-    .hero-figure{margin-top:0;grid-column:2}
-    .hero h1{font-size:clamp(3.2rem,5.4vw,4.9rem)}
-    .ecg-band.top{top:auto;bottom:36px}
-    .index-wrap{columns:auto}
-    .finder-grid{grid-template-columns:1.15fr .85fr;align-items:start;gap:44px}
-    .index-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-    .index-list .index-row:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--line)}
+  @media(min-width:920px){
+    .hero{padding:44px 0 60px}
+    .hero-in{grid-template-columns:1.02fr .98fr;gap:48px}
+    .hero .portrait{order:2}
+    .about{grid-template-columns:.9fr 1.1fr;gap:44px}
+    .about-figure{order:0}
   }
-
-  @media (prefers-reduced-motion:reduce){
-    .ecg-dot{display:none}
-    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  @media(prefers-reduced-motion:reduce){
+    .portrait::before{animation:none}
+    .rise{opacity:1;transform:none;animation:none}
+    *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   }
 </style>
 
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top" aria-label="Centro Médico Almenara, inicio">
-      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="24" fill="#1F5F8B"/>
-        <path d="M12 56 H34 l5 -22 l9 44 l7 -32 l6 14 h20" fill="none" stroke="#EF7A5A" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-      </svg>
+    <a class="brand" href="#top" aria-label="Dra. Valentina Sáez, inicio">
+      <img class="pic" src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=120&q=70&auto=format&fit=crop" alt="" width="120" height="120">
       <span class="tt">
-        <b>Almenara</b>
-        <span>Centro Médico</span>
+        <b>Dra. Valentina Sáez</b>
+        <span>Ginecología · Obstetricia</span>
       </span>
     </a>
-    <nav class="nav-tools" aria-label="Principal">
-      <button class="mega-trigger" id="megaBtn" aria-expanded="false" aria-controls="megaPanel" aria-haspopup="true">
-        Especialidades
-        <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <a class="btn btn-primary nav-cta" href="#pedir-cita">Pedir cita</a>
-    </nav>
-  </div>
-  <!-- mega menu -->
-  <div class="mega" id="megaPanel" role="region" aria-label="Listado de especialidades">
-    <div class="mega-in">
-      <div class="mega-lead">
-        <h3>8 especialidades, cada una con su médico</h3>
-        <p>Elige el área que necesitas y coordina tu cita por WhatsApp. Atención de lunes a sábado en Av. de los Almendros 120.</p>
-      </div>
-      <div class="mega-cols">
-        <a href="#especialidades"><i></i>Medicina General</a>
-        <a href="#especialidades"><i></i>Pediatría</a>
-        <a href="#especialidades"><i></i>Ginecología</a>
-        <a href="#especialidades"><i></i>Cardiología</a>
-        <a href="#especialidades"><i></i>Dermatología</a>
-        <a href="#especialidades"><i></i>Traumatología</a>
-        <a href="#especialidades"><i></i>Nutrición</a>
-        <a href="#especialidades"><i></i>Laboratorio</a>
-      </div>
-    </div>
+    <a class="nav-phone" href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener">+34 960 555 210</a>
+    <a class="btn btn-primary nav-cta" href="#pedir-cita">Pedir cita</a>
   </div>
 </header>
 
@@ -400,218 +268,164 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="ecg-band top" aria-hidden="true">
-    <svg class="ecg-svg" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <path class="ecg-line" d="M 0 90 L 60 90 L 72 81 L 84 90 L 100 90 L 106 98 L 114 32 L 122 124 L 128 90 L 156 90 L 172 74 L 188 90 L 200 90 L 260 90 L 272 81 L 284 90 L 300 90 L 306 98 L 314 32 L 322 124 L 328 90 L 356 90 L 372 74 L 388 90 L 400 90 L 460 90 L 472 81 L 484 90 L 500 90 L 506 98 L 514 32 L 522 124 L 528 90 L 556 90 L 572 74 L 588 90 L 600 90 L 660 90 L 672 81 L 684 90 L 700 90 L 706 98 L 714 32 L 722 124 L 728 90 L 756 90 L 772 74 L 788 90 L 800 90 L 860 90 L 872 81 L 884 90 L 900 90 L 906 98 L 914 32 L 922 124 L 928 90 L 956 90 L 972 74 L 988 90 L 1000 90 L 1060 90 L 1072 81 L 1084 90 L 1100 90 L 1106 98 L 1114 32 L 1122 124 L 1128 90 L 1156 90 L 1172 74 L 1188 90 L 1200 90"/>
-    </svg>
-    <span class="ecg-dot"></span>
-  </div>
-
-  <div class="hero-in">
+  <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="eyebrow">Policlínica multidisciplinar</p>
-      <h1>Tu salud, en manos de <span class="tint">un equipo.</span></h1>
-      <p class="hero-sub">Un mismo centro para toda la familia: ocho especialidades, cada una con su médico, historia clínica compartida y una cita que pides en minutos por WhatsApp.</p>
-      <div class="hero-cta">
+      <p class="eyebrow rise d1">Ginecología y Obstetricia</p>
+      <h1 class="rise d2">Dra. Valentina <em>Sáez</em></h1>
+      <p class="role rise d3">Tu ginecóloga de confianza, en cada etapa.</p>
+      <p class="lede rise d3">Revisión, embarazo, anticoncepción o menopausia: una consulta cercana, con tiempo para escucharte y explicarte cada paso.</p>
+      <div class="hero-cta rise d4">
         <a class="btn btn-primary" href="#pedir-cita">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v3M16 2v3M3 9h18M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Pedir cita
+          Pedir cita por WhatsApp
         </a>
-        <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
+        <a class="btn btn-ghost" href="#doctora">Conóceme</a>
+      </div>
+      <div class="hero-badges rise d5">
+        <span>Colegiada nº 28/4517</span>
+        <span>+12 años de experiencia</span>
+        <span>Ecografía en consulta</span>
       </div>
     </div>
-    <figure class="hero-figure">
-      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400&q=80&auto=format&fit=crop" alt="Recepción luminosa de una clínica con mostrador curvo y señalización de plantas" width="1400" height="960">
-      <figcaption class="cap">Recepción · Av. de los Almendros 120</figcaption>
-    </figure>
+    <div class="portrait rise d3">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=1100&q=80&auto=format&fit=crop" alt="Retrato de la Dra. Valentina Sáez, ginecóloga, en consulta" width="1100" height="1300">
+        <figcaption class="sig">Dra. Valentina Sáez</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<!-- ============ INDICATORS ============ -->
-<section class="stats" style="padding:0" aria-label="Indicadores del centro">
+<!-- ============ STATS ============ -->
+<section class="stats" style="padding:0" aria-label="Trayectoria">
   <div class="stats-in" id="stats">
-    <div class="stat"><div class="n"><span class="u">+</span><span class="c" data-to="15">0</span></div><div class="l">Años de experiencia</div></div>
-    <div class="stat"><div class="n"><span class="c" data-to="8">0</span></div><div class="l">Especialidades médicas</div></div>
-    <div class="stat"><div class="n"><span class="c" data-to="8000" data-sep="1">0</span></div><div class="l">Pacientes al año</div></div>
-    <div class="stat qual"><div class="n">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Seguros aceptados</div><div class="l">Trabajamos con las principales aseguradoras</div></div>
+    <div class="stat"><div class="n"><span class="u">+</span><span class="c" data-to="12">0</span></div><div class="l">Años de experiencia</div></div>
+    <div class="stat"><div class="n"><span class="u">+</span><span class="c" data-to="3000" data-sep="1">0</span></div><div class="l">Pacientes acompañadas</div></div>
+    <div class="stat q"><div class="n"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg>Ecografía</div><div class="l">En la misma consulta</div></div>
+    <div class="stat q"><div class="n"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Privacidad</div><div class="l">Un espacio íntimo y seguro</div></div>
   </div>
 </section>
 
-<!-- ============ ESPECIALIDADES (index) ============ -->
-<section id="especialidades">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2>Especialidades</h2></div>
-    <p class="sec-intro">Cada especialidad, con su médico de referencia y lo que atiende. Elige la consulta que necesitas y pide cita directa por WhatsApp.</p>
-    <div class="dep-grid">
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v6a4 4 0 008 0V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 13v3a4 4 0 008 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 01</span><h3>Medicina General</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">AR</span><div class="who"><b>Dr. Álvaro Ruiz</b><span>Médico de familia</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Chequeos</span><span>Controles</span><span>Crónicos</span><span>Certificados</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Medicina General" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 02</span><h3>Pediatría</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">CS</span><div class="who"><b>Dra. Carmen Solís</b><span>Pediatra</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Niño sano</span><span>Vacunas</span><span>Fiebre</span><span>Revisiones</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Sáb</span><a class="dep-cta" data-esp="Pediatría" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 12.6V21M8.5 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 03</span><h3>Ginecología</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">LF</span><div class="who"><b>Dra. Lucía Ferrer</b><span>Ginecóloga</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Revisión anual</span><span>Citología</span><span>Embarazo</span><span>Menopausia</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Ginecología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20S4 14.5 4 9a4 4 0 018-1 4 4 0 018 1c0 5.5-8 11-8 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12h3l1.5-3 2 5 1.5-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 04</span><h3>Cardiología</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">EN</span><div class="who"><b>Dr. Emilio Navarro</b><span>Cardiólogo</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Electrocardiograma</span><span>Hipertensión</span><span>Arritmias</span><span>Riesgo cardiovascular</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mar y Jue</span><a class="dep-cta" data-esp="Cardiología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 05</span><h3>Dermatología</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">PH</span><div class="who"><b>Dra. Paula Herrera</b><span>Dermatóloga</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Revisión de lunares</span><span>Acné</span><span>Dermatitis</span><span>Cirugía menor</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun y Mié</span><a class="dep-cta" data-esp="Dermatología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8l8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 8a2.4 2.4 0 10-2-2 2.4 2.4 0 002 2zM16 16a2.4 2.4 0 102 2 2.4 2.4 0 00-2-2z" stroke="currentColor" stroke-width="1.8"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 06</span><h3>Traumatología</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">SM</span><div class="who"><b>Dr. Sergio Marín</b><span>Traumatólogo</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Lesiones deportivas</span><span>Dolor articular</span><span>Fracturas</span><span>Infiltraciones</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Traumatología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8c-3-3-8-1-8 4 0 4 4 9 8 9s8-5 8-9c0-5-5-7-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8c0-2 1-4 3-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 07</span><h3>Nutrición</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">MI</span><div class="who"><b>Lda. Marta Ibáñez</b><span>Nutricionista-Dietista</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Pérdida de peso</span><span>Nutrición clínica</span><span>Deportiva</span><span>Digestiva</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Nutrición" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
-      <article class="dep">
-        <div class="dep-top">
-          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-4.5 8A2 2 0 007.3 20h9.4a2 2 0 001.8-3L14 9V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 15h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-          <div class="t"><span class="n">CONSULTA 08</span><h3>Laboratorio</h3></div>
-        </div>
-        <div class="dep-doc"><span class="av" aria-hidden="true">LAB</span><div class="who"><b>Equipo de laboratorio</b><span>Análisis clínicos</span></div></div>
-        <p class="dep-treat">Atiende</p>
-        <div class="dep-tags"><span>Analíticas</span><span>Perfiles</span><span>Control de tratamiento</span><span>Resultados 24–48 h</span></div>
-        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Sáb · 8:00–11:00</span><a class="dep-cta" data-esp="Laboratorio" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </article>
-
+<!-- ============ LA DOCTORA ============ -->
+<section id="doctora">
+  <div class="wrap about">
+    <figure class="about-figure">
+      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=1100&q=80&auto=format&fit=crop" alt="La Dra. Valentina Sáez sonriendo, con uniforme clínico" loading="lazy" width="1100" height="1200">
+    </figure>
+    <div>
+      <p class="eyebrow"><span class="num">01</span> La doctora</p>
+      <h2>Escuchar primero, explicar siempre.</h2>
+      <p class="quote">"Ninguna pregunta sobra. Mi trabajo es que salgas de la consulta entendiendo tu cuerpo y tranquila con tu decisión."</p>
+      <p class="body">Soy Valentina Sáez, ginecóloga y obstetra. Llevo más de doce años acompañando a mujeres en cada etapa —de la primera consulta al embarazo y la menopausia— con una idea sencilla: cuidar sin prisa y decidir contigo, nunca por ti.</p>
+      <ul class="creds">
+        <li>Especialista en Ginecología y Obstetricia</li>
+        <li>Máster en Ecografía Obstétrica y Ginecológica</li>
+        <li>Miembro de la Sociedad de Ginecología y Obstetricia</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ CONSULTA band ============ -->
-<section style="padding-top:0">
+<!-- ============ ACOMPAÑAMIENTO ============ -->
+<section id="acompanamiento" style="padding-top:8px">
   <div class="wrap">
-    <div class="band">
-      <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1400&q=80&auto=format&fit=crop" alt="Dos profesionales de la salud revisan resultados en pantalla durante una consulta" loading="lazy" width="1400" height="875">
-      <div class="txt">
-        <span class="e">Atención cercana</span>
-        <h3>Te explicamos cada resultado, sin prisa.</h3>
-        <p>Historia clínica compartida entre especialidades para un seguimiento sin repetir pruebas.</p>
+    <div class="sec-head"><span class="num">02</span><h2>En qué te acompaño</h2></div>
+    <p class="sec-intro">Cada mujer y cada etapa piden algo distinto. Estas son las consultas más frecuentes; si lo tuyo no está aquí, escríbeme y lo vemos.</p>
+    <div class="care">
+      <div class="care-row">
+        <span class="rn">I</span>
+        <div><h3>Revisión ginecológica</h3><p>Tu chequeo anual completo: citología, exploración y ecografía en una sola visita, con resultados explicados.</p>
+          <div class="tags"><span>Citología</span><span>Ecografía</span><span>Prevención</span></div></div>
+      </div>
+      <div class="care-row">
+        <span class="rn">II</span>
+        <div><h3>Anticoncepción</h3><p>El método que encaja con tu vida y tu salud, con seguimiento y todas las dudas resueltas sin tabúes.</p>
+          <div class="tags"><span>Píldora</span><span>DIU</span><span>Implante</span></div></div>
+      </div>
+      <div class="care-row">
+        <span class="rn">III</span>
+        <div><h3>Embarazo y control prenatal</h3><p>Acompañamiento mes a mes, con ecografía en consulta y respuestas rápidas cuando más tranquilidad necesitas.</p>
+          <div class="tags"><span>Control prenatal</span><span>Ecografía</span><span>Preparación</span></div></div>
+      </div>
+      <div class="care-row">
+        <span class="rn">IV</span>
+        <div><h3>Menopausia</h3><p>Alivio de los síntomas y cuidado de tu calidad de vida, con un plan pensado para ti y no para el promedio.</p>
+          <div class="tags"><span>Síntomas</span><span>Terapia</span><span>Bienestar</span></div></div>
+      </div>
+      <div class="care-row">
+        <span class="rn">V</span>
+        <div><h3>Salud íntima</h3><p>Infecciones, molestias y bienestar íntimo: un espacio para hablar con confianza de lo que muchas veces se calla.</p>
+          <div class="tags"><span>Infecciones</span><span>Dolor</span><span>Bienestar</span></div></div>
+      </div>
+      <div class="care-row">
+        <span class="rn">VI</span>
+        <div><h3>Primera consulta</h3><p>Un primer encuentro tranquilo para adolescentes y jóvenes, a su ritmo y con la información que necesitan.</p>
+          <div class="tags"><span>Orientación</span><span>Sin prisa</span><span>Confianza</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CÓMO PEDIR CITA ============ -->
-<section style="padding-top:8px">
+<!-- ============ CÓMO ES LA CONSULTA ============ -->
+<section id="consulta" style="padding-top:8px">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Cómo pedir cita</h2></div>
-    <p class="sec-intro">Tres pasos, sin llamadas en espera ni formularios largos.</p>
-    <div class="steps">
-      <article class="ficha">
-        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><span class="st">01</span></div>
-        <h3>Elige especialidad</h3>
-        <p>Revisa el directorio y ubica el área que necesitas para ti o tu familia.</p>
+    <div class="sec-head"><span class="num">03</span><h2>Cómo es la consulta</h2></div>
+    <p class="sec-intro">Lo que puedes esperar cuando entras por la puerta.</p>
+    <div class="values">
+      <article class="value">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M21 12a8 8 0 01-8 8H6l-3 2 1-4a8 8 0 1117-6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+        <h3>Escucha sin prisa</h3>
+        <p>Tiempo real para tus preguntas. Nada de consultas de cinco minutos ni respuestas a medias.</p>
       </article>
-      <article class="ficha">
-        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a8 8 0 00-7 12l-1 5 5-1a8 8 0 103-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="st">02</span></div>
-        <h3>Escríbenos por WhatsApp</h3>
-        <p>Nos dices la especialidad y tu turno preferido; el mensaje ya viene listo.</p>
+      <article class="value">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.7"/></svg></span>
+        <h3>Privacidad y confianza</h3>
+        <p>Un espacio íntimo y respetuoso, para hablar con libertad de lo que te preocupa.</p>
       </article>
-      <article class="ficha">
-        <div class="tag"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="st">03</span></div>
-        <h3>Confirmamos día y hora</h3>
-        <p>Recepción te devuelve la confirmación con fecha, hora y recomendaciones previas.</p>
+      <article class="value">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H7l-3 3V5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <h3>Explicación clara</h3>
+        <p>Te explico cada resultado y cada opción en palabras sencillas, para que decidas con criterio.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ FINDER : encuentra tu especialista ============ -->
+<!-- ============ TESTIMONIAL ============ -->
+<section class="quote-band" aria-label="Testimonio">
+  <div class="wrap">
+    <div class="mk" aria-hidden="true">&ldquo;</div>
+    <blockquote>Por primera vez salí de una consulta entendiéndolo todo. Me sentí escuchada.</blockquote>
+    <p class="who">Paciente en consulta</p>
+  </div>
+</section>
+
+<!-- ============ FINDER ============ -->
 <section class="finder" id="pedir-cita">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Encuentra tu especialista</h2></div>
-    <p class="sec-intro">Elige especialidad y turno: preparamos tu mensaje de cita y solo tienes que enviarlo.</p>
+    <div class="sec-head"><span class="num">04</span><h2>¿Qué te trae a consulta?</h2></div>
+    <p class="sec-intro">Elige el motivo y preparo tu mensaje de cita: solo tienes que enviarlo por WhatsApp.</p>
     <div class="finder-grid">
       <div>
-        <p class="chips-label">Especialidad</p>
-        <div class="chips" id="espChips" role="group" aria-label="Elige una especialidad">
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Medicina General">Medicina General</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Pediatría">Pediatría</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Ginecología">Ginecología</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Cardiología">Cardiología</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Dermatología">Dermatología</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Traumatología">Traumatología</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Nutrición">Nutrición</button>
-          <button class="chip esp" type="button" aria-pressed="false" data-v="Laboratorio">Laboratorio</button>
-        </div>
-        <p class="chips-label">Turno</p>
-        <div class="chips" id="turnChips" role="group" aria-label="Elige un turno">
-          <button class="chip turn" type="button" aria-pressed="false" data-v="la mañana">Mañana · 8:00–13:00</button>
-          <button class="chip turn" type="button" aria-pressed="false" data-v="la tarde">Tarde · 15:00–20:00</button>
+        <p class="chips-label">Motivo de la consulta</p>
+        <div class="chips" id="motChips" role="group" aria-label="Elige un motivo">
+          <button class="chip" type="button" aria-pressed="false" data-v="una revisión ginecológica">Revisión anual</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="anticoncepción">Anticoncepción</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="control del embarazo">Embarazo</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="menopausia">Menopausia</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="una molestia o síntoma">Síntomas o molestias</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="una primera consulta">Primera consulta</button>
         </div>
       </div>
-
-      <aside class="apt-card" aria-live="polite">
-        <span class="rx" aria-hidden="true">℞</span>
-        <h3>Ficha de cita</h3>
-        <p class="sm">Centro Médico Almenara</p>
-        <div class="apt-row"><span class="k">Especialidad</span><span class="v pending" id="outEsp">Sin elegir</span></div>
-        <div class="apt-row"><span class="k">Turno</span><span class="v pending" id="outTurn">Sin elegir</span></div>
+      <aside class="apt" aria-live="polite">
+        <span class="mono" aria-hidden="true">Rx</span>
+        <h3>Tu cita</h3>
+        <p class="sm">Dra. Valentina Sáez · Ginecología</p>
+        <div class="apt-row"><span class="k">Motivo</span><span class="v pending" id="outMot">Sin elegir</span></div>
         <div class="apt-row"><span class="k">Vía</span><span class="v">WhatsApp</span></div>
-        <a class="btn btn-primary go" id="aptGo" href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener">
+        <a class="btn btn-primary go" id="aptGo" href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
-          Pedir cita por WhatsApp
+          Enviar cita por WhatsApp
         </a>
       </aside>
     </div>
@@ -621,57 +435,53 @@
 <!-- ============ CONTACTO ============ -->
 <section id="contacto">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Dónde estamos</h2></div>
-    <p class="sec-intro">Atención presencial en un mismo edificio, con recepción y sala de espera renovadas.</p>
+    <div class="sec-head"><span class="num">05</span><h2>Dónde y cuándo</h2></div>
+    <p class="sec-intro">Consulta con cita previa. Escríbeme por WhatsApp y coordinamos el día que mejor te venga.</p>
     <div class="contact-grid">
       <div class="info">
-        <div class="k"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Dirección</div>
+        <div class="k"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Consulta</div>
         <div class="v">Av. de los Almendros 120</div>
       </div>
       <div class="info">
         <div class="k"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Horario</div>
-        <div class="v small">Lun–Vie 8:00–20:00<br>Sábado 9:00–13:00</div>
+        <div class="v sm">Lunes a viernes<br>9:00–19:00</div>
       </div>
       <div class="info">
         <div class="k"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>WhatsApp</div>
-        <div class="v small"><a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none">Escríbenos y coordinamos tu cita</a></div>
+        <div class="v sm"><a href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener">Escríbeme y pedimos tu cita</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FOOTER : recetario ============ -->
-<footer class="rx-pad">
-  <div class="pad">
-    <div class="pad-top">
-      <div class="who">
-        <b>Centro Médico Almenara</b>
-        <span>Policlínica multidisciplinar</span>
+<!-- ============ FOOTER : firma de la doctora ============ -->
+<footer class="signoff">
+  <div class="so">
+    <div class="so-sig">Valentina Sáez</div>
+    <div class="so-role">Ginecología y Obstetricia · Colegiada nº 28/4517</div>
+    <div class="so-cols">
+      <div class="so-col">
+        <h4>La consulta</h4>
+        <p>Una ginecología cercana, sin prisa y sin tabúes, para acompañarte en cada etapa.</p>
       </div>
-      <div class="rxsym" aria-hidden="true">℞</div>
-    </div>
-
-    <div class="pad-lines">
-      <div class="pad-line"><span class="lbl">Dirección</span><span class="val">Av. de los Almendros 120</span></div>
-      <div class="pad-line"><span class="lbl">Horario</span><span class="val">Lun–Vie 8:00–20:00 · Sáb 9:00–13:00</span></div>
-      <div class="pad-line"><span class="lbl">WhatsApp</span><span class="val"><a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener">+34 960 555 210</a></span></div>
-      <div class="pad-line"><span class="lbl">Instagram</span><span class="val"><a href="https://instagram.com/centromedicoalmenara" target="_blank" rel="noopener">@centromedicoalmenara</a></span></div>
-    </div>
-
-    <div class="pad-foot">
-      <div class="socials">
-        <a href="https://instagram.com/centromedicoalmenara" target="_blank" rel="noopener" aria-label="Instagram de Centro Médico Almenara">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
-        </a>
-        <a href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" aria-label="WhatsApp de Centro Médico Almenara">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
-        </a>
+      <div class="so-col">
+        <h4>Contacto</h4>
+        <p>Av. de los Almendros 120</p>
+        <a href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener">+34 960 555 210</a>
+        <a href="https://instagram.com/dra.valentinasaez" target="_blank" rel="noopener">@dra.valentinasaez</a>
       </div>
-      <div class="stamp" aria-hidden="true">
-        <div><b>Centro Médico<br>Almenara</b><small>Recepción</small></div>
+      <div class="so-col">
+        <h4>Sígueme</h4>
+        <div class="socials">
+          <a href="https://instagram.com/dra.valentinasaez" target="_blank" rel="noopener" aria-label="Instagram de la Dra. Valentina Sáez">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener" aria-label="WhatsApp de la Dra. Valentina Sáez">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-
     <p class="seal">
       Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial
     </p>
@@ -679,7 +489,7 @@
 </footer>
 
 <!-- ============ FAB WhatsApp ============ -->
-<a class="fab" href="https://wa.me/34960555210?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Centro%20M%C3%A9dico%20Almenara." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+<a class="fab" href="https://wa.me/34960555210?text=Hola%20doctora%2C%20quisiera%20pedir%20una%20cita." target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
   <span class="fab-label">Pide tu cita por WhatsApp</span>
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3 4.2c-.2 0-.5 0-.7.4-.2.4-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.6-.4z"/></svg>
 </a>
@@ -689,81 +499,35 @@
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- mega menu ---- */
-  var megaBtn = document.getElementById("megaBtn");
-  var mega = document.getElementById("megaPanel");
-  var hoverCapable = window.matchMedia && window.matchMedia("(hover:hover)").matches;
-  function setMega(open){
-    mega.classList.toggle("open", open);
-    megaBtn.setAttribute("aria-expanded", open ? "true":"false");
-  }
-  megaBtn.addEventListener("click", function(e){
-    e.stopPropagation();
-    setMega(!mega.classList.contains("open"));
-  });
-  if(hoverCapable){
-    var head = document.querySelector("header.nav");
-    head.addEventListener("mouseleave", function(){ setMega(false); });
-    megaBtn.addEventListener("mouseenter", function(){ setMega(true); });
-  }
-  document.addEventListener("click", function(e){
-    if(!mega.contains(e.target) && e.target !== megaBtn) setMega(false);
-  });
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMega(false); });
-  mega.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMega(false); }); });
-
   /* ---- finder ---- */
-  var esp = null, turn = null;
-  var outEsp = document.getElementById("outEsp");
-  var outTurn = document.getElementById("outTurn");
+  var mot = null;
+  var outMot = document.getElementById("outMot");
   var go = document.getElementById("aptGo");
   var base = "https://wa.me/34960555210?text=";
+  var grp = document.getElementById("motChips");
 
-  function singleSelect(group, cb){
-    group.querySelectorAll(".chip").forEach(function(c){
-      c.addEventListener("click", function(){
-        var already = c.getAttribute("aria-pressed") === "true";
-        group.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
-        c.setAttribute("aria-pressed", already ? "false":"true");
-        cb(already ? null : c.getAttribute("data-v"));
-      });
-    });
-  }
-  singleSelect(document.getElementById("espChips"), function(v){ esp = v; render(); });
-  singleSelect(document.getElementById("turnChips"), function(v){ turn = v; render(); });
-
-  /* ---- "Pedir cita" de cada especialidad → preselecciona esa especialidad en el finder ---- */
-  document.querySelectorAll(".dep-cta[data-esp]").forEach(function(link){
-    link.addEventListener("click", function(){
-      var want = link.getAttribute("data-esp");
-      var chip = document.querySelector('#espChips .chip.esp[data-v="' + (window.CSS && CSS.escape ? CSS.escape(want) : want) + '"]');
-      if(chip && chip.getAttribute("aria-pressed") !== "true"){ chip.click(); }
+  grp.querySelectorAll(".chip").forEach(function(c){
+    c.addEventListener("click", function(){
+      var already = c.getAttribute("aria-pressed") === "true";
+      grp.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      c.setAttribute("aria-pressed", already ? "false" : "true");
+      mot = already ? null : c.getAttribute("data-v");
+      render();
     });
   });
 
   function render(){
-    outEsp.textContent = esp || "Sin elegir";
-    outEsp.classList.toggle("pending", !esp);
-    outTurn.textContent = turn ? (turn === "la mañana" ? "Mañana" : "Tarde") : "Sin elegir";
-    outTurn.classList.toggle("pending", !turn);
-    var msg;
-    if(esp && turn){
-      msg = "Hola, quisiera pedir una cita de " + esp + " en el turno de " + turn + " en Centro Médico Almenara.";
-    } else if(esp){
-      msg = "Hola, quisiera pedir una cita de " + esp + " en Centro Médico Almenara.";
-    } else {
-      msg = "Hola, quisiera pedir una cita en Centro Médico Almenara.";
-    }
+    outMot.textContent = mot ? mot.charAt(0).toUpperCase() + mot.slice(1) : "Sin elegir";
+    outMot.classList.toggle("pending", !mot);
+    var msg = mot
+      ? "Hola doctora, quisiera pedir una cita para " + mot + " con la Dra. Valentina Sáez."
+      : "Hola doctora, quisiera pedir una cita con la Dra. Valentina Sáez.";
     go.setAttribute("href", base + encodeURIComponent(msg));
   }
 
   /* ---- count-up (plumbing via IntersectionObserver) ---- */
   var counters = Array.prototype.slice.call(document.querySelectorAll(".stat .c"));
-  function fmt(n, sep){
-    n = Math.round(n);
-    if(sep) return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return String(n);
-  }
+  function fmt(n, sep){ n = Math.round(n); return sep ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") : String(n); }
   function runCount(el){
     var to = parseInt(el.getAttribute("data-to"),10) || 0;
     var sep = el.getAttribute("data-sep") === "1";
@@ -774,22 +538,17 @@
       var p = Math.min((ts - start)/dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
       el.textContent = fmt(to * eased, sep);
-      if(p < 1) requestAnimationFrame(step);
-      else el.textContent = fmt(to, sep);
+      if(p < 1) requestAnimationFrame(step); else el.textContent = fmt(to, sep);
     }
     requestAnimationFrame(step);
   }
-  function fireAll(){ counters.forEach(runCount); }
-
   if("IntersectionObserver" in window && !reduce){
     var io = new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ runCount(en.target); obs.unobserve(en.target); }
-      });
+      entries.forEach(function(en){ if(en.isIntersecting){ runCount(en.target); obs.unobserve(en.target); } });
     }, {threshold:0.5});
     counters.forEach(function(c){ io.observe(c); });
   } else {
-    fireAll();
+    counters.forEach(runCount);
   }
 })();
 </script>
