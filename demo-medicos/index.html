@@ -5,7 +5,7 @@
 <meta name="description" content="Centro Médico Almenara — policlínica multidisciplinar. Pide tu cita por WhatsApp: elige especialidad, escríbenos y confirmamos día y hora.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Centro Médico Almenara · Tu salud, en manos de un equipo">
-<meta property="og:description" content="Policlínica multidisciplinar. Pide cita en minutos por WhatsApp — 12 especialidades, atención cercana.">
+<meta property="og:description" content="Policlínica multidisciplinar. Pide cita en minutos por WhatsApp — 8 especialidades, cada una con su médico.">
 <meta property="og:locale" content="es_ES">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F5F8B'/%3E%3Cpath d='M10 54 H34 l5 -20 l8 40 l7 -30 l6 14 h24' fill='none' stroke='%23EF7A5A' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
 
@@ -185,6 +185,41 @@
     display:grid;place-items:center;color:var(--blue);flex:0 0 auto}
   .index-row .ic svg{width:22px;height:22px}
 
+  /* ---------- ESPECIALIDADES : consultas por especialidad (doctor-forward) ---------- */
+  .dep-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .dep{
+    position:relative;background:var(--bg);border:1px solid var(--line);border-radius:16px;
+    padding:20px;display:flex;flex-direction:column;gap:13px;
+    transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease;
+  }
+  .dep:hover{box-shadow:var(--shadow);border-color:var(--line-strong);transform:translateY(-2px)}
+  .dep-top{display:flex;align-items:center;gap:12px}
+  .dep-ic{width:44px;height:44px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--blue);flex:0 0 auto}
+  .dep-ic svg{width:24px;height:24px}
+  .dep-top .t{flex:1;min-width:0}
+  .dep-top .t .n{font-family:"Red Hat Display";font-weight:700;color:var(--coral);font-size:.7rem;letter-spacing:.16em}
+  .dep-top .t h3{font-size:1.16rem;font-weight:800;letter-spacing:-.01em;margin-top:2px}
+  .dep-doc{display:flex;align-items:center;gap:11px;padding:12px 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .dep-doc .av{width:40px;height:40px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    background:linear-gradient(145deg,var(--blue),var(--blue-2));color:#fff;
+    font-family:"Red Hat Display";font-weight:800;font-size:.86rem;letter-spacing:.01em}
+  .dep-doc .who{min-width:0}
+  .dep-doc .who b{display:block;font-family:"Red Hat Display";font-weight:700;font-size:.98rem;line-height:1.15}
+  .dep-doc .who span{font-size:.8rem;color:var(--muted)}
+  .dep-treat{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .dep-tags{display:flex;flex-wrap:wrap;gap:7px}
+  .dep-tags span{font-size:.8rem;color:var(--blue);background:var(--bg-2);border:1px solid var(--line);
+    border-radius:999px;padding:5px 11px;line-height:1.2}
+  .dep-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
+  .dep-foot .hrs{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .dep-foot .hrs svg{width:14px;height:14px;color:var(--coral);flex:0 0 auto}
+  .dep-cta{display:inline-flex;align-items:center;gap:7px;font-family:"Red Hat Text";font-weight:600;
+    font-size:.86rem;color:var(--blue);text-decoration:none;white-space:nowrap}
+  .dep-cta:hover{text-decoration:underline}
+  .dep-cta svg{width:15px;height:15px;flex:0 0 auto}
+
   /* ---------- STEPS : flat clinical fichas ---------- */
   .steps{display:grid;grid-template-columns:1fr;gap:16px}
   .ficha{
@@ -296,6 +331,7 @@
   /* ---------- responsive grow ---------- */
   @media (min-width:720px){
     .stats-in{grid-template-columns:repeat(4,1fr)}
+    .dep-grid{grid-template-columns:1fr 1fr}
     .steps{grid-template-columns:repeat(3,1fr)}
     .contact-grid{grid-template-columns:repeat(3,1fr)}
     .mega-in{grid-template-columns:1fr 1.3fr;align-items:start}
@@ -343,7 +379,7 @@
   <div class="mega" id="megaPanel" role="region" aria-label="Listado de especialidades">
     <div class="mega-in">
       <div class="mega-lead">
-        <h3>12 especialidades, un solo equipo</h3>
+        <h3>8 especialidades, cada una con su médico</h3>
         <p>Elige el área que necesitas y coordina tu cita por WhatsApp. Atención de lunes a sábado en Av. de los Almendros 120.</p>
       </div>
       <div class="mega-cols">
@@ -375,7 +411,7 @@
     <div class="hero-copy">
       <p class="eyebrow">Policlínica multidisciplinar</p>
       <h1>Tu salud, en manos de <span class="tint">un equipo.</span></h1>
-      <p class="hero-sub">Un mismo centro para toda la familia: doce especialidades coordinadas, historia clínica compartida y una cita que pides en minutos por WhatsApp.</p>
+      <p class="hero-sub">Un mismo centro para toda la familia: ocho especialidades, cada una con su médico, historia clínica compartida y una cita que pides en minutos por WhatsApp.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#pedir-cita">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v3M16 2v3M3 9h18M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -395,7 +431,7 @@
 <section class="stats" style="padding:0" aria-label="Indicadores del centro">
   <div class="stats-in" id="stats">
     <div class="stat"><div class="n"><span class="u">+</span><span class="c" data-to="15">0</span></div><div class="l">Años de experiencia</div></div>
-    <div class="stat"><div class="n"><span class="c" data-to="12">0</span></div><div class="l">Especialidades médicas</div></div>
+    <div class="stat"><div class="n"><span class="c" data-to="8">0</span></div><div class="l">Especialidades médicas</div></div>
     <div class="stat"><div class="n"><span class="c" data-to="8000" data-sep="1">0</span></div><div class="l">Pacientes al año</div></div>
     <div class="stat qual"><div class="n">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -407,50 +443,97 @@
 <section id="especialidades">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>Especialidades</h2></div>
-    <p class="sec-intro">Un directorio claro, como el panel de recepción. Cada área con su propio equipo y agenda; toda tu atención en un mismo lugar.</p>
-    <div class="index">
-      <div class="index-list">
-        <div class="index-row">
-          <span class="rn">01</span>
-          <div class="body"><h3>Medicina General</h3><p>Tu primer punto de contacto: diagnóstico, controles y seguimiento continuo.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v6a4 4 0 008 0V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 13v3a4 4 0 008 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg></span>
+    <p class="sec-intro">Cada especialidad, con su médico de referencia y lo que atiende. Elige la consulta que necesitas y pide cita directa por WhatsApp.</p>
+    <div class="dep-grid">
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v6a4 4 0 008 0V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 13v3a4 4 0 008 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 01</span><h3>Medicina General</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">02</span>
-          <div class="body"><h3>Pediatría</h3><p>Acompañamiento del crecimiento sano, vacunas y control del niño.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">AR</span><div class="who"><b>Dr. Álvaro Ruiz</b><span>Médico de familia</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Chequeos</span><span>Controles</span><span>Crónicos</span><span>Certificados</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Medicina General" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 02</span><h3>Pediatría</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">03</span>
-          <div class="body"><h3>Ginecología</h3><p>Salud femenina integral, revisiones y control preventivo.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 12.6V21M8.5 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">CS</span><div class="who"><b>Dra. Carmen Solís</b><span>Pediatra</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Niño sano</span><span>Vacunas</span><span>Fiebre</span><span>Revisiones</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Sáb</span><a class="dep-cta" data-esp="Pediatría" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4.6" stroke="currentColor" stroke-width="1.8"/><path d="M12 12.6V21M8.5 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 03</span><h3>Ginecología</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">04</span>
-          <div class="body"><h3>Cardiología</h3><p>Cuidado del corazón: electrocardiograma, presión y valoración de riesgo.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20S4 14.5 4 9a4 4 0 018-1 4 4 0 018 1c0 5.5-8 11-8 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12h3l1.5-3 2 5 1.5-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">LF</span><div class="who"><b>Dra. Lucía Ferrer</b><span>Ginecóloga</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Revisión anual</span><span>Citología</span><span>Embarazo</span><span>Menopausia</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Ginecología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20S4 14.5 4 9a4 4 0 018-1 4 4 0 018 1c0 5.5-8 11-8 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12h3l1.5-3 2 5 1.5-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 04</span><h3>Cardiología</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">05</span>
-          <div class="body"><h3>Dermatología</h3><p>Revisión de piel, control de lunares y tratamientos dermatológicos.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">EN</span><div class="who"><b>Dr. Emilio Navarro</b><span>Cardiólogo</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Electrocardiograma</span><span>Hipertensión</span><span>Arritmias</span><span>Riesgo cardiovascular</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mar y Jue</span><a class="dep-cta" data-esp="Cardiología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 05</span><h3>Dermatología</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">06</span>
-          <div class="body"><h3>Traumatología</h3><p>Lesiones, dolor articular y recuperación del movimiento.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8l8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 8a2.4 2.4 0 10-2-2 2.4 2.4 0 002 2zM16 16a2.4 2.4 0 102 2 2.4 2.4 0 00-2-2z" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">PH</span><div class="who"><b>Dra. Paula Herrera</b><span>Dermatóloga</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Revisión de lunares</span><span>Acné</span><span>Dermatitis</span><span>Cirugía menor</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun y Mié</span><a class="dep-cta" data-esp="Dermatología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8l8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 8a2.4 2.4 0 10-2-2 2.4 2.4 0 002 2zM16 16a2.4 2.4 0 102 2 2.4 2.4 0 00-2-2z" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 06</span><h3>Traumatología</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">07</span>
-          <div class="body"><h3>Nutrición</h3><p>Planes de alimentación adaptados a tu objetivo y tu ritmo.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8c-3-3-8-1-8 4 0 4 4 9 8 9s8-5 8-9c0-5-5-7-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8c0-2 1-4 3-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">SM</span><div class="who"><b>Dr. Sergio Marín</b><span>Traumatólogo</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Lesiones deportivas</span><span>Dolor articular</span><span>Fracturas</span><span>Infiltraciones</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Traumatología" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8c-3-3-8-1-8 4 0 4 4 9 8 9s8-5 8-9c0-5-5-7-8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8c0-2 1-4 3-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 07</span><h3>Nutrición</h3></div>
         </div>
-        <div class="index-row">
-          <span class="rn">08</span>
-          <div class="body"><h3>Laboratorio</h3><p>Análisis clínicos con resultados claros y a tiempo.</p></div>
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-4.5 8A2 2 0 007.3 20h9.4a2 2 0 001.8-3L14 9V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 15h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div class="dep-doc"><span class="av" aria-hidden="true">MI</span><div class="who"><b>Lda. Marta Ibáñez</b><span>Nutricionista-Dietista</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Pérdida de peso</span><span>Nutrición clínica</span><span>Deportiva</span><span>Digestiva</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Vie</span><a class="dep-cta" data-esp="Nutrición" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
+      <article class="dep">
+        <div class="dep-top">
+          <span class="dep-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-4.5 8A2 2 0 007.3 20h9.4a2 2 0 001.8-3L14 9V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 15h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <div class="t"><span class="n">CONSULTA 08</span><h3>Laboratorio</h3></div>
         </div>
-      </div>
+        <div class="dep-doc"><span class="av" aria-hidden="true">LAB</span><div class="who"><b>Equipo de laboratorio</b><span>Análisis clínicos</span></div></div>
+        <p class="dep-treat">Atiende</p>
+        <div class="dep-tags"><span>Analíticas</span><span>Perfiles</span><span>Control de tratamiento</span><span>Resultados 24–48 h</span></div>
+        <div class="dep-foot"><span class="hrs"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lun–Sáb · 8:00–11:00</span><a class="dep-cta" data-esp="Laboratorio" href="#pedir-cita">Pedir cita <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -648,6 +731,15 @@
   }
   singleSelect(document.getElementById("espChips"), function(v){ esp = v; render(); });
   singleSelect(document.getElementById("turnChips"), function(v){ turn = v; render(); });
+
+  /* ---- "Pedir cita" de cada especialidad → preselecciona esa especialidad en el finder ---- */
+  document.querySelectorAll(".dep-cta[data-esp]").forEach(function(link){
+    link.addEventListener("click", function(){
+      var want = link.getAttribute("data-esp");
+      var chip = document.querySelector('#espChips .chip.esp[data-v="' + (window.CSS && CSS.escape ? CSS.escape(want) : want) + '"]');
+      if(chip && chip.getAttribute("aria-pressed") !== "true"){ chip.click(); }
+    });
+  });
 
   function render(){
     outEsp.textContent = esp || "Sin elegir";
