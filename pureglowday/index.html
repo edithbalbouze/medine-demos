@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="es-VE">
+<html lang="es-VE" data-tema="nude">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Dayrrig Duarte — Mentora de marca personal</title>
-<meta name="description" content="Dayrrig Duarte. Estratega de Imagen Internacional certificada y mentora de marca personal en Barcelona / Lechería, Anzoátegui.">
-<meta name="theme-color" content="#701A1B">
+<title>Dayrrig Duarte — Estratega de imagen y bienestar</title>
+<meta name="description" content="Dayrrig Duarte. Estratega de Imagen Internacional certificada. Asesoría de imagen y bienestar en Barcelona / Lechería, Anzoátegui.">
+<meta name="theme-color" content="#4A382E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dayrrig Duarte — Mentora de marca personal">
-<meta property="og:description" content="Brilla con tu piel y construye un negocio digital rentable. Estratega de Imagen Internacional certificada.">
+<meta property="og:title" content="Dayrrig Duarte — Estratega de imagen y bienestar">
+<meta property="og:description" content="Tu imagen y tu bienestar, con estrategia. Asesoría de imagen certificada y diez años vistiendo a mujeres que necesitaban destacar.">
 <meta property="og:image" content="./assets/dayrrig-portada.jpg">
 <meta property="og:locale" content="es_VE">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23701A1B'/%3E%3Ctext x='50' y='73' font-family='Didot,Georgia,serif' font-size='64' fill='%23DCDDD8' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234A382E'/%3E%3Ctext x='50' y='73' font-family='Georgia,serif' font-size='62' fill='%23F4EEE6' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300..800&family=Marcellus&display=swap" rel="stylesheet">
+
+<!-- Tema guardado aplicado antes de pintar: sin FOUC -->
+<script>
+(function(){try{var t=localStorage.getItem('dd-tema');if(t==='rose'||t==='nude'){document.documentElement.setAttribute('data-tema',t);}}catch(e){}})();
+</script>
+
 <style>
 /* ============================================================
    DAYRRIG DUARTE — dossier editorial por capítulos
-   Base vino dominante · serif editorial (Newsreader) + Instrument Sans
+   Base CLARA · dos temas conmutables (Nude & bronce / Rosé suave)
+   Marcellus (display) + Hanken Grotesk (cuerpo)
    Demo de diseño · Medine.tech
    ============================================================ */
 
@@ -32,35 +39,53 @@ img{display:block;max-width:100%;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
 button{background:none;border:0;cursor:pointer}
 
-:root{
-  --crema:#DCDDD8;
-  --crema-dark:#C9CAC4;
-  --vino:#701A1B;
-  --rojo:#931717;
-  --oro:#A8946B;          /* hairlines y numerales grandes — nunca texto pequeño */
-  --oro-lite:#C9B489;     /* texto pequeño sobre vino — 5.5:1 */
-  --oro-deep:#5A4B26;     /* texto pequeño sobre crema (6.2:1) y crema oscura (5.1:1) */
-  --tinta:#2A1416;
-  --verde-wa:#25D366;
-
-  --rail:0px;
-  --topbar:46px;
-  --pad:clamp(20px,5.2vw,72px);
-
-  --display:"Newsreader",Georgia,"Times New Roman",Times,serif;
-  --body:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+/* ---------- TOKENS DE TEMA ---------- */
+:root,
+[data-tema="nude"]{
+  --canvas:#F4EEE6;      /* 60% marfil cálido */
+  --surface:#E7DBCD;     /* 30% nude suave */
+  --deep:#4A382E;        /* bandas de acento · CTA · footer */
+  --accent:#9A6E45;      /* bronce — hairlines y numerales grandes */
+  --accent-2:#B89A76;    /* bronce claro — hairlines sobre deep */
+  --ink:#2C231D;
+  --ink-soft:rgba(44,35,29,.72);
+  --hair:rgba(154,110,69,.4);
+  --label-ink:#6A4A2A;   /* etiquetas pequeñas sobre claro (AA) */
+  --label-deep:#D8C1A2;  /* etiquetas pequeñas sobre deep (AA) */
+  --on-deep-soft:rgba(244,238,230,.82);
 }
-@media (min-width:1024px){ :root{--rail:156px;--topbar:0px} }
-@media (min-width:1440px){ :root{--rail:184px} }
+[data-tema="rose"]{
+  --canvas:#F8EFEC;      /* crema blush */
+  --surface:#EBD3CE;     /* rosa empolvado */
+  --deep:#5E3B45;        /* rosewood / ciruela */
+  --accent:#A85D66;      /* rosa/oro */
+  --accent-2:#C9A98F;    /* oro-rosa */
+  --ink:#38282B;
+  --ink-soft:rgba(56,40,43,.72);
+  --hair:rgba(168,93,102,.38);
+  --label-ink:#7C3F49;
+  --label-deep:#E4C7B7;
+  --on-deep-soft:rgba(248,239,236,.84);
+}
+:root{
+  --verde-wa:#25D366;
+  --rail:0px;
+  --topbar:52px;
+  --pad:clamp(20px,5.2vw,72px);
+  --display:"Marcellus",Georgia,"Times New Roman",Times,serif;
+  --body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (min-width:1024px){ :root{--rail:172px;--topbar:0px} }
+@media (min-width:1440px){ :root{--rail:198px} }
 
 html{scroll-behavior:smooth}
 body{
   font-family:var(--body);
-  background:var(--vino);
-  color:var(--crema);
+  background:var(--canvas);
+  color:var(--ink);
   font-size:clamp(15px,1.02vw,17px);
   line-height:1.62;
-  letter-spacing:.004em;
+  letter-spacing:.003em;
   -webkit-font-smoothing:antialiased;
 }
 /* overflow-x:clip recorta sin crear contenedor de scroll -> no rompe position:sticky */
@@ -71,40 +96,32 @@ html,body{overflow-x:clip}
   .who-fig{position:static!important}
 }
 
-::selection{background:var(--crema);color:var(--vino)}
+::selection{background:var(--deep);color:var(--canvas)}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--oro-lite);outline-offset:3px;border-radius:1px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
+.s-deep :focus-visible{outline-color:var(--accent-2)}
 
 /* ------------------------------------------------------------
    SUPERFICIES — cada banda declara sus propios tokens.
-   Vino domina (~70%); la crema queda para los bloques de respiro.
+   La mayoría en claro (canvas/surface); deep sólo para 2 acentos + footer.
    ------------------------------------------------------------ */
-.s-vino{
-  --bg:var(--vino);--fg:var(--crema);
-  --fg-soft:rgba(220,221,216,.86);
-  --label:var(--oro-lite);
-  --rule:rgba(168,148,107,.45);
-  --rule-hi:var(--oro);
-  --edge:var(--crema);
+.s-canvas{
+  --bg:var(--canvas);--fg:var(--ink);--fg-soft:var(--ink-soft);
+  --label:var(--label-ink);--rule:var(--hair);--rule-hi:var(--accent);--edge:var(--deep);
 }
-.s-crema{
-  --bg:var(--crema);--fg:var(--tinta);
-  --fg-soft:rgba(42,20,22,.88);
-  --label:var(--oro-deep);
-  --rule:rgba(168,148,107,.8);
-  --rule-hi:var(--oro);
-  --edge:var(--oro);
+.s-surface{
+  --bg:var(--surface);--fg:var(--ink);--fg-soft:var(--ink-soft);
+  --label:var(--label-ink);--rule:var(--hair);--rule-hi:var(--accent);--edge:var(--deep);
+}
+.s-deep{
+  --bg:var(--deep);--fg:var(--canvas);--fg-soft:var(--on-deep-soft);
+  --label:var(--label-deep);--rule:rgba(255,255,255,.18);--rule-hi:var(--accent-2);--edge:var(--canvas);
 }
 .s-nota{
-  --bg:var(--crema-dark);--fg:var(--tinta);
-  --fg-soft:rgba(42,20,22,.88);
-  --label:var(--vino);
-  --rule:var(--oro-deep);
-  --rule-hi:var(--oro-deep);
-  --edge:var(--oro-deep);
+  --bg:var(--surface);--fg:var(--ink);--fg-soft:var(--ink-soft);
+  --label:var(--label-ink);--rule:var(--accent-2);--rule-hi:var(--accent);--edge:var(--deep);
 }
-.s-vino,.s-crema,.s-nota{background:var(--bg);color:var(--fg)}
-.s-crema :focus-visible,.s-nota :focus-visible{outline-color:var(--oro-deep)}
+.s-canvas,.s-surface,.s-deep,.s-nota{background:var(--bg);color:var(--fg)}
 
 /* ---------- utilidades tipográficas ---------- */
 .kicker{
@@ -115,92 +132,115 @@ a{color:inherit}
   line-height:1.5;
   color:var(--label);
 }
-.skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--crema);color:var(--vino);padding:12px 18px}
+.skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--deep);color:var(--canvas);padding:12px 18px}
 .skip:focus{left:8px;top:8px}
 
-/* Didone: opsz fijo por tamaño — buena tipografía, sin animar ejes */
-.d-xl{font-family:var(--display);font-variation-settings:'opsz' 72;font-weight:500;letter-spacing:-.018em}
-.d-lg{font-family:var(--display);font-variation-settings:'opsz' 72;font-weight:400;letter-spacing:-.014em}
-.d-md{font-family:var(--display);font-variation-settings:'opsz' 40;font-weight:400;letter-spacing:-.006em}
+/* Marcellus: peso único, sin itálica ni bold. Jerarquía por tamaño/tracking/color. */
+.d-xl{font-family:var(--display);font-weight:400;letter-spacing:-.012em}
+.d-lg{font-family:var(--display);font-weight:400;letter-spacing:-.008em}
+.d-md{font-family:var(--display);font-weight:400;letter-spacing:-.004em}
 
 /* ============================================================
-   RAIL LATERAL FIJO (>=1024px)
+   RAIL LATERAL FIJO (>=1024px) — chrome deep
    ============================================================ */
 .rail{
   display:none;
   position:fixed;inset:0 auto 0 0;width:var(--rail);
-  background:var(--vino);
-  border-right:1px solid rgba(168,148,107,.45);
+  background:var(--deep);color:var(--canvas);
+  border-right:1px solid rgba(255,255,255,.14);
   padding:26px 18px 22px;
-  z-index:60;flex-direction:column;color:var(--crema);
+  z-index:60;flex-direction:column;
 }
 @media (min-width:1024px){.rail{display:flex}}
 
-/* hilo de progreso vertical — scroll-driven, con fallback JS */
 .rail-prog{
   position:absolute;right:-1px;top:0;width:1px;height:100%;
-  background:var(--oro-lite);
+  background:var(--accent-2);
   transform:scaleY(0);transform-origin:top center;
 }
-
 .rail-mark{
-  font-family:var(--display);font-variation-settings:'opsz' 40;font-weight:500;
-  font-size:clamp(14px,1.2vw,17px);
-  line-height:1.12;letter-spacing:.09em;
-  text-transform:uppercase;text-decoration:none;display:block;
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(15px,1.2vw,18px);
+  line-height:1.12;letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;display:block;color:var(--canvas);
 }
 .rail-mark span{display:block}
-.rail-mark span+span{color:var(--oro-lite)}
-.rail-rule{height:1px;background:rgba(168,148,107,.45);margin:20px 0 22px}
+.rail-mark span+span{color:var(--accent-2)}
+.rail-rule{height:1px;background:rgba(255,255,255,.14);margin:20px 0 22px}
 
 .rail-idx{display:flex;flex-direction:column;gap:2px;flex:1}
 .rail-idx a{
   display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:baseline;
-  text-decoration:none;padding:7px 0;color:rgba(220,221,216,.64);
+  text-decoration:none;padding:7px 0;color:rgba(244,238,230,.62);
   transition:color .35s ease;
 }
-.rail-idx a:hover{color:var(--crema)}
-.rail-idx .n{font-family:var(--display);font-variation-settings:'opsz' 11;font-weight:600;font-size:12px;letter-spacing:.06em}
-.rail-idx .t{font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:500;line-height:1.35}
-.rail-idx a.is-active{color:var(--crema)}
-.rail-idx a.is-active .n{color:var(--oro-lite)}
+.rail-idx a:hover{color:var(--canvas)}
+.rail-idx .n{font-family:var(--display);font-weight:400;font-size:12px;letter-spacing:.06em}
+.rail-idx .t{font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:600;line-height:1.35}
+.rail-idx a.is-active{color:var(--canvas)}
+.rail-idx a.is-active .n{color:var(--accent-2)}
 .rail-idx a.is-active .t{position:relative}
-.rail-idx a.is-active .t::after{content:"";position:absolute;left:0;bottom:-4px;width:18px;height:1px;background:var(--oro-lite)}
+.rail-idx a.is-active .t::after{content:"";position:absolute;left:0;bottom:-4px;width:18px;height:1px;background:var(--accent-2)}
 
-.rail-foot{border-top:1px solid rgba(168,148,107,.45);padding-top:16px}
-.rail-foot a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:600;color:var(--oro-lite)}
-.rail-foot a:hover{color:var(--crema)}
-.rail-foot svg{width:13px;height:13px;flex:none}
+.rail-foot{border-top:1px solid rgba(255,255,255,.14);padding-top:16px;display:flex;flex-direction:column;gap:16px}
+
+/* ---------- Selector de tema (rail) ---------- */
+.tema{display:flex;flex-direction:column;gap:9px}
+.tema-lab{font-size:9.5px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;color:var(--accent-2)}
+.tema-set{display:flex;gap:8px}
+.tema-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 9px 6px 7px;border:1px solid rgba(255,255,255,.2);
+  color:rgba(244,238,230,.7);
+  font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;
+  transition:border-color .25s ease,color .25s ease;
+}
+.tema-btn:hover{color:var(--canvas)}
+.tema-btn[aria-pressed="true"]{border-color:var(--accent-2);color:var(--canvas)}
+.sw{width:15px;height:15px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.35)}
+.sw-nude{background:linear-gradient(135deg,#E7DBCD 0 50%,#4A382E 50% 100%)}
+.sw-rose{background:linear-gradient(135deg,#EBD3CE 0 50%,#5E3B45 50% 100%)}
+
+.rail-wa{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:600;color:var(--accent-2)}
+.rail-wa:hover{color:var(--canvas)}
+.rail-wa svg{width:13px;height:13px;flex:none}
 
 /* ============================================================
-   BARRA DE PROGRESO MÓVIL (<1024px)
+   BARRA MÓVIL (<1024px) — chrome deep
    ============================================================ */
 .topbar{
   position:fixed;top:0;left:0;right:0;z-index:60;
-  background:var(--vino);color:var(--crema);height:var(--topbar);
-  display:flex;align-items:center;gap:10px;padding:0 12px 0 14px;
-  border-bottom:1px solid rgba(168,148,107,.45);
+  background:var(--deep);color:var(--canvas);height:var(--topbar);
+  display:flex;align-items:center;gap:10px;padding:0 10px 0 14px;
+  border-bottom:1px solid rgba(255,255,255,.14);
 }
 @media (min-width:1024px){.topbar{display:none}}
 .topbar-prog{
   position:absolute;left:0;top:0;height:2px;width:100%;
-  background:var(--oro-lite);
+  background:var(--accent-2);
   transform:scaleX(0);transform-origin:left center;
 }
 .topbar-now{display:flex;align-items:baseline;gap:8px;min-width:0;flex:1}
-.topbar-now .n{font-family:var(--display);font-variation-settings:'opsz' 11;font-weight:600;font-size:12px;color:var(--oro-lite);flex:none}
-.topbar-now .t{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-now .n{font-family:var(--display);font-weight:400;font-size:13px;color:var(--accent-2);flex:none}
+.topbar-now .t{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-tema{display:flex;gap:5px;flex:none}
+.ttema-btn{
+  width:26px;height:26px;display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.2);
+}
+.ttema-btn[aria-pressed="true"]{border-color:var(--accent-2)}
+.ttema-btn .sw{width:13px;height:13px}
 .topbar-wa{
   flex:none;display:inline-flex;align-items:center;gap:6px;
-  border:1px solid var(--oro);color:var(--crema);text-decoration:none;padding:6px 11px;
-  font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:600;
+  border:1px solid var(--accent-2);color:var(--canvas);text-decoration:none;padding:6px 10px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:600;
 }
 .topbar-wa svg{width:13px;height:13px}
 
 /* ============================================================
    BANDAS Y CABECERAS DE CAPÍTULO
    ============================================================ */
-.band{padding:clamp(64px,9vw,132px) var(--pad)}
+.band{padding:clamp(60px,9vw,128px) var(--pad)}
 
 .chap-head{
   display:grid;gap:clamp(10px,1.6vw,18px);grid-template-columns:1fr;align-items:end;
@@ -208,10 +248,10 @@ a{color:inherit}
 }
 @media (min-width:900px){.chap-head{grid-template-columns:5.5rem 1fr auto;gap:clamp(16px,2.4vw,40px)}}
 .chap-n{
-  font-family:var(--display);font-variation-settings:'opsz' 72;font-weight:500;
-  font-size:clamp(46px,7.2vw,92px);line-height:.82;letter-spacing:-.02em;color:var(--oro);
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(46px,7.2vw,92px);line-height:.82;letter-spacing:-.02em;color:var(--accent);
 }
-.s-vino .chap-n{color:var(--oro-lite);opacity:.9}
+.s-deep .chap-n{color:var(--accent-2)}
 .chap-t{font-size:clamp(30px,4.6vw,60px);line-height:1.04}
 .chap-note{max-width:30ch;font-size:clamp(13px,1.05vw,14.5px);line-height:1.55;color:var(--fg-soft)}
 @media (min-width:900px){.chap-note{text-align:right;padding-bottom:.5em}}
@@ -219,26 +259,27 @@ a{color:inherit}
 /* ---------- CTAs ---------- */
 .cta{
   display:inline-flex;align-items:center;gap:10px;
-  background:var(--rojo);color:var(--crema);
-  border:1px solid var(--edge);border-radius:0;
+  background:var(--deep);color:var(--canvas);
+  border:1px solid var(--deep);border-radius:0;
   padding:15px 26px;text-decoration:none;
   font-size:clamp(11px,1.15vw,12.5px);
-  text-transform:uppercase;letter-spacing:.19em;font-weight:600;
-  transition:background .3s ease,color .3s ease,transform .3s ease;
+  text-transform:uppercase;letter-spacing:.18em;font-weight:600;
+  transition:background .3s ease,color .3s ease,border-color .3s ease,transform .3s ease;
   cursor:pointer;
 }
-.s-vino .cta:hover{background:var(--crema);color:var(--vino);transform:translateY(-1px)}
-.s-crema .cta:hover,.s-nota .cta:hover{background:var(--vino);transform:translateY(-1px)}
+.cta:hover{background:var(--canvas);color:var(--deep);border-color:var(--deep);transform:translateY(-1px)}
+.s-deep .cta{background:var(--canvas);color:var(--deep);border-color:var(--canvas)}
+.s-deep .cta:hover{background:transparent;color:var(--canvas);border-color:var(--canvas)}
 .cta svg{width:15px;height:15px;flex:none}
 .cta-txt{
   display:inline-block;text-decoration:none;border-bottom:1px solid currentColor;
   padding-bottom:2px;font-size:clamp(12px,1.15vw,13.5px);
-  text-transform:uppercase;letter-spacing:.16em;font-weight:600;transition:opacity .3s ease;
+  text-transform:uppercase;letter-spacing:.15em;font-weight:600;transition:opacity .3s ease;color:var(--fg)
 }
 .cta-txt:hover{opacity:.62}
 
 /* ============================================================
-   HERO (00)
+   HERO (00) — banda deep con retrato
    ============================================================ */
 .hero{
   position:relative;
@@ -253,20 +294,27 @@ a{color:inherit}
   display:grid;grid-template-columns:1fr;gap:clamp(26px,3.4vw,48px);
   flex:1;align-items:center;padding-top:clamp(26px,3.6vw,44px);
 }
-@media (min-width:960px){.hero-grid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);align-items:end}}
+@media (min-width:960px){.hero-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:end}}
 
-.hero-figure{position:relative;align-self:end;margin-inline:auto;width:100%;max-width:390px;order:2}
+.hero-figure{position:relative;align-self:end;margin-inline:auto;width:100%;max-width:360px;order:2}
 @media (min-width:960px){.hero-figure{max-width:none;margin-inline:0;order:1}}
-/* el fondo de la foto es exactamente #701A1B: sangra sin borde ni contenedor */
-.hero-figure img{width:100%;height:auto;display:block}
+/* plate: el retrato viene con fondo vino; lo enmarcamos como lámina editorial y
+   fundimos el borde inferior hacia la banda deep para que no corte en seco */
+.hero-figure img{
+  width:100%;height:auto;display:block;
+  border:1px solid var(--rule-hi);
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 88%,transparent 100%);
+          mask-image:linear-gradient(180deg,#000 0,#000 88%,transparent 100%);
+}
+.hero-cap{margin-top:12px;font-size:11px;line-height:1.5;color:var(--label);font-weight:600;letter-spacing:.02em}
 .hero-copy{padding-bottom:clamp(20px,3vw,64px);order:1}
 @media (min-width:960px){.hero-copy{order:2}}
 
 h1{
-  font-family:var(--display);font-variation-settings:'opsz' 72;font-weight:500;
-  font-size:clamp(37px,6.5vw,90px);
-  line-height:1.28;letter-spacing:-.022em;
-  margin-bottom:clamp(18px,2.2vw,26px);
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(40px,7.2vw,104px);
+  line-height:1.06;letter-spacing:-.02em;
+  margin-bottom:clamp(20px,2.4vw,30px);
 }
 h1 .ln{display:inline}
 @media (min-width:700px){h1 .ln{display:block}}
@@ -274,44 +322,44 @@ h1 .ln{display:inline}
 /* firma: swash SVG que se dibuja solo, una sola vez en toda la página */
 .swashword{position:relative;display:inline-block;white-space:nowrap}
 .swash{
-  position:absolute;left:-7%;top:calc(100% - .07em);
-  width:121%;height:.2em;overflow:visible;pointer-events:none;z-index:2;
+  position:absolute;left:-6%;top:calc(100% - .06em);
+  width:118%;height:.22em;overflow:visible;pointer-events:none;z-index:2;
 }
 .swash path{
-  fill:none;stroke:var(--crema);
+  fill:none;stroke:var(--edge);
   stroke-linecap:round;stroke-linejoin:round;
-  vector-effect:non-scaling-stroke;   /* la caja se estira, el trazo no se aplasta */
-  opacity:.95;
+  vector-effect:non-scaling-stroke;
+  opacity:.96;
 }
-.swash .s1{stroke-width:clamp(5px,.9vw,11px)}
-.swash .s2{stroke-width:clamp(2px,.38vw,4.5px);opacity:.68}
-.swash .s3{stroke-width:clamp(1px,.18vw,2px);opacity:.48}
+.swash .s1{stroke-width:clamp(4px,.8vw,10px)}
+.swash .s2{stroke-width:clamp(2px,.34vw,4px);opacity:.66}
+.swash .s3{stroke-width:clamp(1px,.16vw,2px);opacity:.46}
 
-.hero-lead{max-width:44ch;font-size:clamp(14.5px,1.18vw,17px);line-height:1.62;color:var(--fg-soft);margin-bottom:clamp(24px,3vw,34px)}
+.hero-lead{max-width:46ch;font-size:clamp(14.5px,1.18vw,17px);line-height:1.62;color:var(--fg-soft);margin-bottom:clamp(24px,3vw,34px)}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,28px)}
-.hero-strip{border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 22px;padding:14px 0 16px}
+.hero-strip{border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 22px;padding:14px 0 16px;color:var(--label)}
 .hero-strip span:not(:last-child)::after{content:" ·";opacity:.5}
 
 /* ============================================================
-   01 · QUIÉN SOY  (bloque de respiro en crema)
+   01 · QUIÉN SOY
    ============================================================ */
 .who{display:grid;grid-template-columns:1fr;gap:clamp(34px,4.4vw,64px);padding-top:clamp(34px,4.4vw,60px)}
 @media (min-width:900px){.who{grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:clamp(36px,4.4vw,72px)}}
 .who-fig{align-self:start}
 @media (min-width:900px){.who-fig{position:sticky;top:40px}}
-.who-fig img{width:100%;filter:saturate(.86) contrast(1.03)}
-figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--label);font-weight:500;padding-top:10px;border-top:1px solid var(--rule-hi)}
+.who-fig img{width:100%;filter:saturate(.94) contrast(1.02);border:1px solid var(--rule)}
+figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--label);font-weight:600;padding-top:10px;border-top:1px solid var(--rule-hi)}
 
 .steps{border-top:1px solid var(--rule-hi)}
 .step{display:grid;grid-template-columns:1fr;gap:4px 20px;padding:clamp(18px,2.2vw,26px) 0;border-bottom:1px solid var(--rule-hi)}
 @media (min-width:560px){.step{grid-template-columns:4.6rem 1fr;align-items:baseline}}
-.step-n{font-family:var(--display);font-variation-settings:'opsz' 11;font-weight:600;font-size:clamp(13px,1.1vw,15px);color:var(--label);letter-spacing:.06em}
+.step-n{font-family:var(--display);font-weight:400;font-size:clamp(14px,1.1vw,16px);color:var(--accent);letter-spacing:.04em}
 .step-k{display:block;color:var(--label);margin-bottom:5px;font-size:10px;text-transform:uppercase;letter-spacing:.22em;font-weight:700}
 .step-t{font-size:clamp(19px,2.05vw,27px);line-height:1.2}
 .step-d{margin-top:7px;max-width:52ch;font-size:clamp(14px,1.05vw,15.5px);color:var(--fg-soft)}
 
-.pullquote{font-style:italic;font-size:clamp(25px,4.1vw,54px);line-height:1.14;margin:clamp(40px,5.2vw,80px) 0 0;max-width:19ch}
-.pullquote-sm{font-style:italic;font-size:clamp(17px,1.9vw,24px);line-height:1.38;max-width:36ch}
+.pullquote{font-size:clamp(26px,4.3vw,56px);line-height:1.12;margin:clamp(40px,5.2vw,80px) 0 0;max-width:19ch;color:var(--fg)}
+.pullquote-sm{font-size:clamp(18px,1.9vw,25px);line-height:1.34;max-width:38ch;color:var(--fg)}
 .attrib{margin-top:14px}
 
 /* ============================================================
@@ -320,31 +368,56 @@ figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--label);fon
 .ways{margin-top:clamp(34px,4.2vw,58px);border-top:1px solid var(--rule-hi)}
 .way{display:grid;grid-template-columns:1fr;gap:8px 20px;padding:clamp(26px,3.4vw,46px) 0;border-bottom:1px solid var(--rule-hi)}
 @media (min-width:760px){.way{grid-template-columns:4.6rem minmax(0,1fr) minmax(0,auto);align-items:start;gap:10px clamp(20px,3vw,48px)}}
-.way-n{font-family:var(--display);font-variation-settings:'opsz' 72;font-weight:500;font-size:clamp(30px,3.6vw,52px);line-height:.9;color:var(--oro);letter-spacing:-.02em}
-.s-vino .way-n{color:var(--oro-lite);opacity:.9}
+.way-n{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.6vw,52px);line-height:.9;color:var(--accent);letter-spacing:-.02em}
 .way-t{font-size:clamp(24px,3.15vw,42px);line-height:1.08;max-width:19ch}
 .way-d{margin-top:12px;max-width:50ch;font-size:clamp(14.5px,1.1vw,16px);color:var(--fg-soft)}
-.way-d + .way-d{margin-top:8px;opacity:.82}
+.way-d + .way-d{margin-top:8px;opacity:.85}
 .way-cta{padding-top:clamp(14px,1.6vw,8px)}
 @media (min-width:760px){.way-cta{grid-column:3;grid-row:1;justify-self:end;padding-top:6px}}
 
 .ways-fig{margin-top:clamp(34px,4.4vw,60px)}
 @media (min-width:900px){.ways-fig{width:min(58%,560px);margin-left:auto}}
-.ways-fig img{width:100%;filter:saturate(.8) contrast(1.05) brightness(.98)}
+.ways-fig img{width:100%;filter:saturate(.92) contrast(1.03);border:1px solid var(--rule)}
 
 .nofee{margin-top:clamp(26px,3vw,40px);display:flex;gap:14px;align-items:flex-start;max-width:56ch}
 .nofee::before{content:"";flex:none;width:34px;height:1px;background:var(--rule-hi);margin-top:.72em}
 .nofee p{font-size:clamp(13.5px,1.05vw,15px);color:var(--fg-soft)}
 
 /* ============================================================
-   03 · EN MIS PALABRAS
+   03 · EN MOVIMIENTO  (video reels 9:16)
+   ============================================================ */
+.reels{
+  margin-top:clamp(34px,4.4vw,60px);
+  display:grid;grid-template-columns:1fr;gap:clamp(26px,3.4vw,36px);
+}
+@media (min-width:720px){.reels{grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,30px);align-items:start}}
+.reel{max-width:400px;margin-inline:auto;width:100%}
+@media (min-width:720px){
+  .reel{max-width:none}
+  .reel:nth-child(2){transform:translateY(clamp(18px,3vw,44px))}
+  .reel:nth-child(3){transform:translateY(clamp(36px,6vw,88px))}
+}
+.reel-frame{position:relative;background:var(--deep);border:1px solid var(--rule-hi);overflow:hidden}
+.reel-vid{
+  display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;
+  background:var(--deep);
+}
+.reel-tag{
+  margin-top:12px;display:flex;align-items:baseline;gap:9px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;color:var(--label);
+  padding-top:9px;border-top:1px solid var(--rule-hi);
+}
+.reel-n{font-family:var(--display);font-weight:400;font-size:14px;letter-spacing:.06em;color:var(--accent)}
+
+/* ============================================================
+   04 · EN MIS PALABRAS  (banda deep)
    ============================================================ */
 .words{margin-top:clamp(36px,4.4vw,64px)}
 .word{padding:clamp(24px,3.2vw,42px) 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr;gap:8px 18px}
 @media (min-width:700px){.word{grid-template-columns:3.6rem minmax(0,1fr);align-items:baseline}}
-.word-n{font-family:var(--display);font-variation-settings:'opsz' 11;font-weight:600;font-size:12px;letter-spacing:.14em;color:var(--label)}
-.word .q{display:block;line-height:1.11}
-.word--xl .q{font-size:clamp(28px,5.3vw,70px);max-width:16ch}
+.word-n{font-family:var(--display);font-weight:400;font-size:13px;letter-spacing:.12em;color:var(--accent-2)}
+.word .q{display:block;line-height:1.11;color:var(--fg)}
+.word--xl .q{font-size:clamp(28px,5.3vw,72px);max-width:16ch}
 .word--lg .q{font-size:clamp(24px,4.1vw,52px);max-width:20ch}
 .word--md .q{font-size:clamp(21px,3.2vw,40px);max-width:24ch}
 @media (min-width:900px){
@@ -355,22 +428,10 @@ figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--label);fon
 
 .words-fig{position:relative;margin:clamp(34px,4.4vw,56px) 0 clamp(8px,1vw,16px)}
 @media (min-width:900px){.words-fig{width:min(42%,400px)}}
-/* duotono oro->vino: sobre fondo vino, la base dorada es la que hace legible la foto */
-.duo{position:relative;background:var(--oro);overflow:hidden}
-.duo img{width:100%;display:block;filter:grayscale(1) contrast(1.08) brightness(1.04);mix-blend-mode:luminosity}
-.duo::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(168deg,rgba(220,221,216,.16),rgba(112,26,27,.34) 52%,rgba(112,26,27,.72));
-  mix-blend-mode:multiply;
-}
-@supports not (mix-blend-mode:luminosity){
-  .duo{background:none}
-  .duo img{filter:sepia(.7) saturate(2.4) hue-rotate(-22deg) contrast(1.06) brightness(.98);mix-blend-mode:normal}
-  .duo::after{display:none}
-}
+.words-fig img{width:100%;display:block;filter:saturate(.9) contrast(1.03);border:1px solid var(--rule-hi)}
 
 /* ============================================================
-   04 · ESCRÍBEME
+   05 · ESCRÍBEME
    ============================================================ */
 .write{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,64px);margin-top:clamp(32px,4vw,56px)}
 @media (min-width:900px){.write{grid-template-columns:minmax(0,1fr) minmax(0,.82fr)}}
@@ -384,84 +445,85 @@ figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--label);fon
 fieldset{border:0;padding:0;margin:0}
 .inp{
   width:100%;background:transparent;border:0;
-  border-bottom:1px solid rgba(220,221,216,.3);
+  border-bottom:1px solid var(--accent-2);
   padding:6px 0 8px;color:var(--fg);
-  font-family:var(--display);font-variation-settings:'opsz' 40;font-weight:400;
-  font-size:clamp(18px,2vw,25px);letter-spacing:-.006em;
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(18px,2vw,25px);letter-spacing:-.004em;
   transition:border-color .3s ease;
 }
-.inp::placeholder{color:rgba(220,221,216,.4)}
-.inp:focus{outline:none;border-bottom-color:var(--crema)}
-.inp:focus-visible{outline:2px solid var(--oro-lite);outline-offset:4px}
-textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15px;line-height:1.55;resize:vertical;min-height:74px}
+.inp::placeholder{color:var(--ink-soft);opacity:.55}
+.inp:focus{outline:none;border-bottom-color:var(--deep)}
+.inp:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+textarea.inp{font-family:var(--body);font-size:15px;line-height:1.55;resize:vertical;min-height:74px}
 
 .opts{display:grid;margin-top:2px}
-.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 0;cursor:pointer;border-top:1px solid rgba(168,148,107,.3)}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 0;cursor:pointer;border-top:1px solid var(--hair)}
 .opt:first-child{border-top:0}
 .opt input{
   appearance:none;-webkit-appearance:none;flex:none;
   width:15px;height:15px;margin-top:.28em;
-  border:1px solid var(--oro-lite);background:transparent;border-radius:0;cursor:pointer;
+  border:1px solid var(--accent);background:transparent;border-radius:0;cursor:pointer;
 }
-.opt input:checked{background:var(--crema);border-color:var(--crema);box-shadow:inset 0 0 0 3px var(--vino)}
-.opt input:focus-visible{outline:2px solid var(--oro-lite);outline-offset:3px}
+.opt input:checked{background:var(--deep);border-color:var(--deep);box-shadow:inset 0 0 0 3px var(--canvas)}
+.opt input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .opt-t{font-size:clamp(14.5px,1.1vw,16px);line-height:1.4}
 
-.preview{margin-top:22px;border:1px solid var(--rule-hi);background:rgba(220,221,216,.07);padding:16px 18px}
+.preview{margin-top:22px;border:1px solid var(--rule-hi);background:rgba(0,0,0,.03);padding:16px 18px}
 .preview .kicker{margin-bottom:9px}
 .preview p{font-size:14px;line-height:1.55;word-break:break-word}
 .write-send{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center}
-.write-hint{font-size:12.5px;color:var(--fg-soft);opacity:.8;max-width:34ch}
+.write-hint{font-size:12.5px;color:var(--fg-soft);opacity:.85;max-width:34ch}
 
 /* ============================================================
    BANDA · NOTA AL MARGEN (Medine.tech)
    ============================================================ */
-.note{border-top:1px solid var(--oro-deep);border-bottom:1px solid var(--oro-deep);padding:clamp(44px,6vw,86px) var(--pad)}
+.note{border-top:1px solid var(--accent);border-bottom:1px solid var(--accent);padding:clamp(44px,6vw,86px) var(--pad)}
 .note-inner{display:grid;grid-template-columns:1fr;gap:clamp(24px,3.2vw,52px);max-width:1180px}
 @media (min-width:940px){.note-inner{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}}
-.note-tag{display:inline-block;border-left:3px solid var(--vino);padding-left:11px;margin-bottom:16px}
+.note-tag{display:inline-block;border-left:3px solid var(--deep);padding-left:11px;margin-bottom:16px}
 .note-t{font-size:clamp(25px,3.5vw,44px);line-height:1.1;margin-bottom:16px;max-width:16ch}
-.note-p{max-width:46ch;font-size:clamp(14.5px,1.08vw,16px)}
+.note-p{max-width:46ch;font-size:clamp(14.5px,1.08vw,16px);color:var(--fg-soft)}
+.note-p b{color:var(--fg);font-weight:700}
 .note-p + .note-p{margin-top:12px}
-.note-sign{margin-top:22px;padding-top:14px;border-top:1px solid var(--oro-deep)}
-.note-sign a{font-weight:700}
+.note-sign{margin-top:22px;padding-top:14px;border-top:1px solid var(--accent)}
+.note-sign a{font-weight:700;color:var(--fg)}
 
 /* --- antes/después: toggle en JS vanilla, accesible con teclado --- */
-.ba{border:1px solid var(--oro-deep);background:rgba(220,221,216,.55)}
-.ba-switch{display:flex;border-bottom:1px solid var(--oro-deep)}
+.ba{border:1px solid var(--accent);background:rgba(0,0,0,.02)}
+.ba-switch{display:flex;border-bottom:1px solid var(--accent)}
 .ba-switch[hidden]{display:none}
 .ba-btn{
-  flex:1;padding:13px 10px;text-align:center;color:var(--tinta);
+  flex:1;padding:13px 10px;text-align:center;color:var(--ink);
   font-size:10.5px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;
-  opacity:.62;transition:background .25s ease,color .25s ease,opacity .25s ease;
+  opacity:.6;transition:background .25s ease,color .25s ease,opacity .25s ease;
 }
-.ba-btn + .ba-btn{border-left:1px solid var(--oro-deep)}
-.ba-btn[aria-pressed="true"]{background:var(--vino);color:var(--crema);opacity:1}
-.ba-btn:focus-visible{outline:2px solid var(--vino);outline-offset:-4px}
+.ba-btn + .ba-btn{border-left:1px solid var(--accent)}
+.ba-btn[aria-pressed="true"]{background:var(--deep);color:var(--canvas);opacity:1}
+.ba-btn:focus-visible{outline:2px solid var(--deep);outline-offset:-4px}
 .ba-panel{padding:clamp(18px,2.4vw,28px)}
-.ba-panel + .ba-panel{border-top:1px solid var(--oro-deep)}
+.ba-panel + .ba-panel{border-top:1px solid var(--accent)}
 .ba-panel[hidden]{display:none}
 .ba-state{margin-bottom:12px}
 .ba-url{
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  font-size:clamp(12.5px,1.5vw,15px);letter-spacing:-.01em;word-break:break-all;
-  padding:11px 13px;border:1px dashed var(--oro-deep);background:rgba(255,255,255,.42);margin-bottom:14px;
+  font-size:clamp(12.5px,1.5vw,15px);letter-spacing:-.01em;word-break:break-all;color:var(--ink);
+  padding:11px 13px;border:1px dashed var(--accent);background:rgba(255,255,255,.5);margin-bottom:14px;
 }
-.ba-url b{font-weight:700;color:var(--vino);background:rgba(147,23,23,.13);padding:0 2px}
-.ba-url s{color:rgba(42,20,22,.5)}
-.ba-card{border:1px solid rgba(42,20,22,.3);background:#fff;padding:13px 15px;display:flex;gap:11px;align-items:center}
+.ba-url b{font-weight:700;color:var(--deep);background:rgba(74,56,46,.12);padding:0 2px}
+.ba-url s{color:var(--ink-soft)}
+.ba-card{border:1px solid var(--hair);background:#fff;padding:13px 15px;display:flex;gap:11px;align-items:center;color:#2C231D}
 .ba-card .wa{flex:none;width:30px;height:30px;border-radius:50%;background:var(--verde-wa);display:grid;place-items:center}
 .ba-card .wa svg{width:17px;height:17px}
 .ba-card .txt{font-size:13.5px;line-height:1.35;min-width:0;word-break:break-word}
 .ba-card .txt em{display:block;font-style:normal;font-size:11px;opacity:.62;margin-top:2px}
-.ba-verdict{margin-top:13px;font-size:13.5px;line-height:1.5;display:flex;gap:9px;align-items:flex-start}
-.ba-verdict::before{content:"";flex:none;width:9px;height:9px;margin-top:.42em;border:1px solid var(--tinta)}
-.ba-verdict.good::before{background:var(--vino);border-color:var(--vino)}
-.ba-fallnote{padding:11px clamp(18px,2.4vw,28px);border-top:1px solid var(--oro-deep);font-size:12px;opacity:.78}
+.ba-verdict{margin-top:13px;font-size:13.5px;line-height:1.5;display:flex;gap:9px;align-items:flex-start;color:var(--fg-soft)}
+.ba-verdict::before{content:"";flex:none;width:9px;height:9px;margin-top:.42em;border:1px solid var(--ink)}
+.ba-verdict.good::before{background:var(--deep);border-color:var(--deep)}
+.ba-fallnote{padding:11px clamp(18px,2.4vw,28px);border-top:1px solid var(--accent);font-size:12px;color:var(--fg-soft)}
 .ba-fallnote[hidden]{display:none}
 
 /* ============================================================
-   COLOFÓN — cierre de dossier: índice numerado, datos y sello
+   COLOFÓN — banda deep: índice numerado, datos y sello
    ============================================================ */
 .colofon{padding:clamp(52px,7vw,104px) var(--pad) clamp(30px,4vw,48px)}
 .colofon-top{
@@ -476,35 +538,35 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
 .colofon-idx a{
   display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:4px 16px;align-items:baseline;
   padding:15px 0;border-top:1px solid var(--rule);text-decoration:none;
-  transition:padding-left .3s ease,color .3s ease;color:rgba(220,221,216,.84);
+  transition:padding-left .3s ease,color .3s ease;color:var(--on-deep-soft);
 }
 @media (min-width:700px){.colofon-idx a{grid-template-columns:3.2rem minmax(0,22ch) minmax(0,1fr)}}
-.colofon-idx a:hover{padding-left:8px;color:var(--crema)}
-.colofon-idx .n{font-family:var(--display);font-variation-settings:'opsz' 11;font-weight:600;font-size:13px;letter-spacing:.08em;color:var(--oro-lite)}
-.colofon-idx .t{font-family:var(--display);font-variation-settings:'opsz' 40;font-weight:400;font-size:clamp(18px,1.9vw,24px);line-height:1.2;letter-spacing:-.004em}
-.colofon-idx .d{font-size:12.5px;line-height:1.5;color:rgba(220,221,216,.7)}
+.colofon-idx a:hover{padding-left:8px;color:var(--canvas)}
+.colofon-idx .n{font-family:var(--display);font-weight:400;font-size:13px;letter-spacing:.08em;color:var(--accent-2)}
+.colofon-idx .t{font-family:var(--display);font-weight:400;font-size:clamp(18px,1.9vw,24px);line-height:1.2;letter-spacing:-.004em}
+.colofon-idx .d{font-size:12.5px;line-height:1.5;color:var(--on-deep-soft);opacity:.85}
 @media (min-width:700px){.colofon-idx .d{text-align:right}}
 
 .colofon-grid{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px);padding-top:clamp(26px,3.2vw,42px)}
 @media (min-width:760px){.colofon-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .colofon-h{margin-bottom:11px}
 .colofon-grid p{font-size:14.5px;line-height:1.6;color:var(--fg-soft)}
-.colofon-grid p a{text-decoration:none;border-bottom:1px solid rgba(220,221,216,.32)}
-.colofon-grid p a:hover{border-bottom-color:var(--crema)}
+.colofon-grid p a{text-decoration:none;border-bottom:1px solid rgba(244,238,230,.32)}
+.colofon-grid p a:hover{border-bottom-color:var(--canvas)}
 .socials{display:flex;flex-direction:column}
 .socials a{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding-left .3s ease}
 .socials a:first-child{border-top:1px solid var(--rule)}
 .socials a:hover{padding-left:7px}
-.socials svg{width:17px;height:17px;flex:none;color:var(--oro-lite)}
+.socials svg{width:17px;height:17px;flex:none;color:var(--accent-2)}
 .socials .h{font-size:14px}
-.socials .u{margin-left:auto;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--oro-lite)}
+.socials .u{margin-left:auto;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent-2)}
 
 .sello{
   margin-top:clamp(28px,3.6vw,48px);padding-top:16px;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
-  font-size:11.5px;line-height:1.6;color:rgba(220,221,216,.82);
+  font-size:11.5px;line-height:1.6;color:var(--on-deep-soft);
 }
-.sello a{color:var(--oro-lite);font-weight:700;text-decoration:none;border-bottom:1px solid var(--oro-lite)}
+.sello a{color:var(--accent-2);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-2)}
 
 /* ============================================================
    FAB WHATSAPP
@@ -512,7 +574,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
 .fab{
   position:fixed;right:16px;bottom:16px;z-index:70;
   width:54px;height:54px;border-radius:50%;background:var(--verde-wa);
-  display:grid;place-items:center;box-shadow:0 6px 22px rgba(20,6,7,.45);
+  display:grid;place-items:center;box-shadow:0 6px 22px rgba(44,35,29,.28);
   text-decoration:none;transition:transform .3s ease;
 }
 .fab:hover{transform:scale(1.06)}
@@ -520,23 +582,10 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
 @media (min-width:1024px){.fab{right:26px;bottom:26px}}
 
 /* ============================================================
-   TÉCNICA · SCROLL-DRIVEN ANIMATIONS (con fallback a IO)
+   REVEALS (IntersectionObserver como plomería)
    ============================================================ */
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
-/* fallback: IntersectionObserver añade .is-in */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
 .rv.is-in{opacity:1;transform:none}
-
-@supports (animation-timeline:view()){
-  .rv{transition:none;animation:rise both linear;animation-timeline:view();animation-range:entry 5% cover 24%}
-}
-@supports (animation-timeline:scroll()){
-  .rail-prog{animation:growY both linear;animation-timeline:scroll(root block)}
-  .topbar-prog{animation:growX both linear;animation-timeline:scroll(root block)}
-}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -544,8 +593,8 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important;
   }
-  /* los reveals se apagan; el hilo de progreso sigue al scroll y no es motion autónoma */
-  .rv{opacity:1!important;transform:none!important;animation:none!important}
+  .rv{opacity:1!important;transform:none!important}
+  .reel:nth-child(2),.reel:nth-child(3){transform:none!important}
   .swash path{stroke-dasharray:none!important;stroke-dashoffset:0!important}
   .cta:hover,.socials a:hover,.colofon-idx a:hover{transform:none;padding-left:0}
 }
@@ -563,11 +612,19 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     <li><a href="#hero" data-idx="hero"><span class="n">00</span><span class="t">Inicio</span></a></li>
     <li><a href="#c01" data-idx="c01"><span class="n">01</span><span class="t">Quién soy</span></a></li>
     <li><a href="#c02" data-idx="c02"><span class="n">02</span><span class="t">Cómo ayudo</span></a></li>
-    <li><a href="#c03" data-idx="c03"><span class="n">03</span><span class="t">En mis palabras</span></a></li>
-    <li><a href="#c04" data-idx="c04"><span class="n">04</span><span class="t">Escríbeme</span></a></li>
+    <li><a href="#c03" data-idx="c03"><span class="n">03</span><span class="t">En movimiento</span></a></li>
+    <li><a href="#c04" data-idx="c04"><span class="n">04</span><span class="t">En mis palabras</span></a></li>
+    <li><a href="#c05" data-idx="c05"><span class="n">05</span><span class="t">Escríbeme</span></a></li>
   </ul>
   <div class="rail-foot">
-    <a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
+    <div class="tema" role="group" aria-label="Tema de color">
+      <span class="tema-lab">Tema</span>
+      <div class="tema-set">
+        <button type="button" class="tema-btn" data-tema-set="nude" aria-pressed="true" aria-label="Tema Nude y bronce"><span class="sw sw-nude" aria-hidden="true"></span>Nude</button>
+        <button type="button" class="tema-btn" data-tema-set="rose" aria-pressed="false" aria-label="Tema Rosé suave"><span class="sw sw-rose" aria-hidden="true"></span>Rosé</button>
+      </div>
+    </div>
+    <a class="rail-wa" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
       Escríbeme
     </a>
@@ -581,6 +638,10 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     <span class="n" id="mNum">00</span>
     <span class="t" id="mLab">Dayrrig Duarte</span>
   </div>
+  <div class="topbar-tema" role="group" aria-label="Tema de color">
+    <button type="button" class="ttema-btn" data-tema-set="nude" aria-pressed="true" aria-label="Tema Nude y bronce"><span class="sw sw-nude" aria-hidden="true"></span></button>
+    <button type="button" class="ttema-btn" data-tema-set="rose" aria-pressed="false" aria-label="Tema Rosé suave"><span class="sw sw-rose" aria-hidden="true"></span></button>
+  </div>
   <a class="topbar-wa" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
     WhatsApp
@@ -590,23 +651,24 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
 <main class="page">
 
   <!-- ============ HERO · 00 ============ -->
-  <section class="hero s-vino" id="hero" data-chap="00" data-label="Inicio">
-    <p class="kicker hero-eyebrow">Mentora de marca personal · Barcelona / Lechería, Anzoátegui</p>
+  <section class="hero s-deep" id="hero" data-chap="00" data-label="Inicio">
+    <p class="kicker hero-eyebrow">Estratega de Imagen Internacional · Barcelona / Lechería, Anzoátegui</p>
 
     <div class="hero-grid">
       <figure class="hero-figure">
         <img src="./assets/dayrrig-portada.jpg" width="480" height="700"
-             alt="Retrato editorial de Dayrrig Duarte con blazer color verde azulado sobre fondo vino, con un trazo de pincel blanco a la altura del hombro." fetchpriority="high" decoding="async">
+             alt="Retrato editorial de Dayrrig Duarte con blazer color verde azulado, con un trazo de pincel blanco a la altura del hombro." fetchpriority="high" decoding="async">
+        <figcaption class="hero-cap">Dayrrig Duarte · Estratega de imagen certificada</figcaption>
       </figure>
 
       <div class="hero-copy">
         <h1>
-          <span class="ln">Brilla con tu piel</span>
-          <span class="ln">y construye un <span class="swashword">negocio<svg class="swash" viewBox="0 0 600 60" fill="none" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path class="s1" d="M8 40C96 17 190 10 286 17c96 7 198 17 306 1"/><path class="s2" d="M22 51C124 32 226 27 320 31c94 4 178 12 258 1"/><path class="s3" d="M340 56c76-5 148-8 214-16"/></svg></span></span>
-          <span class="ln">digital rentable.</span>
+          <span class="ln">Tu <span class="swashword">imagen<svg class="swash" viewBox="0 0 600 60" fill="none" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path class="s1" d="M8 40C96 17 190 10 286 17c96 7 198 17 306 1"/><path class="s2" d="M22 51C124 32 226 27 320 31c94 4 178 12 258 1"/><path class="s3" d="M340 56c76-5 148-8 214-16"/></svg></span></span>
+          <span class="ln">y tu bienestar,</span>
+          <span class="ln">con estrategia.</span>
         </h1>
 
-        <p class="hero-lead">Soy Dayrrig Duarte: abogada de origen, Estratega de Imagen Internacional certificada y mentora de marca personal. Acompaño a mujeres que quieren construir un negocio propio dentro de la belleza, con su nombre por delante.</p>
+        <p class="hero-lead">Soy Dayrrig Duarte. Ayudo a mujeres a vestir su historia y cuidar su bienestar, con la mano de una estratega de imagen certificada y diez años vistiendo a mujeres que necesitaban destacar.</p>
 
         <div class="hero-actions">
           <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
@@ -618,15 +680,15 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
       </div>
     </div>
 
-    <p class="kicker hero-strip"><span>Estratega de Imagen Internacional</span><span>Diez años vistiendo mujeres influyentes</span><span>Comunidad de mujeres en Farmasi</span></p>
+    <p class="kicker hero-strip"><span>Estratega de Imagen Internacional</span><span>Diez años vistiendo mujeres</span><span>Imagen &amp; bienestar</span></p>
   </section>
 
-  <!-- ============ 01 · QUIÉN SOY (respiro en crema) ============ -->
-  <section class="band s-crema" id="c01" data-chap="01" data-label="Quién soy">
+  <!-- ============ 01 · QUIÉN SOY ============ -->
+  <section class="band s-canvas" id="c01" data-chap="01" data-label="Quién soy">
     <header class="chap-head">
       <p class="chap-n" aria-hidden="true">01</p>
       <h2 class="chap-t d-lg">Quién soy</h2>
-      <p class="chap-note">No llegué a la belleza por casualidad. Llegué por siete decisiones seguidas, y la última fue la más difícil.</p>
+      <p class="chap-note">No llegué a la imagen por casualidad. Llegué por siete decisiones seguidas, y la última fue la más difícil.</p>
     </header>
 
     <div class="who">
@@ -652,7 +714,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
           </li>
           <li class="step rv">
             <span class="step-n" aria-hidden="true">04</span>
-            <div><span class="step-k">Diez años</span><p class="step-t d-md">Vistiendo mujeres influyentes</p>
+            <div><span class="step-k">Diez años</span><p class="step-t d-md">Vistiendo a mujeres que necesitaban destacar</p>
               <p class="step-d">Una década asesorando a mujeres y a marcas dentro y fuera de Venezuela.</p></div>
           </li>
           <li class="step rv">
@@ -666,8 +728,8 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
           </li>
           <li class="step rv">
             <span class="step-n" aria-hidden="true">07</span>
-            <div><span class="step-k">Hoy</span><p class="step-t d-md">Farmasi, y una comunidad de mujeres</p>
-              <p class="step-d">Mentora de marca personal y líder de una comunidad de mujeres dentro de la red global de Farmasi.</p></div>
+            <div><span class="step-k">Hoy</span><p class="step-t d-md">Asesoría de imagen y bienestar</p>
+              <p class="step-d">Acompaño a mujeres en su imagen y su bienestar. Farmasi es el lado de productos de belleza de mi día a día — parte de mi historia, no un catálogo que persigo.</p></div>
           </li>
         </ol>
 
@@ -676,7 +738,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
         </blockquote>
 
         <blockquote class="rv" style="margin-top:clamp(30px,3.6vw,52px)">
-          <p class="pullquote-sm d-md">«Me uní a la red global de Farmasi, el lugar donde las mujeres diseñamos nuestro negocio para que nuestra vida vaya primero.»</p>
+          <p class="pullquote-sm d-md">«Hoy visto historias, no sólo cuerpos; y cuido el bienestar que sostiene esa imagen.»</p>
           <p class="kicker attrib">Dayrrig Duarte</p>
         </blockquote>
       </div>
@@ -684,30 +746,30 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
   </section>
 
   <!-- ============ 02 · CÓMO PUEDO AYUDARTE ============ -->
-  <section class="band s-vino" id="c02" data-chap="02" data-label="Cómo puedo ayudarte">
+  <section class="band s-surface" id="c02" data-chap="02" data-label="Cómo puedo ayudarte">
     <header class="chap-head">
       <p class="chap-n" aria-hidden="true">02</p>
       <h2 class="chap-t d-lg">Cómo puedo ayudarte</h2>
-      <p class="chap-note">Dos caminos. Los dos empiezan con una conversación, no con un catálogo.</p>
+      <p class="chap-note">Dos vías. Las dos empiezan con una conversación, no con un catálogo.</p>
     </header>
 
     <ol class="ways">
       <li class="way rv">
         <span class="way-n" aria-hidden="true">01</span>
         <div>
-          <h3 class="way-t d-lg">Construye tu propio negocio de belleza</h3>
-          <p class="way-d">Te cuento cómo puedes empezar a diseñar tu propio negocio de belleza junto a mí, dentro de la comunidad de mujeres que acompaño.</p>
-          <p class="way-d">Para ti si quieres ingresos propios y un lugar donde tu vida vaya primero.</p>
+          <h3 class="way-t d-lg">Estilismo &amp; imagen</h3>
+          <p class="way-d">Asesoría de imagen: cómo vestir, cómo presentarte, la coherencia visual de tu marca personal. Diez años vistiendo a mujeres que necesitaban que las vieran.</p>
+          <p class="way-d">Para ti si quieres que tu forma de mostrarte diga, sin decirlo, quién eres.</p>
         </div>
         <div class="way-cta">
-          <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina%20web.%20Quiero%20construir%20mi%20negocio%20de%20belleza%20junto%20a%20ti." target="_blank" rel="noopener">Quiero construir mi negocio</a>
+          <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina%20web.%20Quiero%20asesor%C3%ADa%20de%20imagen." target="_blank" rel="noopener">Quiero asesoría de imagen</a>
         </div>
       </li>
       <li class="way rv">
         <span class="way-n" aria-hidden="true">02</span>
         <div>
-          <h3 class="way-t d-lg">Diseña tu rutina de belleza y bienestar</h3>
-          <p class="way-d">Te ayudo a diseñar tu rutina de belleza y bienestar, pensada para tu piel y para tu día real.</p>
+          <h3 class="way-t d-lg">Bienestar &amp; rutina</h3>
+          <p class="way-d">Diseñamos tu rutina de belleza y bienestar, pensada para tu piel y para tu día real.</p>
           <p class="way-d">Para ti si quieres verte y sentirte bien sin improvisar cada mañana.</p>
         </div>
         <div class="way-cta">
@@ -723,23 +785,66 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     </figure>
 
     <div class="nofee rv">
-      <p>En esta página no hay lista de precios, y es a propósito: cada camino se conversa. Escríbeme por WhatsApp y vemos cuál de los dos es el tuyo.</p>
+      <p>En esta página no hay lista de precios, y es a propósito: cada vía se conversa. Escríbeme por WhatsApp y vemos cuál de las dos es la tuya.</p>
     </div>
   </section>
 
-  <!-- ============ 03 · EN MIS PALABRAS ============ -->
-  <section class="band s-vino" id="c03" data-chap="03" data-label="En mis palabras">
+  <!-- ============ 03 · EN MOVIMIENTO (video) ============ -->
+  <section class="band s-canvas" id="c03" data-chap="03" data-label="En movimiento">
     <header class="chap-head">
       <p class="chap-n" aria-hidden="true">03</p>
+      <h2 class="chap-t d-lg">En movimiento</h2>
+      <p class="chap-note">Tres piezas cortas: el estilismo, la presencia y el bienestar, en su propia voz.</p>
+    </header>
+
+    <ul class="reels">
+      <li class="reel rv">
+        <div class="reel-frame">
+          <video class="reel-vid" controls playsinline preload="metadata" width="720" height="1280"
+                 poster="./assets/dayrrig-reel-1.jpg"
+                 aria-label="Video de Dayrrig Duarte mostrando un look completo en la calle.">
+            <source src="./assets/dayrrig-reel-1.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="reel-tag"><span class="reel-n" aria-hidden="true">I</span> Estilismo</p>
+      </li>
+      <li class="reel rv">
+        <div class="reel-frame">
+          <video class="reel-vid" controls playsinline preload="metadata" width="720" height="1280"
+                 poster="./assets/dayrrig-reel-2.jpg"
+                 aria-label="Video de Dayrrig Duarte hablando a cámara sobre presencia y profesionalismo.">
+            <source src="./assets/dayrrig-reel-2.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="reel-tag"><span class="reel-n" aria-hidden="true">II</span> Presencia</p>
+      </li>
+      <li class="reel rv">
+        <div class="reel-frame">
+          <video class="reel-vid" controls playsinline preload="metadata" width="720" height="1280"
+                 poster="./assets/dayrrig-reel-3.jpg"
+                 aria-label="Video de Dayrrig Duarte sobre bienestar y mentalidad.">
+            <source src="./assets/dayrrig-reel-3.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="reel-tag"><span class="reel-n" aria-hidden="true">III</span> Bienestar</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 04 · EN MIS PALABRAS (banda deep) ============ -->
+  <section class="band s-deep" id="c04" data-chap="04" data-label="En mis palabras">
+    <header class="chap-head">
+      <p class="chap-n" aria-hidden="true">04</p>
       <h2 class="chap-t d-lg">En mis palabras</h2>
-      <p class="chap-note">Lo que le digo a las mujeres que quieren vender sin sentir que están vendiendo.</p>
+      <p class="chap-note">Lo que le digo a las mujeres que quieren mostrarse sin sentir que están de más.</p>
     </header>
 
     <figure class="words-fig rv">
-      <div class="duo">
-        <img src="./assets/dayrrig-calle.jpg" width="480" height="851" loading="lazy" decoding="async"
-             alt="Dayrrig Duarte de cuerpo entero caminando por una calle colonial venezolana de fachadas de colores.">
-      </div>
+      <img src="./assets/dayrrig-calle.jpg" width="480" height="851" loading="lazy" decoding="async"
+           alt="Dayrrig Duarte de cuerpo entero caminando por una calle colonial venezolana de fachadas de colores.">
     </figure>
 
     <div class="words">
@@ -749,27 +854,19 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
       </blockquote>
       <blockquote class="word word--lg word--right rv">
         <span class="word-n" aria-hidden="true">II</span>
-        <p class="q d-xl">Vender es servir a quien ya decidió cambiar</p>
+        <p class="q d-xl">Te enseñaron que la belleza es frívola</p>
       </blockquote>
       <blockquote class="word word--md rv">
         <span class="word-n" aria-hidden="true">III</span>
-        <p class="q d-lg">Las networkers que escalan no persiguen clientas. Construyen autoridad</p>
-      </blockquote>
-      <blockquote class="word word--lg word--right rv">
-        <span class="word-n" aria-hidden="true">IV</span>
-        <p class="q d-xl">Facturar bien no te salva de la soledad empresarial</p>
-      </blockquote>
-      <blockquote class="word word--md rv">
-        <span class="word-n" aria-hidden="true">V</span>
-        <p class="q d-lg">Te enseñaron que la belleza es frívola</p>
+        <p class="q d-lg">Vender es servir a quien ya decidió cambiar</p>
       </blockquote>
     </div>
   </section>
 
-  <!-- ============ 04 · ESCRÍBEME ============ -->
-  <section class="band s-vino" id="c04" data-chap="04" data-label="Escríbeme">
+  <!-- ============ 05 · ESCRÍBEME ============ -->
+  <section class="band s-canvas" id="c05" data-chap="05" data-label="Escríbeme">
     <header class="chap-head">
-      <p class="chap-n" aria-hidden="true">04</p>
+      <p class="chap-n" aria-hidden="true">05</p>
       <h2 class="chap-t d-lg">Escríbeme</h2>
       <p class="chap-note">Sin formularios que se pierden: esto abre WhatsApp con tu mensaje ya escrito.</p>
     </header>
@@ -780,7 +877,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
         <p class="lead">Al enviar se abre tu WhatsApp con el mensaje redactado — solo tienes que darle a enviar. Así me llega completo y directo, ordenado desde el primer momento, en vez de perderse entre mensajes sueltos.</p>
         <div class="preview" aria-live="polite">
           <p class="kicker">Así me llegará</p>
-          <p id="prev">Hola Dayrrig, vengo de tu página web. Quiero construir mi negocio de belleza junto a ti.</p>
+          <p id="prev">Hola Dayrrig, vengo de tu página web. Quiero asesoría de imagen.</p>
         </div>
       </div>
 
@@ -795,8 +892,8 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
             <legend>¿Qué te trae?</legend>
             <div class="opts">
               <label class="opt">
-                <input type="radio" name="via" value="negocio" checked>
-                <span class="opt-t">Quiero construir mi negocio de belleza junto a ti</span>
+                <input type="radio" name="via" value="imagen" checked>
+                <span class="opt-t">Quiero asesoría de imagen</span>
               </label>
               <label class="opt">
                 <input type="radio" name="via" value="rutina">
@@ -865,12 +962,12 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
   </aside>
 
   <!-- ============ COLOFÓN ============ -->
-  <footer class="colofon s-vino">
+  <footer class="colofon s-deep">
     <div class="colofon-top">
       <div>
         <p class="kicker">Colofón</p>
         <p class="colofon-mark d-md">Dayrrig Duarte</p>
-        <p class="colofon-claim">Mentora de marca personal · Estratega de Imagen Internacional certificada. Si llegaste hasta aquí, ya decidiste algo.</p>
+        <p class="colofon-claim">Estratega de imagen y bienestar · certificada internacional. Si llegaste hasta aquí, ya decidiste algo.</p>
       </div>
       <a class="cta" href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina.%20Quiero%20empezar%20aqu%C3%AD." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.33-1.4a9.83 9.83 0 0 0 4.71 1.2h.01c5.44 0 9.87-4.43 9.87-9.87S17.48 2 12.04 2Zm0 17.94h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.15 8.15 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.2 8.2Z"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
@@ -880,10 +977,11 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
 
     <nav class="colofon-idx" aria-label="Índice del dossier">
       <a href="#hero"><span class="n">00</span><span class="t">Inicio</span><span class="d">Barcelona / Lechería, Anzoátegui</span></a>
-      <a href="#c01"><span class="n">01</span><span class="t">Quién soy</span><span class="d">Derecho, moda, imagen, PLURAL, Farmasi</span></a>
-      <a href="#c02"><span class="n">02</span><span class="t">Cómo puedo ayudarte</span><span class="d">Dos caminos, sin catálogo</span></a>
-      <a href="#c03"><span class="n">03</span><span class="t">En mis palabras</span><span class="d">Cinco frases textuales</span></a>
-      <a href="#c04"><span class="n">04</span><span class="t">Escríbeme</span><span class="d">WhatsApp con el mensaje ya escrito</span></a>
+      <a href="#c01"><span class="n">01</span><span class="t">Quién soy</span><span class="d">Derecho, moda, imagen, PLURAL</span></a>
+      <a href="#c02"><span class="n">02</span><span class="t">Cómo puedo ayudarte</span><span class="d">Estilismo · bienestar, sin catálogo</span></a>
+      <a href="#c03"><span class="n">03</span><span class="t">En movimiento</span><span class="d">Tres piezas en su propia voz</span></a>
+      <a href="#c04"><span class="n">04</span><span class="t">En mis palabras</span><span class="d">Tres frases textuales</span></a>
+      <a href="#c05"><span class="n">05</span><span class="t">Escríbeme</span><span class="d">WhatsApp con el mensaje ya escrito</span></a>
     </nav>
 
     <div class="colofon-grid">
@@ -893,7 +991,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
       </div>
       <div>
         <p class="kicker colofon-h">Escríbeme</p>
-        <p><a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina." target="_blank" rel="noopener">+58 424 849 4014</a><br>Mentora de marca personal</p>
+        <p><a href="https://wa.me/584248494014?text=Hola%20Dayrrig%2C%20vengo%20de%20tu%20p%C3%A1gina." target="_blank" rel="noopener">+58 424 849 4014</a><br>Estratega de imagen y bienestar</p>
       </div>
       <div>
         <p class="kicker colofon-h">Redes</p>
@@ -929,10 +1027,24 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
   "use strict";
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO  = 'IntersectionObserver' in window;
-  var svdView   = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'));
-  var svdScroll = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()'));
 
-  /* ---------- TÉCNICA 1 · swash SVG line-drawing (stroke-dashoffset) ----------
+  /* ---------- TÉCNICA 1 · toggle de tema (data-tema + localStorage) ---------- */
+  var temaBtns = Array.prototype.slice.call(document.querySelectorAll('[data-tema-set]'));
+  function setTema(t){
+    if (t !== 'nude' && t !== 'rose') t = 'nude';
+    document.documentElement.setAttribute('data-tema', t);
+    temaBtns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-tema-set') === t));
+    });
+    try { localStorage.setItem('dd-tema', t); } catch(e){}
+  }
+  temaBtns.forEach(function(b){
+    b.addEventListener('click', function(){ setTema(b.getAttribute('data-tema-set')); });
+  });
+  /* sincroniza los botones con el tema aplicado en el <head> */
+  setTema(document.documentElement.getAttribute('data-tema') || 'nude');
+
+  /* ---------- TÉCNICA 2 · swash SVG line-drawing (stroke-dashoffset) ----------
      Sin JS o con reduced-motion el trazo queda dibujado por defecto. */
   var swash = document.querySelector('.swash');
   if (swash && !reduce) {
@@ -947,7 +1059,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     });
     var drawSwash = function(){
       paths.forEach(function(p, i){
-        setTimeout(function(){ p.style.strokeDashoffset = '0'; }, 140 + i*170);
+        setTimeout(function(){ p.style.strokeDashoffset = '0'; }, 240 + i*170);
       });
     };
     if (hasIO) {
@@ -958,25 +1070,22 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     } else { drawSwash(); }
   }
 
-  /* ---------- TÉCNICA 2 · scroll-driven animations ----------
-     Con soporte de animation-timeline el CSS se encarga solo.
-     Sin soporte, IntersectionObserver y un listener de scroll hacen de plomería. */
-  if (!svdView) {
-    if (hasIO) {
-      var inObs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting){ e.target.classList.add('is-in'); inObs.unobserve(e.target); }
-        });
-      }, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
-      document.querySelectorAll('.rv').forEach(function(el){ inObs.observe(el); });
-    } else {
-      document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('is-in'); });
-    }
+  /* ---------- TÉCNICA 3 · reveals con IntersectionObserver (plomería) ---------- */
+  if (!reduce && hasIO) {
+    var inObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('is-in'); inObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.rv').forEach(function(el){ inObs.observe(el); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('is-in'); });
   }
 
+  /* ---------- Hilo de progreso (rail + barra móvil) ---------- */
   var railProg = document.getElementById('railProg');
   var topProg  = document.getElementById('topProg');
-  if (!svdScroll && (railProg || topProg)) {
+  if (railProg || topProg) {
     var ticking = false;
     var update = function(){
       var h = document.documentElement.scrollHeight - window.innerHeight;
@@ -1019,8 +1128,20 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     setActive('hero','00','Dayrrig Duarte');
   }
 
-  /* ---------- Antes / después: toggle accesible con teclado ----------
-     Sin JS quedan los dos paneles apilados con su nota explicativa. */
+  /* ---------- Video: ocultar el slot cuyo archivo no cargue ---------- */
+  Array.prototype.slice.call(document.querySelectorAll('.reel-vid')).forEach(function(v){
+    v.addEventListener('error', function(){
+      var li = v.closest('.reel');
+      if (li) li.style.display = 'none';
+    });
+    var src = v.querySelector('source');
+    if (src) src.addEventListener('error', function(){
+      var li = v.closest('.reel');
+      if (li) li.style.display = 'none';
+    });
+  });
+
+  /* ---------- Antes / después: toggle accesible con teclado ---------- */
   var baSwitch   = document.getElementById('baSwitch');
   var baHoy      = document.getElementById('baHoy');
   var baFix      = document.getElementById('baFix');
@@ -1054,7 +1175,7 @@ textarea.inp{font-family:var(--body);font-variation-settings:normal;font-size:15
     var viaEl = form.querySelector('input[name="via"]:checked');
     var via = viaEl && viaEl.value === 'rutina'
       ? 'Quiero diseñar mi rutina de belleza y bienestar.'
-      : 'Quiero construir mi negocio de belleza junto a ti.';
+      : 'Quiero asesoría de imagen.';
     var msg = name
       ? 'Hola Dayrrig, soy ' + name + '. Vengo de tu página web. ' + via
       : 'Hola Dayrrig, vengo de tu página web. ' + via;
