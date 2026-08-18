@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Análisis de presencia pública — Dra. Ricnia Vizcaino | Medine.tech</title>
+<meta name="description" content="Análisis de la presencia pública de la consulta de nefrología infantil de la Dra. Ricnia Vizcaino, con un prototipo de la sección de citas.">
+<meta property="og:title" content="Análisis de presencia pública — Dra. Ricnia Vizcaino">
+<meta property="og:description" content="Qué encontramos en su presencia pública y un prototipo de la sección de citas.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FAF7F2'/%3E%3Crect x='24' y='30' width='52' height='8' fill='%231F6F6B'/%3E%3Crect x='24' y='46' width='52' height='8' fill='%231F6F6B' opacity='.55'/%3E%3Crect x='24' y='62' width='30' height='8' fill='%231F6F6B' opacity='.28'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Commissioner:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#FAF7F2; --papel2:#F2EDE5; --tinta:#2A2724; --sec:#5E5850;
+  --regla:#DED6C9; --teal:#1F6F6B; --menta:#CDE5DE; --alerta:#9A5B2E;
+  --serif:'Literata',Georgia,serif; --sans:'Commissioner',system-ui,sans-serif;
+  --mem:58px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:var(--serif); font-size:17px; line-height:1.68;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{margin:0; line-height:1.18; font-weight:600}
+p{margin:0 0 1.05em}
+a{color:inherit}
+.wrap{width:min(880px,100% - 2.2rem); margin-inline:auto}
+.lbl{font-family:var(--sans); font-weight:600; font-size:.66rem; letter-spacing:.19em; text-transform:uppercase; color:var(--sec)}
+:focus-visible{outline:3px solid var(--teal); outline-offset:3px}
+
+/* ---------- MEMBRETE (nav) ---------- */
+.membrete{
+  position:sticky; top:0; z-index:60; min-height:var(--mem);
+  background:var(--papel); border-bottom:1px solid var(--tinta);
+  display:flex; align-items:center;
+}
+.membrete-in{
+  width:min(880px,100% - 2.2rem); margin-inline:auto;
+  display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; padding:.6rem 0;
+}
+.membrete .doc{font-family:var(--sans); font-weight:600; font-size:.66rem; letter-spacing:.17em; text-transform:uppercase; color:var(--teal)}
+.membrete .para{font-family:var(--sans); font-size:.78rem; color:var(--sec)}
+.membrete .de{margin-left:auto; font-family:var(--sans); font-size:.7rem; color:var(--sec); white-space:nowrap}
+
+/* ---------- ENCABEZADO ---------- */
+.cabeza{padding:clamp(2.6rem,7vw,4.4rem) 0 clamp(1.6rem,4vw,2.4rem)}
+h1{font-size:clamp(2rem,6.2vw,3.35rem); letter-spacing:-.018em}
+.dest{font-family:var(--sans); font-size:.94rem; color:var(--sec); margin-top:1rem}
+.resumen{
+  margin-top:1.9rem; padding:1.35rem 1.3rem; background:var(--papel2);
+  border-left:4px solid var(--teal); font-size:1.04rem;
+}
+.resumen b{font-weight:600}
+
+/* ---------- HALLAZGOS ---------- */
+.seccion{padding:clamp(2.4rem,6vw,3.6rem) 0; border-top:1px solid var(--regla); scroll-margin-top:calc(var(--mem) + 16px)}
+h2{font-size:clamp(1.45rem,4.2vw,2.05rem); letter-spacing:-.012em}
+.lead{color:var(--sec); max-width:60ch; margin-top:.8rem}
+
+.hallazgo{display:grid; gap:.7rem; padding:1.5rem 0; border-bottom:1px solid var(--regla)}
+.hallazgo:last-of-type{border-bottom:0}
+.h-top{display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap}
+.h-num{font-family:var(--sans); font-weight:600; font-size:.78rem; color:var(--teal)}
+.h-tipo{font-family:var(--sans); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; padding:.2rem .5rem; border:1px solid var(--regla); color:var(--sec)}
+.h-tipo.bien{color:var(--teal); border-color:var(--teal)}
+.h-tipo.mejora{color:var(--alerta); border-color:var(--alerta)}
+.hallazgo h3{font-size:1.16rem}
+.hallazgo p{margin:0; color:var(--sec); font-size:1rem}
+.cita{
+  margin-top:.5rem; padding:.75rem .95rem; background:var(--papel2);
+  font-family:var(--sans); font-size:.88rem; color:var(--tinta);
+}
+.cita span{display:block; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sec); margin-bottom:.32rem}
+
+/* ---------- FIRMA: franja horaria ---------- */
+.proto{background:var(--papel2); border:1px solid var(--tinta); padding:clamp(1.4rem,3.6vw,2rem); margin-top:2rem}
+.proto > .lbl{display:block; margin-bottom:.9rem}
+.franja{margin-top:1.3rem; overflow-x:auto; scrollbar-width:thin; padding-bottom:.4rem}
+.franja-grid{display:grid; grid-template-columns:auto repeat(5,minmax(56px,1fr)); gap:3px; min-width:360px}
+.fcell{font-family:var(--sans); font-size:.7rem; display:flex; align-items:center; justify-content:center; padding:.45rem .2rem}
+.fcell.dia{font-weight:600; font-size:.64rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sec)}
+.fcell.hora{justify-content:flex-end; padding-right:.6rem; color:var(--sec); font-size:.66rem; white-space:nowrap}
+.slot{
+  background:var(--menta); border:1px solid transparent; cursor:pointer; color:var(--tinta);
+  font-family:var(--sans); font-size:.68rem; padding:.62rem .2rem; transition:background .15s ease,color .15s ease;
+}
+.slot:hover{background:#B4D8CF}
+.slot[aria-pressed="true"]{background:var(--teal); color:#fff; border-color:var(--teal)}
+.slot[aria-pressed="true"]::after{content:" ✓"}
+.franja-nota{font-family:var(--sans); font-size:.78rem; color:var(--sec); margin-top:.7rem}
+
+.previa{margin-top:1.4rem; padding:1.05rem 1.1rem; background:var(--papel); border:1px dashed var(--tinta); font-size:.99rem}
+.previa .lbl{display:block; margin-bottom:.45rem}
+.enviar{
+  display:inline-block; margin-top:1.2rem; background:var(--teal); color:#fff; text-decoration:none;
+  padding:.95rem 1.7rem; font-family:var(--sans); font-weight:600; font-size:.76rem;
+  letter-spacing:.13em; text-transform:uppercase; border-radius:2px;
+}
+.enviar:hover,.enviar:focus-visible{background:#175753}
+
+/* ---------- PIE DE CARTA ---------- */
+.pie{margin-top:clamp(2.4rem,6vw,3.6rem); border-top:3px double var(--tinta); padding:2.2rem 0 1.6rem}
+.firma-bloque{display:grid; gap:1.4rem}
+.firma-bloque .lbl{display:block; margin-bottom:.35rem}
+.redes{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.7rem}
+.red{display:inline-flex; align-items:center; gap:.45rem; padding:.55rem .9rem; border:1px solid var(--regla); text-decoration:none; font-family:var(--sans); font-size:.72rem; color:var(--tinta)}
+.red:hover,.red:focus-visible{border-color:var(--tinta)}
+.red svg{width:14px; height:14px}
+.sello{margin-top:1.8rem; font-family:var(--sans); font-size:.72rem; color:var(--sec); line-height:1.7}
+.sello a{color:var(--tinta)}
+
+.fab{position:fixed; right:16px; bottom:16px; z-index:70; width:56px; height:56px; border-radius:50%; background:#25D366; display:grid; place-items:center; box-shadow:0 6px 18px rgba(42,39,36,.3)}
+.fab svg{width:29px; height:29px}
+
+@media (min-width:760px){
+  .firma-bloque{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<div class="membrete">
+  <div class="membrete-in">
+    <span class="doc">Análisis de presencia pública</span>
+    <span class="para">Preparado para la Dra. Ricnia Vizcaino</span>
+    <span class="de">Medine.tech</span>
+  </div>
+</div>
+
+<header class="cabeza wrap" id="top">
+  <p class="lbl">Nefrología infantil · Lechería, Anzoátegui</p>
+  <h1>Lo que encontramos al buscar su consulta como lo haría una familia</h1>
+  <p class="dest">Este documento no es un sitio web. Es el análisis de lo que hoy es visible públicamente de su consulta, y un prototipo de la única parte que proponemos resolver primero: cómo se agenda.</p>
+  <div class="resumen">
+    <b>En una línea:</b> su credencial es de las más fuertes del estado y su horario ya está publicado — pero ambos viven donde una familia derivada no los encuentra sin desplazarse por el feed.
+  </div>
+</header>
+
+<main>
+<section class="seccion wrap" id="hallazgos">
+  <h2>Tres hallazgos</h2>
+  <p class="lead">Todo lo que sigue es observable desde su perfil público, sin iniciar sesión. No usamos ninguna información privada.</p>
+
+  <article class="hallazgo">
+    <div class="h-top"><span class="h-num">01</span><span class="h-tipo mejora">A mejorar</span></div>
+    <h3>Su credencial más fuerte se corta antes de leerse</h3>
+    <p>Su biografía declara haber sido Presidenta de la Sociedad Venezolana de Puericultura y Pediatría en Anzoátegui entre 2009 y 2013, y pertenecer a una comisión científica nacional. Instagram corta la biografía y esa segunda línea queda detrás de un «más». Para una familia que llega derivada por otro médico, ese es justamente el dato que buscaba.</p>
+    <div class="cita"><span>Visible sin desplegar</span>Nefrólogo Infantil / Pediatra Puericultor · Ex Presidenta SVPP Anz 2009–2013 · Miembro comisión científica nacional de la…</div>
+  </article>
+
+  <article class="hallazgo">
+    <div class="h-top"><span class="h-num">02</span><span class="h-tipo mejora">A mejorar</span></div>
+    <h3>Su horario existe, pero es una imagen</h3>
+    <p>El horario de atención está publicado como una pieza gráfica en el feed. Eso significa que no se puede copiar, no aparece en buscadores, y baja de posición cada vez que publica algo nuevo. Una madre que lo vio hace tres semanas tiene que volver a buscarlo desplazándose.</p>
+    <div class="cita"><span>Publicado en su feed</span>Horario de atención: 8:00 am – 6:00 pm · Lunes a Viernes · Consulta Clínicas</div>
+  </article>
+
+  <article class="hallazgo">
+    <div class="h-top"><span class="h-num">03</span><span class="h-tipo bien">Ya funciona</span></div>
+    <h3>Su enlace de WhatsApp está bien resuelto</h3>
+    <p>El enlace de su biografía abre WhatsApp con un mensaje ya escrito. Eso está bien hecho y es más de lo que hace la mayoría. Lo único que le falta es contexto: llega sin decir qué necesita esa familia ni cuándo puede venir, así que la conversación empieza por preguntarlo.</p>
+    <div class="cita"><span>Mensaje que se envía hoy</span>«Hola Doctora Ricnia, me gustaría saber si tiene disponibilidad para consulta»</div>
+  </article>
+</section>
+
+<section class="seccion wrap" id="prototipo">
+  <h2>Prototipo: la franja horaria</h2>
+  <p class="lead">Su horario ya publicado, convertido en algo que la familia puede tocar. Elige cuándo le sirve venir, y el mensaje que usted ya redactó sale completo — sin que usted tenga que preguntar nada.</p>
+
+  <div class="proto">
+    <span class="lbl">Prototipo funcional · elija una franja</span>
+
+    <div class="franja">
+      <div class="franja-grid" id="grid" role="group" aria-label="Franjas de atención de lunes a viernes">
+        <div class="fcell"></div>
+        <div class="fcell dia">Lun</div><div class="fcell dia">Mar</div><div class="fcell dia">Mié</div><div class="fcell dia">Jue</div><div class="fcell dia">Vie</div>
+
+        <div class="fcell hora">8 – 11 am</div>
+        <button class="slot" type="button" data-d="lunes" data-h="en la mañana" aria-pressed="false">Mañana</button>
+        <button class="slot" type="button" data-d="martes" data-h="en la mañana" aria-pressed="false">Mañana</button>
+        <button class="slot" type="button" data-d="miércoles" data-h="en la mañana" aria-pressed="false">Mañana</button>
+        <button class="slot" type="button" data-d="jueves" data-h="en la mañana" aria-pressed="false">Mañana</button>
+        <button class="slot" type="button" data-d="viernes" data-h="en la mañana" aria-pressed="false">Mañana</button>
+
+        <div class="fcell hora">11 am – 2 pm</div>
+        <button class="slot" type="button" data-d="lunes" data-h="al mediodía" aria-pressed="false">Mediodía</button>
+        <button class="slot" type="button" data-d="martes" data-h="al mediodía" aria-pressed="false">Mediodía</button>
+        <button class="slot" type="button" data-d="miércoles" data-h="al mediodía" aria-pressed="false">Mediodía</button>
+        <button class="slot" type="button" data-d="jueves" data-h="al mediodía" aria-pressed="false">Mediodía</button>
+        <button class="slot" type="button" data-d="viernes" data-h="al mediodía" aria-pressed="false">Mediodía</button>
+
+        <div class="fcell hora">2 – 6 pm</div>
+        <button class="slot" type="button" data-d="lunes" data-h="en la tarde" aria-pressed="false">Tarde</button>
+        <button class="slot" type="button" data-d="martes" data-h="en la tarde" aria-pressed="false">Tarde</button>
+        <button class="slot" type="button" data-d="miércoles" data-h="en la tarde" aria-pressed="false">Tarde</button>
+        <button class="slot" type="button" data-d="jueves" data-h="en la tarde" aria-pressed="false">Tarde</button>
+        <button class="slot" type="button" data-d="viernes" data-h="en la tarde" aria-pressed="false">Tarde</button>
+      </div>
+    </div>
+    <p class="franja-nota">Las franjas salen de su horario publicado (8:00 am – 6:00 pm, lunes a viernes). No representan cupos reales: en el sistema definitivo usted decide cuáles abre.</p>
+
+    <div class="previa" aria-live="polite">
+      <span class="lbl">Mensaje que recibiría</span>
+      <span id="previa-txt">Elija una franja para ver el mensaje.</span>
+    </div>
+
+    <a class="enviar" id="enviar" href="https://wa.me/584148079702?text=Hola%20Doctora%20Ricnia%2C%20me%20gustar%C3%ADa%20saber%20si%20tiene%20disponibilidad%20para%20consulta" target="_blank" rel="noopener">Probar el envío</a>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="firma-bloque">
+      <div>
+        <span class="lbl">Documento</span>
+        <p style="margin:0">Análisis de presencia pública y prototipo de agendamiento.<br>Preparado el 14 de agosto de 2026.</p>
+      </div>
+      <div>
+        <span class="lbl">Perfil analizado</span>
+        <div class="redes">
+          <a class="red" href="https://www.instagram.com/ricnefro" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            @ricnefro
+          </a>
+          <a class="red" href="https://wa.me/584148079702?text=Hola%20Doctora%20Ricnia%2C%20me%20gustar%C3%ADa%20saber%20si%20tiene%20disponibilidad%20para%20consulta" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.4z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="sello">
+      Documento preparado por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> · Esta es una propuesta de diseño — no es el sitio oficial de la Dra. Vizcaino. Se retira a solicitud.
+    </p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/584148079702?text=Hola%20Doctora%20Ricnia%2C%20me%20gustar%C3%ADa%20saber%20si%20tiene%20disponibilidad%20para%20consulta" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA = "https://wa.me/584148079702?text=";
+  var BASE = "Hola Doctora Ricnia, me gustaría saber si tiene disponibilidad para consulta";
+  var txt = document.getElementById('previa-txt');
+  var btn = document.getElementById('enviar');
+  var sel = null;
+
+  function pintar(){
+    var m = sel ? (BASE + " el " + sel.d + " " + sel.h + ".") : BASE;
+    txt.textContent = sel ? "«" + m + "»" : "Elija una franja para ver el mensaje.";
+    btn.href = WA + encodeURIComponent(m);
+  }
+
+  document.querySelectorAll('.slot').forEach(function(s){
+    s.addEventListener('click', function(){
+      var ya = s.getAttribute('aria-pressed') === 'true';
+      document.querySelectorAll('.slot').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+      if(ya){ sel = null; }
+      else { s.setAttribute('aria-pressed','true'); sel = {d:s.dataset.d, h:s.dataset.h}; }
+      pintar();
+    });
+  });
+  pintar();
+})();
+</script>
+</body>
+</html>
