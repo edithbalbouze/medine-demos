@@ -140,6 +140,13 @@ Base: `https://edithbalbouze.github.io/medine-demos/<slug>/`
   evergreen (Plaza Central + agenda viva en Instagram) porque una página estática no puede
   mantener una agenda a mano; la versión con panel la hace editable (localStorage en la demo,
   base de datos en producción). URLs: `.../ciudad-puente-real/` y `.../ciudad-puente-real-panel/`.
+- ℹ️ **2026-08-28 — `ciudad-puente-real-panel` fue ESTANDARIZADA como demo de muestra** en el
+  repo `medine-tech/demo-cliente` → `demos/panel/` (URL:
+  `https://medine-tech.github.io/demo-cliente/demos/panel/`). Centro comercial ficticio
+  "Miralta · Ciudad Comercial": sin logo, fotos, teléfono, redes ni textos de Puente Real
+  (fotos de eventos generadas con IA, emblema de arcos, claves localStorage `cc_*`).
+  El archivo original sigue intacto en `~/dev/medine-demos-archive/ciudad-puente-real-panel/`.
+  Su arquetipo/firma siguen QUEMADOS igual (mismo diseño, otra piel).
 - Los DIEZ campos de la fila importan: una demo nueva no puede repetir arquetipo, firma,
   nav, footer ni tratamiento de tarjetas de ninguna fila anterior (ejes de unicidad de
   `references/diseno.md` de la skill `demo-landing`).
