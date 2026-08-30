@@ -1,0 +1,1430 @@
+<meta charset="utf-8" />
+<title>Wireframes de Galeno</title>
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+/* ============ TOKENS (mundo Galeno preservado; ink-faint/warn ajustados por AA — hallazgo para hi-fi) ============ */
+:root{
+  --paper:#F1EEE5; --paper-2:#FBFAF4; --paper-sunk:#E9E5D8;
+  --ink:#1B2621; --ink-soft:#56615A; --ink-faint:#6B736A;
+  --line:#DED8C9; --line-soft:#E7E2D5;
+  --accent:#1E5C48; --accent-2:#2C7D62; --accent-ink:#103729;
+  --accent-wash:#E1E9E1; --on-wash:#0F3A2C;
+  --danger:#AF3F2E; --danger-wash:#F0DFD9;
+  --warn:#7A5416; --warn-wash:#EEE4CE;
+  --wire-bg:#1B2621; --wire-ink:#F1EEE5; --wire-dim:#9FA99E; --wire-acc:#6FBF9F; --wire-acc-ink:#06120C;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --r-card:15px; --r-input:11px;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10150F; --paper-2:#191F18; --paper-sunk:#0B0F0A;
+    --ink:#E9EAE0; --ink-soft:#9FA99E; --ink-faint:#939D92;
+    --line:#29322A; --line-soft:#222A23;
+    --accent:#6FBF9F; --accent-2:#85D2B2; --accent-ink:#06120C;
+    --accent-wash:#182620; --on-wash:#BEE9D5;
+    --danger:#E08C7B; --danger-wash:#2C1B16;
+    --warn:#D5A759; --warn-wash:#271F12;
+    --wire-bg:#0B0F0A; --wire-ink:#E9EAE0; --wire-dim:#6C766C; --wire-acc:#6FBF9F; --wire-acc-ink:#06120C;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10150F; --paper-2:#191F18; --paper-sunk:#0B0F0A;
+  --ink:#E9EAE0; --ink-soft:#9FA99E; --ink-faint:#939D92;
+  --line:#29322A; --line-soft:#222A23;
+  --accent:#6FBF9F; --accent-2:#85D2B2; --accent-ink:#06120C;
+  --accent-wash:#182620; --on-wash:#BEE9D5;
+  --danger:#E08C7B; --danger-wash:#2C1B16;
+  --warn:#D5A759; --warn-wash:#271F12;
+  --wire-bg:#0B0F0A; --wire-ink:#E9EAE0; --wire-dim:#6C766C; --wire-acc:#6FBF9F; --wire-acc-ink:#06120C;
+}
+*{box-sizing:border-box;margin:0}
+html{height:100%}
+body{height:100dvh;display:flex;flex-direction:column;overflow:hidden;
+  background:var(--paper-sunk);color:var(--ink);font-family:var(--sans);line-height:1.45;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink)}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:4px}
+[tabindex="-1"]:focus-visible{outline:none}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+body.font-lg #app{font-size:17.5px}
+
+/* ============ BARRA DE WIREFRAME (meta-chrome) ============ */
+.wirebar{flex-shrink:0;z-index:60;background:var(--wire-bg);color:var(--wire-ink);
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;font-size:12.5px}
+.wirebar .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--wire-acc);text-transform:uppercase;margin-right:4px;white-space:nowrap}
+.wirebar .grow{flex:1}
+.wbtn{border:1px solid color-mix(in srgb,var(--wire-ink) 25%,transparent);border-radius:999px;
+  padding:5px 11px;color:var(--wire-ink);font-size:12px;min-height:30px}
+.wbtn:hover{background:color-mix(in srgb,var(--wire-ink) 10%,transparent)}
+.wbtn[aria-pressed="true"]{background:var(--wire-acc);color:var(--wire-acc-ink);border-color:transparent;font-weight:600}
+.wsel{background:transparent;border:1px solid color-mix(in srgb,var(--wire-ink) 25%,transparent);
+  border-radius:999px;padding:5px 8px;color:var(--wire-ink);font-size:12px}
+.wsel option{color:CanvasText;background:Canvas}
+@media (max-width:700px){
+  .wirebar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .wirebar::-webkit-scrollbar{display:none}
+  .wirebar .wbtn,.wirebar .wsel{flex-shrink:0}
+}
+
+/* ============ ESCENARIO / MARCO 390 ============ */
+.stage{flex:1;min-height:0;overflow-y:auto;display:flex;justify-content:center;align-items:flex-start}
+#app{container-type:inline-size;container-name:app;position:relative;background:var(--paper);
+  width:100%;min-height:100%;overflow-x:hidden}
+body.marco .stage{padding:26px 12px 60px}
+body.marco .stage>div{width:auto!important}
+body.marco #app{width:390px;height:844px;min-height:0;overflow-y:auto;border-radius:26px;
+  border:1.5px solid var(--line);box-shadow:0 18px 50px -24px rgba(0,0,0,.45);transform:translateZ(0)}
+.marco-cap{display:none;font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+  text-align:center;padding-top:10px;letter-spacing:.12em}
+body.marco .marco-cap{display:block}
+
+/* ============ SHELL ============ */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line-soft);padding:12px 16px;min-height:54px}
+.brand{font-family:var(--serif);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
+.brand .dot{color:var(--accent-2)}
+.back{display:none;min-width:44px;min-height:44px;margin-left:-10px;align-items:center;justify-content:center;font-size:20px;color:var(--ink-soft)}
+.back.show{display:inline-flex}
+.tb-title{font-weight:600;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-spacer{flex:1}
+.avatar-dr{width:44px;height:44px;border-radius:999px;background:var(--accent-wash);color:var(--on-wash);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700}
+.content{padding:16px 16px 96px;max-width:640px;margin:0 auto;width:100%}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:var(--paper-2);
+  border-top:1px solid var(--line);padding:4px 6px calc(6px + env(safe-area-inset-bottom))}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  min-height:52px;justify-content:center;font-size:10.5px;color:var(--ink-soft);border-radius:10px}
+.tabbar button .ic{font-size:19px;line-height:1}
+.tabbar button[aria-current="true"]{color:var(--accent);font-weight:700}
+.rail{display:none}
+@container app (min-width: 900px){
+  .tabbar{display:none}
+  .rail{position:absolute;top:54px;bottom:0;left:0;width:206px;display:flex;flex-direction:column;
+    gap:2px;padding:18px 12px;border-right:1px solid var(--line-soft);background:var(--paper)}
+  .rail button{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;
+    color:var(--ink-soft);font-size:.94rem;text-align:left;min-height:44px}
+  .rail button[aria-current="true"]{background:var(--accent-wash);color:var(--on-wash);font-weight:600}
+  .content{margin-left:206px;max-width:980px;padding:24px 32px 60px}
+}
+
+/* ============ PIEZAS ============ */
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+h1.pg{font-family:var(--serif);font-size:1.62rem;font-weight:600;letter-spacing:-.01em;margin:2px 0 4px;text-wrap:balance}
+.sub{color:var(--ink-soft);font-size:.95rem}
+.card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-card);padding:16px}
+.gap8{display:flex;flex-direction:column;gap:8px}.gap12{display:flex;flex-direction:column;gap:12px}.gap16{display:flex;flex-direction:column;gap:16px}
+.row{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;
+  padding:10px 18px;border-radius:var(--r-input);font-weight:600;font-size:.95rem}
+.btn-p{background:var(--accent);color:var(--paper-2)}
+.btn-p:hover{background:var(--accent-2)}
+.btn-g{border:1.5px solid var(--line);color:var(--ink);background:var(--paper-2)}
+.btn-d{background:var(--danger-wash);color:var(--danger);border:1.5px solid transparent}
+.btn[disabled]{opacity:.6;cursor:default}
+.linkbtn{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-soft);font-size:.86rem;text-decoration:underline;text-underline-offset:3px}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 10px;
+  font-size:11.5px;font-weight:700;white-space:nowrap}
+.ch-ok{background:var(--accent-wash);color:var(--on-wash)}
+.ch-wait{background:var(--warn-wash);color:var(--warn)}
+.ch-re{background:var(--warn-wash);color:var(--warn);border:1px dashed var(--warn)}
+.ch-no{background:var(--danger-wash);color:var(--danger)}
+.ch-off{background:var(--paper-sunk);color:var(--ink-soft)}
+.avatar{width:40px;height:40px;min-width:40px;border-radius:999px;background:var(--paper-sunk);
+  color:var(--ink-soft);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-weight:700}
+.mono{font-family:var(--mono)}
+.faint{color:var(--ink-faint)}.soft{color:var(--ink-soft)}
+.ellip{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.hr{border:none;border-top:1px solid var(--line-soft);margin:4px 0}
+.listitem{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line-soft);width:100%;text-align:left;min-height:44px}
+.listitem:last-child{border-bottom:none}
+.fab{position:fixed;right:16px;bottom:calc(74px + env(safe-area-inset-bottom));z-index:25;
+  width:54px;height:54px;border-radius:999px;background:var(--accent);color:var(--paper-2);
+  font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px -8px rgba(0,0,0,.4)}
+@container app (min-width:900px){ .fab{right:32px;bottom:32px}
+  .hoy-cols{display:grid;grid-template-columns:1.08fr .92fr;gap:16px;align-items:start} }
+
+.nextcard{background:var(--accent-wash);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
+  border-radius:var(--r-card);padding:18px}
+.nextcard .who{font-family:var(--serif);font-size:1.34rem;font-weight:600;color:var(--on-wash)}
+.stats{display:flex;gap:10px}
+.stat{flex:1;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center}
+.stat .n{font-family:var(--mono);font-size:1.25rem;font-weight:700}
+.stat .l{font-size:11px;color:var(--ink-faint)}
+
+.exp-head{display:flex;gap:14px;align-items:center}
+.exp-head .avatar{width:52px;height:52px;min-width:52px;font-size:15px;background:var(--accent-wash);color:var(--on-wash)}
+.allergy-strip{display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-radius:10px;
+  padding:8px 12px;font-size:12.5px;font-weight:600}
+.allergy-strip.alerta-si{background:var(--danger-wash);border:1px solid color-mix(in srgb,var(--danger) 30%,transparent);color:var(--danger)}
+.allergy-strip.alerta-no{background:var(--paper-sunk);border:1px solid var(--line);color:var(--ink-soft)}
+.allergy-strip .cr{color:var(--ink-soft);font-weight:500}
+.tabs{display:flex;gap:2px;border-bottom:1.5px solid var(--line);overflow-x:auto;scrollbar-width:none;margin-top:6px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs [role="tab"]{padding:10px 13px;font-size:.9rem;color:var(--ink-soft);white-space:nowrap;
+  border-bottom:2.5px solid transparent;margin-bottom:-1.5px;min-height:44px}
+.tabs [role="tab"][aria-selected="true"]{color:var(--accent);font-weight:700;border-bottom-color:var(--accent)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem}
+.kv dt{color:var(--ink-faint)}
+.kv dd{font-weight:500}
+
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1.5px;background:var(--line)}
+.tl-item{position:relative;padding:8px 0 14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:14px;width:9px;height:9px;border-radius:999px;
+  background:var(--paper);border:2px solid var(--accent-2)}
+.tl-item.warn::before{border-color:var(--warn)}
+.tl-item.doc::before{border-color:var(--ink-faint)}
+.tl-date{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.86rem;font-weight:600;color:var(--ink-soft)}
+.input,.select,.textarea{background:var(--paper-2);border:1.5px solid var(--line);border-radius:var(--r-input);
+  padding:11px 13px;min-height:44px;width:100%}
+.textarea{min-height:76px;resize:vertical}
+.input:focus-visible,.select:focus-visible,.textarea:focus-visible{
+  border-color:var(--accent);outline:2.5px solid var(--accent);outline-offset:1px;box-shadow:0 0 0 3px var(--accent-wash)}
+.field.invalid .input,.field.invalid .textarea{border-color:var(--danger)}
+.err{display:none;color:var(--danger);font-size:.83rem;font-weight:600}
+.field.invalid .err{display:flex;gap:5px;align-items:center}
+.banner-err{background:var(--danger-wash);color:var(--danger);
+  border-radius:var(--r-input);padding:11px 13px;font-size:.9rem;font-weight:600}
+.banner-err ul{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.banner-err button{text-decoration:underline;text-underline-offset:3px;font-weight:600;color:var(--danger);min-height:24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@container app (min-width:900px){ .grid2.d3{grid-template-columns:1fr 1fr 1fr} }
+.idfield{display:flex;gap:0}
+.idfield .select{width:auto;min-width:96px;border-radius:var(--r-input) 0 0 var(--r-input);border-right:none;font-family:var(--mono);font-size:.9rem}
+.idfield .input{border-radius:0 var(--r-input) var(--r-input) 0}
+.switchrow{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+.sw{position:relative;width:44px;height:26px;border-radius:999px;background:var(--line);transition:background .15s;flex-shrink:0}
+.sw::before{content:"";position:absolute;inset:-9px}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:999px;background:var(--paper-2);transition:left .15s}
+.sw[aria-checked="true"]{background:var(--accent)}
+.sw[aria-checked="true"]::after{left:21px}
+
+.docsheet{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:22px 20px;
+  border-top:5px solid var(--accent);font-size:.92rem;max-width:560px;margin:0 auto;width:100%}
+.docsheet .dhead{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line-soft);padding-bottom:10px;margin-bottom:12px}
+.docsheet .dr{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+.docsheet .meta{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);text-align:right}
+.docsheet .rx{font-family:var(--serif);font-size:1.7rem;color:var(--accent);line-height:1}
+.docsheet .firma{margin-top:26px;padding-top:8px;border-top:1px solid var(--line);width:200px;
+  font-size:11px;color:var(--ink-faint);text-align:center}
+.doctype{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 14px;
+  border:1.5px solid var(--line);border-radius:var(--r-input);background:var(--paper-2);min-height:54px}
+.doctype .ic{font-size:20px;width:28px;text-align:center}
+.doctype small{display:block;color:var(--ink-faint);font-weight:400}
+.docgrid{display:grid;grid-template-columns:1fr;gap:10px}
+@container app (min-width:900px){ .docgrid{grid-template-columns:1fr 1fr 1fr} }
+
+.week{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.day{min-width:52px;min-height:56px;padding:8px 4px;border-radius:12px;text-align:center;border:1.5px solid var(--line);background:var(--paper-2)}
+.day .dn{font-size:10.5px;color:var(--ink-faint);text-transform:uppercase;font-family:var(--mono)}
+.day .dd{font-weight:700;font-size:1.05rem}
+.day[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper-2)}
+.day[aria-pressed="true"] .dn{color:color-mix(in srgb,var(--paper-2) 78%,transparent)}
+.cita{display:flex;gap:12px;padding:8px 4px;border-bottom:1px solid var(--line-soft);align-items:flex-start;width:100%;text-align:left;min-height:52px}
+.cita:last-child{border-bottom:none}
+.cita .hora{font-family:var(--mono);font-size:.9rem;font-weight:700;min-width:52px;padding-top:8px}
+.wa-preview{background:var(--accent-wash);border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:.88rem;color:var(--on-wash);max-width:420px}
+.wa-preview .wm{font-family:var(--mono);font-size:10px;opacity:.75;display:block;margin-bottom:3px;letter-spacing:.1em}
+
+.empty{padding:34px 18px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.empty .ei{font-size:30px}
+.empty b{font-family:var(--serif);font-size:1.08rem;font-weight:600}
+.sync-badge{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;white-space:nowrap;min-height:30px}
+.sync-badge.s-local{background:var(--warn-wash);color:var(--warn)}
+.sync-badge.s-err{background:var(--danger-wash);color:var(--danger);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.sync-badge.s-ok{background:var(--accent-wash);color:var(--on-wash)}
+.sync-ext{display:none}
+@container app (min-width:521px){ .sync-ext{display:inline} }
+.topbar:has(.sync-badge:not(.hidden)) .demo-tag{display:none}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));z-index:70;
+  background:var(--ink);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:.9rem;font-weight:600;
+  display:flex;gap:8px;align-items:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);max-width:88%}
+@container app (min-width:900px){ .toast{bottom:26px} }
+.spinner{width:15px;height:15px;border:2px solid color-mix(in srgb,currentColor 30%,transparent);
+  border-top-color:currentColor;border-radius:999px;animation:spin .8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.skel{height:52px;border-radius:10px;background:var(--paper-sunk);border:1px solid var(--line-soft);margin-bottom:8px}
+
+.scrim{position:fixed;inset:0;z-index:65;background:rgba(10,14,11,.45);display:flex;align-items:flex-end;justify-content:center;padding:14px}
+@container app (min-width:900px){ .scrim{align-items:center} }
+.modal{background:var(--paper);border:1px solid var(--line);border-radius:18px;max-width:480px;width:100%;
+  padding:20px;display:flex;flex-direction:column;gap:14px;max-height:86%;overflow-y:auto}
+.modal h3{font-family:var(--serif);font-size:1.18rem;font-weight:600}
+.modal.alerta{border-top:6px solid var(--danger)}
+.modal.alerta h3{color:var(--danger);display:flex;gap:8px;align-items:center}
+
+/* ============ CHROME DE REVISIÓN ============ */
+.notes{position:fixed;z-index:55;right:12px;bottom:12px;width:min(360px,calc(100vw - 24px));
+  background:var(--wire-bg);color:var(--wire-ink);border-radius:14px;padding:14px 16px;
+  font-size:12.5px;box-shadow:0 14px 40px -12px rgba(0,0,0,.55);display:none;max-height:46vh;overflow-y:auto}
+@media (min-width:701px){ .notes{top:56px;bottom:auto;max-height:56vh} }
+body.notas .notes{display:block}
+.notes h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--wire-acc);margin-bottom:8px}
+.notes ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px}
+.notes .ref{font-family:var(--mono);font-size:10px;color:var(--wire-dim)}
+body.prueba .notes{display:none!important}
+
+.tarea{position:fixed;z-index:29;left:12px;right:12px;bottom:calc(78px + env(safe-area-inset-bottom));
+  background:var(--wire-bg);color:var(--wire-ink);border-radius:14px;padding:12px 46px 12px 14px;font-size:13px;
+  display:none;box-shadow:0 14px 40px -12px rgba(0,0,0,.55);max-width:560px;margin:0 auto}
+@media (min-width:701px){ .tarea{bottom:12px} }
+body.prueba .tarea{display:block}
+.tarea .steps{display:flex;gap:6px;margin-top:8px}
+.tarea .st{flex:1;height:4px;border-radius:99px;background:color-mix(in srgb,var(--wire-ink) 22%,transparent)}
+.tarea .st.done{background:var(--wire-acc)}
+.tarea .mini{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--wire-acc);text-transform:uppercase}
+.tarea .cerrar{position:absolute;top:0;right:0;color:var(--wire-dim);font-size:16px;min-width:44px;min-height:44px}
+body.prueba .fab{bottom:calc(174px + env(safe-area-inset-bottom))}
+@media (min-width:701px){ body.prueba .fab{bottom:110px} }
+
+.guion{position:fixed;inset:0;z-index:80;background:var(--paper);overflow-y:auto;display:none;padding:26px 18px 60px}
+body.guion-open .guion{display:block}
+.guion .inner{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.guion h2{font-family:var(--serif);font-size:1.5rem}
+.guion ol{padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.guion .card ul{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.demo-tag{font-family:var(--mono);font-size:10px;white-space:nowrap;
+  letter-spacing:.08em;color:var(--ink-soft);background:var(--paper-sunk);border:1px dashed var(--line);
+  border-radius:6px;padding:3px 7px;text-transform:uppercase}
+.hidden{display:none!important}
+.view{display:none}
+.view.act{display:block}
+
+/* ============ MODO DEMO (médicos) ============ */
+body.demo .wirebar{display:none}
+body.demo .demo-tag{display:none}
+.btn-interes{display:none;align-items:center;gap:6px;min-height:38px;padding:6px 14px;border-radius:999px;
+  background:var(--accent);color:var(--paper-2);font-weight:700;font-size:12.5px;white-space:nowrap}
+body.demo .btn-interes{display:inline-flex}
+.bienvenida{position:fixed;inset:0;z-index:85;background:var(--paper);overflow-y:auto;display:none}
+body.bienvenida-open .bienvenida{display:block}
+.bienvenida .inner{max-width:560px;margin:0 auto;padding:44px 22px 40px;display:flex;flex-direction:column;gap:18px;min-height:100%}
+.bienvenida .marca{font-family:var(--serif);font-size:2.3rem;font-weight:600;letter-spacing:-.01em}
+.bienvenida .marca .dot{color:var(--accent-2)}
+.bienvenida h2{font-family:var(--serif);font-size:1.5rem;font-weight:600;text-wrap:balance}
+.bienvenida ol{padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.98rem}
+.bienvenida .legal{font-size:.78rem;color:var(--ink-faint);margin-top:auto;padding-top:16px;border-top:1px solid var(--line-soft)}
+</style>
+
+<header class="wirebar" id="wirebar">
+  <span class="tag">Wireframes · Gate MER-2063</span>
+  <select class="wsel" id="w-screen" aria-label="Ir a pantalla"></select>
+  <select class="wsel" id="w-state" aria-label="Ir a estado"><option value="">Estados…</option></select>
+  <span class="grow"></span>
+  <button class="wbtn" id="w-marco" aria-pressed="false">Marco 390</button>
+  <button class="wbtn" id="w-notas" aria-pressed="false">Notas</button>
+  <button class="wbtn" id="w-senal" aria-pressed="false">Simular sin señal</button>
+  <button class="wbtn" id="w-tema">Tema</button>
+  <button class="wbtn" id="w-guion">Guión de la prueba</button>
+  <button class="wbtn" id="w-modo" aria-pressed="false">Modo prueba</button>
+</header>
+
+<div class="stage"><div style="width:100%">
+<div class="marco-cap">390 × 844 · compacto</div>
+<div id="app">
+
+  <div class="topbar">
+    <button class="back" id="backbtn" aria-label="Volver">←</button>
+    <div class="brand" id="brandword" translate="no">Galeno<span class="dot">.</span></div>
+    <div class="tb-title hidden" id="tbtitle"></div>
+    <div class="tb-spacer"></div>
+    <span class="demo-tag">Demo · datos ficticios</span>
+    <button class="btn-interes" onclick="ctaInteres()">Me interesa</button>
+    <button class="sync-badge hidden" id="syncbadge"></button>
+    <button class="avatar-dr" id="avatarbtn" aria-label="Ajustes de la doctora">AF</button>
+  </div>
+
+  <nav class="rail" id="rail" aria-label="Navegación"></nav>
+
+  <!-- ================= HOY ================= -->
+  <section class="view act" id="v-hoy">
+    <div class="content gap16">
+      <div>
+        <div class="eyebrow">Miércoles, 20 de agosto de 2026</div>
+        <h1 class="pg">Buenos días, Dra. Fuenmayor</h1>
+      </div>
+      <div id="hoy-normal" class="gap16 hoy-cols">
+        <div class="gap16">
+          <div class="nextcard gap8">
+            <div class="eyebrow" style="color:var(--on-wash)">Próximo paciente · 10:30 a. m.</div>
+            <div class="who">Carmen Hidalgo</div>
+            <div style="color:var(--on-wash)">Control de tensión · <span id="next-chip"></span></div>
+            <div class="row" style="margin-top:6px">
+              <button class="btn btn-p" onclick="abrirExpediente('carmen')">Abrir ficha</button>
+              <button class="btn btn-g" onclick="abrirConsulta('carmen')">Nueva consulta</button>
+            </div>
+          </div>
+          <div class="stats" id="hoy-stats"></div>
+        </div>
+        <div class="card">
+          <div class="row" style="justify-content:space-between;margin-bottom:4px">
+            <b>Agenda de hoy</b><button class="linkbtn" onclick="go('v-agenda')">Ver agenda →</button>
+          </div>
+          <div id="hoy-lista"></div>
+        </div>
+      </div>
+      <div id="hoy-vacio" class="card empty hidden">
+        <div class="ei" aria-hidden="true">🗓️</div>
+        <b>Hoy no tienes citas</b>
+        <div class="soft">Cuando agendes una cita aparecerá aquí, con su estado de confirmación.</div>
+        <button class="btn btn-p" onclick="go('v-agenda')">Agendar una cita</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PACIENTES ================= -->
+  <section class="view" id="v-pacientes">
+    <div class="content gap16">
+      <h1 class="pg" id="h-pacientes">Pacientes</h1>
+      <div class="field">
+        <label for="psearch" class="vh">Buscar por nombre o cédula</label>
+        <input class="input" id="psearch" type="search" placeholder="Buscar por nombre o cédula…" oninput="renderPacientes(this.value)" />
+      </div>
+      <div class="card" id="plist"></div>
+      <div class="card empty hidden" id="p-vacio">
+        <div class="ei" aria-hidden="true">🗂️</div>
+        <b>Aún no tienes pacientes</b>
+        <div class="soft">Crea la primera ficha y tu consultorio empieza a vivir aquí. Solo tú ves a tus pacientes.</div>
+        <button class="btn btn-p" onclick="go('v-nuevo')">Crear primer paciente</button>
+      </div>
+      <div class="card empty hidden" id="p-cero">
+        <div class="ei" aria-hidden="true">🔍</div>
+        <b>Sin resultados para «<span id="p-q"></span>»</b>
+        <div class="soft">Revisa la escritura o crea una ficha nueva.</div>
+        <div class="row">
+          <button class="btn btn-g" onclick="limpiarBusqueda()">Limpiar búsqueda</button>
+          <button class="btn btn-p" onclick="go('v-nuevo')">Nuevo paciente</button>
+        </div>
+      </div>
+    </div>
+    <button class="fab" onclick="go('v-nuevo')" aria-label="Nuevo paciente"><span aria-hidden="true">+</span></button>
+  </section>
+
+  <!-- ================= NUEVO PACIENTE ================= -->
+  <section class="view" id="v-nuevo">
+    <div class="content gap16">
+      <h1 class="pg">Nuevo paciente</h1>
+      <div class="banner-err hidden" id="np-banner" role="alert"></div>
+      <div class="field" id="f-nombre">
+        <label for="np-nombre">Nombre y apellido</label>
+        <input class="input" id="np-nombre" placeholder="Ej. Ana María Rodríguez" aria-describedby="err-nombre" />
+        <span class="err" id="err-nombre"><span aria-hidden="true">⚠</span> Escribe el nombre del paciente</span>
+      </div>
+      <div class="field" id="f-id">
+        <label for="np-id">Documento de identidad <span class="faint" style="font-weight:400">· Venezuela (configurable por región)</span></label>
+        <div class="idfield">
+          <label class="vh" for="np-tipo">Tipo de documento</label>
+          <select class="select" id="np-tipo"><option>V-</option><option>E-</option><option>Pasaporte</option></select>
+          <input class="input mono" id="np-id" placeholder="12.345.678" inputmode="numeric" aria-describedby="err-id" />
+        </div>
+        <span class="err" id="err-id"><span aria-hidden="true">⚠</span> Escribe el número de documento</span>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="np-nac">Fecha de nacimiento</label><input class="input mono" id="np-nac" placeholder="DD/MM/AAAA" /></div>
+        <div class="field"><label for="np-sexo">Sexo</label><select class="select" id="np-sexo"><option>Femenino</option><option>Masculino</option></select></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="np-tel">Teléfono (WhatsApp)</label><input class="input mono" id="np-tel" placeholder="0414-000 00 00" inputmode="tel" /></div>
+        <div class="field"><label for="np-sangre">Tipo de sangre</label><select class="select" id="np-sangre"><option>—</option><option>O+</option><option>O−</option><option>A+</option><option>A−</option><option>B+</option><option>AB+</option></select></div>
+      </div>
+      <div class="field"><label for="np-alergias">Alergias <span class="faint" style="font-weight:400">· separa con comas</span></label>
+        <input class="input" id="np-alergias" placeholder="Ej. Penicilina, yodo" /></div>
+      <div class="field"><label for="np-cron">Condiciones crónicas</label>
+        <input class="input" id="np-cron" placeholder="Ej. Hipertensión, diabetes tipo 2" /></div>
+      <button class="btn btn-p" style="width:100%" onclick="guardarPaciente()">Guardar y abrir ficha</button>
+    </div>
+  </section>
+
+  <!-- ================= EXPEDIENTE ================= -->
+  <section class="view" id="v-exp">
+    <div class="content gap12">
+      <div class="exp-head">
+        <div class="avatar" id="e-av">CH</div>
+        <div style="min-width:0">
+          <h1 class="pg ellip" id="e-nombre" style="font-size:1.4rem">Carmen Hidalgo</h1>
+          <div class="soft mono" style="font-size:.85rem" id="e-meta"></div>
+        </div>
+      </div>
+      <div class="allergy-strip" id="e-alergias"></div>
+      <div class="row">
+        <button class="btn btn-p" style="flex:1" onclick="abrirConsulta()">Nueva consulta</button>
+        <button class="btn btn-g" style="flex:1" onclick="go('v-docs')">Documento</button>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Secciones del expediente" id="e-tabs">
+        <button role="tab" id="e-tab-resumen" aria-controls="e-panel" aria-selected="true" data-tab="resumen">Resumen</button>
+        <button role="tab" id="e-tab-historia" aria-controls="e-panel" aria-selected="false" data-tab="historia">Historia</button>
+        <button role="tab" id="e-tab-consultas" aria-controls="e-panel" aria-selected="false" data-tab="consultas">Consultas</button>
+        <button role="tab" id="e-tab-documentos" aria-controls="e-panel" aria-selected="false" data-tab="documentos">Documentos</button>
+        <button role="tab" id="e-tab-adjuntos" aria-controls="e-panel" aria-selected="false" data-tab="adjuntos">Adjuntos</button>
+      </div>
+      <div role="tabpanel" id="e-panel" aria-labelledby="e-tab-resumen"></div>
+    </div>
+  </section>
+
+  <!-- ================= CONSULTA ================= -->
+  <section class="view" id="v-consulta">
+    <div class="content gap16">
+      <div>
+        <div class="eyebrow">Nueva consulta · hoy</div>
+        <h1 class="pg ellip" id="c-nombre">Carmen Hidalgo</h1>
+        <div class="allergy-strip" id="c-alergias" style="margin-top:8px"></div>
+      </div>
+      <div class="banner-err hidden" id="c-banner" role="alert"></div>
+      <div class="field" id="f-motivo">
+        <label for="c-motivo">Motivo de consulta</label>
+        <input class="input" id="c-motivo" aria-describedby="err-motivo" />
+        <span class="err" id="err-motivo"><span aria-hidden="true">⚠</span> Escribe el motivo de la consulta</span>
+      </div>
+      <div class="card gap8">
+        <b style="font-size:.92rem">Signos vitales</b>
+        <div class="grid2 d3">
+          <div class="field"><label for="c-ta">Tensión arterial</label><input class="input mono" id="c-ta" /></div>
+          <div class="field"><label for="c-fc">Frecuencia cardíaca</label><input class="input mono" id="c-fc" /></div>
+          <div class="field"><label for="c-peso">Peso</label><input class="input mono" id="c-peso" /></div>
+        </div>
+      </div>
+      <div class="field"><label for="c-exp">Exploración y evolución</label>
+        <textarea class="textarea" id="c-exp"></textarea></div>
+      <div class="field"><label for="c-dx">Diagnóstico</label>
+        <input class="input" id="c-dx" /></div>
+      <div class="field"><label for="c-plan">Plan</label>
+        <textarea class="textarea" id="c-plan"></textarea></div>
+      <div class="field"><label for="c-med">Medicación indicada</label>
+        <textarea class="textarea mono" id="c-med" style="font-size:.88rem"></textarea></div>
+      <div class="card switchrow">
+        <b style="font-size:.92rem">Generar récipe al guardar</b>
+        <button class="sw" id="c-recipe" role="switch" aria-checked="true" aria-label="Generar récipe al guardar" onclick="swToggle(this)"></button>
+      </div>
+      <button class="btn btn-p" style="width:100%" id="c-save" onclick="guardarConsulta()">Guardar consulta</button>
+      <div class="soft" style="font-size:.82rem;text-align:center">La nota se guarda en el teléfono mientras escribes. Sin señal no se pierde nada.</div>
+    </div>
+  </section>
+
+  <!-- ================= DOCUMENTOS ================= -->
+  <section class="view" id="v-docs">
+    <div class="content gap16">
+      <div>
+        <h1 class="pg">Emitir documento</h1>
+        <div class="sub">Para <b id="docs-para">Carmen Hidalgo</b> · <button class="linkbtn" onclick="elegirPaciente()">cambiar</button></div>
+      </div>
+      <div class="docgrid" id="doc-tipos"></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-doc-detalle">
+    <div class="content gap16">
+      <div>
+        <div class="eyebrow" id="d-tipo-eyebrow">Récipe</div>
+        <h1 class="pg" id="d-tipo-titulo">Récipe médico</h1>
+      </div>
+      <div id="d-campos" class="gap12"></div>
+      <div class="docsheet" id="d-sheet"></div>
+      <div class="row" style="flex-wrap:wrap">
+        <button class="btn btn-p" style="flex:1;min-width:150px" id="d-pdf" onclick="generarPDF()">Descargar PDF</button>
+        <button class="btn btn-g" style="flex:1;min-width:120px" onclick="imprimirDoc()">Imprimir</button>
+        <button class="btn btn-g" style="flex:1;min-width:170px" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      </div>
+      <div class="banner-err hidden" id="d-err" role="alert" tabindex="-1">
+        <span id="d-err-txt"><span aria-hidden="true">⚠</span> No se pudo generar el PDF. Revisa tu conexión.</span>
+        <button style="text-decoration:underline;margin-left:8px;min-height:32px" onclick="generarPDF(true)">Reintentar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AGENDA ================= -->
+  <section class="view" id="v-agenda">
+    <div class="content gap16">
+      <h1 class="pg">Agenda</h1>
+      <div class="week" id="ag-week" role="group" aria-label="Semana del 18 al 22 de agosto"></div>
+      <div class="card" id="ag-lista"></div>
+      <div class="card gap8" id="ag-prox-card" style="display:none">
+        <b style="font-size:.92rem">Próximas</b>
+        <div id="ag-prox"></div>
+      </div>
+      <div class="card gap8" id="ag-wa">
+        <b style="font-size:.92rem">Así confirma el paciente (2 vías)</b>
+        <div class="wa-preview"><span class="wm">WhatsApp · vista previa</span>
+          Hola, Carmen <span aria-hidden="true">👋</span> Le recordamos su cita <b>hoy a las 10:30 a. m.</b> con la Dra. Fuenmayor.
+          Responda <b>1</b> para confirmar o <b>2</b> para reagendar.</div>
+        <div class="row" style="flex-wrap:wrap">
+          <span class="soft" style="font-size:.85rem">Simula la respuesta de Carmen:</span>
+          <button class="btn btn-g" style="min-height:38px;padding:6px 14px" onclick="respuestaPaciente(1)">1 · Confirmar</button>
+          <button class="btn btn-g" style="min-height:38px;padding:6px 14px" onclick="respuestaPaciente(2)">2 · Reagendar</button>
+        </div>
+        <div class="faint" style="font-size:.82rem">Recordatorios: 1 día antes y 2 horas antes. Cuando el paciente responde, el chip de la cita cambia solo.</div>
+      </div>
+    </div>
+    <button class="fab" onclick="abrirModalCita()" aria-label="Nueva cita"><span aria-hidden="true">+</span></button>
+  </section>
+
+  <!-- ================= MÓDULOS ================= -->
+  <section class="view" id="v-modulos">
+    <div class="content gap16">
+      <div>
+        <div class="eyebrow">Concepto · a validar con médicos</div>
+        <h1 class="pg">Módulos por especialidad</h1>
+        <div class="sub">El núcleo (ficha, consultas, documentos, agenda) es igual para todos. Cada especialidad activa solo lo que usa.</div>
+      </div>
+      <div class="card gap8">
+        <div class="row" style="justify-content:space-between"><b>Núcleo universal</b><span class="chip ch-ok"><span aria-hidden="true">✓</span> Siempre activo</span></div>
+        <div class="soft" style="font-size:.9rem">Expediente · Consultas · Récipe, informe, constancia, reposo, referencia, orden · Agenda con confirmación</div>
+      </div>
+      <div class="card gap8" id="mod-list"></div>
+      <div class="card" style="background:var(--accent-wash);border-color:transparent;color:var(--on-wash)">
+        <b>Pregunta para la sesión:</b> ¿qué le falta al núcleo para tu consulta diaria — y qué módulo activarías tú?
+      </div>
+    </div>
+  </section>
+
+  <nav class="tabbar" id="tabbar" aria-label="Navegación principal"></nav>
+
+  <div id="toast-slot" role="status" aria-live="polite"></div>
+  <div id="modal-slot"></div>
+</div>
+</div></div>
+
+<aside class="notes" id="notes" aria-label="Notas de arquitectura"></aside>
+
+<div class="tarea" id="tarea">
+  <button class="cerrar" onclick="salirPrueba()" aria-label="Salir del modo prueba"><span aria-hidden="true">✕</span></button>
+  <span class="mini">Prueba · sin ayuda</span>
+  <div id="tarea-txt" style="margin-top:4px"></div>
+  <div class="steps"><div class="st" id="st1"></div><div class="st" id="st2"></div><div class="st" id="st3"></div><div class="st" id="st4"></div></div>
+</div>
+
+<div class="bienvenida" id="bienvenida" role="dialog" aria-modal="true" aria-labelledby="bv-t">
+  <div class="inner">
+    <div class="marca" translate="no">Galeno<span class="dot">.</span></div>
+    <h2 id="bv-t">Tu consultorio, contigo — el expediente y la agenda de tus pacientes, en el bolsillo.</h2>
+    <div class="soft">Esta es una <b>demo interactiva</b> de cómo se sentiría Galeno en tu día a día.
+      Todos los pacientes y datos son <b>ficticios</b>. Nada de lo que toques se guarda.</div>
+    <div class="card gap8">
+      <b>Pruébala como si fuera tu mañana de consulta:</b>
+      <ol>
+        <li>Abre la ficha de tu próxima paciente, <b>Carmen Hidalgo</b>.</li>
+        <li>Regístrale la consulta de hoy (la nota viene adelantada).</li>
+        <li>Emítele el récipe. <span class="soft">Ojo con lo que aparece…</span></li>
+        <li>Déjale agendado su próximo control.</li>
+      </ol>
+    </div>
+    <button class="btn btn-p" style="width:100%" onclick="cerrarBienvenida(false)">Probar la demo</button>
+    <button class="btn btn-g" style="width:100%" onclick="cerrarBienvenida(true)">Solo explorar libremente</button>
+    <div class="legal">Demo conceptual con datos ficticios · no es un producto en uso clínico.<br/>
+      MedineTech · RIF: V-18581219-3 · <a href="https://wa.me/584248274759" style="color:var(--accent-2)">WhatsApp</a></div>
+  </div>
+</div>
+
+<div class="guion" id="guion">
+  <div class="inner">
+    <div class="row" style="justify-content:space-between">
+      <div class="eyebrow">Gate MER-2063 · validación con médicos</div>
+      <button class="btn btn-g" onclick="document.body.classList.remove('guion-open')">Cerrar</button>
+    </div>
+    <h2>Guión de la sesión (25–30 min por médico)</h2>
+    <div class="card gap8">
+      <b>Participantes</b>
+      <div class="soft">2–3 médicos de distinta especialidad (ej. medicina interna, pediatría, gineco-obstetricia). Teléfono del médico, modo prueba activado, sin ayuda del facilitador.</div>
+    </div>
+    <div class="card gap8">
+      <b>Tarea central (criterio del gate)</b>
+      <ol>
+        <li>«Empieza tu día: abre la ficha de tu próxima paciente.»</li>
+        <li>«Regístrale la consulta de hoy.» <span class="soft">(la nota viene precargada — observa si encuentra Guardar)</span></li>
+        <li>«Emítele el récipe.» <span class="soft">(salta la alerta de alergia: observa si la entiende y qué decide; PDF, Imprimir o WhatsApp valen igual)</span></li>
+        <li>«Déjale agendado su próximo control.»</li>
+      </ol>
+      <div class="soft"><span aria-hidden="true">✅</span> Pasa si completa los 4 pasos <b>sin ayuda</b>. Si falla claridad o seguridad clínica → resultado NONE, se itera.</div>
+    </div>
+    <div class="card gap8">
+      <b>Qué observar</b>
+      <ul>
+        <li>¿Dónde duda? ¿Qué toca primero en «Hoy»?</li>
+        <li>Alerta de alergia: ¿la lee completa? ¿entiende «Cambiar medicamento» vs «Continuar»? Si continúa, verifica que note que el récipe lleva el fármaco que aceptó.</li>
+        <li>Badge «Guardado local · se sincroniza»: activa «Simular sin señal» y pregunta qué cree que pasó con su nota.</li>
+        <li>Confirmación 2 vías: usa «Simula la respuesta de Carmen» en Agenda y pregunta qué entiende del cambio de chip.</li>
+        <li>Chips de la agenda (✓✓ confirmada / ◷ por confirmar / ↺ reagendar / ✕ no asistió / ⊘ cancelada): ¿los interpreta sin explicación?</li>
+        <li>Nombre largo (Génesis Montilla de Camacaro Fernández): ¿se lee bien en su teléfono?</li>
+        <li>Ajustes (avatar): ¿encuentra la tipografía más grande? (médicos mayores)</li>
+      </ul>
+    </div>
+    <div class="card gap8">
+      <b>Preguntas de cierre (módulos por especialidad)</b>
+      <ul>
+        <li>«En tu consulta típica, ¿qué te faltó en esta ficha?»</li>
+        <li>Mostrar pantalla <b>Módulos</b> (avatar → Módulos): «¿cuál activarías tú? ¿cuál sobra?»</li>
+        <li>«¿La confirmación de citas por WhatsApp funcionaría con tus pacientes?»</li>
+      </ul>
+    </div>
+    <div class="card gap8">
+      <b>Registro</b>
+      <div class="soft">Anotar hallazgos por médico (especialidad, dónde dudó, cita textual) como comentario en MER-2063. Tres hallazgos coincidentes = cambio obligatorio antes de cerrar el gate.</div>
+    </div>
+    <div class="card gap8">
+      <b>Notas de alcance del wireframe</b>
+      <ul class="soft" style="font-size:.9rem">
+        <li>Login fuera del alcance: ya está construido de verdad (Corte 0); el wireframe arranca con sesión iniciada.</li>
+        <li>Perfil completo del médico y firma digital → alta fidelidad.</li>
+        <li>Hallazgo de sistema: el token <span class="mono">--ink-faint</span> del prototipo falla contraste AA; aquí se oscureció. Llevar a la revisión de tokens de alta fidelidad.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= DATOS (ficticios, es-VE) ================= */
+const PAC = [
+ {id:'carmen',n:'Carmen Hidalgo',edad:58,sx:'F',ced:'V-9.847.221',tel:'0414-608 22 41',sangre:'O+',al:['Penicilina'],cr:['Hipertensión arterial'],
+  med:[['Losartán 50 mg','1 tableta cada mañana'],['Amlodipino 5 mg','1 tableta en la noche']],
+  ult:'23 jul 2026 · Control de tensión', vit:'TA 140/90 · FC 76 lpm · 72,4 kg',
+  hist:[
+   {d:'23 JUL 2026',t:'Consulta · Control de tensión',s:'TA 140/90 · se mantiene tratamiento',k:''},
+   {d:'23 JUL 2026',t:'Récipe emitido',s:'Losartán 50 mg · Amlodipino 5 mg',k:'doc'},
+   {d:'25 JUN 2026',t:'Cita · No asistió',s:'Control programado — se reagendó al 23 jul',k:'warn'},
+   {d:'12 JUN 2026',t:'Informe médico emitido',s:'Informe para seguro · PDF',k:'doc'},
+   {d:'03 MAY 2026',t:'Consulta · Primera vez',s:'Dx: HTA (I10) · inicia Losartán',k:''},
+   {d:'03 MAY 2026',t:'Orden de examen',s:'Perfil lipídico · creatinina · HbA1c',k:'doc'}],
+  cons:[['23 jul 2026','Control de tensión','TA 140/90 · continúa Losartán 50'],['03 may 2026','Primera consulta','Dx: HTA (I10) · inicia tratamiento']],
+  docs:[['23 jul 2026','Récipe','Losartán · Amlodipino'],['12 jun 2026','Informe médico','Para seguro'],['03 may 2026','Orden de examen','Perfil lipídico · HbA1c']]},
+ {id:'jose',n:'José Gregorio Páez',edad:64,sx:'M',ced:'V-4.115.302',tel:'0412-355 90 18',sangre:'A+',al:[],cr:['Diabetes tipo 2'],
+  med:[['Metformina 850 mg','1 tableta con desayuno y cena']],
+  ult:'28 jul 2026 · Control de glicemia', vit:'Glicemia 118 mg/dL · 81 kg',
+  hist:[{d:'28 JUL 2026',t:'Consulta · Control de glicemia',s:'HbA1c 6,9 % · buen control',k:''},{d:'28 JUL 2026',t:'Récipe emitido',s:'Metformina 850 mg',k:'doc'}],
+  cons:[['28 jul 2026','Control de glicemia','HbA1c 6,9 % · continúa Metformina']],
+  docs:[['28 jul 2026','Récipe','Metformina 850 mg']]},
+ {id:'maria',n:'Marianyelis Rivas',edad:34,sx:'F',ced:'V-19.223.870',tel:'0424-771 03 55',sangre:'B+',al:['Ibuprofeno'],cr:[],med:[],
+  ult:'11 ago 2026 · Cefalea tensional', vit:'TA 110/70 · 58 kg',
+  hist:[{d:'11 AGO 2026',t:'Consulta · Cefalea tensional',s:'Se indica laboratorio de control',k:''},{d:'11 AGO 2026',t:'Orden de examen',s:'Hematología completa · perfil tiroideo',k:'doc'}],
+  cons:[['11 ago 2026','Cefalea tensional','Se descarta HTA · pendiente laboratorio']],
+  docs:[['11 ago 2026','Orden de examen','Hematología · perfil tiroideo']]},
+ {id:'genesis',n:'Génesis Montilla de Camacaro Fernández',edad:47,sx:'F',ced:'V-12.660.114',tel:'0414-119 84 02',sangre:'O−',al:[],cr:['Hipotiroidismo'],
+  med:[['Levotiroxina 75 µg','1 tableta en ayunas']],
+  ult:'02 jun 2026 · Chequeo tiroideo', vit:'TSH 3,1 µUI/mL · 66 kg',
+  hist:[{d:'02 JUN 2026',t:'Consulta · Chequeo tiroideo',s:'TSH en rango · misma dosis',k:''},{d:'02 JUN 2026',t:'Orden de examen',s:'TSH · T4 libre',k:'doc'}],
+  cons:[['02 jun 2026','Chequeo tiroideo','TSH 3,1 · continúa Levotiroxina 75']],
+  docs:[['02 jun 2026','Orden de examen','TSH · T4 libre']]},
+ {id:'luis',n:'Luis Perozo',edad:71,sx:'M',ced:'V-3.402.559',tel:'0416-902 44 87',sangre:'A−',al:[],cr:['EPOC'],med:[['Salbutamol inhalador','2 inhalaciones si hay falta de aire']],
+  ult:'14 jul 2026 · Control EPOC', vit:'SatO₂ 93 % · FC 82 lpm',
+  hist:[{d:'19 AGO 2026',t:'Cita · No asistió',s:'Control EPOC — pendiente reagendar',k:'warn'},{d:'14 JUL 2026',t:'Consulta · Control EPOC',s:'Estable · técnica de inhalador reforzada',k:''}],
+  cons:[['14 jul 2026','Control EPOC','Estable · continúa Salbutamol SOS']],
+  docs:[]},
+ {id:'ana',n:'Ana Karina Bolívar',edad:42,sx:'F',ced:'E-84.220.973',tel:'0412-604 18 30',sangre:'AB+',al:[],cr:[],med:[],
+  ult:null, vit:null, hist:[], cons:[], docs:[]},
+ {id:'pedro',n:'Pedro Ustáriz',edad:55,sx:'M',ced:'V-7.881.240',tel:'0414-350 76 61',sangre:'O+',al:['Sulfas'],cr:['Gota'],med:[['Alopurinol 300 mg','1 tableta diaria']],
+  ult:'30 jul 2026 · Control de gota', vit:'Ácido úrico 6,1 mg/dL',
+  hist:[{d:'30 JUL 2026',t:'Consulta · Control de gota',s:'Sin crisis · continúa Alopurinol',k:''},{d:'30 JUL 2026',t:'Récipe emitido',s:'Alopurinol 300 mg',k:'doc'}],
+  cons:[['30 jul 2026','Control de gota','Ácido úrico 6,1 · continúa tratamiento']],
+  docs:[['30 jul 2026','Récipe','Alopurinol 300 mg']]}
+];
+const byId=id=>PAC.find(p=>p.id===id);
+let CITAS = [
+ {cid:1,h:'09:00',pid:'jose',m:'Control de glicemia',e:'ok',day:'hoy'},
+ {cid:2,h:'10:30',pid:'carmen',m:'Control de tensión',e:'wait',day:'hoy'},
+ {cid:3,h:'11:15',pid:'maria',m:'Resultados de laboratorio',e:'re',day:'hoy'},
+ {cid:4,h:'12:00',pid:'genesis',m:'Chequeo tiroideo',e:'ok',day:'hoy'},
+ {cid:5,h:'16:00',pid:'ana',m:'Primera consulta',e:'wait',day:'hoy'},
+ {cid:6,h:'09:30',pid:'luis',m:'Control EPOC',e:'no',day:'ayer'},
+ {cid:7,h:'15:00',pid:'pedro',m:'Control de ácido úrico',e:'off',day:'ayer'}
+];
+let PROXIMAS=[];
+const CHIP = {
+ ok:'<span class="chip ch-ok"><span aria-hidden="true">✓✓</span> Confirmada</span>',
+ wait:'<span class="chip ch-wait"><span aria-hidden="true">◷</span> Por confirmar</span>',
+ re:'<span class="chip ch-re"><span aria-hidden="true">↺</span> Reagendar solicitado</span>',
+ no:'<span class="chip ch-no"><span aria-hidden="true">✕</span> No asistió</span>',
+ off:'<span class="chip ch-off"><span aria-hidden="true">⊘</span> Cancelada</span>'
+};
+const DOCTIPOS = [
+ ['recipe','℞','Récipe','Medicación e indicaciones'],
+ ['informe','📄','Informe médico','Evolución y estado del paciente'],
+ ['constancia','🖋','Constancia','Asistencia o condición'],
+ ['reposo','🛏','Reposo','Días de reposo con fechas'],
+ ['referencia','↗','Referencia','A otro especialista'],
+ ['orden','🧪','Orden de examen','Laboratorio o imágenes']
+];
+const MODULOS = [
+ ['Pediatría','Vacunas · percentiles de crecimiento'],
+ ['Gineco-obstetricia','Control prenatal · FUR/FPP'],
+ ['Medicina interna','Escalas de riesgo cardiovascular'],
+ ['Odontología','Odontograma'],
+ ['Salud mental','Escalas y seguimiento de sesiones']
+];
+const ALERGENOS={ 'penicilina':/amoxicilina|ampicilina|penicilina/i, 'ibuprofeno':/ibuprofeno/i, 'sulfas':/sulfa/i };
+
+/* ================= NOTAS ================= */
+const NOTAS = {
+ 'v-hoy':[
+  ['«Hoy» abre con el próximo paciente + una acción — nunca un muro de tarjetas.','§7 baseline · Principio 1'],
+  ['Cada cita es tocable: abre su detalle con acciones (confirmar, reagendar, cancelar).','§6 estados citas'],
+  ['Escritorio: 2 columnas (día + agenda) por revelación, no reflow.','§7 reglas adaptativas'],
+  ['Estado «sin citas» en menú Estados → Primer uso · Hoy (se restaura al navegar).','§6 cobertura']],
+ 'v-pacientes':[
+  ['Buscar primero; cédula en mono y alergia visible desde la lista.','§6 inventario'],
+  ['Primer uso, cero resultados y cargando con recuperación.','§6 estados'],
+  ['Nombre largo → ellipsis (regla fija por bug detectado).','§7 · Evidence ledger']],
+ 'v-nuevo':[
+  ['Campo de identidad por región: V- / E- / Pasaporte, con estado inválido propio.','§12 componente nuevo · No-negociable 5'],
+  ['Validación: mensaje por campo (aria-invalid) + resumen-lista enfocable que lleva al campo.','§0 difficult states · §8'],
+  ['Al guardar se crea el paciente real y se abre SU ficha (Historia vacía = primer uso).','§5 journey Alta']],
+ 'v-exp':[
+  ['Ficha con pestañas = firma FULL. Resumen · Historia · Consultas · Documentos · Adjuntos, con flechas ← →.','§5 IA · Signature moves'],
+  ['Franja de alergias/crónicos SIEMPRE visible — también en la consulta y al recetar.','No-negociable 3'],
+  ['«Historia» = timeline unificada por paciente; Ana Karina (primera consulta) muestra el estado vacío.','§6: Historia unificada'],
+  ['Guardar una consulta actualiza medicación, historia y documentos al instante.','§5 cierre del journey']],
+ 'v-consulta':[
+  ['Contexto clínico del paciente REAL (alergias, crónicos, medicación) visible mientras se escribe.','No-negociable 3'],
+  ['Autosave local; con «Simular sin señal» la nota queda en el teléfono y el badge lo dice.','No-negociable 2'],
+  ['Validación: borra el motivo y guarda para ver campo + resumen enfocable.','§0 difficult states'],
+  ['Alerta de alergia BLOQUEANTE al recetar contra una alergia registrada; el récipe respeta la decisión tomada.','§13 hipótesis alerta']],
+ 'v-docs':[
+  ['Suite unificada: un solo punto de emisión, 6 tipos — decisión LOCKED. «Cambiar» elige paciente real.','Decision log'],
+  ['Referencia y orden de examen: nuevos vs prototipo.','§6 inventario']],
+ 'v-doc-detalle':[
+  ['Documento-papel = firma FULL: encabezado del médico, MPPS, riel verde, firma. Editar un campo actualiza la hoja.','Signature moves'],
+  ['Cierre triple: PDF · Imprimir · WhatsApp (con cola si no hay señal). Error de sistema y timeout en menú Estados.','§5 cierre + recuperación'],
+  ['El récipe imprime la medicación REAL de la consulta — incluida la decisión de la alerta.','No-negociable 4']],
+ 'v-agenda':[
+  ['Chips de confirmación: ✓✓ / ◷ / ↺ / ✕ / ⊘ — icono + texto, nunca solo color.','§12 chip · a11y'],
+  ['Confirmación 2 vías PROTOTIPADA: simula la respuesta del paciente y el chip cambia solo.','Decision LOCKED · §13/§14'],
+  ['Días de la semana navegables; la cita nueva aparece en «Próximas» (estado vivo).','§6 orden semana→día→citas'],
+  ['No-asistió y reagendar con acción del médico en el detalle de la cita.','§6 estados citas']],
+ 'v-modulos':[
+  ['Pantalla-sonda para la pregunta abierta: set de módulos por especialidad.','§16 open questions'],
+  ['Núcleo universal siempre activo; módulos opcionales (v2). Acceso: avatar → Ajustes.','Decision LOCKED']]
+};
+
+/* ================= NAVEGACIÓN ================= */
+const NAV = [['v-hoy','Hoy','☀️'],['v-pacientes','Pacientes','🗂️'],['v-agenda','Agenda','🗓️'],['v-docs','Documentos','℞']];
+const TITULOS = {'v-exp':'Expediente','v-consulta':'Consulta','v-doc-detalle':'Documento','v-nuevo':'Nuevo paciente','v-modulos':'Módulos'};
+let stack=[];
+function go(id,push=true){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('act'));
+  const el=document.getElementById(id); if(!el) return;
+  el.classList.add('act');
+  if(id==='v-hoy'){restaurarHoy()}
+  if(push && current()!==id) stack.push(id);
+  const root=NAV.some(([nid])=>nid===id);
+  document.getElementById('backbtn').classList.toggle('show',!root);
+  document.getElementById('brandword').classList.toggle('hidden',!root);
+  const t=document.getElementById('tbtitle');
+  t.classList.toggle('hidden',root); t.textContent=TITULOS[id]||'';
+  document.querySelectorAll('#tabbar button, #rail button').forEach(b=>b.setAttribute('aria-current', b.dataset.v===id ? 'true':'false'));
+  renderNotas(id);
+  document.querySelector('.stage')?.scrollTo(0,0); document.getElementById('app').scrollTo?.(0,0);
+  const h=el.querySelector('h1'); if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}
+  const sel=document.getElementById('w-screen'); if(sel.value!==id) sel.value=id;
+}
+function current(){return stack[stack.length-1]||'v-hoy'}
+function back(){ if(stack.length>1){stack.pop(); go(current(),false);} else go('v-hoy',false); }
+document.getElementById('backbtn').onclick=back;
+NAV.forEach(([id,label,ic])=>{
+  const mk=(parent,html)=>{const b=document.createElement('button');b.dataset.v=id;b.innerHTML=html;
+    b.onclick=()=>{stack=[id];go(id,false)};parent.appendChild(b)};
+  mk(document.getElementById('tabbar'),`<span class="ic" aria-hidden="true">${ic}</span>${label}`);
+  mk(document.getElementById('rail'),`<span aria-hidden="true">${ic}</span> ${label}`);
+});
+const rmod=document.createElement('button'); rmod.dataset.v='v-modulos';
+rmod.innerHTML='<span aria-hidden="true">🧩</span> Módulos'; rmod.onclick=()=>{stack=['v-modulos'];go('v-modulos',false)};
+document.getElementById('rail').appendChild(rmod);
+function swToggle(el){el.setAttribute('aria-checked', el.getAttribute('aria-checked')==='true'?'false':'true')}
+
+/* ================= HOY ================= */
+function restaurarHoy(){
+  document.getElementById('hoy-normal').classList.remove('hidden');
+  document.getElementById('hoy-vacio').classList.add('hidden');
+}
+function renderHoy(){
+  const hoy=CITAS.filter(c=>c.day==='hoy');
+  document.getElementById('next-chip').innerHTML=CHIP[hoy.find(c=>c.pid==='carmen')?.e||'wait'];
+  const n={tot:hoy.length,wait:hoy.filter(c=>c.e==='wait').length,re:hoy.filter(c=>c.e==='re').length};
+  document.getElementById('hoy-stats').innerHTML=`
+    <div class="stat"><div class="n">${n.tot}</div><div class="l">Citas hoy</div></div>
+    <div class="stat"><div class="n">${n.wait}</div><div class="l">Por confirmar</div></div>
+    <div class="stat"><div class="n">${n.re}</div><div class="l">Reagendar</div></div>`;
+  document.getElementById('hoy-lista').innerHTML=hoy.map(c=>{const p=byId(c.pid);return `
+    <button class="cita" onclick="citaModal(${c.cid})"><span class="hora">${c.h}</span>
+      <span style="flex:1;min-width:0;display:block"><span class="ellip" style="font-weight:600;display:block">${p.n}</span>
+      <span class="soft ellip" style="font-size:.86rem;display:block">${c.m}</span></span>${CHIP[c.e]}</button>`}).join('');
+}
+
+/* ================= PACIENTES ================= */
+function iniciales(n){const p=n.split(' ');return (p[0][0]+(p[1]?p[1][0]:'')).toUpperCase()}
+function renderPacientes(q=''){
+  const list=document.getElementById('plist'), vacio=document.getElementById('p-vacio'), cero=document.getElementById('p-cero');
+  const ql=q.trim().toLowerCase();
+  const res=PAC.filter(p=>!ql||p.n.toLowerCase().includes(ql)||p.ced.toLowerCase().includes(ql));
+  vacio.classList.add('hidden');
+  if(ql && res.length===0){ list.classList.add('hidden'); cero.classList.remove('hidden');
+    document.getElementById('p-q').textContent=q.trim(); return; }
+  cero.classList.add('hidden'); list.classList.remove('hidden'); list.removeAttribute('aria-busy');
+  list.innerHTML=res.map(p=>`
+    <button class="listitem" onclick="abrirExpediente('${p.id}')">
+      <span class="avatar" aria-hidden="true">${iniciales(p.n)}</span>
+      <span style="flex:1;min-width:0;display:block">
+        <span class="ellip" style="font-weight:600;display:block">${p.n}</span>
+        <span class="soft mono ellip" style="font-size:.82rem;display:block">${p.edad} años · ${p.ced}</span>
+      </span>
+      ${p.al.length?'<span class="chip ch-no"><span aria-hidden="true">⚠</span> '+p.al[0]+'</span>':''}
+    </button>`).join('');
+}
+function limpiarBusqueda(){const s=document.getElementById('psearch');s.value='';renderPacientes('');s.focus()}
+function mostrarPrimerUso(){go('v-pacientes');document.getElementById('plist').classList.add('hidden');
+  document.getElementById('p-cero').classList.add('hidden');document.getElementById('p-vacio').classList.remove('hidden')}
+function mostrarCargando(){go('v-pacientes');const l=document.getElementById('plist');
+  l.classList.remove('hidden');l.setAttribute('aria-busy','true');
+  l.innerHTML='<div class="skel"></div><div class="skel"></div><div class="skel"></div>';
+  setTimeout(()=>renderPacientes(document.getElementById('psearch').value),1400)}
+
+/* ================= NUEVO PACIENTE ================= */
+function validar(campos){ /* campos: [[fieldId, inputId, cond]] → lista de errores */
+  const errs=[];
+  campos.forEach(([f,i,label])=>{
+    const el=document.getElementById(i), ok=el.value.trim()!=='';
+    document.getElementById(f).classList.toggle('invalid',!ok);
+    el.setAttribute('aria-invalid', ok?'false':'true');
+    if(!ok)errs.push([i,label]);
+  });
+  return errs;
+}
+function bannerLista(bannerId,errs){
+  const b=document.getElementById(bannerId);
+  if(!errs.length){b.classList.add('hidden');return false}
+  b.innerHTML='<span aria-hidden="true">⚠</span> Revisa los campos marcados:<ul>'+
+    errs.map(e=>`<li><button onclick="document.getElementById('${e[0]}').focus()">${e[1]}</button></li>`).join('')+'</ul>';
+  b.classList.remove('hidden');b.setAttribute('tabindex','-1');b.focus();
+  return true;
+}
+function guardarPaciente(){
+  const errs=validar([['f-nombre','np-nombre','Nombre del paciente'],['f-id','np-id','Documento de identidad']]);
+  if(bannerLista('np-banner',errs))return;
+  const nombre=document.getElementById('np-nombre').value.trim();
+  const ced=document.getElementById('np-tipo').value.replace('Pasaporte','P-')+document.getElementById('np-id').value.trim();
+  const nuevo={id:'nuevo'+Date.now?.()||'nuevo', n:nombre, edad:'—', sx:document.getElementById('np-sexo').value[0], ced,
+    tel:document.getElementById('np-tel').value||'—', sangre:document.getElementById('np-sangre').value,
+    al:document.getElementById('np-alergias').value.split(',').map(s=>s.trim()).filter(Boolean),
+    cr:document.getElementById('np-cron').value.split(',').map(s=>s.trim()).filter(Boolean),
+    med:[], ult:null, vit:null, hist:[], cons:[], docs:[]};
+  nuevo.id='p'+(PAC.length+1);
+  PAC.push(nuevo);
+  toast('Paciente creado ✓');
+  abrirExpediente(nuevo.id);
+}
+
+/* ================= EXPEDIENTE ================= */
+let pacAct=PAC[0];
+function stripAlergias(el,p){
+  const tiene=p.al.length>0;
+  el.className='allergy-strip '+(tiene?'alerta-si':'alerta-no');
+  const alTxt=tiene?`<span aria-hidden="true">⚠</span> ${p.sx==='F'?'Alérgica':'Alérgico'}: ${p.al.join(', ')}`:'Sin alergias registradas';
+  el.innerHTML=`<span>${alTxt}</span><span class="cr">· Crónicos: ${p.cr.length?p.cr.join(', '):'ninguno'}</span>`;
+}
+function abrirExpediente(id){
+  pacAct=byId(id)||PAC[0];
+  document.getElementById('e-nombre').textContent=pacAct.n;
+  document.getElementById('e-av').textContent=iniciales(pacAct.n);
+  document.getElementById('e-meta').textContent=`${pacAct.edad} años · ${pacAct.sx} · ${pacAct.ced} · ${pacAct.sangre||'—'}`;
+  stripAlergias(document.getElementById('e-alergias'),pacAct);
+  tab('resumen'); go('v-exp');
+  if(pacAct.id==='carmen')hito(1);
+}
+document.getElementById('e-tabs').addEventListener('click',e=>{const b=e.target.closest('[role=tab]');if(b)tab(b.dataset.tab)});
+document.getElementById('e-tabs').addEventListener('keydown',e=>{
+  if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+  const tabs=[...document.querySelectorAll('#e-tabs [role=tab]')];
+  const i=tabs.findIndex(t=>t.getAttribute('aria-selected')==='true');
+  const j=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+  tab(tabs[j].dataset.tab); tabs[j].focus(); e.preventDefault();
+});
+function tab(name){
+  document.querySelectorAll('#e-tabs [role=tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===name?'true':'false'));
+  document.getElementById('e-panel').setAttribute('aria-labelledby','e-tab-'+name);
+  const P=document.getElementById('e-panel'), p=pacAct;
+  if(name==='resumen') P.innerHTML=`
+    <div class="gap12">
+      <div class="card"><dl class="kv">
+        <dt>Teléfono</dt><dd class="mono">${p.tel}</dd>
+        <dt>Última consulta</dt><dd>${p.ult||'Primera consulta hoy'}</dd></dl></div>
+      <div class="card gap8"><b style="font-size:.92rem">Medicación actual</b>
+        ${p.med.length?p.med.map(m=>`<div class="row" style="align-items:flex-start"><span class="mono" style="min-width:0;font-weight:600;font-size:.88rem">${m[0]}</span><span class="soft" style="font-size:.86rem">— ${m[1]}</span></div>`).join(''):'<span class="soft">Sin medicación registrada</span>'}</div>
+      ${p.vit?`<div class="card gap8"><b style="font-size:.92rem">Últimos signos vitales</b>
+        <div class="mono" style="font-size:.88rem">${p.vit}</div></div>`:''}
+    </div>`;
+  if(name==='historia') P.innerHTML = p.hist.length
+    ? `<div class="card"><div class="tl">${p.hist.map(h=>`
+        <div class="tl-item ${h.k}"><div class="tl-date">${h.d}</div>
+        <div style="font-weight:600">${h.t}</div><div class="soft" style="font-size:.88rem">${h.s}</div></div>`).join('')}</div></div>`
+    : `<div class="card empty"><div class="ei" aria-hidden="true">📖</div><b>Su historia empieza aquí</b>
+       <div class="soft">Al guardar la primera consulta, todo lo que ocurra con ${p.n.split(' ')[0]} quedará en esta línea de tiempo.</div>
+       <button class="btn btn-p" onclick="abrirConsulta()">Primera consulta</button></div>`;
+  if(name==='consultas') P.innerHTML = (p.cons.length
+    ? `<div class="card">${p.cons.map(c=>`
+      <button class="listitem" onclick="toast('Detalle de consulta (wireframe)','ℹ')"><span style="flex:1;min-width:0;display:block">
+        <span style="font-weight:600;display:block">${c[1]}</span><span class="soft" style="font-size:.86rem;display:block">${c[2]}</span></span>
+        <span class="tl-date">${c[0]}</span></button>`).join('')}</div>`
+    : `<div class="card empty"><div class="ei" aria-hidden="true">🩺</div><b>Sin consultas aún</b><div class="soft">Registra la primera consulta para empezar el expediente.</div></div>`)
+    + `<button class="btn btn-p" style="width:100%;margin-top:12px" onclick="abrirConsulta()">Nueva consulta</button>`;
+  if(name==='documentos') P.innerHTML = (p.docs.length
+    ? `<div class="card">${p.docs.map(d=>`
+      <button class="listitem" onclick="toast('Abre el documento (wireframe)','ℹ')"><span style="flex:1;min-width:0;display:block">
+        <span style="font-weight:600;display:block">${d[1]}</span><span class="soft" style="font-size:.86rem;display:block">${d[2]}</span></span>
+        <span class="tl-date">${d[0]}</span></button>`).join('')}</div>`
+    : `<div class="card empty"><div class="ei" aria-hidden="true">📄</div><b>Sin documentos aún</b><div class="soft">Los récipes, informes y órdenes que emitas quedan guardados aquí.</div></div>`)
+    + `<button class="btn btn-g" style="width:100%;margin-top:12px" onclick="go('v-docs')">Emitir documento</button>`;
+  if(name==='adjuntos') P.innerHTML=`
+      <div class="banner-err hidden" id="adj-permiso" role="alert" tabindex="-1"><span aria-hidden="true">⚠</span>
+        Galeno no tiene permiso para abrir tus archivos. Actívalo en los ajustes del teléfono.
+        <button style="text-decoration:underline;margin-left:6px;min-height:32px" onclick="this.parentElement.classList.add('hidden')">Entendido</button></div>
+      <div class="card empty">
+      <div class="ei" aria-hidden="true">📎</div><b>Sin adjuntos aún</b>
+      <div class="soft">Sube resultados de laboratorio o imágenes y quedan guardados en la ficha.</div>
+      <button class="btn btn-g" onclick="subirAdjunto()">Subir archivo</button></div>`;
+}
+function subirAdjunto(){
+  if(SIM.permiso){const b=document.getElementById('adj-permiso');b.classList.remove('hidden');b.focus();return}
+  toast('Selector de archivos (wireframe)','ℹ');
+}
+
+/* ================= CONSULTA ================= */
+function abrirConsulta(id){
+  if(id)pacAct=byId(id)||pacAct;
+  const p=pacAct;
+  document.getElementById('c-nombre').textContent=p.n;
+  stripAlergias(document.getElementById('c-alergias'),p);
+  const esCarmen=p.id==='carmen';
+  document.getElementById('c-motivo').value=esCarmen?'Control de hipertensión · dolor de garganta':(p.cr.length?`Control de ${p.cr[0].toLowerCase()}`:'Consulta de control');
+  document.getElementById('c-ta').value=esCarmen?'150/95':'120/80';
+  document.getElementById('c-fc').value=esCarmen?'78 lpm':'72 lpm';
+  document.getElementById('c-peso').value=esCarmen?'72 kg':'—';
+  document.getElementById('c-exp').value=esCarmen
+    ?'TA elevada pese a tratamiento. Faringe eritematosa con exudado; adenopatías cervicales dolorosas. Resto sin hallazgos.'
+    :'Paciente estable. Sin hallazgos agudos al examen físico.';
+  document.getElementById('c-dx').value=esCarmen?'HTA no controlada (I10) · Faringoamigdalitis aguda (J03.9)':(p.cr[0]||'Paciente sano — control');
+  document.getElementById('c-plan').value=esCarmen
+    ?'Subir Losartán a 100 mg. Antibiótico por 7 días. Control de TA en 4 semanas con perfil renal.'
+    :'Continuar tratamiento actual. Control en 3 meses.';
+  document.getElementById('c-med').value=esCarmen
+    ?'Losartán 100 mg — 1 tableta cada mañana\nAmoxicilina 500 mg — 1 cápsula cada 8 horas por 7 días'
+    :p.med.map(m=>m[0]+' — '+m[1]).join('\n');
+  document.getElementById('c-banner').classList.add('hidden');
+  document.getElementById('f-motivo').classList.remove('invalid');
+  go('v-consulta');
+}
+function guardarConsulta(){
+  const errs=validar([['f-motivo','c-motivo','Motivo de consulta']]);
+  if(bannerLista('c-banner',errs))return;
+  const btn=document.getElementById('c-save');
+  btn.disabled=true;btn.setAttribute('aria-busy','true');btn.innerHTML='<span class="spinner" aria-hidden="true"></span> Guardando…';
+  setTimeout(()=>{
+    btn.disabled=false;btn.removeAttribute('aria-busy');btn.textContent='Guardar consulta';
+    postGuardado(SIM.senal);
+  },700);
+}
+function medsActuales(){return document.getElementById('c-med').value.split('\n').map(s=>s.trim()).filter(Boolean)}
+function alergiaDetectada(){
+  const meds=document.getElementById('c-med').value;
+  for(const a of pacAct.al){
+    const re=ALERGENOS[a.toLowerCase()]||new RegExp(a,'i');
+    const m=meds.match(re); if(m)return {alergeno:a, farmaco:m[0]};
+  }
+  return null;
+}
+function postGuardado(offline){
+  const conRecipe=document.getElementById('c-recipe').getAttribute('aria-checked')==='true';
+  const hit=conRecipe&&alergiaDetectada();
+  if(hit){ alertaAlergia(offline,hit); return }
+  cierreConsulta(offline, conRecipe);
+}
+function alertaAlergia(offline,hit){
+  const nom=pacAct.n, fam=/amoxicilina|ampicilina/i.test(hit.farmaco)?` (familia de las penicilinas)`:'';
+  modal(`
+    <div class="modal alerta" role="alertdialog" aria-modal="true" aria-labelledby="al-t">
+      <h3 id="al-t"><span aria-hidden="true">⚠</span> Alergia registrada</h3>
+      <div><b>${nom} es ${pacAct.sx==='F'?'alérgica':'alérgico'} a ${hit.alergeno}.</b><br/>
+      El récipe incluye <b>${hit.farmaco}</b>${fam}.</div>
+      <div class="gap8">
+        <button class="btn btn-p" onclick="cambiarMed(${offline})">Cambiar medicamento · sugerir alternativa</button>
+        <button class="btn btn-d" onclick="cerrarModal();cierreConsulta(${offline},true)">Continuar de todos modos</button>
+        <button class="btn btn-g" onclick="cerrarModal()">Volver a la consulta</button>
+      </div>
+    </div>`);
+}
+function cambiarMed(offline){
+  const ta=document.getElementById('c-med');
+  ta.value=ta.value.replace(/Amoxicilina.*$/mi,'Azitromicina 500 mg — 1 tableta diaria por 3 días');
+  cerrarModal(); toast('Medicamento cambiado a Azitromicina ✓');
+  setTimeout(()=>cierreConsulta(offline,true),600);
+}
+function cierreConsulta(offline, conRecipe){
+  const p=pacAct, hoyd='HOY · 20 AGO 2026';
+  p.med=medsActuales().map(l=>{const [n,...i]=l.split(' — ');return [n,i.join(' — ')||'']});
+  p.vit=`TA ${document.getElementById('c-ta').value} · FC ${document.getElementById('c-fc').value}`;
+  const motivo=document.getElementById('c-motivo').value, dx=document.getElementById('c-dx').value;
+  p.ult='Hoy · '+motivo;
+  p.cons.unshift(['Hoy',motivo,dx]);
+  p.hist.unshift({d:hoyd,t:'Consulta · '+motivo,s:dx,k:''});
+  if(conRecipe){p.hist.unshift({d:hoyd,t:'Récipe emitido',s:p.med.map(m=>m[0]).join(' · '),k:'doc'});
+    p.docs.unshift(['Hoy','Récipe',p.med.map(m=>m[0]).join(' · ')]);}
+  hito(2);
+  toast(offline?'⛅ Guardada en el teléfono · se sincroniza al reconectar':'Consulta guardada ✓'+(conRecipe?' · récipe generado':''));
+  if(offline)setSync('local');
+  if(conRecipe){ setTimeout(()=>{abrirDoc('recipe'); }, 650); }
+  else setTimeout(promptControl, 650);
+}
+
+/* ================= DOCUMENTOS ================= */
+document.getElementById('doc-tipos').innerHTML=DOCTIPOS.map(d=>`
+  <button class="doctype" onclick="abrirDoc('${d[0]}')"><span class="ic" aria-hidden="true">${d[1]}</span>
+    <span style="min-width:0"><b>${d[2]}</b><small>${d[3]}</small></span></button>`).join('');
+let docAct='recipe';
+const DOCCAMPOS={
+ recipe:[],
+ informe:[['Motivo del informe','Informe de evolución para seguro']],
+ constancia:[['Texto de la constancia','Asistió a consulta médica el día de hoy']],
+ reposo:[['Días de reposo','7'],['Desde','20/08/2026'],['Hasta','27/08/2026']],
+ referencia:[['Referir a','Cardiología — Dr. R. Añez'],['Motivo','HTA de difícil control; valorar MAPA']],
+ orden:[['Exámenes','Perfil renal · electrolitos · HbA1c'],['Indicaciones','En ayunas de 8 horas']]
+};
+function elegirPaciente(){
+  modal(`<div class="modal" role="dialog" aria-modal="true" aria-labelledby="ep-t">
+    <h3 id="ep-t">¿Para quién es el documento?</h3>
+    <div>${PAC.map(p=>`<button class="listitem" onclick="setPacDoc('${p.id}')">
+      <span class="avatar" aria-hidden="true">${iniciales(p.n)}</span>
+      <span class="ellip" style="font-weight:600">${p.n}</span></button>`).join('')}</div>
+    <button class="btn btn-g" onclick="cerrarModal()">Cancelar</button></div>`);
+}
+function setPacDoc(id){pacAct=byId(id);cerrarModal();
+  document.getElementById('docs-para').textContent=pacAct.n;
+  if(current()==='v-doc-detalle')abrirDoc(docAct);}
+function sheetHTML(tipo){
+  const p=pacAct;
+  const campos=[...document.querySelectorAll('#d-campos input')].map(i=>i.value);
+  const defs=DOCCAMPOS[tipo];
+  const cuerpo = tipo==='recipe'
+    ? `<div class="rx" aria-hidden="true">℞</div><div class="mono" style="margin-top:8px;font-size:.9rem;line-height:1.7">${
+        (p.id===pacConsultaId()?medsActuales():p.med.map(m=>m[0]+' — '+m[1])).map(l=>l).join('<br/>')||'—'}</div>`
+    : `<div style="margin-top:6px">${defs.map((c,i)=>`<div style="margin-bottom:6px"><span class="faint" style="font-size:.8rem">${c[0]}:</span> ${campos[i]??c[1]}</div>`).join('')}</div>`;
+  return `
+    <div class="dhead"><div><div class="dr">Dra. Amelia Fuenmayor</div>
+      <div class="faint" style="font-size:.8rem">Medicina Interna · Centro Médico La Viña, Valencia</div></div>
+      <div class="meta">MPPS 45.312<br/>20/08/2026</div></div>
+    <div style="font-size:.85rem;margin-bottom:6px"><b>Paciente:</b> ${p.n} · ${p.ced} · ${p.edad} años</div>
+    ${cuerpo}
+    <div class="firma">Firma y sello</div>`;
+}
+function pacConsultaId(){return document.getElementById('c-nombre').textContent===pacAct.n?pacAct.id:null}
+function abrirDoc(tipo){
+  docAct=tipo;
+  const t=DOCTIPOS.find(d=>d[0]===tipo);
+  document.getElementById('d-tipo-eyebrow').textContent='Documento · '+t[2];
+  document.getElementById('d-tipo-titulo').textContent=t[2];
+  document.getElementById('docs-para').textContent=pacAct.n;
+  document.getElementById('d-campos').innerHTML=DOCCAMPOS[tipo].map((c,i)=>`
+    <div class="field"><label for="dc${i}">${c[0]}</label><input class="input" id="dc${i}" value="${c[1]}" oninput="refrescarSheet()" /></div>`).join('');
+  refrescarSheet();
+  document.getElementById('d-err').classList.add('hidden');
+  document.getElementById('d-pdf').dataset.intento='0';
+  go('v-doc-detalle');
+}
+function refrescarSheet(){document.getElementById('d-sheet').innerHTML=sheetHTML(docAct)}
+function generarPDF(reintento=false){
+  const btn=document.getElementById('d-pdf'), err=document.getElementById('d-err');
+  btn.disabled=true;btn.innerHTML='<span class="spinner" aria-hidden="true"></span> Generando…';
+  setTimeout(()=>{
+    btn.disabled=false;btn.textContent='Descargar PDF';
+    if(!reintento && btn.dataset.intento==='0' && (SIM.pdfFalla||SIM.pdfTimeout)){
+      btn.dataset.intento='1';
+      document.getElementById('d-err-txt').innerHTML=SIM.pdfTimeout
+        ?'<span aria-hidden="true">⚠</span> La descarga está tardando demasiado.'
+        :'<span aria-hidden="true">⚠</span> No se pudo generar el PDF. Revisa tu conexión.';
+      err.classList.remove('hidden');err.focus();return }
+    err.classList.add('hidden');SIM.pdfFalla=false;SIM.pdfTimeout=false;
+    toast('PDF listo · '+DOCTIPOS.find(d=>d[0]===docAct)[2].toLowerCase()+' emitido ✓'); cierreDoc();
+  },800);
+}
+function imprimirDoc(){toast('Enviado a imprimir ✓');cierreDoc()}
+function enviarWhatsApp(){
+  if(SIM.senal){toast('⛅ Sin señal · el envío quedó en cola y saldrá al reconectar');setSync('local');cierreDoc();return}
+  toast('Compartido por WhatsApp ✓');cierreDoc();
+}
+function cierreDoc(){ if(docAct==='recipe'){hito(3); setTimeout(promptControl,700)} }
+
+/* ================= PRÓXIMO CONTROL + AGENDA ================= */
+function promptControl(){
+  if(document.getElementById('modal-slot').innerHTML) return;
+  modal(`
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pc-t">
+      <h3 id="pc-t">¿Agendar el próximo control?</h3>
+      <div class="soft">El plan indica control en 4 semanas.</div>
+      <div class="gap8">
+        <button class="btn btn-p" onclick="cerrarModal();abrirModalCita('jue 17 sep · 10:30 a. m.')">En 4 semanas · jue 17 sep</button>
+        <button class="btn btn-g" onclick="cerrarModal();abrirModalCita('')">Elegir otra fecha</button>
+        <button class="btn btn-g" onclick="cerrarModal()">Ahora no</button>
+      </div>
+    </div>`);
+}
+function abrirModalCita(prefill){
+  modal(`
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="nc-t">
+      <h3 id="nc-t" class="ellip">Nueva cita · ${pacAct.n}</h3>
+      <div class="field"><label for="nc-f">Fecha y hora</label>
+        <input class="input mono" id="nc-f" value="${prefill||''}" placeholder="Elegir fecha…" /></div>
+      <div class="field"><label for="nc-m">Motivo</label>
+        <input class="input" id="nc-m" value="Control" /></div>
+      <div class="card switchrow" style="padding:10px 14px">
+        <span style="font-size:.9rem"><b>Recordar y confirmar por WhatsApp</b><br/>
+        <span class="soft" style="font-size:.8rem">1 día antes y 2 horas antes</span></span>
+        <button class="sw" role="switch" aria-checked="true" aria-label="Recordatorio por WhatsApp" onclick="swToggle(this)"></button>
+      </div>
+      <button class="btn btn-p" onclick="citaCreada()">Agendar cita</button>
+      <button class="btn btn-g" onclick="cerrarModal()">Cancelar</button>
+    </div>`);
+}
+function citaCreada(){
+  const f=document.getElementById('nc-f').value||'jue 17 sep · 10:30 a. m.';
+  const m=document.getElementById('nc-m').value||'Control';
+  PROXIMAS.push({f,m,pid:pacAct.id,e:'wait'});
+  cerrarModal(); hito(4);
+  toast('Cita agendada ✓ · recordatorio programado');
+  setTimeout(()=>{ go('v-agenda'); renderAgenda(); }, 650);
+}
+let agDay='mie';
+const DIAS=[['lun','LUN','18'],['mar','MAR','19'],['mie','MIÉ','20'],['jue','JUE','21'],['vie','VIE','22']];
+function renderWeek(){
+  document.getElementById('ag-week').innerHTML=DIAS.map(d=>`
+    <button class="day" aria-pressed="${agDay===d[0]}" onclick="agDay='${d[0]}';renderWeek();renderAgenda()">
+      <span class="dn" style="display:block">${d[1]}</span><span class="dd" style="display:block">${d[2]}</span></button>`).join('');
+}
+function citaRow(c){
+  const p=byId(c.pid);
+  return `<button class="cita" onclick="citaModal(${c.cid})"><span class="hora">${c.h}</span>
+    <span style="flex:1;min-width:0;display:block"><span class="ellip" style="font-weight:600;display:block">${p.n}</span>
+    <span class="soft ellip" style="font-size:.86rem;display:block">${c.m}</span></span>${CHIP[c.e]}</button>`;
+}
+function renderAgenda(){
+  const L=document.getElementById('ag-lista');
+  if(agDay==='mie'){
+    const hoy=CITAS.filter(c=>c.day==='hoy');
+    L.innerHTML=hoy.map(citaRow).join('')
+      +`<hr class="hr"/><div class="eyebrow" style="padding:6px 4px">Ayer · martes 19</div>`
+      +CITAS.filter(c=>c.day==='ayer').map(citaRow).join('');
+  } else if(agDay==='mar'){
+    L.innerHTML=`<div class="eyebrow" style="padding:0 4px 6px">Martes 19</div>`+CITAS.filter(c=>c.day==='ayer').map(citaRow).join('');
+  } else {
+    const d=DIAS.find(x=>x[0]===agDay);
+    L.innerHTML=`<div class="empty" style="padding:22px 12px"><div class="ei" aria-hidden="true">🗓️</div>
+      <b>Sin citas el ${d[1].toLowerCase()==='jue'?'jueves':d[1].toLowerCase()==='vie'?'viernes':'lunes'} ${d[2]}</b>
+      <div class="soft">Toca + para agendar en este día.</div></div>`;
+  }
+  const PX=document.getElementById('ag-prox-card');
+  if(PROXIMAS.length){PX.style.display='';document.getElementById('ag-prox').innerHTML=PROXIMAS.map(x=>{const p=byId(x.pid);return `
+    <div class="cita" style="cursor:default"><span class="hora" style="min-width:0;font-size:.8rem">${x.f.split('·')[0]}</span>
+      <span style="flex:1;min-width:0;display:block"><span class="ellip" style="font-weight:600;display:block">${p.n}</span>
+      <span class="soft ellip" style="font-size:.86rem;display:block">${x.m} · <span aria-hidden="true">⛅</span> recordatorio programado</span></span>${CHIP[x.e]}</div>`}).join('')}
+  else PX.style.display='none';
+  renderHoy();
+}
+function citaModal(cid){
+  const c=CITAS.find(x=>x.cid===cid), p=byId(c.pid);
+  const acciones={
+    wait:[['Confirmar manualmente','ok'],['Marcar reagendar','re'],['Cancelar cita','off']],
+    ok:[['Marcar reagendar','re'],['Cancelar cita','off']],
+    re:[['Proponer nueva hora',null,'reagendar'],['Cancelar cita','off']],
+    no:[['Reagendar',null,'reagendar']],
+    off:[]
+  }[c.e]||[];
+  modal(`<div class="modal" role="dialog" aria-modal="true" aria-labelledby="cm-t">
+    <h3 id="cm-t" class="ellip">${c.h} · ${p.n}</h3>
+    <div class="row" style="justify-content:space-between"><span class="soft">${c.m}</span>${CHIP[c.e]}</div>
+    <div class="gap8">
+      <button class="btn btn-p" onclick="cerrarModal();abrirExpediente('${p.id}')">Abrir ficha</button>
+      ${acciones.map(a=>a[2]==='reagendar'
+        ?`<button class="btn btn-g" onclick="cerrarModal();pacAct=byId('${p.id}');abrirModalCita('')">${a[0]}</button>`
+        :`<button class="btn ${a[1]==='off'?'btn-d':'btn-g'}" onclick="estadoCita(${cid},'${a[1]}')">${a[0]}</button>`).join('')}
+      <button class="btn btn-g" onclick="cerrarModal()">Cerrar</button>
+    </div></div>`);
+}
+function estadoCita(cid,e){
+  const c=CITAS.find(x=>x.cid===cid); c.e=e; cerrarModal();
+  toast(e==='ok'?'Cita confirmada ✓✓':e==='re'?'Marcada para reagendar ↺':'Cita cancelada ⊘');
+  renderAgenda();
+}
+function respuestaPaciente(n){
+  const c=CITAS.find(x=>x.pid==='carmen'&&x.day==='hoy');
+  if(n===1){c.e='ok';toast('Carmen respondió 1 · cita confirmada ✓✓')}
+  else{c.e='re';toast('Carmen respondió 2 · pidió reagendar ↺')}
+  renderAgenda();
+}
+
+/* ================= MÓDULOS / AJUSTES ================= */
+document.getElementById('mod-list').innerHTML='<b>Módulos opcionales</b>'+MODULOS.map(m=>`
+  <div class="switchrow"><span style="font-size:.92rem;min-width:0"><b>${m[0]}</b><br/>
+    <span class="soft" style="font-size:.82rem">${m[1]}</span></span>
+    <button class="sw" role="switch" aria-checked="false" aria-label="Activar módulo ${m[0]}" onclick="swToggle(this)"></button></div>`).join('');
+document.getElementById('avatarbtn').onclick=()=>{
+  modal(`<div class="modal" role="dialog" aria-modal="true" aria-labelledby="aj-t">
+    <h3 id="aj-t">Ajustes</h3>
+    <div class="card gap8" style="padding:12px 14px">
+      <b>Dra. Amelia Fuenmayor</b>
+      <span class="soft" style="font-size:.88rem">Medicina Interna · MPPS 45.312 · Centro Médico La Viña</span>
+    </div>
+    <div class="card switchrow" style="padding:10px 14px">
+      <span style="font-size:.92rem"><b>Tipografía más grande</b><br/><span class="soft" style="font-size:.8rem">Para leer con comodidad</span></span>
+      <button class="sw" role="switch" aria-checked="${document.body.classList.contains('font-lg')}"
+        aria-label="Tipografía más grande" onclick="swToggle(this);document.body.classList.toggle('font-lg')"></button>
+    </div>
+    <div class="card row" style="padding:12px 14px;justify-content:space-between">
+      <span style="font-size:.92rem"><b>Región</b><br/><span class="soft" style="font-size:.8rem">Terminología y documentos</span></span>
+      <span class="chip ch-ok">Venezuela · por defecto</span>
+    </div>
+    <button class="btn btn-g" onclick="cerrarModal();stack=['v-modulos'];go('v-modulos',false)">Módulos por especialidad →</button>
+    <button class="btn btn-g" onclick="cerrarModal()">Cerrar</button>
+  </div>`);
+};
+
+/* ================= UTILIDADES ================= */
+function toast(msg){
+  const slot=document.getElementById('toast-slot');
+  slot.innerHTML=`<div class="toast">${msg}</div>`;
+  clearTimeout(slot._t); slot._t=setTimeout(()=>slot.innerHTML='',2800);
+}
+let lastFocus=null;
+function modal(html){
+  lastFocus=document.activeElement;
+  document.getElementById('modal-slot').innerHTML=`<div class="scrim" onclick="if(event.target===this)cerrarModal()">${html}</div>`;
+  document.querySelector('#modal-slot .btn')?.focus();
+}
+function cerrarModal(){document.getElementById('modal-slot').innerHTML='';lastFocus?.focus?.()}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(document.getElementById('modal-slot').innerHTML){cerrarModal();return}
+  if(document.body.classList.contains('guion-open'))document.body.classList.remove('guion-open');
+});
+
+/* ================= SIMULACIONES / SYNC ================= */
+const SIM={senal:false,pdfFalla:false,pdfTimeout:false,permiso:false};
+function setSync(mode){
+  const b=document.getElementById('syncbadge');
+  b.classList.remove('hidden','s-local','s-err','s-ok');b.onclick=null;
+  if(!mode){b.classList.add('hidden');return}
+  if(mode==='local'){b.classList.add('s-local');
+    b.innerHTML='<span aria-hidden="true">⛅</span> Guardado local<span class="sync-ext"> · se sincroniza</span>'}
+  if(mode==='err'){b.classList.add('s-err');
+    b.innerHTML='<span aria-hidden="true">⚠</span> 1 nota sin sincronizar<span class="sync-ext"> · Reintentar</span>';
+    b.onclick=()=>{b.innerHTML='<span class="spinner" aria-hidden="true"></span> Sincronizando…';
+      setTimeout(()=>{setSync('ok');setTimeout(()=>setSync(null),1800)},900)}}
+  if(mode==='ok'){b.classList.add('s-ok');b.innerHTML='<span aria-hidden="true">✓</span> Sincronizado'}
+}
+document.getElementById('w-senal').onclick=function(){
+  SIM.senal=!SIM.senal; this.setAttribute('aria-pressed',SIM.senal);
+  if(SIM.senal){setSync('local');toast('⛅ Sin señal · la nota se guarda en el teléfono')}
+  else{setSync('ok');toast('Señal restablecida · todo sincronizado ✓');setTimeout(()=>setSync(null),1800)}
+};
+
+/* ================= MODO PRUEBA / DEMO ================= */
+const MODO_REVISION = new URLSearchParams(location.search).get('modo')==='revision';
+const WA_MEDINETECH='https://wa.me/584248274759?text='+encodeURIComponent('Hola, MedineTech 👋 Probé la demo de Galeno y me interesa para mi consultorio.');
+const TAREA_TXT='Abre la ficha de <b>Carmen Hidalgo</b>, registra la consulta de hoy, emite su récipe y agenda su próximo control.';
+function hito(n){
+  if(!document.body.classList.contains('prueba'))return;
+  for(let i=1;i<=n;i++)document.getElementById('st'+i)?.classList.add('done');
+  if(n===4){
+    document.getElementById('tarea-txt').innerHTML=MODO_REVISION
+      ?'<b>¡Prueba completada!</b> Gracias, doctor(a). Cuéntenos: ¿qué le costó más?'
+      :'<b>¡Eso fue todo!</b> Consulta, récipe y próximo control — en un par de minutos.';
+    if(!MODO_REVISION) setTimeout(ctaInteres, 1100);
+  }
+}
+function ctaInteres(){
+  modal(`<div class="modal" role="dialog" aria-modal="true" aria-labelledby="ci-t">
+    <h3 id="ci-t">¿Te gustaría tener Galeno en tu consultorio?</h3>
+    <div class="soft">Estamos armando el <b>grupo fundador</b>: médicos que definen con nosotros qué se construye primero. Sin compromiso — cuéntanos de tu consulta y te mostramos cómo quedaría para tu especialidad.</div>
+    <a class="btn btn-p" style="text-decoration:none" href="${WA_MEDINETECH}" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <button class="btn btn-g" onclick="cerrarModal()">Seguir explorando</button>
+    <div class="faint" style="font-size:.76rem;text-align:center">MedineTech · RIF: V-18581219-3 · Demo con datos ficticios</div>
+  </div>`);
+}
+function cerrarBienvenida(soloExplorar){
+  document.body.classList.remove('bienvenida-open');
+  try{sessionStorage.setItem('galeno-bienvenida','1')}catch(e){}
+  if(soloExplorar)salirPrueba();
+}
+function salirPrueba(){document.body.classList.remove('prueba');document.getElementById('w-modo').setAttribute('aria-pressed','false')}
+
+/* ================= CHROME ================= */
+const PANTALLAS=[['v-hoy','Hoy'],['v-pacientes','Pacientes'],['v-nuevo','Nuevo paciente'],['v-exp','Expediente'],['v-consulta','Consulta'],['v-docs','Documentos'],['v-doc-detalle','Documento'],['v-agenda','Agenda'],['v-modulos','Módulos (concepto)']];
+const selP=document.getElementById('w-screen');
+PANTALLAS.forEach(([v,l])=>{const o=document.createElement('option');o.value=v;o.textContent=l;selP.appendChild(o)});
+selP.onchange=()=>{ if(selP.value==='v-exp')abrirExpediente(pacAct.id||'carmen');
+  else if(selP.value==='v-consulta')abrirConsulta(pacAct.id||'carmen');
+  else if(selP.value==='v-doc-detalle')abrirDoc(docAct||'recipe');
+  else {stack=[selP.value];go(selP.value,false)} };
+const ESTADOS=[
+ ['Primer uso · Pacientes',()=>mostrarPrimerUso()],
+ ['Primer uso · Hoy sin citas',()=>{go('v-hoy');document.getElementById('hoy-normal').classList.add('hidden');document.getElementById('hoy-vacio').classList.remove('hidden')}],
+ ['Cero resultados · búsqueda',()=>{go('v-pacientes');const s=document.getElementById('psearch');s.value='Zerpa';renderPacientes('Zerpa')}],
+ ['Cargando · lista de pacientes',()=>mostrarCargando()],
+ ['Validación · consulta sin motivo',()=>{abrirConsulta('carmen');document.getElementById('c-motivo').value='';guardarConsulta()}],
+ ['Guardando · consulta',()=>{abrirConsulta('carmen');guardarConsulta()}],
+ ['Sin señal · guardado local',()=>{if(!SIM.senal)document.getElementById('w-senal').click();abrirConsulta('carmen')}],
+ ['Fallo de sincronización',()=>{setSync('err');toast('⚠ Una nota no pudo sincronizarse · toca el aviso para reintentar')}],
+ ['Alerta de alergia (bloqueante)',()=>{abrirConsulta('carmen');postGuardado(false)}],
+ ['Error de sistema · PDF',()=>{pacAct=byId('carmen');SIM.pdfFalla=true;abrirDoc('recipe');setTimeout(()=>generarPDF(),300)}],
+ ['Timeout · PDF tarda demasiado',()=>{pacAct=byId('carmen');SIM.pdfTimeout=true;abrirDoc('recipe');setTimeout(()=>generarPDF(),300)}],
+ ['Permiso denegado · adjuntos',()=>{SIM.permiso=true;abrirExpediente('carmen');tab('adjuntos');setTimeout(subirAdjunto,300)}],
+ ['Estados de cita (chips)',()=>{go('v-agenda')}],
+ ['Éxito · toast',()=>toast('Consulta guardada ✓ · récipe generado')]
+];
+const selE=document.getElementById('w-state');
+ESTADOS.forEach((e,i)=>{const o=document.createElement('option');o.value=i;o.textContent=e[0];selE.appendChild(o)});
+selE.onchange=()=>{ if(selE.value!=='')ESTADOS[+selE.value][1](); selE.value='' };
+document.getElementById('w-marco').onclick=function(){
+  const on=document.body.classList.toggle('marco'); this.setAttribute('aria-pressed',on)};
+let notasManual=false;
+document.getElementById('w-notas').onclick=function(){notasManual=true;
+  const on=document.body.classList.toggle('notas'); this.setAttribute('aria-pressed',on); renderNotas(current())};
+document.getElementById('w-tema').onclick=()=>{
+  const r=document.documentElement, cur=r.getAttribute('data-theme');
+  const next=cur==='dark'?'light':cur==='light'?null:'dark';
+  next?r.setAttribute('data-theme',next):r.removeAttribute('data-theme');
+};
+document.getElementById('w-guion').onclick=()=>document.body.classList.add('guion-open');
+document.getElementById('w-modo').onclick=function(){
+  const on=document.body.classList.toggle('prueba'); this.setAttribute('aria-pressed',on);
+  if(on){document.body.classList.remove('notas');document.getElementById('w-notas').setAttribute('aria-pressed','false');
+    document.querySelectorAll('.tarea .st').forEach(s=>s.classList.remove('done'));
+    document.getElementById('tarea-txt').innerHTML=TAREA_TXT;
+    stack=['v-hoy'];go('v-hoy',false)}
+};
+function renderNotas(id){
+  const n=NOTAS[id]||[];
+  const box=document.getElementById('notes');
+  if(!n.length){box.innerHTML='<h4>Notas</h4><div style="color:var(--wire-dim)">Sin notas para esta pantalla.</div>';return}
+  box.innerHTML='<h4>Arquitectura · '+(PANTALLAS.find(p=>p[0]===id)?.[1]||id)+'</h4><ul>'+
+    n.map(x=>`<li>${x[0]}<div class="ref">${x[1]}</div></li>`).join('')+'</ul>';
+}
+
+/* init */
+document.getElementById('tarea-txt').innerHTML=TAREA_TXT;
+renderPacientes(); renderWeek(); renderAgenda();
+if(MODO_REVISION){
+  const mqNotas=window.matchMedia('(min-width:701px)');
+  const syncNotas=()=>{ if(notasManual)return; const on=mqNotas.matches;
+    document.body.classList.toggle('notas',on);
+    document.getElementById('w-notas').setAttribute('aria-pressed',on); };
+  mqNotas.addEventListener('change',syncNotas); syncNotas();
+}else{
+  document.body.classList.add('demo','prueba');
+  document.getElementById('w-modo').setAttribute('aria-pressed','true');
+  let vista=false; try{vista=!!sessionStorage.getItem('galeno-bienvenida')}catch(e){}
+  if(!vista)document.body.classList.add('bienvenida-open');
+}
+go('v-hoy',true); stack=['v-hoy'];
+</script>
