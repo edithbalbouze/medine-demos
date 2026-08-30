@@ -1427,4 +1427,15 @@ if(MODO_REVISION){
   if(!vista)document.body.classList.add('bienvenida-open');
 }
 go('v-hoy',true); stack=['v-hoy'];
+/* deep-link de captura: ?p=<vista> abre una pantalla limpia (sin bienvenida ni tarjeta de misión) */
+const pCap=new URLSearchParams(location.search).get('p');
+if(pCap){
+  document.body.classList.remove('bienvenida-open'); salirPrueba();
+  if(pCap==='alerta'){abrirConsulta('carmen');setTimeout(()=>postGuardado(false),500)}
+  else if(pCap==='v-exp')abrirExpediente('carmen');
+  else if(pCap==='historia'){abrirExpediente('carmen');tab('historia')}
+  else if(pCap==='v-consulta')abrirConsulta('carmen');
+  else if(pCap==='v-doc-detalle'){pacAct=byId('carmen');abrirDoc('recipe')}
+  else if(document.getElementById(pCap)){stack=[pCap];go(pCap,false)}
+}
 </script>
